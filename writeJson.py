@@ -37,7 +37,7 @@ tableSource = [
  'https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Omon.json',
  'https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_SImon.json'
  ] ;
-    
+
 #%% Loop through tables and create in-memory objects
 # Create urllib2 context to deal with lab certs
 ctx                 = ssl.create_default_context()
@@ -65,7 +65,7 @@ for count,table in enumerate(tableSource):
 Amon.get('axis_entry').keys()
 sorted(Amon.get('axis_entry').keys())
 
-#%%    
+#%%
 tmpFile = open('tmp.json','w')
 tmpFile.write(Amon)
 tmpFile.close()
@@ -74,8 +74,8 @@ newDict = json.load(open('tmp.json','r'))
 #json.dump(eval(masterTargets[count]),tmpFile,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
 #json.dump(tmpFile,eval(test),ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
 #tmpFile.close()
-    
-    
+
+
 #%%
 
 experiment  = exps['CV']['experiment_ids'] ;
