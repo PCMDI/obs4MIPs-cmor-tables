@@ -18,9 +18,8 @@ PJD 15 Jul 2016     - TODO:
 
 #%% Import statements
 import gc,json,os,ssl,time,urllib2
-#homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
-homePath = '/export/durack1/git/obs4MIPs-cmor-tables/'
-print homePath
+homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
+#homePath = '/export/durack1/git/obs4MIPs-cmor-tables/'
 os.chdir(homePath)
 
 #%% urllib2 config
@@ -50,7 +49,6 @@ tableSource = [
 #%% Loop through tables and create in-memory objects
 # Loop through input tables
 for count,table in enumerate(tableSource):
-    print count,masterTargets[count],table
     # Read web file
     jsonOutput                      = urllib2.urlopen(table, context=ctx)
     tmp                             = jsonOutput.read()
@@ -73,6 +71,7 @@ for table in masterTargets:
     else:
         eval(table).pop('axis_entry')
         eval(table)['Header'].pop('generic_levels')
+        eval(table)['Header']['activity_id'] = 'obs4MIPs'
         eval(table)['Header']['table_date'] = time.strftime('%d %B %Y')
 
 #%% Cleanup realms
