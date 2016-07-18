@@ -5,14 +5,15 @@ Created on Mon Jul 18 13:49:08 2016
 
 @author: durack1
 """
-#%% Import statements
+
 import cmor,gc,json,os,ssl,urllib2
 import cdms2 as cdm
 import numpy as np
 
-#%% Home path spec
-homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
+#%% Import statements
+#homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
 #homePath = '/export/durack1/git/obs4MIPs-cmor-tables/'
+homePath = '/sync/git/obs4MIPs-cmor-tables/demo'
 os.chdir(homePath)
 
 #%% urllib2 config
@@ -60,8 +61,13 @@ for count,table in enumerate(buildList):
 obs4MIPs_CV = {}
 obs4MIPs_CV['CV'] = {}
 for count,CV in enumerate(buildList):
-    CVName = CV[0]
-    obs4MIPs_CV['CV'][CVName] = eval(CVName)
+    CVName1 = CV[0]
+    if CVName1 == 'coordinate':
+        CVName2 = CVName1
+        CVName1 = 'axis_entry'
+    else:
+        CVName2 = CVName1        
+    obs4MIPs_CV['CV'][CVName1] = eval(CVName2)
 
 outFile = 'obs4MIPs_CV.json'
 # Check file exists
@@ -80,7 +86,7 @@ d       = f['tos']
 lat     = d.getLatitude()
 lon     = d.getLongitude()
 time    = d.getTime()
-cmor.set_cur_dataset_attribute('history',f.history) ; # Force local file attribute as history
+#cmor.set_cur_dataset_attribute('history',f.history) ; # Force local file attribute as history
 table   = 'obs4MIPs_Omon.json' ; # Amon,Lmon,Omon,SImon
 cmor.load_table(table) ; # Load target table (above), axis info (coordinates, grid*) and CVs
 axes    = [ {'table_entry': 'time',

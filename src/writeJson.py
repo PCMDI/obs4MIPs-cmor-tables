@@ -206,6 +206,7 @@ for jsonName in masterTargets:
                     string = string.replace(' & ',' and ')  ; # Replace +
                     string = string.replace('   ',' ') ; # Replace '  ', '   '
                     string = string.replace('anthro ','anthropogenic ') ; # Replace anthro
+                    string = string.replace('decidous','deciduous') ; # Replace decidous
                     string = string.replace('  ',' ') ; # Replace '  ', '   '
                 dictToClean[key][values[0]] = string
         vars()[jsonName] = dictToClean
