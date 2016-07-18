@@ -5,10 +5,15 @@ Created on Mon Jul 18 13:49:08 2016
 
 @author: durack1
 """
-
+#%% Import statements
 import cmor,gc,json,os,ssl,urllib2
 import cdms2 as cdm
 import numpy as np
+
+#%% Home path spec
+homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
+#homePath = '/export/durack1/git/obs4MIPs-cmor-tables/'
+os.chdir(homePath)
 
 #%% urllib2 config
 # Create urllib2 context to deal with lab certs
@@ -64,7 +69,7 @@ if os.path.exists(outFile):
     print 'File existing, purging:',outFile
     os.remove(outFile)
 fH = open(outFile,'w')
-json.dump(eval(obs4MIPs_CV),fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
+json.dump(obs4MIPs_CV,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
 fH.close()
 
 #%% Process variable (with time axis)
