@@ -1,0 +1,20 @@
+[
+    "activity_id",
+    "Conventions",
+    "creation_date",
+    "dataset_version_number",
+    "further_info_url",
+    "frequency",
+    "grid",
+    "grid_label",
+    "grid_resolution",
+    "institution_id",
+    "license",
+    "product",
+    "realm",
+    "source_id",
+    "table_id",
+    "target_mip",
+    "tracking_id",
+    "variable_id"
+]
