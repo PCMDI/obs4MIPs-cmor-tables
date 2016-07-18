@@ -6,13 +6,66 @@ Created on Mon Jul 18 13:49:08 2016
 @author: durack1
 """
 
-import cmor,gc
+import cmor,gc,json,os,ssl,urllib2
 import cdms2 as cdm
 import numpy as np
 
+#%% urllib2 config
+# Create urllib2 context to deal with lab certs
+ctx                 = ssl.create_default_context()
+ctx.check_hostname  = False
+ctx.verify_mode     = ssl.CERT_NONE
+
 #%% Integrate all CVs into master file
 jsonCVs = 'obs4MIPs_CV.json'
+buildList = [
+ ['coordinate','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_coordinate.json'],
+ ['frequency','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_coordinate.json'],
+ ['grid_label','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_grid_label.json'],
+ ['grid_resolution','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_grid_resolution.json'],
+ ['grid','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_grid.json'],
+ ['institution_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_institution_id.json'],
+ ['mip_era','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_mip_era.json'],
+ ['product','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_product.json'],
+ ['realm','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_realm.json'],
+ ['required_global_attributes','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_required_global_attributes.json'],
+ ['source_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_source_id.json'],
+ ['table_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_table_id.json'],
+ ] ;
 
+# Loop through input tables
+for count,table in enumerate(buildList):
+    print 'Processing:',table[0]
+    # Read web file
+    jsonOutput                      = urllib2.urlopen(table[1], context=ctx)
+    tmp                             = jsonOutput.read()
+    vars()[table[0]]                = tmp
+    jsonOutput.close()
+    # Write local json
+    tmpFile                         = open('tmp.json','w')
+    tmpFile.write(eval(table[0]))
+    tmpFile.close()
+    # Read local json
+    vars()[table[0]]    = json.load(open('tmp.json','r'))
+    os.remove('tmp.json')
+    del(tmp,jsonOutput)
+    del(count,table) ; gc.collect()
+
+# Rebuild
+obs4MIPs_CV = {}
+obs4MIPs_CV['CV'] = {}
+for count,CV in enumerate(buildList):
+    CVName = CV[0]
+    obs4MIPs_CV['CV'][CVName] = eval(CVName)
+
+outFile = 'obs4MIPs_CV.json'
+# Check file exists
+if os.path.exists(outFile):
+    print 'File existing, purging:',outFile
+    os.remove(outFile)
+fH = open(outFile,'w')
+json.dump(eval(obs4MIPs_CV),fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
+fH.close()
 
 #%% Process variable (with time axis)
 cmor.setup(inpath='../Tables',netcdf_file_action=cmor.CMOR_REPLACE_4)

@@ -11,6 +11,7 @@ PJD 12 Jul 2016     - Started
 PJD 13 Jul 2016     - Updated to download existing tables
 PJD 14 Jul 2016     - Successfully loaded dictionaries
 PJD 15 Jul 2016     - Tables successfully created, coordinates from CMIP6_CVs
+PJD 18 Jul 2016     - Generate CVs and tables from CMIP6_CVs and CMIP6-cmor-tables
 PJD 15 Jul 2016     - TODO:
 
 @author: durack1
@@ -41,6 +42,8 @@ masterTargets = [
  'grid_label',
  'grid_resolution',
  'institution_id',
+ 'mip_era',
+ 'product',
  'realm',
  'required_global_attributes',
  'source_id',
@@ -141,6 +144,12 @@ institution_id = {
  'PCMDI': 'Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA'
  } ;
 
+ #%% Product
+mip_era = ['CMIP6'] ;
+
+#%% Product
+product = ['derived', 'observations', 'reanalysis'] ;
+ 
 #%% Realms
 realm = [
  'aerosol',
@@ -166,6 +175,7 @@ required_global_attributes = [
  'grid_resolution',
  'institution_id',
  'license',
+ 'mip_era',
  'product',
  'realm',
  'source_id',

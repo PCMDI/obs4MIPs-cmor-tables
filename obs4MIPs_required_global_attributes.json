@@ -10,6 +10,7 @@
     "grid_resolution",
     "institution_id",
     "license",
+    "mip_era",
     "product",
     "realm",
     "source_id",
