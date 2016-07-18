@@ -6,8 +6,53 @@ Created on Mon Jul 18 13:49:08 2016
 @author: durack1
 """
 
+import cmor,gc
+import cdms2 as cdm
+import numpy as np
+
+#%% Integrate all CVs into master file
+jsonCVs = 'obs4MIPs_CV.json'
+
+
+#%% Process variable (with time axis)
+cmor.setup(inpath='../Tables',netcdf_file_action=cmor.CMOR_REPLACE_4)
+cmor.dataset_json("drive_obs4MIPs.json")
+f       = cdm.open('amipobs_tos_360x180_v1.1.0_187001-187112.nc')
+d       = f['tos']
+lat     = d.getLatitude()
+lon     = d.getLongitude()
+time    = d.getTime()
+cmor.set_cur_dataset_attribute('history',f.history) ; # Force local file attribute as history
+table   = 'obs4MIPs_Omon.json' ; # Amon,Lmon,Omon,SImon
+cmor.load_table(table) ; # Load target table (above), axis info (coordinates, grid*) and CVs
+axes    = [ {'table_entry': 'time',
+             'units': 'days since 1870-01-01',
+             },
+             {'table_entry': 'latitude',
+              'units': 'degrees_north',
+              'coord_vals': lat[:],
+              'cell_bounds': lat.getBounds()},
+             {'table_entry': 'longitude',
+              'units': 'degrees_east',
+              'coord_vals': lon[:],
+              'cell_bounds': lon.getBounds()},
+          ]
+axis_ids = list()
+for axis in axes:
+    axis_id = cmor.axis(**axis)
+    axis_ids.append(axis_id)
+varid   = cmor.variable('tos',d.units,axis_ids)
+values  = np.array(d[:],np.float32)
+cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 ; CMOR 3.0.6+
+cmor.write(varid,values,time_vals=time[:])
+f.close()
+cmor.close()
+# Cleanup
+del(f,d,lat,lon,time) ; gc.collect()
+
+#%% Process fixed field
 cmor.setup(inpath='CMOR/input4MIPs-cmor-tables/Tables',netcdf_file_action=cmor.CMOR_REPLACE_4)
-cmor.dataset_json("CMOR/drive_input4MIPs_bcs.json")
+cmor.dataset_json("CMOR/drive_input4MIPs_obs.json")
 f       = cdm.open(outFile)
 d       = f[var.id]
 lat     = d.getLatitude()
@@ -16,7 +61,7 @@ time    = d.getTime()
 cmor.set_cur_dataset_attribute('history',f.history) ; # Force local file attribute as history
 table   = 'input4MIPs.json'
 cmor.load_table(table)
-axes    = [ {'table_entry': 'time2',
+axes    = [ {'table_entry': 'time',
              'units': 'days since 1870-01-01',
              },
              {'table_entry': 'latitude',
@@ -35,7 +80,8 @@ for axis in axes:
 varid   = cmor.variable(var.id,var.units,axis_ids)
 values  = np.array(d[:],np.float32)
 cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 ; CMOR 3.0.6+
-cmor.write(varid,values,time_vals=time[:])
+#cmor.write(varid,values,time_vals=d.getTime()[:],time_bnds=d.getTime().genGenericBounds()) ; # Not valid for time
+cmor.write(varid,values,time_vals=time[:],time_bnds=time.getBounds())
 f.close()
 cmor.close()
 # Cleanup

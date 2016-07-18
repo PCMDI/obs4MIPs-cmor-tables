@@ -34,6 +34,7 @@ masterTargets = [
  'Lmon',
  'Omon',
  'SImon',
+ 'fx',
  'coordinate',
  'frequency',
  'grid',
@@ -49,6 +50,7 @@ masterTargets = [
 #%% Tables
 tableSource = [
  ['coordinate','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_coordinate.json'],
+ ['fx','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_fx.json'],
  ['grid','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_grid.json'],
  ['Amon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Amon.json'],
  ['Lmon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Lmon.json'],
@@ -90,6 +92,7 @@ Amon['Header']['realm']     = 'atmos'
 Lmon['Header']['realm']     = 'land'
 Omon['Header']['realm']     = 'ocean'
 SImon['Header']['realm']    = 'seaIce'
+fx['Header']['realm']       = 'fx'
 
 #%% Frequencies
 frequency = ['3hr', '3hrClim', '6hr', 'day', 'decadal', 'fx', 'mon', 'monClim', 'subhr', 'yr'] ;
@@ -197,8 +200,8 @@ for jsonName in masterTargets:
                 dictToClean[key][values[0]] = string
         vars()[jsonName] = dictToClean
     # Write file
-    if jsonName in ['Amon','Lmon','Omon','SImon']:
-        outFile = ''.join(['../Tables/',jsonName,'.json'])
+    if jsonName in ['Amon','Lmon','Omon','SImon','fx']:
+        outFile = ''.join(['../Tables/obs4MIPs_',jsonName,'.json'])
     else:
         outFile = ''.join(['../obs4MIPs_',jsonName,'.json'])
     # Check file exists
