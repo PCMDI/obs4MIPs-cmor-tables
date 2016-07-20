@@ -108,11 +108,10 @@ table = {}
 for count,CV in enumerate(buildList):
     CVName1 = CV[0]
     if CVName1 == 'coordinate':
-        table['axis_entry'] = coordinate
+        table['axis_entry'] = eval(CVName1)
     elif CVName1 == 'Omon':
         keys = eval(CVName1).keys()
         for count in range(len(keys)):
-            print keys[count],CVName2,CVName1
             CVName2 = CVName1
             if keys[count] == 'Header':
                 eval(CVName1)['Header'].pop('activity_id')
