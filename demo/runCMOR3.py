@@ -21,7 +21,7 @@ PJD 20 Jul 2016     - Further tweaks to enhance readability
 """
 
 #%% Import statements
-import cmor,gc,json,os,ssl,urllib2
+import cmor,gc,json,os,ssl,sys,urllib2
 import cdms2 as cdm
 import numpy as np
 
@@ -31,12 +31,56 @@ homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]
 #homePath = '/sync/git/obs4MIPs-cmor-tables/demo' ; # Hard code path
 os.chdir(homePath)
 
-#%% Create urllib2 context to deal with lab/LLNL web certificates
-ctx                 = ssl.create_default_context()
-ctx.check_hostname  = False
-ctx.verify_mode     = ssl.CERT_NONE
+#%% Function definitions
 
-#%% SECTION 1 - Integrate all CVs into master file - create obs4MIPs_CV.json
+# Loop through input tables
+def readJsonCreateDict(buildList):
+    '''
+    Documentation for readJsonCreateDict(buildList):
+    -------
+    The readJsonCreateDict() function reads web-based json files and writes
+    their contents to a dictionary in memory
+
+    Author: Paul J. Durack : pauldurack@llnl.gov
+
+    Usage:
+    ------
+        >>> from runCMOR3 import readJsonCreateDict
+        >>> readJsonCreateDict(['Omon','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/Tables/obs4MIPs_Omon.json'])
+
+    Notes:
+    -----
+        ...
+    '''
+    # Test for list input of length == 2
+    if len(buildList[0]) != 2:
+        print 'Invalid inputs, exiting..'
+        sys.exit()
+    # Create urllib2 context to deal with lab/LLNL web certificates
+    ctx                 = ssl.create_default_context()
+    ctx.check_hostname  = False
+    ctx.verify_mode     = ssl.CERT_NONE
+    # Iterate through buildList and write results to jsonDict
+    jsonDict = {}       
+    for count,table in enumerate(buildList):
+        print 'Processing:',table[0]
+        # Read web file
+        jsonOutput = urllib2.urlopen(table[1], context=ctx)
+        tmp = jsonOutput.read()
+        vars()[table[0]] = tmp
+        jsonOutput.close()
+        # Write local json
+        tmpFile = open('tmp.json','w')
+        tmpFile.write(eval(table[0]))
+        tmpFile.close()
+        # Read local json
+        vars()[table[0]] = json.load(open('tmp.json','r'))
+        os.remove('tmp.json')
+        jsonDict[table[0]] = eval(table[0]) ; # Write to dictionary
+    
+    return jsonDict
+
+#%% SECTION 1 - Integrate all controlled vocabularies (CVs) into master file - create obs4MIPs_CV.json
 jsonCVs = 'obs4MIPs_CV.json'
 buildList = [
  ['frequency','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_frequency.json'],
@@ -51,23 +95,11 @@ buildList = [
  ['table_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_table_id.json'],
  ] ;
 
-# Loop through input tables
-for count,table in enumerate(buildList):
-    print 'Processing:',table[0]
-    # Read web file
-    jsonOutput                      = urllib2.urlopen(table[1], context=ctx)
-    tmp                             = jsonOutput.read()
-    vars()[table[0]]                = tmp
-    jsonOutput.close()
-    # Write local json
-    tmpFile                         = open('tmp.json','w')
-    tmpFile.write(eval(table[0]))
-    tmpFile.close()
-    # Read local json
-    vars()[table[0]]    = json.load(open('tmp.json','r'))
-    os.remove('tmp.json')
-    del(tmp,jsonOutput)
-    del(count,table) ; gc.collect()
+# Loop through buildList and create output tables
+tmp = readJsonCreateDict(buildList)
+for count,table in enumerate(tmp.keys()):
+    vars()[table] = tmp[table]
+del(tmp,count,table) ; gc.collect()
 
 # Rebuild grid_labels
 grid_labels = {}
@@ -118,23 +150,11 @@ buildList = [
  ['Omon','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/Tables/obs4MIPs_Omon.json']
  ] ;
 
-# Loop through input tables
-for count,table in enumerate(buildList):
-    print 'Processing:',table[0]
-    # Read web file
-    jsonOutput                      = urllib2.urlopen(table[1], context=ctx)
-    tmp                             = jsonOutput.read()
-    vars()[table[0]]                = tmp
-    jsonOutput.close()
-    # Write local json
-    tmpFile                         = open('tmp.json','w')
-    tmpFile.write(eval(table[0]))
-    tmpFile.close()
-    # Read local json
-    vars()[table[0]]    = json.load(open('tmp.json','r'))
-    os.remove('tmp.json')
-    del(tmp,jsonOutput)
-    del(count,table) ; gc.collect()
+# Loop through buildList and create output tables
+tmp = readJsonCreateDict(buildList)
+for count,table in enumerate(tmp.keys()):
+    vars()[table] = tmp[table]
+del(tmp,count,table) ; gc.collect()
 
 # Rebuild
 table = {}
@@ -156,7 +176,7 @@ fH = open(outFile,'w')
 json.dump(table,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
 fH.close()
 
-#%% Process variable (with time axis)
+# Process variable (with time axis)
 cmor.setup(inpath='../Tables',netcdf_file_action=cmor.CMOR_REPLACE_4)
 cmor.dataset_json('drive_obs4MIPs.json') ; # Update contents of this file to set your global_attributes
 f       = cdm.open('amipobs_tos_360x180_v1.1.0_187001-187112.nc')
@@ -200,23 +220,11 @@ buildList = [
  ['fx','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/Tables/obs4MIPs_fx.json']
  ] ;
 
-# Loop through input tables
-for count,table in enumerate(buildList):
-    print 'Processing:',table[0]
-    # Read web file
-    jsonOutput                      = urllib2.urlopen(table[1], context=ctx)
-    tmp                             = jsonOutput.read()
-    vars()[table[0]]                = tmp
-    jsonOutput.close()
-    # Write local json
-    tmpFile                         = open('tmp.json','w')
-    tmpFile.write(eval(table[0]))
-    tmpFile.close()
-    # Read local json
-    vars()[table[0]]    = json.load(open('tmp.json','r'))
-    os.remove('tmp.json')
-    del(tmp,jsonOutput)
-    del(count,table) ; gc.collect()
+# Loop through buildList and create output tables
+tmp = readJsonCreateDict(buildList)
+for count,table in enumerate(tmp.keys()):
+    vars()[table] = tmp[table]
+del(tmp,count,table) ; gc.collect()
 
 # Rebuild
 table = {}
@@ -240,7 +248,7 @@ fH = open(outFile,'w')
 json.dump(table,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
 fH.close()
 
-#%% Process fixed field
+# Process fixed field
 cmor.setup(inpath='../Tables',netcdf_file_action=cmor.CMOR_REPLACE_4)
 cmor.dataset_json('drive_obs4MIPs.json') ; # Update contents of this file to set your global_attributes
 f       = cdm.open('amipbc_areacello_360x180_v1.1.0.nc')
