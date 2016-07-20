@@ -15,6 +15,7 @@ PJD 18 Jul 2016     - Generate CVs and tables from CMIP6_CVs and CMIP6-cmor-tabl
 PJD 19 Jul 2016     - Remove activity_id - no longer in A/O/etc tables
 PJD 20 Jul 2016     - Removed target_mip from required_global_attributes
 PJD 20 Jul 2016     - Removed source_id
+PJD 20 Jul 2016     - Added fx table_id
                     - TODO:
 
 @author: durack1
@@ -192,7 +193,7 @@ required_global_attributes = [
  ];
 
 #%% Table IDs
-table_id = ['Amon', 'Lmon', 'Omon', 'SImon'] ;
+table_id = ['Amon', 'Lmon', 'Omon', 'SImon', 'fx'] ;
 
 #%% Write variables to files
 for jsonName in masterTargets:
