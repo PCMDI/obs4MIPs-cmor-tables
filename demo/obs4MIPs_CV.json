@@ -103,11 +103,6 @@
             "tracking_id",
             "variable_id"
         ],
-        "source_ids":[
-            "derived",
-            "observations",
-            "reanalysis"
-        ],
         "table_id":[
             "Amon",
             "Lmon",

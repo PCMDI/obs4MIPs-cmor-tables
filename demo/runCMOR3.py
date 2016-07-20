@@ -3,6 +3,12 @@
 """
 Created on Mon Jul 18 13:49:08 2016
 
+This script generates all json files required to run obs4MIPs data creation and
+then calls cmor3 to generate two example files
+
+PJD 20 Jul 2016     - Removed source_id
+                    - TODO:
+
 @author: durack1
 """
 
@@ -34,7 +40,6 @@ buildList = [
  ['product','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_product.json'],
  ['realm','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_realm.json'],
  ['required_global_attributes','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_required_global_attributes.json'],
- ['source_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_source_id.json'],
  ['table_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_table_id.json'],
  ] ;
 
