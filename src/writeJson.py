@@ -14,6 +14,7 @@ PJD 15 Jul 2016     - Tables successfully created, coordinates from CMIP6_CVs
 PJD 18 Jul 2016     - Generate CVs and tables from CMIP6_CVs and CMIP6-cmor-tables
 PJD 19 Jul 2016     - Remove activity_id - no longer in A/O/etc tables
 PJD 20 Jul 2016     - Removed target_mip from required_global_attributes
+PJD 20 Jul 2016     - Removed source_id
                     - TODO:
 
 @author: durack1
@@ -48,7 +49,6 @@ masterTargets = [
  'product',
  'realm',
  'required_global_attributes',
- 'source_id',
  'table_id'
  ] ;
 
@@ -190,9 +190,6 @@ required_global_attributes = [
  'tracking_id',
  'variable_id'
  ];
-
-#%% Source IDs
-source_id = ['derived', 'observations', 'reanalysis'] ;
 
 #%% Table IDs
 table_id = ['Amon', 'Lmon', 'Omon', 'SImon'] ;

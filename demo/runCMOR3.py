@@ -74,7 +74,7 @@ obs4MIPs_CV['CV']['grid_labels'] = grid_labels
 for count,CV in enumerate(buildList):
     CVName1 = CV[0]
     if CVName1 in ['grid','grid_label','grid_resolution']:
-        continue
+        continue ; # Exclude
     if CVName1 == 'coordinate':
         CVName2 = CVName1
         CVName1 = 'axis_entry'
