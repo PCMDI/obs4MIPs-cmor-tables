@@ -103,18 +103,20 @@ for count,table in enumerate(buildList):
     del(tmp,jsonOutput)
     del(count,table) ; gc.collect()
 
-#%% Rebuild
+# Rebuild
 table = {}
 for count,CV in enumerate(buildList):
     CVName1 = CV[0]
     if CVName1 == 'coordinate':
-        CVName2 = CVName1
-        CVName1 = 'axis_entry'
+        table['axis_entry'] = coordinate
     elif CVName1 == 'Omon':
         keys = eval(CVName1).keys()
-        for count in range(keys):
+        for count in range(len(keys)):
+            print keys[count],CVName2,CVName1
             CVName2 = CVName1
-        table[CVName1] = eval(CVName2)
+            if keys[count] == 'Header':
+                eval(CVName1)['Header'].pop('activity_id')
+            table[keys[count]] = eval(CVName2).get(keys[count])
 
 outFile = jsonOmon
 # Check file exists
@@ -123,6 +125,7 @@ if os.path.exists(outFile):
     os.remove(outFile)
 fH = open(outFile,'w')
 json.dump(table,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
+fH.close()
 
 #%% Process variable (with time axis)
 cmor.setup(inpath='../Tables',netcdf_file_action=cmor.CMOR_REPLACE_4)
@@ -137,9 +140,9 @@ time    = d.getTime()
 table   = 'obs4MIPs_Omon_composite.json' ; # Amon,Lmon,Omon,SImon
 obs4MIPsOmonID = cmor.load_table(table) ; # Load target table (above), axis info (coordinates, grid*) and CVs
 #cmor.load_axes(None) ; cmor.load_variables(None) ; cmor.load_CVs(None)
-cmor.add_entry('obs4MIPs_CV.json',name='axis_entry') ; # read axis data from key axis_entry
-cmor.add_entry('obs4MIPs_CV.json',name='variable_entry',append_table_id=obs4MIPsOmonID) ; # read variable data from key variable_entry
-cmor.add_entry('obs4MIPs_CV.json',name='CV') ; # read controlled vocabulary from key CV
+#cmor.add_entry('obs4MIPs_CV.json',name='axis_entry') ; # read axis data from key axis_entry
+#cmor.add_entry('obs4MIPs_CV.json',name='variable_entry',append_table_id=obs4MIPsOmonID) ; # read variable data from key variable_entry
+#cmor.add_entry('obs4MIPs_CV.json',name='CV') ; # read controlled vocabulary from key CV
 
 axes    = [ {'table_entry': 'time',
              'units': 'days since 1870-01-01',
