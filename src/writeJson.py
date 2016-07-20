@@ -12,6 +12,7 @@ PJD 13 Jul 2016     - Updated to download existing tables
 PJD 14 Jul 2016     - Successfully loaded dictionaries
 PJD 15 Jul 2016     - Tables successfully created, coordinates from CMIP6_CVs
 PJD 18 Jul 2016     - Generate CVs and tables from CMIP6_CVs and CMIP6-cmor-tables
+PJD 19 Jul 2016     - Remove activity_id - no longer in A/O/etc tables
 PJD 15 Jul 2016     - TODO:
 
 @author: durack1
@@ -87,7 +88,7 @@ for count2,table in enumerate(tableSource):
     else:
         eval(tableName).pop('axis_entry')
         eval(tableName)['Header'].pop('generic_levels')
-        eval(tableName)['Header']['activity_id'] = 'obs4MIPs'
+        eval(tableName)['Header'].pop('activity_id')
         eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
 
 # Cleanup realms

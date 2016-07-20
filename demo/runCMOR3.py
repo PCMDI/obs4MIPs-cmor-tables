@@ -66,7 +66,7 @@ for count,CV in enumerate(buildList):
         CVName2 = CVName1
         CVName1 = 'axis_entry'
     else:
-        CVName2 = CVName1        
+        CVName2 = CVName1
     obs4MIPs_CV['CV'][CVName1] = eval(CVName2)
 
 outFile = 'obs4MIPs_CV.json'
@@ -78,17 +78,69 @@ fH = open(outFile,'w')
 json.dump(obs4MIPs_CV,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
 fH.close()
 
+#%% Integrate all required attributes into master file
+jsonOmon = 'obs4MIPs_Omon_composite.json'
+buildList = [
+ ['coordinate','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_coordinate.json'],
+ ['Omon','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/Tables/obs4MIPs_Omon.json']
+ ] ;
+
+# Loop through input tables
+for count,table in enumerate(buildList):
+    print 'Processing:',table[0]
+    # Read web file
+    jsonOutput                      = urllib2.urlopen(table[1], context=ctx)
+    tmp                             = jsonOutput.read()
+    vars()[table[0]]                = tmp
+    jsonOutput.close()
+    # Write local json
+    tmpFile                         = open('tmp.json','w')
+    tmpFile.write(eval(table[0]))
+    tmpFile.close()
+    # Read local json
+    vars()[table[0]]    = json.load(open('tmp.json','r'))
+    os.remove('tmp.json')
+    del(tmp,jsonOutput)
+    del(count,table) ; gc.collect()
+
+#%% Rebuild
+table = {}
+for count,CV in enumerate(buildList):
+    CVName1 = CV[0]
+    if CVName1 == 'coordinate':
+        CVName2 = CVName1
+        CVName1 = 'axis_entry'
+    elif CVName1 == 'Omon':
+        keys = eval(CVName1).keys()
+        for count in range(keys):
+            CVName2 = CVName1
+        table[CVName1] = eval(CVName2)
+
+outFile = jsonOmon
+# Check file exists
+if os.path.exists(outFile):
+    print 'File existing, purging:',outFile
+    os.remove(outFile)
+fH = open(outFile,'w')
+json.dump(table,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
+
 #%% Process variable (with time axis)
 cmor.setup(inpath='../Tables',netcdf_file_action=cmor.CMOR_REPLACE_4)
-cmor.dataset_json("drive_obs4MIPs.json")
+cmor.dataset_json('drive_obs4MIPs.json')
 f       = cdm.open('amipobs_tos_360x180_v1.1.0_187001-187112.nc')
 d       = f['tos']
 lat     = d.getLatitude()
 lon     = d.getLongitude()
 time    = d.getTime()
 #cmor.set_cur_dataset_attribute('history',f.history) ; # Force local file attribute as history
-table   = 'obs4MIPs_Omon.json' ; # Amon,Lmon,Omon,SImon
-cmor.load_table(table) ; # Load target table (above), axis info (coordinates, grid*) and CVs
+#table   = '../Tables/obs4MIPs_Omon.json' ; # Amon,Lmon,Omon,SImon
+table   = 'obs4MIPs_Omon_composite.json' ; # Amon,Lmon,Omon,SImon
+obs4MIPsOmonID = cmor.load_table(table) ; # Load target table (above), axis info (coordinates, grid*) and CVs
+#cmor.load_axes(None) ; cmor.load_variables(None) ; cmor.load_CVs(None)
+cmor.add_entry('obs4MIPs_CV.json',name='axis_entry') ; # read axis data from key axis_entry
+cmor.add_entry('obs4MIPs_CV.json',name='variable_entry',append_table_id=obs4MIPsOmonID) ; # read variable data from key variable_entry
+cmor.add_entry('obs4MIPs_CV.json',name='CV') ; # read controlled vocabulary from key CV
+
 axes    = [ {'table_entry': 'time',
              'units': 'days since 1870-01-01',
              },
@@ -115,38 +167,38 @@ cmor.close()
 del(f,d,lat,lon,time) ; gc.collect()
 
 #%% Process fixed field
-cmor.setup(inpath='CMOR/input4MIPs-cmor-tables/Tables',netcdf_file_action=cmor.CMOR_REPLACE_4)
-cmor.dataset_json("CMOR/drive_input4MIPs_obs.json")
-f       = cdm.open(outFile)
-d       = f[var.id]
-lat     = d.getLatitude()
-lon     = d.getLongitude()
-time    = d.getTime()
-cmor.set_cur_dataset_attribute('history',f.history) ; # Force local file attribute as history
-table   = 'input4MIPs.json'
-cmor.load_table(table)
-axes    = [ {'table_entry': 'time',
-             'units': 'days since 1870-01-01',
-             },
-             {'table_entry': 'latitude',
-              'units': 'degrees_north',
-              'coord_vals': lat[:],
-              'cell_bounds': lat.getBounds()},
-             {'table_entry': 'longitude',
-              'units': 'degrees_east',
-              'coord_vals': lon[:],
-              'cell_bounds': lon.getBounds()},
-          ]
-axis_ids = list()
-for axis in axes:
-    axis_id = cmor.axis(**axis)
-    axis_ids.append(axis_id)
-varid   = cmor.variable(var.id,var.units,axis_ids)
-values  = np.array(d[:],np.float32)
-cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 ; CMOR 3.0.6+
-#cmor.write(varid,values,time_vals=d.getTime()[:],time_bnds=d.getTime().genGenericBounds()) ; # Not valid for time
-cmor.write(varid,values,time_vals=time[:],time_bnds=time.getBounds())
-f.close()
-cmor.close()
-# Cleanup
-del(outFile,var,f,d,lat,lon,time) ; gc.collect()
+#cmor.setup(inpath='CMOR/input4MIPs-cmor-tables/Tables',netcdf_file_action=cmor.CMOR_REPLACE_4)
+#cmor.dataset_json("CMOR/drive_input4MIPs_obs.json")
+#f       = cdm.open(outFile)
+#d       = f[var.id]
+#lat     = d.getLatitude()
+#lon     = d.getLongitude()
+#time    = d.getTime()
+#cmor.set_cur_dataset_attribute('history',f.history) ; # Force local file attribute as history
+#table   = 'input4MIPs.json'
+#cmor.load_table(table)
+#axes    = [ {'table_entry': 'time',
+#             'units': 'days since 1870-01-01',
+#             },
+#             {'table_entry': 'latitude',
+#              'units': 'degrees_north',
+#              'coord_vals': lat[:],
+#              'cell_bounds': lat.getBounds()},
+#             {'table_entry': 'longitude',
+#              'units': 'degrees_east',
+#              'coord_vals': lon[:],
+#              'cell_bounds': lon.getBounds()},
+#          ]
+#axis_ids = list()
+#for axis in axes:
+#    axis_id = cmor.axis(**axis)
+#    axis_ids.append(axis_id)
+#varid   = cmor.variable(var.id,var.units,axis_ids)
+#values  = np.array(d[:],np.float32)
+#cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 ; CMOR 3.0.6+
+##cmor.write(varid,values,time_vals=d.getTime()[:],time_bnds=d.getTime().genGenericBounds()) ; # Not valid for time
+#cmor.write(varid,values,time_vals=time[:],time_bnds=time.getBounds())
+#f.close()
+#cmor.close()
+## Cleanup
+#del(outFile,var,f,d,lat,lon,time) ; gc.collect()
