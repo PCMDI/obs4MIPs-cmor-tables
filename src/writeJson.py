@@ -13,7 +13,8 @@ PJD 14 Jul 2016     - Successfully loaded dictionaries
 PJD 15 Jul 2016     - Tables successfully created, coordinates from CMIP6_CVs
 PJD 18 Jul 2016     - Generate CVs and tables from CMIP6_CVs and CMIP6-cmor-tables
 PJD 19 Jul 2016     - Remove activity_id - no longer in A/O/etc tables
-PJD 15 Jul 2016     - TODO:
+PJD 20 Jul 2016     - Removed target_mip from required_global_attributes
+                    - TODO:
 
 @author: durack1
 """
@@ -88,7 +89,6 @@ for count2,table in enumerate(tableSource):
     else:
         eval(tableName).pop('axis_entry')
         eval(tableName)['Header'].pop('generic_levels')
-        eval(tableName)['Header'].pop('activity_id')
         eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
 
 # Cleanup realms
@@ -150,7 +150,7 @@ mip_era = ['CMIP6'] ;
 
 #%% Product
 product = ['derived', 'observations', 'reanalysis'] ;
- 
+
 #%% Realms
 realm = [
  'aerosol',
@@ -181,7 +181,6 @@ required_global_attributes = [
  'realm',
  'source_id',
  'table_id',
- 'target_mip',
  'tracking_id',
  'variable_id'
  ];

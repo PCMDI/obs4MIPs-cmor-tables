@@ -15,7 +15,6 @@
     "realm",
     "source_id",
     "table_id",
-    "target_mip",
     "tracking_id",
     "variable_id"
 ]

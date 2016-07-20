@@ -1,7 +1,6 @@
 {
     "Header":{
         "Conventions":"CF-1.6 CMIP-6.0",
-        "activity_id":"obs4MIPs",
         "approx_interval":"30.00000",
         "cmor_version":"3.1",
         "data_specs_version":"01.beta.30",
@@ -10,7 +9,7 @@
         "missing_value":"1e20",
         "product":"output",
         "realm":"atmos",
-        "table_date":"18 July 2016",
+        "table_date":"20 July 2016",
         "table_id":"Table Amon"
     },
     "variable_entry":{
