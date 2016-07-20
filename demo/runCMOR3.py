@@ -112,8 +112,8 @@ for count,CV in enumerate(buildList):
         keys = eval(CVName1).keys()
         for count in range(len(keys)):
             CVName2 = CVName1
-            if keys[count] == 'Header':
-                eval(CVName1)['Header'].pop('activity_id')
+            #if keys[count] == 'Header':
+            #    eval(CVName1)['Header'].pop('activity_id')
             table[keys[count]] = eval(CVName2).get(keys[count])
 
 outFile = jsonOmon
