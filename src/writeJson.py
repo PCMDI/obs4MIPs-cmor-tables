@@ -149,7 +149,13 @@ institution_id = {
 mip_era = ['CMIP6'] ;
 
 #%% Product
-product = ['derived', 'observations', 'reanalysis'] ;
+product = [
+ 'composite',
+ 'remote-sensed',
+ 'satellite',
+ 'surface-gridded-insitu',
+ 'surface-radar'
+ ] ;
 
 #%% Realms
 realm = [

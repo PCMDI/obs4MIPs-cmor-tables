@@ -1,5 +1,7 @@
 [
-    "derived",
-    "observations",
-    "reanalysis"
+    "composite",
+    "remote-sensed",
+    "satellite",
+    "surface-gridded-insitu",
+    "surface-radar"
 ]

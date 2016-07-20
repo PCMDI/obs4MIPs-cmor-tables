@@ -56,6 +56,8 @@ for count,table in enumerate(buildList):
     del(tmp,jsonOutput)
     del(count,table) ; gc.collect()
 
+# Rebuild grid_labels
+
 # Rebuild
 obs4MIPs_CV = {}
 obs4MIPs_CV['CV'] = {}
@@ -111,10 +113,7 @@ for count,CV in enumerate(buildList):
     elif CVName1 == 'Omon':
         keys = eval(CVName1).keys()
         for count in range(len(keys)):
-            CVName2 = CVName1
-            #if keys[count] == 'Header':
-            #    eval(CVName1)['Header'].pop('activity_id')
-            table[keys[count]] = eval(CVName2).get(keys[count])
+            table[keys[count]] = eval(CVName1).get(keys[count])
 
 outFile = jsonOmon
 # Check file exists
