@@ -70,12 +70,12 @@ for count,CV in enumerate(buildList):
 
 outFile = 'obs4MIPs_CV.json'
 # Check file exists
-if os.path.exists(outFile):
-    print 'File existing, purging:',outFile
-    os.remove(outFile)
-fH = open(outFile,'w')
-json.dump(obs4MIPs_CV,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
-fH.close()
+#if os.path.exists(outFile):
+#    print 'File existing, purging:',outFile
+#    os.remove(outFile)
+#fH = open(outFile,'w')
+#json.dump(obs4MIPs_CV,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
+#fH.close()
 
 #%% Integrate all required attributes into master file
 jsonOmon = 'obs4MIPs_Omon_composite.json'
@@ -161,7 +161,7 @@ for axis in axes:
 varid   = cmor.variable('tos',d.units,axis_ids)
 values  = np.array(d[:],np.float32)
 cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 ; CMOR 3.0.6+
-cmor.write(varid,values,time_vals=time[:])
+cmor.write(varid,values,time_vals=time[:],time_bnds=time.getBounds())
 f.close()
 cmor.close()
 # Cleanup
