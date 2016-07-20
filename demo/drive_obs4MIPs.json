@@ -4,13 +4,12 @@
     "calendar":                     "gregorian",
 
     "data_structure":               "grid",
-    "dataset_category":             "composite",
     "dataset_version_number":       "1.1.0",
     "frequency":                    "mon",
     "grid":                         "1x1 degree latitude x longitude",
     "grid_label":                   "gs1x1 gr",
     "grid_resolution":              "1x1 degree",
-    "product":                      "observations",
+    "product":                      "composite",
     "realm":                        "ocean",
 
     "comment":                      "Based on Hurrell SST/sea ice consistency criteria applied to merged HadISST (1870-01 1981-10) & NCEP-0I2 (1981-11 to 2015-12)",
@@ -24,8 +23,8 @@
     "title":                        "PCMDI-AMIP 1.1.0 dataset prepared for input4MIPs",
 
     "outpath":                      ".",
-    "output_path_template":         "<activity_id><realm><frequency><variable_id><dataset_category><source_id><grid_label><version>",
-    "output_file_template":         "<variable_id><table><dataset_category><source_id><grid_label>",
+    "output_path_template":         "<activity_id><realm><frequency><variable_id><product><source_id><grid_label><version>",
+    "output_file_template":         "<variable_id><table><product><source_id><grid_label>",
 
     "license":                      "AMIP boundary condition data produced by PCMDI is licensed under a Creative Commons Attribution \"Share Alike\" 4.0 International License (http://creativecommons.org/licenses/by/4.0/). The data producers and data providers make no warranty, either express or implied, including but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
 }
