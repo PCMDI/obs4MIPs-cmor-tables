@@ -1,5 +1,6 @@
 {
     "_control_vocabulary_file":     "obs4MIPs_CV.json",
+    "activity_id":                  "obs4MIPs",
 
     "calendar":                     "gregorian",
     "data_structure":               "grid",
