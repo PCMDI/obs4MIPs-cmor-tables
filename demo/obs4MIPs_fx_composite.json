@@ -8,7 +8,7 @@
         "mip_era":"CMIP6",
         "missing_value":"1e20",
         "product":"output",
-        "realm":"fx",
+        "realm":"ocean",
         "table_date":"20 July 2016",
         "table_id":"Table fx"
     },

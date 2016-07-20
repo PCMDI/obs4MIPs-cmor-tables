@@ -184,6 +184,8 @@ for count,CV in enumerate(buildList):
         for count in range(len(keys)):
             table[keys[count]] = eval(CVName1).get(keys[count])
 
+table['Header']['realm'] = 'ocean' ; # Overwrite realm info
+
 outFile = jsonFx
 # Check file exists
 if os.path.exists(outFile):

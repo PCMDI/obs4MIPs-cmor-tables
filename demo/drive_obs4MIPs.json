@@ -16,7 +16,7 @@
     "contact ":                     "PCMDI (pcmdi-cmip@llnl.gov) ",
     "further_info_url":             "http://www-pcmdi.llnl.gov/projects/amip/AMIP2EXPDSN/BCS/amip2bcs.php",
     "institution_id":               "PCMDI",
-    "institution":                  "Program for Climate Model Diagnosis and Intercomparison (LLNL), Livermore, CA, USA",
+    "institution":                  "Program for Climate Model Diagnosis and Intercomparison (LLNL), Livermore, CA 94550, USA",
     "references":                   "Taylor, K.E., D. Williamson and F. Zwiers, 2000: The sea surface temperature and sea ice concentration boundary conditions for AMIP II simulations. PCMDI Report 60, Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, 25 pp. Available online: http://www-pcmdi.llnl.gov/publications/pdf/60.pdf",
     "source":                       "PCMDI-AMIP 1.1.0: Merged SST based on UK MetOffice HadISST and NCEP OI2",
     "source_id":                    "PCMDI-AMIP-1-1-0",
