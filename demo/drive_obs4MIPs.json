@@ -1,8 +1,8 @@
 {
     "_control_vocabulary_file":     "obs4MIPs_CV.json",
     "activity_id":                  "obs4MIPs",
-
     "calendar":                     "gregorian",
+
     "data_structure":               "grid",
     "dataset_category":             "composite",
     "dataset_version_number":       "1.1.0",
@@ -12,10 +12,9 @@
     "grid_resolution":              "1x1 degree",
     "product":                      "observations",
     "realm":                        "ocean",
-    "target_mip":                   "CMIP",
 
     "comment":                      "Based on Hurrell SST/sea ice consistency criteria applied to merged HadISST (1870-01 1981-10) & NCEP-0I2 (1981-11 to 2015-12)",
-    "contact ":                     "PCMDI (pcmdi-cmip@lists.llnl.gov) ",
+    "contact ":                     "PCMDI (pcmdi-cmip@llnl.gov) ",
     "further_info_url":             "http://www-pcmdi.llnl.gov/projects/amip/AMIP2EXPDSN/BCS/amip2bcs.php",
     "institution_id":               "PCMDI",
     "institution":                  "Program for Climate Model Diagnosis and Intercomparison (LLNL), Livermore, CA, USA",
