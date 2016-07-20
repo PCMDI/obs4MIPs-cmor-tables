@@ -12,131 +12,54 @@
             "subhr",
             "yr"
         ],
-        "grid":{
-            "grid_latitude":{
-                "axis":"Y",
-                "long_name":"latitude in rotated pole grid",
-                "out_name":"rlat",
-                "standard_name":"grid_latitude",
-                "type":"",
-                "units":"degrees"
+        "grid_labels":{
+            "gn":[
+                "10 km",
+                "100 km",
+                "1000 km",
+                "10000 km",
+                "1x1 degree",
+                "25 km",
+                "250 km",
+                "2500 km",
+                "5 km",
+                "50 km",
+                "500 km",
+                "5000 km"
+            ],
+            "gr":[
+                "10 km",
+                "100 km",
+                "1000 km",
+                "10000 km",
+                "1x1 degree",
+                "25 km",
+                "250 km",
+                "2500 km",
+                "5 km",
+                "50 km",
+                "500 km",
+                "5000 km"
+            ],
+            "gr1":{},
+            "gr2":{},
+            "gr3":{},
+            "gr4":{},
+            "gr5":{},
+            "gr6":{},
+            "gr7":{},
+            "gr8":{},
+            "gr9":{},
+            "gs1x1":{
+                "grid_resolution":"1x1 degree"
             },
-            "grid_longitude":{
-                "axis":"X",
-                "long_name":"longitude in rotated pole grid",
-                "out_name":"rlon",
-                "standard_name":"grid_longitude",
-                "type":"",
-                "units":"degrees"
+            "gs1x1 gn":{
+                "grid_resolution":"1x1 degree"
             },
-            "i_index":{
-                "axis":"",
-                "long_name":"cell index along first dimension",
-                "out_name":"i",
-                "standard_name":"",
-                "type":"integer",
-                "units":"1"
-            },
-            "j_index":{
-                "axis":"",
-                "long_name":"cell index along second dimension",
-                "out_name":"j",
-                "standard_name":"",
-                "type":"integer",
-                "units":"1"
-            },
-            "k_index":{
-                "axis":"",
-                "long_name":"cell index along third dimension",
-                "out_name":"k",
-                "standard_name":"",
-                "type":"integer",
-                "units":"1"
-            },
-            "l_index":{
-                "axis":"",
-                "long_name":"cell index along fourth dimension",
-                "out_name":"l",
-                "standard_name":"",
-                "type":"integer",
-                "units":"1"
-            },
-            "m_index":{
-                "axis":"",
-                "long_name":"cell index along fifth dimension",
-                "out_name":"m",
-                "standard_name":"",
-                "type":"integer",
-                "units":"1"
-            },
-            "vertices":{
-                "axis":"",
-                "long_name":"",
-                "out_name":"",
-                "standard_name":"",
-                "type":"",
-                "units":""
-            },
-            "x":{
-                "axis":"X",
-                "long_name":"x coordinate of projection",
-                "out_name":"",
-                "standard_name":"projection_x_coordinate",
-                "type":"",
-                "units":"m"
-            },
-            "x_deg":{
-                "axis":"X",
-                "long_name":"x coordinate of projection",
-                "out_name":"x",
-                "standard_name":"projection_x_coordinate",
-                "type":"",
-                "units":"degrees"
-            },
-            "y":{
-                "axis":"Y",
-                "long_name":"y coordinate of projection",
-                "out_name":"",
-                "standard_name":"projection_y_coordinate",
-                "type":"",
-                "units":"m"
-            },
-            "y_deg":{
-                "axis":"Y",
-                "long_name":"y coordinate of projection",
-                "out_name":"y",
-                "standard_name":"projection_y_coordinate",
-                "type":"",
-                "units":"degrees"
+            "gs1x1 gr":{
+                "grid_resolution":"1x1 degree"
             }
         },
-        "grid_label":[
-            "gn",
-            "gr",
-            "gr1",
-            "gr2",
-            "gr3",
-            "gr4",
-            "gr5",
-            "gr6",
-            "gr7",
-            "gr8",
-            "gr9"
-        ],
-        "grid_resolution":[
-            "10 km",
-            "100 km",
-            "1000 km",
-            "10000 km",
-            "1x1 degree",
-            "25 km",
-            "250 km",
-            "2500 km",
-            "5 km",
-            "50 km",
-            "500 km",
-            "5000 km"
-        ],
         "institution_ids":{
             "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA"
         },
@@ -144,9 +67,11 @@
             "CMIP6"
         ],
         "product":[
-            "derived",
-            "observations",
-            "reanalysis"
+            "composite",
+            "remote-sensed",
+            "satellite",
+            "surface-gridded-insitu",
+            "surface-radar"
         ],
         "realm":[
             "aerosol",
@@ -188,15 +113,6 @@
             "Lmon",
             "Omon",
             "SImon"
-        ],
-    "grid_labels": {
-        "gs1x1":     { "grid_resolution":"1x1 degree" },
-        "gs1x1 gn":  { "grid_resolution":"1x1 degree" },
-        "gs1x1 gr":  { "grid_resolution":"1x1 degree" },
-        "gn": { "grid_resolution":[ "5 km",   "10 km",   "25 km",   "50 km",   "100 km", "250 km",
-                                    "500 km", "1000 km", "2500 km", "5000 km", "10000 km" ] },
-        "gr": { "grid_resolution":[ "5 km",   "10 km",   "25 km",   "50 km",   "100 km", "250 km",
-                                    "500 km", "1000 km", "2500 km", "5000 km", "10000 km" ] }
-         }
+        ]
     }
 }

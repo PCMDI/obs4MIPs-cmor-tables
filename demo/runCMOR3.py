@@ -57,27 +57,45 @@ for count,table in enumerate(buildList):
     del(count,table) ; gc.collect()
 
 # Rebuild grid_labels
+grid_labels = {}
+grid_labels['gs1x1'] = { "grid_resolution":"1x1 degree" }
+grid_labels['gs1x1 gn'] = { "grid_resolution":"1x1 degree" }
+grid_labels['gs1x1 gr'] = { "grid_resolution":"1x1 degree" }
+for count,grid in enumerate(grid_label):
+    if count < 2:
+        grid_labels[grid] = grid_resolution
+    else:
+        grid_labels[grid] = {}
 
 # Rebuild
 obs4MIPs_CV = {}
 obs4MIPs_CV['CV'] = {}
+obs4MIPs_CV['CV']['grid_labels'] = grid_labels
 for count,CV in enumerate(buildList):
     CVName1 = CV[0]
+    if CVName1 in ['grid','grid_label','grid_resolution']:
+        continue
     if CVName1 == 'coordinate':
         CVName2 = CVName1
         CVName1 = 'axis_entry'
+    elif CVName1 == 'institution_id':
+        CVName2 = CVName1
+        CVName1 = 'institution_ids'
+    elif CVName1 == 'source_id':
+        CVName2 = CVName1
+        CVName1 = 'source_ids'
     else:
         CVName2 = CVName1
     obs4MIPs_CV['CV'][CVName1] = eval(CVName2)
 
 outFile = 'obs4MIPs_CV.json'
 # Check file exists
-#if os.path.exists(outFile):
-#    print 'File existing, purging:',outFile
-#    os.remove(outFile)
-#fH = open(outFile,'w')
-#json.dump(obs4MIPs_CV,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
-#fH.close()
+if os.path.exists(outFile):
+    print 'File existing, purging:',outFile
+    os.remove(outFile)
+fH = open(outFile,'w')
+json.dump(obs4MIPs_CV,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
+fH.close()
 
 #%% Integrate all required attributes into master file
 jsonOmon = 'obs4MIPs_Omon_composite.json'
