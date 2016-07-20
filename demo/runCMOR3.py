@@ -11,9 +11,9 @@ import cdms2 as cdm
 import numpy as np
 
 #%% Import statements
-#homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
+homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
 #homePath = '/export/durack1/git/obs4MIPs-cmor-tables/'
-homePath = '/sync/git/obs4MIPs-cmor-tables/demo'
+#homePath = '/sync/git/obs4MIPs-cmor-tables/demo'
 os.chdir(homePath)
 
 #%% urllib2 config
