@@ -4,7 +4,6 @@
 
     "calendar":                     "gregorian",
     "data_structure":               "grid",
-    "_dataset_category-input4MIPs": "SSTsAndSeaIce",
     "dataset_category":             "composite",
     "dataset_version_number":       "1.1.0",
     "frequency":                    "mon",
@@ -26,7 +25,6 @@
     "title":                        "PCMDI-AMIP 1.1.0 dataset prepared for input4MIPs",
 
     "outpath":                      ".",
-    "_output_path_template-input4MIPs": "<mip_era><activity_id><institution_id><dataset_category><target_mip><frequency><realm><source_id><variable_id><grid_label><version>",
     "output_path_template":         "<activity_id><realm><frequency><variable_id><dataset_category><source_id><grid_label><version>",
     "output_file_template":         "<variable_id><table><dataset_category><source_id><grid_label>",
 
