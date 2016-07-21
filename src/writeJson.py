@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
 Created on Tue Jul 12 16:11:44 2016
@@ -17,7 +17,8 @@ PJD 20 Jul 2016     - Removed target_mip from required_global_attributes
 PJD 20 Jul 2016     - Removed source_id
 PJD 20 Jul 2016     - Added fx table_id
 PJD 20 Jul 2016     - Added readJsonCreateDict function
-                    - TODO: remove modeling_realm from all variables
+PJD 20 Jul 2016     - Removed modeling_realm from all variable_entry entries
+                    - TODO:
 
 @author: durack1
 """
@@ -65,7 +66,7 @@ def readJsonCreateDict(buildList):
     # Iterate through buildList and write results to jsonDict
     jsonDict = {}       
     for count,table in enumerate(buildList):
-        print 'Processing:',table[0]
+        #print 'Processing:',table[0]
         # Read web file
         jsonOutput = urllib2.urlopen(table[1], context=ctx)
         tmp = jsonOutput.read()
@@ -142,23 +143,11 @@ fx['Header']['realm']       = 'fx'
 for jsonName in ['Amon','Lmon','Omon','SImon']:
     dictToClean = eval(jsonName)
     for key, value in dictToClean.iteritems():
-        for key1 in value.iteritems():
-            print key1,'\n'
-            tmp = key1
-#            for value2 in key1.iteritems():
-#                print value2,'\n'
-#            string = dictToClean[key][values[0]]
-#            if not isinstance(string, list):
-#                string = string.strip() ; # Remove trailing whitespace
-#                string = string.strip(',.') ; # Remove trailing characters
-#                string = string.replace(' + ',' and ')  ; # Replace +
-#                string = string.replace(' & ',' and ')  ; # Replace +
-#                string = string.replace('   ',' ') ; # Replace '  ', '   '
-#                string = string.replace('anthro ','anthropogenic ') ; # Replace anthro
-#                string = string.replace('decidous','deciduous') ; # Replace decidous
-#                string = string.replace('  ',' ') ; # Replace '  ', '   '
-#            dictToClean[key][values[0]] = string
-#    vars()[jsonName] = dictToClean
+        if key == 'Header':
+            continue
+        for key1,value1 in value.iteritems():
+            if 'modeling_realm' in dictToClean[key][key1].keys():
+                dictToClean[key][key1].pop('modeling_realm')
 
 #%% Frequencies
 frequency = ['3hr', '3hrClim', '6hr', 'day', 'decadal', 'fx', 'mon', 'monClim', 'subhr', 'yr'] ;
