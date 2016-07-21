@@ -64,7 +64,7 @@ def readJsonCreateDict(buildList):
     ctx.check_hostname  = False
     ctx.verify_mode     = ssl.CERT_NONE
     # Iterate through buildList and write results to jsonDict
-    jsonDict = {}       
+    jsonDict = {}
     for count,table in enumerate(buildList):
         #print 'Processing:',table[0]
         # Read web file
@@ -80,7 +80,7 @@ def readJsonCreateDict(buildList):
         vars()[table[0]] = json.load(open('tmp.json','r'))
         os.remove('tmp.json')
         jsonDict[table[0]] = eval(table[0]) ; # Write to dictionary
-    
+
     return jsonDict
 
 
