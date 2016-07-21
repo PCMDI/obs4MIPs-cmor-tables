@@ -16,22 +16,72 @@ PJD 19 Jul 2016     - Remove activity_id - no longer in A/O/etc tables
 PJD 20 Jul 2016     - Removed target_mip from required_global_attributes
 PJD 20 Jul 2016     - Removed source_id
 PJD 20 Jul 2016     - Added fx table_id
-                    - TODO:
+PJD 20 Jul 2016     - Added readJsonCreateDict function
+                    - TODO: remove modeling_realm from all variables
 
 @author: durack1
 """
 
 #%% Import statements
-import gc,json,os,ssl,time,urllib2
+import gc,json,os,ssl,sys,time,urllib2
 homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
 #homePath = '/export/durack1/git/obs4MIPs-cmor-tables/'
 os.chdir(homePath)
 
-#%% urllib2 config
-# Create urllib2 context to deal with lab certs
+#%% Create urllib2 context to deal with lab/LLNL web certificates
 ctx                 = ssl.create_default_context()
 ctx.check_hostname  = False
 ctx.verify_mode     = ssl.CERT_NONE
+
+#%% Function definitions
+
+# Loop through input tables
+def readJsonCreateDict(buildList):
+    '''
+    Documentation for readJsonCreateDict(buildList):
+    -------
+    The readJsonCreateDict() function reads web-based json files and writes
+    their contents to a dictionary in memory
+
+    Author: Paul J. Durack : pauldurack@llnl.gov
+
+    Usage:
+    ------
+        >>> from runCMOR3 import readJsonCreateDict
+        >>> readJsonCreateDict(['Omon','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/Tables/obs4MIPs_Omon.json'])
+
+    Notes:
+    -----
+        ...
+    '''
+    # Test for list input of length == 2
+    if len(buildList[0]) != 2:
+        print 'Invalid inputs, exiting..'
+        sys.exit()
+    # Create urllib2 context to deal with lab/LLNL web certificates
+    ctx                 = ssl.create_default_context()
+    ctx.check_hostname  = False
+    ctx.verify_mode     = ssl.CERT_NONE
+    # Iterate through buildList and write results to jsonDict
+    jsonDict = {}       
+    for count,table in enumerate(buildList):
+        print 'Processing:',table[0]
+        # Read web file
+        jsonOutput = urllib2.urlopen(table[1], context=ctx)
+        tmp = jsonOutput.read()
+        vars()[table[0]] = tmp
+        jsonOutput.close()
+        # Write local json
+        tmpFile = open('tmp.json','w')
+        tmpFile.write(eval(table[0]))
+        tmpFile.close()
+        # Read local json
+        vars()[table[0]] = json.load(open('tmp.json','r'))
+        os.remove('tmp.json')
+        jsonDict[table[0]] = eval(table[0]) ; # Write to dictionary
+    
+    return jsonDict
+
 
 #%% List target tables
 masterTargets = [
@@ -65,22 +115,11 @@ tableSource = [
  ] ;
 
 #%% Loop through tables and create in-memory objects
-# Loop through input tables
-for count,table in enumerate(tableSource):
-    # Read web file
-    jsonOutput                      = urllib2.urlopen(table[1], context=ctx)
-    tmp                             = jsonOutput.read()
-    vars()[table[0]]                = tmp
-    jsonOutput.close()
-    # Write local json
-    tmpFile                         = open('tmp.json','w')
-    tmpFile.write(eval(table[0]))
-    tmpFile.close()
-    # Read local json
-    vars()[table[0]]    = json.load(open('tmp.json','r'))
-    os.remove('tmp.json')
-    del(tmp,jsonOutput)
-    del(count,table) ; gc.collect()
+# Loop through tableSource and create output tables
+tmp = readJsonCreateDict(tableSource)
+for count,table in enumerate(tmp.keys()):
+    vars()[table] = tmp[table]
+del(tmp,count,table) ; gc.collect()
 
 # Cleanup by extracting only variable lists
 for count2,table in enumerate(tableSource):
@@ -98,6 +137,28 @@ Lmon['Header']['realm']     = 'land'
 Omon['Header']['realm']     = 'ocean'
 SImon['Header']['realm']    = 'seaIce'
 fx['Header']['realm']       = 'fx'
+
+# Clean out modeling_realm
+for jsonName in ['Amon','Lmon','Omon','SImon']:
+    dictToClean = eval(jsonName)
+    for key, value in dictToClean.iteritems():
+        for key1 in value.iteritems():
+            print key1,'\n'
+            tmp = key1
+#            for value2 in key1.iteritems():
+#                print value2,'\n'
+#            string = dictToClean[key][values[0]]
+#            if not isinstance(string, list):
+#                string = string.strip() ; # Remove trailing whitespace
+#                string = string.strip(',.') ; # Remove trailing characters
+#                string = string.replace(' + ',' and ')  ; # Replace +
+#                string = string.replace(' & ',' and ')  ; # Replace +
+#                string = string.replace('   ',' ') ; # Replace '  ', '   '
+#                string = string.replace('anthro ','anthropogenic ') ; # Replace anthro
+#                string = string.replace('decidous','deciduous') ; # Replace decidous
+#                string = string.replace('  ',' ') ; # Replace '  ', '   '
+#            dictToClean[key][values[0]] = string
+#    vars()[jsonName] = dictToClean
 
 #%% Frequencies
 frequency = ['3hr', '3hrClim', '6hr', 'day', 'decadal', 'fx', 'mon', 'monClim', 'subhr', 'yr'] ;
