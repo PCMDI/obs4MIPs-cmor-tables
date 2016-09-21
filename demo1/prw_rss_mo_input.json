@@ -1,0 +1,30 @@
+{
+    "_control_vocabulary_file":     "obs4MIPs_CV.json",
+    "activity_id":                  "obs4MIPs",
+    "calendar":                     "gregorian",
+
+    "data_structure":               "grid",
+    "dataset_version_number":       "1.1.0",
+    "frequency":                    "mon",
+    "grid":                         "2.5x2.5 degree latitude x longitude",
+    "grid_label":                   "gs1x1 gr",   
+    "grid_resolution":              "1x1 degree",
+    "product":                      "satellite",
+    "realm":                        "atm",
+
+    "comment":                      "",
+    "contact":                     "PCMDI (pcmdi-cmip@llnl.gov) ",
+    "further_info_url":             "http://www-pcmdi.llnl.gov/projects/amip/AMIP2EXPDSN/BCS/amip2bcs.php",
+    "institution_id":               "RSS",
+    "institution":                  "Remote Sensing Systems",
+    "references":                   "",
+    "source":                       "Program for Climate Model Diagnosis and Intercomparison (PCMDI)",
+    "source_id":                    "PCMDI",
+    "title":                        "Dataset prepared for PCMDI Metrics Package (PMP) observational database PMPobsv1.1",
+
+    "outpath":                      "./testout-demo1/",
+    "output_path_template":         "<activity_id><realm><frequency><variable_id><product><source_id><grid_label><version>",
+    "output_file_template":         "<variable_id><table><product><source_id><grid_label>",
+
+    "license":                      "Testing 123"
+}

@@ -6,7 +6,7 @@ import sys
 import argparse
 import MV2
 
-inp = './Tables'
+inp = './obs4MIPs_CMOR_tables'
 input_json = './prw_rss_mo_input.json' 
 input_data_path = '/clim_obs/orig/data/RSS/rss_ssmi_pw_v06.6-demo.nc' 
 input_var_name = 'prw'
