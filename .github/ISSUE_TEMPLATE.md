@@ -1,16 +1,18 @@
 <Please fill out the requested information and delete irrelevant information from the template below before submitting your issue.>  
 
-## If you are registering or editing your INSTITUTION_ID (abbreviated acronym identifying your institution and used in labeling your data), please provide the following information:
+To register (or edit) information about your institution, please title your issue "institution_id registration of [acronym for your institution]"
 
-Enter "Institution Id" in the title of your github issue
+'institution_id' -- a short acronym suitable for search interfaces and sub-directory names (should limit the characters used to the following set: a-z, A-Z, 0-9, and "-") 'institution' -- full name and address of institution, likely to include: laboratory/group name, hosting institution name, city, state/province and postal-code, country (no restriction on character set).
 
-Also please enter your Institution Id with the following template and noting the use of quotation marks: 
+Example 1: [title your issue "institution_id registration of PCMDI"]
 
-<'institution_id' 'laboratory/group name, hosting institution name, city, state/province and postal-code, country'>
+institution_id = PCMDI
+institution = Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA
 
-example 1: 'PCMDI' 'Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA'
+Example 2: [title your issue "institution_id registration of NASA-GISS"]
 
-example 2: 'NASA-GISS' 'NASA Goddard Institute for Space Studies, New York, NY 10025, USA'
+institution_id = NASA-GISS
+institution = NASA Goddard Institute for Space Studies, New York, NY 10025, USA 
 
 
 You can now delete the two examples and submit your issue! 
