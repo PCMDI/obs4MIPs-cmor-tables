@@ -1,5 +1,7 @@
 {
-    "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA", 
-    "JPL": "Jet Propulsion Laboratory, Pasadena, CA 91109, USA",
-    "RSS":"Remote Sensing Systems, Santa Rosa, CA 91109, USA"
+    "institution_id":{
+        "JPL":"Jet Propulsion Laboratory, Pasadena, CA 91109, USA",
+        "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
+        "RSS":"Remote Sensing Systems, Santa Rosa, CA 91109, USA"
+    }
 }

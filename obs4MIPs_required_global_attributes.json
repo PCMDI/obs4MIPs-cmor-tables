@@ -1,20 +1,22 @@
-[
-    "activity_id",
-    "Conventions",
-    "creation_date",
-    "dataset_version_number",
-    "further_info_url",
-    "frequency",
-    "grid",
-    "grid_label",
-    "grid_resolution",
-    "institution_id",
-    "license",
-    "mip_era",
-    "product",
-    "realm",
-    "source_id",
-    "table_id",
-    "tracking_id",
-    "variable_id"
-]
+{
+    "required_global_attributes":[
+        "activity_id",
+        "Conventions",
+        "creation_date",
+        "dataset_version_number",
+        "further_info_url",
+        "frequency",
+        "grid",
+        "grid_label",
+        "grid_resolution",
+        "institution_id",
+        "license",
+        "mip_era",
+        "product",
+        "realm",
+        "source_id",
+        "table_id",
+        "tracking_id",
+        "variable_id"
+    ]
+}
