@@ -111,7 +111,7 @@ for jsonName in ['Amon','Lmon','Omon','SImon']:
                 dictToClean[key][key1].pop('modeling_realm')
 
 #%% Coordinate
-                
+
 #%% Frequencies
 frequency = ['3hr', '3hrClim', '6hr', 'day', 'decadal', 'fx', 'mon', 'monClim', 'subhr', 'yr'] ;
 
@@ -140,8 +140,7 @@ grid_resolution = [
 tmp = [['institution_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/obs4MIPs_institution_id.json']
       ] ;
 institution_id = readJsonCreateDict(tmp)
-#experiment_id = experiment_id.get('experiment_id')
-#experiment_id = experiment_id.get('experiment_id') ; # Fudge to extract duplicate level
+#institution_id = institution_id.get('institution_id')
 
  #%% Product
 mip_era = ['CMIP6'] ;
