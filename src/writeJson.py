@@ -86,9 +86,7 @@ del(tmp,count,table) ; gc.collect()
 for count2,table in enumerate(tableSource):
     tableName = table[0]
     if tableName in ['coordinate','grid']:
-        print eval(tableName).keys()
         eval(tableName).pop('version_metadata')
-        print eval(tableName).keys()
         continue
     else:
         eval(tableName).pop('axis_entry')
