@@ -86,6 +86,9 @@ del(tmp,count,table) ; gc.collect()
 for count2,table in enumerate(tableSource):
     tableName = table[0]
     if tableName in ['coordinate','grid']:
+        print eval(tableName).keys()
+        eval(tableName).pop('version_metadata')
+        print eval(tableName).keys()
         continue
     else:
         eval(tableName).pop('axis_entry')
@@ -109,28 +112,12 @@ for jsonName in ['Amon','Lmon','Omon','SImon']:
             if 'modeling_realm' in dictToClean[key][key1].keys():
                 dictToClean[key][key1].pop('modeling_realm')
 
+#%% Coordinate
+                
 #%% Frequencies
 frequency = ['3hr', '3hrClim', '6hr', 'day', 'decadal', 'fx', 'mon', 'monClim', 'subhr', 'yr'] ;
 
 #%% Grid
-# Read web file
-sourceFile = 'https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_grid.json'
-jsonOutput = urllib2.urlopen(sourceFile, context=ctx)
-tmp = jsonOutput.read()
-jsonOutput.close()
-# Write local json
-if os.path.exists('tmp.json'):
-    os.remove('tmp.json')
-tmpFile = open('tmp.json','w')
-tmpFile.write(tmp)
-tmpFile.close()
-# Read local json
-tmp = json.load(open('tmp.json','r'))
-os.remove('tmp.json')
-del(jsonOutput) ; gc.collect()
-# Allocate grid
-grid = tmp
-del(tmp,sourceFile) ; gc.collect()
 
 #%% Grid labels
 grid_label = ['gn', 'gr', 'gr1', 'gr2', 'gr3', 'gr4', 'gr5', 'gr6', 'gr7', 'gr8', 'gr9'] ;
