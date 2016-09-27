@@ -3,13 +3,13 @@
         "Conventions":"CF-1.6 CMIP-6.0",
         "approx_interval":"30.00000",
         "cmor_version":"3.1",
-        "data_specs_version":"01.beta.30",
+        "data_specs_version":"01.beta.32",
         "frequency":"mon",
         "mip_era":"CMIP6",
         "missing_value":"1e20",
         "product":"output",
         "realm":"ocean",
-        "table_date":"20 July 2016",
+        "table_date":"27 September 2016",
         "table_id":"Table Omon"
     },
     "variable_entry":{

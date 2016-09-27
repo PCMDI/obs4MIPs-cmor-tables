@@ -1,7 +1,9 @@
-[
-    "Amon",
-    "Lmon",
-    "Omon",
-    "SImon",
-    "fx"
-]
+{
+    "table_id":[
+        "Amon",
+        "Lmon",
+        "Omon",
+        "SImon",
+        "fx"
+    ]
+}

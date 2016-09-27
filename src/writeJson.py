@@ -18,71 +18,28 @@ PJD 20 Jul 2016     - Removed source_id
 PJD 20 Jul 2016     - Added fx table_id
 PJD 20 Jul 2016     - Added readJsonCreateDict function
 PJD 20 Jul 2016     - Removed modeling_realm from all variable_entry entries
+PJD 27 Sep 2016     - Updated to deal with new upstream data formats
+PJD 27 Sep 2016     - Updated tables to "01.beta.30" -> "01.beta.32"
+PJD 27 Sep 2016     - Update jsons to include 'identifier' dictionary name (following CMIP6_CVs)
                     - TODO:
 
 @author: durack1
 """
 
 #%% Import statements
-import gc,json,os,ssl,sys,time,urllib2
+import gc,json,os,ssl,time,urllib2 ; #sys
+from durolib import readJsonCreateDict
+
+#%% Determine path
 homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
 #homePath = '/export/durack1/git/obs4MIPs-cmor-tables/'
+#homePath = '/sync/git/obs4MIPs-cmor-tables/'
 os.chdir(homePath)
 
 #%% Create urllib2 context to deal with lab/LLNL web certificates
 ctx                 = ssl.create_default_context()
 ctx.check_hostname  = False
 ctx.verify_mode     = ssl.CERT_NONE
-
-#%% Function definitions
-
-# Loop through input tables
-def readJsonCreateDict(buildList):
-    '''
-    Documentation for readJsonCreateDict(buildList):
-    -------
-    The readJsonCreateDict() function reads web-based json files and writes
-    their contents to a dictionary in memory
-
-    Author: Paul J. Durack : pauldurack@llnl.gov
-
-    Usage:
-    ------
-        >>> from runCMOR3 import readJsonCreateDict
-        >>> readJsonCreateDict(['Omon','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/Tables/obs4MIPs_Omon.json'])
-
-    Notes:
-    -----
-        ...
-    '''
-    # Test for list input of length == 2
-    if len(buildList[0]) != 2:
-        print 'Invalid inputs, exiting..'
-        sys.exit()
-    # Create urllib2 context to deal with lab/LLNL web certificates
-    ctx                 = ssl.create_default_context()
-    ctx.check_hostname  = False
-    ctx.verify_mode     = ssl.CERT_NONE
-    # Iterate through buildList and write results to jsonDict
-    jsonDict = {}
-    for count,table in enumerate(buildList):
-        #print 'Processing:',table[0]
-        # Read web file
-        jsonOutput = urllib2.urlopen(table[1], context=ctx)
-        tmp = jsonOutput.read()
-        vars()[table[0]] = tmp
-        jsonOutput.close()
-        # Write local json
-        tmpFile = open('tmp.json','w')
-        tmpFile.write(eval(table[0]))
-        tmpFile.close()
-        # Read local json
-        vars()[table[0]] = json.load(open('tmp.json','r'))
-        os.remove('tmp.json')
-        jsonDict[table[0]] = eval(table[0]) ; # Write to dictionary
-
-    return jsonDict
-
 
 #%% List target tables
 masterTargets = [
@@ -119,7 +76,10 @@ tableSource = [
 # Loop through tableSource and create output tables
 tmp = readJsonCreateDict(tableSource)
 for count,table in enumerate(tmp.keys()):
-    vars()[table] = tmp[table]
+    if 'cmip6_CVs' in tableSource[count][1]:
+        vars()[table] = tmp[table].get(table)
+    else:
+        vars()[table] = tmp[table]
 del(tmp,count,table) ; gc.collect()
 
 # Cleanup by extracting only variable lists
@@ -192,9 +152,11 @@ grid_resolution = [
  ] ;
 
 #%% Institutions
-institution_id = {
- 'PCMDI': 'Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA'
- } ;
+tmp = [['institution_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/obs4MIPs_institution_id.json']
+      ] ;
+institution_id = readJsonCreateDict(tmp)
+#experiment_id = experiment_id.get('experiment_id')
+#experiment_id = experiment_id.get('experiment_id') ; # Fudge to extract duplicate level
 
  #%% Product
 mip_era = ['CMIP6'] ;
@@ -250,10 +212,10 @@ for jsonName in masterTargets:
     # Clean experiment formats
     if jsonName in ['coordinate','grid']: #,'Amon','Lmon','Omon','SImon']:
         dictToClean = eval(jsonName)
-        for key, value in dictToClean.iteritems():
-            for values in value.iteritems():
-                string = dictToClean[key][values[0]]
-                if not isinstance(string, list):
+        for key, value1 in dictToClean.iteritems():
+            for value2 in value1.iteritems():
+                string = dictToClean[key][value2[0]]
+                if not isinstance(string, list) and not isinstance(string, dict):
                     string = string.strip() ; # Remove trailing whitespace
                     string = string.strip(',.') ; # Remove trailing characters
                     string = string.replace(' + ',' and ')  ; # Replace +
@@ -262,7 +224,7 @@ for jsonName in masterTargets:
                     string = string.replace('anthro ','anthropogenic ') ; # Replace anthro
                     string = string.replace('decidous','deciduous') ; # Replace decidous
                     string = string.replace('  ',' ') ; # Replace '  ', '   '
-                dictToClean[key][values[0]] = string
+                dictToClean[key][value2[0]] = string
         vars()[jsonName] = dictToClean
     # Write file
     if jsonName in ['Amon','Lmon','Omon','SImon','fx']:
@@ -275,8 +237,14 @@ for jsonName in masterTargets:
         os.remove(outFile)
     if not os.path.exists('../Tables'):
         os.mkdir('../Tables')
+    # Create host dictionary
+    if jsonName not in ['coordinate','fx','grid','institution_id','Amon','Lmon','Omon','SImon']:
+        jsonDict = {}
+        jsonDict[jsonName] = eval(jsonName)
+    else:
+        jsonDict = eval(jsonName)
     fH = open(outFile,'w')
-    json.dump(eval(jsonName),fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
+    json.dump(jsonDict,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
     fH.close()
 
 del(jsonName,outFile) ; gc.collect()

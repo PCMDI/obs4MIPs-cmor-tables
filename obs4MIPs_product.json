@@ -1,7 +1,9 @@
-[
-    "composite",
-    "remote-sensed",
-    "satellite",
-    "surface-gridded-insitu",
-    "surface-radar"
-]
+{
+    "product":[
+        "composite",
+        "remote-sensed",
+        "satellite",
+        "surface-gridded-insitu",
+        "surface-radar"
+    ]
+}
