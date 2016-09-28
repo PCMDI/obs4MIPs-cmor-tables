@@ -15,6 +15,7 @@ The file is split into 3 sections:
 
 PJD 20 Jul 2016     - Removed source_id
 PJD 20 Jul 2016     - Further tweaks to enhance readability
+PJD 28 Sep 2016     - Update to deal with new json (embedded key) formats
                     - TODO:
 
 @author: durack1
@@ -153,7 +154,10 @@ buildList = [
 # Loop through buildList and create output tables
 tmp = readJsonCreateDict(buildList)
 for count,table in enumerate(tmp.keys()):
-    vars()[table] = tmp[table]
+    if table == 'coordinate':
+        vars()[table] = tmp[table].get(table)
+    else:
+        vars()[table] = tmp[table]
 del(tmp,count,table) ; gc.collect()
 
 # Rebuild
@@ -223,7 +227,10 @@ buildList = [
 # Loop through buildList and create output tables
 tmp = readJsonCreateDict(buildList)
 for count,table in enumerate(tmp.keys()):
-    vars()[table] = tmp[table]
+    if table == 'coordinate':
+        vars()[table] = tmp[table].get(table)
+    else:
+        vars()[table] = tmp[table]
 del(tmp,count,table) ; gc.collect()
 
 # Rebuild

@@ -1,55 +1,36 @@
 {
     "CV":{
-        "frequency":[
-            "3hr",
-            "3hrClim",
-            "6hr",
-            "day",
-            "decadal",
-            "fx",
-            "mon",
-            "monClim",
-            "subhr",
-            "yr"
-        ],
+        "frequency":{
+            "frequency":[
+                "3hr",
+                "3hrClim",
+                "6hr",
+                "day",
+                "decadal",
+                "fx",
+                "mon",
+                "monClim",
+                "subhr",
+                "yr"
+            ]
+        },
         "grid_labels":{
-            "gn":[
-                "10 km",
-                "100 km",
-                "1000 km",
-                "10000 km",
-                "1x1 degree",
-                "25 km",
-                "250 km",
-                "2500 km",
-                "5 km",
-                "50 km",
-                "500 km",
-                "5000 km"
-            ],
-            "gr":[
-                "10 km",
-                "100 km",
-                "1000 km",
-                "10000 km",
-                "1x1 degree",
-                "25 km",
-                "250 km",
-                "2500 km",
-                "5 km",
-                "50 km",
-                "500 km",
-                "5000 km"
-            ],
-            "gr1":{},
-            "gr2":{},
-            "gr3":{},
-            "gr4":{},
-            "gr5":{},
-            "gr6":{},
-            "gr7":{},
-            "gr8":{},
-            "gr9":{},
+            "grid_label":{
+                "grid_resolution":[
+                    "10 km",
+                    "100 km",
+                    "1000 km",
+                    "10000 km",
+                    "1x1 degree",
+                    "25 km",
+                    "250 km",
+                    "2500 km",
+                    "5 km",
+                    "50 km",
+                    "500 km",
+                    "5000 km"
+                ]
+            },
             "gs1x1":{
                 "grid_resolution":"1x1 degree"
             },
@@ -61,54 +42,69 @@
             }
         },
         "institution_ids":{
-            "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA"
+            "institution_id":{
+                "JPL":"Jet Propulsion Laboratory, Pasadena, CA 91109, USA",
+                "NOAA-NCEI":"NOAA's National Centers for Environmental Information, Asheville, NC 28801, USA",
+                "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
+                "RSS":"Remote Sensing Systems, Santa Rosa, CA 95401, USA"
+            }
         },
-        "mip_era":[
-            "CMIP6"
-        ],
-        "product":[
-            "composite",
-            "remote-sensed",
-            "satellite",
-            "surface-gridded-insitu",
-            "surface-radar"
-        ],
-        "realm":[
-            "aerosol",
-            "atmos",
-            "atmosChem",
-            "land",
-            "landIce",
-            "ocean",
-            "ocnBgchem",
-            "seaIce"
-        ],
-        "required_global_attributes":[
-            "activity_id",
-            "Conventions",
-            "creation_date",
-            "dataset_version_number",
-            "further_info_url",
-            "frequency",
-            "grid",
-            "grid_label",
-            "grid_resolution",
-            "institution_id",
-            "license",
-            "mip_era",
-            "product",
-            "realm",
-            "source_id",
-            "table_id",
-            "tracking_id",
-            "variable_id"
-        ],
-        "table_id":[
-            "Amon",
-            "Lmon",
-            "Omon",
-            "SImon",
-            "fx"
-        ]
+        "mip_era":{
+            "mip_era":[
+                "CMIP6"
+            ]
+        },
+        "product":{
+            "product":[
+                "composite",
+                "remote-sensed",
+                "satellite",
+                "surface-gridded-insitu",
+                "surface-radar"
+            ]
+        },
+        "realm":{
+            "realm":[
+                "aerosol",
+                "atmos",
+                "atmosChem",
+                "land",
+                "landIce",
+                "ocean",
+                "ocnBgchem",
+                "seaIce"
+            ]
+        },
+        "required_global_attributes":{
+            "required_global_attributes":[
+                "activity_id",
+                "Conventions",
+                "creation_date",
+                "dataset_version_number",
+                "further_info_url",
+                "frequency",
+                "grid",
+                "grid_label",
+                "grid_resolution",
+                "institution_id",
+                "license",
+                "mip_era",
+                "product",
+                "realm",
+                "source_id",
+                "table_id",
+                "tracking_id",
+                "variable_id"
+            ]
+        },
+        "table_id":{
+            "table_id":[
+                "Amon",
+                "Lmon",
+                "Omon",
+                "SImon",
+                "fx"
+            ]
+        }
     }
 }
