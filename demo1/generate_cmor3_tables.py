@@ -47,8 +47,15 @@ buildList = [
 # Loop through buildList and create output tables
 tmp = readJsonCreateDict(buildList)
 for count,table in enumerate(tmp.keys()):
-    vars()[table] = tmp[table]
+	if table == 'coordinate':
+		vars()[table] = tmp[table].get(table)
+	else:
+		vars()[table] = tmp[table]
 del(tmp,count,table) ; gc.collect()
+
+# Now cleanup Amon - These problems require fixes upstream
+#Amon['variable_entry'].pop('mc')
+#Amon['variable_entry'].pop('phalf')
 
 # Rebuild
 table = {}

@@ -98,7 +98,11 @@ buildList = [
 # Loop through buildList and create output tables
 tmp = readJsonCreateDict(buildList)
 for count,table in enumerate(tmp.keys()):
-    vars()[table] = tmp[table]
+	vars()[table] = tmp[table].get(table)
+#	if table == 'coordinate':
+#		vars()[table] = tmp[table].get(table)
+#	else:
+#		vars()[table] = tmp[table]
 del(tmp,count,table) ; gc.collect()
 
 # Rebuild grid_labels

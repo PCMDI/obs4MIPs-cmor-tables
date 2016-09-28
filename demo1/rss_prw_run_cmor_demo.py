@@ -6,11 +6,13 @@ import sys
 import argparse
 import MV2
 
-inp = './obs4MIPs_CMOR_tables'
+inp = '../Tables'
+#inp = '.'
 input_json = './prw_rss_mo_input.json' 
 input_data_path = '/clim_obs/orig/data/RSS/rss_ssmi_pw_v06.6-demo.nc' 
 input_var_name = 'prw'
 cmor_table = './obs4MIPs_CMOR_tables/obs4MIPs_Amon.json' 
+#cmor_table = 'obs4MIPs_Amon.json'
 output_units = 'kg m-2'
 output_var_name = 'prw'
 
