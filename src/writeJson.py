@@ -21,6 +21,8 @@ PJD 20 Jul 2016     - Removed modeling_realm from all variable_entry entries
 PJD 27 Sep 2016     - Updated to deal with new upstream data formats
 PJD 27 Sep 2016     - Updated tables to "01.beta.30" -> "01.beta.32"
 PJD 27 Sep 2016     - Update jsons to include 'identifier' dictionary name (following CMIP6_CVs)
+PJD 27 Sep 2016     - Add NOAA-NCEI to institution_id https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/8
+PJD 27 Sep 2016     - Correct RSS zip
                     - TODO:
 
 @author: durack1
@@ -140,7 +142,9 @@ grid_resolution = [
 tmp = [['institution_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/obs4MIPs_institution_id.json']
       ] ;
 institution_id = readJsonCreateDict(tmp)
-#institution_id = institution_id.get('institution_id')
+institution_id = institution_id.get('institution_id')
+institution_id['institution_id']['NOAA-NCEI'] = 'NOAA\'s National Centers for Environmental Information, Asheville, NC 28801, USA'
+institution_id['institution_id']['RSS'] = 'Remote Sensing Systems, Santa Rosa, CA 95401, USA'
 
  #%% Product
 mip_era = ['CMIP6'] ;
