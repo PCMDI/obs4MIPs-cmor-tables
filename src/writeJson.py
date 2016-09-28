@@ -23,6 +23,7 @@ PJD 27 Sep 2016     - Updated tables to "01.beta.30" -> "01.beta.32"
 PJD 27 Sep 2016     - Update jsons to include 'identifier' dictionary name (following CMIP6_CVs)
 PJD 27 Sep 2016     - Add NOAA-NCEI to institution_id https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/8
 PJD 27 Sep 2016     - Correct RSS zip
+PJD 28 Sep 2016     - Correct missing 'generic_levels' in Amon table
                     - TODO:
 
 @author: durack1
@@ -92,7 +93,7 @@ for count2,table in enumerate(tableSource):
         continue
     else:
         eval(tableName).pop('axis_entry')
-        eval(tableName)['Header'].pop('generic_levels')
+        #eval(tableName)['Header'].pop('generic_levels')
         eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
 
 # Cleanup realms
