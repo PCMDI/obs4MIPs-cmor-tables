@@ -10,7 +10,7 @@
         "missing_value":"1e20",
         "product":"output",
         "realm":"atmos",
-        "table_date":"28 September 2016",
+        "table_date":"29 September 2016",
         "table_id":"Table Amon"
     },
     "variable_entry":{
@@ -1117,6 +1117,22 @@
             "units":"K",
             "valid_max":"339.6",
             "valid_min":"176.8"
+        },
+        "ttbr":{
+            "cell_measures":"time: mean",
+            "cell_methods":"area: areacella",
+            "comment":"",
+            "dimensions":"longitude latitude time",
+            "long_name":"Top of Atmosphere Brightness Temperature",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"ttbr",
+            "positive":"time: mean",
+            "standard_name":"toa_brightness_temperature",
+            "type":"real",
+            "units":"K",
+            "valid_max":"375.0",
+            "valid_min":"140.0"
         },
         "ua":{
             "cell_measures":"time: mean",

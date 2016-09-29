@@ -30,13 +30,13 @@ PJD 28 Sep 2016     - Correct missing 'generic_levels' in Amon table
 """
 
 #%% Import statements
-import gc,json,os,ssl,time,urllib2 ; #sys
+import gc,json,os,ssl,time
 from durolib import readJsonCreateDict
 
 #%% Determine path
 homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
 #homePath = '/export/durack1/git/obs4MIPs-cmor-tables/'
-#homePath = '/sync/git/obs4MIPs-cmor-tables/'
+#homePath = '/sync/git/obs4MIPs-cmor-tables/src'
 os.chdir(homePath)
 
 #%% Create urllib2 context to deal with lab/LLNL web certificates
@@ -93,7 +93,6 @@ for count2,table in enumerate(tableSource):
         continue
     else:
         eval(tableName).pop('axis_entry')
-        #eval(tableName)['Header'].pop('generic_levels')
         eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
 
 # Cleanup realms
@@ -113,6 +112,24 @@ for jsonName in ['Amon','Lmon','Omon','SImon']:
             if 'modeling_realm' in dictToClean[key][key1].keys():
                 dictToClean[key][key1].pop('modeling_realm')
 
+# Add new variables
+# Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics)
+Amon['variable_entry'][u'ttbr'] = {}
+Amon['variable_entry']['ttbr']['cell_measures'] = 'time: mean'
+Amon['variable_entry']['ttbr']['cell_methods'] = 'area: areacella'
+Amon['variable_entry']['ttbr']['comment'] = ''
+Amon['variable_entry']['ttbr']['dimensions'] = 'longitude latitude time'
+Amon['variable_entry']['ttbr']['long_name'] = 'Top of Atmosphere Brightness Temperature'
+Amon['variable_entry']['ttbr']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['ttbr']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['ttbr']['out_name'] = 'ttbr'
+Amon['variable_entry']['ttbr']['positive'] = 'time: mean'
+Amon['variable_entry']['ttbr']['standard_name'] = 'toa_brightness_temperature'
+Amon['variable_entry']['ttbr']['type'] = 'real'
+Amon['variable_entry']['ttbr']['units'] = 'K'
+Amon['variable_entry']['ttbr']['valid_max'] = '375.0'
+Amon['variable_entry']['ttbr']['valid_min'] = '140.0'
+                
 #%% Coordinate
 
 #%% Frequencies
