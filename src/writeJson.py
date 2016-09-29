@@ -24,6 +24,7 @@ PJD 27 Sep 2016     - Update jsons to include 'identifier' dictionary name (foll
 PJD 27 Sep 2016     - Add NOAA-NCEI to institution_id https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/8
 PJD 27 Sep 2016     - Correct RSS zip
 PJD 28 Sep 2016     - Correct missing 'generic_levels' in Amon table
+PJD 29 Sep 2016     - Added ttbr (NOAA-NCEI; Jim Baird [JimBiardCics]) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/14
                     - TODO:
 
 @author: durack1
