@@ -2,57 +2,21 @@
     "Header":{
         "Conventions":"CF-1.6 CMIP-6.0",
         "approx_interval":"30.00000",
-        "cmor_version":"3.1",
-        "data_specs_version":"01.beta.32",
+        "cmor_version":"3.2",
+        "data_specs_version":"01.00.00",
         "frequency":"mon",
         "generic_levels":"",
         "mip_era":"CMIP6",
         "missing_value":"1e20",
         "product":"output",
         "realm":"land",
-        "table_date":"29 September 2016",
+        "table_date":"30 January 2017",
         "table_id":"Table Lmon"
     },
     "variable_entry":{
-        "a":{
-            "dimensions":"alevel",
-            "long_name":"vertical coordinate formula term: a(k)",
-            "type":"double",
-            "units":""
-        },
-        "a_bnds":{
-            "dimensions":"alevel",
-            "long_name":"vertical coordinate formula term: a(k+1/2)",
-            "type":"double",
-            "units":""
-        },
-        "ap":{
-            "dimensions":"alevel",
-            "long_name":"vertical coordinate formula term: ap(k)",
-            "type":"double",
-            "units":"Pa"
-        },
-        "ap_bnds":{
-            "dimensions":"alevel",
-            "long_name":"vertical coordinate formula term: ap(k+1/2)",
-            "type":"double",
-            "units":"Pa"
-        },
-        "b":{
-            "dimensions":"alevel",
-            "long_name":"vertical coordinate formula term: b(k)",
-            "type":"double",
-            "units":""
-        },
-        "b_bnds":{
-            "dimensions":"alevel",
-            "long_name":"vertical coordinate formula term: b(k+1/2)",
-            "type":"double",
-            "units":""
-        },
         "baresoilFrac":{
-            "cell_measures":"time: mean",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean",
             "comment":"Percentage of entire grid cell  that is covered by bare soil.",
             "dimensions":"longitude latitude time typebare",
             "long_name":"Bare Soil Fraction",
@@ -67,8 +31,8 @@
             "valid_min":""
         },
         "burntArea":{
-            "cell_measures":"time: mean",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean",
             "comment":"Fraction of entire grid cell  that is covered by burnt vegetation.",
             "dimensions":"longitude latitude time",
             "long_name":"Burnt Area Fraction",
@@ -83,8 +47,8 @@
             "valid_min":""
         },
         "c3PftFrac":{
-            "cell_measures":"time: mean",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean",
             "comment":"Percentage of entire grid cell  that is covered by C3 PFTs (including grass, crops, and trees).",
             "dimensions":"longitude latitude time typec3pft",
             "long_name":"Total C3 PFT Cover Fraction",
@@ -99,9 +63,9 @@
             "valid_min":""
         },
         "c4PftFrac":{
-            "cell_measures":"time: mean",
-            "cell_methods":"area: areacella",
-            "comment":"Fraction of entire grid cell  that is covered by C4 PFTs (including grass and crops).",
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean",
+            "comment":"Percentage of entire grid cell  that is covered by C4 PFTs (including grass and crops).",
             "dimensions":"longitude latitude time typec4pft",
             "long_name":"Total C4 PFT Cover Fraction",
             "ok_max_mean_abs":"",
@@ -115,8 +79,8 @@
             "valid_min":""
         },
         "cCwd":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"Carbon mass per unit area in woody debris (dead organic matter composed of coarse wood.  It is distinct from litter)",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass in Coarse Woody Debris",
@@ -131,8 +95,8 @@
             "valid_min":""
         },
         "cLeaf":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"Carbon mass per unit area in leaves.",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass in Leaves",
@@ -147,8 +111,8 @@
             "valid_min":""
         },
         "cLitter":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass in Litter Pool",
@@ -163,8 +127,8 @@
             "valid_min":""
         },
         "cLitterAbove":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass in Above-Ground Litter",
@@ -179,8 +143,8 @@
             "valid_min":""
         },
         "cLitterBelow":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass in Below-Ground Litter",
@@ -194,25 +158,9 @@
             "valid_max":"",
             "valid_min":""
         },
-        "cMisc":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
-            "comment":"e.g., labile, fruits, reserves, etc.",
-            "dimensions":"longitude latitude time",
-            "long_name":"Carbon Mass in Other Living Compartments on Land",
-            "ok_max_mean_abs":"",
-            "ok_min_mean_abs":"",
-            "out_name":"cMisc",
-            "positive":"",
-            "standard_name":"miscellaneous_living_matter_carbon_content",
-            "type":"real",
-            "units":"kg m-2",
-            "valid_max":"",
-            "valid_min":""
-        },
         "cProduct":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"Carbon mass per unit area in that has been removed from the environment through  landuse change.",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass in Products of Land Use Change",
@@ -227,8 +175,8 @@
             "valid_min":""
         },
         "cRoot":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"Carbon mass per unit area in roots, including fine and coarse roots.",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass in Roots",
@@ -242,25 +190,9 @@
             "valid_max":"",
             "valid_min":""
         },
-        "cSoil":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
-            "comment":"Carbon mass in the full depth of the soil model.",
-            "dimensions":"longitude latitude time",
-            "long_name":"Carbon Mass in Soil Pool",
-            "ok_max_mean_abs":"",
-            "ok_min_mean_abs":"",
-            "out_name":"cSoil",
-            "positive":"",
-            "standard_name":"soil_carbon_content",
-            "type":"real",
-            "units":"kg m-2",
-            "valid_max":"",
-            "valid_min":""
-        },
         "cSoilFast":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"Carbon mass per unit area in fast soil pool. Fast means a lifetime of less than 10 years for reference climate conditions (20th century) in the absence of water limitations.",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass in Fast Soil Pool",
@@ -275,8 +207,8 @@
             "valid_min":""
         },
         "cSoilMedium":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"Carbon mass per unit area in medium (rate) soil pool. Medium means a lifetime of more than than 10 years and less than 100 years for reference climate conditions (20th century) in the absence of water limitations.",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass in Medium Soil Pool",
@@ -291,8 +223,8 @@
             "valid_min":""
         },
         "cSoilSlow":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"Carbon mass per unit area in slow soil pool. Slow means a lifetime of more than 100 years for reference climate (20th century) in the absence of water limitations.",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass in Slow Soil Pool",
@@ -307,8 +239,8 @@
             "valid_min":""
         },
         "cVeg":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"Carbon mass per unit area in vegetation.",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass in Vegetation",
@@ -322,25 +254,9 @@
             "valid_max":"",
             "valid_min":""
         },
-        "cWood":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
-            "comment":"Carbon mass per unit area in wood, including sapwood and hardwood.",
-            "dimensions":"longitude latitude time",
-            "long_name":"Carbon Mass in Wood",
-            "ok_max_mean_abs":"",
-            "ok_min_mean_abs":"",
-            "out_name":"cWood",
-            "positive":"",
-            "standard_name":"wood_carbon_content",
-            "type":"real",
-            "units":"kg m-2",
-            "valid_max":"",
-            "valid_min":""
-        },
         "cropFrac":{
-            "cell_measures":"time: mean",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean",
             "comment":"Percentage of entire grid cell  that is covered by crop.",
             "dimensions":"longitude latitude time",
             "long_name":"Crop Fraction",
@@ -354,27 +270,9 @@
             "valid_max":"",
             "valid_min":""
         },
-        "depth":{
-            "dimensions":"longitude latitude",
-            "long_name":"Sea Floor Depth: formula term: thetao",
-            "type":"real",
-            "units":"m"
-        },
-        "depth_c":{
-            "dimensions":"",
-            "long_name":"vertical coordinate formula term: depth_c",
-            "type":"double",
-            "units":""
-        },
-        "eta":{
-            "dimensions":"longitude latitude time",
-            "long_name":"Sea Surface Height formula term: thetao",
-            "type":"real",
-            "units":"m"
-        },
         "evspsblsoi":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"Water evaporation from soil (including sublimation).",
             "dimensions":"longitude latitude time",
             "long_name":"Water Evaporation from Soil",
@@ -389,8 +287,8 @@
             "valid_min":""
         },
         "evspsblveg":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"The canopy evaporation and sublimation (if present in model); may include dew formation as a negative flux.",
             "dimensions":"longitude latitude time",
             "long_name":"Evaporation from Canopy",
@@ -405,8 +303,8 @@
             "valid_min":""
         },
         "fFire":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"CO2 emissions (expressed as a carbon mass flux per unit area) from natural fires and human ignition fires as calculated by the fire module of the dynamic vegetation model, but excluding any CO2 flux from fire included in fLuc (CO2 Flux to Atmosphere from Land Use Change).",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass Flux into Atmosphere due to CO2 Emission from Fire",
@@ -421,8 +319,8 @@
             "valid_min":""
         },
         "fGrazing":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"Carbon mass flux per unit area due to grazing on land",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass Flux into Atmosphere due to Grazing on Land",
@@ -437,8 +335,8 @@
             "valid_min":""
         },
         "fHarvest":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"Carbon mass flux per unit area due to crop harvesting",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass Flux into Atmosphere due to Crop Harvesting",
@@ -453,8 +351,8 @@
             "valid_min":""
         },
         "fLitterSoil":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"Carbon mass flux per unit area into soil from litter (dead plant material in or above the soil).",
             "dimensions":"longitude latitude time",
             "long_name":"Total Carbon Mass Flux from Litter to Soil",
@@ -468,25 +366,9 @@
             "valid_max":"",
             "valid_min":""
         },
-        "fLuc":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
-            "comment":"Carbon mass flux per unit area into atmosphere due to human changes to land (excluding forest regrowth) accounting possibly for different time-scales related to fate of the wood, for example.",
-            "dimensions":"longitude latitude time",
-            "long_name":"Net Carbon Mass Flux into Atmosphere due to Land Use Change",
-            "ok_max_mean_abs":"",
-            "ok_min_mean_abs":"",
-            "out_name":"fLuc",
-            "positive":"up",
-            "standard_name":"surface_net_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_anthropogenic_land_use_change",
-            "type":"real",
-            "units":"kg m-2 s-1",
-            "valid_max":"",
-            "valid_min":""
-        },
         "fVegLitter":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Total Carbon Mass Flux from Vegetation to Litter",
@@ -501,8 +383,8 @@
             "valid_min":""
         },
         "fVegSoil":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"Carbon mass flux per unit area from vegetation directly into soil, without intermediate conversion to litter.",
             "dimensions":"longitude latitude time",
             "long_name":"Total Carbon Mass Flux from Vegetation Directly to Soil",
@@ -517,8 +399,8 @@
             "valid_min":""
         },
         "gpp":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass Flux out of Atmosphere due to Gross Primary Production on Land",
@@ -533,8 +415,8 @@
             "valid_min":""
         },
         "grassFrac":{
-            "cell_measures":"time: mean",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean",
             "comment":"Percentage of entire grid cell that is covered by natural grass.",
             "dimensions":"longitude latitude time",
             "long_name":"Natural Grass Fraction",
@@ -548,21 +430,9 @@
             "valid_max":"",
             "valid_min":""
         },
-        "href":{
-            "dimensions":"",
-            "long_name":"vertical coordinate formula term: href",
-            "type":"double",
-            "units":""
-        },
-        "k_c":{
-            "dimensions":"",
-            "long_name":"vertical coordinate formula term: k_c",
-            "type":"integer",
-            "units":""
-        },
         "lai":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Leaf Area Index",
@@ -577,8 +447,8 @@
             "valid_min":""
         },
         "landCoverFrac":{
-            "cell_measures":"time: mean",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean",
             "comment":"Percentage of grid cell area occupied by different model vegetation/land cover categories. The categories may differ from model to model, depending on each model's subgrid land cover category definitions. Categories may include natural vegetation, anthropogenic vegetation, bare soil, lakes, urban areas, glaciers, etc. Sum of all should equal the fraction of the grid-cell that is land.",
             "dimensions":"longitude latitude vegtype time",
             "long_name":"Plant Functional Type Grid Fraction",
@@ -593,24 +463,24 @@
             "valid_min":""
         },
         "mrfso":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"The mass per unit area (summed over all model layers) of frozen water.",
             "dimensions":"longitude latitude time",
             "long_name":"Soil Frozen Water Content",
-            "ok_max_mean_abs":"940.3",
-            "ok_min_mean_abs":"-419",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
             "out_name":"mrfso",
             "positive":"",
             "standard_name":"soil_frozen_water_content",
             "type":"real",
             "units":"kg m-2",
-            "valid_max":"5763",
-            "valid_min":"0"
+            "valid_max":"",
+            "valid_min":""
         },
         "mrlsl":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"The mass of water in all phases, including ice, in soil layers.  Report as missing for grid cells with no land.",
             "dimensions":"longitude latitude sdepth time",
             "long_name":"Water Content of Soil Layer",
@@ -625,72 +495,72 @@
             "valid_min":""
         },
         "mrro":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"The total run-off (including drainage through the base of the soil model) per unit area leaving the land portion of the grid cell.",
             "dimensions":"longitude latitude time",
             "long_name":"Total Runoff",
-            "ok_max_mean_abs":"1.874e-05",
-            "ok_min_mean_abs":"-6.668e-06",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
             "out_name":"mrro",
             "positive":"",
             "standard_name":"runoff_flux",
             "type":"real",
             "units":"kg m-2 s-1",
-            "valid_max":"0.001065",
-            "valid_min":"-0.0002019"
+            "valid_max":"",
+            "valid_min":""
         },
         "mrros":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"The total surface run off leaving the land portion of the grid cell (excluding drainage through the base of the soil model).",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Runoff",
-            "ok_max_mean_abs":"1.302e-05",
-            "ok_min_mean_abs":"-5.867e-06",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
             "out_name":"mrros",
             "positive":"",
             "standard_name":"surface_runoff_flux",
             "type":"real",
             "units":"kg m-2 s-1",
-            "valid_max":"0.0009825",
-            "valid_min":"-6.802e-06"
+            "valid_max":"",
+            "valid_min":""
         },
         "mrso":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"the mass per unit area  (summed over all soil layers) of water in all phases.",
             "dimensions":"longitude latitude time",
             "long_name":"Total Soil Moisture Content",
-            "ok_max_mean_abs":"3038",
-            "ok_min_mean_abs":"-1424",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
             "out_name":"mrso",
             "positive":"",
             "standard_name":"soil_moisture_content",
             "type":"real",
             "units":"kg m-2",
-            "valid_max":"5717",
-            "valid_min":"-64.17"
+            "valid_max":"",
+            "valid_min":""
         },
         "mrsos":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"The mass of water in all phases in the upper 10cm of the  soil layer.",
             "dimensions":"longitude latitude time sdepth1",
             "long_name":"Moisture in Upper Portion of Soil Column",
-            "ok_max_mean_abs":"123.3",
-            "ok_min_mean_abs":"-35.89",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
             "out_name":"mrsos",
             "positive":"",
             "standard_name":"moisture_content_of_soil_layer",
             "type":"real",
             "units":"kg m-2",
-            "valid_max":"146.5",
-            "valid_min":"-2.008"
+            "valid_max":"",
+            "valid_min":""
         },
         "nbp":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"This is the net mass flux of carbon from atmosphere into land, calculated as photosynthesis MINUS the sum of  plant and soil respiration, carbon fluxes from fire, harvest, grazing  and land use change. Positive flux is into the land.",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass Flux out of Atmosphere due to Net Biospheric Production on Land",
@@ -704,25 +574,9 @@
             "valid_max":"",
             "valid_min":""
         },
-        "nep":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
-            "comment":"Natural flux of CO2 (expressed as a mass flux of carbon) from the atmosphere to the land calculated as the difference between uptake associated will photosynthesis and the release of CO2 from the sum of plant and soil respiration and fire.  Positive flux is into the land.  emissions from natural fires and human ignition fires as calculated by the fire module of the dynamic vegetation model, but excluding any CO2 flux from fire included in fLuc (CO2 Flux to Atmosphere from Land Use Change).",
-            "dimensions":"longitude latitude time",
-            "long_name":"Net Carbon Mass Flux out of Atmophere due to Net Ecosystem Productivity on Land.",
-            "ok_max_mean_abs":"",
-            "ok_min_mean_abs":"",
-            "out_name":"nep",
-            "positive":"down",
-            "standard_name":"surface_net_downward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_all_land_processes_excluding_anthropogenic_land_use_change",
-            "type":"real",
-            "units":"kg m-2 s-1",
-            "valid_max":"",
-            "valid_min":""
-        },
         "npp":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass Flux out of Atmosphere due to Net Primary Production on Land",
@@ -737,8 +591,8 @@
             "valid_min":""
         },
         "nppLeaf":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"This is the rate of carbon uptake by leaves due to NPP",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass Flux due to NPP Allocation to Leaf",
@@ -753,8 +607,8 @@
             "valid_min":""
         },
         "nppRoot":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"This is the rate of carbon uptake by roots due to NPP",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass Flux due to NPP Allocation to Roots",
@@ -769,8 +623,8 @@
             "valid_min":""
         },
         "nppWood":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"This is the rate of carbon uptake by wood due to NPP",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass Flux due to NPP Allocation to Wood",
@@ -784,27 +638,9 @@
             "valid_max":"",
             "valid_min":""
         },
-        "nsigma":{
-            "dimensions":"",
-            "long_name":"vertical coordinate formula term: nsigma",
-            "type":"integer",
-            "units":""
-        },
-        "orog":{
-            "dimensions":"longitude latitude",
-            "long_name":"Surface Altitude",
-            "type":"real",
-            "units":"m"
-        },
-        "p0":{
-            "dimensions":"",
-            "long_name":"vertical coordinate formula term: reference pressure",
-            "type":"",
-            "units":"Pa"
-        },
         "pastureFrac":{
-            "cell_measures":"time: mean",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean",
             "comment":"Percentage of entire grid cell  that is covered by anthropogenic pasture.",
             "dimensions":"longitude latitude time",
             "long_name":"Anthropogenic Pasture Fraction",
@@ -819,8 +655,8 @@
             "valid_min":""
         },
         "prveg":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"The precipitation flux that is intercepted by the vegetation canopy (if present in model) before reaching the ground.",
             "dimensions":"longitude latitude time",
             "long_name":"Precipitation onto Canopy",
@@ -834,21 +670,9 @@
             "valid_max":"",
             "valid_min":""
         },
-        "ps":{
-            "dimensions":"longitude latitude time",
-            "long_name":"Surface Air Pressure",
-            "type":"real",
-            "units":"Pa"
-        },
-        "ptop":{
-            "dimensions":"",
-            "long_name":"pressure at top of model",
-            "type":"",
-            "units":"Pa"
-        },
         "rGrowth":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass Flux into Atmosphere due to Growth Autotrophic Respiration on Land",
@@ -863,8 +687,8 @@
             "valid_min":""
         },
         "rMaint":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass Flux into Atmosphere due to Maintenance Autotrophic Respiration on Land",
@@ -879,8 +703,8 @@
             "valid_min":""
         },
         "ra":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"Carbon mass flux per unit area into atmosphere due to autotrophic respiration on land (respiration by producers) [see rh for heterotrophic production] ",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass Flux into Atmosphere due to Autotrophic (Plant) Respiration on Land",
@@ -895,8 +719,8 @@
             "valid_min":""
         },
         "residualFrac":{
-            "cell_measures":"time: mean",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean",
             "comment":"Percentage of entire grid cell  that is land and is covered by  neither vegetation nor bare-soil (e.g., urban, ice, lakes, etc.)",
             "dimensions":"longitude latitude time",
             "long_name":"Fraction of Grid Cell that is Land but Neither Vegetation-Covered nor Bare Soil",
@@ -911,8 +735,8 @@
             "valid_min":""
         },
         "rh":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"Carbon mass flux per unit area into atmosphere due to heterotrophic respiration on land (respiration by consumers)",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass Flux into Atmosphere due to Heterotrophic Respiration on Land",
@@ -927,8 +751,8 @@
             "valid_min":""
         },
         "shrubFrac":{
-            "cell_measures":"time: mean",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean",
             "comment":"Percentage of entire grid cell  that is covered by shrub.",
             "dimensions":"longitude latitude time",
             "long_name":"Shrub Fraction",
@@ -942,21 +766,9 @@
             "valid_max":"",
             "valid_min":""
         },
-        "sigma":{
-            "dimensions":"olevel",
-            "long_name":"vertical coordinate formula term: sigma(k)",
-            "type":"double",
-            "units":""
-        },
-        "sigma_bnds":{
-            "dimensions":"olevel",
-            "long_name":"vertical coordinate formula term: sigma(k+1/2)",
-            "type":"double",
-            "units":""
-        },
         "tran":{
-            "cell_measures":"time: mean area: mean where land",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"Transpiration (may include dew formation as a negative flux).",
             "dimensions":"longitude latitude time",
             "long_name":"Transpiration",
@@ -971,8 +783,8 @@
             "valid_min":""
         },
         "treeFrac":{
-            "cell_measures":"time: mean",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean",
             "comment":"Percentage of entire grid cell  that is covered by trees.",
             "dimensions":"longitude latitude time",
             "long_name":"Tree Cover Fraction",
@@ -987,8 +799,8 @@
             "valid_min":""
         },
         "treeFracPrimDec":{
-            "cell_measures":"time: mean",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean",
             "comment":"Percentage of the entire grid cell  that is covered by total primary deciduous trees.",
             "dimensions":"longitude latitude time typepdec",
             "long_name":"Total Primary Deciduous Tree Fraction",
@@ -1003,8 +815,8 @@
             "valid_min":""
         },
         "treeFracPrimEver":{
-            "cell_measures":"time: mean",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean",
             "comment":"Percentage of entire grid cell  that is covered by primary evergreen trees.",
             "dimensions":"longitude latitude time typepever",
             "long_name":"Total Primary Evergreen Tree Cover Fraction",
@@ -1019,8 +831,8 @@
             "valid_min":""
         },
         "treeFracSecDec":{
-            "cell_measures":"time: mean",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean",
             "comment":"Percentage of entire grid cell  that is covered by secondary deciduous trees.",
             "dimensions":"longitude latitude time typesdec",
             "long_name":"Total Secondary Deciduous Tree Cover Fraction",
@@ -1035,8 +847,8 @@
             "valid_min":""
         },
         "treeFracSecEver":{
-            "cell_measures":"time: mean",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean",
             "comment":"Percentage of entire grid cell  that is covered by secondary evergreen trees.",
             "dimensions":"longitude latitude time typesever",
             "long_name":"Total Secondary Evergreen Tree Cover Fraction",
@@ -1051,8 +863,8 @@
             "valid_min":""
         },
         "tsl":{
-            "cell_measures":"time: mean",
-            "cell_methods":"area: areacella",
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean",
             "comment":"Temperature of each soil layer. Reported as missing for grid cells with no land.",
             "dimensions":"longitude latitude sdepth time",
             "long_name":"Temperature of Soil",
@@ -1065,36 +877,6 @@
             "units":"K",
             "valid_max":"",
             "valid_min":""
-        },
-        "z1":{
-            "dimensions":"",
-            "long_name":"vertical coordinate formula term: z1",
-            "type":"double",
-            "units":""
-        },
-        "z2":{
-            "dimensions":"",
-            "long_name":"vertical coordinate formula term: z2",
-            "type":"double",
-            "units":""
-        },
-        "zlev":{
-            "dimensions":"olevel",
-            "long_name":"vertical coordinate formula term: zlev(k)",
-            "type":"double",
-            "units":""
-        },
-        "zlev_bnds":{
-            "dimensions":"olevel",
-            "long_name":"vertical coordinate formula term: zlev(k+1/2)",
-            "type":"double",
-            "units":""
-        },
-        "ztop":{
-            "dimensions":"",
-            "long_name":"height of top of model",
-            "type":"",
-            "units":"m"
         }
     }
 }

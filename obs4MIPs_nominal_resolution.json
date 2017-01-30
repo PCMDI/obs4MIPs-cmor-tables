@@ -1,10 +1,13 @@
 {
-    "grid_resolution":[
+    "nominal_resolution":[
+        "0.5 km",
+        "1 km",
         "10 km",
         "100 km",
         "1000 km",
         "10000 km",
         "1x1 degree",
+        "2.5 km",
         "25 km",
         "250 km",
         "2500 km",
