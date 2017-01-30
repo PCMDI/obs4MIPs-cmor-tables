@@ -26,6 +26,7 @@ PJD 27 Sep 2016     - Correct RSS zip
 PJD 28 Sep 2016     - Correct missing 'generic_levels' in Amon table
 PJD 29 Sep 2016     - Added ttbr (NOAA-NCEI; Jim Baird [JimBiardCics]) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/14
 PJD 30 Jan 2017     - Updated to latest cmip6-cmor-tables and CMIP6_CVs
+PJD 30 Jan 2017     - Remove header from coordinate
                     - TODO:
 
 @author: durack1
@@ -96,11 +97,8 @@ for count2,table in enumerate(tableSource):
     tableName = table[0]
     print 'tableName:',tableName
     #print eval(tableName)
-    if tableName in ['frequency','grid_label','nominal_resolution']:
+    if tableName in ['coordinate','frequency','grid_label','nominal_resolution']:
         continue
-    elif tableName in ['coordinate']:
-        eval(tableName)['Header'] = {}
-        eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
     else:
         eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
 
