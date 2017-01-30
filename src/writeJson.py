@@ -36,9 +36,9 @@ import gc,json,os,ssl,time
 from durolib import readJsonCreateDict
 
 #%% Determine path
-#homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
-#homePath = '/export/durack1/git/obs4MIPs-cmor-tables/'
-homePath = '/sync/git/obs4MIPs-cmor-tables/src'
+homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
+#homePath = '/export/durack1/git/obs4MIPs-cmor-tables/' ; # Linux
+#homePath = '/sync/git/obs4MIPs-cmor-tables/src' ; # OS-X
 os.chdir(homePath)
 
 #%% Create urllib2 context to deal with lab/LLNL web certificates
@@ -85,13 +85,9 @@ tableSource = [
 tmp = readJsonCreateDict(tableSource)
 for count,table in enumerate(tmp.keys()):
     print 'table:', table
-    #if 'CMIP6_CVs' in tableSource[count][1]:
     if table in ['frequency','grid_label','nominal_resolution']:
-        print 'CMIP6_CVs:',table
-        print 'CMIP6_CVs:',tableSource[count][1]
         vars()[table] = tmp[table].get(table)
     else:
-        print 'else',table
         vars()[table] = tmp[table]
 del(tmp,count,table) ; gc.collect()
 
@@ -99,15 +95,13 @@ del(tmp,count,table) ; gc.collect()
 for count2,table in enumerate(tableSource):
     tableName = table[0]
     print 'tableName:',tableName
-    print eval(tableName)
+    #print eval(tableName)
     if tableName in ['frequency','grid_label','nominal_resolution']:
-        #eval(tableName).pop('version_metadata')
         continue
     elif tableName in ['coordinate']:
         eval(tableName)['Header'] = {}
         eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
     else:
-        #eval(tableName).pop('axis_entry')
         eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
 
 # Cleanup realms
@@ -148,28 +142,10 @@ Amon['variable_entry']['ttbr']['valid_min'] = '140.0'
 #%% Coordinate
 
 #%% Frequencies
-#frequency = ['3hr', '3hrClim', '6hr', 'day', 'decadal', 'fx', 'mon', 'monClim', 'subhr', 'yr'] ;
 
 #%% Grid
 
 #%% Grid labels
-#grid_label = ['gn', 'gr', 'gr1', 'gr2', 'gr3', 'gr4', 'gr5', 'gr6', 'gr7', 'gr8', 'gr9'] ;
-
-#%% Grid resolutions
-#grid_resolution = [
-# '10 km',
-# '100 km',
-# '1000 km',
-# '10000 km',
-# '1x1 degree',
-# '25 km',
-# '250 km',
-# '2500 km',
-# '5 km',
-# '50 km',
-# '500 km',
-# '5000 km'
-# ] ;
 
 #%% Institutions
 tmp = [['institution_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/obs4MIPs_institution_id.json']
@@ -183,8 +159,10 @@ institution_id = institution_id.get('institution_id')
 #institution_id['institution_id']['NOAA-NCEI'] = 'NOAA\'s National Centers for Environmental Information, Asheville, NC 28801, USA'
 #institution_id['institution_id']['RSS'] = 'Remote Sensing Systems, Santa Rosa, CA 95401, USA'
 
- #%% Product
+#%% Mip era
 mip_era = ['CMIP6'] ;
+
+#%% Nominal resolution
 
 #%% Product
 product = [
