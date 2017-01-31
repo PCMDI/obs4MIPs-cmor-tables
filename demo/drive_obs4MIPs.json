@@ -7,8 +7,8 @@
     "dataset_version_number":       "1.1.0",
     "frequency":                    "mon",
     "grid":                         "1x1 degree latitude x longitude",
-    "grid_label":                   "gs1x1 gr",
-    "grid_resolution":              "1x1 degree",
+    "grid_label":                   "gn",
+    "nominal_resolution":           "1x1 degree",
     "product":                      "composite",
     "realm":                        "ocean",
 

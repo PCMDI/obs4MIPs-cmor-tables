@@ -1,0 +1,142 @@
+{
+    "variable_entry":{
+        "a":{
+            "dimensions":"alevel",
+            "long_name":"vertical coordinate formula term: a(k)",
+            "type":"double",
+            "units":""
+        },
+        "a_bnds":{
+            "dimensions":"alevel",
+            "long_name":"vertical coordinate formula term: a(k+1/2)",
+            "type":"double",
+            "units":""
+        },
+        "ap":{
+            "dimensions":"alevel",
+            "long_name":"vertical coordinate formula term: ap(k)",
+            "type":"double",
+            "units":"Pa"
+        },
+        "ap_bnds":{
+            "dimensions":"alevel",
+            "long_name":"vertical coordinate formula term: ap(k+1/2)",
+            "type":"double",
+            "units":"Pa"
+        },
+        "b":{
+            "dimensions":"alevel",
+            "long_name":"vertical coordinate formula term: b(k)",
+            "type":"double",
+            "units":""
+        },
+        "b_bnds":{
+            "dimensions":"alevel",
+            "long_name":"vertical coordinate formula term: b(k+1/2)",
+            "type":"double",
+            "units":""
+        },
+        "depth":{
+            "dimensions":"longitude latitude",
+            "long_name":"Sea Floor Depth: formula term: thetao",
+            "type":"real",
+            "units":"m"
+        },
+        "depth_c":{
+            "dimensions":"",
+            "long_name":"vertical coordinate formula term: depth_c",
+            "type":"double",
+            "units":""
+        },
+        "eta":{
+            "dimensions":"longitude latitude time",
+            "long_name":"Sea Surface Height formula term: thetao",
+            "type":"real",
+            "units":"m"
+        },
+        "href":{
+            "dimensions":"",
+            "long_name":"vertical coordinate formula term: href",
+            "type":"double",
+            "units":""
+        },
+        "k_c":{
+            "dimensions":"",
+            "long_name":"vertical coordinate formula term: k_c",
+            "type":"integer",
+            "units":""
+        },
+        "nsigma":{
+            "dimensions":"",
+            "long_name":"vertical coordinate formula term: nsigma",
+            "type":"integer",
+            "units":""
+        },
+        "orog":{
+            "dimensions":"longitude latitude",
+            "long_name":"Surface Altitude",
+            "type":"real",
+            "units":"m"
+        },
+        "p0":{
+            "dimensions":"",
+            "long_name":"vertical coordinate formula term: reference pressure",
+            "type":"",
+            "units":"Pa"
+        },
+        "ps":{
+            "dimensions":"longitude latitude time",
+            "long_name":"Surface Air Pressure",
+            "type":"real",
+            "units":"Pa"
+        },
+        "ptop":{
+            "dimensions":"",
+            "long_name":"pressure at top of model",
+            "type":"",
+            "units":"Pa"
+        },
+        "sigma":{
+            "dimensions":"olevel",
+            "long_name":"vertical coordinate formula term: sigma(k)",
+            "type":"double",
+            "units":""
+        },
+        "sigma_bnds":{
+            "dimensions":"olevel",
+            "long_name":"vertical coordinate formula term: sigma(k+1/2)",
+            "type":"double",
+            "units":""
+        },
+        "z1":{
+            "dimensions":"",
+            "long_name":"vertical coordinate formula term: z1",
+            "type":"double",
+            "units":""
+        },
+        "z2":{
+            "dimensions":"",
+            "long_name":"vertical coordinate formula term: z2",
+            "type":"double",
+            "units":""
+        },
+        "zlev":{
+            "dimensions":"olevel",
+            "long_name":"vertical coordinate formula term: zlev(k)",
+            "type":"double",
+            "units":""
+        },
+        "zlev_bnds":{
+            "dimensions":"olevel",
+            "long_name":"vertical coordinate formula term: zlev(k+1/2)",
+            "type":"double",
+            "units":""
+        },
+        "ztop":{
+            "dimensions":"",
+            "long_name":"height of top of model",
+            "type":"",
+            "units":"m"
+        }
+    }
+}
