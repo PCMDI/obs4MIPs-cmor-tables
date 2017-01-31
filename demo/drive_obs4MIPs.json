@@ -6,7 +6,7 @@
     "data_structure":               "grid",
     "dataset_version_number":       "1.1.0",
     "frequency":                    "mon",
-    "grid":                         "1x1 degree latitude x longitude",
+    "grids":                        "1x1 degree latitude x longitude",
     "grid_label":                   "gn",
     "nominal_resolution":           "1x1 degree",
     "product":                      "composite",
