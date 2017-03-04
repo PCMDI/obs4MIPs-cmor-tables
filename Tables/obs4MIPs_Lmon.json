@@ -574,6 +574,22 @@
             "valid_max":"",
             "valid_min":""
         },
+        "ndvi":{
+            "cell_measures":"time: mean area: mean where land",
+            "cell_methods":"area: areacella",
+            "comment":"",
+            "dimensions":"longitude latitude time",
+            "long_name":"Normalized Difference Vegetation Index",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"ndvi",
+            "positive":"",
+            "standard_name":"normalized_difference_vegetation_index",
+            "type":"real",
+            "units":"1",
+            "valid_max":"1.0",
+            "valid_min":"-0.1"
+        },
         "npp":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: mean where land time: mean",

@@ -28,6 +28,7 @@ PJD 29 Sep 2016     - Added ttbr (NOAA-NCEI; Jim Baird [JimBiardCics]) https://g
 PJD 30 Jan 2017     - Updated to latest cmip6-cmor-tables and CMIP6_CVs
 PJD 30 Jan 2017     - Remove header from coordinate
 PJD  3 Mar 2017     - Fixed issue with 'grids' subdict in obs4MIPs_grids.json https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/22
+PJD  3 Mar 2017     - Add ndvi to LMon table https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/16
                     - TODO:
 
 @author: durack1
@@ -139,6 +140,22 @@ Amon['variable_entry']['ttbr']['type'] = 'real'
 Amon['variable_entry']['ttbr']['units'] = 'K'
 Amon['variable_entry']['ttbr']['valid_max'] = '375.0'
 Amon['variable_entry']['ttbr']['valid_min'] = '140.0'
+# Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics)
+Lmon['variable_entry'][u'ndvi'] = {}
+Lmon['variable_entry']['ndvi']['cell_measures'] = 'time: mean area: mean where land'
+Lmon['variable_entry']['ndvi']['cell_methods'] = 'area: areacella'
+Lmon['variable_entry']['ndvi']['comment'] = ''
+Lmon['variable_entry']['ndvi']['dimensions'] = 'longitude latitude time'
+Lmon['variable_entry']['ndvi']['long_name'] = 'Normalized Difference Vegetation Index'
+Lmon['variable_entry']['ndvi']['ok_max_mean_abs'] = ''
+Lmon['variable_entry']['ndvi']['ok_min_mean_abs'] = ''
+Lmon['variable_entry']['ndvi']['out_name'] = 'ndvi'
+Lmon['variable_entry']['ndvi']['positive'] = ''
+Lmon['variable_entry']['ndvi']['standard_name'] = 'normalized_difference_vegetation_index'
+Lmon['variable_entry']['ndvi']['type'] = 'real'
+Lmon['variable_entry']['ndvi']['units'] = '1'
+Lmon['variable_entry']['ndvi']['valid_max'] = '1.0'
+Lmon['variable_entry']['ndvi']['valid_min'] = '-0.1'
 
 #%% Coordinate
 
