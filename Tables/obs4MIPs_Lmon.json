@@ -3,14 +3,14 @@
         "Conventions":"CF-1.6 CMIP-6.0",
         "approx_interval":"30.00000",
         "cmor_version":"3.2",
-        "data_specs_version":"01.00.00",
+        "data_specs_version":"01.00.03",
         "frequency":"mon",
         "generic_levels":"",
         "mip_era":"CMIP6",
         "missing_value":"1e20",
         "product":"output",
         "realm":"land",
-        "table_date":"30 January 2017",
+        "table_date":"03 March 2017",
         "table_id":"Table Lmon"
     },
     "variable_entry":{
