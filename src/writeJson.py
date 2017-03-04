@@ -27,6 +27,7 @@ PJD 28 Sep 2016     - Correct missing 'generic_levels' in Amon table
 PJD 29 Sep 2016     - Added ttbr (NOAA-NCEI; Jim Baird [JimBiardCics]) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/14
 PJD 30 Jan 2017     - Updated to latest cmip6-cmor-tables and CMIP6_CVs
 PJD 30 Jan 2017     - Remove header from coordinate
+PJD  3 Mar 2017     - Fixed issue with 'grids' subdict in obs4MIPs_grids.json https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/22
                     - TODO:
 
 @author: durack1
@@ -101,6 +102,8 @@ for count2,table in enumerate(tableSource):
         continue
     else:
         eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
+        if 'baseURL' in eval(tableName)['Header'].keys():
+            del(eval(tableName)['Header']['baseURL']) ; # Remove spurious entry
 
 # Cleanup realms
 Amon['Header']['realm']     = 'atmos'
@@ -239,7 +242,7 @@ for jsonName in masterTargets:
     if not os.path.exists('../Tables'):
         os.mkdir('../Tables')
     # Create host dictionary
-    if jsonName not in ['coordinate','fx','grid','institution_id','Amon','Lmon','Omon','SImon']:
+    if jsonName not in ['coordinate','fx','grids','institution_id','Amon','Lmon','Omon','SImon']:
         jsonDict = {}
         jsonDict[jsonName] = eval(jsonName)
     else:
