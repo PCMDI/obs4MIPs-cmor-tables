@@ -398,6 +398,22 @@
             "valid_max":"",
             "valid_min":""
         },
+        "fapar":{
+            "cell_measures":"time: mean area: mean where land",
+            "cell_methods":"area: areacella",
+            "comment":"The fraction of incoming solar radiation in the photosynthetically active radiation spectral region that is absorbed by a vegetation canopy.",
+            "dimensions":"longitude latitude time",
+            "long_name":"Fraction of Absorbed Photosynthetically Active Radiation",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"fapar",
+            "positive":"",
+            "standard_name":"fraction_of_surface_downwelling_photosynthetic_radiative_flux_absorbed_by_vegetation",
+            "type":"real",
+            "units":"1",
+            "valid_max":"1.0",
+            "valid_min":"0.0"
+        },
         "gpp":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: mean where land time: mean",

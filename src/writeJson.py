@@ -29,6 +29,7 @@ PJD 30 Jan 2017     - Updated to latest cmip6-cmor-tables and CMIP6_CVs
 PJD 30 Jan 2017     - Remove header from coordinate
 PJD  3 Mar 2017     - Fixed issue with 'grids' subdict in obs4MIPs_grids.json https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/22
 PJD  3 Mar 2017     - Add ndvi to LMon table https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/16
+PJD  3 Mar 2017     - Add fapar to LMon table https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/15
                     - TODO:
 
 @author: durack1
@@ -140,7 +141,7 @@ Amon['variable_entry']['ttbr']['type'] = 'real'
 Amon['variable_entry']['ttbr']['units'] = 'K'
 Amon['variable_entry']['ttbr']['valid_max'] = '375.0'
 Amon['variable_entry']['ttbr']['valid_min'] = '140.0'
-# Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics)
+# Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/16
 Lmon['variable_entry'][u'ndvi'] = {}
 Lmon['variable_entry']['ndvi']['cell_measures'] = 'time: mean area: mean where land'
 Lmon['variable_entry']['ndvi']['cell_methods'] = 'area: areacella'
@@ -156,6 +157,22 @@ Lmon['variable_entry']['ndvi']['type'] = 'real'
 Lmon['variable_entry']['ndvi']['units'] = '1'
 Lmon['variable_entry']['ndvi']['valid_max'] = '1.0'
 Lmon['variable_entry']['ndvi']['valid_min'] = '-0.1'
+# Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/15
+Lmon['variable_entry'][u'fapar'] = {}
+Lmon['variable_entry']['fapar']['cell_measures'] = 'time: mean area: mean where land'
+Lmon['variable_entry']['fapar']['cell_methods'] = 'area: areacella'
+Lmon['variable_entry']['fapar']['comment'] = 'The fraction of incoming solar radiation in the photosynthetically active radiation spectral region that is absorbed by a vegetation canopy.'
+Lmon['variable_entry']['fapar']['dimensions'] = 'longitude latitude time'
+Lmon['variable_entry']['fapar']['long_name'] = 'Fraction of Absorbed Photosynthetically Active Radiation'
+Lmon['variable_entry']['fapar']['ok_max_mean_abs'] = ''
+Lmon['variable_entry']['fapar']['ok_min_mean_abs'] = ''
+Lmon['variable_entry']['fapar']['out_name'] = 'fapar'
+Lmon['variable_entry']['fapar']['positive'] = ''
+Lmon['variable_entry']['fapar']['standard_name'] = 'fraction_of_surface_downwelling_photosynthetic_radiative_flux_absorbed_by_vegetation'
+Lmon['variable_entry']['fapar']['type'] = 'real'
+Lmon['variable_entry']['fapar']['units'] = '1'
+Lmon['variable_entry']['fapar']['valid_max'] = '1.0'
+Lmon['variable_entry']['fapar']['valid_min'] = '0.0'
 
 #%% Coordinate
 
