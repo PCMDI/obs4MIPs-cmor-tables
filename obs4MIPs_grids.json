@@ -2,10 +2,10 @@
     "Header":{
         "Conventions":"CF-1.6 CMIP-6.0",
         "cmor_version":"3.2",
-        "data_specs_version":"01.00.03",
+        "data_specs_version":"01.00.04",
         "missing_value":"1e20",
         "product":"output",
-        "table_date":"03 March 2017",
+        "table_date":"29 March 2017",
         "table_id":"Table grids"
     },
     "axis_entry":{
