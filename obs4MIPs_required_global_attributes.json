@@ -6,7 +6,7 @@
         "dataset_version_number",
         "further_info_url",
         "frequency",
-        "grids",
+        "grid",
         "grid_label",
         "institution_id",
         "license",

@@ -3,14 +3,14 @@
         "Conventions":"CF-1.6 CMIP-6.0",
         "approx_interval":"30.00000",
         "cmor_version":"3.2",
-        "data_specs_version":"01.00.03",
+        "data_specs_version":"01.00.04",
         "frequency":"mon",
-        "generic_levels":"olevel olevelh",
+        "generic_levels":"olevel",
         "mip_era":"CMIP6",
         "missing_value":"1e20",
         "product":"output",
         "realm":"ocean",
-        "table_date":"03 March 2017",
+        "table_date":"29 March 2017",
         "table_id":"Table Omon"
     },
     "variable_entry":{
@@ -2624,7 +2624,7 @@
         },
         "mlotstmin":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: point",
+            "cell_methods":"time: minimum",
             "comment":"Sigma T is potential density referenced to ocean surface.",
             "dimensions":"longitude latitude time",
             "long_name":"Minimum Ocean Mixed Layer Thickness Defined by Sigma T",

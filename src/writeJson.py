@@ -30,6 +30,7 @@ PJD 30 Jan 2017     - Remove header from coordinate
 PJD  3 Mar 2017     - Fixed issue with 'grids' subdict in obs4MIPs_grids.json https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/22
 PJD  3 Mar 2017     - Add ndvi to LMon table https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/16
 PJD  3 Mar 2017     - Add fapar to LMon table https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/15
+PJD 29 Mar 2017     - Correct required_global_attribute grids -> grid
                     - TODO:
 
 @author: durack1
@@ -228,7 +229,7 @@ required_global_attributes = [
  'dataset_version_number',
  'further_info_url',
  'frequency',
- 'grids',
+ 'grid',
  'grid_label',
  'institution_id',
  'license',
