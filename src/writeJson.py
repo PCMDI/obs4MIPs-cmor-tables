@@ -118,7 +118,7 @@ Lmon['Header']['realm']     = 'land'
 Omon['Header']['realm']     = 'ocean'
 SImon['Header']['realm']    = 'seaIce'
 fx['Header']['realm']       = 'fx'
-#Aday['Header']['realm']     = 'atmos'
+Aday['Header']['table_id']  = 'Table Aday' ; # Cleanup from upstream
 
 # Clean out modeling_realm
 for jsonName in ['Amon','Lmon','Omon','SImon']:  #,'Aday']:
@@ -226,9 +226,77 @@ realm = [
  'seaIce'
  ] ;
 
-#%% Regions (taken from http://cfconventions.org/Data/cf-standard-names/docs/standardized-region-names.html) 
-region = ['africa', 'antarctica', 'arabian_sea', 'aral_sea', 'arctic_ocean', 'asia', 'atlantic_ocean', 'australia', 'baltic_sea', 'barents_opening', 'barents_sea', 'beaufort_sea', 'bellingshausen_sea', 'bering_sea', 'bering_strait', 'black_sea', 'canadian_archipelago', 'caribbean_sea', 'caspian_sea', 'central_america', 'chukchi_sea', 'contiguous_united_states', 'denmark_strait', 'drake_passage', 'east_china_sea', 'english_channel', 'eurasia', 'europe', 'faroe_scotland_channel', 'florida_bahamas_strait', 'fram_strait', 'global', 'global_land', 'global_ocean', 'great_lakes', 'greenland', 'gulf_of_alaska', 'gulf_of_mexico', 'hudson_bay', 'iceland_faroe_channel', 'indian_ocean', 'indonesian_throughflow', 'indo_pacific_ocean', 'irish_sea', 'lake_baykal', 'lake_chad', 'lake_malawi', 'lake_tanganyika', 'lake_victoria', 'mediterranean_sea', 'mozambique_channel', 'north_america', 'north_sea', 'norwegian_sea', 'pacific_equatorial_undercurrent', 'pacific_ocean', 'persian_gulf', 'red_sea', 'ross_sea', 'sea_of_japan', 'sea_of_okhotsk', 'south_america', 'south_china_sea', 'southern_ocean', 'taiwan_luzon_straits', 'weddell_sea', 'windward_passage', 'yellow_sea']
-
+#%% Regions (taken from http://cfconventions.org/Data/cf-standard-names/docs/standardized-region-names.html)
+region = [
+ 'africa',
+ 'antarctica',
+ 'arabian_sea',
+ 'aral_sea',
+ 'arctic_ocean',
+ 'asia',
+ 'atlantic_ocean',
+ 'australia',
+ 'baltic_sea',
+ 'barents_opening',
+ 'barents_sea',
+ 'beaufort_sea',
+ 'bellingshausen_sea',
+ 'bering_sea',
+ 'bering_strait',
+ 'black_sea',
+ 'canadian_archipelago',
+ 'caribbean_sea',
+ 'caspian_sea',
+ 'central_america',
+ 'chukchi_sea',
+ 'contiguous_united_states',
+ 'denmark_strait',
+ 'drake_passage',
+ 'east_china_sea',
+ 'english_channel',
+ 'eurasia',
+ 'europe',
+ 'faroe_scotland_channel',
+ 'florida_bahamas_strait',
+ 'fram_strait',
+ 'global',
+ 'global_land',
+ 'global_ocean',
+ 'great_lakes',
+ 'greenland',
+ 'gulf_of_alaska',
+ 'gulf_of_mexico',
+ 'hudson_bay',
+ 'iceland_faroe_channel',
+ 'indian_ocean',
+ 'indo_pacific_ocean',
+ 'indonesian_throughflow',
+ 'irish_sea',
+ 'lake_baykal',
+ 'lake_chad',
+ 'lake_malawi',
+ 'lake_tanganyika',
+ 'lake_victoria',
+ 'mediterranean_sea',
+ 'mozambique_channel',
+ 'north_america',
+ 'north_sea',
+ 'norwegian_sea',
+ 'pacific_equatorial_undercurrent',
+ 'pacific_ocean',
+ 'persian_gulf',
+ 'red_sea',
+ 'ross_sea',
+ 'sea_of_japan',
+ 'sea_of_okhotsk',
+ 'south_america',
+ 'south_china_sea',
+ 'southern_ocean',
+ 'taiwan_luzon_straits',
+ 'weddell_sea',
+ 'windward_passage',
+ 'yellow_sea'
+ ]
 
 #%% Required global attributes
 required_global_attributes = [
@@ -254,7 +322,7 @@ required_global_attributes = [
  ];
 
 #%% Table IDs
-table_id = ['Amon', 'Lmon', 'Omon', 'SImon', 'fx','Aday'] ;
+table_id = ['Amon', 'Lmon', 'Omon', 'SImon', 'fx', 'Aday'] ;
 
 #%% Write variables to files
 for jsonName in masterTargets:
@@ -270,9 +338,9 @@ for jsonName in masterTargets:
                     string = string.replace(' + ',' and ')  ; # Replace +
                     string = string.replace(' & ',' and ')  ; # Replace +
                     string = string.replace('   ',' ') ; # Replace '  ', '   '
+                    string = string.replace('  ',' ') ; # Replace '  ', '   '
                     string = string.replace('anthro ','anthropogenic ') ; # Replace anthro
                     string = string.replace('decidous','deciduous') ; # Replace decidous
-                    string = string.replace('  ',' ') ; # Replace '  ', '   '
                 dictToClean[key][value2[0]] = string
         vars()[jsonName] = dictToClean
     # Write file
