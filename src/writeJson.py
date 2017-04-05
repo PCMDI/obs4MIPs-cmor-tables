@@ -296,7 +296,7 @@ region = [
  'weddell_sea',
  'windward_passage',
  'yellow_sea'
- ]
+ ] ;
 
 #%% Required global attributes
 required_global_attributes = [
@@ -319,10 +319,10 @@ required_global_attributes = [
  'table_id',
  'tracking_id',
  'variable_id'
- ];
+ ] ;
 
 #%% Table IDs
-table_id = ['Amon', 'Lmon', 'Omon', 'SImon', 'fx', 'Aday'] ;
+table_id = ['Aday', 'Amon', 'Lmon', 'Omon', 'SImon', 'fx'] ;
 
 #%% Write variables to files
 for jsonName in masterTargets:
@@ -344,7 +344,7 @@ for jsonName in masterTargets:
                 dictToClean[key][value2[0]] = string
         vars()[jsonName] = dictToClean
     # Write file
-    if jsonName in ['Amon','Lmon','Omon','SImon','fx','Aday']:
+    if jsonName in ['Aday', 'Amon', 'Lmon', 'Omon', 'SImon', 'fx']:
         outFile = ''.join(['../Tables/obs4MIPs_',jsonName,'.json'])
     else:
         outFile = ''.join(['../obs4MIPs_',jsonName,'.json'])
@@ -355,7 +355,7 @@ for jsonName in masterTargets:
     if not os.path.exists('../Tables'):
         os.mkdir('../Tables')
     # Create host dictionary
-    if jsonName not in ['coordinate','fx','grids','institution_id','Amon','Lmon','Omon','SImon','Aday']:
+    if jsonName not in ['coordinate','fx','grids','institution_id','Aday','Amon','Lmon','Omon','SImon']:
         jsonDict = {}
         jsonDict[jsonName] = eval(jsonName)
     else:
