@@ -3,14 +3,14 @@
         "Conventions":"CF-1.6 CMIP-6.0",
         "approx_interval":"30.00000",
         "cmor_version":"3.2",
-        "data_specs_version":"01.00.04",
+        "data_specs_version":"01.00.05",
         "frequency":"mon",
         "generic_levels":"",
         "mip_era":"CMIP6",
         "missing_value":"1e20",
         "product":"output",
         "realm":"seaIce",
-        "table_date":"29 March 2017",
+        "table_date":"05 April 2017",
         "table_id":"Table SImon"
     },
     "variable_entry":{
@@ -110,6 +110,22 @@
             "valid_max":"",
             "valid_min":""
         },
+        "siconc":{
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean",
+            "comment":"Area fraction of grid cell covered by sea ice",
+            "dimensions":"longitude latitude time",
+            "long_name":"Sea Ice Area Fraction",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"siconc",
+            "positive":"",
+            "standard_name":"sea_ice_area_fraction",
+            "type":"float",
+            "units":"%",
+            "valid_max":"",
+            "valid_min":""
+        },
         "sidconcdyn":{
             "cell_measures":"area: areacella",
             "cell_methods":"time: mean",
@@ -193,7 +209,7 @@
         "sidmassgrowthbot":{
             "cell_measures":"area: areacella",
             "cell_methods":"time: mean",
-            "comment":"The rate of change of sea ice mass due to vertical growth of existing sea ice at its base divided by grid-cell area. ",
+            "comment":"The rate of change of sea ice mass due to vertical growth of existing sea ice at its base divided by grid-cell area.",
             "dimensions":"longitude latitude time",
             "long_name":"sea-ice mass change through basal growth",
             "ok_max_mean_abs":"",
@@ -209,7 +225,7 @@
         "sidmassgrowthwat":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: time: mean",
-            "comment":"The rate of change of sea ice mass due to sea ice formation in supercooled water (often through frazil formation) divided by grid-cell area. Together, sidmassgrowthwat and sidmassgrowthbot should give total ice growth ",
+            "comment":"The rate of change of sea ice mass due to sea ice formation in supercooled water (often through frazil formation) divided by grid-cell area. Together, sidmassgrowthwat and sidmassgrowthbot should give total ice growth",
             "dimensions":"longitude latitude time",
             "long_name":"sea-ice mass change through growth in supercooled open water (aka frazil)",
             "ok_max_mean_abs":"",
@@ -417,7 +433,7 @@
         "siflcondbot":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
-            "comment":"the net heat conduction flux at the ice base ",
+            "comment":"the net heat conduction flux at the ice base",
             "dimensions":"longitude latitude time",
             "long_name":"Net conductive heat fluxes in ice at the bottom",
             "ok_max_mean_abs":"",
@@ -426,7 +442,7 @@
             "positive":"",
             "standard_name":"conductive_heat_flux_at_sea_ice_bottom",
             "type":"",
-            "units":"W m-2 ",
+            "units":"W m-2",
             "valid_max":"",
             "valid_min":""
         },
@@ -442,7 +458,7 @@
             "positive":"",
             "standard_name":"conductive_heat_flux_at_sea_ice_surface",
             "type":"",
-            "units":"W m-2 ",
+            "units":"W m-2",
             "valid_max":"",
             "valid_min":""
         },
@@ -746,7 +762,7 @@
             "positive":"",
             "standard_name":"sea_ice_area_fraction_over_categories",
             "type":"",
-            "units":"1.0",
+            "units":"%",
             "valid_max":"",
             "valid_min":""
         },
@@ -762,7 +778,7 @@
             "positive":"",
             "standard_name":"snow_area_fraction_over_categories",
             "type":"",
-            "units":"1.0",
+            "units":"%",
             "valid_max":"",
             "valid_min":""
         },
@@ -834,7 +850,7 @@
             "cell_measures":"area: areacella",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Fraction of sea ice, by area, which is covered by melt ponds, giving equal weight to every square metre of sea ice .",
-            "dimensions":"longitude latitude time",
+            "dimensions":"longitude latitude typemp time",
             "long_name":"Meltpond area fraction",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
@@ -842,7 +858,7 @@
             "positive":"",
             "standard_name":"area_fraction",
             "type":"",
-            "units":"1.0",
+            "units":"%",
             "valid_max":"",
             "valid_min":""
         },
@@ -986,7 +1002,7 @@
             "positive":"",
             "standard_name":"surface_snow_area_fraction",
             "type":"",
-            "units":"1.0",
+            "units":"%",
             "valid_max":"",
             "valid_min":""
         },
@@ -1105,7 +1121,7 @@
         "sistrxubot":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
-            "comment":"X-component of ocean stress on sea ice ",
+            "comment":"X-component of ocean stress on sea ice",
             "dimensions":"longitude latitude time",
             "long_name":"X-component of ocean stress on sea ice",
             "ok_max_mean_abs":"",
@@ -1121,7 +1137,7 @@
         "sistrydtop":{
             "cell_measures":"--MODEL",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
-            "comment":"Y-component of atmospheric stress on sea ice ",
+            "comment":"Y-component of atmospheric stress on sea ice",
             "dimensions":"longitude latitude time",
             "long_name":"Y-component of atmospheric stress on sea ice",
             "ok_max_mean_abs":"",
@@ -1137,7 +1153,7 @@
         "sistryubot":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
-            "comment":"Y-component of ocean stress on sea ice ",
+            "comment":"Y-component of ocean stress on sea ice",
             "dimensions":"longitude latitude time",
             "long_name":"Y-component of ocean stress on sea ice",
             "ok_max_mean_abs":"",
@@ -1192,7 +1208,7 @@
             "ok_min_mean_abs":"",
             "out_name":"sitemptop",
             "positive":"",
-            "standard_name":"surface_temperature",
+            "standard_name":"sea_ice_surface_temperature",
             "type":"",
             "units":"K",
             "valid_max":"",
@@ -1217,7 +1233,7 @@
         "sitimefrac":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: time: mean",
-            "comment":"Fraction of time steps of the averaging period during which sea ice is present (siconc >0 ) in a grid cell ",
+            "comment":"Fraction of time steps of the averaging period during which sea ice is present (siconc >0 ) in a grid cell",
             "dimensions":"longitude latitude time",
             "long_name":"Fraction of time steps with sea ice",
             "ok_max_mean_abs":"",

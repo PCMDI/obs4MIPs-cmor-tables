@@ -31,6 +31,7 @@ PJD  3 Mar 2017     - Fixed issue with 'grids' subdict in obs4MIPs_grids.json ht
 PJD  3 Mar 2017     - Add ndvi to LMon table https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/16
 PJD  3 Mar 2017     - Add fapar to LMon table https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/15
 PJD 29 Mar 2017     - Correct required_global_attribute grids -> grid
+PJG 05 Apr 2017     - Added daily atm table
                     - TODO:
 
 @author: durack1
@@ -58,6 +59,7 @@ masterTargets = [
  'Omon',
  'SImon',
  'fx',
+ 'Aday',
  'coordinate',
  'frequency',
  'grid_label',
@@ -67,6 +69,7 @@ masterTargets = [
  'nominal_resolution',
  'product',
  'realm',
+ 'region',
  'required_global_attributes',
  'table_id'
  ] ;
@@ -82,7 +85,8 @@ tableSource = [
  ['Amon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Amon.json'],
  ['Lmon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Lmon.json'],
  ['Omon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Omon.json'],
- ['SImon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_SImon.json']
+ ['SImon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_SImon.json'],
+ ['Aday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_day.json'],
  ] ;
 
 #%% Loop through tables and create in-memory objects
@@ -114,9 +118,10 @@ Lmon['Header']['realm']     = 'land'
 Omon['Header']['realm']     = 'ocean'
 SImon['Header']['realm']    = 'seaIce'
 fx['Header']['realm']       = 'fx'
+#Aday['Header']['realm']     = 'atmos'
 
 # Clean out modeling_realm
-for jsonName in ['Amon','Lmon','Omon','SImon']:
+for jsonName in ['Amon','Lmon','Omon','SImon']:  #,'Aday']:
     dictToClean = eval(jsonName)
     for key, value in dictToClean.iteritems():
         if key == 'Header':
@@ -221,6 +226,10 @@ realm = [
  'seaIce'
  ] ;
 
+#%% Regions (taken from http://cfconventions.org/Data/cf-standard-names/docs/standardized-region-names.html) 
+region = ['africa', 'antarctica', 'arabian_sea', 'aral_sea', 'arctic_ocean', 'asia', 'atlantic_ocean', 'australia', 'baltic_sea', 'barents_opening', 'barents_sea', 'beaufort_sea', 'bellingshausen_sea', 'bering_sea', 'bering_strait', 'black_sea', 'canadian_archipelago', 'caribbean_sea', 'caspian_sea', 'central_america', 'chukchi_sea', 'contiguous_united_states', 'denmark_strait', 'drake_passage', 'east_china_sea', 'english_channel', 'eurasia', 'europe', 'faroe_scotland_channel', 'florida_bahamas_strait', 'fram_strait', 'global', 'global_land', 'global_ocean', 'great_lakes', 'greenland', 'gulf_of_alaska', 'gulf_of_mexico', 'hudson_bay', 'iceland_faroe_channel', 'indian_ocean', 'indonesian_throughflow', 'indo_pacific_ocean', 'irish_sea', 'lake_baykal', 'lake_chad', 'lake_malawi', 'lake_tanganyika', 'lake_victoria', 'mediterranean_sea', 'mozambique_channel', 'north_america', 'north_sea', 'norwegian_sea', 'pacific_equatorial_undercurrent', 'pacific_ocean', 'persian_gulf', 'red_sea', 'ross_sea', 'sea_of_japan', 'sea_of_okhotsk', 'south_america', 'south_china_sea', 'southern_ocean', 'taiwan_luzon_straits', 'weddell_sea', 'windward_passage', 'yellow_sea']
+
+
 #%% Required global attributes
 required_global_attributes = [
  'activity_id',
@@ -237,6 +246,7 @@ required_global_attributes = [
  'nominal_resolution',
  'product',
  'realm',
+ 'region',
  'source_id',
  'table_id',
  'tracking_id',
@@ -244,7 +254,7 @@ required_global_attributes = [
  ];
 
 #%% Table IDs
-table_id = ['Amon', 'Lmon', 'Omon', 'SImon', 'fx'] ;
+table_id = ['Amon', 'Lmon', 'Omon', 'SImon', 'fx','Aday'] ;
 
 #%% Write variables to files
 for jsonName in masterTargets:
@@ -266,7 +276,7 @@ for jsonName in masterTargets:
                 dictToClean[key][value2[0]] = string
         vars()[jsonName] = dictToClean
     # Write file
-    if jsonName in ['Amon','Lmon','Omon','SImon','fx']:
+    if jsonName in ['Amon','Lmon','Omon','SImon','fx','Aday']:
         outFile = ''.join(['../Tables/obs4MIPs_',jsonName,'.json'])
     else:
         outFile = ''.join(['../obs4MIPs_',jsonName,'.json'])
@@ -277,7 +287,7 @@ for jsonName in masterTargets:
     if not os.path.exists('../Tables'):
         os.mkdir('../Tables')
     # Create host dictionary
-    if jsonName not in ['coordinate','fx','grids','institution_id','Amon','Lmon','Omon','SImon']:
+    if jsonName not in ['coordinate','fx','grids','institution_id','Amon','Lmon','Omon','SImon','Aday']:
         jsonDict = {}
         jsonDict[jsonName] = eval(jsonName)
     else:
