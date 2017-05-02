@@ -1,13 +1,18 @@
-This file describes basic how to run demo1 which uses CMOR3 to produce a sample obs4MIPs dataset.  It builds on the original demo directory set up by PJD.
+
+This file describes how to run demo1 which uses CMOR3 to produce a sample obs4MIPs dataset.  It builds on the original demo directory set up by PJD.
 
 PjG  Last update 05012017
+
 
 Follow these steps to run demo1:
 
 1) Downloads:  https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/demo1/update_obs4mips_CMOR3_CV.py
    by clicking on the link and then selecting the "raw" tab.
-   Repeat the process for: https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/demo1/generate_cmor3_tables.py
-
+   Repeat the process for: 
+      https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/demo1/generate_cmor3_tables.py
+      https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/demo1/rss_prw_run_cmor_demo.py
+      https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/demo1/rss_ssmi_pw_v06.6-demo.nc
+      
 2) Make sure you are in a conda envirnment that includes CMOR3, then execute the following:
 
    >python generate_cmor3_tables.py
