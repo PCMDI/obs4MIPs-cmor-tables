@@ -1,6 +1,8 @@
 {
     "CV":{
         "frequency":[
+            "1hr",
+            "1hrClimMon",
             "3hr",
             "3hrClim",
             "6hr",
@@ -12,55 +14,54 @@
             "subhr",
             "yr"
         ],
-        "grid_labels":{
-            "gn":[
-                "10 km",
-                "100 km",
-                "1000 km",
-                "10000 km",
-                "1x1 degree",
-                "25 km",
-                "250 km",
-                "2500 km",
-                "5 km",
-                "50 km",
-                "500 km",
-                "5000 km"
-            ],
-            "gr":[
-                "10 km",
-                "100 km",
-                "1000 km",
-                "10000 km",
-                "1x1 degree",
-                "25 km",
-                "250 km",
-                "2500 km",
-                "5 km",
-                "50 km",
-                "500 km",
-                "5000 km"
-            ],
-            "gr1":{},
-            "gr2":{},
-            "gr3":{},
-            "gr4":{},
-            "gr5":{},
-            "gr6":{},
-            "gr7":{},
-            "gr8":{},
-            "gr9":{},
-            "gs1x1":{
-                "grid_resolution":"1x1 degree"
-            },
-            "gs1x1 gn":{
-                "grid_resolution":"1x1 degree"
-            },
-            "gs1x1 gr":{
-                "grid_resolution":"1x1 degree"
-            }
-        },
-        "institution_ids":{
+        "grid_label":[
+            "gm",
+            "gn",
+            "gna",
+            "gng",
+            "gnz",
+            "gr",
+            "gr1",
+            "gr1a",
+            "gr1g",
+            "gr1z",
+            "gr2",
+            "gr2a",
+            "gr2g",
+            "gr2z",
+            "gr3",
+            "gr3a",
+            "gr3g",
+            "gr3z",
+            "gr4",
+            "gr4a",
+            "gr4g",
+            "gr4z",
+            "gr5",
+            "gr5a",
+            "gr5g",
+            "gr5z",
+            "gr6",
+            "gr6a",
+            "gr6g",
+            "gr6z",
+            "gr7",
+            "gr7a",
+            "gr7g",
+            "gr7z",
+            "gr8",
+            "gr8a",
+            "gr8g",
+            "gr8z",
+            "gr9",
+            "gr9a",
+            "gr9g",
+            "gr9z",
+            "gra",
+            "grg",
+            "grz"
+        ],
+        "institution_id":{
             "JPL":"Jet Propulsion Laboratory, Pasadena, CA 91109, USA",
             "NOAA-NCEI":"NOAA's National Centers for Environmental Information, Asheville, NC 28801, USA",
             "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
@@ -68,6 +69,23 @@
         },
         "mip_era":[
             "CMIP6"
+        ],
+        "nominal_resolution":[
+            "0.5 km",
+            "1 km",
+            "10 km",
+            "100 km",
+            "1000 km",
+            "10000 km",
+            "1x1 degree",
+            "2.5 km",
+            "25 km",
+            "250 km",
+            "2500 km",
+            "5 km",
+            "50 km",
+            "500 km",
+            "5000 km"
         ],
         "product":[
             "composite",
@@ -95,18 +113,20 @@
             "frequency",
             "grid",
             "grid_label",
-            "grid_resolution",
             "institution_id",
             "license",
             "mip_era",
+            "nominal_resolution",
             "product",
             "realm",
+            "region",
             "source_id",
             "table_id",
             "tracking_id",
             "variable_id"
         ],
         "table_id":[
+            "Aday",
             "Amon",
             "Lmon",
             "Omon",

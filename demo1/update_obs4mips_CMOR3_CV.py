@@ -85,15 +85,18 @@ jsonCVs = 'obs4MIPs_CV.json'
 buildList = [
  ['frequency','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_frequency.json'],
  ['grid_label','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_grid_label.json'],
- ['grid_resolution','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_grid_resolution.json'],
- ['grid','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_grid.json'],
  ['institution_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_institution_id.json'],
  ['mip_era','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_mip_era.json'],
+ ['nominal_resolution','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_nominal_resolution.json'],
  ['product','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_product.json'],
  ['realm','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_realm.json'],
  ['required_global_attributes','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_required_global_attributes.json'],
  ['table_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_table_id.json'],
+ ['coordinate','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_coordinate.json'],
+ ['formula_terms','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_formula_terms.json']
  ] ;
+
+
 
 # Loop through buildList and create output tables
 tmp = readJsonCreateDict(buildList)
@@ -105,37 +108,19 @@ for count,table in enumerate(tmp.keys()):
 #		vars()[table] = tmp[table]
 del(tmp,count,table) ; gc.collect()
 
-# Rebuild grid_labels
-grid_labels = {}
-grid_labels['gs1x1'] = { "grid_resolution":"1x1 degree" }
-grid_labels['gs1x1 gn'] = { "grid_resolution":"1x1 degree" }
-grid_labels['gs1x1 gr'] = { "grid_resolution":"1x1 degree" }
-for count,grid in enumerate(grid_label):
-    if count < 2:
-        grid_labels[grid] = grid_resolution
-    else:
-        grid_labels[grid] = {}
-
-# Rebuild
+# Rebuild dictionaries
 obs4MIPs_CV = {}
 obs4MIPs_CV['CV'] = {}
-obs4MIPs_CV['CV']['grid_labels'] = grid_labels
 for count,CV in enumerate(buildList):
     CVName1 = CV[0]
-    if CVName1 in ['grid','grid_label','grid_resolution']:
-        continue ; # Exclude
-    if CVName1 == 'coordinate':
-        CVName2 = CVName1
-        CVName1 = 'axis_entry'
-    elif CVName1 == 'institution_id':
-        CVName2 = CVName1
-        CVName1 = 'institution_ids'
-    elif CVName1 == 'source_id':
-        CVName2 = CVName1
-        CVName1 = 'source_ids'
+    if CVName1 in ['coordinate','formula_terms','grids']:
+        continue
     else:
-        CVName2 = CVName1
-    obs4MIPs_CV['CV'][CVName1] = eval(CVName2)
+        obs4MIPs_CV['CV'][CVName1] = eval(CVName1)
+
+outFilePairs = {'obs4MIPs_CV':'obs4MIPs_CV.json',
+                'coordinate':'CMIP6_coordinate.json',
+                'formula_terms':'CMIP6_formula_terms.json'}
 
 try:
   os.mkdir('obs4MIPs_CMOR_tables')
