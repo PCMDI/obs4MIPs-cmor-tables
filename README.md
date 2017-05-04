@@ -1,4 +1,4 @@
 # obs4MIPs-cmor-tables
-- JSON Tables for CMOR3 to create obs4MIPs datasets
-
-- Examples for preparing obs4MIPs data with CMOR
+- Up-to-date obs4MIPs CMOR3 tables (json files)
+- Up-to-date obs4MIPs Controlled Vocabulary (CVs; json files) 
+- Examples for preparing obs4MIPs data with CMOR3 
