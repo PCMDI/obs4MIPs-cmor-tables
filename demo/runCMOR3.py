@@ -18,6 +18,7 @@ PJD 20 Jul 2016     - Further tweaks to enhance readability
 PJD 28 Sep 2016     - Update to deal with new json (embedded key) formats
 PJD 30 Jan 2017     - Update to deal with new tables
 PJD 31 Jan 2017     - Updated to work with CMOR 3.2.1
+PJD 11 May 2017     - Updated to refer to all internal CVs and tables, and revised for CMOR 3.2.3
                     - TODO:
 
 @author: durack1
@@ -47,8 +48,8 @@ buildList = [
  ['realm','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_realm.json'],
  ['required_global_attributes','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_required_global_attributes.json'],
  ['table_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_table_id.json'],
- ['coordinate','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_coordinate.json'],
- ['formula_terms','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_formula_terms.json']
+ ['coordinate','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_coordinate.json'],
+ ['formula_terms','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_formula_terms.json']
  ] ;
 
 # Loop through buildList and create output tables
@@ -71,8 +72,8 @@ for count,CV in enumerate(buildList):
         obs4MIPs_CV['CV'][CVName1] = eval(CVName1)
 
 outFilePairs = {'obs4MIPs_CV':'obs4MIPs_CV.json',
-                'coordinate':'CMIP6_coordinate.json',
-                'formula_terms':'CMIP6_formula_terms.json'}
+                'coordinate':'obs4MIPs_coordinate.json',
+                'formula_terms':'obs4MIPs_formula_terms.json'}
 
 # Loop through dictionary and write files
 for count,pair in enumerate(outFilePairs):

@@ -1,16 +1,19 @@
 {
     "_control_vocabulary_file":     "obs4MIPs_CV.json",
+    "_AXIS_ENTRY_FILE":             "obs4MIPs_coordinate.json",
+    "_FORMULA_VAR_FILE":	    "obs4MIPs_formula_terms.json",
     "activity_id":                  "obs4MIPs",
     "calendar":                     "gregorian",
 
     "data_structure":               "grid",
     "dataset_version_number":       "1.1.0",
     "frequency":                    "mon",
-    "grids":                        "1x1 degree latitude x longitude",
+    "grid":                         "1x1 degree latitude x longitude",
     "grid_label":                   "gn",
     "nominal_resolution":           "1x1 degree",
     "product":                      "composite",
     "realm":                        "ocean",
+    "region":			    "global",
 
     "comment":                      "Based on Hurrell SST/sea ice consistency criteria applied to merged HadISST (1870-01 1981-10) & NCEP-0I2 (1981-11 to 2015-12)",
     "contact ":                     "PCMDI (pcmdi-cmip@llnl.gov) ",

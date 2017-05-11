@@ -12,7 +12,8 @@
             "mon",
             "monClim",
             "subhr",
-            "yr"
+            "yr",
+            "yrClim"
         ],
         "grid_label":[
             "gm",
@@ -62,6 +63,7 @@
             "grz"
         ],
         "institution_id":{
+            "DWD":"Deutscher Wetterdienst, Offenbach 63067, Germany",
             "JPL":"Jet Propulsion Laboratory, Pasadena, CA 91109, USA",
             "NOAA-NCEI":"NOAA's National Centers for Environmental Information, Asheville, NC 28801, USA",
             "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
@@ -111,7 +113,7 @@
             "dataset_version_number",
             "further_info_url",
             "frequency",
-            "grids",
+            "grid",
             "grid_label",
             "institution_id",
             "license",
@@ -119,12 +121,14 @@
             "nominal_resolution",
             "product",
             "realm",
+            "region",
             "source_id",
             "table_id",
             "tracking_id",
             "variable_id"
         ],
         "table_id":[
+            "Aday",
             "Amon",
             "Lmon",
             "Omon",
