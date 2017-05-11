@@ -1,22 +1,22 @@
 {
     "Header":{
-        "Conventions":"CF-1.6 CMIP-6.0",
+        "Conventions":"CF-1.7 CMIP-6.0",
         "approx_interval":"30.00000",
         "cmor_version":"3.2",
-        "data_specs_version":"01.00.05",
+        "data_specs_version":"01.00.10",
         "frequency":"mon",
         "generic_levels":"",
         "mip_era":"CMIP6",
         "missing_value":"1e20",
-        "product":"output",
+        "product":"observations",
         "realm":"land",
-        "table_date":"05 April 2017",
-        "table_id":"Table Lmon"
+        "table_date":"11 May 2017",
+        "table_id":"Table obs4MIPs_Lmon"
     },
     "variable_entry":{
         "baresoilFrac":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where land over all_area_types time: mean",
             "comment":"Percentage of entire grid cell  that is covered by bare soil.",
             "dimensions":"longitude latitude time typebare",
             "long_name":"Bare Soil Fraction",
@@ -30,15 +30,15 @@
             "valid_max":"",
             "valid_min":""
         },
-        "burntArea":{
+        "burntFractionAll":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
-            "comment":"Fraction of entire grid cell  that is covered by burnt vegetation.",
+            "cell_methods":"area: mean where land over all_area_types time: mean",
+            "comment":"Percentage of grid cell burned due to all fires including natural and anthropogenic fires and those associated with anthropogenic land use change",
             "dimensions":"longitude latitude time typeburnt",
-            "long_name":"Burnt Area Fraction",
+            "long_name":"Percentage of Entire Grid cell  that is Covered by Burnt Vegetation (All Classes)",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
-            "out_name":"burntArea",
+            "out_name":"burntFractionAll",
             "positive":"",
             "standard_name":"area_fraction",
             "type":"real",
@@ -48,7 +48,7 @@
         },
         "c3PftFrac":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where land over all_area_types time: mean",
             "comment":"Percentage of entire grid cell  that is covered by C3 PFTs (including grass, crops, and trees).",
             "dimensions":"longitude latitude time typec3pft",
             "long_name":"Total C3 PFT Cover Fraction",
@@ -64,7 +64,7 @@
         },
         "c4PftFrac":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where land over all_area_types time: mean",
             "comment":"Percentage of entire grid cell  that is covered by C4 PFTs (including grass and crops).",
             "dimensions":"longitude latitude time typec4pft",
             "long_name":"Total C4 PFT Cover Fraction",
@@ -256,7 +256,7 @@
         },
         "cropFrac":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where land over all_area_types time: mean",
             "comment":"Percentage of entire grid cell  that is covered by crop.",
             "dimensions":"longitude latitude time typecrop",
             "long_name":"Crop Fraction",
@@ -424,7 +424,7 @@
             "ok_min_mean_abs":"",
             "out_name":"gpp",
             "positive":"down",
-            "standard_name":"gross_primary_productivity_of_carbon",
+            "standard_name":"gross_primary_productivity_of_biomass_expressed_as_carbon",
             "type":"real",
             "units":"kg m-2 s-1",
             "valid_max":"",
@@ -432,7 +432,7 @@
         },
         "grassFrac":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where land over all_area_types time: mean",
             "comment":"Percentage of entire grid cell that is covered by natural grass.",
             "dimensions":"longitude latitude time typenatgr",
             "long_name":"Natural Grass Fraction",
@@ -464,7 +464,7 @@
         },
         "landCoverFrac":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where land over all_area_types time: mean",
             "comment":"Percentage of grid cell area occupied by different model vegetation/land cover categories. The categories may differ from model to model, depending on each model's subgrid land cover category definitions. Categories may include natural vegetation, anthropogenic vegetation, bare soil, lakes, urban areas, glaciers, etc. Sum of all should equal the fraction of the grid-cell that is land.",
             "dimensions":"longitude latitude vegtype time",
             "long_name":"Plant Functional Type Grid Fraction",
@@ -616,7 +616,7 @@
             "ok_min_mean_abs":"",
             "out_name":"npp",
             "positive":"down",
-            "standard_name":"net_primary_productivity_of_carbon",
+            "standard_name":"net_primary_productivity_of_biomass_expressed_as_carbon",
             "type":"real",
             "units":"kg m-2 s-1",
             "valid_max":"",
@@ -672,7 +672,7 @@
         },
         "pastureFrac":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where land over all_area_types time: mean",
             "comment":"Percentage of entire grid cell  that is covered by anthropogenic pasture.",
             "dimensions":"longitude latitude time typepasture",
             "long_name":"Anthropogenic Pasture Fraction",
@@ -752,9 +752,9 @@
         },
         "residualFrac":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where land over all_area_types time: mean",
             "comment":"Percentage of entire grid cell  that is land and is covered by  neither vegetation nor bare-soil (e.g., urban, ice, lakes, etc.)",
-            "dimensions":"longitude latitude time",
+            "dimensions":"longitude latitude time typeresidual",
             "long_name":"Fraction of Grid Cell that is Land but Neither Vegetation-Covered nor Bare Soil",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
@@ -784,7 +784,7 @@
         },
         "shrubFrac":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where land over all_area_types time: mean",
             "comment":"Percentage of entire grid cell  that is covered by shrub.",
             "dimensions":"longitude latitude time typeshrub",
             "long_name":"Shrub Fraction",
@@ -816,7 +816,7 @@
         },
         "treeFrac":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where land over all_area_types time: mean",
             "comment":"Percentage of entire grid cell  that is covered by trees.",
             "dimensions":"longitude latitude time typetree",
             "long_name":"Tree Cover Fraction",
@@ -832,7 +832,7 @@
         },
         "treeFracPrimDec":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where land over all_area_types time: mean",
             "comment":"Percentage of the entire grid cell  that is covered by total primary deciduous trees.",
             "dimensions":"longitude latitude time typepdec",
             "long_name":"Total Primary Deciduous Tree Fraction",
@@ -848,7 +848,7 @@
         },
         "treeFracPrimEver":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where land over all_area_types time: mean",
             "comment":"Percentage of entire grid cell  that is covered by primary evergreen trees.",
             "dimensions":"longitude latitude time typepever",
             "long_name":"Total Primary Evergreen Tree Cover Fraction",
@@ -864,7 +864,7 @@
         },
         "treeFracSecDec":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where land over all_area_types time: mean",
             "comment":"Percentage of entire grid cell  that is covered by secondary deciduous trees.",
             "dimensions":"longitude latitude time typesdec",
             "long_name":"Total Secondary Deciduous Tree Cover Fraction",
@@ -880,7 +880,7 @@
         },
         "treeFracSecEver":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where land over all_area_types time: mean",
             "comment":"Percentage of entire grid cell  that is covered by secondary evergreen trees.",
             "dimensions":"longitude latitude time typesever",
             "long_name":"Total Secondary Evergreen Tree Cover Fraction",
@@ -896,7 +896,7 @@
         },
         "tsl":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"Temperature of each soil layer. Reported as missing for grid cells with no land.",
             "dimensions":"longitude latitude sdepth time",
             "long_name":"Temperature of Soil",

@@ -1,22 +1,22 @@
 {
     "Header":{
-        "Conventions":"CF-1.6 CMIP-6.0",
+        "Conventions":"CF-1.7 CMIP-6.0",
         "approx_interval":"30.00000",
         "cmor_version":"3.2",
-        "data_specs_version":"01.00.05",
+        "data_specs_version":"01.00.10",
         "frequency":"mon",
         "generic_levels":"alevel alevhalf",
         "mip_era":"CMIP6",
         "missing_value":"1e20",
-        "product":"output",
+        "product":"observations",
         "realm":"atmos",
-        "table_date":"05 April 2017",
-        "table_id":"Table Amon"
+        "table_date":"11 May 2017",
+        "table_id":"Table obs4MIPs_Amon"
     },
     "variable_entry":{
         "ccb":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Where convective cloud is present in the grid cell, the instantaneous cloud base altitude should be that of the bottom of the lowest level containing convective cloud. Missing data should be reported in the absence of convective cloud. The time mean should be calculated from these quantities averaging over occasions when convective cloud is present only, and should contain missing data for occasions when no convective cloud is present during the meaning period.",
             "dimensions":"longitude latitude time",
             "long_name":"Air Pressure at Convective Cloud Base",
@@ -32,7 +32,7 @@
         },
         "cct":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Where convective cloud is present in the grid cell, the instantaneous cloud top altitude should be that of the top of the highest level containing convective cloud. Missing data should be reported in the absence of convective cloud. The time mean should be calculated from these quantities averaging over occasions when convective cloud is present only, and should contain missing data for occasions when no convective cloud is present during the meaning period.",
             "dimensions":"longitude latitude time",
             "long_name":"Air Pressure at Convective Cloud Top",
@@ -48,7 +48,7 @@
         },
         "cfc113global":{
             "cell_measures":"",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"",
             "dimensions":"time",
             "long_name":"Global Mean Mole Fraction of CFC113",
@@ -64,7 +64,7 @@
         },
         "cfc11global":{
             "cell_measures":"",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"",
             "dimensions":"time",
             "long_name":"Global Mean Mole Fraction of CFC11",
@@ -80,7 +80,7 @@
         },
         "cfc12global":{
             "cell_measures":"",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"",
             "dimensions":"time",
             "long_name":"Global Mean Mole Fraction of CFC12",
@@ -112,13 +112,13 @@
         },
         "ch4Clim":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean within years time: mean over years",
+            "cell_methods":"area: mean time: mean within years time: mean over years",
             "comment":"",
             "dimensions":"longitude latitude plev19 time2",
             "long_name":"Mole Fraction of CH4",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
-            "out_name":"ch4Clim",
+            "out_name":"ch4",
             "positive":"",
             "standard_name":"mole_fraction_of_methane_in_air",
             "type":"real",
@@ -128,7 +128,7 @@
         },
         "ch4global":{
             "cell_measures":"",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Global Mean Mole Fraction of CH4",
             "dimensions":"time",
             "long_name":"Global Mean Mole Fraction of CH4",
@@ -144,13 +144,13 @@
         },
         "ch4globalClim":{
             "cell_measures":"",
-            "cell_methods":"time: mean within years time: mean over years",
+            "cell_methods":"area: mean time: mean within years time: mean over years",
             "comment":"Global Mean Mole Fraction of CH4",
             "dimensions":"time2",
             "long_name":"Global Mean Mole Fraction of CH4",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
-            "out_name":"ch4globalClim",
+            "out_name":"ch4global",
             "positive":"",
             "standard_name":"mole_fraction_of_methane_in_air",
             "type":"real",
@@ -160,7 +160,7 @@
         },
         "ci":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Fraction of time that convection occurs in the grid cell.",
             "dimensions":"longitude latitude time",
             "long_name":"Fraction of Time Convection Occurs",
@@ -176,7 +176,7 @@
         },
         "cl":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Percentage cloud cover, including both large-scale and convective cloud.",
             "dimensions":"longitude latitude alevel time",
             "long_name":"Cloud Area Fraction",
@@ -192,7 +192,7 @@
         },
         "cli":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Includes both large-scale and convective cloud. This is calculated as the mass of cloud ice in the grid cell divided by the mass of air (including the water in all phases) in the grid cell. It includes precipitating hydrometeors ONLY if the precipitating hydrometeors affect the calculation of radiative transfer in model.",
             "dimensions":"longitude latitude alevel time",
             "long_name":"Mass Fraction of Cloud Ice",
@@ -208,7 +208,7 @@
         },
         "clivi":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"mass of ice water in the column divided by the area of the column (not just the area of the cloudy portion of the column). Includes precipitating frozen hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.",
             "dimensions":"longitude latitude time",
             "long_name":"Ice Water Path",
@@ -224,7 +224,7 @@
         },
         "clt":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Total cloud area fraction for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Includes both large-scale and convective cloud.",
             "dimensions":"longitude latitude time",
             "long_name":"Total Cloud Fraction",
@@ -240,7 +240,7 @@
         },
         "clw":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Includes both large-scale and convective cloud. Calculate as the mass of cloud liquid water in the grid cell divided by the mass of air (including the water in all phases) in the grid cells. Precipitating hydrometeors are included ONLY if the precipitating hydrometeors affect the calculation of radiative transfer in model.",
             "dimensions":"longitude latitude alevel time",
             "long_name":"Mass Fraction of Cloud Liquid Water",
@@ -256,7 +256,7 @@
         },
         "clwvi":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Mass of condensed (liquid + ice) water in the column divided by the area of the column (not just the area of the cloudy portion of the column). Includes precipitating hydrometeors ONLY if the precipitating hydrometeors affect the calculation of radiative transfer in model.",
             "dimensions":"longitude latitude time",
             "long_name":"Condensed Water Path",
@@ -288,13 +288,13 @@
         },
         "co2Clim":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean within years time: mean over years",
+            "cell_methods":"area: mean time: mean within years time: mean over years",
             "comment":"",
             "dimensions":"longitude latitude plev19 time2",
             "long_name":"Mole Fraction of CO2",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
-            "out_name":"co2Clim",
+            "out_name":"co2",
             "positive":"",
             "standard_name":"mole_fraction_of_carbon_dioxide_in_air",
             "type":"real",
@@ -304,7 +304,7 @@
         },
         "co2mass":{
             "cell_measures":"",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Total atmospheric mass of Carbon Dioxide",
             "dimensions":"time",
             "long_name":"Total Atmospheric Mass of CO2",
@@ -320,13 +320,13 @@
         },
         "co2massClim":{
             "cell_measures":"",
-            "cell_methods":"time: mean within years time: mean over years",
+            "cell_methods":"area: mean time: mean within years time: mean over years",
             "comment":"Total atmospheric mass of Carbon Dioxide",
             "dimensions":"time2",
             "long_name":"Total Atmospheric Mass of CO2",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
-            "out_name":"co2massClim",
+            "out_name":"co2mass",
             "positive":"",
             "standard_name":"atmosphere_mass_of_carbon_dioxide",
             "type":"real",
@@ -336,7 +336,7 @@
         },
         "evspsbl":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Evaporation at surface: flux of water into the atmosphere due to conversion of both liquid and solid phases to vapor (from underlying surface and vegetation)",
             "dimensions":"longitude latitude time",
             "long_name":"Evaporation",
@@ -352,7 +352,7 @@
         },
         "fco2antt":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"This is requested only for the emission-driven coupled carbon climate model runs.  Does not include natural fire sources but, includes all anthropogenic sources, including fossil fuel use, cement production, agricultural burning, and sources associated with anthropogenic land use change excluding forest regrowth.",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass Flux into Atmosphere Due to All Anthropogenic Emissions of CO2",
@@ -368,7 +368,7 @@
         },
         "fco2fos":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"This is the prescribed anthropogenic CO2 flux from fossil fuel use, including cement production, and flaring (but not from land-use changes, agricultural burning, forest regrowth, etc.)",
             "dimensions":"longitude latitude time",
             "long_name":"Carbon Mass Flux into Atmosphere Due to Fossil Fuel Emissions of CO2",
@@ -384,7 +384,7 @@
         },
         "fco2nat":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"This is what the atmosphere sees (on its own grid).  This field should be equivalent to the combined natural fluxes of carbon  that account for natural exchanges between the atmosphere and land (nep) or ocean (fgco2) reservoirs.",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Carbon Mass Flux into the Atmosphere Due to Natural Sources",
@@ -400,7 +400,7 @@
         },
         "hcfc22global":{
             "cell_measures":"",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"",
             "dimensions":"time",
             "long_name":"Global Mean Mole Fraction of HCFC22",
@@ -416,7 +416,7 @@
         },
         "hfls":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Upward Latent Heat Flux",
@@ -432,7 +432,7 @@
         },
         "hfss":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Upward Sensible Heat Flux",
@@ -464,7 +464,7 @@
         },
         "hurs":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"The relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C.",
             "dimensions":"longitude latitude time height2m",
             "long_name":"Near-Surface Relative Humidity",
@@ -496,7 +496,7 @@
         },
         "huss":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Near-surface (usually, 2 meter) specific humidity.",
             "dimensions":"longitude latitude time height2m",
             "long_name":"Near-Surface Specific Humidity",
@@ -512,7 +512,7 @@
         },
         "mc":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"The net mass flux should represent the difference between the updraft and downdraft components.  The flux is computed as the mass divided by the area of the grid cell.",
             "dimensions":"longitude latitude alevhalf time",
             "long_name":"Convective Mass Flux",
@@ -544,13 +544,13 @@
         },
         "n2oClim":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean within years time: mean over years",
+            "cell_methods":"area: mean time: mean within years time: mean over years",
             "comment":"",
             "dimensions":"longitude latitude plev19 time2",
             "long_name":"Mole Fraction of N2O",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
-            "out_name":"n2oClim",
+            "out_name":"n2o",
             "positive":"",
             "standard_name":"mole_fraction_of_nitrous_oxide_in_air",
             "type":"real",
@@ -560,7 +560,7 @@
         },
         "n2oglobal":{
             "cell_measures":"",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Global mean Nitrous Oxide (N2O)",
             "dimensions":"time",
             "long_name":"Global Mean Mole Fraction of N2O",
@@ -576,13 +576,13 @@
         },
         "n2oglobalClim":{
             "cell_measures":"",
-            "cell_methods":"time: mean within years time: mean over years",
+            "cell_methods":"area: mean time: mean within years time: mean over years",
             "comment":"Global mean Nitrous Oxide (N2O)",
             "dimensions":"time2",
             "long_name":"Global Mean Mole Fraction of N2O",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
-            "out_name":"n2oglobalClim",
+            "out_name":"n2oglobal",
             "positive":"",
             "standard_name":"mole_fraction_of_nitrous_oxide_in_air",
             "type":"real",
@@ -608,13 +608,13 @@
         },
         "o3Clim":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean within years time: mean over years",
+            "cell_methods":"area: mean time: mean within years time: mean over years",
             "comment":"",
             "dimensions":"longitude latitude plev19 time2",
             "long_name":"Mole Fraction of O3",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
-            "out_name":"o3Clim",
+            "out_name":"o3",
             "positive":"",
             "standard_name":"mole_fraction_of_ozone_in_air",
             "type":"real",
@@ -624,7 +624,7 @@
         },
         "pfull":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean within years time: mean over years",
+            "cell_methods":"area: mean time: mean within years time: mean over years",
             "comment":"Air pressure on model levels",
             "dimensions":"longitude latitude alevel time2",
             "long_name":"Pressure on Model Levels",
@@ -640,7 +640,7 @@
         },
         "phalf":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean within years time: mean over years",
+            "cell_methods":"area: mean time: mean within years time: mean over years",
             "comment":"Air pressure on model half-levels",
             "dimensions":"longitude latitude alevhalf time2",
             "long_name":"Pressure on Model Half-Levels",
@@ -656,7 +656,7 @@
         },
         "pr":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"includes both liquid and solid phases",
             "dimensions":"longitude latitude time",
             "long_name":"Precipitation",
@@ -672,7 +672,7 @@
         },
         "prc":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Convective precipitation at surface; includes both liquid and solid phases.",
             "dimensions":"longitude latitude time",
             "long_name":"Convective Precipitation",
@@ -688,7 +688,7 @@
         },
         "prsn":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"at surface; includes precipitation of all forms of water in the solid phase",
             "dimensions":"longitude latitude time",
             "long_name":"Snowfall Flux",
@@ -704,7 +704,7 @@
         },
         "prw":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"vertically integrated through the atmospheric column",
             "dimensions":"longitude latitude time",
             "long_name":"Water Vapor Path",
@@ -720,7 +720,7 @@
         },
         "ps":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"surface pressure (not mean sea-level pressure), 2-D field to calculate the 3-D pressure field from hybrid coordinates",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Air Pressure",
@@ -736,7 +736,7 @@
         },
         "psl":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Sea Level Pressure",
             "dimensions":"longitude latitude time",
             "long_name":"Sea Level Pressure",
@@ -752,7 +752,7 @@
         },
         "rlds":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Downwelling Longwave Radiation",
@@ -768,7 +768,7 @@
         },
         "rldscs":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Surface downwelling clear-sky longwave radiation",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Downwelling Clear-Sky Longwave Radiation",
@@ -784,7 +784,7 @@
         },
         "rlus":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Upwelling Longwave Radiation",
@@ -800,7 +800,7 @@
         },
         "rlut":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"at the top of the atmosphere (to be compared with satellite measurements)",
             "dimensions":"longitude latitude time",
             "long_name":"TOA Outgoing Longwave Radiation",
@@ -816,7 +816,7 @@
         },
         "rlutcs":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"TOA Outgoing Clear-Sky Longwave Radiation",
@@ -832,7 +832,7 @@
         },
         "rsds":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"surface solar irradiance for UV calculations",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Downwelling Shortwave Radiation",
@@ -848,7 +848,7 @@
         },
         "rsdscs":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"surface solar irradiance clear sky for UV calculations",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Downwelling Clear-Sky Shortwave Radiation",
@@ -864,7 +864,7 @@
         },
         "rsdt":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Shortwave radiation incident at the top of the atmosphere",
             "dimensions":"longitude latitude time",
             "long_name":"TOA Incident Shortwave Radiation",
@@ -880,7 +880,7 @@
         },
         "rsus":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Upwelling Shortwave Radiation",
@@ -896,8 +896,8 @@
         },
         "rsuscs":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
-            "comment":"Surface upwelling clear-sky shortwave radiation",
+            "cell_methods":"area: time: mean",
+            "comment":"Surface Upwelling Clear-sky Shortwave Radiation",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Upwelling Clear-Sky Shortwave Radiation",
             "ok_max_mean_abs":"",
@@ -912,7 +912,7 @@
         },
         "rsut":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"at the top of the atmosphere",
             "dimensions":"longitude latitude time",
             "long_name":"TOA Outgoing Shortwave Radiation",
@@ -928,7 +928,7 @@
         },
         "rsutcs":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Calculated in the absence of clouds.",
             "dimensions":"longitude latitude time",
             "long_name":"TOA Outgoing Clear-Sky Shortwave Radiation",
@@ -944,7 +944,7 @@
         },
         "rtmt":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Net Downward Radiative Flux at Top of Model : I.e., at the top of that portion of the atmosphere where dynamics are explicitly treated by the model. This is reported only if it differs from the net downward radiative flux at the top of the atmosphere.",
             "dimensions":"longitude latitude time",
             "long_name":"Net Downward Flux at Top of Model",
@@ -960,7 +960,7 @@
         },
         "sbl":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"The snow and ice sublimation flux is the loss of snow and ice mass per unit area from the surface resulting from their direct conversion to water vapor that enters the atmosphere.",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Snow and Ice Sublimation Flux",
@@ -976,7 +976,7 @@
         },
         "sci":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Fraction of time that shallow convection occurs in the grid cell.",
             "dimensions":"longitude latitude time",
             "long_name":"Fraction of Time Shallow Convection Occurs",
@@ -991,8 +991,8 @@
             "valid_min":""
         },
         "sfcWind":{
-            "cell_measures":"",
-            "cell_methods":"time: mean",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: time: mean",
             "comment":"near-surface (usually, 10 meters) wind speed.",
             "dimensions":"longitude latitude time height10m",
             "long_name":"Near-Surface Wind Speed",
@@ -1024,7 +1024,7 @@
         },
         "tas":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"near-surface (usually, 2 meter) air temperature",
             "dimensions":"longitude latitude time height2m",
             "long_name":"Near-Surface Air Temperature",
@@ -1040,7 +1040,7 @@
         },
         "tasmax":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: maximum within days time: mean over days",
+            "cell_methods":"area: mean time: maximum within days time: mean over days",
             "comment":"maximum near-surface (usually, 2 meter) air temperature (add cell_method attribute 'time: max')",
             "dimensions":"longitude latitude time height2m",
             "long_name":"Daily Maximum Near-Surface Air Temperature",
@@ -1056,7 +1056,7 @@
         },
         "tasmin":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: minimum within days time: mean over days",
+            "cell_methods":"area: mean time: minimum within days time: mean over days",
             "comment":"minimum near-surface (usually, 2 meter) air temperature (add cell_method attribute 'time: min')",
             "dimensions":"longitude latitude time height2m",
             "long_name":"Daily Minimum Near-Surface Air Temperature",
@@ -1072,7 +1072,7 @@
         },
         "tauu":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Downward eastward wind stress at the surface",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Downward Eastward Wind Stress",
@@ -1088,7 +1088,7 @@
         },
         "tauv":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Downward northward wind stress at the surface",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Downward Northward Wind Stress",
@@ -1104,7 +1104,7 @@
         },
         "ts":{
             "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Temperature of the lower boundary of the atmosphere",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Temperature",
@@ -1151,8 +1151,8 @@
             "valid_min":""
         },
         "uas":{
-            "cell_measures":"",
-            "cell_methods":"time: mean",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: time: mean",
             "comment":"Eastward component of the near-surface (usually, 10 meters)  wind",
             "dimensions":"longitude latitude time height10m",
             "long_name":"Eastward Near-Surface Wind",
@@ -1183,8 +1183,8 @@
             "valid_min":""
         },
         "vas":{
-            "cell_measures":"",
-            "cell_methods":"time: mean",
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: time: mean",
             "comment":"Northward component of the near surface wind",
             "dimensions":"longitude latitude time height10m",
             "long_name":"Northward Near-Surface Wind",
