@@ -1,22 +1,22 @@
 {
     "Header":{
-        "Conventions":"CF-1.6 CMIP-6.0",
+        "Conventions":"CF-1.7 CMIP-6.0",
         "approx_interval":"30.00000",
         "cmor_version":"3.2",
-        "data_specs_version":"01.00.05",
+        "data_specs_version":"01.00.10",
         "frequency":"mon",
         "generic_levels":"olevel",
         "mip_era":"CMIP6",
         "missing_value":"1e20",
-        "product":"output",
+        "product":"obs4MIPs",
         "realm":"ocean",
-        "table_date":"05 April 2017",
-        "table_id":"Table Omon"
+        "table_date":"11 May 2017",
+        "table_id":"Table obs4MIPs_Omon"
     },
     "variable_entry":{
         "agessc":{
             "cell_measures":"area: areacello volume: volcello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"Time elapsed since water was last in surface layer of the ocean.",
             "dimensions":"longitude latitude olevel time",
             "long_name":"Sea Water Age Since Surface Contact",
@@ -47,7 +47,7 @@
             "valid_min":""
         },
         "aragos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"sum of particulate aragonite components (e.g. Phytoplankton, Detrital, etc.)",
             "dimensions":"longitude latitude time",
@@ -79,7 +79,7 @@
             "valid_min":""
         },
         "baccos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"sum of bacterial carbon component concentrations",
             "dimensions":"longitude latitude time",
@@ -111,7 +111,7 @@
             "valid_min":""
         },
         "bfeos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"sum of particulate organic iron component concentrations",
             "dimensions":"longitude latitude time",
@@ -128,7 +128,7 @@
         },
         "bigthetao":{
             "cell_measures":"area: areacello volume: volcello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"Sea water conservative temperature (this should be contributed only for models using conservative temperature as prognostic field)",
             "dimensions":"longitude latitude olevel time",
             "long_name":"Sea Water Convervative Temperature",
@@ -175,7 +175,7 @@
             "valid_min":""
         },
         "bsios":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"sum of particulate silica component concentrations",
             "dimensions":"longitude latitude time",
@@ -207,7 +207,7 @@
             "valid_min":""
         },
         "calcos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"sum of particulate calcite component concentrations (e.g. Phytoplankton, Detrital, etc.)",
             "dimensions":"longitude latitude time",
@@ -224,7 +224,7 @@
         },
         "cfc11":{
             "cell_measures":"area: areacello volume: volcello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude olevel time",
             "long_name":"Moles Per Unit Mass of CFC-11 in sea water",
@@ -240,7 +240,7 @@
         },
         "cfc12":{
             "cell_measures":"area: areacello volume: volcello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude olevel time",
             "long_name":"Moles Per Unit Mass of CFC-12 in sea water",
@@ -287,7 +287,7 @@
             "valid_min":""
         },
         "chlcalcos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"chlorophyll concentration from the calcite-producing phytoplankton component alone",
             "dimensions":"longitude latitude time",
@@ -319,7 +319,7 @@
             "valid_min":""
         },
         "chldiatos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"chlorophyll from diatom phytoplankton component concentration alone",
             "dimensions":"longitude latitude time",
@@ -351,7 +351,7 @@
             "valid_min":""
         },
         "chldiazos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"chlorophyll concentration from the diazotrophic phytoplankton component alone",
             "dimensions":"longitude latitude time",
@@ -383,7 +383,7 @@
             "valid_min":""
         },
         "chlmiscos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"chlorophyll from additional phytoplankton component concentrations alone",
             "dimensions":"longitude latitude time",
@@ -399,7 +399,7 @@
             "valid_min":""
         },
         "chlos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"Sum of chlorophyll from all phytoplankton group concentrations at the sea surface.  In most models this is equal to chldiat+chlmisc, that is the sum of 'Diatom Chlorophyll Mass Concentration' plus 'Other Phytoplankton Chlorophyll Mass Concentration'",
             "dimensions":"longitude latitude time",
@@ -431,7 +431,7 @@
             "valid_min":""
         },
         "chlpicoos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"chlorophyll concentration from the picophytoplankton (<2 um) component alone",
             "dimensions":"longitude latitude time",
@@ -479,7 +479,7 @@
             "valid_min":""
         },
         "co3abioos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
@@ -511,7 +511,7 @@
             "valid_min":""
         },
         "co3natos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
@@ -527,7 +527,7 @@
             "valid_min":""
         },
         "co3os":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
@@ -559,11 +559,11 @@
             "valid_min":""
         },
         "co3sataragos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
-            "long_name":"Surface Mole Concentration of Dimethyl Sulphide in sea water",
+            "long_name":"Surface Mole Concentration of Carbonate Ion in Equilibrium with Pure Aragonite in sea water",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"co3sataragos",
@@ -591,11 +591,11 @@
             "valid_min":""
         },
         "co3satcalcos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
-            "long_name":"Surface Mole Concentration of Dimethyl Sulphide in sea water",
+            "long_name":"Surface Mole Concentration of Carbonate Ion in Equilibrium with Pure Calcite in sea water",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"co3satcalcos",
@@ -623,7 +623,7 @@
             "valid_min":""
         },
         "detocos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"sum of detrital organic carbon component concentrations",
             "dimensions":"longitude latitude time",
@@ -655,7 +655,7 @@
             "valid_min":""
         },
         "dfeos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"dissolved iron in sea water is meant to include both Fe2+ and Fe3+ ions (but not, e.g., particulate detrital iron)",
             "dimensions":"longitude latitude time",
@@ -687,7 +687,7 @@
             "valid_min":""
         },
         "dissi13cos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"Dissolved inorganic 14carbon (CO3+HCO3+H2CO3) concentration",
             "dimensions":"longitude latitude time",
@@ -719,7 +719,7 @@
             "valid_min":""
         },
         "dissi14cabioos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"Abiotic Dissolved inorganic 14carbon (CO3+HCO3+H2CO3) concentration",
             "dimensions":"longitude latitude time",
@@ -767,7 +767,7 @@
             "valid_min":""
         },
         "dissicabioos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"Abiotic Dissolved inorganic carbon (CO3+HCO3+H2CO3) concentration",
             "dimensions":"longitude latitude time",
@@ -799,7 +799,7 @@
             "valid_min":""
         },
         "dissicnatos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"Dissolved inorganic carbon (CO3+HCO3+H2CO3) concentration at preindustrial atmospheric xCO2",
             "dimensions":"longitude latitude time",
@@ -815,7 +815,7 @@
             "valid_min":""
         },
         "dissicos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"Dissolved inorganic carbon (CO3+HCO3+H2CO3) concentration",
             "dimensions":"longitude latitude time",
@@ -847,7 +847,7 @@
             "valid_min":""
         },
         "dissocos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"Sum of dissolved carbon component concentrations explicitly represented (i.e. not ~40 uM refractory unless explicit)",
             "dimensions":"longitude latitude time",
@@ -862,11 +862,27 @@
             "valid_max":"",
             "valid_min":""
         },
-        "dmso":{
+        "dms":{
             "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
-            "comment":"Mole concentration of dimethyl sulphide in water",
+            "comment":"",
             "dimensions":"longitude latitude time depth0m",
+            "long_name":"Mole Concentration of Dimethyl Sulphide in sea water",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"dms",
+            "positive":"",
+            "standard_name":"mole_fraction_of_dimethyl_sulfide_in_air",
+            "type":"real",
+            "units":"mol mol-1",
+            "valid_max":"",
+            "valid_min":""
+        },
+        "dmso":{
+            "cell_measures":"area: areacello volume: volcello",
+            "cell_methods":"area: mean where sea time: mean",
+            "comment":"Mole concentration of dimethyl sulphide in water",
+            "dimensions":"longitude latitude olevel time",
             "long_name":"Mole Concentration of Dimethyl Sulphide in sea water",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
@@ -879,7 +895,7 @@
             "valid_min":""
         },
         "dmsos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
@@ -1088,7 +1104,7 @@
         },
         "expc":{
             "cell_measures":"area: areacello volume: volcello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"Downward flux of particulate organic carbon",
             "dimensions":"longitude latitude olevel time",
             "long_name":"Sinking Particulate Organic Carbon Flux",
@@ -1297,7 +1313,7 @@
         "fg13co2":{
             "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
-            "comment":"as specified by C4MIP",
+            "comment":"",
             "dimensions":"longitude latitude time depth0m",
             "long_name":"Surface Downward Flux of Abiotic 13CO2",
             "ok_max_mean_abs":"",
@@ -1328,7 +1344,7 @@
         },
         "fgcfc11":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"gas exchange flux of CFC11",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Downward CFC11 flux",
@@ -1344,7 +1360,7 @@
         },
         "fgcfc12":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"gas exchange flux of CFC12",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Downward CFC12 flux",
@@ -1440,7 +1456,7 @@
         },
         "fgsf6":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"gas exchange flux of SF6",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Downward SF6 flux",
@@ -1456,7 +1472,7 @@
         },
         "ficeberg":{
             "cell_measures":"area: areacello volume: volcello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"computed as the iceberg melt water  flux into the ocean divided by the area of the ocean portion of the grid cell.",
             "dimensions":"longitude latitude olevel time",
             "long_name":"Water Flux into Sea Water From Icebergs",
@@ -1472,13 +1488,13 @@
         },
         "ficeberg2d":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"computed as the iceberg melt water  flux into the ocean divided by the area of the ocean portion of the grid cell.",
             "dimensions":"longitude latitude time",
             "long_name":"Water Flux into Sea Water From Icebergs",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
-            "out_name":"ficeberg2d",
+            "out_name":"ficeberg",
             "positive":"",
             "standard_name":"water_flux_into_sea_water_from_icebergs",
             "type":"real",
@@ -1488,7 +1504,7 @@
         },
         "frfe":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Iron Loss to Sediments",
@@ -1504,7 +1520,7 @@
         },
         "fric":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"Inorganic Carbon loss to sediments",
             "dimensions":"longitude latitude time",
             "long_name":"Downward Inorganic Carbon Flux at Ocean Bottom",
@@ -1520,7 +1536,7 @@
         },
         "friver":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"computed as the river flux of water into the ocean divided by the area of the ocean portion of the grid cell.",
             "dimensions":"longitude latitude time",
             "long_name":"Water Flux into Sea Water From Rivers",
@@ -1536,7 +1552,7 @@
         },
         "frn":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Nitrogen Loss to Sediments and through Denitrification",
@@ -1552,7 +1568,7 @@
         },
         "froc":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"Organic Carbon loss to sediments",
             "dimensions":"longitude latitude time",
             "long_name":"Downward Organic Carbon Flux at Ocean Bottom",
@@ -1584,7 +1600,7 @@
         },
         "fsitherm":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"computed as the sea ice thermodynamic water flux into the ocean divided by the area of the ocean portion of the grid cell.",
             "dimensions":"longitude latitude time",
             "long_name":"Water Flux into Sea Water due to Sea Ice Thermodynamics",
@@ -1616,7 +1632,7 @@
         },
         "graz":{
             "cell_measures":"area: areacello volume: volcello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude olevel time",
             "long_name":"Total Grazing of Phytoplankton by Zooplankton",
@@ -1631,7 +1647,7 @@
             "valid_min":""
         },
         "hfbasin":{
-            "cell_measures":"",
+            "cell_measures":"area: areacella",
             "cell_methods":"longitude: mean (basin) time: mean",
             "comment":"Contains contributions from all physical processes affecting the northward heat transport, including resolved advection, parameterized advection, lateral diffusion, etc. Diagnosed here as a function of latitude and basin.   Use Celsius for temperature scale.",
             "dimensions":"latitude basin time",
@@ -1647,7 +1663,7 @@
             "valid_min":""
         },
         "hfbasinpadv":{
-            "cell_measures":"",
+            "cell_measures":"area: areacella",
             "cell_methods":"longitude: mean (basin) time: mean",
             "comment":"Contributions to heat transport from parameterized eddy-induced advective transport due to any subgrid advective process. Diagnosed here as a function of latitude and basin.  Use Celsius for temperature scale.",
             "dimensions":"latitude basin time",
@@ -1663,7 +1679,7 @@
             "valid_min":""
         },
         "hfbasinpmadv":{
-            "cell_measures":"",
+            "cell_measures":"area: areacella",
             "cell_methods":"longitude: mean (basin) time: mean",
             "comment":"Contributions to heat transport from parameterized mesoscale eddy-induced advective transport. Diagnosed here as a function of latitude and basin.  Use Celsius for temperature scale.",
             "dimensions":"latitude basin time",
@@ -1679,7 +1695,7 @@
             "valid_min":""
         },
         "hfbasinpmdiff":{
-            "cell_measures":"",
+            "cell_measures":"area: areacella",
             "cell_methods":"longitude: mean (basin) time: mean",
             "comment":"Contributions to heat transport from parameterized mesoscale eddy-induced diffusive transport (i.e., neutral diffusion). Diagnosed here as a function of latitude and basin.",
             "dimensions":"latitude basin time",
@@ -1695,7 +1711,7 @@
             "valid_min":""
         },
         "hfbasinpsmadv":{
-            "cell_measures":"",
+            "cell_measures":"area: areacella",
             "cell_methods":"longitude: mean (basin) time: mean",
             "comment":"Contributions to heat transport from parameterized mesoscale eddy-induced advective transport. Diagnosed here as a function of latitude and basin.  Use Celsius for temperature scale.",
             "dimensions":"latitude basin time",
@@ -1712,7 +1728,7 @@
         },
         "hfcorr":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Heat Flux Correction",
@@ -1728,7 +1744,7 @@
         },
         "hfds":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"This is the net flux of heat entering the liquid water column through its upper surface (excluding any 'flux adjustment') .",
             "dimensions":"longitude latitude time",
             "long_name":"Downward Heat Flux at Sea Water Surface",
@@ -1760,7 +1776,7 @@
         },
         "hfgeou":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Upward Geothermal Heat Flux at Sea Floor",
@@ -1776,7 +1792,7 @@
         },
         "hfibthermds":{
             "cell_measures":"area: areacello volume: volcello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude olevel time",
             "long_name":"Heat Flux into Sea Water due to Iceberg Thermodynamics",
@@ -1792,13 +1808,13 @@
         },
         "hfibthermds2d":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Heat Flux into Sea Water due to Iceberg Thermodynamics",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
-            "out_name":"hfibthermds2d",
+            "out_name":"hfibthermds",
             "positive":"",
             "standard_name":"heat_flux_into_sea_water_due_to_iceberg_thermodynamics",
             "type":"real",
@@ -1840,7 +1856,7 @@
         },
         "hfrunoffds":{
             "cell_measures":"area: areacello volume: volcello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude olevel time",
             "long_name":"Temperature Flux due to Runoff Expressed as Heat Flux into Sea Water",
@@ -1856,13 +1872,13 @@
         },
         "hfrunoffds2d":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Temperature Flux due to Runoff Expressed as Heat Flux into Sea Water",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
-            "out_name":"hfrunoffds2d",
+            "out_name":"hfrunoffds",
             "positive":"",
             "standard_name":"temperature_flux_due_to_runoff_expressed_as_heat_flux_into_sea_water",
             "type":"real",
@@ -1872,7 +1888,7 @@
         },
         "hfsifrazil":{
             "cell_measures":"area: areacello volume: volcello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude olevel time",
             "long_name":"Heat Flux into Sea Water due to Frazil Ice Formation",
@@ -1888,13 +1904,13 @@
         },
         "hfsifrazil2d":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Heat Flux into Sea Water due to Frazil Ice Formation",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
-            "out_name":"hfsifrazil2d",
+            "out_name":"hfsifrazil",
             "positive":"",
             "standard_name":"heat_flux_into_sea_water_due_to_freezing_of_frazil_ice",
             "type":"real",
@@ -1904,7 +1920,7 @@
         },
         "hfsnthermds":{
             "cell_measures":"area: areacello volume: volcello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude olevel time",
             "long_name":"Heat Flux into Sea Water due to Snow Thermodynamics",
@@ -1920,13 +1936,13 @@
         },
         "hfsnthermds2d":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Heat Flux into Sea Water due to Snow Thermodynamics",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
-            "out_name":"hfsnthermds2d",
+            "out_name":"hfsnthermds",
             "positive":"",
             "standard_name":"heat_flux_into_sea_water_due_to_snow_thermodynamics",
             "type":"real",
@@ -1983,7 +1999,7 @@
             "valid_min":""
         },
         "htovgyre":{
-            "cell_measures":"",
+            "cell_measures":"area: areacella",
             "cell_methods":"longitude: mean time: mean",
             "comment":"From all advective mass transport processes, resolved and parameterized.",
             "dimensions":"latitude basin time",
@@ -1999,7 +2015,7 @@
             "valid_min":""
         },
         "htovovrt":{
-            "cell_measures":"",
+            "cell_measures":"area: areacella",
             "cell_methods":"longitude: mean time: mean",
             "comment":"From all advective mass transport processes, resolved and parameterized.",
             "dimensions":"latitude basin time",
@@ -2304,7 +2320,7 @@
         },
         "limfecalc":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Iron limitation of Calcareous Phytoplankton",
@@ -2320,7 +2336,7 @@
         },
         "limfediat":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Iron limitation of Diatoms",
@@ -2336,7 +2352,7 @@
         },
         "limfediaz":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Iron limitation of Diazotrophs",
@@ -2352,7 +2368,7 @@
         },
         "limfemisc":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Iron Limitation of Other Phytoplankton",
@@ -2368,7 +2384,7 @@
         },
         "limfepico":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Iron limitation of Picophytoplankton",
@@ -2384,7 +2400,7 @@
         },
         "limirrcalc":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Irradiance limitation of Calcareous Phytoplankton",
@@ -2400,7 +2416,7 @@
         },
         "limirrdiat":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Irradiance limitation of Diatoms",
@@ -2416,7 +2432,7 @@
         },
         "limirrdiaz":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Irradiance limitation of Diazotrophs",
@@ -2432,7 +2448,7 @@
         },
         "limirrmisc":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Irradiance Limitation of Other Phytoplankton",
@@ -2448,7 +2464,7 @@
         },
         "limirrpico":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Irradiance limitation of Picophytoplankton",
@@ -2464,7 +2480,7 @@
         },
         "limncalc":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Nitrogen limitation of Calcareous Phytoplankton",
@@ -2480,7 +2496,7 @@
         },
         "limndiat":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Nitrogen limitation of Diatoms",
@@ -2496,7 +2512,7 @@
         },
         "limndiaz":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Nitrogen limitation of Diazotrophs",
@@ -2512,7 +2528,7 @@
         },
         "limnmisc":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Nitrogen Limitation of Other Phytoplankton",
@@ -2528,7 +2544,7 @@
         },
         "limnpico":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Nitrogen limitation of Picophytoplankton",
@@ -2544,7 +2560,7 @@
         },
         "masscello":{
             "cell_measures":"area: areacello volume: volcello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"Tracer grid-cell mass per unit area used for computing tracer budgets. For Boussinesq models with static ocean grid cell thickness, masscello = rhozero*thickcello, where thickcello is static cell thickness and rhozero is constant Boussinesq reference density. More generally, masscello is time dependent and reported as part of Omon.",
             "dimensions":"longitude latitude olevel time",
             "long_name":"Sea Water Mass Per Unit Area",
@@ -2575,7 +2591,7 @@
             "valid_min":""
         },
         "mfo":{
-            "cell_measures":"",
+            "cell_measures":"area: areacella",
             "cell_methods":"time: mean",
             "comment":"",
             "dimensions":"oline time",
@@ -2592,7 +2608,7 @@
         },
         "mlotst":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"Sigma T is potential density referenced to ocean surface.",
             "dimensions":"longitude latitude time",
             "long_name":"Ocean Mixed Layer Thickness Defined by Sigma T",
@@ -2640,7 +2656,7 @@
         },
         "mlotstsq":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Square of Ocean Mixed Layer Thickness Defined by Sigma T",
@@ -2656,7 +2672,7 @@
         },
         "msftbarot":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"Streamfunction or its approximation for free surface models. See OMDP document for details.",
             "dimensions":"longitude latitude time",
             "long_name":"Ocean Barotropic Mass Streamfunction",
@@ -2671,8 +2687,8 @@
             "valid_min":""
         },
         "msftmrho":{
-            "cell_measures":"",
-            "cell_methods":"longitude: mean time: mean",
+            "cell_measures":"area: areacella",
+            "cell_methods":"longitude: mean (comment: basin mean[ along zig-zag grid path]) time: mean",
             "comment":"Overturning mass streamfunction arising from all advective mass transport processes, resolved and parameterized.",
             "dimensions":"latitude rho basin time",
             "long_name":"Ocean Meridional Overturning Mass Streamfunction",
@@ -2687,8 +2703,8 @@
             "valid_min":""
         },
         "msftmrhompa":{
-            "cell_measures":"",
-            "cell_methods":"longitude: mean time: mean",
+            "cell_measures":"area: areacella",
+            "cell_methods":"longitude: mean (comment: basin mean[ along zig-zag grid path]) time: mean",
             "comment":"CMIP5 called this 'due to Bolus Advection'.  Name change respects the more general physics of the mesoscale parameterizations.",
             "dimensions":"latitude rho basin time",
             "long_name":"ocean meridional overturning mass streamfunction due to parameterized mesoscale advection",
@@ -2703,8 +2719,8 @@
             "valid_min":""
         },
         "msftmyz":{
-            "cell_measures":"",
-            "cell_methods":"longitude: mean time: mean",
+            "cell_measures":"area: areacella",
+            "cell_methods":"longitude: mean (comment: basin mean[ along zig-zag grid path]) time: mean",
             "comment":"Overturning mass streamfunction arising from all advective mass transport processes, resolved and parameterized.",
             "dimensions":"latitude olevel basin time",
             "long_name":"Ocean Meridional Overturning Mass Streamfunction",
@@ -2719,8 +2735,8 @@
             "valid_min":""
         },
         "msftmzmpa":{
-            "cell_measures":"",
-            "cell_methods":"longitude: mean time: mean",
+            "cell_measures":"area: areacella",
+            "cell_methods":"longitude: mean (comment: basin mean[ along zig-zag grid path]) time: mean",
             "comment":"CMIP5 called this 'due to Bolus Advection'.  Name change respects the more general physics of the mesoscale parameterizations.",
             "dimensions":"latitude olevel basin time",
             "long_name":"ocean meridional overturning mass streamfunction due to parameterized mesoscale advection",
@@ -2735,8 +2751,8 @@
             "valid_min":""
         },
         "msftmzsmpa":{
-            "cell_measures":"",
-            "cell_methods":"longitude: mean time: mean",
+            "cell_measures":"area: areacella",
+            "cell_methods":"longitude: mean (comment: basin mean[ along zig-zag grid path]) time: mean",
             "comment":"Report only if there is a submesoscale eddy parameterization.",
             "dimensions":"latitude olevel basin time",
             "long_name":"ocean meridional overturning mass streamfunction due to parameterized submesoscale advection",
@@ -2751,8 +2767,8 @@
             "valid_min":""
         },
         "msftyrho":{
-            "cell_measures":"",
-            "cell_methods":"longitude: mean time: mean",
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean grid_longitude: mean",
             "comment":"Overturning mass streamfunction arising from all advective mass transport processes, resolved and parameterized.",
             "dimensions":"latitude rho basin time",
             "long_name":"Ocean Y Overturning Mass Streamfunction",
@@ -2767,8 +2783,8 @@
             "valid_min":""
         },
         "msftyrhompa":{
-            "cell_measures":"",
-            "cell_methods":"longitude: mean time: mean",
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean grid_longitude: mean",
             "comment":"CMIP5 called this 'due to Bolus Advection'.  Name change respects the more general physics of the mesoscale parameterizations.",
             "dimensions":"latitude rho basin time",
             "long_name":"ocean Y overturning mass streamfunction due to parameterized mesoscale advection",
@@ -2783,8 +2799,8 @@
             "valid_min":""
         },
         "msftyyz":{
-            "cell_measures":"",
-            "cell_methods":"longitude: mean time: mean",
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean grid_longitude: mean",
             "comment":"Overturning mass streamfunction arising from all advective mass transport processes, resolved and parameterized.",
             "dimensions":"latitude olevel basin time",
             "long_name":"Ocean Y Overturning Mass Streamfunction",
@@ -2799,8 +2815,8 @@
             "valid_min":""
         },
         "msftyzmpa":{
-            "cell_measures":"",
-            "cell_methods":"longitude: mean time: mean",
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean grid_longitude: mean",
             "comment":"CMIP5 called this 'due to Bolus Advection'.  Name change respects the more general physics of the mesoscale parameterizations.",
             "dimensions":"latitude olevel basin time",
             "long_name":"ocean Y overturning mass streamfunction due to parameterized mesoscale advection",
@@ -2815,8 +2831,8 @@
             "valid_min":""
         },
         "msftyzsmpa":{
-            "cell_measures":"",
-            "cell_methods":"longitude: mean time: mean",
+            "cell_measures":"area: areacella",
+            "cell_methods":"longitude: mean (comment: basin mean[ along zig-zag grid path]) time: mean",
             "comment":"Report only if there is a submesoscale eddy parameterization.",
             "dimensions":"latitude olevel basin time",
             "long_name":"ocean Y overturning mass streamfunction due to parameterized submesoscale advection",
@@ -2847,7 +2863,7 @@
             "valid_min":""
         },
         "nh4os":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
@@ -2879,7 +2895,7 @@
             "valid_min":""
         },
         "no3os":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
@@ -2912,7 +2928,7 @@
         },
         "o2min":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Oxygen Minimum Concentration",
@@ -2927,7 +2943,7 @@
             "valid_min":""
         },
         "o2os":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
@@ -2959,7 +2975,7 @@
             "valid_min":""
         },
         "o2satos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
@@ -2976,7 +2992,7 @@
         },
         "obvfsq":{
             "cell_measures":"area: areacello volume: volcello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude olevel time",
             "long_name":"Square of Brunt Vaisala Frequency in Sea Water",
@@ -3024,7 +3040,7 @@
         },
         "pbo":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Sea Water Pressure at Sea floor",
@@ -3087,7 +3103,7 @@
             "valid_min":""
         },
         "phabioos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"negative log10 of hydrogen ion concentration with the concentration expressed as mol H kg-1.",
             "dimensions":"longitude latitude time",
@@ -3119,7 +3135,7 @@
             "valid_min":""
         },
         "phnatos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"negative log10 of hydrogen ion concentration with the concentration expressed as mol H kg-1.",
             "dimensions":"longitude latitude time",
@@ -3135,7 +3151,7 @@
             "valid_min":""
         },
         "phos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"negative log10 of hydrogen ion concentration with the concentration expressed as mol H kg-1.",
             "dimensions":"longitude latitude time",
@@ -3183,7 +3199,7 @@
             "valid_min":""
         },
         "phycalcos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"carbon concentration from calcareous (calcite-producing) phytoplankton component alone",
             "dimensions":"longitude latitude time",
@@ -3199,7 +3215,7 @@
             "valid_min":""
         },
         "phycos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"sum of phytoplankton organic carbon component concentrations at the sea surface",
             "dimensions":"longitude latitude time",
@@ -3231,7 +3247,7 @@
             "valid_min":""
         },
         "phydiatos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"carbon from the diatom phytoplankton component concentration alone",
             "dimensions":"longitude latitude time",
@@ -3263,7 +3279,7 @@
             "valid_min":""
         },
         "phydiazos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"carbon concentration from the diazotrophic phytoplankton component alone",
             "dimensions":"longitude latitude time",
@@ -3295,7 +3311,7 @@
             "valid_min":""
         },
         "phyfeos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"sum of phytoplankton iron component concentrations",
             "dimensions":"longitude latitude time",
@@ -3327,7 +3343,7 @@
             "valid_min":""
         },
         "phymiscos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"carbon concentration from additional phytoplankton component alone",
             "dimensions":"longitude latitude time",
@@ -3359,7 +3375,7 @@
             "valid_min":""
         },
         "phynos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"sum of phytoplankton nitrogen component concentrations",
             "dimensions":"longitude latitude time",
@@ -3407,7 +3423,7 @@
             "valid_min":""
         },
         "phypicoos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"carbon concentration from the picophytoplankton (<2 um) component alone",
             "dimensions":"longitude latitude time",
@@ -3423,7 +3439,7 @@
             "valid_min":""
         },
         "phypos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"sum of phytoplankton phosphorus components",
             "dimensions":"longitude latitude time",
@@ -3455,7 +3471,7 @@
             "valid_min":""
         },
         "physios":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"sum of phytoplankton silica component concentrations",
             "dimensions":"longitude latitude time",
@@ -3503,7 +3519,7 @@
             "valid_min":""
         },
         "po4os":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
@@ -3535,7 +3551,7 @@
             "valid_min":""
         },
         "ponos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"sum of particulate organic nitrogen component concentrations",
             "dimensions":"longitude latitude time",
@@ -3567,7 +3583,7 @@
             "valid_min":""
         },
         "popos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"sum of particulate organic phosphorus component concentrations",
             "dimensions":"longitude latitude time",
@@ -3632,7 +3648,7 @@
         },
         "pso":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Sea Water Pressure at Sea Water Surface",
@@ -3664,7 +3680,7 @@
         },
         "rsdo":{
             "cell_measures":"area: areacello volume: volcello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude olevel time",
             "long_name":"Downwelling Shortwave Radiation in Sea Water",
@@ -3680,7 +3696,7 @@
         },
         "rsntds":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"This is the flux into the surface of liquid sea water only. This excludes shortwave flux absorbed by sea ice, but includes any light that passes through the ice and is absorbed by the ocean.",
             "dimensions":"longitude latitude time",
             "long_name":"Net Downward Shortwave Radiation at Sea Water Surface",
@@ -3696,7 +3712,7 @@
         },
         "sf6":{
             "cell_measures":"area: areacello volume: volcello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude olevel time",
             "long_name":"Moles Per Unit Mass of SF6 in sea water",
@@ -3712,7 +3728,7 @@
         },
         "sfdsi":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"This field is physical, and it arises since sea ice has a nonzero salt content, so it exchanges salt with the liquid ocean upon melting and freezing.",
             "dimensions":"longitude latitude time",
             "long_name":"Downward Sea Ice Basal Salt Flux",
@@ -3728,7 +3744,7 @@
         },
         "sfriver":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"This field is physical, and it arises when rivers carry a nonzero salt content.  Often this is zero, with rivers assumed to be fresh.",
             "dimensions":"longitude latitude time",
             "long_name":"Salt Flux into Sea Water from Rivers",
@@ -3759,7 +3775,7 @@
             "valid_min":""
         },
         "sios":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
@@ -3775,7 +3791,7 @@
             "valid_min":""
         },
         "sltovgyre":{
-            "cell_measures":"",
+            "cell_measures":"area: areacella",
             "cell_methods":"longitude: mean time: mean",
             "comment":"From all advective mass transport processes, resolved and parameterized.",
             "dimensions":"latitude basin time",
@@ -3791,7 +3807,7 @@
             "valid_min":""
         },
         "sltovovrt":{
-            "cell_measures":"",
+            "cell_measures":"area: areacella",
             "cell_methods":"longitude: mean time: mean",
             "comment":"From all advective mass transport processes, resolved and parameterized.",
             "dimensions":"latitude basin time",
@@ -3808,7 +3824,7 @@
         },
         "so":{
             "cell_measures":"area: areacello volume: volcello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude olevel time",
             "long_name":"Sea Water Salinity",
@@ -3824,7 +3840,7 @@
         },
         "sob":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"Model prognostic salinity at bottom-most model grid cell",
             "dimensions":"longitude latitude time",
             "long_name":"sea water salinity at sea floor",
@@ -3856,7 +3872,7 @@
         },
         "sos":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Sea Surface Salinity",
@@ -3872,7 +3888,7 @@
         },
         "sosga":{
             "cell_measures":"",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"time",
             "long_name":"Global Average Sea Surface Salinity",
@@ -3888,7 +3904,7 @@
         },
         "sossq":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "long_name":"Square of Sea Surface Salinity",
@@ -3983,7 +3999,7 @@
             "valid_min":""
         },
         "talknatos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"total alkalinity equivalent concentration (including carbonate, borate, phosphorus, silicon, and nitrogen components) at preindustrial atmospheric xCO2",
             "dimensions":"longitude latitude time",
@@ -3999,7 +4015,7 @@
             "valid_min":""
         },
         "talkos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"total alkalinity equivalent concentration (including carbonate, borate, phosphorus, silicon, and nitrogen components)",
             "dimensions":"longitude latitude time",
@@ -4016,7 +4032,7 @@
         },
         "tauucorr":{
             "cell_measures":"--OPT",
-            "cell_methods":"area: mean where sea time: mean",
+            "cell_methods":"time: mean",
             "comment":"This is the stress on the liquid ocean from overlying atmosphere, sea ice, ice shelf, etc.",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Downward X Stress Correction",
@@ -4032,7 +4048,7 @@
         },
         "tauuo":{
             "cell_measures":"--OPT",
-            "cell_methods":"area: mean where sea time: mean",
+            "cell_methods":"time: mean",
             "comment":"This is the stress on the liquid ocean from overlying atmosphere, sea ice, ice shelf, etc.",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Downward X Stress",
@@ -4048,7 +4064,7 @@
         },
         "tauvcorr":{
             "cell_measures":"--OPT",
-            "cell_methods":"area: mean where sea time: mean",
+            "cell_methods":"time: mean",
             "comment":"This is the stress on the liquid ocean from overlying atmosphere, sea ice, ice shelf, etc.",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Downward Y Stress Correction",
@@ -4064,7 +4080,7 @@
         },
         "tauvo":{
             "cell_measures":"--OPT",
-            "cell_methods":"area: mean where sea time: mean",
+            "cell_methods":"time: mean",
             "comment":"This is the stress on the liquid ocean from overlying atmosphere, sea ice, ice shelf, etc.",
             "dimensions":"longitude latitude time",
             "long_name":"Surface Downward Y Stress",
@@ -4080,7 +4096,7 @@
         },
         "thetao":{
             "cell_measures":"area: areacello volume: volcello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"Diagnostic should be contributed even for models using conservative temperature as prognostic field.",
             "dimensions":"longitude latitude olevel time",
             "long_name":"Sea Water Potential Temperature",
@@ -4112,7 +4128,7 @@
         },
         "thkcello":{
             "cell_measures":"area: areacello volume: volcello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"",
             "dimensions":"longitude latitude olevel time",
             "long_name":"Ocean Model Cell Thickness",
@@ -4128,7 +4144,7 @@
         },
         "tob":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"Potential temperature at the ocean bottom-most grid cell.",
             "dimensions":"longitude latitude time",
             "long_name":"Sea Water Potential Temperature at Sea Floor",
@@ -4144,7 +4160,7 @@
         },
         "tos":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"temperature of liquid ocean.  Note that the correct standard_name for this variable is 'sea_surface_temperature', not 'surface_temperature', but this was discovered too late to correct.  To maintain consistency across CMIP5 models, the wrong standard_name will continue to be used.",
             "dimensions":"longitude latitude time",
             "long_name":"Sea Surface Temperature",
@@ -4152,7 +4168,7 @@
             "ok_min_mean_abs":"",
             "out_name":"tos",
             "positive":"",
-            "standard_name":"surface_temperature",
+            "standard_name":"sea_surface_temperature",
             "type":"real",
             "units":"K",
             "valid_max":"",
@@ -4160,7 +4176,7 @@
         },
         "tosga":{
             "cell_measures":"",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"This may differ from 'surface temperature' in regions of sea ice.This may differ from 'surface temperature' in regions of sea ice.For models using conservative temperature as prognostic field, they should report the SST as surface potent",
             "dimensions":"time",
             "long_name":"Global Average Sea Surface Temperature",
@@ -4176,7 +4192,7 @@
         },
         "tossq":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"square of temperature of liquid ocean, averaged over the day.",
             "dimensions":"longitude latitude time",
             "long_name":"Square of Sea Surface Temperature",
@@ -4272,7 +4288,7 @@
         },
         "vsf":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"It is set to zero in models which receive a real water flux.",
             "dimensions":"longitude latitude time",
             "long_name":"Virtual Salt Flux into Sea Water",
@@ -4288,7 +4304,7 @@
         },
         "vsfcorr":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"It is set to zero in models which receive a real water flux.",
             "dimensions":"longitude latitude time",
             "long_name":"Virtual Salt Flux Correction",
@@ -4304,7 +4320,7 @@
         },
         "vsfevap":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"zero for models using real water fluxes.",
             "dimensions":"longitude latitude time",
             "long_name":"Virtual Salt Flux into Sea Water due to Evaporation",
@@ -4320,7 +4336,7 @@
         },
         "vsfpr":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"zero for models using real water fluxes.",
             "dimensions":"longitude latitude time",
             "long_name":"Virtual Salt Flux into Sea Water due to Rainfall",
@@ -4336,7 +4352,7 @@
         },
         "vsfriver":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"zero for models using real water fluxes.",
             "dimensions":"longitude latitude time",
             "long_name":"Virtual Salt Flux into Sea Water From Rivers",
@@ -4352,7 +4368,7 @@
         },
         "vsfsit":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"This variable measures the virtual salt flux into sea water due to the melting of sea ice. It is set to zero in models which receive a real water flux.",
             "dimensions":"longitude latitude time",
             "long_name":"Virtual Salt Flux into Sea Water due to Sea Ice Thermodynamics",
@@ -4368,7 +4384,7 @@
         },
         "wfcorr":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"Positive flux implies correction adds water to ocean.",
             "dimensions":"longitude latitude time",
             "long_name":"Water Flux Correction",
@@ -4384,7 +4400,7 @@
         },
         "wfo":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"computed as the water  flux into the ocean divided by the area of the ocean portion of the grid cell.  This is the sum of the next two variables in this table.",
             "dimensions":"longitude latitude time",
             "long_name":"Water Flux into Sea Water",
@@ -4400,7 +4416,7 @@
         },
         "wfonocorr":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"computed as the water  flux (without flux correction) into the ocean divided by the area of the ocean portion of the grid cell.",
             "dimensions":"longitude latitude time",
             "long_name":"Water Flux into Sea Water Without Flux Correction",
@@ -4416,7 +4432,7 @@
         },
         "wmo":{
             "cell_measures":"area: areacello volume: volcello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"Upward mass transport from resolved and parameterized advective transport.",
             "dimensions":"longitude latitude olevel time",
             "long_name":"Upward Ocean Mass Transport",
@@ -4448,7 +4464,7 @@
         },
         "zfullo":{
             "cell_measures":"area: areacello volume: volcello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"Depth below geoid",
             "dimensions":"longitude latitude olevel time",
             "long_name":"Depth Below Geoid of Ocean Layer",
@@ -4464,7 +4480,7 @@
         },
         "zhalfo":{
             "cell_measures":"area: areacello volume: volcello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"Depth below geoid",
             "dimensions":"longitude latitude olevel time",
             "long_name":"Depth Below Geoid of Interfaces Between Ocean Layers",
@@ -4495,7 +4511,7 @@
             "valid_min":""
         },
         "zmesoos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"carbon  concentration from mesozooplankton (20-200 um) component alone",
             "dimensions":"longitude latitude time",
@@ -4527,7 +4543,7 @@
             "valid_min":""
         },
         "zmicroos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"carbon  concentration from the microzooplankton (<20 um) component alone",
             "dimensions":"longitude latitude time",
@@ -4559,7 +4575,7 @@
             "valid_min":""
         },
         "zmiscos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"carbon from additional zooplankton component concentrations alone (e.g. Micro, meso).  Since the models all have different numbers of components, this variable has been included to provide a check for intercomparison between models since some phytoplankton groups are supersets.",
             "dimensions":"longitude latitude time",
@@ -4576,7 +4592,7 @@
         },
         "zo2min":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"Depth of vertical minimum concentration of dissolved oxygen gas (if two, then the shallower)",
             "dimensions":"longitude latitude time",
             "long_name":"Depth of Oxygen Minimum Concentration",
@@ -4607,7 +4623,7 @@
             "valid_min":""
         },
         "zoocos":{
-            "cell_measures":"area: areacello volume: volcello",
+            "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"sum of zooplankton carbon component concentrations",
             "dimensions":"longitude latitude time",
@@ -4624,7 +4640,7 @@
         },
         "zos":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"This is the dynamic sea level, so should have zero global area mean. It should not include inverse barometer depressions from sea ice.",
             "dimensions":"longitude latitude time",
             "long_name":"Sea Surface Height Above Geoid",
@@ -4640,7 +4656,7 @@
         },
         "zossq":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"Surface ocean geoid defines z=0.",
             "dimensions":"longitude latitude time",
             "long_name":"Square of Sea Surface Height Above Geoid",
@@ -4672,7 +4688,7 @@
         },
         "zsatarag":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"Depth of aragonite saturation horizon (0 if undersaturated at all depths, 'missing' if supersaturated at all depths; if multiple horizons exist, the shallowest should be taken).",
             "dimensions":"longitude latitude time",
             "long_name":"Aragonite Saturation Depth",
@@ -4688,7 +4704,7 @@
         },
         "zsatcalc":{
             "cell_measures":"area: areacello",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"Depth of calcite saturation horizon (0 if undersaturated at all depths, and missing saturated through whole depth; if two or more horizons exist, then the shallowest is reported)",
             "dimensions":"longitude latitude time",
             "long_name":"Calcite Saturation Depth",

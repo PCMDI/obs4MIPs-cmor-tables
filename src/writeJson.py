@@ -5,7 +5,7 @@ Created on Tue Jul 12 16:11:44 2016
 
 Paul J. Durack 12th July 2016
 
-This script generates all json files residing this this subdirectory
+This script generates all json files residing in this subdirectory
 
 PJD 12 Jul 2016     - Started
 PJD 13 Jul 2016     - Updated to download existing tables
@@ -61,6 +61,7 @@ masterTargets = [
  'fx',
  'Aday',
  'coordinate',
+ 'formula_terms',
  'frequency',
  'grid_label',
  'grids',
@@ -77,6 +78,7 @@ masterTargets = [
 #%% Tables
 tableSource = [
  ['coordinate','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_coordinate.json'],
+ ['formula_terms','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_formula_terms.json'],
  ['frequency','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_frequency.json'],
  ['fx','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_fx.json'],
  ['grid_label','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_grid_label.json'],
@@ -105,10 +107,12 @@ for count2,table in enumerate(tableSource):
     tableName = table[0]
     print 'tableName:',tableName
     #print eval(tableName)
-    if tableName in ['coordinate','frequency','grid_label','nominal_resolution']:
+    if tableName in ['coordinate','formula_terms','frequency','grid_label','nominal_resolution']:
         continue
     else:
         eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
+        eval(tableName)['Header']['product'] = 'obs4MIPs'
+        eval(tableName)['Header']['table_id'] = ''.join(['Table obs4MIPs_',tableName])
         if 'baseURL' in eval(tableName)['Header'].keys():
             del(eval(tableName)['Header']['baseURL']) ; # Remove spurious entry
 
@@ -118,7 +122,7 @@ Lmon['Header']['realm']     = 'land'
 Omon['Header']['realm']     = 'ocean'
 SImon['Header']['realm']    = 'seaIce'
 fx['Header']['realm']       = 'fx'
-Aday['Header']['table_id']  = 'Table Aday' ; # Cleanup from upstream
+Aday['Header']['table_id']  = 'Table obs4MIPs_Aday' ; # Cleanup from upstream
 
 # Clean out modeling_realm
 for jsonName in ['Amon','Lmon','Omon','SImon']:  #,'Aday']:
@@ -182,13 +186,13 @@ Lmon['variable_entry']['fapar']['valid_min'] = '0.0'
 
 #%% Coordinate
 
-#%% Frequencies
+#%% Frequency
 
 #%% Grid
 
-#%% Grid labels
+#%% Grid label
 
-#%% Institutions
+#%% Institution
 tmp = [['institution_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/obs4MIPs_institution_id.json']
       ] ;
 institution_id = readJsonCreateDict(tmp)
@@ -214,7 +218,7 @@ product = [
  'surface-radar'
  ] ;
 
-#%% Realms
+#%% Realm
 realm = [
  'aerosol',
  'atmos',
@@ -226,7 +230,7 @@ realm = [
  'seaIce'
  ] ;
 
-#%% Regions (taken from http://cfconventions.org/Data/cf-standard-names/docs/standardized-region-names.html)
+#%% Region (taken from http://cfconventions.org/Data/cf-standard-names/docs/standardized-region-names.html)
 region = [
  'africa',
  'antarctica',
@@ -321,13 +325,13 @@ required_global_attributes = [
  'variable_id'
  ] ;
 
-#%% Table IDs
+#%% Table ID
 table_id = ['Aday', 'Amon', 'Lmon', 'Omon', 'SImon', 'fx'] ;
 
 #%% Write variables to files
 for jsonName in masterTargets:
     # Clean experiment formats
-    if jsonName in ['coordinate','grid']: #,'Amon','Lmon','Omon','SImon']:
+    if jsonName in ['coordinate','grids']: #,'Amon','Lmon','Omon','SImon']:
         dictToClean = eval(jsonName)
         for key, value1 in dictToClean.iteritems():
             for value2 in value1.iteritems():
@@ -355,7 +359,8 @@ for jsonName in masterTargets:
     if not os.path.exists('../Tables'):
         os.mkdir('../Tables')
     # Create host dictionary
-    if jsonName not in ['coordinate','fx','grids','institution_id','Aday','Amon','Lmon','Omon','SImon']:
+    if jsonName not in ['coordinate','formula_terms','fx','grids',
+                        'institution_id','Aday','Amon','Lmon','Omon','SImon']:
         jsonDict = {}
         jsonDict[jsonName] = eval(jsonName)
     else:
