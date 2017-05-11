@@ -4,7 +4,7 @@
         "cmor_version":"3.2",
         "data_specs_version":"01.00.10",
         "missing_value":"1e20",
-        "product":"obs4MIPs",
+        "product":"observations",
         "table_date":"11 May 2017",
         "table_id":"Table obs4MIPs_grids"
     },

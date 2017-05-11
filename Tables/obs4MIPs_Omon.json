@@ -8,7 +8,7 @@
         "generic_levels":"olevel",
         "mip_era":"CMIP6",
         "missing_value":"1e20",
-        "product":"obs4MIPs",
+        "product":"observations",
         "realm":"ocean",
         "table_date":"11 May 2017",
         "table_id":"Table obs4MIPs_Omon"

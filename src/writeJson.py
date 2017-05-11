@@ -32,6 +32,7 @@ PJD  3 Mar 2017     - Add ndvi to LMon table https://github.com/PCMDI/obs4MIPs-c
 PJD  3 Mar 2017     - Add fapar to LMon table https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/15
 PJD 29 Mar 2017     - Correct required_global_attribute grids -> grid
 PJG 05 Apr 2017     - Added daily atm table
+PJD 11 May 2017     - Added formula_terms; Updated upstream; corrected product to 'observations'
                     - TODO:
 
 @author: durack1
@@ -111,7 +112,7 @@ for count2,table in enumerate(tableSource):
         continue
     else:
         eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
-        eval(tableName)['Header']['product'] = 'obs4MIPs'
+        eval(tableName)['Header']['product'] = 'observations'
         eval(tableName)['Header']['table_id'] = ''.join(['Table obs4MIPs_',tableName])
         if 'baseURL' in eval(tableName)['Header'].keys():
             del(eval(tableName)['Header']['baseURL']) ; # Remove spurious entry
