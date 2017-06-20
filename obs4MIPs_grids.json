@@ -2,10 +2,10 @@
     "Header":{
         "Conventions":"CF-1.7 CMIP-6.0",
         "cmor_version":"3.2",
-        "data_specs_version":"01.00.10",
+        "data_specs_version":"01.00.11",
         "missing_value":"1e20",
         "product":"observations",
-        "table_date":"11 May 2017",
+        "table_date":"19 June 2017",
         "table_id":"Table obs4MIPs_grids"
     },
     "axis_entry":{
@@ -118,7 +118,7 @@
             "dimensions":"longitude latitude",
             "long_name":"",
             "out_name":"latitude",
-            "standard_name":"",
+            "standard_name":"latitude",
             "units":"degrees_north",
             "valid_max":"90.0",
             "valid_min":"-90.0"
@@ -127,7 +127,7 @@
             "dimensions":"longitude latitude",
             "long_name":"",
             "out_name":"longitude",
-            "standard_name":"",
+            "standard_name":"longitude",
             "units":"degrees_east",
             "valid_max":"360.0",
             "valid_min":"0.0"
@@ -136,7 +136,7 @@
             "dimensions":"vertices longitude latitude",
             "long_name":"",
             "out_name":"vertices_latitude",
-            "standard_name":"",
+            "standard_name":"vertices_latitude",
             "units":"degrees_north",
             "valid_max":"90.0",
             "valid_min":"-90.0"
@@ -145,7 +145,7 @@
             "dimensions":"vertices longitude latitude",
             "long_name":"",
             "out_name":"vertices_longitude",
-            "standard_name":"",
+            "standard_name":"vertices_longitude",
             "units":"degrees_east",
             "valid_max":"360.0",
             "valid_min":"0.0"
