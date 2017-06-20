@@ -1191,6 +1191,7 @@
             "cell_methods":"area: areacella",
             "comment":"",
             "dimensions":"longitude latitude time",
+            "frequency":"mon",
             "long_name":"Top of Atmosphere Brightness Temperature",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
