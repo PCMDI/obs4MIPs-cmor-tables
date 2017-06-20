@@ -1,17 +1,15 @@
 {
-    "frequency":[
-        "1hr",
-        "1hrClimMon",
-        "3hr",
-        "3hrClim",
-        "6hr",
-        "day",
-        "decadal",
-        "fx",
-        "mon",
-        "monClim",
-        "subhr",
-        "yr",
-        "yrClim"
-    ]
+    "frequency":{
+        "1hr":"sampled hourly",
+        "1hrClimMon":"monthly climatology of diurnal cycle computed from hourly samples",
+        "3hr":"sampled every 3 hours",
+        "6hr":"sampled every 6 hours",
+        "day":"daily mean samples",
+        "dec":"decadal mean samples",
+        "fx":"fixed (time invariant) field",
+        "mon":"monthly mean samples",
+        "monClim":"monthly climatology computed from monthly mean samples",
+        "subhr":"sampled sub-hourly",
+        "yr":"annual mean samples"
+    }
 }

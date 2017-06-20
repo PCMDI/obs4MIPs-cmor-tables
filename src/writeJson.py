@@ -33,6 +33,7 @@ PJD  3 Mar 2017     - Add fapar to LMon table https://github.com/PCMDI/obs4MIPs-
 PJD 29 Mar 2017     - Correct required_global_attribute grids -> grid
 PJG 05 Apr 2017     - Added daily atm table
 PJD 11 May 2017     - Added formula_terms; Updated upstream; corrected product to 'observations'
+PJD 19 Jun 2017     - Update to deal with CMOR 3.2.4 and tables v01.00.11
                     - TODO:
 
 @author: durack1
@@ -142,6 +143,7 @@ Amon['variable_entry']['ttbr']['cell_measures'] = 'time: mean'
 Amon['variable_entry']['ttbr']['cell_methods'] = 'area: areacella'
 Amon['variable_entry']['ttbr']['comment'] = ''
 Amon['variable_entry']['ttbr']['dimensions'] = 'longitude latitude time'
+Amon['variable_entry']['ttbr']['frequency'] = 'mon'
 Amon['variable_entry']['ttbr']['long_name'] = 'Top of Atmosphere Brightness Temperature'
 Amon['variable_entry']['ttbr']['ok_max_mean_abs'] = ''
 Amon['variable_entry']['ttbr']['ok_min_mean_abs'] = ''
@@ -158,6 +160,7 @@ Lmon['variable_entry']['ndvi']['cell_measures'] = 'time: mean area: mean where l
 Lmon['variable_entry']['ndvi']['cell_methods'] = 'area: areacella'
 Lmon['variable_entry']['ndvi']['comment'] = ''
 Lmon['variable_entry']['ndvi']['dimensions'] = 'longitude latitude time'
+Lmon['variable_entry']['ndvi']['frequency'] = 'mon'
 Lmon['variable_entry']['ndvi']['long_name'] = 'Normalized Difference Vegetation Index'
 Lmon['variable_entry']['ndvi']['ok_max_mean_abs'] = ''
 Lmon['variable_entry']['ndvi']['ok_min_mean_abs'] = ''
@@ -174,6 +177,7 @@ Lmon['variable_entry']['fapar']['cell_measures'] = 'time: mean area: mean where 
 Lmon['variable_entry']['fapar']['cell_methods'] = 'area: areacella'
 Lmon['variable_entry']['fapar']['comment'] = 'The fraction of incoming solar radiation in the photosynthetically active radiation spectral region that is absorbed by a vegetation canopy.'
 Lmon['variable_entry']['fapar']['dimensions'] = 'longitude latitude time'
+Lmon['variable_entry']['fapar']['frequency'] = 'mon'
 Lmon['variable_entry']['fapar']['long_name'] = 'Fraction of Absorbed Photosynthetically Active Radiation'
 Lmon['variable_entry']['fapar']['ok_max_mean_abs'] = ''
 Lmon['variable_entry']['fapar']['ok_min_mean_abs'] = ''
