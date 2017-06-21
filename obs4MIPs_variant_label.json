@@ -1,0 +1,5 @@
+{
+    "variant_label":[
+      "^r[[:digit:]]\\+i[[:digit:]]\\+p[[:digit:]]\\+f[[:digit:]]\\+$"
+    ]
+}

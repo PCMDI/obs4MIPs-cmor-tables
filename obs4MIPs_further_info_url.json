@@ -1,0 +1,5 @@
+{
+    "further_info_url":[
+      "^http://furtherinfo\\.es-doc\\.org/obs4MIPs\\(\\.[[:alnum:]\\-]\\+\\)\\{3\\}$"
+    ]
+}
