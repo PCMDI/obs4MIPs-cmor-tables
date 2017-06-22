@@ -375,8 +375,6 @@ institution_id = readJsonCreateDict(tmp)
 institution_id = institution_id.get('institution_id')
 
 # Fix issues
-#DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
-institution_id['institution_id']['DWD'] = 'Deutscher Wetterdienst, Offenbach 63067, Germany'
 #==============================================================================
 # Example new experiment_id entry
 #institution_id['institution_id']['NOAA-NCEI'] = 'NOAA\'s National Centers for Environmental Information, Asheville, NC 28801, USA'
