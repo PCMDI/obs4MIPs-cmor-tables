@@ -34,6 +34,7 @@ PJD 29 Mar 2017     - Correct required_global_attribute grids -> grid
 PJG 05 Apr 2017     - Added daily atm table
 PJD 11 May 2017     - Added formula_terms; Updated upstream; corrected product to 'observations'
 PJD 19 Jun 2017     - Update to deal with CMOR 3.2.4 and tables v01.00.11
+PJD 21 Jun 2017     - Updated PR #46 by Funkensieper/DWD to add new Amon variables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48 
                     - TODO:
 
 @author: durack1
