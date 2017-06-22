@@ -1,5 +1,5 @@
 {
-    "variable_entry":{
+    "formula_entry":{
         "a":{
             "dimensions":"alevel",
             "long_name":"vertical coordinate formula term: a(k)",

@@ -3,13 +3,13 @@
         "Conventions":"CF-1.7 CMIP-6.0",
         "approx_interval":"30.00000",
         "cmor_version":"3.2",
-        "data_specs_version":"01.00.11",
+        "data_specs_version":"01.00.12",
         "generic_levels":"",
         "mip_era":"CMIP6",
         "missing_value":"1e20",
         "product":"observations",
         "realm":"seaIce",
-        "table_date":"20 June 2017",
+        "table_date":"21 June 2017",
         "table_id":"Table obs4MIPs_SImon"
     },
     "variable_entry":{
@@ -33,7 +33,7 @@
         "siareaacrossline":{
             "cell_measures":"area: areacella",
             "cell_methods":"time: mean",
-            "comment":"net (sum of transport in all directions) sea ice area transport through the following four passages, positive into the Arctic Ocean 1. Fram Strait = (11.5W,81.3N to (10.5E,79.6N) 2. Canadian Archipelego = (128.2W,70.6N) to (59.3W,82.1N) 3. Barents opening = (16.8E,76.5N) to (19.2E,70.2N) 4. Bering Strait = (171W,66.2N) to (166W,65N)",
+            "comment":"net (sum of transport in all directions) sea ice area transport through the following four passages, positive into the Arctic Ocean 1. Fram Strait = (11.5W,81.3N to (10.5E,79.6N) 2. Canadian Archipelago = (128.2W,70.6N) to (59.3W,82.1N) 3. Barents opening = (16.8E,76.5N) to (19.2E,70.2N) 4. Bering Strait = (171W,66.2N) to (166W,65N)",
             "dimensions":"siline time",
             "frequency":"mon",
             "long_name":"Sea ice area flux through straits",
@@ -883,7 +883,7 @@
         "simassacrossline":{
             "cell_measures":"area: areacella",
             "cell_methods":"time: mean",
-            "comment":"net (sum of transport in all directions) sea ice area transport through the following four passages, positive into the Arctic Ocean 1. Fram Strait = (11.5W,81.3N to (10.5E,79.6N) 2. Canadian Archipelego = (128.2W,70.6N) to (59.3W,82.1N) 3. Barents opening = (16.8E,76.5N) to (19.2E,70.2N) 4. Bering Strait = (171W,66.2N) to (166W,65N)",
+            "comment":"net (sum of transport in all directions) sea ice area transport through the following four passages, positive into the Arctic Ocean 1. Fram Strait = (11.5W,81.3N to (10.5E,79.6N) 2. Canadian Archipelago = (128.2W,70.6N) to (59.3W,82.1N) 3. Barents opening = (16.8E,76.5N) to (19.2E,70.2N) 4. Bering Strait = (171W,66.2N) to (166W,65N)",
             "dimensions":"siline time",
             "frequency":"mon",
             "long_name":"Sea mass area flux through straits",
@@ -1512,7 +1512,7 @@
         "snmassacrossline":{
             "cell_measures":"area: areacella",
             "cell_methods":"time: mean",
-            "comment":"net (sum of transport in all directions) snow mass transport through the following four passages, positive into the Arctic Ocean 1. Fram Strait = (11.5W,81.3N to (10.5E,79.6N) 2. Canadian Archipelego = (128.2W,70.6N) to (59.3W,82.1N) 3. Barents opening = (16.8E,76.5N) to (19.2E,70.2N) 4. Bering Strait = (171W,66.2N) to (166W,65N)",
+            "comment":"net (sum of transport in all directions) snow mass transport through the following four passages, positive into the Arctic Ocean 1. Fram Strait = (11.5W,81.3N to (10.5E,79.6N) 2. Canadian Archipela",
             "dimensions":"siline time",
             "frequency":"mon",
             "long_name":"Snow mass flux through straits",

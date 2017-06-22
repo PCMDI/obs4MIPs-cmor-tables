@@ -189,8 +189,7 @@ Lmon['variable_entry']['fapar']['units'] = '1'
 Lmon['variable_entry']['fapar']['valid_max'] = '1.0'
 Lmon['variable_entry']['fapar']['valid_min'] = '0.0'
 # DWD cloud variables (CM SAF CLARA & ESA Cloud_CCI) ...
-#
-# ... clCCI
+# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'clCCI'] = {}
 Amon['variable_entry']['clCCI']['cell_measures'] = 'area: areacella'
 Amon['variable_entry']['clCCI']['cell_methods'] = 'area: time: mean'
@@ -207,7 +206,7 @@ Amon['variable_entry']['clCCI']['type'] = 'real'
 Amon['variable_entry']['clCCI']['units'] = '%'
 Amon['variable_entry']['clCCI']['valid_max'] = ''
 Amon['variable_entry']['clCCI']['valid_min'] = ''
-# ... clCLARA
+# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'clCLARA'] = {}
 Amon['variable_entry']['clCLARA']['cell_measures'] = 'area: areacella'
 Amon['variable_entry']['clCLARA']['cell_methods'] = 'area: mean time: mean'
@@ -224,7 +223,7 @@ Amon['variable_entry']['clCLARA']['type'] = 'real'
 Amon['variable_entry']['clCLARA']['units'] = '%'
 Amon['variable_entry']['clCLARA']['valid_max'] = ''
 Amon['variable_entry']['clCLARA']['valid_min'] = ''
-# ... cltCCI
+# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'cltCCI'] = {}
 Amon['variable_entry']['cltCCI']['cell_measures'] = 'area: areacella'
 Amon['variable_entry']['cltCCI']['cell_methods'] = 'area: time: mean'
@@ -241,7 +240,7 @@ Amon['variable_entry']['cltCCI']['type'] = 'real'
 Amon['variable_entry']['cltCCI']['units'] = '%'
 Amon['variable_entry']['cltCCI']['valid_max'] = ''
 Amon['variable_entry']['cltCCI']['valid_min'] = ''
-# ... cltCLARA
+# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'cltCLARA'] = {}
 Amon['variable_entry']['cltCLARA']['cell_measures'] = 'area: areacella'
 Amon['variable_entry']['cltCLARA']['cell_methods'] = 'area: mean time: mean'
@@ -258,7 +257,7 @@ Amon['variable_entry']['cltCLARA']['type'] = 'real'
 Amon['variable_entry']['cltCLARA']['units'] = '%'
 Amon['variable_entry']['cltCLARA']['valid_max'] = ''
 Amon['variable_entry']['cltCLARA']['valid_min'] = ''
-# ... clwCCI
+# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'clwCCI'] = {}
 Amon['variable_entry']['clwCCI']['cell_measures'] = 'area: areacella'
 Amon['variable_entry']['clwCCI']['cell_methods'] = 'area: time: mean'
@@ -275,7 +274,7 @@ Amon['variable_entry']['clwCCI']['type'] = 'real'
 Amon['variable_entry']['clwCCI']['units'] = '%'
 Amon['variable_entry']['clwCCI']['valid_max'] = ''
 Amon['variable_entry']['clwCCI']['valid_min'] = ''
-# ... clwCLARA
+# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'clwCLARA'] = {}
 Amon['variable_entry']['clwCLARA']['cell_measures'] = 'area: areacella'
 Amon['variable_entry']['clwCLARA']['cell_methods'] = 'area: mean time: mean'
@@ -292,7 +291,7 @@ Amon['variable_entry']['clwCLARA']['type'] = 'real'
 Amon['variable_entry']['clwCLARA']['units'] = '%'
 Amon['variable_entry']['clwCLARA']['valid_max'] = ''
 Amon['variable_entry']['clwCLARA']['valid_min'] = ''
-# ... clwtCCI
+# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'clwtCCI'] = {}
 Amon['variable_entry']['clwtCCI']['cell_measures'] = 'area: areacella'
 Amon['variable_entry']['clwtCCI']['cell_methods'] = 'area: time: mean'
@@ -309,7 +308,7 @@ Amon['variable_entry']['clwtCCI']['type'] = 'real'
 Amon['variable_entry']['clwtCCI']['units'] = '%'
 Amon['variable_entry']['clwtCCI']['valid_max'] = ''
 Amon['variable_entry']['clwtCCI']['valid_min'] = ''
-# ... clwtCLARA
+# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'clwtCLARA'] = {}
 Amon['variable_entry']['clwtCLARA']['cell_measures'] = 'area: areacella'
 Amon['variable_entry']['clwtCLARA']['cell_methods'] = 'area: mean time: mean'
@@ -326,7 +325,7 @@ Amon['variable_entry']['clwtCLARA']['type'] = 'real'
 Amon['variable_entry']['clwtCLARA']['units'] = '%'
 Amon['variable_entry']['clwtCLARA']['valid_max'] = ''
 Amon['variable_entry']['clwtCLARA']['valid_min'] = ''
-# ... pctCCI
+# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'pctCCI'] = {}
 Amon['variable_entry']['pctCCI']['cell_measures'] = 'area: areacella'
 Amon['variable_entry']['pctCCI']['cell_methods'] = 'area: time: mean'
@@ -343,7 +342,7 @@ Amon['variable_entry']['pctCCI']['type'] = 'real'
 Amon['variable_entry']['pctCCI']['units'] = 'Pa'
 Amon['variable_entry']['pctCCI']['valid_max'] = ''
 Amon['variable_entry']['pctCCI']['valid_min'] = ''
-# ... pctCLARA
+# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'pctCLARA'] = {}
 Amon['variable_entry']['pctCLARA']['cell_measures'] = 'area: areacella'
 Amon['variable_entry']['pctCLARA']['cell_methods'] = 'area: mean time: mean'
@@ -376,6 +375,7 @@ institution_id = readJsonCreateDict(tmp)
 institution_id = institution_id.get('institution_id')
 
 # Fix issues
+#DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 institution_id['institution_id']['DWD'] = 'Deutscher Wetterdienst, Offenbach 63067, Germany'
 #==============================================================================
 # Example new experiment_id entry
