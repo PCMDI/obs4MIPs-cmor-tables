@@ -1,9 +1,9 @@
 {
     "source_type":[
-        "composite",
-        "remote-sensed",
-        "satellite",
-        "surface-gridded-insitu",
-        "surface-radar"
+        "^composite$",
+        "^remote-sensed$",
+        "^satellite$",
+        "^surface-gridded-insitu$",
+        "^surface-radar$"
     ]
 }

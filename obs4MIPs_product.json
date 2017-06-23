@@ -1,5 +1,5 @@
 {
     "product":[
-        "observations"
+        "^observations$"
     ]
 }
