@@ -6,28 +6,30 @@
     "calendar":                     "gregorian",
 
     "data_structure":               "grid",
-    "dataset_version_number":       "1.1.0",
     "frequency":                    "mon",
     "grid":                         "1x1 degree latitude x longitude",
     "grid_label":                   "gn",
     "nominal_resolution":           "1x1 degree",
-    "product":                      "composite",
+    "product":                      "observations",
     "realm":                        "ocean",
-    "region":			    "global",
+    "region":			            "global",
+    "variant_label":                "r1",
 
     "comment":                      "Based on Hurrell SST/sea ice consistency criteria applied to merged HadISST (1870-01 1981-10) & NCEP-0I2 (1981-11 to 2015-12)",
     "contact ":                     "PCMDI (pcmdi-cmip@llnl.gov) ",
-    "further_info_url":             "http://www-pcmdi.llnl.gov/projects/amip/AMIP2EXPDSN/BCS/amip2bcs.php",
+    "further_info_url":             "http://furtherinfo.es-doc.org/obs4MIPs.PCMDI.PCMDI-AMIP-1-1-0.r1",
     "institution_id":               "PCMDI",
     "institution":                  "Program for Climate Model Diagnosis and Intercomparison (LLNL), Livermore, CA 94550, USA",
     "references":                   "Taylor, K.E., D. Williamson and F. Zwiers, 2000: The sea surface temperature and sea ice concentration boundary conditions for AMIP II simulations. PCMDI Report 60, Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, 25 pp. Available online: http://www-pcmdi.llnl.gov/publications/pdf/60.pdf",
     "source":                       "PCMDI-AMIP 1.1.0: Merged SST based on UK MetOffice HadISST and NCEP OI2",
     "source_id":                    "PCMDI-AMIP-1-1-0",
+    "source_type":                  "composite",
+    "source_version_number":        "1-1-0",
     "title":                        "PCMDI-AMIP 1.1.0 dataset prepared for input4MIPs",
 
     "outpath":                      ".",
-    "output_path_template":         "<activity_id><realm><frequency><variable_id><product><source_id><grid_label><version>",
-    "output_file_template":         "<variable_id><table><product><source_id><grid_label>",
+    "output_path_template":         "<mip_era><activity_id><institution_id><source_id><source_version_number><table_id><variable_id><grid_label><version>",
+    "output_file_template":         "<variable_id><table_id><source_id><source_version_number><variant_label><grid_label>",
 
     "license":                      "AMIP boundary condition data produced by PCMDI is licensed under a Creative Commons Attribution \"Share Alike\" 4.0 International License (http://creativecommons.org/licenses/by/4.0/). The data producers and data providers make no warranty, either express or implied, including but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law."
 }
