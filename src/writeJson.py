@@ -37,7 +37,8 @@ PJD 19 Jun 2017     - Update to deal with CMOR 3.2.4 and tables v01.00.11
 PJD 21 Jun 2017     - Updated PR #46 by Funkensieper/DWD to add new Amon variables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 PJD 28 Jun 2017     - Rerun to fix formula_terms to work with CMOR 3.2.4 https://github.com/PCMDI/cmor/issues/198
 PJD 28 Jun 2017     - Start to implement new CVs in obs4MIPs Data Specifications (ODS) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/40
-                    - TODO: Create demo3 which simplifies user experience to updating json and running cmor
+                    - TODO: Create demo3 which simplifies user experience to downloading pre-packaged json zip archive,
+                            unzipping contents, tweaking user input json and running cmor
 
 @author: durack1
 """
@@ -497,30 +498,7 @@ region = [
  'yellow_sea'
  ] ;
 
-#%% Required global attributes
-required_global_attributes = [
- 'activity_id',
- 'Conventions',
- 'creation_date',
- 'dataset_version_number',
- 'further_info_url',
- 'frequency',
- 'grid',
- 'grid_label',
- 'institution_id',
- 'license',
- 'mip_era',
- 'nominal_resolution',
- 'product',
- 'realm',
- 'region',
- 'source_id',
- 'table_id',
- 'tracking_id',
- 'variable_id'
- ] ;
-        
-        
+#%% Required global attributes - # indicates source
 required_global_attributes = [
  'Conventions', #obs4MIPs table
  'activity_id', #CV
@@ -544,22 +522,6 @@ required_global_attributes = [
  'tracking_id', #cmor
  'variable_id' #cmip6
 ] ;
-'''   
-obs4MIPs_coordinate.json #cmip6
-obs4MIPs_formula_terms.json #cmip6
-
-obs4MIPs_frequency.json #cmip6
-obs4MIPs_grid_label.json
-obs4MIPs_grids.json #
-obs4MIPs_institution_id.json #registered
-obs4MIPs_mip_era.json #cmip6
-obs4MIPs_nominal_resolution.json #cmip6
-obs4MIPs_source_type.json
-obs4MIPs_realm.json
-obs4MIPs_region.json
-obs4MIPs_required_global_attributes.json
-obs4MIPs_table_id.json
-'''
 
 #%% Source ID
 source_id = [
@@ -617,7 +579,7 @@ for jsonName in masterTargets:
     # Create host dictionary
     if jsonName == 'license_':
         jsonDict = {}
-        jsonDict[jsonName.replace('_','')] = eval(jsonName)        
+        jsonDict[jsonName.replace('_','')] = eval(jsonName)
     elif jsonName not in ['coordinate','formula_terms','fx','grids',
                         'institution_id','Aday','Amon','Lmon','Omon','SImon']:
         jsonDict = {}
