@@ -34,7 +34,8 @@ PJD 29 Mar 2017     - Correct required_global_attribute grids -> grid
 PJG 05 Apr 2017     - Added daily atm table
 PJD 11 May 2017     - Added formula_terms; Updated upstream; corrected product to 'observations'
 PJD 19 Jun 2017     - Update to deal with CMOR 3.2.4 and tables v01.00.11
-PJD 21 Jun 2017     - Updated PR #46 by Funkensieper/DWD to add new Amon variables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48 
+PJD 21 Jun 2017     - Updated PR #46 by Funkensieper/DWD to add new Amon variables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
+PJD 28 Jun 2017     - Rerun to fix formula_terms to work with CMOR 3.2.4 https://github.com/PCMDI/cmor/issues/198
                     - TODO:
 
 @author: durack1
@@ -45,9 +46,9 @@ import gc,json,os,ssl,time
 from durolib import readJsonCreateDict
 
 #%% Determine path
-homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
+#homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
 #homePath = '/export/durack1/git/obs4MIPs-cmor-tables/' ; # Linux
-#homePath = '/sync/git/obs4MIPs-cmor-tables/src' ; # OS-X
+homePath = '/sync/git/obs4MIPs-cmor-tables/src' ; # OS-X
 os.chdir(homePath)
 
 #%% Create urllib2 context to deal with lab/LLNL web certificates
