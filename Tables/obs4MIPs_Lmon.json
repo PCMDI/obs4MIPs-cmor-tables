@@ -3,13 +3,13 @@
         "Conventions":"CF-1.7 CMIP-6.0",
         "approx_interval":"30.00000",
         "cmor_version":"3.2",
-        "data_specs_version":"01.00.11",
+        "data_specs_version":"01.00.12",
         "generic_levels":"",
         "mip_era":"CMIP6",
         "missing_value":"1e20",
         "product":"observations",
         "realm":"land",
-        "table_date":"19 June 2017",
+        "table_date":"28 June 2017",
         "table_id":"Table obs4MIPs_Lmon"
     },
     "variable_entry":{
@@ -169,7 +169,7 @@
         "cProduct":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: mean where land time: mean",
-            "comment":"Carbon mass per unit area in that has been removed from the environment through  landuse change.",
+            "comment":"Carbon mass per unit area in that has been removed from the environment through  land use change.",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
             "long_name":"Carbon Mass in Products of Land Use Change",
