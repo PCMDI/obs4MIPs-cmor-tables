@@ -524,14 +524,19 @@ required_global_attributes = [
 ] ;
 
 #%% Source ID
-source_id = [
- ''
-] ;
+source_id = {}
+key = 'GPCP' # Attempting to scratch something together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51
+source_id[key] = {}
+source_id[key]['label'] = key
+source_id[key]['label_extended'] = 'Global Precipitation Climatology Project'
+source_id[key]['release_year'] = '2017'
+source_id[key]['source_id'] = key
 
 # Fix issues
 #==============================================================================
 # Example new source_id entry
-#source_id['source_id']['GPCP'] = 'Global Precipitation Climatology Project'
+#key = 'GPCP'
+#source_id['source_id'][key] = 'Global Precipitation Climatology Project'
 
 #%% Source type
 source_type = [

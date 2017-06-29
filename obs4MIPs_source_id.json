@@ -1,5 +1,10 @@
 {
-    "source_id":[
-        ""
-    ]
+    "source_id":{
+        "GPCP":{
+            "label":"GPCP",
+            "label_extended":"Global Precipitation Climatology Project",
+            "release_year":"2017",
+            "source_id":"GPCP"
+        }
+    }
 }
