@@ -1,6 +1,6 @@
 {
     "Header":{
-        "Conventions":"CF-1.7 CMIP-6.0",
+        "Conventions":"CF-1.7 ODS-2.0",
         "approx_interval":"30.00000",
         "cmor_version":"3.2",
         "data_specs_version":"01.00.12",

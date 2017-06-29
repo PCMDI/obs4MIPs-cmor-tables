@@ -1,0 +1,8 @@
+{
+    "source_type":[
+        "gridded_insitu",
+        "reanalysis",
+        "satellite_blended",
+        "satellite_retrieval"
+    ]
+}
