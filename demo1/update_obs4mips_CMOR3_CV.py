@@ -22,8 +22,6 @@ PJD 20 Jul 2016     - Further tweaks to enhance readability
 
 #%% Import statements
 import cmor,gc,json,os,ssl,sys,urllib2
-import cdms2 as cdm
-import numpy as np
 
 #%% Set local path
 homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1])) ; # Extract path from executing file
@@ -82,18 +80,26 @@ def readJsonCreateDict(buildList):
 
 #%% SECTION 1 - Integrate all controlled vocabularies (CVs) into master file - create obs4MIPs_CV.json
 jsonCVs = 'obs4MIPs_CV.json'
+obs4mips_repo = 'https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/'
+cmip6_repo = 'https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/'
 buildList = [
- ['frequency','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_frequency.json'],
- ['grid_label','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_grid_label.json'],
- ['institution_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_institution_id.json'],
- ['mip_era','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_mip_era.json'],
- ['nominal_resolution','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_nominal_resolution.json'],
- ['product','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_product.json'],
- ['realm','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_realm.json'],
- ['required_global_attributes','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_required_global_attributes.json'],
- ['table_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_table_id.json'],
- ['coordinate','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_coordinate.json'],
- ['formula_terms','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_formula_terms.json']
+ ['activity_id', obs4mips_repo + 'obs4MIPs_activity_id.json'],
+ ['frequency', obs4mips_repo + 'obs4MIPs_frequency.json'],
+ ['further_info_url', obs4mips_repo + 'obs4MIPs_further_info_url.json'],
+ ['grid_label', obs4mips_repo + 'obs4MIPs_grid_label.json'],
+ ['institution_id', obs4mips_repo + 'obs4MIPs_institution_id.json'],
+ ['mip_era', obs4mips_repo + 'obs4MIPs_mip_era.json'],
+ ['nominal_resolution', obs4mips_repo + 'obs4MIPs_nominal_resolution.json'],
+ ['product', obs4mips_repo + 'obs4MIPs_product.json'],
+ ['realm', obs4mips_repo + 'obs4MIPs_realm.json'],
+ ['required_global_attributes', obs4mips_repo + 'obs4MIPs_required_global_attributes.json'],
+ ['source_type', obs4mips_repo + 'obs4MIPs_source_type.json'],
+ ['source_version_number', obs4mips_repo + 'obs4MIPs_source_version_number.json'],
+ ['table_id', obs4mips_repo + 'obs4MIPs_table_id.json'],
+ ['tracking_id', obs4mips_repo + 'obs4MIPs_tracking_id.json'],
+ ['variant_label', obs4mips_repo + 'obs4MIPs_variant_label.json'],
+ ['coordinate', cmip6_repo + 'CMIP6_coordinate.json'],
+ ['formula_terms', cmip6_repo + 'CMIP6_formula_terms.json']
  ] ;
 
 

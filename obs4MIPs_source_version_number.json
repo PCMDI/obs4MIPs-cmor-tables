@@ -1,0 +1,5 @@
+{
+    "source_version_number":[
+      "^[[:alnum:]\\-]\\+$"
+    ]
+}

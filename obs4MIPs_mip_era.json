@@ -1,5 +1,5 @@
 {
     "mip_era":[
-        "CMIP6"
+        "^CMIP6$"
     ]
 }

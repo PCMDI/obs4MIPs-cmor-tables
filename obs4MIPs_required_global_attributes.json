@@ -1,11 +1,11 @@
 {
     "required_global_attributes":[
         "activity_id",
+        "contact",
         "Conventions",
         "creation_date",
-        "dataset_version_number",
-        "further_info_url",
         "frequency",
+        "further_info_url",
         "grid",
         "grid_label",
         "institution_id",
@@ -16,8 +16,11 @@
         "realm",
         "region",
         "source_id",
+        "source_version_number",
+        "source_type",
         "table_id",
         "tracking_id",
-        "variable_id"
+        "variable_id",
+        "variant_label"
     ]
 }

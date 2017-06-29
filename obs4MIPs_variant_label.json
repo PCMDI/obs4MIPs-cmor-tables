@@ -1,0 +1,6 @@
+{
+    "variant_label": [
+        "^r[[:digit:]]\\+$",
+        "^best estimate$"
+    ]
+}
