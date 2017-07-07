@@ -50,8 +50,8 @@ from durolib import readJsonCreateDict
 #%% Determine path
 #homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
 #homePath = '/export/durack1/git/obs4MIPs-cmor-tables/' ; # Linux
-homePath = '/sync/git/obs4MIPs-cmor-tables/src' ; # OS-X
-os.chdir(homePath)
+#homePath = '/sync/git/obs4MIPs-cmor-tables/src' ; # OS-X
+#os.chdir(homePath)
 
 #%% Create urllib2 context to deal with lab/LLNL web certificates
 ctx                 = ssl.create_default_context()
@@ -527,7 +527,7 @@ required_global_attributes = [
 source_id = {}
 key = 'GPCP' # Attempting to scratch something together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51
 source_id[key] = {}
-source_id[key]['cohort'] = 'CMIP6'
+#source_id[key]['cohort'] = 'CMIP6'
 source_id[key]['label'] = key
 source_id[key]['label_extended'] = 'Global Precipitation Climatology Project'
 source_id[key]['release_year'] = '2017'
