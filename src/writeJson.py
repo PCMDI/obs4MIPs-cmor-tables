@@ -37,6 +37,7 @@ PJD 19 Jun 2017     - Update to deal with CMOR 3.2.4 and tables v01.00.11
 PJD 21 Jun 2017     - Updated PR #46 by Funkensieper/DWD to add new Amon variables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 PJD 28 Jun 2017     - Rerun to fix formula_terms to work with CMOR 3.2.4 https://github.com/PCMDI/cmor/issues/198
 PJD 17 Jul 2017     - Implement new CVs in obs4MIPs Data Specifications (ODS) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/40
+PJD 17 Jul 2017     - Updated tableNames to deal with 3.2.5 hard codings
                     - TODO: Create demo3 which simplifies user experience to downloading pre-packaged json zip archive,
                             unzipping contents, tweaking user input json and running cmor
 
@@ -44,7 +45,7 @@ PJD 17 Jul 2017     - Implement new CVs in obs4MIPs Data Specifications (ODS) ht
 """
 
 #%% Import statements
-import gc,json,os,ssl,time
+import gc,json,os,shutil,ssl,subprocess,time
 from durolib import readJsonCreateDict
 
 #%% Determine path
@@ -122,7 +123,10 @@ for count2,table in enumerate(tableSource):
         eval(tableName)['Header']['Conventions'] = 'CF-1.7 ODS-2.0' ; # Update "Conventions": "CF-1.7 CMIP-6.0"
         eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
         eval(tableName)['Header']['product'] = 'observations'
-        eval(tableName)['Header']['table_id'] = ''.join(['Table obs4MIPs_',tableName])
+        #eval(tableName)['Header']['table_id'] = ''.join(['Table obs4MIPs_',tableName])
+        eval(tableName)['Header']['table_id'] = tableName ; # Added as kludge for CMOR3.2.5
+#            ! Valid values must match the regular expression:
+#            ! 	["^Aday$" "^Amon$" "^Lmon$" "^Omon$" "^SImon$" "^fx$"  ...]
         if 'baseURL' in eval(tableName)['Header'].keys():
             del(eval(tableName)['Header']['baseURL']) ; # Remove spurious entry
 
@@ -132,7 +136,8 @@ Lmon['Header']['realm']     = 'land'
 Omon['Header']['realm']     = 'ocean'
 SImon['Header']['realm']    = 'seaIce'
 fx['Header']['realm']       = 'fx'
-Aday['Header']['table_id']  = 'Table obs4MIPs_Aday' ; # Cleanup from upstream
+#Aday['Header']['table_id']  = 'Table obs4MIPs_Aday' ; # Cleanup from upstream
+Aday['Header']['table_id']  = 'Aday' ; # Added as kludge for CMOR3.2.5
 
 # Clean out modeling_realm
 for jsonName in ['Amon','Lmon','Omon','SImon']:  #,'Aday']:
@@ -598,3 +603,85 @@ for jsonName in masterTargets:
 del(jsonName,outFile) ; gc.collect()
 
 # Validate - only necessary if files are not written by json module
+
+#%% Generate files for download and use
+demoPath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-2]),'demo')
+outPath = os.path.join(demoPath,'Tables')
+if os.path.exists(outPath):
+    shutil.rmtree(outPath) ; # Purge all existing
+    os.makedirs(outPath)
+else:
+    os.makedirs(outPath)
+os.chdir(demoPath)
+
+# Integrate all controlled vocabularies (CVs) into master file - create obs4MIPs_CV.json
+# List all local files
+inputJson = ['frequency','grid_label','institution_id','license','mip_era',
+             'nominal_resolution','product','realm','region',
+             'required_global_attributes','source_id','source_type','table_id', # These are controlled vocabs
+             'coordinate','grids','formula_terms', # These are not controlled vocabs - rather lookup tables for CMOR
+             'Aday','Amon','Lmon','Omon','SImon','fx' # Update/add if new tables are generated
+            ]
+lookupList = ['coordinate','grids','formula_terms']
+tableList = ['Aday','Amon','Lmon','Omon','SImon','fx']
+
+# Load dictionaries from local files
+for count,CV in enumerate(inputJson):
+    if CV in tableList:
+        path = '../Tables/'
+    else:
+        path = '../'
+    vars()[CV] = json.load(open(''.join([path,'obs4MIPs_',CV,'.json'])))
+
+# Build CV master dictionary
+obs4MIPs_CV = {}
+obs4MIPs_CV['CV'] = {}
+for count,CV in enumerate(inputJson):
+    #CVName1 = CV[0]
+    if CV not in tableList:
+        obs4MIPs_CV['CV'][CV] = eval(CV)
+
+# Write obs4MIPs_CV.json
+if os.path.exists('obs4MIPs_CV.json'):
+    print 'File existing, purging:','obs4MIPs_CV.json'
+    os.remove('obs4MIPs_CV.json')
+fH = open('obs4MIPs_CV.json','w')
+json.dump(obs4MIPs_CV,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
+fH.close()
+
+# Loop and write all other files
+os.chdir('Tables')
+tableList.extend(lookupList)
+for count,CV in enumerate(tableList):
+    outFile = ''.join(['obs4MIPs_',CV,'.json'])
+    if os.path.exists(outFile):
+        print 'File existing, purging:',outFile
+        os.remove(outFile)
+    fH = open(outFile,'w')
+    json.dump(eval(CV),fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
+    fH.close()
+
+# Cleanup
+del(coordinate,count,formula_terms,frequency,grid_label,homePath,institution_id,
+    mip_era,nominal_resolution,obs4MIPs_CV,product,realm,inputJson,lookupList,
+    tableList,required_global_attributes,table_id)
+
+#%% Generate zip archive
+# Cleanup rogue files
+os.chdir(demoPath)
+if os.path.exists('.DS_Store'):
+    os.remove('.DS_Store')
+if os.path.exists('demo.zip'):
+    os.remove('demo.zip')
+if os.path.exists('demo/demo.zip'):
+    os.remove('demo/demo.zip')
+# Jump up one directory
+os.chdir(demoPath.replace('/demo',''))
+# Zip demo dir
+p = subprocess.Popen(['7za','a','demo.zip','demo','tzip'],
+                         stdout=subprocess.PIPE,stderr=subprocess.PIPE,
+                         cwd=os.getcwd())
+stdout = p.stdout.read() ; # Use persistent variables for tests below
+stderr = p.stderr.read()
+# Move to demo dir
+shutil.move('demo.zip', 'demo/demo.zip')

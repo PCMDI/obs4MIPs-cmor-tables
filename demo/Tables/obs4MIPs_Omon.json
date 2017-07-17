@@ -1,16 +1,16 @@
 {
     "Header":{
-        "Conventions":"CF-1.7 CMIP-6.0",
+        "Conventions":"CF-1.7 ODS-2.0",
         "approx_interval":"30.00000",
         "cmor_version":"3.2",
-        "data_specs_version":"01.00.11",
+        "data_specs_version":"01.00.13",
         "generic_levels":"olevel",
         "mip_era":"CMIP6",
         "missing_value":"1e20",
         "product":"observations",
         "realm":"ocean",
-        "table_date":"19 June 2017",
-        "table_id":"Table obs4MIPs_Omon"
+        "table_date":"17 July 2017",
+        "table_id":"Omon"
     },
     "variable_entry":{
         "agessc":{
@@ -4419,7 +4419,7 @@
         "tos":{
             "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
-            "comment":"temperature of liquid ocean.  Note that the correct standard_name for this variable is 'sea_surface_temperature', not 'surface_temperature', but this was discovered too late to correct.  To maintain consistency across CMIP5 models, the wrong standard_name will continue to be used.",
+            "comment":"Temperature of upper boundary of the liquid ocean, including temperatures below sea-ice and floating ice shelves.",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
             "long_name":"Sea Surface Temperature",
@@ -4436,7 +4436,7 @@
         "tosga":{
             "cell_measures":"",
             "cell_methods":"area: mean where sea time: mean",
-            "comment":"This may differ from 'surface temperature' in regions of sea ice.This may differ from 'surface temperature' in regions of sea ice.For models using conservative temperature as prognostic field, they should report the SST as surface potent",
+            "comment":"Temperature of upper boundary of the liquid ocean, including temperatures below sea-ice and floating ice shelves.",
             "dimensions":"time",
             "frequency":"mon",
             "long_name":"Global Average Sea Surface Temperature",
@@ -4453,7 +4453,7 @@
         "tossq":{
             "cell_measures":"area: areacello",
             "cell_methods":"area: mean where sea time: mean",
-            "comment":"square of temperature of liquid ocean, averaged over the day.",
+            "comment":"Square of temperature of liquid ocean.",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
             "long_name":"Square of Sea Surface Temperature",
