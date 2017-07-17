@@ -1,15 +1,15 @@
 {
     "Header":{
-        "Conventions":"CF-1.7 CMIP-6.0",
+        "Conventions":"CF-1.7 ODS-2.0",
         "approx_interval":"30.00000",
         "cmor_version":"3.2",
-        "data_specs_version":"01.00.12",
+        "data_specs_version":"01.00.13",
         "generic_levels":"",
         "mip_era":"CMIP6",
         "missing_value":"1e20",
         "product":"observations",
         "realm":"seaIce",
-        "table_date":"28 June 2017",
+        "table_date":"17 July 2017",
         "table_id":"Table obs4MIPs_SImon"
     },
     "variable_entry":{

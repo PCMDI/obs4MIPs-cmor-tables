@@ -36,7 +36,9 @@ PJD 11 May 2017     - Added formula_terms; Updated upstream; corrected product t
 PJD 19 Jun 2017     - Update to deal with CMOR 3.2.4 and tables v01.00.11
 PJD 21 Jun 2017     - Updated PR #46 by Funkensieper/DWD to add new Amon variables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 PJD 28 Jun 2017     - Rerun to fix formula_terms to work with CMOR 3.2.4 https://github.com/PCMDI/cmor/issues/198
-                    - TODO:
+PJD 17 Jul 2017     - Implement new CVs in obs4MIPs Data Specifications (ODS) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/40
+                    - TODO: Create demo3 which simplifies user experience to downloading pre-packaged json zip archive,
+                            unzipping contents, tweaking user input json and running cmor
 
 @author: durack1
 """
@@ -46,10 +48,10 @@ import gc,json,os,ssl,time
 from durolib import readJsonCreateDict
 
 #%% Determine path
-#homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
+homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
 #homePath = '/export/durack1/git/obs4MIPs-cmor-tables/' ; # Linux
-homePath = '/sync/git/obs4MIPs-cmor-tables/src' ; # OS-X
-os.chdir(homePath)
+#homePath = '/sync/git/obs4MIPs-cmor-tables/src' ; # OS-X
+#os.chdir(homePath)
 
 #%% Create urllib2 context to deal with lab/LLNL web certificates
 ctx                 = ssl.create_default_context()
@@ -58,24 +60,27 @@ ctx.verify_mode     = ssl.CERT_NONE
 
 #%% List target tables
 masterTargets = [
+ 'Aday',
  'Amon',
  'Lmon',
  'Omon',
  'SImon',
  'fx',
- 'Aday',
  'coordinate',
  'formula_terms',
  'frequency',
  'grid_label',
  'grids',
  'institution_id',
+ 'license_',
  'mip_era',
  'nominal_resolution',
  'product',
  'realm',
  'region',
  'required_global_attributes',
+ 'source_id',
+ 'source_type',
  'table_id'
  ] ;
 
@@ -114,6 +119,7 @@ for count2,table in enumerate(tableSource):
     if tableName in ['coordinate','formula_terms','frequency','grid_label','nominal_resolution']:
         continue
     else:
+        eval(tableName)['Header']['Conventions'] = 'CF-1.7 ODS-2.0' ; # Update "Conventions": "CF-1.7 CMIP-6.0"
         eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
         eval(tableName)['Header']['product'] = 'observations'
         eval(tableName)['Header']['table_id'] = ''.join(['Table obs4MIPs_',tableName])
@@ -362,6 +368,11 @@ Amon['variable_entry']['pctCLARA']['units'] = 'Pa'
 Amon['variable_entry']['pctCLARA']['valid_max'] = ''
 Amon['variable_entry']['pctCLARA']['valid_min'] = ''
 
+#%% Activity ID
+product = [
+ 'obs4MIPs'
+ ] ;
+
 #%% Coordinate
 
 #%% Frequency
@@ -382,18 +393,25 @@ institution_id = institution_id.get('institution_id')
 #institution_id['institution_id']['NOAA-NCEI'] = 'NOAA\'s National Centers for Environmental Information, Asheville, NC 28801, USA'
 #institution_id['institution_id']['RSS'] = 'Remote Sensing Systems, Santa Rosa, CA 95401, USA'
 
+#%% License
+license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
+            ' a Creative Commons Attribution-ShareAlike 4.0 International License'
+            ' (https://creativecommons.org/licenses/). Use of the data must be'
+            ' acknowledged following guidelines found at <a URL maintained by you>.'
+            ' Further information about this data, including some limitations,'
+            ' can be found via <some URL maintained by you>.)')
+
 #%% Mip era
-mip_era = ['CMIP6'] ;
+mip_era = [
+ 'CMIP5',
+ 'CMIP6'
+] ;
 
 #%% Nominal resolution
 
 #%% Product
 product = [
- 'composite',
- 'remote-sensed',
- 'satellite',
- 'surface-gridded-insitu',
- 'surface-radar'
+ 'observations'
  ] ;
 
 #%% Realm
@@ -480,28 +498,53 @@ region = [
  'yellow_sea'
  ] ;
 
-#%% Required global attributes
+#%% Required global attributes - # indicates source
 required_global_attributes = [
- 'activity_id',
- 'Conventions',
- 'creation_date',
- 'dataset_version_number',
- 'further_info_url',
- 'frequency',
- 'grid',
- 'grid_label',
- 'institution_id',
- 'license',
- 'mip_era',
- 'nominal_resolution',
- 'product',
- 'realm',
- 'region',
- 'source_id',
- 'table_id',
- 'tracking_id',
- 'variable_id'
- ] ;
+ 'Conventions', #obs4MIPs table
+ 'activity_id', #CV
+ 'contact', #user provided
+ 'creation_date', #cmor
+ 'data_specs_version', #obs4MIPs table
+ 'frequency', #CV
+ 'further_info_url', #cmor
+ 'grid', #user provided
+ 'grid_label', #CV
+ 'institution_id', #CV
+ 'license', #CV
+ 'mip_era', #CV
+ 'nominal_resolution', #CV
+ 'product', #CV
+ 'realm', #CV
+ 'source_id', #CV - will require spec so source can be extracted
+ 'source_type', #CV (renamed from product)
+ 'source_version_number', #user provided
+ 'table_id', #obs4MIPs table
+ 'tracking_id', #cmor
+ 'variable_id' #cmip6
+] ;
+
+#%% Source ID
+source_id = {}
+key = 'GPCP' # Attempting to scratch something together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51
+source_id[key] = {}
+source_id[key]['label'] = key
+source_id[key]['label_extended'] = 'Global Precipitation Climatology Project'
+source_id[key]['release_year'] = '2017'
+source_id[key]['source_id'] = key
+
+# Fix issues
+#==============================================================================
+# Example new source_id entry
+#key = 'GPCP'
+#source_id['source_id'][key] = 'Global Precipitation Climatology Project'
+
+#%% Source type
+source_type = [
+ 'gridded_insitu',
+ 'reanalysis',
+ 'satellite_blended',
+ 'satellite_retrieval'
+] ;
 
 #%% Table ID
 table_id = ['Aday', 'Amon', 'Lmon', 'Omon', 'SImon', 'fx'] ;
@@ -528,6 +571,8 @@ for jsonName in masterTargets:
     # Write file
     if jsonName in ['Aday', 'Amon', 'Lmon', 'Omon', 'SImon', 'fx']:
         outFile = ''.join(['../Tables/obs4MIPs_',jsonName,'.json'])
+    elif jsonName == 'license_':
+        outFile = ''.join(['../obs4MIPs_license.json'])
     else:
         outFile = ''.join(['../obs4MIPs_',jsonName,'.json'])
     # Check file exists
@@ -537,7 +582,10 @@ for jsonName in masterTargets:
     if not os.path.exists('../Tables'):
         os.mkdir('../Tables')
     # Create host dictionary
-    if jsonName not in ['coordinate','formula_terms','fx','grids',
+    if jsonName == 'license_':
+        jsonDict = {}
+        jsonDict[jsonName.replace('_','')] = eval(jsonName)
+    elif jsonName not in ['coordinate','formula_terms','fx','grids',
                         'institution_id','Aday','Amon','Lmon','Omon','SImon']:
         jsonDict = {}
         jsonDict[jsonName] = eval(jsonName)
