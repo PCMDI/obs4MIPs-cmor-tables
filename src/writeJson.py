@@ -50,8 +50,8 @@ from durolib import readJsonCreateDict
 #%% Determine path
 #homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
 #homePath = '/export/durack1/git/obs4MIPs-cmor-tables/' ; # Linux
-homePath = '/sync/git/obs4MIPs-cmor-tables/src' ; # OS-X
-os.chdir(homePath)
+#homePath = '/sync/git/obs4MIPs-cmor-tables/src' ; # OS-X
+#os.chdir(homePath)
 
 #%% Create urllib2 context to deal with lab/LLNL web certificates
 ctx                 = ssl.create_default_context()
