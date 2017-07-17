@@ -1,0 +1,35 @@
+{
+    "_control_vocabulary_file":     "obs4MIPs_CV.json",
+    "_AXIS_ENTRY_FILE":             "obs4MIPs_coordinate.json",
+    "_FORMULA_VAR_FILE":            "obs4MIPs_formula_terms.json",
+    "activity_id":                  "obs4MIPs",
+
+    "calendar":                     "gregorian",
+    "data_structure":               "grid",
+    "grid":                         "2.5x2.5 degree latitude x longitude",
+    "grid_label":                   "gn",
+    "nominal_resolution":           "250 km",
+    "dataset_version_number":       "6.6.0",
+    "source_version_number":        "6.6.0",
+    "frequency":                    "mon",
+    "product":                      "observations",
+    "realm":                        "atmos",
+    "source_type":                  "satellite_blended",
+    "variant_label":                "BE",
+
+    "comment":                      "",
+    "contact":                      "PCMDI (pcmdi-cmip@llnl.gov)",
+    "further_info_url":             "https://www.earthsystemcog.org/projects/obs4mips/",
+    "institution_id":               "RSS",
+    "institution":                  "Remote Sensing Systems, Santa Rosa, CA 95401, USA",
+    "references":                   "",
+    "source":                       "REMSS PRW v6.6.0 (2017): Precipitable water (PRW)",
+    "source_id":                    "REMSS-PRW-6-6-0",
+    "title":                        "PRW V6.6.0 prepared for obs4MIPs (ODS-v2.0.0)",
+
+    "outpath":                      "./demo/",
+    "output_path_template":         "<variable_id><table_id><source_id><variant_label><grid_label><version>",
+    "output_file_template":         "<activity_id><institution_id><source_id><table_id><variable_id><grid_label>",
+
+    "license":                      "Data in this file produced by <Your Centre Name> is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Use of the data must be acknowledged following guidelines found at <a URL maintained by you>. Further information about this data, including some limitations, can be found via <some URL maintained by you>"
+}

@@ -1,7 +1,6 @@
-CMIP6_Amon.json
 ~$.xlsx
 *.json~
 *.sh~
 *.py~
 *.swp
-demo/obs4MIPs
+demo/demo
