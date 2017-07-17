@@ -48,7 +48,7 @@ import gc,json,os,ssl,time
 from durolib import readJsonCreateDict
 
 #%% Determine path
-#homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
+homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
 #homePath = '/export/durack1/git/obs4MIPs-cmor-tables/' ; # Linux
 #homePath = '/sync/git/obs4MIPs-cmor-tables/src' ; # OS-X
 #os.chdir(homePath)
