@@ -36,7 +36,7 @@ PJD 11 May 2017     - Added formula_terms; Updated upstream; corrected product t
 PJD 19 Jun 2017     - Update to deal with CMOR 3.2.4 and tables v01.00.11
 PJD 21 Jun 2017     - Updated PR #46 by Funkensieper/DWD to add new Amon variables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 PJD 28 Jun 2017     - Rerun to fix formula_terms to work with CMOR 3.2.4 https://github.com/PCMDI/cmor/issues/198
-PJD 28 Jun 2017     - Start to implement new CVs in obs4MIPs Data Specifications (ODS) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/40
+PJD 17 Jul 2017     - Implement new CVs in obs4MIPs Data Specifications (ODS) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/40
                     - TODO: Create demo3 which simplifies user experience to downloading pre-packaged json zip archive,
                             unzipping contents, tweaking user input json and running cmor
 
