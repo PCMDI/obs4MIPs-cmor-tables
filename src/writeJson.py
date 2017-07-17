@@ -527,7 +527,6 @@ required_global_attributes = [
 source_id = {}
 key = 'GPCP' # Attempting to scratch something together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51
 source_id[key] = {}
-source_id[key]['cohort'] = 'CMIP6'
 source_id[key]['label'] = key
 source_id[key]['label_extended'] = 'Global Precipitation Climatology Project'
 source_id[key]['release_year'] = '2017'
