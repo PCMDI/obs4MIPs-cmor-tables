@@ -17,7 +17,6 @@
         "realm",
         "source_id",
         "source_type",
-        "source_version_number",
         "table_id",
         "tracking_id",
         "variable_id"

@@ -639,7 +639,7 @@ obs4MIPs_CV['CV'] = {}
 for count,CV in enumerate(inputJson):
     #CVName1 = CV[0]
     if CV not in tableList:
-        obs4MIPs_CV['CV'][CV] = eval(CV)
+        obs4MIPs_CV['CV'].update(eval(CV))
 
 # Write obs4MIPs_CV.json
 if os.path.exists('obs4MIPs_CV.json'):
