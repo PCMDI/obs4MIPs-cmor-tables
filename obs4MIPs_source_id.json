@@ -1,10 +1,15 @@
 {
     "source_id":{
-        "GPCP":{
-            "label":"GPCP",
-            "label_extended":"Global Precipitation Climatology Project",
+        "REMSS-PRW-6-6-0":{
+            "description":"Precipitable Water",
+            "institution_id":"RSS",
+            "label":"REMSS PRW v6.6.0",
+            "region":"global",
             "release_year":"2017",
-            "source_id":"GPCP"
+            "source":"REMSS PRW v6.6.0 (2017): Precipitable water (PRW)",
+            "source_id":"REMSS-PRW-6-6-0",
+            "source_label":"REMSS-PRW",
+            "source_type":"satellite_blended"
         }
     }
 }

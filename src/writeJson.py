@@ -38,14 +38,14 @@ PJD 21 Jun 2017     - Updated PR #46 by Funkensieper/DWD to add new Amon variabl
 PJD 28 Jun 2017     - Rerun to fix formula_terms to work with CMOR 3.2.4 https://github.com/PCMDI/cmor/issues/198
 PJD 17 Jul 2017     - Implement new CVs in obs4MIPs Data Specifications (ODS) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/40
 PJD 17 Jul 2017     - Updated tableNames to deal with 3.2.5 hard codings
-                    - TODO: Create demo3 which simplifies user experience to downloading pre-packaged json zip archive,
-                            unzipping contents, tweaking user input json and running cmor
+PJD 20 Jul 2017     - Updates to v2.0.0 release https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/53, 54, 57, 58, 59
+                    - TODO: Ensure demo runs CMOR to validate current repo contents
 
 @author: durack1
 """
 
 #%% Import statements
-import gc,json,os,shutil,ssl,subprocess,time
+import copy,gc,json,os,shutil,ssl,subprocess,time
 from durolib import readJsonCreateDict
 
 #%% Determine path
@@ -74,7 +74,6 @@ masterTargets = [
  'grids',
  'institution_id',
  'license_',
- 'mip_era',
  'nominal_resolution',
  'product',
  'realm',
@@ -373,11 +372,6 @@ Amon['variable_entry']['pctCLARA']['units'] = 'Pa'
 Amon['variable_entry']['pctCLARA']['valid_max'] = ''
 Amon['variable_entry']['pctCLARA']['valid_min'] = ''
 
-#%% Activity ID
-product = [
- 'obs4MIPs'
- ] ;
-
 #%% Coordinate
 
 #%% Frequency
@@ -394,7 +388,7 @@ institution_id = institution_id.get('institution_id')
 
 # Fix issues
 #==============================================================================
-# Example new experiment_id entry
+# Example new institution_id entry
 #institution_id['institution_id']['NOAA-NCEI'] = 'NOAA\'s National Centers for Environmental Information, Asheville, NC 28801, USA'
 #institution_id['institution_id']['RSS'] = 'Remote Sensing Systems, Santa Rosa, CA 95401, USA'
 
@@ -405,12 +399,6 @@ license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
             ' acknowledged following guidelines found at <a URL maintained by you>.'
             ' Further information about this data, including some limitations,'
             ' can be found via <some URL maintained by you>.)')
-
-#%% Mip era
-mip_era = [
- 'CMIP5',
- 'CMIP6'
-] ;
 
 #%% Nominal resolution
 
@@ -514,28 +502,36 @@ required_global_attributes = [
  'further_info_url', #cmor
  'grid', #user provided
  'grid_label', #CV
+ 'institution', #CV
  'institution_id', #CV
  'license', #CV
- 'mip_era', #CV
  'nominal_resolution', #CV
  'product', #CV
  'realm', #CV
+ 'region', #CV
+ 'source', #obs4MIPs_CV - will require spec so source can be extracted
  'source_id', #CV - will require spec so source can be extracted
+ 'source_label', #CV - will require spec so source can be extracted
  'source_type', #CV (renamed from product)
- 'source_version_number', #user provided
  'table_id', #obs4MIPs table
  'tracking_id', #cmor
- 'variable_id' #cmip6
+ 'variable_id', #cmip6
+ 'variant_label' #cmip6
 ] ;
 
 #%% Source ID
 source_id = {}
-key = 'GPCP' # Attempting to scratch something together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51
+key = 'REMSS-PRW-6-6-0' # Attempting to scratch something together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51
 source_id[key] = {}
-source_id[key]['label'] = key
-source_id[key]['label_extended'] = 'Global Precipitation Climatology Project'
+source_id[key]['description'] = 'Precipitable Water'
+source_id[key]['institution_id'] = 'RSS'
+source_id[key]['label'] = 'REMSS PRW v6.6.0'
 source_id[key]['release_year'] = '2017'
+source_id[key]['source'] = 'REMSS PRW v6.6.0 (2017): Precipitable water (PRW)'
 source_id[key]['source_id'] = key
+source_id[key]['source_label'] = 'REMSS-PRW'
+source_id[key]['source_type'] = 'satellite_blended'
+source_id[key]['region'] = 'global'
 
 # Fix issues
 #==============================================================================
@@ -591,7 +587,7 @@ for jsonName in masterTargets:
         jsonDict = {}
         jsonDict[jsonName.replace('_','')] = eval(jsonName)
     elif jsonName not in ['coordinate','formula_terms','fx','grids',
-                        'institution_id','Aday','Amon','Lmon','Omon','SImon']:
+                          'institution_id','Aday','Amon','Lmon','Omon','SImon']:
         jsonDict = {}
         jsonDict[jsonName] = eval(jsonName)
     else:
@@ -626,6 +622,16 @@ lookupList = ['coordinate','grids','formula_terms']
 tableList = ['Aday','Amon','Lmon','Omon','SImon','fx']
 
 # Load dictionaries from local files
+CVJsonList = copy.deepcopy(inputJson)
+CVJsonList.remove('coordinate')
+CVJsonList.remove('grids')
+CVJsonList.remove('formula_terms')
+CVJsonList.remove('Aday')
+CVJsonList.remove('Amon')
+CVJsonList.remove('Lmon')
+CVJsonList.remove('Omon')
+CVJsonList.remove('SImon')
+CVJsonList.remove('fx')
 for count,CV in enumerate(inputJson):
     if CV in tableList:
         path = '../Tables/'
@@ -636,10 +642,14 @@ for count,CV in enumerate(inputJson):
 # Build CV master dictionary
 obs4MIPs_CV = {}
 obs4MIPs_CV['CV'] = {}
-for count,CV in enumerate(inputJson):
+for count,CV in enumerate(CVJsonList):
     #CVName1 = CV[0]
     if CV not in tableList:
-        obs4MIPs_CV['CV'][CV] = eval(CV)
+        obs4MIPs_CV['CV'].update(eval(CV))
+
+# Create source entry from source_id
+# Update     "data_specs_version":           "2.0.0", in rssSsmiPrw-input.json
+# Include in obs4MIPs_CV.json: "activity_id": "obs4MIPs"
 
 # Write obs4MIPs_CV.json
 if os.path.exists('obs4MIPs_CV.json'):
@@ -663,7 +673,7 @@ for count,CV in enumerate(tableList):
 
 # Cleanup
 del(coordinate,count,formula_terms,frequency,grid_label,homePath,institution_id,
-    mip_era,nominal_resolution,obs4MIPs_CV,product,realm,inputJson,lookupList,
+    nominal_resolution,obs4MIPs_CV,product,realm,inputJson,lookupList,
     tableList,required_global_attributes,table_id)
 
 #%% Generate zip archive
