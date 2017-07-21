@@ -1,7 +1,7 @@
 {
     "comment1": "The following attributes must be defined by the user",
 
-    "contact":                      "PCMDI (pcmdi-cmip@llnl.gov)",
+    "contact":                      "RSS (support@remss.com)",
     "institution_id":               "RSS",
     "institution":                  "Remote Sensing Systems, Santa Rosa, CA 95401, USA",
     "references":                   "",
@@ -38,6 +38,8 @@
     "tracking_id":                  "hdl:21.14102/.",
     "Conventions":                  "CF-1.7 ODS-2.0",
     "data_specs_version":           "2.0.0",
+
+    "comment4": "The following are CMOR internal settings and should not be edited by the user",
 
     "_control_vocabulary_file":     "obs4MIPs_CV.json",
     "_AXIS_ENTRY_FILE":             "obs4MIPs_coordinate.json",

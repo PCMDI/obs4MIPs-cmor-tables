@@ -1,5 +1,9 @@
 {
     "CV":{
+        "activity_id":"obs4MIPs",
+        "experiment_id":{
+            "Earth1.0":"Earth1.0"
+        },
         "frequency":{
             "1hr":"sampled hourly",
             "1hrClimMon":"monthly climatology of diurnal cycle computed from hourly samples",
@@ -68,10 +72,6 @@
             "RSS":"Remote Sensing Systems, Santa Rosa, CA 95401, USA"
         },
         "license":"Data in this file produced by <Your Centre Name> is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Use of the data must be acknowledged following guidelines found at <a URL maintained by you>. Further information about this data, including some limitations, can be found via <some URL maintained by you>.)",
-        "mip_era":[
-            "CMIP5",
-            "CMIP6"
-        ],
         "nominal_resolution":[
             "0.5 km",
             "1 km",
@@ -200,15 +200,7 @@
         ],
         "source_id":{
             "REMSS-PRW-6-6-0":{
-                "description":"Precipitable Water",
-                "institution_id":"RSS",
-                "label":"REMSS PRW v6.6.0",
-                "region":"global",
-                "release_year":"2017",
-                "source":"REMSS PRW v6.6.0 (2017): Precipitable water (PRW)",
-                "source_id":"REMSS-PRW-6-6-0",
-                "source_label":"REMSS-PRW",
-                "source_type":"satellite_blended"
+                "source":"REMSS PRW v6.6.0 (2017): Precipitable Water"
             }
         },
         "source_type":[

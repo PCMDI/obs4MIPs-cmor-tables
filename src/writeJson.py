@@ -47,6 +47,7 @@ PJD 20 Jul 2017     - Updates to v2.0.0 release https://github.com/PCMDI/obs4MIP
 #%% Import statements
 import copy,gc,json,os,shutil,ssl,subprocess,time
 from durolib import readJsonCreateDict
+from durolib import getGitInfo
 
 #%% Determine path
 homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
@@ -536,8 +537,17 @@ source_id[key]['region'] = 'global'
 # Fix issues
 #==============================================================================
 # Example new source_id entry
-#key = 'GPCP'
-#source_id['source_id'][key] = 'Global Precipitation Climatology Project'
+#key = 'REMSS-PRW-6-6-0' # Attempting to scratch something together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51
+#source_id[key] = {}
+#source_id[key]['description'] = 'Precipitable Water'
+#source_id[key]['institution_id'] = 'RSS'
+#source_id[key]['label'] = 'REMSS PRW v6.6.0'
+#source_id[key]['release_year'] = '2017'
+#source_id[key]['source'] = 'REMSS PRW v6.6.0 (2017): Precipitable water (PRW)'
+#source_id[key]['source_id'] = key
+#source_id[key]['source_label'] = 'REMSS-PRW'
+#source_id[key]['source_type'] = 'satellite_blended'
+#source_id[key]['region'] = 'global'
 
 #%% Source type
 source_type = [
@@ -612,7 +622,7 @@ os.chdir(demoPath)
 
 # Integrate all controlled vocabularies (CVs) into master file - create obs4MIPs_CV.json
 # List all local files
-inputJson = ['frequency','grid_label','institution_id','license','mip_era',
+inputJson = ['frequency','grid_label','institution_id','license',
              'nominal_resolution','product','realm','region',
              'required_global_attributes','source_id','source_type','table_id', # These are controlled vocabs
              'coordinate','grids','formula_terms', # These are not controlled vocabs - rather lookup tables for CMOR
@@ -644,12 +654,29 @@ obs4MIPs_CV = {}
 obs4MIPs_CV['CV'] = {}
 for count,CV in enumerate(CVJsonList):
     #CVName1 = CV[0]
-    if CV not in tableList:
+    # Create source entry from source_id
+    if CV == 'source_id':
+        source_id_ = source_id['source_id']
+        obs4MIPs_CV['CV']['source_id'] = {}
+        for key,values in source_id_.iteritems():
+            obs4MIPs_CV['CV']['source_id'][key] = {}
+            string = ''.join([source_id_[key]['label'],' (',
+                              source_id_[key]['release_year'],'): ',
+                              source_id_[key]['description']])
+        obs4MIPs_CV['CV']['source_id'][key]['source'] = string
+    elif CV not in tableList:
         obs4MIPs_CV['CV'].update(eval(CV))
+# Add static entries to obs4MIPs_CV.json
+obs4MIPs_CV['CV']['activity_id'] = 'obs4MIPs'
+obs4MIPs_CV['CV']['experiment_id'] = {}
+obs4MIPs_CV['CV']['experiment_id']['Earth1.0'] = 'Earth1.0' ; # Kludge for CMOR3.2.5
 
-# Create source entry from source_id
-# Update     "data_specs_version":           "2.0.0", in rssSsmiPrw-input.json
-# Include in obs4MIPs_CV.json: "activity_id": "obs4MIPs"
+# Dynamically update "data_specs_version": "2.0.0", in rssSsmiPrw-input.json
+#print os.getcwd()
+#versionInfo = getGitInfo('../demo/rssSsmiPrw-input.json')
+#tagTxt = versionInfo[2]
+#tagInd = tagTxt.find('(')
+#tagTxt = tagTxt[0:tagInd].replace('latest_tagPoint: ','').strip()
 
 # Write obs4MIPs_CV.json
 if os.path.exists('obs4MIPs_CV.json'):
