@@ -43,6 +43,5 @@
 
     "_control_vocabulary_file":     "obs4MIPs_CV.json",
     "_AXIS_ENTRY_FILE":             "obs4MIPs_coordinate.json",
-    "_FORMULA_VAR_FILE":            "obs4MIPs_formula_terms.json",
-    "_cmip6_option":                "off",
+    "_FORMULA_VAR_FILE":            "obs4MIPs_formula_terms.json"
 }
