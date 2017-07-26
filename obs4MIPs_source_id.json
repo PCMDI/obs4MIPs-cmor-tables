@@ -6,7 +6,6 @@
             "label":"REMSS PRW v6.6.0",
             "region":"global",
             "release_year":"2017",
-            "source":"REMSS PRW v6.6.0 (2017): Precipitable water (PRW)",
             "source_id":"REMSS-PRW-6-6-0",
             "source_label":"REMSS-PRW",
             "source_type":"satellite_blended"

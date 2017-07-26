@@ -9,8 +9,8 @@
         "missing_value":"1e20",
         "product":"observations",
         "realm":"atmos",
-        "table_date":"25 July 2017",
-        "table_id":"Amon"
+        "table_date":"26 July 2017",
+        "table_id":"Table obs4MIPs_Amon"
     },
     "variable_entry":{
         "ccb":{

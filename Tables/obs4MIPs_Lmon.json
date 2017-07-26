@@ -9,8 +9,8 @@
         "missing_value":"1e20",
         "product":"observations",
         "realm":"land",
-        "table_date":"25 July 2017",
-        "table_id":"Lmon"
+        "table_date":"26 July 2017",
+        "table_id":"Table obs4MIPs_Lmon"
     },
     "variable_entry":{
         "baresoilFrac":{

@@ -9,8 +9,8 @@
         "missing_value":"1e20",
         "product":"observations",
         "realm":"fx",
-        "table_date":"25 July 2017",
-        "table_id":"fx"
+        "table_date":"26 July 2017",
+        "table_id":"Table obs4MIPs_fx"
     },
     "variable_entry":{
         "areacella":{

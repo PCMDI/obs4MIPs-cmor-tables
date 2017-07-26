@@ -40,6 +40,7 @@ PJD 17 Jul 2017     - Implement new CVs in obs4MIPs Data Specifications (ODS) ht
 PJD 17 Jul 2017     - Updated tableNames to deal with 3.2.5 hard codings
 PJD 20 Jul 2017     - Updates to v2.0.0 release https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/53, 54, 57, 58, 59
 PJD 25 Jul 2017     - Further changes to deal with issues described in https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/60#issuecomment-317832149
+PJD 26 Jul 2017     - Cleanup source_id source entry duplicate https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/60
                     - TODO: Ensure demo runs CMOR to validate current repo contents
 
 @author: durack1
@@ -128,8 +129,8 @@ for count2,table in enumerate(tableSource):
             del(eval(tableName)['Header']['mip_era']) ; # Delete mip_era
         eval(tableName)['Header']['product'] = 'observations'
         eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
-        #eval(tableName)['Header']['table_id'] = ''.join(['Table obs4MIPs_',tableName])
-        eval(tableName)['Header']['table_id'] = tableName ; # Added as kludge for CMOR3.2.5
+        eval(tableName)['Header']['table_id'] = ''.join(['Table obs4MIPs_',tableName])
+        #eval(tableName)['Header']['table_id'] = tableName ; # Added as kludge for CMOR3.2.5
 #            ! Valid values must match the regular expression:
 #            ! 	["^Aday$" "^Amon$" "^Lmon$" "^Omon$" "^SImon$" "^fx$"  ...]
         if 'baseURL' in eval(tableName)['Header'].keys():
@@ -533,7 +534,6 @@ source_id[key]['description'] = 'Precipitable Water'
 source_id[key]['institution_id'] = 'RSS'
 source_id[key]['label'] = 'REMSS PRW v6.6.0'
 source_id[key]['release_year'] = '2017'
-source_id[key]['source'] = 'REMSS PRW v6.6.0 (2017): Precipitable water (PRW)'
 source_id[key]['source_id'] = key
 source_id[key]['source_label'] = 'REMSS-PRW'
 source_id[key]['source_type'] = 'satellite_blended'
@@ -669,12 +669,21 @@ for count,CV in enumerate(CVJsonList):
                               source_id_[key]['release_year'],'): ',
                               source_id_[key]['description']])
         obs4MIPs_CV['CV']['source_id'][key]['source'] = string
+    # Rewrite table names
+    elif CV == 'table_id':
+        obs4MIPs_CV['CV']['table_id'] = []
+        for value in table_id['table_id']:
+            obs4MIPs_CV['CV']['table_id'].append('_'.join(['obs4MIPs',value]))
+    # Else all other CVs
     elif CV not in tableList:
         obs4MIPs_CV['CV'].update(eval(CV))
 # Add static entries to obs4MIPs_CV.json
 obs4MIPs_CV['CV']['activity_id'] = 'obs4MIPs'
 obs4MIPs_CV['CV']['experiment_id'] = {}
 obs4MIPs_CV['CV']['experiment_id']['Earth1.0'] = 'Earth1.0' ; # Kludge for CMOR3.2.5
+
+
+print obs4MIPs_CV['CV']['table_id']
 
 # Dynamically update "data_specs_version": "2.0.0", in rssSsmiPrw-input.json
 #print os.getcwd()
