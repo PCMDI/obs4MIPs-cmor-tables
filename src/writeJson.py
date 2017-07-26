@@ -123,10 +123,10 @@ for count2,table in enumerate(tableSource):
         continue
     else:
         eval(tableName)['Header']['Conventions'] = 'CF-1.7 ODS-2.0' ; # Update "Conventions": "CF-1.7 CMIP-6.0"
-        eval(tableName)['Header']['dataRequest_specs_version'] = eval(tableName)['Header']['data_specs_version']
+        eval(tableName)['Header']['#dataRequest_specs_version'] = eval(tableName)['Header']['data_specs_version']
         eval(tableName)['Header']['data_specs_version'] = '2.0.0'
         if 'mip_era' in eval(tableName)['Header'].keys():
-            del(eval(tableName)['Header']['mip_era']) ; # Delete mip_era
+            eval(tableName)['Header']['#mip_era'] = eval(tableName)['Header']['mip_era']
         eval(tableName)['Header']['product'] = 'observations'
         eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
         eval(tableName)['Header']['table_id'] = ''.join(['Table obs4MIPs_',tableName])
@@ -142,8 +142,8 @@ Lmon['Header']['realm']     = 'land'
 Omon['Header']['realm']     = 'ocean'
 SImon['Header']['realm']    = 'seaIce'
 fx['Header']['realm']       = 'fx'
-#Aday['Header']['table_id']  = 'Table obs4MIPs_Aday' ; # Cleanup from upstream
-Aday['Header']['table_id']  = 'Aday' ; # Added as kludge for CMOR3.2.5
+Aday['Header']['table_id']  = 'Table obs4MIPs_Aday' ; # Cleanup from upstream
+#Aday['Header']['table_id']  = 'Aday' ; # Added as kludge for CMOR3.2.5
 
 # Clean out modeling_realm
 for jsonName in ['Amon','Lmon','Omon','SImon']:  #,'Aday']:

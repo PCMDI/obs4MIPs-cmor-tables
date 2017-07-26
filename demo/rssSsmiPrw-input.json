@@ -32,7 +32,7 @@
 
     "activity_id":                  "obs4MIPs",
     "product":                      "observations",
-    "further_info_url":            "http://furtherinfo.es-doc.org/<activity_id><institution_id><source_label><variable_id>",
+    "_further_info_url_tmpl":       "http://furtherinfo.es-doc.org/<activity_id><institution_id><source_label><source_id><variable_id>",
     "output_file_template":         "<variable_id><table_id><source_id><variant_label><grid_label>",
     "output_path_template":         "<activity_id><institution_id><source_id><table_id><variable_id><grid_label><version>",
     "tracking_prefix":              "hdl:21.14102",

@@ -1,11 +1,13 @@
 {
     "Header":{
+        "#dataRequest_specs_version":"01.00.13",
+        "#mip_era":"CMIP6",
         "Conventions":"CF-1.7 ODS-2.0",
         "approx_interval":"0.00000",
         "cmor_version":"3.2",
-        "dataRequest_specs_version":"01.00.13",
         "data_specs_version":"2.0.0",
         "generic_levels":"alevel",
+        "mip_era":"CMIP6",
         "missing_value":"1e20",
         "product":"observations",
         "realm":"fx",
