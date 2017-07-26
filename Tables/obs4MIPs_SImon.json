@@ -3,13 +3,13 @@
         "Conventions":"CF-1.7 ODS-2.0",
         "approx_interval":"30.00000",
         "cmor_version":"3.2",
-        "data_specs_version":"01.00.13",
+        "dataRequest_specs_version":"01.00.13",
+        "data_specs_version":"2.0.0",
         "generic_levels":"",
-        "mip_era":"CMIP6",
         "missing_value":"1e20",
         "product":"observations",
         "realm":"seaIce",
-        "table_date":"21 July 2017",
+        "table_date":"25 July 2017",
         "table_id":"SImon"
     },
     "variable_entry":{

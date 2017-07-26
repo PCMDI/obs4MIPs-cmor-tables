@@ -39,6 +39,7 @@ PJD 28 Jun 2017     - Rerun to fix formula_terms to work with CMOR 3.2.4 https:/
 PJD 17 Jul 2017     - Implement new CVs in obs4MIPs Data Specifications (ODS) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/40
 PJD 17 Jul 2017     - Updated tableNames to deal with 3.2.5 hard codings
 PJD 20 Jul 2017     - Updates to v2.0.0 release https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/53, 54, 57, 58, 59
+PJD 25 Jul 2017     - Further changes to deal with issues described in https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/60#issuecomment-317832149
                     - TODO: Ensure demo runs CMOR to validate current repo contents
 
 @author: durack1
@@ -121,8 +122,12 @@ for count2,table in enumerate(tableSource):
         continue
     else:
         eval(tableName)['Header']['Conventions'] = 'CF-1.7 ODS-2.0' ; # Update "Conventions": "CF-1.7 CMIP-6.0"
-        eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
+        eval(tableName)['Header']['dataRequest_specs_version'] = eval(tableName)['Header']['data_specs_version']
+        eval(tableName)['Header']['data_specs_version'] = '2.0.0'
+        if 'mip_era' in eval(tableName)['Header'].keys():
+            del(eval(tableName)['Header']['mip_era']) ; # Delete mip_era
         eval(tableName)['Header']['product'] = 'observations'
+        eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
         #eval(tableName)['Header']['table_id'] = ''.join(['Table obs4MIPs_',tableName])
         eval(tableName)['Header']['table_id'] = tableName ; # Added as kludge for CMOR3.2.5
 #            ! Valid values must match the regular expression:
