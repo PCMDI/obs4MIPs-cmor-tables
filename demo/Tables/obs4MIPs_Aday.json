@@ -7,11 +7,10 @@
         "cmor_version":"3.2",
         "data_specs_version":"2.0.0",
         "generic_levels":"",
-        "mip_era":"CMIP6",
         "missing_value":"1e20",
         "product":"observations",
         "realm":"atmos",
-        "table_date":"26 July 2017",
+        "table_date":"27 July 2017",
         "table_id":"Table obs4MIPs_Aday"
     },
     "variable_entry":{
