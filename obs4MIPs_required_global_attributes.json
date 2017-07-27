@@ -6,6 +6,7 @@
         "creation_date",
         "data_specs_version",
         "frequency",
+        "further_info_url",
         "grid",
         "grid_label",
         "institution",

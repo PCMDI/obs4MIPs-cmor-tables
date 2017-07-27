@@ -1,9 +1,6 @@
 {
     "CV":{
         "activity_id":"obs4MIPs",
-        "experiment_id":{
-            "Earth1.0":"Earth1.0"
-        },
         "frequency":{
             "1hr":"sampled hourly",
             "1hrClimMon":"monthly climatology of diurnal cycle computed from hourly samples",
@@ -179,6 +176,7 @@
             "creation_date",
             "data_specs_version",
             "frequency",
+            "further_info_url",
             "grid",
             "grid_label",
             "institution",

@@ -49,7 +49,16 @@ PJD 26 Jul 2017     - Cleanup source_id source entry duplicate https://github.co
 #%% Import statements
 import copy,gc,json,os,shutil,ssl,subprocess,time
 from durolib import readJsonCreateDict
-from durolib import getGitInfo
+#from durolib import getGitInfo
+
+#%% Add machine local 7za to path - solve for @gleckler1
+env7za = os.environ.copy()
+if 'oceanonly' in os.environ.get('HOST'):
+    env7za['PATH'] = env7za['PATH'] + '/export/durack1/bin/downloads/p7zip9.38.1/150916_build/p7zip_9.38.1/bin'
+elif 'crunchy' in os.environ.get('HOST'):
+    env7za['PATH'] = env7za['PATH'] + '/export/durack1/bin/downloads/p7zip9.20.1/130123_build/p7zip_9.20.1/bin'
+else:
+    print 'No 7za path found'
 
 #%% Determine path
 homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
@@ -130,9 +139,6 @@ for count2,table in enumerate(tableSource):
         eval(tableName)['Header']['product'] = 'observations'
         eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
         eval(tableName)['Header']['table_id'] = ''.join(['Table obs4MIPs_',tableName])
-        #eval(tableName)['Header']['table_id'] = tableName ; # Added as kludge for CMOR3.2.5
-#            ! Valid values must match the regular expression:
-#            ! 	["^Aday$" "^Amon$" "^Lmon$" "^Omon$" "^SImon$" "^fx$"  ...]
         if 'baseURL' in eval(tableName)['Header'].keys():
             del(eval(tableName)['Header']['baseURL']) ; # Remove spurious entry
 
@@ -143,7 +149,6 @@ Omon['Header']['realm']     = 'ocean'
 SImon['Header']['realm']    = 'seaIce'
 fx['Header']['realm']       = 'fx'
 Aday['Header']['table_id']  = 'Table obs4MIPs_Aday' ; # Cleanup from upstream
-#Aday['Header']['table_id']  = 'Aday' ; # Added as kludge for CMOR3.2.5
 
 # Clean out modeling_realm
 for jsonName in ['Amon','Lmon','Omon','SImon']:  #,'Aday']:
@@ -500,34 +505,35 @@ region = [
 
 #%% Required global attributes - # indicates source
 required_global_attributes = [
- 'Conventions', #obs4MIPs table
- 'activity_id', #CV
- 'contact', #user provided
- 'creation_date', #cmor
- 'data_specs_version', #obs4MIPs table
- 'frequency', #CV
- 'grid', #user provided
- 'grid_label', #CV
- 'institution', #CV
- 'institution_id', #CV
- 'license', #CV
- 'nominal_resolution', #CV
- 'product', #CV
- 'realm', #CV
- 'region', #CV
- 'source', #obs4MIPs_CV - will require spec so source can be extracted
- 'source_id', #CV - will require spec so source can be extracted
- 'source_label', #CV - will require spec so source can be extracted
- 'source_type', #CV (renamed from product)
- 'table_id', #obs4MIPs table
- 'tracking_id', #cmor
- 'variable_id', #cmip6
- 'variant_label' #cmip6
+ 'Conventions',
+ 'activity_id',
+ 'contact',
+ 'creation_date',
+ 'data_specs_version',
+ 'frequency',
+ 'further_info_url',
+ 'grid',
+ 'grid_label',
+ 'institution',
+ 'institution_id',
+ 'license',
+ 'nominal_resolution',
+ 'product',
+ 'realm',
+ 'region',
+ 'source',
+ 'source_id',
+ 'source_label',
+ 'source_type',
+ 'table_id',
+ 'tracking_id',
+ 'variable_id',
+ 'variant_label'
 ] ;
 
 #%% Source ID
 source_id = {}
-key = 'REMSS-PRW-6-6-0' # Attempting to scratch something together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51
+key = 'REMSS-PRW-6-6-0' # Pull together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51
 source_id[key] = {}
 source_id[key]['description'] = 'Precipitable Water'
 source_id[key]['institution_id'] = 'RSS'
@@ -657,7 +663,6 @@ for count,CV in enumerate(inputJson):
 obs4MIPs_CV = {}
 obs4MIPs_CV['CV'] = {}
 for count,CV in enumerate(CVJsonList):
-    #CVName1 = CV[0]
     # Create source entry from source_id
     if CV == 'source_id':
         source_id_ = source_id['source_id']
@@ -678,11 +683,6 @@ for count,CV in enumerate(CVJsonList):
         obs4MIPs_CV['CV'].update(eval(CV))
 # Add static entries to obs4MIPs_CV.json
 obs4MIPs_CV['CV']['activity_id'] = 'obs4MIPs'
-obs4MIPs_CV['CV']['experiment_id'] = {}
-obs4MIPs_CV['CV']['experiment_id']['Earth1.0'] = 'Earth1.0' ; # Kludge for CMOR3.2.5
-
-
-print obs4MIPs_CV['CV']['table_id']
 
 # Dynamically update "data_specs_version": "2.0.0", in rssSsmiPrw-input.json
 #print os.getcwd()
@@ -732,7 +732,7 @@ os.chdir(demoPath.replace('/demo',''))
 # Zip demo dir
 p = subprocess.Popen(['7za','a','demo.zip','demo','tzip','-xr!demo/demo'],
                          stdout=subprocess.PIPE,stderr=subprocess.PIPE,
-                         cwd=os.getcwd())
+                         cwd=os.getcwd(),env=env7za)
 stdout = p.stdout.read() ; # Use persistent variables for tests below
 stderr = p.stderr.read()
 # Move to demo dir
