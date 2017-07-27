@@ -506,7 +506,6 @@ required_global_attributes = [
  'creation_date', #cmor
  'data_specs_version', #obs4MIPs table
  'frequency', #CV
- 'further_info_url', #cmor
  'grid', #user provided
  'grid_label', #CV
  'institution', #CV
@@ -726,10 +725,12 @@ if os.path.exists('demo.zip'):
     os.remove('demo.zip')
 if os.path.exists('demo/demo.zip'):
     os.remove('demo/demo.zip')
+if os.path.exists('../demo/demo.zip'):
+    os.remove('../demo/demo.zip')
 # Jump up one directory
 os.chdir(demoPath.replace('/demo',''))
 # Zip demo dir
-p = subprocess.Popen(['7za','a','demo.zip','demo','tzip'],
+p = subprocess.Popen(['7za','a','demo.zip','demo','tzip','-xr!demo/demo'],
                          stdout=subprocess.PIPE,stderr=subprocess.PIPE,
                          cwd=os.getcwd())
 stdout = p.stdout.read() ; # Use persistent variables for tests below
