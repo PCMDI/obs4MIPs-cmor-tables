@@ -9,17 +9,20 @@
         "further_info_url",
         "grid",
         "grid_label",
+        "institution",
         "institution_id",
         "license",
-        "mip_era",
         "nominal_resolution",
         "product",
         "realm",
+        "region",
+        "source",
         "source_id",
+        "source_label",
         "source_type",
-        "source_version_number",
         "table_id",
         "tracking_id",
-        "variable_id"
+        "variable_id",
+        "variant_label"
     ]
 }

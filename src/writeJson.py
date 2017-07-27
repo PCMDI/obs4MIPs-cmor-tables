@@ -38,15 +38,27 @@ PJD 21 Jun 2017     - Updated PR #46 by Funkensieper/DWD to add new Amon variabl
 PJD 28 Jun 2017     - Rerun to fix formula_terms to work with CMOR 3.2.4 https://github.com/PCMDI/cmor/issues/198
 PJD 17 Jul 2017     - Implement new CVs in obs4MIPs Data Specifications (ODS) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/40
 PJD 17 Jul 2017     - Updated tableNames to deal with 3.2.5 hard codings
-                    - TODO: Create demo3 which simplifies user experience to downloading pre-packaged json zip archive,
-                            unzipping contents, tweaking user input json and running cmor
+PJD 20 Jul 2017     - Updates to v2.0.0 release https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/53, 54, 57, 58, 59
+PJD 25 Jul 2017     - Further changes to deal with issues described in https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/60#issuecomment-317832149
+PJD 26 Jul 2017     - Cleanup source_id source entry duplicate https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/60
+                    - TODO: Ensure demo runs CMOR to validate current repo contents
 
 @author: durack1
 """
 
 #%% Import statements
-import gc,json,os,shutil,ssl,subprocess,time
+import copy,gc,json,os,shutil,ssl,subprocess,time
 from durolib import readJsonCreateDict
+#from durolib import getGitInfo
+
+#%% Add machine local 7za to path - solve for @gleckler1
+env7za = os.environ.copy()
+if 'oceanonly' in os.environ.get('HOST'):
+    env7za['PATH'] = env7za['PATH'] + '/export/durack1/bin/downloads/p7zip9.38.1/150916_build/p7zip_9.38.1/bin'
+elif 'crunchy' in os.environ.get('HOST'):
+    env7za['PATH'] = env7za['PATH'] + '/export/durack1/bin/downloads/p7zip9.20.1/130123_build/p7zip_9.20.1/bin'
+else:
+    print 'No 7za path found'
 
 #%% Determine path
 homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
@@ -74,7 +86,6 @@ masterTargets = [
  'grids',
  'institution_id',
  'license_',
- 'mip_era',
  'nominal_resolution',
  'product',
  'realm',
@@ -121,12 +132,13 @@ for count2,table in enumerate(tableSource):
         continue
     else:
         eval(tableName)['Header']['Conventions'] = 'CF-1.7 ODS-2.0' ; # Update "Conventions": "CF-1.7 CMIP-6.0"
-        eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
+        eval(tableName)['Header']['#dataRequest_specs_version'] = eval(tableName)['Header']['data_specs_version']
+        eval(tableName)['Header']['data_specs_version'] = '2.0.0'
+        if 'mip_era' in eval(tableName)['Header'].keys():
+            eval(tableName)['Header']['#mip_era'] = eval(tableName)['Header']['mip_era']
         eval(tableName)['Header']['product'] = 'observations'
-        #eval(tableName)['Header']['table_id'] = ''.join(['Table obs4MIPs_',tableName])
-        eval(tableName)['Header']['table_id'] = tableName ; # Added as kludge for CMOR3.2.5
-#            ! Valid values must match the regular expression:
-#            ! 	["^Aday$" "^Amon$" "^Lmon$" "^Omon$" "^SImon$" "^fx$"  ...]
+        eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
+        eval(tableName)['Header']['table_id'] = ''.join(['Table obs4MIPs_',tableName])
         if 'baseURL' in eval(tableName)['Header'].keys():
             del(eval(tableName)['Header']['baseURL']) ; # Remove spurious entry
 
@@ -136,8 +148,7 @@ Lmon['Header']['realm']     = 'land'
 Omon['Header']['realm']     = 'ocean'
 SImon['Header']['realm']    = 'seaIce'
 fx['Header']['realm']       = 'fx'
-#Aday['Header']['table_id']  = 'Table obs4MIPs_Aday' ; # Cleanup from upstream
-Aday['Header']['table_id']  = 'Aday' ; # Added as kludge for CMOR3.2.5
+Aday['Header']['table_id']  = 'Table obs4MIPs_Aday' ; # Cleanup from upstream
 
 # Clean out modeling_realm
 for jsonName in ['Amon','Lmon','Omon','SImon']:  #,'Aday']:
@@ -373,11 +384,6 @@ Amon['variable_entry']['pctCLARA']['units'] = 'Pa'
 Amon['variable_entry']['pctCLARA']['valid_max'] = ''
 Amon['variable_entry']['pctCLARA']['valid_min'] = ''
 
-#%% Activity ID
-product = [
- 'obs4MIPs'
- ] ;
-
 #%% Coordinate
 
 #%% Frequency
@@ -394,7 +400,7 @@ institution_id = institution_id.get('institution_id')
 
 # Fix issues
 #==============================================================================
-# Example new experiment_id entry
+# Example new institution_id entry
 #institution_id['institution_id']['NOAA-NCEI'] = 'NOAA\'s National Centers for Environmental Information, Asheville, NC 28801, USA'
 #institution_id['institution_id']['RSS'] = 'Remote Sensing Systems, Santa Rosa, CA 95401, USA'
 
@@ -405,12 +411,6 @@ license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
             ' acknowledged following guidelines found at <a URL maintained by you>.'
             ' Further information about this data, including some limitations,'
             ' can be found via <some URL maintained by you>.)')
-
-#%% Mip era
-mip_era = [
- 'CMIP5',
- 'CMIP6'
-] ;
 
 #%% Nominal resolution
 
@@ -505,43 +505,59 @@ region = [
 
 #%% Required global attributes - # indicates source
 required_global_attributes = [
- 'Conventions', #obs4MIPs table
- 'activity_id', #CV
- 'contact', #user provided
- 'creation_date', #cmor
- 'data_specs_version', #obs4MIPs table
- 'frequency', #CV
- 'further_info_url', #cmor
- 'grid', #user provided
- 'grid_label', #CV
- 'institution_id', #CV
- 'license', #CV
- 'mip_era', #CV
- 'nominal_resolution', #CV
- 'product', #CV
- 'realm', #CV
- 'source_id', #CV - will require spec so source can be extracted
- 'source_type', #CV (renamed from product)
- 'source_version_number', #user provided
- 'table_id', #obs4MIPs table
- 'tracking_id', #cmor
- 'variable_id' #cmip6
+ 'Conventions',
+ 'activity_id',
+ 'contact',
+ 'creation_date',
+ 'data_specs_version',
+ 'frequency',
+ 'further_info_url',
+ 'grid',
+ 'grid_label',
+ 'institution',
+ 'institution_id',
+ 'license',
+ 'nominal_resolution',
+ 'product',
+ 'realm',
+ 'region',
+ 'source',
+ 'source_id',
+ 'source_label',
+ 'source_type',
+ 'table_id',
+ 'tracking_id',
+ 'variable_id',
+ 'variant_label'
 ] ;
 
 #%% Source ID
 source_id = {}
-key = 'GPCP' # Attempting to scratch something together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51
+key = 'REMSS-PRW-6-6-0' # Pull together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51
 source_id[key] = {}
-source_id[key]['label'] = key
-source_id[key]['label_extended'] = 'Global Precipitation Climatology Project'
+source_id[key]['description'] = 'Precipitable Water'
+source_id[key]['institution_id'] = 'RSS'
+source_id[key]['label'] = 'REMSS PRW v6.6.0'
 source_id[key]['release_year'] = '2017'
 source_id[key]['source_id'] = key
+source_id[key]['source_label'] = 'REMSS-PRW'
+source_id[key]['source_type'] = 'satellite_blended'
+source_id[key]['region'] = 'global'
 
 # Fix issues
 #==============================================================================
 # Example new source_id entry
-#key = 'GPCP'
-#source_id['source_id'][key] = 'Global Precipitation Climatology Project'
+#key = 'REMSS-PRW-6-6-0' # Attempting to scratch something together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51
+#source_id[key] = {}
+#source_id[key]['description'] = 'Precipitable Water'
+#source_id[key]['institution_id'] = 'RSS'
+#source_id[key]['label'] = 'REMSS PRW v6.6.0'
+#source_id[key]['release_year'] = '2017'
+#source_id[key]['source'] = 'REMSS PRW v6.6.0 (2017): Precipitable water (PRW)'
+#source_id[key]['source_id'] = key
+#source_id[key]['source_label'] = 'REMSS-PRW'
+#source_id[key]['source_type'] = 'satellite_blended'
+#source_id[key]['region'] = 'global'
 
 #%% Source type
 source_type = [
@@ -591,7 +607,7 @@ for jsonName in masterTargets:
         jsonDict = {}
         jsonDict[jsonName.replace('_','')] = eval(jsonName)
     elif jsonName not in ['coordinate','formula_terms','fx','grids',
-                        'institution_id','Aday','Amon','Lmon','Omon','SImon']:
+                          'institution_id','Aday','Amon','Lmon','Omon','SImon']:
         jsonDict = {}
         jsonDict[jsonName] = eval(jsonName)
     else:
@@ -616,7 +632,7 @@ os.chdir(demoPath)
 
 # Integrate all controlled vocabularies (CVs) into master file - create obs4MIPs_CV.json
 # List all local files
-inputJson = ['frequency','grid_label','institution_id','license','mip_era',
+inputJson = ['frequency','grid_label','institution_id','license',
              'nominal_resolution','product','realm','region',
              'required_global_attributes','source_id','source_type','table_id', # These are controlled vocabs
              'coordinate','grids','formula_terms', # These are not controlled vocabs - rather lookup tables for CMOR
@@ -626,6 +642,16 @@ lookupList = ['coordinate','grids','formula_terms']
 tableList = ['Aday','Amon','Lmon','Omon','SImon','fx']
 
 # Load dictionaries from local files
+CVJsonList = copy.deepcopy(inputJson)
+CVJsonList.remove('coordinate')
+CVJsonList.remove('grids')
+CVJsonList.remove('formula_terms')
+CVJsonList.remove('Aday')
+CVJsonList.remove('Amon')
+CVJsonList.remove('Lmon')
+CVJsonList.remove('Omon')
+CVJsonList.remove('SImon')
+CVJsonList.remove('fx')
 for count,CV in enumerate(inputJson):
     if CV in tableList:
         path = '../Tables/'
@@ -636,10 +662,34 @@ for count,CV in enumerate(inputJson):
 # Build CV master dictionary
 obs4MIPs_CV = {}
 obs4MIPs_CV['CV'] = {}
-for count,CV in enumerate(inputJson):
-    #CVName1 = CV[0]
-    if CV not in tableList:
-        obs4MIPs_CV['CV'][CV] = eval(CV)
+for count,CV in enumerate(CVJsonList):
+    # Create source entry from source_id
+    if CV == 'source_id':
+        source_id_ = source_id['source_id']
+        obs4MIPs_CV['CV']['source_id'] = {}
+        for key,values in source_id_.iteritems():
+            obs4MIPs_CV['CV']['source_id'][key] = {}
+            string = ''.join([source_id_[key]['label'],' (',
+                              source_id_[key]['release_year'],'): ',
+                              source_id_[key]['description']])
+        obs4MIPs_CV['CV']['source_id'][key]['source'] = string
+    # Rewrite table names
+    elif CV == 'table_id':
+        obs4MIPs_CV['CV']['table_id'] = []
+        for value in table_id['table_id']:
+            obs4MIPs_CV['CV']['table_id'].append('_'.join(['obs4MIPs',value]))
+    # Else all other CVs
+    elif CV not in tableList:
+        obs4MIPs_CV['CV'].update(eval(CV))
+# Add static entries to obs4MIPs_CV.json
+obs4MIPs_CV['CV']['activity_id'] = 'obs4MIPs'
+
+# Dynamically update "data_specs_version": "2.0.0", in rssSsmiPrw-input.json
+#print os.getcwd()
+#versionInfo = getGitInfo('../demo/rssSsmiPrw-input.json')
+#tagTxt = versionInfo[2]
+#tagInd = tagTxt.find('(')
+#tagTxt = tagTxt[0:tagInd].replace('latest_tagPoint: ','').strip()
 
 # Write obs4MIPs_CV.json
 if os.path.exists('obs4MIPs_CV.json'):
@@ -663,7 +713,7 @@ for count,CV in enumerate(tableList):
 
 # Cleanup
 del(coordinate,count,formula_terms,frequency,grid_label,homePath,institution_id,
-    mip_era,nominal_resolution,obs4MIPs_CV,product,realm,inputJson,lookupList,
+    nominal_resolution,obs4MIPs_CV,product,realm,inputJson,lookupList,
     tableList,required_global_attributes,table_id)
 
 #%% Generate zip archive
@@ -675,12 +725,14 @@ if os.path.exists('demo.zip'):
     os.remove('demo.zip')
 if os.path.exists('demo/demo.zip'):
     os.remove('demo/demo.zip')
+if os.path.exists('../demo/demo.zip'):
+    os.remove('../demo/demo.zip')
 # Jump up one directory
 os.chdir(demoPath.replace('/demo',''))
 # Zip demo dir
-p = subprocess.Popen(['7za','a','demo.zip','demo','tzip'],
+p = subprocess.Popen(['7za','a','demo.zip','demo','tzip','-xr!demo/demo'],
                          stdout=subprocess.PIPE,stderr=subprocess.PIPE,
-                         cwd=os.getcwd())
+                         cwd=os.getcwd(),env=env7za)
 stdout = p.stdout.read() ; # Use persistent variables for tests below
 stderr = p.stderr.read()
 # Move to demo dir

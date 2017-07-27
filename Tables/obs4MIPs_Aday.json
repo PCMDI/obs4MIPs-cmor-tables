@@ -1,16 +1,18 @@
 {
     "Header":{
+        "#dataRequest_specs_version":"01.00.13",
+        "#mip_era":"CMIP6",
         "Conventions":"CF-1.7 ODS-2.0",
         "approx_interval":"1.00000",
         "cmor_version":"3.2",
-        "data_specs_version":"01.00.13",
+        "data_specs_version":"2.0.0",
         "generic_levels":"",
         "mip_era":"CMIP6",
         "missing_value":"1e20",
         "product":"observations",
         "realm":"atmos",
-        "table_date":"17 July 2017",
-        "table_id":"Aday"
+        "table_date":"26 July 2017",
+        "table_id":"Table obs4MIPs_Aday"
     },
     "variable_entry":{
         "clt":{
