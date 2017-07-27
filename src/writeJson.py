@@ -41,6 +41,7 @@ PJD 17 Jul 2017     - Updated tableNames to deal with 3.2.5 hard codings
 PJD 20 Jul 2017     - Updates to v2.0.0 release https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/53, 54, 57, 58, 59
 PJD 25 Jul 2017     - Further changes to deal with issues described in https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/60#issuecomment-317832149
 PJD 26 Jul 2017     - Cleanup source_id source entry duplicate https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/60
+PJD 27 Jul 2017     - Remove mip_era from tables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/61
                     - TODO: Ensure demo runs CMOR to validate current repo contents
 
 @author: durack1
@@ -50,15 +51,6 @@ PJD 26 Jul 2017     - Cleanup source_id source entry duplicate https://github.co
 import copy,gc,json,os,shutil,ssl,subprocess,time
 from durolib import readJsonCreateDict
 #from durolib import getGitInfo
-
-#%% Add machine local 7za to path - solve for @gleckler1
-env7za = os.environ.copy()
-if 'oceanonly' in os.environ.get('HOST'):
-    env7za['PATH'] = env7za['PATH'] + '/export/durack1/bin/downloads/p7zip9.38.1/150916_build/p7zip_9.38.1/bin'
-elif 'crunchy' in os.environ.get('HOST'):
-    env7za['PATH'] = env7za['PATH'] + '/export/durack1/bin/downloads/p7zip9.20.1/130123_build/p7zip_9.20.1/bin'
-else:
-    print 'No 7za path found'
 
 #%% Determine path
 homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
@@ -116,7 +108,7 @@ tableSource = [
 # Loop through tableSource and create output tables
 tmp = readJsonCreateDict(tableSource)
 for count,table in enumerate(tmp.keys()):
-    print 'table:', table
+    #print 'table:', table
     if table in ['frequency','grid_label','nominal_resolution']:
         vars()[table] = tmp[table].get(table)
     else:
@@ -126,7 +118,7 @@ del(tmp,count,table) ; gc.collect()
 # Cleanup by extracting only variable lists
 for count2,table in enumerate(tableSource):
     tableName = table[0]
-    print 'tableName:',tableName
+    #print 'tableName:',tableName
     #print eval(tableName)
     if tableName in ['coordinate','formula_terms','frequency','grid_label','nominal_resolution']:
         continue
@@ -136,6 +128,7 @@ for count2,table in enumerate(tableSource):
         eval(tableName)['Header']['data_specs_version'] = '2.0.0'
         if 'mip_era' in eval(tableName)['Header'].keys():
             eval(tableName)['Header']['#mip_era'] = eval(tableName)['Header']['mip_era']
+            del(eval(tableName)['Header']['mip_era']) ; # Remove after rewriting
         eval(tableName)['Header']['product'] = 'observations'
         eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
         eval(tableName)['Header']['table_id'] = ''.join(['Table obs4MIPs_',tableName])
@@ -717,6 +710,15 @@ del(coordinate,count,formula_terms,frequency,grid_label,homePath,institution_id,
     tableList,required_global_attributes,table_id)
 
 #%% Generate zip archive
+# Add machine local 7za to path - solve for @gleckler1
+env7za = os.environ.copy()
+if 'oceanonly' in os.environ.get('HOST'):
+    env7za['PATH'] = env7za['PATH'] + '/export/durack1/bin/downloads/p7zip9.38.1/150916_build/p7zip_9.38.1/bin'
+elif 'crunchy' in os.environ.get('HOST'):
+    env7za['PATH'] = env7za['PATH'] + '/export/durack1/bin/downloads/p7zip9.20.1/130123_build/p7zip_9.20.1/bin'
+else:
+    print 'No 7za path found'
+
 # Cleanup rogue files
 os.chdir(demoPath)
 if os.path.exists('.DS_Store'):
