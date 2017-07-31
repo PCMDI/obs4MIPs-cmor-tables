@@ -7,10 +7,11 @@
         "cmor_version":"3.2",
         "data_specs_version":"2.0.0",
         "generic_levels":"",
+        "int_missing_value":"-2147483648",
         "missing_value":"1e20",
         "product":"observations",
         "realm":"land",
-        "table_date":"27 July 2017",
+        "table_date":"31 July 2017",
         "table_id":"Table obs4MIPs_Lmon"
     },
     "variable_entry":{
