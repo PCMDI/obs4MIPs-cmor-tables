@@ -1,5 +1,6 @@
 ~$.xlsx
 *.json~
+*.json.bak
 *.sh~
 *.py~
 *.swp
