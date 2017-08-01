@@ -154,6 +154,10 @@ for jsonName in ['Amon','Lmon','Omon','SImon']:  #,'Aday']:
             if 'modeling_realm' in dictToClean[key][key1].keys():
                 dictToClean[key][key1].pop('modeling_realm')
 
+# Set missing value for integer variables
+for tab in (Amon, Lmon, Omon, SImon, fx, Aday):
+    tab['Header']['int_missing_value'] = str(-2**31)
+
 # Add new variables
 # Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics)
 Amon['variable_entry'][u'ttbr'] = {}
