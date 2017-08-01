@@ -1,6 +1,6 @@
 {
     "Header":{
-        "#dataRequest_specs_version":"01.00.13",
+        "#dataRequest_specs_version":"01.00.14",
         "#mip_era":"CMIP6",
         "Conventions":"CF-1.7 ODS-2.0",
         "approx_interval":"30.00000",
@@ -10,7 +10,7 @@
         "missing_value":"1e20",
         "product":"observations",
         "realm":"atmos",
-        "table_date":"27 July 2017",
+        "table_date":"01 August 2017",
         "table_id":"Table obs4MIPs_Amon"
     },
     "variable_entry":{
@@ -500,7 +500,7 @@
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"evspsbl",
-            "positive":"",
+            "positive":"up",
             "standard_name":"water_evaporation_flux",
             "type":"real",
             "units":"kg m-2 s-1",
@@ -835,7 +835,7 @@
             "cell_methods":"area: mean time: mean within years time: mean over years",
             "comment":"Air pressure on model levels",
             "dimensions":"longitude latitude alevel time2",
-            "frequency":"mon",
+            "frequency":"monClim",
             "long_name":"Pressure on Model Levels",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
@@ -852,7 +852,7 @@
             "cell_methods":"area: mean time: mean within years time: mean over years",
             "comment":"Air pressure on model half-levels",
             "dimensions":"longitude latitude alevhalf time2",
-            "frequency":"mon",
+            "frequency":"monClim",
             "long_name":"Pressure on Model Half-Levels",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",

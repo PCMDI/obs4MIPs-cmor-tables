@@ -42,6 +42,7 @@ PJD 20 Jul 2017     - Updates to v2.0.0 release https://github.com/PCMDI/obs4MIP
 PJD 25 Jul 2017     - Further changes to deal with issues described in https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/60#issuecomment-317832149
 PJD 26 Jul 2017     - Cleanup source_id source entry duplicate https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/60
 PJD 27 Jul 2017     - Remove mip_era from tables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/61
+PJD  1 Aug 2017     - Cleanup source* entries; purge data_structure https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/64
                     - TODO: Ensure demo runs CMOR to validate current repo contents
 
 @author: durack1
@@ -530,7 +531,7 @@ key = 'REMSS-PRW-6-6-0' # Pull together from https://github.com/WCRP-CMIP/CMIP6_
 source_id[key] = {}
 source_id[key]['description'] = 'Precipitable Water'
 source_id[key]['institution_id'] = 'RSS'
-source_id[key]['label'] = 'REMSS PRW v6.6.0'
+source_id[key]['label'] = 'REMSS PRW 6.6.0'
 source_id[key]['release_year'] = '2017'
 source_id[key]['source_id'] = key
 source_id[key]['source_label'] = 'REMSS-PRW'
@@ -665,6 +666,8 @@ for count,CV in enumerate(CVJsonList):
             string = ''.join([source_id_[key]['label'],' (',
                               source_id_[key]['release_year'],'): ',
                               source_id_[key]['description']])
+            obs4MIPs_CV['CV']['source_id'][key]['source_label'] = values['source_label']
+            obs4MIPs_CV['CV']['source_id'][key]['source_type'] = values['source_type']
         obs4MIPs_CV['CV']['source_id'][key]['source'] = string
     # Rewrite table names
     elif CV == 'table_id':
