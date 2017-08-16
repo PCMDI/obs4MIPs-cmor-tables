@@ -139,8 +139,8 @@ for count2,table in enumerate(tableSource):
 
 # Cleanup realms
 Amon['Header']['realm']     = 'atmos'
-#Amon['variable_entry'].pop('pfull')
-#Amon['variable_entry'].pop('phalf')
+Amon['variable_entry'].pop('pfull')
+Amon['variable_entry'].pop('phalf')
 Lmon['Header']['realm']     = 'land'
 Omon['Header']['realm']     = 'ocean'
 SImon['Header']['realm']    = 'seaIce'
