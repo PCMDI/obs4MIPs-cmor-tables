@@ -197,6 +197,7 @@
         ],
         "source_id":{
             "REMSS-PRW-6-6-0":{
+                "region":"global",
                 "source":"REMSS PRW 6.6.0 (2017): Precipitable Water",
                 "source_label":"REMSS-PRW",
                 "source_type":"satellite_blended"

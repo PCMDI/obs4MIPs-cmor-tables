@@ -43,6 +43,7 @@ PJD 25 Jul 2017     - Further changes to deal with issues described in https://g
 PJD 26 Jul 2017     - Cleanup source_id source entry duplicate https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/60
 PJD 27 Jul 2017     - Remove mip_era from tables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/61
 PJD  1 Aug 2017     - Cleanup source* entries; purge data_structure https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/64
+PJD 16 Aug 2017     - Further cleanup to improve consistency between source_id and obs4MIPs_CV #64
                     - TODO: Ensure demo runs CMOR to validate current repo contents
 
 @author: durack1
@@ -672,6 +673,7 @@ for count,CV in enumerate(CVJsonList):
                               source_id_[key]['description']])
             obs4MIPs_CV['CV']['source_id'][key]['source_label'] = values['source_label']
             obs4MIPs_CV['CV']['source_id'][key]['source_type'] = values['source_type']
+            obs4MIPs_CV['CV']['source_id'][key]['region'] = values['region']
         obs4MIPs_CV['CV']['source_id'][key]['source'] = string
     # Rewrite table names
     elif CV == 'table_id':

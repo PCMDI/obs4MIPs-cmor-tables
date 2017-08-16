@@ -1,6 +1,6 @@
 {
     "Header":{
-        "#dataRequest_specs_version":"01.00.14",
+        "#dataRequest_specs_version":"01.00.15",
         "#mip_era":"CMIP6",
         "Conventions":"CF-1.7 ODS-2.0",
         "approx_interval":"30.00000",
@@ -11,10 +11,27 @@
         "missing_value":"1e20",
         "product":"observations",
         "realm":"seaIce",
-        "table_date":"01 August 2017",
+        "table_date":"16 August 2017",
         "table_id":"Table obs4MIPs_SImon"
     },
     "variable_entry":{
+        "sfdsi":{
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "comment":"This field is physical, and it arises since sea ice has a nonzero salt content, so it exchanges salt with the liquid ocean upon melting and freezing.",
+            "dimensions":"longitude latitude time",
+            "frequency":"mon",
+            "long_name":"Salt flux from sea ice",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"sfdsi",
+            "positive":"down",
+            "standard_name":"downward_sea_ice_basal_salt_flux",
+            "type":"",
+            "units":"kg m-2 s-1",
+            "valid_max":"",
+            "valid_min":""
+        },
         "siage":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
@@ -573,23 +590,6 @@
             "standard_name":"surface_upwelling_longwave_flux_in_air",
             "type":"",
             "units":"W m-2",
-            "valid_max":"",
-            "valid_min":""
-        },
-        "siflsaltbot":{
-            "cell_measures":"area: areacella",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
-            "comment":"Total flux of salt from water into sea ice divided by grid-cell area; salt flux is upward (negative) during ice growth when salt is embedded into the ice and downward (positive) during melt when salt from sea ice is again released to the ocean",
-            "dimensions":"longitude latitude time",
-            "frequency":"mon",
-            "long_name":"Salt flux from sea ice",
-            "ok_max_mean_abs":"",
-            "ok_min_mean_abs":"",
-            "out_name":"siflsaltbot",
-            "positive":"down",
-            "standard_name":"salt_flux_from_ice",
-            "type":"",
-            "units":"kg m-2 s-1",
             "valid_max":"",
             "valid_min":""
         },
