@@ -44,6 +44,7 @@ PJD 26 Jul 2017     - Cleanup source_id source entry duplicate https://github.co
 PJD 27 Jul 2017     - Remove mip_era from tables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/61
 PJD  1 Aug 2017     - Cleanup source* entries; purge data_structure https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/64
 PJD 16 Aug 2017     - Further cleanup to improve consistency between source_id and obs4MIPs_CV #64
+PJD 24 Aug 2017     - Further cleanup for source_id in obs4MIPs_CV following CMOR3.2.6 tweaks #64
                     - TODO: Ensure demo runs CMOR to validate current repo contents
 
 @author: durack1
@@ -521,11 +522,7 @@ required_global_attributes = [
  'nominal_resolution',
  'product',
  'realm',
- 'region',
- 'source',
  'source_id',
- 'source_label',
- 'source_type',
  'table_id',
  'tracking_id',
  'variable_id',
