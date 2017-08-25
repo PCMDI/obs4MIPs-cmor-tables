@@ -45,6 +45,7 @@ PJD 27 Jul 2017     - Remove mip_era from tables https://github.com/PCMDI/obs4MI
 PJD  1 Aug 2017     - Cleanup source* entries; purge data_structure https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/64
 PJD 16 Aug 2017     - Further cleanup to improve consistency between source_id and obs4MIPs_CV #64
 PJD 24 Aug 2017     - Further cleanup for source_id in obs4MIPs_CV following CMOR3.2.6 tweaks #64
+PJD 25 Aug 2017     - Remove further_info_url from required_global_attributes #64
                     - TODO: Ensure demo runs CMOR to validate current repo contents
 
 @author: durack1
@@ -513,7 +514,6 @@ required_global_attributes = [
  'creation_date',
  'data_specs_version',
  'frequency',
- 'further_info_url',
  'grid',
  'grid_label',
  'institution',
