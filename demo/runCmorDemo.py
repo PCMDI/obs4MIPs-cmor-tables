@@ -1,6 +1,7 @@
 import cmor
 import cdms2 as cdm
 import numpy as np
+#cdm.setAutoBounds('on') # Caution, this attempts to automatically set coordinate bounds - please check outputs using this option
 #import pdb ; # Debug statement - import if enabling below
 
 #%% User provided input
@@ -19,7 +20,15 @@ d = f(inputVarName)
 lat = d.getLatitude()
 lon = d.getLongitude()
 #time = d.getTime() ; # Assumes variable is named 'time', for the demo file this is named 'months'
-time = d.getAxis(0)
+time = d.getAxis(0) ; # Rather use a file dimension-based load statement
+
+# Deal with problematic "months since" calendar/time axis
+time_bounds = time.getBounds()
+time_bounds[:,0] = time[:]
+time_bounds[:-1,1] = time[1:]
+time_bounds[-1,1] = time_bounds[-1,0]+1
+time.setBounds(time_bounds)
+del(time_bounds) ; # Cleanup
 
 #%% Initialize and run CMOR
 # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
@@ -49,7 +58,6 @@ for axis in axes:
 d.units = outputUnits
 varid   = cmor.variable(outputVarName,d.units,axisIds,missing_value=d.missing)
 values  = np.array(d[:],np.float32)
-cdm.setAutoBounds('on') # PJG - Caution, this attempts to automatically set coordinate bounds - please check outputs using this option
 
 cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
 cmor.write(varid,values,time_vals=time[:],time_bnds=time.getBounds()) ; # Write variable with time axis
