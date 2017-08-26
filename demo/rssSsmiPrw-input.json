@@ -2,33 +2,28 @@
     "#comment1": "The following attributes must be defined by the user",
 
     "contact":                      "RSS (support@remss.com)",
+    "#comment2": "institution comes from institution_id match controlled vocabulary",
     "institution_id":               "RSS",
-    "institution":                  "Remote Sensing Systems, Santa Rosa, CA 95401, USA",
     "references":                   "",
-    "source":                       "REMSS PRW v6.6.0 (2017): Precipitable water (PRW)",
+    "#comment3": "source, source_id, source_label, source_type and region comes from source_id match controlled vocabulary",
     "source_id":                    "REMSS-PRW-6-6-0",
-    "source_label":                 "REMSS-PRW",
-    "source_type":                  "satellite_blended",
-    "data_structure":               "grid",
     "grid":                         "2.5x2.5 degree latitude x longitude",
     "grid_label":                   "gn",
     "nominal_resolution":           "250 km",
     "calendar":                     "gregorian",
-    "frequency":                    "mon",
-    "realm":                        "atmos",
-    "region":                       "global",
+    "#comment4": "frequency and realm are sourced from the variable table used",
     "variant_label":                "BE",
     "outpath":                      "./demo",
     "license":                      "Data in this file produced by <Your Centre Name> is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Use of the data must be acknowledged following guidelines found at <a URL maintained by you>. Further information about this data, including some limitations, can be found via <some URL maintained by you>",
 
-    "#comment2": "The user may choose to define or omit some or all of the following",
+    "#comment5": "The user may choose to define or omit some or all of the following",
 
     "title":                        "PRW V6.6.0 prepared for obs4MIPs (ODS-v2.0.0)",
     "variant_info":                 "Best Estimate",
     "comment":                      "",
     "history":                      "",
 
-    "#comment3": "The following should not be edited by the user",
+    "#comment6": "The following should not be edited by the user",
 
     "activity_id":                  "obs4MIPs",
     "product":                      "observations",
@@ -39,7 +34,7 @@
     "Conventions":                  "CF-1.7 ODS-2.0",
     "data_specs_version":           "2.0.0",
 
-    "#comment4": "The following are CMOR internal settings and should not be edited by the user",
+    "#comment7": "The following are CMOR internal settings and should not be edited by the user",
 
     "_control_vocabulary_file":     "obs4MIPs_CV.json",
     "_AXIS_ENTRY_FILE":             "obs4MIPs_coordinate.json",

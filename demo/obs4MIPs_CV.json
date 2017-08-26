@@ -176,7 +176,6 @@
             "creation_date",
             "data_specs_version",
             "frequency",
-            "further_info_url",
             "grid",
             "grid_label",
             "institution",
@@ -185,11 +184,7 @@
             "nominal_resolution",
             "product",
             "realm",
-            "region",
-            "source",
             "source_id",
-            "source_label",
-            "source_type",
             "table_id",
             "tracking_id",
             "variable_id",
@@ -197,7 +192,10 @@
         ],
         "source_id":{
             "REMSS-PRW-6-6-0":{
-                "source":"REMSS PRW v6.6.0 (2017): Precipitable Water"
+                "region":"global",
+                "source":"REMSS PRW 6.6.0 (2017): Precipitable Water",
+                "source_label":"REMSS-PRW",
+                "source_type":"satellite_blended"
             }
         },
         "source_type":[
