@@ -46,6 +46,8 @@ PJD  1 Aug 2017     - Cleanup source* entries; purge data_structure https://gith
 PJD 16 Aug 2017     - Further cleanup to improve consistency between source_id and obs4MIPs_CV #64
 PJD 24 Aug 2017     - Further cleanup for source_id in obs4MIPs_CV following CMOR3.2.6 tweaks #64
 PJD 25 Aug 2017     - Remove further_info_url from required_global_attributes #64
+PJD 14 Sep 2017     - Revise REMSS source_id registration; Update all upstreams https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/75
+PJD 14 Sep 2017     - Revise REMSS source_id registration; Update all upstreams https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/75
                     - TODO: Ensure demo runs CMOR to validate current repo contents
 
 @author: durack1
@@ -530,28 +532,20 @@ required_global_attributes = [
 ] ;
 
 #%% Source ID
-source_id = {}
-key = 'REMSS-PRW-6-6-0' # Pull together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51
-source_id[key] = {}
-source_id[key]['description'] = 'Water Vapor Path'
-source_id[key]['institution_id'] = 'RSS'
-source_id[key]['label'] = 'REMSS PRW 6.6.0'
-source_id[key]['release_year'] = '2017'
-source_id[key]['source_id'] = key
-source_id[key]['source_label'] = 'REMSS-PRW'
-source_id[key]['source_type'] = 'satellite_blended'
-source_id[key]['region'] = 'global'
+tmp = [['source_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/obs4MIPs_source_id.json']
+      ] ;
+source_id = readJsonCreateDict(tmp)
+source_id = source_id.get('source_id')
 
 # Fix issues
 #==============================================================================
 # Example new source_id entry
 #key = 'REMSS-PRW-6-6-0' # Attempting to scratch something together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51
 #source_id[key] = {}
-#source_id[key]['description'] = 'Precipitable Water'
+#source_id[key]['description'] = 'Water Vapor Path'
 #source_id[key]['institution_id'] = 'RSS'
 #source_id[key]['label'] = 'REMSS PRW v6.6.0'
 #source_id[key]['release_year'] = '2017'
-#source_id[key]['source'] = 'REMSS PRW v6.6.0 (2017): Precipitable water (PRW)'
 #source_id[key]['source_id'] = key
 #source_id[key]['source_label'] = 'REMSS-PRW'
 #source_id[key]['source_type'] = 'satellite_blended'
@@ -588,7 +582,8 @@ for jsonName in masterTargets:
                 dictToClean[key][value2[0]] = string
         vars()[jsonName] = dictToClean
     # Write file
-    if jsonName in ['Aday', 'Amon', 'Lmon', 'Omon', 'SImon', 'fx']:
+    if jsonName in ['Aday', 'Amon', 'Lmon', 'Omon', 'SImon', 'coordinate',
+                    'formula_terms', 'fx', 'grids']:
         outFile = ''.join(['../Tables/obs4MIPs_',jsonName,'.json'])
     elif jsonName == 'license_':
         outFile = ''.join(['../obs4MIPs_license.json'])
@@ -605,7 +600,8 @@ for jsonName in masterTargets:
         jsonDict = {}
         jsonDict[jsonName.replace('_','')] = eval(jsonName)
     elif jsonName not in ['coordinate','formula_terms','fx','grids',
-                          'institution_id','Aday','Amon','Lmon','Omon','SImon']:
+                          'institution_id','source_id','Aday','Amon','Lmon',
+                          'Omon','SImon']:
         jsonDict = {}
         jsonDict[jsonName] = eval(jsonName)
     else:
@@ -636,8 +632,8 @@ inputJson = ['frequency','grid_label','institution_id','license',
              'coordinate','grids','formula_terms', # These are not controlled vocabs - rather lookup tables for CMOR
              'Aday','Amon','Lmon','Omon','SImon','fx' # Update/add if new tables are generated
             ]
-lookupList = ['coordinate','grids','formula_terms']
-tableList = ['Aday','Amon','Lmon','Omon','SImon','fx']
+tableList = ['Aday', 'Amon', 'Lmon', 'Omon', 'SImon', 'coordinate',
+             'formula_terms', 'fx', 'grids']
 
 # Load dictionaries from local files
 CVJsonList = copy.deepcopy(inputJson)
@@ -692,7 +688,7 @@ obs4MIPs_CV['CV']['activity_id'] = 'obs4MIPs'
 #tagInd = tagTxt.find('(')
 #tagTxt = tagTxt[0:tagInd].replace('latest_tagPoint: ','').strip()
 
-# Write obs4MIPs_CV.json
+# Write demo obs4MIPs_CV.json
 if os.path.exists('obs4MIPs_CV.json'):
     print 'File existing, purging:','obs4MIPs_CV.json'
     os.remove('obs4MIPs_CV.json')
@@ -700,9 +696,17 @@ fH = open('obs4MIPs_CV.json','w')
 json.dump(obs4MIPs_CV,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
 fH.close()
 
+# Write ../Tables obs4MIPs_CV.json
+if os.path.exists('../Tables/obs4MIPs_CV.json'):
+    print 'File existing, purging:','obs4MIPs_CV.json'
+    os.remove('../Tables/obs4MIPs_CV.json')
+fH = open('../Tables/obs4MIPs_CV.json','w')
+json.dump(obs4MIPs_CV,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
+fH.close()
+
 # Loop and write all other files
 os.chdir('Tables')
-tableList.extend(lookupList)
+#tableList.extend(lookupList)
 for count,CV in enumerate(tableList):
     outFile = ''.join(['obs4MIPs_',CV,'.json'])
     if os.path.exists(outFile):
@@ -714,8 +718,8 @@ for count,CV in enumerate(tableList):
 
 # Cleanup
 del(coordinate,count,formula_terms,frequency,grid_label,homePath,institution_id,
-    nominal_resolution,obs4MIPs_CV,product,realm,inputJson,lookupList,
-    tableList,required_global_attributes,table_id)
+    nominal_resolution,obs4MIPs_CV,product,realm,inputJson,tableList,
+    required_global_attributes,table_id)
 
 #%% Generate zip archive
 # Add machine local 7za to path - solve for @gleckler1
