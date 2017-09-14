@@ -1,4 +1,14 @@
 {
+    "NOAA-NCEI-AVHRR-NDVI-4-0":{
+        "description":"Normalized Difference Vegetation Index",
+        "institution_id":"NOAA-NCEI",
+        "label":"NOAA NCEI AVHRR NDVI v4.0",
+        "region":"global_land",
+        "release_year":"2013",
+        "source_id":"NOAA-NCEI-AVHRR-NDVI-4-0",
+        "source_label":"NOAA-NCEI-AVHRR-NDVI",
+        "source_type":"satellite_retrieval"
+    },
     "source_id":{
         "REMSS-PRW-6-6-0":{
             "description":"Water Vapor Path",

@@ -49,6 +49,7 @@ PJD 25 Aug 2017     - Remove further_info_url from required_global_attributes #6
 PJD 14 Sep 2017     - Revise REMSS source_id registration; Update all upstreams https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/75
 PJD 14 Sep 2017     - Revise REMSS source_id registration; Update all upstreams https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/67
 PJD 14 Sep 2017     - Deal with repo reorganization https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/75
+PJD 14 Sep 2017     - Register source_id AVHRR-NDVI-4-0 https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/73
                     - TODO: Ensure demo runs CMOR to validate current repo contents
 
 @author: durack1
@@ -539,6 +540,16 @@ source_id = readJsonCreateDict(tmp)
 source_id = source_id.get('source_id')
 
 # Fix issues
+key = 'NOAA-NCEI-AVHRR-NDVI-4-0'
+source_id[key] = {}
+source_id[key]['description'] = 'Normalized Difference Vegetation Index'
+source_id[key]['institution_id'] = 'NOAA-NCEI'
+source_id[key]['label'] = 'NOAA NCEI AVHRR NDVI v4.0'
+source_id[key]['release_year'] = '2013'
+source_id[key]['source_id'] = key
+source_id[key]['source_label'] = 'NOAA-NCEI-AVHRR-NDVI'
+source_id[key]['source_type'] = 'satellite_retrieval'
+source_id[key]['region'] = 'global_land'
 #==============================================================================
 # Example new source_id entry
 #key = 'REMSS-PRW-6-6-0' # Attempting to scratch something together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51
