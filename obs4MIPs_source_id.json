@@ -1,7 +1,7 @@
 {
     "source_id":{
         "REMSS-PRW-6-6-0":{
-            "description":"Precipitable Water",
+            "description":"Water Vapor Path",
             "institution_id":"RSS",
             "label":"REMSS PRW 6.6.0",
             "region":"global",
