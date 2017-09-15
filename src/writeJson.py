@@ -683,7 +683,7 @@ for count,CV in enumerate(CVJsonList):
     elif CV == 'table_id':
         obs4MIPs_CV['CV']['table_id'] = []
         for value in table_id['table_id']:
-            obs4MIPs_CV['CV']['table_id'].append('_'.join(['obs4MIPs',value]))
+            obs4MIPs_CV['CV']['table_id'].append(value)
     # Else all other CVs
     elif CV not in tableList:
         obs4MIPs_CV['CV'].update(eval(CV))
