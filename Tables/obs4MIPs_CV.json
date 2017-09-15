@@ -197,6 +197,7 @@
         "source_id":{
             "NOAA-NCEI-AVHRR-NDVI-4-0":{
                 "region":"global_land",
+                "source":"NOAA NCEI AVHRR NDVI v4.0 (2013): Normalized Difference Vegetation Index",
                 "source_label":"NOAA-NCEI-AVHRR-NDVI",
                 "source_type":"satellite_retrieval"
             },

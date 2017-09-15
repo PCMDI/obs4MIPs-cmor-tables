@@ -689,7 +689,7 @@ for count,CV in enumerate(CVJsonList):
             obs4MIPs_CV['CV']['source_id'][key]['source_label'] = values['source_label']
             obs4MIPs_CV['CV']['source_id'][key]['source_type'] = values['source_type']
             obs4MIPs_CV['CV']['source_id'][key]['region'] = values['region']
-        obs4MIPs_CV['CV']['source_id'][key]['source'] = string
+            obs4MIPs_CV['CV']['source_id'][key]['source'] = string
     # Rewrite table names
     elif CV == 'table_id':
         obs4MIPs_CV['CV']['table_id'] = []
