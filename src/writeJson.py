@@ -49,6 +49,7 @@ PJD 25 Aug 2017     - Remove further_info_url from required_global_attributes #6
 PJD 14 Sep 2017     - Revise REMSS source_id registration; Update all upstreams https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/75
 PJD 14 Sep 2017     - Revise REMSS source_id registration; Update all upstreams https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/67
 PJD 14 Sep 2017     - Deal with repo reorganization https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/75
+PJD 15 Sep 2017     - Update table_id names for consistency https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/79
                     - TODO: Ensure demo runs CMOR to validate current repo contents
 
 @author: durack1
@@ -561,7 +562,14 @@ source_type = [
 ] ;
 
 #%% Table ID
-table_id = ['Aday', 'Amon', 'Lmon', 'Omon', 'SImon', 'fx'] ;
+table_id = [
+  'obs4MIPs_Aday',
+  'obs4MIPs_Amon',
+  'obs4MIPs_Lmon',
+  'obs4MIPs_Omon',
+  'obs4MIPs_SImon',
+  'obs4MIPs_fx'
+] ;
 
 #%% Write variables to files
 for jsonName in masterTargets:
