@@ -49,7 +49,8 @@ PJD 25 Aug 2017     - Remove further_info_url from required_global_attributes #6
 PJD 14 Sep 2017     - Revise REMSS source_id registration; Update all upstreams https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/75
 PJD 14 Sep 2017     - Revise REMSS source_id registration; Update all upstreams https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/67
 PJD 14 Sep 2017     - Deal with repo reorganization https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/75
-PJD 14 Sep 2017     - Register source_id AVHRR-NDVI-4-0 https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/73
+PJD 15 Sep 2017     - Update table_id names for consistency https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/79
+PJD 15 Sep 2017     - Register source_id AVHRR-NDVI-4-0 https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/73
                     - TODO: Ensure demo runs CMOR to validate current repo contents
 
 @author: durack1
@@ -572,7 +573,14 @@ source_type = [
 ] ;
 
 #%% Table ID
-table_id = ['Aday', 'Amon', 'Lmon', 'Omon', 'SImon', 'fx'] ;
+table_id = [
+  'obs4MIPs_Aday',
+  'obs4MIPs_Amon',
+  'obs4MIPs_Lmon',
+  'obs4MIPs_Omon',
+  'obs4MIPs_SImon',
+  'obs4MIPs_fx'
+] ;
 
 #%% Write variables to files
 for jsonName in masterTargets:
@@ -686,7 +694,7 @@ for count,CV in enumerate(CVJsonList):
     elif CV == 'table_id':
         obs4MIPs_CV['CV']['table_id'] = []
         for value in table_id['table_id']:
-            obs4MIPs_CV['CV']['table_id'].append('_'.join(['obs4MIPs',value]))
+            obs4MIPs_CV['CV']['table_id'].append(value)
     # Else all other CVs
     elif CV not in tableList:
         obs4MIPs_CV['CV'].update(eval(CV))
@@ -701,10 +709,10 @@ obs4MIPs_CV['CV']['activity_id'] = 'obs4MIPs'
 #tagTxt = tagTxt[0:tagInd].replace('latest_tagPoint: ','').strip()
 
 # Write demo obs4MIPs_CV.json
-if os.path.exists('obs4MIPs_CV.json'):
+if os.path.exists('Tables/obs4MIPs_CV.json'):
     print 'File existing, purging:','obs4MIPs_CV.json'
-    os.remove('obs4MIPs_CV.json')
-fH = open('obs4MIPs_CV.json','w')
+    os.remove('Tables/obs4MIPs_CV.json')
+fH = open('Tables/obs4MIPs_CV.json','w')
 json.dump(obs4MIPs_CV,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
 fH.close()
 
