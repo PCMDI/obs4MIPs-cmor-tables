@@ -551,6 +551,16 @@ source_id['source_id'][key]['source_id'] = key
 source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-AVHRR-NDVI'
 source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['region'] = 'global_land'
+key = 'REMSS-PRW-6-6-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['description'] = 'Water Vapor Path'
+source_id['source_id'][key]['institution_id'] = 'RSS'
+source_id['source_id'][key]['label'] = 'REMSS PRW v6.6.0'
+source_id['source_id'][key]['release_year'] = '2017'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'REMSS-PRW'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = 'global'
 #==============================================================================
 # Example new source_id entry
 #key = 'REMSS-PRW-6-6-0' # Attempting to scratch something together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51

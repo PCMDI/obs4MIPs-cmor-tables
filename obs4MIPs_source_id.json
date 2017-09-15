@@ -13,7 +13,7 @@
         "REMSS-PRW-6-6-0":{
             "description":"Water Vapor Path",
             "institution_id":"RSS",
-            "label":"REMSS PRW 6.6.0",
+            "label":"REMSS PRW v6.6.0",
             "region":"global",
             "release_year":"2017",
             "source_id":"REMSS-PRW-6-6-0",

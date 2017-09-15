@@ -203,7 +203,7 @@
             },
             "REMSS-PRW-6-6-0":{
                 "region":"global",
-                "source":"REMSS PRW 6.6.0 (2017): Water Vapor Path",
+                "source":"REMSS PRW v6.6.0 (2017): Water Vapor Path",
                 "source_label":"REMSS-PRW",
                 "source_type":"satellite_blended"
             }
