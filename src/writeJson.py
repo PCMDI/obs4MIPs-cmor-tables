@@ -690,10 +690,10 @@ obs4MIPs_CV['CV']['activity_id'] = 'obs4MIPs'
 #tagTxt = tagTxt[0:tagInd].replace('latest_tagPoint: ','').strip()
 
 # Write demo obs4MIPs_CV.json
-if os.path.exists('obs4MIPs_CV.json'):
+if os.path.exists('Tables/obs4MIPs_CV.json'):
     print 'File existing, purging:','obs4MIPs_CV.json'
-    os.remove('obs4MIPs_CV.json')
-fH = open('obs4MIPs_CV.json','w')
+    os.remove('Tables/obs4MIPs_CV.json')
+fH = open('Tables/obs4MIPs_CV.json','w')
 json.dump(obs4MIPs_CV,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
 fH.close()
 
