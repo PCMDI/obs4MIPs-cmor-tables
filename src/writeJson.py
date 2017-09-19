@@ -50,6 +50,8 @@ PJD 14 Sep 2017     - Revise REMSS source_id registration; Update all upstreams 
 PJD 14 Sep 2017     - Revise REMSS source_id registration; Update all upstreams https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/67
 PJD 14 Sep 2017     - Deal with repo reorganization https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/75
 PJD 15 Sep 2017     - Update table_id names for consistency https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/79
+PJD 15 Sep 2017     - Register source_id AVHRR-NDVI-4-0 https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/73
+PJD 19 Sep 2017     - Update demo input.json to remove controlled fields https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/84
                     - TODO: Ensure demo runs CMOR to validate current repo contents
 
 @author: durack1
@@ -140,6 +142,15 @@ for count2,table in enumerate(tableSource):
         eval(tableName)['Header']['product'] = 'observations'
         eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
         eval(tableName)['Header']['table_id'] = ''.join(['Table obs4MIPs_',tableName])
+        # Attempt to move information from input.json to table files - #84 - CMOR-limited
+        #eval(tableName)['Header']['activity_id'] = 'obs4MIPs'
+        #eval(tableName)['Header']['_further_info_url_tmpl'] = 'http://furtherinfo.es-doc.org/<activity_id><institution_id><source_label><source_id><variable_id>'
+        #eval(tableName)['Header']['output_file_template'] = '<variable_id><table_id><source_id><variant_label><grid_label>'
+        #eval(tableName)['Header']['output_path_template'] = '<activity_id><institution_id><source_id><table_id><variable_id><grid_label><version>'
+        #eval(tableName)['Header']['tracking_prefix'] = 'hdl:21.14102'
+        #eval(tableName)['Header']['_control_vocabulary_file'] = 'obs4MIPs_CV.json'
+        #eval(tableName)['Header']['_AXIS_ENTRY_FILE'] = 'obs4MIPs_coordinate.json'
+        #eval(tableName)['Header']['_FORMULA_VAR_FILE'] = 'obs4MIPs_formula_terms.json'
         if 'baseURL' in eval(tableName)['Header'].keys():
             del(eval(tableName)['Header']['baseURL']) ; # Remove spurious entry
 
@@ -540,18 +551,38 @@ source_id = readJsonCreateDict(tmp)
 source_id = source_id.get('source_id')
 
 # Fix issues
+key = 'NOAA-NCEI-AVHRR-NDVI-4-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['description'] = 'Normalized Difference Vegetation Index'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['label'] = 'NOAA NCEI AVHRR NDVI v4.0'
+source_id['source_id'][key]['release_year'] = '2013'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-AVHRR-NDVI'
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['region'] = 'global_land'
+key = 'REMSS-PRW-6-6-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['description'] = 'Water Vapor Path'
+source_id['source_id'][key]['institution_id'] = 'RSS'
+source_id['source_id'][key]['label'] = 'REMSS PRW v6.6.0'
+source_id['source_id'][key]['release_year'] = '2017'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'REMSS-PRW'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = 'global'
 #==============================================================================
 # Example new source_id entry
 #key = 'REMSS-PRW-6-6-0' # Attempting to scratch something together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51
-#source_id[key] = {}
-#source_id[key]['description'] = 'Water Vapor Path'
-#source_id[key]['institution_id'] = 'RSS'
-#source_id[key]['label'] = 'REMSS PRW v6.6.0'
-#source_id[key]['release_year'] = '2017'
-#source_id[key]['source_id'] = key
-#source_id[key]['source_label'] = 'REMSS-PRW'
-#source_id[key]['source_type'] = 'satellite_blended'
-#source_id[key]['region'] = 'global'
+#source_id['source_id'][key] = {}
+#source_id['source_id'][key]['description'] = 'Water Vapor Path'
+#source_id['source_id'][key]['institution_id'] = 'RSS'
+#source_id['source_id'][key]['label'] = 'REMSS PRW v6.6.0'
+#source_id['source_id'][key]['release_year'] = '2017'
+#source_id['source_id'][key]['source_id'] = key
+#source_id['source_id'][key]['source_label'] = 'REMSS-PRW'
+#source_id['source_id'][key]['source_type'] = 'satellite_blended'
+#source_id['source_id'][key]['region'] = 'global'
 
 #%% Source type
 source_type = [
@@ -678,7 +709,7 @@ for count,CV in enumerate(CVJsonList):
             obs4MIPs_CV['CV']['source_id'][key]['source_label'] = values['source_label']
             obs4MIPs_CV['CV']['source_id'][key]['source_type'] = values['source_type']
             obs4MIPs_CV['CV']['source_id'][key]['region'] = values['region']
-        obs4MIPs_CV['CV']['source_id'][key]['source'] = string
+            obs4MIPs_CV['CV']['source_id'][key]['source'] = string
     # Rewrite table names
     elif CV == 'table_id':
         obs4MIPs_CV['CV']['table_id'] = []
