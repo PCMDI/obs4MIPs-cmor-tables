@@ -1,0 +1,21 @@
+{
+    "variable_entry":{
+        "ndviStderr":{
+            "cell_measures":"",
+            "cell_methods":"",
+            "comment":"",
+            "dimensions":"longitude latitude time",
+            "frequency":"mon",
+            "long_name":"NDVI standard error",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"ndviStderr",
+            "positive":"",
+            "standard_name":"ndvi_standard_error",
+            "type":"real",
+            "units":"",
+            "valid_max":"",
+            "valid_min":""
+        }
+    }
+}

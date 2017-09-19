@@ -1,0 +1,21 @@
+{
+    "variable_entry":{
+        "ndviNobs":{
+            "cell_measures":"",
+            "cell_methods":"",
+            "comment":"",
+            "dimensions":"longitude latitude time",
+            "frequency":"mon",
+            "long_name":"NDVI number of observations",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"ndviNobs",
+            "positive":"",
+            "standard_name":"ndvi_number_of_observations",
+            "type":"",
+            "units":"1",
+            "valid_max":"",
+            "valid_min":""
+        }
+    }
+}
