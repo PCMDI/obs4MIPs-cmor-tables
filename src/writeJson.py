@@ -81,6 +81,8 @@ masterTargets = [
  'Omon',
  'SImon',
  'fx',
+ 'monNobs',
+ 'monStderr',
  'coordinate',
  'formula_terms',
  'frequency',
@@ -430,6 +432,46 @@ license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
             ' Further information about this data, including some limitations,'
             ' can be found via <some URL maintained by you>.)')
 
+#%% monNobs
+monNobs = {}
+monNobs['variable_entry'] = {}
+monNobs['variable_entry'][u'ndviNobs'] = {}
+monNobs['variable_entry'][u'ndviNobs']['cell_measures'] = ''
+monNobs['variable_entry'][u'ndviNobs']['cell_methods'] = ''
+monNobs['variable_entry'][u'ndviNobs']['comment'] = ''
+monNobs['variable_entry'][u'ndviNobs']['dimensions'] = 'longitude latitude time'
+monNobs['variable_entry'][u'ndviNobs']['frequency'] = 'mon'
+monNobs['variable_entry'][u'ndviNobs']['long_name'] = 'NDVI number of observations'
+monNobs['variable_entry'][u'ndviNobs']['ok_max_mean_abs'] = ''
+monNobs['variable_entry'][u'ndviNobs']['ok_min_mean_abs'] = ''
+monNobs['variable_entry'][u'ndviNobs']['out_name'] = 'ndviNobs'
+monNobs['variable_entry'][u'ndviNobs']['positive'] = ''
+monNobs['variable_entry'][u'ndviNobs']['standard_name'] = 'ndvi_number_of_observations'
+monNobs['variable_entry'][u'ndviNobs']['type'] = ''
+monNobs['variable_entry'][u'ndviNobs']['units'] = '1'
+monNobs['variable_entry'][u'ndviNobs']['valid_max'] = ''
+monNobs['variable_entry'][u'ndviNobs']['valid_min'] = ''
+
+#%% monStderr
+monStderr = {}
+monStderr['variable_entry'] = {}
+monStderr['variable_entry'][u'ndviStderr'] = {}
+monStderr['variable_entry'][u'ndviStderr']['cell_measures'] = ''
+monStderr['variable_entry'][u'ndviStderr']['cell_methods'] = ''
+monStderr['variable_entry'][u'ndviStderr']['comment'] = ''
+monStderr['variable_entry'][u'ndviStderr']['dimensions'] = 'longitude latitude time'
+monStderr['variable_entry'][u'ndviStderr']['frequency'] = 'mon'
+monStderr['variable_entry'][u'ndviStderr']['long_name'] = 'NDVI standard error'
+monStderr['variable_entry'][u'ndviStderr']['ok_max_mean_abs'] = ''
+monStderr['variable_entry'][u'ndviStderr']['ok_min_mean_abs'] = ''
+monStderr['variable_entry'][u'ndviStderr']['out_name'] = 'ndviStderr'
+monStderr['variable_entry'][u'ndviStderr']['positive'] = ''
+monStderr['variable_entry'][u'ndviStderr']['standard_name'] = 'ndvi_standard_error'
+monStderr['variable_entry'][u'ndviStderr']['type'] = 'real'
+monStderr['variable_entry'][u'ndviStderr']['units'] = ''
+monStderr['variable_entry'][u'ndviStderr']['valid_max'] = ''
+monStderr['variable_entry'][u'ndviStderr']['valid_min'] = ''
+
 #%% Nominal resolution
 
 #%% Product
@@ -623,7 +665,7 @@ for jsonName in masterTargets:
         vars()[jsonName] = dictToClean
     # Write file
     if jsonName in ['Aday', 'Amon', 'Lmon', 'Omon', 'SImon', 'coordinate',
-                    'formula_terms', 'fx', 'grids']:
+                    'formula_terms', 'fx', 'grids', 'monNobs', 'monStderr']:
         outFile = ''.join(['../Tables/obs4MIPs_',jsonName,'.json'])
     elif jsonName == 'license_':
         outFile = ''.join(['../obs4MIPs_license.json'])
@@ -641,7 +683,7 @@ for jsonName in masterTargets:
         jsonDict[jsonName.replace('_','')] = eval(jsonName)
     elif jsonName not in ['coordinate','formula_terms','fx','grids',
                           'institution_id','source_id','Aday','Amon','Lmon',
-                          'Omon','SImon']:
+                          'Omon','SImon','monNobs','monStderr']:
         jsonDict = {}
         jsonDict[jsonName] = eval(jsonName)
     else:
@@ -673,7 +715,7 @@ inputJson = ['frequency','grid_label','institution_id','license',
              'Aday','Amon','Lmon','Omon','SImon','fx' # Update/add if new tables are generated
             ]
 tableList = ['Aday', 'Amon', 'Lmon', 'Omon', 'SImon', 'coordinate',
-             'formula_terms', 'fx', 'grids']
+             'formula_terms', 'fx', 'grids', 'monNobs', 'monStderr']
 
 # Load dictionaries from local files
 CVJsonList = copy.deepcopy(inputJson)
