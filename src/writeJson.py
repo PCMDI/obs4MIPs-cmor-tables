@@ -410,6 +410,46 @@ Amon['variable_entry']['pctCLARA']['units'] = 'Pa'
 Amon['variable_entry']['pctCLARA']['valid_max'] = ''
 Amon['variable_entry']['pctCLARA']['valid_min'] = ''
 
+# monNobs
+
+# Example new monNobs entry
+#monNobs['variable_entry'][u'ndviNobs'] = {}
+#monNobs['variable_entry'][u'ndviNobs']['cell_measures'] = ''
+#monNobs['variable_entry'][u'ndviNobs']['cell_methods'] = ''
+#monNobs['variable_entry'][u'ndviNobs']['comment'] = ''
+#monNobs['variable_entry'][u'ndviNobs']['dimensions'] = 'longitude latitude time'
+#monNobs['variable_entry'][u'ndviNobs']['frequency'] = 'mon'
+#monNobs['variable_entry'][u'ndviNobs']['long_name'] = 'NDVI number of observations'
+#monNobs['variable_entry'][u'ndviNobs']['ok_max_mean_abs'] = ''
+#monNobs['variable_entry'][u'ndviNobs']['ok_min_mean_abs'] = ''
+#monNobs['variable_entry'][u'ndviNobs']['out_name'] = 'ndviNobs'
+#monNobs['variable_entry'][u'ndviNobs']['positive'] = ''
+#monNobs['variable_entry'][u'ndviNobs']['standard_name'] = 'ndvi_number_of_observations'
+#monNobs['variable_entry'][u'ndviNobs']['type'] = ''
+#monNobs['variable_entry'][u'ndviNobs']['units'] = '1'
+#monNobs['variable_entry'][u'ndviNobs']['valid_max'] = ''
+#monNobs['variable_entry'][u'ndviNobs']['valid_min'] = ''
+
+# monStderr
+
+# Example new monStderr entry
+#monStderr['variable_entry'][u'ndviStderr'] = {}
+#monStderr['variable_entry'][u'ndviStderr']['cell_measures'] = ''
+#monStderr['variable_entry'][u'ndviStderr']['cell_methods'] = ''
+#monStderr['variable_entry'][u'ndviStderr']['comment'] = ''
+#monStderr['variable_entry'][u'ndviStderr']['dimensions'] = 'longitude latitude time'
+#monStderr['variable_entry'][u'ndviStderr']['frequency'] = 'mon'
+#monStderr['variable_entry'][u'ndviStderr']['long_name'] = 'NDVI standard error'
+#monStderr['variable_entry'][u'ndviStderr']['ok_max_mean_abs'] = ''
+#monStderr['variable_entry'][u'ndviStderr']['ok_min_mean_abs'] = ''
+#monStderr['variable_entry'][u'ndviStderr']['out_name'] = 'ndviStderr'
+#monStderr['variable_entry'][u'ndviStderr']['positive'] = ''
+#monStderr['variable_entry'][u'ndviStderr']['standard_name'] = 'ndvi_standard_error'
+#monStderr['variable_entry'][u'ndviStderr']['type'] = 'real'
+#monStderr['variable_entry'][u'ndviStderr']['units'] = ''
+#monStderr['variable_entry'][u'ndviStderr']['valid_max'] = ''
+#monStderr['variable_entry'][u'ndviStderr']['valid_min'] = ''
+
 #%% Coordinate
 
 #%% Frequency
@@ -437,10 +477,6 @@ license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
             ' acknowledged following guidelines found at <a URL maintained by you>.'
             ' Further information about this data, including some limitations,'
             ' can be found via <some URL maintained by you>.)')
-
-#%% monNobs
-
-#%% monStderr
 
 #%% Nominal resolution
 
