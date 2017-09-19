@@ -140,6 +140,7 @@ for count2,table in enumerate(tableSource):
         if tableName in ['monNobs', 'monStderr']:
             eval(tableName)['Header'] = copy.deepcopy(Amon['Header']) ; # Copy header info from upstream file
             del(eval(tableName)['Header']['#dataRequest_specs_version']) ; # Purge upstream identifier
+            eval(tableName)['Header']['realm'] = 'aerosol atmos atmosChem land landIce ocean ocnBgchem seaIce' ; # Append all realms
         eval(tableName)['Header']['Conventions'] = 'CF-1.7 ODS-2.0' ; # Update "Conventions": "CF-1.7 CMIP-6.0"
         if tableName not in ['monNobs', 'monStderr']:
             eval(tableName)['Header']['#dataRequest_specs_version'] = eval(tableName)['Header']['data_specs_version']
@@ -411,7 +412,8 @@ Amon['variable_entry']['pctCLARA']['valid_max'] = ''
 Amon['variable_entry']['pctCLARA']['valid_min'] = ''
 
 # monNobs
-
+monNobs['variable_entry'][u'ndviNobs']['standard_name'] = 'number_of_observations'
+monNobs['variable_entry'][u'ndviNobs']['modeling_realm'] = 'atmos'
 # Example new monNobs entry
 #monNobs['variable_entry'][u'ndviNobs'] = {}
 #monNobs['variable_entry'][u'ndviNobs']['cell_measures'] = ''
@@ -420,18 +422,20 @@ Amon['variable_entry']['pctCLARA']['valid_min'] = ''
 #monNobs['variable_entry'][u'ndviNobs']['dimensions'] = 'longitude latitude time'
 #monNobs['variable_entry'][u'ndviNobs']['frequency'] = 'mon'
 #monNobs['variable_entry'][u'ndviNobs']['long_name'] = 'NDVI number of observations'
+#monNobs['variable_entry'][u'ndviNobs']['modeling_realm'] = 'atmos'
 #monNobs['variable_entry'][u'ndviNobs']['ok_max_mean_abs'] = ''
 #monNobs['variable_entry'][u'ndviNobs']['ok_min_mean_abs'] = ''
 #monNobs['variable_entry'][u'ndviNobs']['out_name'] = 'ndviNobs'
 #monNobs['variable_entry'][u'ndviNobs']['positive'] = ''
-#monNobs['variable_entry'][u'ndviNobs']['standard_name'] = 'ndvi_number_of_observations'
+#monNobs['variable_entry'][u'ndviNobs']['standard_name'] = 'number_of_observations'
 #monNobs['variable_entry'][u'ndviNobs']['type'] = ''
 #monNobs['variable_entry'][u'ndviNobs']['units'] = '1'
 #monNobs['variable_entry'][u'ndviNobs']['valid_max'] = ''
 #monNobs['variable_entry'][u'ndviNobs']['valid_min'] = ''
 
 # monStderr
-
+monStderr['variable_entry'][u'ndviStderr']['standard_name'] = 'normalized_difference_vegetation_index standard_error'
+monStderr['variable_entry'][u'ndviStderr']['modeling_realm'] = 'atmos'
 # Example new monStderr entry
 #monStderr['variable_entry'][u'ndviStderr'] = {}
 #monStderr['variable_entry'][u'ndviStderr']['cell_measures'] = ''
@@ -440,11 +444,12 @@ Amon['variable_entry']['pctCLARA']['valid_min'] = ''
 #monStderr['variable_entry'][u'ndviStderr']['dimensions'] = 'longitude latitude time'
 #monStderr['variable_entry'][u'ndviStderr']['frequency'] = 'mon'
 #monStderr['variable_entry'][u'ndviStderr']['long_name'] = 'NDVI standard error'
+#monStderr['variable_entry'][u'ndviStderr']['modeling_realm'] = 'atmos'
 #monStderr['variable_entry'][u'ndviStderr']['ok_max_mean_abs'] = ''
 #monStderr['variable_entry'][u'ndviStderr']['ok_min_mean_abs'] = ''
 #monStderr['variable_entry'][u'ndviStderr']['out_name'] = 'ndviStderr'
 #monStderr['variable_entry'][u'ndviStderr']['positive'] = ''
-#monStderr['variable_entry'][u'ndviStderr']['standard_name'] = 'ndvi_standard_error'
+#monStderr['variable_entry'][u'ndviStderr']['standard_name'] = 'normalized_difference_vegetation_index standard_error'
 #monStderr['variable_entry'][u'ndviStderr']['type'] = 'real'
 #monStderr['variable_entry'][u'ndviStderr']['units'] = ''
 #monStderr['variable_entry'][u'ndviStderr']['valid_max'] = ''
