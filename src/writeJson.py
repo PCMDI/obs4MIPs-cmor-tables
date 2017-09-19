@@ -114,6 +114,8 @@ tableSource = [
  ['Omon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Omon.json'],
  ['SImon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_SImon.json'],
  ['Aday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_day.json'],
+ ['monNobs','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monNobs.json'],
+ ['monStderr','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monStderr.json'],
  ] ;
 
 #%% Loop through tables and create in-memory objects
@@ -135,8 +137,12 @@ for count2,table in enumerate(tableSource):
     if tableName in ['coordinate','formula_terms','frequency','grid_label','nominal_resolution']:
         continue
     else:
+        if tableName in ['monNobs', 'monStderr']:
+            eval(tableName)['Header'] = copy.deepcopy(Amon['Header']) ; # Copy header info from upstream file
+            del(eval(tableName)['Header']['#dataRequest_specs_version']) ; # Purge upstream identifier
         eval(tableName)['Header']['Conventions'] = 'CF-1.7 ODS-2.0' ; # Update "Conventions": "CF-1.7 CMIP-6.0"
-        eval(tableName)['Header']['#dataRequest_specs_version'] = eval(tableName)['Header']['data_specs_version']
+        if tableName not in ['monNobs', 'monStderr']:
+            eval(tableName)['Header']['#dataRequest_specs_version'] = eval(tableName)['Header']['data_specs_version']
         eval(tableName)['Header']['data_specs_version'] = '2.0.0'
         if 'mip_era' in eval(tableName)['Header'].keys():
             eval(tableName)['Header']['#mip_era'] = eval(tableName)['Header']['mip_era']
@@ -177,7 +183,7 @@ for jsonName in ['Amon','Lmon','Omon','SImon']:  #,'Aday']:
                 dictToClean[key][key1].pop('modeling_realm')
 
 # Set missing value for integer variables
-for tab in (Amon, Lmon, Omon, SImon, fx, Aday):
+for tab in (Amon, Lmon, Omon, SImon, fx, Aday, monNobs, monStderr):
     tab['Header']['int_missing_value'] = str(-2**31)
 
 # Add new variables
@@ -404,6 +410,46 @@ Amon['variable_entry']['pctCLARA']['units'] = 'Pa'
 Amon['variable_entry']['pctCLARA']['valid_max'] = ''
 Amon['variable_entry']['pctCLARA']['valid_min'] = ''
 
+# monNobs
+
+# Example new monNobs entry
+#monNobs['variable_entry'][u'ndviNobs'] = {}
+#monNobs['variable_entry'][u'ndviNobs']['cell_measures'] = ''
+#monNobs['variable_entry'][u'ndviNobs']['cell_methods'] = ''
+#monNobs['variable_entry'][u'ndviNobs']['comment'] = ''
+#monNobs['variable_entry'][u'ndviNobs']['dimensions'] = 'longitude latitude time'
+#monNobs['variable_entry'][u'ndviNobs']['frequency'] = 'mon'
+#monNobs['variable_entry'][u'ndviNobs']['long_name'] = 'NDVI number of observations'
+#monNobs['variable_entry'][u'ndviNobs']['ok_max_mean_abs'] = ''
+#monNobs['variable_entry'][u'ndviNobs']['ok_min_mean_abs'] = ''
+#monNobs['variable_entry'][u'ndviNobs']['out_name'] = 'ndviNobs'
+#monNobs['variable_entry'][u'ndviNobs']['positive'] = ''
+#monNobs['variable_entry'][u'ndviNobs']['standard_name'] = 'ndvi_number_of_observations'
+#monNobs['variable_entry'][u'ndviNobs']['type'] = ''
+#monNobs['variable_entry'][u'ndviNobs']['units'] = '1'
+#monNobs['variable_entry'][u'ndviNobs']['valid_max'] = ''
+#monNobs['variable_entry'][u'ndviNobs']['valid_min'] = ''
+
+# monStderr
+
+# Example new monStderr entry
+#monStderr['variable_entry'][u'ndviStderr'] = {}
+#monStderr['variable_entry'][u'ndviStderr']['cell_measures'] = ''
+#monStderr['variable_entry'][u'ndviStderr']['cell_methods'] = ''
+#monStderr['variable_entry'][u'ndviStderr']['comment'] = ''
+#monStderr['variable_entry'][u'ndviStderr']['dimensions'] = 'longitude latitude time'
+#monStderr['variable_entry'][u'ndviStderr']['frequency'] = 'mon'
+#monStderr['variable_entry'][u'ndviStderr']['long_name'] = 'NDVI standard error'
+#monStderr['variable_entry'][u'ndviStderr']['ok_max_mean_abs'] = ''
+#monStderr['variable_entry'][u'ndviStderr']['ok_min_mean_abs'] = ''
+#monStderr['variable_entry'][u'ndviStderr']['out_name'] = 'ndviStderr'
+#monStderr['variable_entry'][u'ndviStderr']['positive'] = ''
+#monStderr['variable_entry'][u'ndviStderr']['standard_name'] = 'ndvi_standard_error'
+#monStderr['variable_entry'][u'ndviStderr']['type'] = 'real'
+#monStderr['variable_entry'][u'ndviStderr']['units'] = ''
+#monStderr['variable_entry'][u'ndviStderr']['valid_max'] = ''
+#monStderr['variable_entry'][u'ndviStderr']['valid_min'] = ''
+
 #%% Coordinate
 
 #%% Frequency
@@ -431,46 +477,6 @@ license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
             ' acknowledged following guidelines found at <a URL maintained by you>.'
             ' Further information about this data, including some limitations,'
             ' can be found via <some URL maintained by you>.)')
-
-#%% monNobs
-monNobs = {}
-monNobs['variable_entry'] = {}
-monNobs['variable_entry'][u'ndviNobs'] = {}
-monNobs['variable_entry'][u'ndviNobs']['cell_measures'] = ''
-monNobs['variable_entry'][u'ndviNobs']['cell_methods'] = ''
-monNobs['variable_entry'][u'ndviNobs']['comment'] = ''
-monNobs['variable_entry'][u'ndviNobs']['dimensions'] = 'longitude latitude time'
-monNobs['variable_entry'][u'ndviNobs']['frequency'] = 'mon'
-monNobs['variable_entry'][u'ndviNobs']['long_name'] = 'NDVI number of observations'
-monNobs['variable_entry'][u'ndviNobs']['ok_max_mean_abs'] = ''
-monNobs['variable_entry'][u'ndviNobs']['ok_min_mean_abs'] = ''
-monNobs['variable_entry'][u'ndviNobs']['out_name'] = 'ndviNobs'
-monNobs['variable_entry'][u'ndviNobs']['positive'] = ''
-monNobs['variable_entry'][u'ndviNobs']['standard_name'] = 'ndvi_number_of_observations'
-monNobs['variable_entry'][u'ndviNobs']['type'] = ''
-monNobs['variable_entry'][u'ndviNobs']['units'] = '1'
-monNobs['variable_entry'][u'ndviNobs']['valid_max'] = ''
-monNobs['variable_entry'][u'ndviNobs']['valid_min'] = ''
-
-#%% monStderr
-monStderr = {}
-monStderr['variable_entry'] = {}
-monStderr['variable_entry'][u'ndviStderr'] = {}
-monStderr['variable_entry'][u'ndviStderr']['cell_measures'] = ''
-monStderr['variable_entry'][u'ndviStderr']['cell_methods'] = ''
-monStderr['variable_entry'][u'ndviStderr']['comment'] = ''
-monStderr['variable_entry'][u'ndviStderr']['dimensions'] = 'longitude latitude time'
-monStderr['variable_entry'][u'ndviStderr']['frequency'] = 'mon'
-monStderr['variable_entry'][u'ndviStderr']['long_name'] = 'NDVI standard error'
-monStderr['variable_entry'][u'ndviStderr']['ok_max_mean_abs'] = ''
-monStderr['variable_entry'][u'ndviStderr']['ok_min_mean_abs'] = ''
-monStderr['variable_entry'][u'ndviStderr']['out_name'] = 'ndviStderr'
-monStderr['variable_entry'][u'ndviStderr']['positive'] = ''
-monStderr['variable_entry'][u'ndviStderr']['standard_name'] = 'ndvi_standard_error'
-monStderr['variable_entry'][u'ndviStderr']['type'] = 'real'
-monStderr['variable_entry'][u'ndviStderr']['units'] = ''
-monStderr['variable_entry'][u'ndviStderr']['valid_max'] = ''
-monStderr['variable_entry'][u'ndviStderr']['valid_min'] = ''
 
 #%% Nominal resolution
 
@@ -593,26 +599,6 @@ source_id = readJsonCreateDict(tmp)
 source_id = source_id.get('source_id')
 
 # Fix issues
-key = 'NOAA-NCEI-AVHRR-NDVI-4-0'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['description'] = 'Normalized Difference Vegetation Index'
-source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
-source_id['source_id'][key]['label'] = 'NOAA NCEI AVHRR NDVI v4.0'
-source_id['source_id'][key]['release_year'] = '2013'
-source_id['source_id'][key]['source_id'] = key
-source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-AVHRR-NDVI'
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['region'] = 'global_land'
-key = 'REMSS-PRW-6-6-0'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['description'] = 'Water Vapor Path'
-source_id['source_id'][key]['institution_id'] = 'RSS'
-source_id['source_id'][key]['label'] = 'REMSS PRW v6.6.0'
-source_id['source_id'][key]['release_year'] = '2017'
-source_id['source_id'][key]['source_id'] = key
-source_id['source_id'][key]['source_label'] = 'REMSS-PRW'
-source_id['source_id'][key]['source_type'] = 'satellite_blended'
-source_id['source_id'][key]['region'] = 'global'
 #==============================================================================
 # Example new source_id entry
 #key = 'REMSS-PRW-6-6-0' # Attempting to scratch something together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51
