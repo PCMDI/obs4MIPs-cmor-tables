@@ -203,7 +203,7 @@
             "valid_min":""
         },
         "clCCI":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"Percentage cloud cover in optical depth categories.",
             "dimensions":"longitude latitude plev7c tau time",
@@ -220,7 +220,7 @@
             "valid_min":""
         },
         "clCLARA":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: mean time: mean",
             "comment":"Percentage cloud cover in optical depth categories.",
             "dimensions":"longitude latitude plev7c tau time",
@@ -288,7 +288,7 @@
             "valid_min":""
         },
         "cltCCI":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"Total cloud area fraction for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Includes both large-scale and convective cloud.",
             "dimensions":"longitude latitude time",
@@ -305,7 +305,7 @@
             "valid_min":""
         },
         "cltCLARA":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: mean time: mean",
             "comment":"Total cloud area fraction for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Includes both large-scale and convective cloud.",
             "dimensions":"longitude latitude time",
@@ -339,7 +339,7 @@
             "valid_min":""
         },
         "clwCCI":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"Percentage liquid cloud cover in optical depth categories.",
             "dimensions":"longitude latitude plev7c tau time",
@@ -356,7 +356,7 @@
             "valid_min":""
         },
         "clwCLARA":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: mean time: mean",
             "comment":"Percentage liquid cloud cover in optical depth categories.",
             "dimensions":"longitude latitude plev7c tau time",
@@ -373,7 +373,7 @@
             "valid_min":""
         },
         "clwtCCI":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
@@ -390,7 +390,7 @@
             "valid_min":""
         },
         "clwtCLARA":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: mean time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
@@ -798,7 +798,7 @@
             "valid_min":""
         },
         "pctCCI":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
@@ -815,7 +815,7 @@
             "valid_min":""
         },
         "pctCLARA":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: mean time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
@@ -1325,8 +1325,8 @@
             "valid_min":""
         },
         "ttbr":{
-            "cell_measures":"time: mean",
-            "cell_methods":"area: areacella",
+            "cell_measures":"",
+            "cell_methods":"time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "frequency":"mon",

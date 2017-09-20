@@ -53,6 +53,7 @@ PJD 15 Sep 2017     - Update table_id names for consistency https://github.com/P
 PJD 15 Sep 2017     - Register source_id AVHRR-NDVI-4-0 https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/73
 PJD 19 Sep 2017     - Update demo input.json to remove controlled fields https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/84
 PJD 20 Sep 2017     - Set all cell_measures to '' see discussion https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/66#issuecomment-330853106
+PJD 20 Sep 2017     - Fix cell_measures for newly defined variables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/66
                     - TODO: Ensure demo runs CMOR to validate current repo contents
 
 @author: durack1
@@ -193,8 +194,8 @@ for tab in (Amon, Lmon, Omon, SImon, fx, Aday, monNobs, monStderr):
 # Add new variables
 # Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics)
 Amon['variable_entry'][u'ttbr'] = {}
-Amon['variable_entry']['ttbr']['cell_measures'] = 'time: mean'
-Amon['variable_entry']['ttbr']['cell_methods'] = 'area: areacella'
+Amon['variable_entry']['ttbr']['cell_measures'] = ''
+Amon['variable_entry']['ttbr']['cell_methods'] = 'time: mean'
 Amon['variable_entry']['ttbr']['comment'] = ''
 Amon['variable_entry']['ttbr']['dimensions'] = 'longitude latitude time'
 Amon['variable_entry']['ttbr']['frequency'] = 'mon'
@@ -210,8 +211,8 @@ Amon['variable_entry']['ttbr']['valid_max'] = '375.0'
 Amon['variable_entry']['ttbr']['valid_min'] = '140.0'
 # Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/16
 Lmon['variable_entry'][u'ndvi'] = {}
-Lmon['variable_entry']['ndvi']['cell_measures'] = 'time: mean area: mean where land'
-Lmon['variable_entry']['ndvi']['cell_methods'] = 'area: areacella'
+Lmon['variable_entry']['ndvi']['cell_measures'] = ''
+Lmon['variable_entry']['ndvi']['cell_methods'] = 'time: mean area: mean where land'
 Lmon['variable_entry']['ndvi']['comment'] = ''
 Lmon['variable_entry']['ndvi']['dimensions'] = 'longitude latitude time'
 Lmon['variable_entry']['ndvi']['frequency'] = 'mon'
@@ -227,8 +228,8 @@ Lmon['variable_entry']['ndvi']['valid_max'] = '1.0'
 Lmon['variable_entry']['ndvi']['valid_min'] = '-0.1'
 # Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/15
 Lmon['variable_entry'][u'fapar'] = {}
-Lmon['variable_entry']['fapar']['cell_measures'] = 'time: mean area: mean where land'
-Lmon['variable_entry']['fapar']['cell_methods'] = 'area: areacella'
+Lmon['variable_entry']['fapar']['cell_measures'] = ''
+Lmon['variable_entry']['fapar']['cell_methods'] = 'time: mean area: mean where land'
 Lmon['variable_entry']['fapar']['comment'] = 'The fraction of incoming solar radiation in the photosynthetically active radiation spectral region that is absorbed by a vegetation canopy.'
 Lmon['variable_entry']['fapar']['dimensions'] = 'longitude latitude time'
 Lmon['variable_entry']['fapar']['frequency'] = 'mon'
@@ -245,7 +246,7 @@ Lmon['variable_entry']['fapar']['valid_min'] = '0.0'
 # DWD cloud variables (CM SAF CLARA & ESA Cloud_CCI) ...
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'clCCI'] = {}
-Amon['variable_entry']['clCCI']['cell_measures'] = 'area: areacella'
+Amon['variable_entry']['clCCI']['cell_measures'] = ''
 Amon['variable_entry']['clCCI']['cell_methods'] = 'area: time: mean'
 Amon['variable_entry']['clCCI']['comment'] = 'Percentage cloud cover in optical depth categories.'
 Amon['variable_entry']['clCCI']['dimensions'] = 'longitude latitude plev7c tau time'
@@ -262,7 +263,7 @@ Amon['variable_entry']['clCCI']['valid_max'] = ''
 Amon['variable_entry']['clCCI']['valid_min'] = ''
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'clCLARA'] = {}
-Amon['variable_entry']['clCLARA']['cell_measures'] = 'area: areacella'
+Amon['variable_entry']['clCLARA']['cell_measures'] = ''
 Amon['variable_entry']['clCLARA']['cell_methods'] = 'area: mean time: mean'
 Amon['variable_entry']['clCLARA']['comment'] = 'Percentage cloud cover in optical depth categories.'
 Amon['variable_entry']['clCLARA']['dimensions'] = 'longitude latitude plev7c tau time'
@@ -279,7 +280,7 @@ Amon['variable_entry']['clCLARA']['valid_max'] = ''
 Amon['variable_entry']['clCLARA']['valid_min'] = ''
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'cltCCI'] = {}
-Amon['variable_entry']['cltCCI']['cell_measures'] = 'area: areacella'
+Amon['variable_entry']['cltCCI']['cell_measures'] = ''
 Amon['variable_entry']['cltCCI']['cell_methods'] = 'area: time: mean'
 Amon['variable_entry']['cltCCI']['comment'] = 'Total cloud area fraction for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Includes both large-scale and convective cloud.'
 Amon['variable_entry']['cltCCI']['dimensions'] = 'longitude latitude time'
@@ -296,7 +297,7 @@ Amon['variable_entry']['cltCCI']['valid_max'] = ''
 Amon['variable_entry']['cltCCI']['valid_min'] = ''
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'cltCLARA'] = {}
-Amon['variable_entry']['cltCLARA']['cell_measures'] = 'area: areacella'
+Amon['variable_entry']['cltCLARA']['cell_measures'] = ''
 Amon['variable_entry']['cltCLARA']['cell_methods'] = 'area: mean time: mean'
 Amon['variable_entry']['cltCLARA']['comment'] = 'Total cloud area fraction for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Includes both large-scale and convective cloud.'
 Amon['variable_entry']['cltCLARA']['dimensions'] = 'longitude latitude time'
@@ -313,7 +314,7 @@ Amon['variable_entry']['cltCLARA']['valid_max'] = ''
 Amon['variable_entry']['cltCLARA']['valid_min'] = ''
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'clwCCI'] = {}
-Amon['variable_entry']['clwCCI']['cell_measures'] = 'area: areacella'
+Amon['variable_entry']['clwCCI']['cell_measures'] = ''
 Amon['variable_entry']['clwCCI']['cell_methods'] = 'area: time: mean'
 Amon['variable_entry']['clwCCI']['comment'] = 'Percentage liquid cloud cover in optical depth categories.'
 Amon['variable_entry']['clwCCI']['dimensions'] = 'longitude latitude plev7c tau time'
@@ -330,7 +331,7 @@ Amon['variable_entry']['clwCCI']['valid_max'] = ''
 Amon['variable_entry']['clwCCI']['valid_min'] = ''
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'clwCLARA'] = {}
-Amon['variable_entry']['clwCLARA']['cell_measures'] = 'area: areacella'
+Amon['variable_entry']['clwCLARA']['cell_measures'] = ''
 Amon['variable_entry']['clwCLARA']['cell_methods'] = 'area: mean time: mean'
 Amon['variable_entry']['clwCLARA']['comment'] = 'Percentage liquid cloud cover in optical depth categories.'
 Amon['variable_entry']['clwCLARA']['dimensions'] = 'longitude latitude plev7c tau time'
@@ -347,7 +348,7 @@ Amon['variable_entry']['clwCLARA']['valid_max'] = ''
 Amon['variable_entry']['clwCLARA']['valid_min'] = ''
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'clwtCCI'] = {}
-Amon['variable_entry']['clwtCCI']['cell_measures'] = 'area: areacella'
+Amon['variable_entry']['clwtCCI']['cell_measures'] = ''
 Amon['variable_entry']['clwtCCI']['cell_methods'] = 'area: time: mean'
 Amon['variable_entry']['clwtCCI']['comment'] = ''
 Amon['variable_entry']['clwtCCI']['dimensions'] = 'longitude latitude time'
@@ -364,7 +365,7 @@ Amon['variable_entry']['clwtCCI']['valid_max'] = ''
 Amon['variable_entry']['clwtCCI']['valid_min'] = ''
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'clwtCLARA'] = {}
-Amon['variable_entry']['clwtCLARA']['cell_measures'] = 'area: areacella'
+Amon['variable_entry']['clwtCLARA']['cell_measures'] = ''
 Amon['variable_entry']['clwtCLARA']['cell_methods'] = 'area: mean time: mean'
 Amon['variable_entry']['clwtCLARA']['comment'] = ''
 Amon['variable_entry']['clwtCLARA']['dimensions'] = 'longitude latitude time'
@@ -381,7 +382,7 @@ Amon['variable_entry']['clwtCLARA']['valid_max'] = ''
 Amon['variable_entry']['clwtCLARA']['valid_min'] = ''
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'pctCCI'] = {}
-Amon['variable_entry']['pctCCI']['cell_measures'] = 'area: areacella'
+Amon['variable_entry']['pctCCI']['cell_measures'] = ''
 Amon['variable_entry']['pctCCI']['cell_methods'] = 'area: time: mean'
 Amon['variable_entry']['pctCCI']['comment'] = ''
 Amon['variable_entry']['pctCCI']['dimensions'] = 'longitude latitude time'
@@ -398,7 +399,7 @@ Amon['variable_entry']['pctCCI']['valid_max'] = ''
 Amon['variable_entry']['pctCCI']['valid_min'] = ''
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'pctCLARA'] = {}
-Amon['variable_entry']['pctCLARA']['cell_measures'] = 'area: areacella'
+Amon['variable_entry']['pctCLARA']['cell_measures'] = ''
 Amon['variable_entry']['pctCLARA']['cell_methods'] = 'area: mean time: mean'
 Amon['variable_entry']['pctCLARA']['comment'] = ''
 Amon['variable_entry']['pctCLARA']['dimensions'] = 'longitude latitude time'
@@ -415,8 +416,7 @@ Amon['variable_entry']['pctCLARA']['valid_max'] = ''
 Amon['variable_entry']['pctCLARA']['valid_min'] = ''
 
 # monNobs
-monNobs['variable_entry'][u'ndviNobs']['standard_name'] = 'number_of_observations'
-monNobs['variable_entry'][u'ndviNobs']['modeling_realm'] = 'atmos'
+#--------
 # Example new monNobs entry
 #monNobs['variable_entry'][u'ndviNobs'] = {}
 #monNobs['variable_entry'][u'ndviNobs']['cell_measures'] = ''
@@ -437,8 +437,7 @@ monNobs['variable_entry'][u'ndviNobs']['modeling_realm'] = 'atmos'
 #monNobs['variable_entry'][u'ndviNobs']['valid_min'] = ''
 
 # monStderr
-monStderr['variable_entry'][u'ndviStderr']['standard_name'] = 'normalized_difference_vegetation_index standard_error'
-monStderr['variable_entry'][u'ndviStderr']['modeling_realm'] = 'atmos'
+#--------
 # Example new monStderr entry
 #monStderr['variable_entry'][u'ndviStderr'] = {}
 #monStderr['variable_entry'][u'ndviStderr']['cell_measures'] = ''
