@@ -11,12 +11,12 @@
         "missing_value":"1e20",
         "product":"observations",
         "realm":"seaIce",
-        "table_date":"19 September 2017",
+        "table_date":"20 September 2017",
         "table_id":"Table obs4MIPs_SImon"
     },
     "variable_entry":{
         "sfdsi":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"This field is physical, and it arises since sea ice has a nonzero salt content, so it exchanges salt with the liquid ocean upon melting and freezing.",
             "dimensions":"longitude latitude time",
@@ -33,7 +33,7 @@
             "valid_min":""
         },
         "siage":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Age of sea ice",
             "dimensions":"longitude latitude time",
@@ -50,7 +50,7 @@
             "valid_min":""
         },
         "siareaacrossline":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"time: mean",
             "comment":"net (sum of transport in all directions) sea ice area transport through the following four passages, positive into the Arctic Ocean 1. Fram Strait = (11.5W,81.3N to (10.5E,79.6N) 2. Canadian Archipelago = (128.2W,70.6N) to (59.3W,82.1N) 3. Barents opening = (16.8E,76.5N) to (19.2E,70.2N) 4. Bering Strait = (171W,66.2N) to (166W,65N)",
             "dimensions":"siline time",
@@ -101,7 +101,7 @@
             "valid_min":""
         },
         "sicompstren":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Computed strength of the ice pack, defined as the energy (J m-2) dissipated per unit area removed from the ice pack under compression, and assumed proportional to the change in potential energy caused by ridging. For Hibler-type models, this is P (= P*hexp(-C(1-A)))",
             "dimensions":"longitude latitude time",
@@ -118,7 +118,7 @@
             "valid_min":""
         },
         "siconc":{
-            "cell_measures":"area: areacello",
+            "cell_measures":"",
             "cell_methods":"area: mean where sea time: mean",
             "comment":"Area fraction of grid cell covered by sea ice",
             "dimensions":"longitude latitude time typesi",
@@ -135,7 +135,7 @@
             "valid_min":""
         },
         "siconco":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"Area fraction of grid cell covered by sea ice",
             "dimensions":"longitude latitude time typesi",
@@ -152,7 +152,7 @@
             "valid_min":""
         },
         "sidconcdyn":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"Total change in sea-ice area fraction through dynamics-related processes (advection, divergence...)",
             "dimensions":"longitude latitude time",
@@ -169,7 +169,7 @@
             "valid_min":""
         },
         "sidconcth":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"Total change in sea-ice area fraction through thermodynamic processes",
             "dimensions":"longitude latitude time",
@@ -186,7 +186,7 @@
             "valid_min":""
         },
         "sidivvel":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: mean where sea_ice (comment: mask=siconc) time: point",
             "comment":"Divergence of sea-ice velocity field (first shear strain invariant)",
             "dimensions":"longitude latitude time1",
@@ -203,7 +203,7 @@
             "valid_min":""
         },
         "sidmassdyn":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"Total change in sea-ice mass through dynamics-related processes (advection,...) divided by grid-cell area",
             "dimensions":"longitude latitude time",
@@ -220,7 +220,7 @@
             "valid_min":""
         },
         "sidmassevapsubl":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"The rate of change of sea-ice mass change through evaporation and sublimation divided by grid-cell area",
             "dimensions":"longitude latitude time",
@@ -237,7 +237,7 @@
             "valid_min":""
         },
         "sidmassgrowthbot":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"The rate of change of sea ice mass due to vertical growth of existing sea ice at its base divided by grid-cell area.",
             "dimensions":"longitude latitude time",
@@ -254,7 +254,7 @@
             "valid_min":""
         },
         "sidmassgrowthwat":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"The rate of change of sea ice mass due to sea ice formation in supercooled water (often through frazil formation) divided by grid-cell area. Together, sidmassgrowthwat and sidmassgrowthbot should give total ice growth",
             "dimensions":"longitude latitude time",
@@ -271,7 +271,7 @@
             "valid_min":""
         },
         "sidmasslat":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"The rate of change of sea ice mass through lateral melting divided by grid-cell area (report 0 if not explicitly calculated thermodynamically)",
             "dimensions":"longitude latitude time",
@@ -288,7 +288,7 @@
             "valid_min":""
         },
         "sidmassmeltbot":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"The rate of change of sea ice mass through melting at the ice bottom divided by grid-cell area",
             "dimensions":"longitude latitude time",
@@ -305,7 +305,7 @@
             "valid_min":""
         },
         "sidmassmelttop":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"The rate of change of sea ice mass through melting at the ice surface divided by grid-cell area",
             "dimensions":"longitude latitude time",
@@ -322,7 +322,7 @@
             "valid_min":""
         },
         "sidmasssi":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"The rate of change of sea ice mass due to transformation of snow to sea ice divided by grid-cell area",
             "dimensions":"longitude latitude time",
@@ -339,7 +339,7 @@
             "valid_min":""
         },
         "sidmassth":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"Total change in sea-ice mass from thermodynamic processes divided by grid-cell area",
             "dimensions":"longitude latitude time",
@@ -356,7 +356,7 @@
             "valid_min":""
         },
         "sidmasstranx":{
-            "cell_measures":"--MODEL",
+            "cell_measures":"",
             "cell_methods":"time: mean",
             "comment":"Includes transport of both sea ice and snow by advection",
             "dimensions":"longitude latitude time",
@@ -373,7 +373,7 @@
             "valid_min":""
         },
         "sidmasstrany":{
-            "cell_measures":"--MODEL",
+            "cell_measures":"",
             "cell_methods":"time: mean",
             "comment":"Includes transport of both sea ice and snow by advection",
             "dimensions":"longitude latitude time",
@@ -390,7 +390,7 @@
             "valid_min":""
         },
         "sidragbot":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Oceanic drag coefficient that is used to calculate the oceanic momentum drag on sea ice",
             "dimensions":"longitude latitude time",
@@ -407,7 +407,7 @@
             "valid_min":""
         },
         "sidragtop":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Atmospheric drag coefficient that is used to calculate the atmospheric momentum drag on sea ice",
             "dimensions":"longitude latitude time",
@@ -458,7 +458,7 @@
             "valid_min":""
         },
         "sifb":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Mean height of sea-ice surface (=snow-ice interface when snow covered) above sea level",
             "dimensions":"longitude latitude time",
@@ -475,7 +475,7 @@
             "valid_min":""
         },
         "siflcondbot":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"the net heat conduction flux at the ice base",
             "dimensions":"longitude latitude time",
@@ -492,7 +492,7 @@
             "valid_min":""
         },
         "siflcondtop":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"the net heat conduction flux at the ice surface",
             "dimensions":"longitude latitude time",
@@ -509,7 +509,7 @@
             "valid_min":""
         },
         "siflfwbot":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Total flux of fresh water from water into sea ice divided by grid-cell area; This flux is negative during ice growth (liquid water mass decreases, hence upward flux of freshwater), positive during ice melt (liquid water mass increases, hence downward flux of freshwater)",
             "dimensions":"longitude latitude time",
@@ -526,7 +526,7 @@
             "valid_min":""
         },
         "siflfwdrain":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Total flux of fresh water from sea-ice surface into underlying ocean. This combines both surface melt water that drains directly into the ocean and the drainage of surface melt pond. By definition, this flux is always positive.",
             "dimensions":"longitude latitude time",
@@ -543,7 +543,7 @@
             "valid_min":""
         },
         "sifllatstop":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"the net latent heat flux over sea ice",
             "dimensions":"longitude latitude time",
@@ -560,7 +560,7 @@
             "valid_min":""
         },
         "sifllwdtop":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"the downwelling longwave flux over sea ice (always positive)",
             "dimensions":"longitude latitude time",
@@ -577,7 +577,7 @@
             "valid_min":""
         },
         "sifllwutop":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"the upwelling longwave flux over sea ice (always negative)",
             "dimensions":"longitude latitude time",
@@ -594,7 +594,7 @@
             "valid_min":""
         },
         "siflsenstop":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"the net sensible heat flux over sea ice",
             "dimensions":"longitude latitude time",
@@ -611,7 +611,7 @@
             "valid_min":""
         },
         "siflsensupbot":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"the net sensible heat flux under sea ice from the ocean",
             "dimensions":"longitude latitude time",
@@ -628,7 +628,7 @@
             "valid_min":""
         },
         "siflswdbot":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"The downwelling shortwave flux underneath sea ice (always positive)",
             "dimensions":"longitude latitude time",
@@ -645,7 +645,7 @@
             "valid_min":""
         },
         "siflswdtop":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"The downwelling shortwave flux over sea ice (always positive by sign convention)",
             "dimensions":"longitude latitude time",
@@ -662,7 +662,7 @@
             "valid_min":""
         },
         "siflswutop":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"The upwelling shortwave flux over sea ice (always negative)",
             "dimensions":"longitude latitude time",
@@ -679,7 +679,7 @@
             "valid_min":""
         },
         "siforcecoriolx":{
-            "cell_measures":"--MODEL",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"X-component of force on sea ice caused by coriolis force",
             "dimensions":"longitude latitude time",
@@ -696,7 +696,7 @@
             "valid_min":""
         },
         "siforcecorioly":{
-            "cell_measures":"--MODEL",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Y-component of force on sea ice caused by coriolis force",
             "dimensions":"longitude latitude time",
@@ -713,7 +713,7 @@
             "valid_min":""
         },
         "siforceintstrx":{
-            "cell_measures":"--MODEL",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"X-component of force on sea ice caused by internal stress (divergence of sigma)",
             "dimensions":"longitude latitude time",
@@ -730,7 +730,7 @@
             "valid_min":""
         },
         "siforceintstry":{
-            "cell_measures":"--MODEL",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Y-component of force on sea ice caused by internal stress (divergence of sigma)",
             "dimensions":"longitude latitude time",
@@ -747,7 +747,7 @@
             "valid_min":""
         },
         "siforcetiltx":{
-            "cell_measures":"--MODEL",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"X-component of force on sea ice caused by sea-surface tilt",
             "dimensions":"longitude latitude time",
@@ -764,7 +764,7 @@
             "valid_min":""
         },
         "siforcetilty":{
-            "cell_measures":"--MODEL",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Y-component of force on sea ice caused by sea-surface tilt",
             "dimensions":"longitude latitude time",
@@ -781,7 +781,7 @@
             "valid_min":""
         },
         "sihc":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"Heat content of all ice in grid cell divided by total grid-cell area. Water at 0 Celsius is assumed to have a heat content of 0 J.  Does not include heat content of snow, but does include heat content of brine. Heat content is always negative, since both the sensible and the latent heat content of ice are less than that of water",
             "dimensions":"longitude latitude time",
@@ -798,7 +798,7 @@
             "valid_min":""
         },
         "siitdconc":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Area fraction of grid cell covered by each ice-thickness category (vector with one entry for each thickness category starting from the thinnest category, netcdf file should use thickness bounds of the categories as third coordinate axis)",
             "dimensions":"longitude latitude iceband time",
@@ -815,7 +815,7 @@
             "valid_min":""
         },
         "siitdsnconc":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siitdconc)",
             "comment":"Area fraction of grid cell covered by snow in each ice-thickness category (vector with one entry for each thickness category starting from the thinnest category, netcdf file should use thickness bounds of the categories as third coordinate axis)",
             "dimensions":"longitude latitude iceband time",
@@ -832,7 +832,7 @@
             "valid_min":""
         },
         "siitdsnthick":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siitdconc)",
             "comment":"Actual thickness of snow in each  category (NOT volume divided by grid area),  (vector with one entry for each thickness category starting from the thinnest category, netcdf file should use thickness bounds of categories as third coordinate axis)",
             "dimensions":"longitude latitude iceband time",
@@ -849,7 +849,7 @@
             "valid_min":""
         },
         "siitdthick":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siitdconc)",
             "comment":"Actual (floe) thickness of sea ice in each  category (NOT volume divided by grid area),  (vector with one entry for each thickness category starting from the thinnest category, netcdf file should use thickness bounds of categories as third coordinate axis)",
             "dimensions":"longitude latitude iceband time",
@@ -866,7 +866,7 @@
             "valid_min":""
         },
         "simass":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"Total mass of sea ice divided by grid-cell area",
             "dimensions":"longitude latitude time",
@@ -883,7 +883,7 @@
             "valid_min":""
         },
         "simassacrossline":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"time: mean",
             "comment":"net (sum of transport in all directions) sea ice area transport through the following four passages, positive into the Arctic Ocean 1. Fram Strait = (11.5W,81.3N to (10.5E,79.6N) 2. Canadian Archipelago = (128.2W,70.6N) to (59.3W,82.1N) 3. Barents opening = (16.8E,76.5N) to (19.2E,70.2N) 4. Bering Strait = (171W,66.2N) to (166W,65N)",
             "dimensions":"siline time",
@@ -900,7 +900,7 @@
             "valid_min":""
         },
         "simpconc":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Fraction of sea ice, by area, which is covered by melt ponds, giving equal weight to every square metre of sea ice .",
             "dimensions":"longitude latitude time typemp",
@@ -917,7 +917,7 @@
             "valid_min":""
         },
         "simpmass":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice_melt_pond (comment: mask=simpconc)",
             "comment":"Meltpond mass per area of sea ice.",
             "dimensions":"longitude latitude time",
@@ -934,7 +934,7 @@
             "valid_min":""
         },
         "simprefrozen":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice_melt_pond (comment: mask=simpconc)",
             "comment":"Volume of refrozen ice on melt ponds divided by meltpond covered area",
             "dimensions":"longitude latitude time",
@@ -951,7 +951,7 @@
             "valid_min":""
         },
         "sipr":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"mass of liquid precipitation falling onto sea ice divided by grid-cell area",
             "dimensions":"longitude latitude time",
@@ -968,7 +968,7 @@
             "valid_min":""
         },
         "sirdgconc":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Fraction of sea ice, by area, which is covered by sea ice ridges, giving equal weight to every square metre of sea ice .",
             "dimensions":"longitude latitude time",
@@ -985,7 +985,7 @@
             "valid_min":""
         },
         "sirdgthick":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=sirdgconc - ridges only)",
             "comment":"Sea Ice Ridge Height (representing mean height over the ridged area)",
             "dimensions":"longitude latitude time",
@@ -1002,7 +1002,7 @@
             "valid_min":""
         },
         "sisali":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Mean sea-ice salinity of all sea ice in grid cell",
             "dimensions":"longitude latitude time",
@@ -1019,7 +1019,7 @@
             "valid_min":""
         },
         "sisaltmass":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"Total mass of all salt in sea ice divided by grid-cell area",
             "dimensions":"longitude latitude time",
@@ -1036,7 +1036,7 @@
             "valid_min":""
         },
         "sishevel":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: mean where sea_ice (comment: mask=siconc) time: point",
             "comment":"Maximum shear of sea-ice velocity field (second shear strain invariant)",
             "dimensions":"longitude latitude time1",
@@ -1053,7 +1053,7 @@
             "valid_min":""
         },
         "sisnconc":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Fraction of sea ice, by area, which is covered by snow, giving equal weight to every square metre of sea ice . Exclude snow that lies on land or land ice.",
             "dimensions":"longitude latitude time",
@@ -1070,7 +1070,7 @@
             "valid_min":""
         },
         "sisnhc":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Heat-content of all snow in grid cell divided by total grid-cell area. Snow-water equivalent at 0 Celsius is assumed to have a heat content of 0 J.  Does not include heat content of sea ice.",
             "dimensions":"longitude latitude time",
@@ -1087,7 +1087,7 @@
             "valid_min":""
         },
         "sisnmass":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Total mass of snow on sea ice divided by grid-cell area",
             "dimensions":"longitude latitude time",
@@ -1104,7 +1104,7 @@
             "valid_min":""
         },
         "sisnthick":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: mean where snow over sea_ice area: time: mean where sea_ice",
             "comment":"Actual thickness of snow (snow volume divided by snow-covered area)",
             "dimensions":"longitude latitude time",
@@ -1121,7 +1121,7 @@
             "valid_min":""
         },
         "sispeed":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Speed of ice (i.e. mean absolute velocity) to account for back-and-forth movement of the ice",
             "dimensions":"longitude latitude time",
@@ -1138,7 +1138,7 @@
             "valid_min":""
         },
         "sistremax":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: mean where sea_ice (comment: mask=siconc) time: point",
             "comment":"Maximum shear stress in sea ice (second stress invariant)",
             "dimensions":"longitude latitude time1",
@@ -1155,7 +1155,7 @@
             "valid_min":""
         },
         "sistresave":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: mean where sea_ice (comment: mask=siconc) time: point",
             "comment":"Average normal stress in sea ice (first stress invariant)",
             "dimensions":"longitude latitude time1",
@@ -1172,7 +1172,7 @@
             "valid_min":""
         },
         "sistrxdtop":{
-            "cell_measures":"--MODEL",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"X-component of atmospheric stress on sea ice",
             "dimensions":"longitude latitude time",
@@ -1189,7 +1189,7 @@
             "valid_min":""
         },
         "sistrxubot":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"X-component of ocean stress on sea ice",
             "dimensions":"longitude latitude time",
@@ -1206,7 +1206,7 @@
             "valid_min":""
         },
         "sistrydtop":{
-            "cell_measures":"--MODEL",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Y-component of atmospheric stress on sea ice",
             "dimensions":"longitude latitude time",
@@ -1223,7 +1223,7 @@
             "valid_min":""
         },
         "sistryubot":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Y-component of ocean stress on sea ice",
             "dimensions":"longitude latitude time",
@@ -1240,7 +1240,7 @@
             "valid_min":""
         },
         "sitempbot":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Report temperature at interface, NOT temperature within lowermost model layer",
             "dimensions":"longitude latitude time",
@@ -1257,7 +1257,7 @@
             "valid_min":""
         },
         "sitempsnic":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Report surface temperature of ice where snow thickness is zero",
             "dimensions":"longitude latitude time",
@@ -1274,7 +1274,7 @@
             "valid_min":""
         },
         "sitemptop":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Report surface temperature of snow where snow covers the sea ice.",
             "dimensions":"longitude latitude time",
@@ -1291,7 +1291,7 @@
             "valid_min":""
         },
         "sithick":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"Actual (floe) thickness of sea ice (NOT volume divided by grid area as was done in CMIP5)",
             "dimensions":"longitude latitude time",
@@ -1308,7 +1308,7 @@
             "valid_min":""
         },
         "sitimefrac":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"Fraction of time steps of the averaging period during which sea ice is present (siconc >0 ) in a grid cell",
             "dimensions":"longitude latitude time",
@@ -1325,7 +1325,7 @@
             "valid_min":""
         },
         "siu":{
-            "cell_measures":"--MODEL",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"The x-velocity of ice on native model grid",
             "dimensions":"longitude latitude time",
@@ -1342,7 +1342,7 @@
             "valid_min":""
         },
         "siv":{
-            "cell_measures":"--MODEL",
+            "cell_measures":"",
             "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
             "comment":"The y-velocity of ice on native model grid",
             "dimensions":"longitude latitude time",
@@ -1359,7 +1359,7 @@
             "valid_min":""
         },
         "sivol":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"Total volume of sea ice divided by grid-cell area (this used to be called ice thickness in CMIP5)",
             "dimensions":"longitude latitude time",
@@ -1410,7 +1410,7 @@
             "valid_min":""
         },
         "sndmassdyn":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"the rate of change of snow mass through advection with sea ice divided by grid-cell area",
             "dimensions":"longitude latitude time",
@@ -1427,7 +1427,7 @@
             "valid_min":""
         },
         "sndmassmelt":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"the rate of change of snow mass through melt divided by grid-cell area",
             "dimensions":"longitude latitude time",
@@ -1444,7 +1444,7 @@
             "valid_min":""
         },
         "sndmasssi":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"the rate of change of snow mass due to transformation of snow to sea ice divided by grid-cell area",
             "dimensions":"longitude latitude time",
@@ -1461,7 +1461,7 @@
             "valid_min":""
         },
         "sndmasssnf":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"mass of solid precipitation falling onto sea ice divided by grid-cell area",
             "dimensions":"longitude latitude time",
@@ -1478,7 +1478,7 @@
             "valid_min":""
         },
         "sndmasssubl":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"the rate of change of snow mass through sublimation and evaporation divided by grid-cell area",
             "dimensions":"longitude latitude time",
@@ -1495,7 +1495,7 @@
             "valid_min":""
         },
         "sndmasswindrif":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"the rate of change of snow mass through wind drift of snow (from sea-ice into the sea) divided by grid-cell area",
             "dimensions":"longitude latitude time",
@@ -1512,7 +1512,7 @@
             "valid_min":""
         },
         "snmassacrossline":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"time: mean",
             "comment":"net (sum of transport in all directions) snow mass transport through the following four passages, positive into the Arctic Ocean 1. Fram Strait = (11.5W,81.3N to (10.5E,79.6N) 2. Canadian Archipela",
             "dimensions":"siline time",

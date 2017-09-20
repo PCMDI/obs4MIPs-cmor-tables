@@ -52,6 +52,7 @@ PJD 14 Sep 2017     - Deal with repo reorganization https://github.com/PCMDI/obs
 PJD 15 Sep 2017     - Update table_id names for consistency https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/79
 PJD 15 Sep 2017     - Register source_id AVHRR-NDVI-4-0 https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/73
 PJD 19 Sep 2017     - Update demo input.json to remove controlled fields https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/84
+PJD 20 Sep 2017     - Set all cell_measures to '' see discussion https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/66#issuecomment-330853106
                     - TODO: Ensure demo runs CMOR to validate current repo contents
 
 @author: durack1
@@ -182,6 +183,8 @@ for jsonName in ['Amon','Lmon','Omon','SImon']:  #,'Aday']:
         for key1,value1 in value.iteritems():
             if 'modeling_realm' in dictToClean[key][key1].keys():
                 dictToClean[key][key1].pop('modeling_realm')
+            if 'cell_measures' in dictToClean[key][key1].keys():
+                dictToClean[key][key1]['cell_measures'] = '' ; # Set all cell_measures entries to blank
 
 # Set missing value for integer variables
 for tab in (Amon, Lmon, Omon, SImon, fx, Aday, monNobs, monStderr):
