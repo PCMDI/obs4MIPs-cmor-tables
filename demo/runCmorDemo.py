@@ -5,7 +5,7 @@ import numpy as np
 #import pdb ; # Debug statement - import if enabling below
 
 #%% User provided input
-cmorTable = 'Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx - Load target table, axis info (coordinates, grid*) and CVs
+cmorTable = 'Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'rssSsmiPrw-input.json' ; # Update contents of this file to set your global_attributes
 inputDataPath = 'rss_ssmi_prw_v06.6-demo.nc'
 inputVarName = 'prw'
