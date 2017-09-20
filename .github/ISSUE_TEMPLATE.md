@@ -1,6 +1,6 @@
-If you are *registering content*, please fill out the requested information below.   If want to create an issue about something else, please delete the text below and title your issue as appropriate.  
+If you are *registering content* (RC) for obs4MIPs, please fill out the requested information below.   If want to create an issue about something else, please delete the text below and title your issue as appropriate.  
 
-To register (or edit) some or all of the obs4MIPs "registered content" (RC), please title this github issue as follows:  
+To register (or edit) some or all of the obs4MIPs RC, please title this github issue as follows:  
 
 "RC for *acronym describing your dataset - use your source_name below*" and indicate if you are modifying your input from an earlier issue
 __________________________________________________________________________________________
