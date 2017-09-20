@@ -17,4 +17,4 @@ The following are required registered content (with example content). Please rep
 If you are planning to provide ancillary files for Nobs or Stderr, please let us know (Yes or No).  If Yes, please indicate for which variable_ids, and we will promptly update the obs4MIPs_monNobs.json and obs4MIPs_monStderr.json CMOR tables.
 __________________________________________________________________________________________
 
-See note 14 of the obs4MIPs data specifications (https://goo.gl/jVZsQl) for more information regarding registered content
+See note 14 and Appendix II of the obs4MIPs data specifications (https://goo.gl/jVZsQl) for more information regarding registered content
