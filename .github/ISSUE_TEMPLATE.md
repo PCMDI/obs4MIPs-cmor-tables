@@ -1,4 +1,4 @@
-If you are regisering content, please fill out the requested information below.  If want to create an issue about something else, please delete the text below and title your issue as appropriate.  
+If you are regisering content, please fill out the requested information below.   If want to create an issue about something else, please delete the text below and title your issue as appropriate.  
 
 To register (or edit) some or all of the obs4MIPs "registered content" (RC), please title this github issue as follows:  
 
