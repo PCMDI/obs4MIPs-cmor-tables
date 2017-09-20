@@ -1,21 +1,24 @@
-<Please fill out the requested information and delete irrelevant information from the template below before submitting your issue.>  
+<Please fill out the requested information below.  If you are not registering content but want to create an issue, please delete the text below and title your issue as appropriate.>  
 
-To register (or edit) information about your institution, please title your issue "institution_id registration of [acronym for your institution]"
+To register (or edit) some or all of the obs4MIPs "registered content" (RC), please title this github issue as follows:  
 
-'institution_id' -- a short acronym suitable for search interfaces and sub-directory names (should limit the characters used to the following set: a-z, A-Z, 0-9, and "-") 'institution' -- full name and address of institution, likely to include: laboratory/group name, hosting institution name, city, state/province and postal-code, country (no restriction on character set).
+"registration information for [acronym describing your dataset - use your source_name below]" and indicate if you are modifying your input from an earlier issue or create an alternate title if you are not providing registered content.
 
-Example 1: [title your issue "institution_id registration of PCMDI"]
+The following are required registered content (with example content): 
+1) source_name             = 'GPCP'
+2) release_year            = '2011'
+3) source_description      = 'Global Precipitation Climatology Project'
+4) source_version_number   = '2.3'
+5) Instituion_id           = 'UofMD'
+6) region                  = 'Global'
+7) source_type             = 'satellite_blended'
 
-institution_id = PCMDI
-institution = Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA
+**Please replace the example text above with your information**
 
-Example 2: [title your issue "institution_id registration of NASA-GISS"]
+Notes:
 
-institution_id = NASA-GISS
-institution = NASA Goddard Institute for Space Studies, New York, NY 10025, USA 
+WORK IN PROGRESS...
 
-
-You can now delete the two examples and submit your issue! 
+See note 14 of the obs4MIPs data specifications (https://goo.gl/jVZsQl) for more information regarding registered content
 
 
-**Please provide any additional information below**
