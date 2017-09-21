@@ -627,6 +627,10 @@ source_id = readJsonCreateDict(tmp)
 source_id = source_id.get('source_id')
 
 # Fix issues
+key = 'NOAA-NCEI-AVHRR-NDVI-4-0'
+source_id['source_id'][key]['source_version_number'] = '4.0'
+key = 'REMSS-PRW-6-6-0'
+source_id['source_id'][key]['source_version_number'] = '6.6.0'
 #==============================================================================
 # Example new source_id entry
 #key = 'REMSS-PRW-6-6-0' # Attempting to scratch something together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51
