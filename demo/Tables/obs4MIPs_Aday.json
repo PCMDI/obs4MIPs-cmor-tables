@@ -2,10 +2,10 @@
     "Header":{
         "#dataRequest_specs_version":"01.00.15",
         "#mip_era":"CMIP6",
-        "Conventions":"CF-1.7 ODS-2.0",
+        "Conventions":"CF-1.7 ODS-2.1",
         "approx_interval":"1.00000",
         "cmor_version":"3.2",
-        "data_specs_version":"2.0.0",
+        "data_specs_version":"2.1.0",
         "generic_levels":"",
         "int_missing_value":"-2147483648",
         "missing_value":"1e20",

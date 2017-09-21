@@ -54,6 +54,7 @@ PJD 15 Sep 2017     - Register source_id AVHRR-NDVI-4-0 https://github.com/PCMDI
 PJD 19 Sep 2017     - Update demo input.json to remove controlled fields https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/84
 PJD 20 Sep 2017     - Set all cell_measures to '' see discussion https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/66#issuecomment-330853106
 PJD 20 Sep 2017     - Fix cell_measures for newly defined variables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/66
+PJD 20 Sep 2017     - Updates in preparation for ODS-2.1 https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/91
                     - TODO: Ensure demo runs CMOR to validate current repo contents
 
 @author: durack1
@@ -143,14 +144,14 @@ for count2,table in enumerate(tableSource):
             eval(tableName)['Header'] = copy.deepcopy(Amon['Header']) ; # Copy header info from upstream file
             del(eval(tableName)['Header']['#dataRequest_specs_version']) ; # Purge upstream identifier
             eval(tableName)['Header']['realm'] = 'aerosol atmos atmosChem land landIce ocean ocnBgchem seaIce' ; # Append all realms
-        eval(tableName)['Header']['Conventions'] = 'CF-1.7 ODS-2.0' ; # Update "Conventions": "CF-1.7 CMIP-6.0"
+        eval(tableName)['Header']['Conventions'] = 'CF-1.7 ODS-2.1' ; # Update "Conventions": "CF-1.7 CMIP-6.0"
         if tableName not in ['monNobs', 'monStderr']:
             eval(tableName)['Header']['#dataRequest_specs_version'] = eval(tableName)['Header']['data_specs_version']
-        eval(tableName)['Header']['data_specs_version'] = '2.0.0'
+        eval(tableName)['Header']['data_specs_version'] = '2.1.0'
         if 'mip_era' in eval(tableName)['Header'].keys():
             eval(tableName)['Header']['#mip_era'] = eval(tableName)['Header']['mip_era']
             del(eval(tableName)['Header']['mip_era']) ; # Remove after rewriting
-        eval(tableName)['Header']['product'] = 'observations'
+        eval(tableName)['Header']['product'] = 'observations' ; # Cannot be 'observations reanalysis'
         eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
         eval(tableName)['Header']['table_id'] = ''.join(['Table obs4MIPs_',tableName])
         # Attempt to move information from input.json to table files - #84 - CMOR-limited
@@ -489,7 +490,8 @@ license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
 
 #%% Product
 product = [
- 'observations'
+ 'observations',
+ 'reanalysis'
  ] ;
 
 #%% Realm
@@ -634,7 +636,9 @@ table_id = [
   'obs4MIPs_Lmon',
   'obs4MIPs_Omon',
   'obs4MIPs_SImon',
-  'obs4MIPs_fx'
+  'obs4MIPs_fx',
+  'obs4MIPs_monNobs',
+  'obs4MIPs_monStderr'
 ] ;
 
 #%% Write variables to files

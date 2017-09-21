@@ -1,9 +1,9 @@
 {
     "Header":{
         "#dataRequest_specs_version":"01.00.15",
-        "Conventions":"CF-1.7 ODS-2.0",
+        "Conventions":"CF-1.7 ODS-2.1",
         "cmor_version":"3.2",
-        "data_specs_version":"2.0.0",
+        "data_specs_version":"2.1.0",
         "missing_value":"1e20",
         "product":"observations",
         "table_date":"20 September 2017",
