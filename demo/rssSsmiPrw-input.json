@@ -16,7 +16,7 @@
     "#comment": "This is an optional field which can be changed by a user - CMOR will create the <outpath> defined below if it does not exist",
     "outpath":                      "./demo",
 
-    "#comment": "In most cases 'BE' is the appropriate entry for variant_label. The user should consult ODS-v2.1.0 (https://goo.gl/jVZsQl) before changing"
+    "#comment": "In most cases 'BE' is the appropriate entry for variant_label. The user should consult ODS-v2.1.0 (https://goo.gl/jVZsQl) before changing",
     "variant_label":                "BE",
 
     "#comment": "The user may choose to define or omit/delete some or all of the following",
