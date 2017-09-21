@@ -54,6 +54,8 @@ PJD 15 Sep 2017     - Register source_id AVHRR-NDVI-4-0 https://github.com/PCMDI
 PJD 19 Sep 2017     - Update demo input.json to remove controlled fields https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/84
 PJD 20 Sep 2017     - Set all cell_measures to '' see discussion https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/66#issuecomment-330853106
 PJD 20 Sep 2017     - Fix cell_measures for newly defined variables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/66
+PJD 20 Sep 2017     - Updates in preparation for ODS-2.1 https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/91
+PJD 21 Sep 2017     - Further updates to monNobs and monStderr templates https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/86
                     - TODO: Ensure demo runs CMOR to validate current repo contents
 
 @author: durack1
@@ -143,14 +145,14 @@ for count2,table in enumerate(tableSource):
             eval(tableName)['Header'] = copy.deepcopy(Amon['Header']) ; # Copy header info from upstream file
             del(eval(tableName)['Header']['#dataRequest_specs_version']) ; # Purge upstream identifier
             eval(tableName)['Header']['realm'] = 'aerosol atmos atmosChem land landIce ocean ocnBgchem seaIce' ; # Append all realms
-        eval(tableName)['Header']['Conventions'] = 'CF-1.7 ODS-2.0' ; # Update "Conventions": "CF-1.7 CMIP-6.0"
+        eval(tableName)['Header']['Conventions'] = 'CF-1.7 ODS-2.1' ; # Update "Conventions": "CF-1.7 CMIP-6.0"
         if tableName not in ['monNobs', 'monStderr']:
             eval(tableName)['Header']['#dataRequest_specs_version'] = eval(tableName)['Header']['data_specs_version']
-        eval(tableName)['Header']['data_specs_version'] = '2.0.0'
+        eval(tableName)['Header']['data_specs_version'] = '2.1.0'
         if 'mip_era' in eval(tableName)['Header'].keys():
             eval(tableName)['Header']['#mip_era'] = eval(tableName)['Header']['mip_era']
             del(eval(tableName)['Header']['mip_era']) ; # Remove after rewriting
-        eval(tableName)['Header']['product'] = 'observations'
+        eval(tableName)['Header']['product'] = 'observations' ; # Cannot be 'observations reanalysis'
         eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
         eval(tableName)['Header']['table_id'] = ''.join(['Table obs4MIPs_',tableName])
         # Attempt to move information from input.json to table files - #84 - CMOR-limited
@@ -416,6 +418,15 @@ Amon['variable_entry']['pctCLARA']['valid_max'] = ''
 Amon['variable_entry']['pctCLARA']['valid_min'] = ''
 
 # monNobs
+monNobs['variable_entry'][u'ndviNobs'].pop('cell_measures')
+monNobs['variable_entry'][u'ndviNobs'].pop('cell_methods')
+monNobs['variable_entry'][u'ndviNobs']['long_name'] = 'Normalized Difference Vegetation Index Number of Observations'
+monNobs['variable_entry'][u'ndviNobs'].pop('ok_max_mean_abs')
+monNobs['variable_entry'][u'ndviNobs'].pop('ok_min_mean_abs')
+monNobs['variable_entry'][u'ndviNobs'].pop('positive')
+monNobs['variable_entry'][u'ndviNobs']['type'] = 'integer'
+monNobs['variable_entry'][u'ndviNobs'].pop('valid_max')
+monNobs['variable_entry'][u'ndviNobs'].pop('valid_min')
 #--------
 # Example new monNobs entry
 #monNobs['variable_entry'][u'ndviNobs'] = {}
@@ -437,6 +448,15 @@ Amon['variable_entry']['pctCLARA']['valid_min'] = ''
 #monNobs['variable_entry'][u'ndviNobs']['valid_min'] = ''
 
 # monStderr
+monStderr['variable_entry'][u'ndviStderr'].pop('cell_measures')
+monStderr['variable_entry'][u'ndviStderr'].pop('cell_methods')
+monStderr['variable_entry'][u'ndviStderr']['long_name'] = 'Normalized Difference Vegetation Index Standard Error'
+monStderr['variable_entry'][u'ndviStderr'].pop('ok_max_mean_abs')
+monStderr['variable_entry'][u'ndviStderr'].pop('ok_min_mean_abs')
+monStderr['variable_entry'][u'ndviStderr'].pop('positive')
+monStderr['variable_entry'][u'ndviStderr']['type'] = 'real'
+monStderr['variable_entry'][u'ndviStderr'].pop('valid_max')
+monStderr['variable_entry'][u'ndviStderr'].pop('valid_min')
 #--------
 # Example new monStderr entry
 #monStderr['variable_entry'][u'ndviStderr'] = {}
@@ -489,7 +509,8 @@ license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
 
 #%% Product
 product = [
- 'observations'
+ 'observations',
+ 'reanalysis'
  ] ;
 
 #%% Realm
@@ -606,6 +627,10 @@ source_id = readJsonCreateDict(tmp)
 source_id = source_id.get('source_id')
 
 # Fix issues
+key = 'NOAA-NCEI-AVHRR-NDVI-4-0'
+source_id['source_id'][key]['source_version_number'] = '4.0'
+key = 'REMSS-PRW-6-6-0'
+source_id['source_id'][key]['source_version_number'] = '6.6.0'
 #==============================================================================
 # Example new source_id entry
 #key = 'REMSS-PRW-6-6-0' # Attempting to scratch something together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51
@@ -634,7 +659,9 @@ table_id = [
   'obs4MIPs_Lmon',
   'obs4MIPs_Omon',
   'obs4MIPs_SImon',
-  'obs4MIPs_fx'
+  'obs4MIPs_fx',
+  'obs4MIPs_monNobs',
+  'obs4MIPs_monStderr'
 ] ;
 
 #%% Write variables to files
@@ -743,6 +770,7 @@ for count,CV in enumerate(CVJsonList):
                               source_id_[key]['description']])
             obs4MIPs_CV['CV']['source_id'][key]['source_label'] = values['source_label']
             obs4MIPs_CV['CV']['source_id'][key]['source_type'] = values['source_type']
+            obs4MIPs_CV['CV']['source_id'][key]['source_version_number'] = values['source_version_number']
             obs4MIPs_CV['CV']['source_id'][key]['region'] = values['region']
             obs4MIPs_CV['CV']['source_id'][key]['source'] = string
     # Rewrite table names

@@ -1,36 +1,29 @@
 {
     "Header":{
         "#mip_era":"CMIP6",
-        "Conventions":"CF-1.7 ODS-2.0",
+        "Conventions":"CF-1.7 ODS-2.1",
         "approx_interval":"30.00000",
         "cmor_version":"3.2",
-        "data_specs_version":"2.0.0",
+        "data_specs_version":"2.1.0",
         "generic_levels":"alevel alevhalf",
         "int_missing_value":"-2147483648",
         "missing_value":"1e20",
         "product":"observations",
         "realm":"aerosol atmos atmosChem land landIce ocean ocnBgchem seaIce",
-        "table_date":"20 September 2017",
+        "table_date":"21 September 2017",
         "table_id":"Table obs4MIPs_monNobs"
     },
     "variable_entry":{
         "ndviNobs":{
-            "cell_measures":"",
-            "cell_methods":"",
             "comment":"",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
-            "long_name":"NDVI number of observations",
+            "long_name":"Normalized Difference Vegetation Index Number of Observations",
             "modeling_realm":"atmos",
-            "ok_max_mean_abs":"",
-            "ok_min_mean_abs":"",
             "out_name":"ndviNobs",
-            "positive":"",
             "standard_name":"number_of_observations",
-            "type":"",
-            "units":"1",
-            "valid_max":"",
-            "valid_min":""
+            "type":"integer",
+            "units":"1"
         }
     }
 }

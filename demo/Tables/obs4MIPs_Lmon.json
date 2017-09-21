@@ -2,16 +2,16 @@
     "Header":{
         "#dataRequest_specs_version":"01.00.15",
         "#mip_era":"CMIP6",
-        "Conventions":"CF-1.7 ODS-2.0",
+        "Conventions":"CF-1.7 ODS-2.1",
         "approx_interval":"30.00000",
         "cmor_version":"3.2",
-        "data_specs_version":"2.0.0",
+        "data_specs_version":"2.1.0",
         "generic_levels":"",
         "int_missing_value":"-2147483648",
         "missing_value":"1e20",
         "product":"observations",
         "realm":"land",
-        "table_date":"20 September 2017",
+        "table_date":"21 September 2017",
         "table_id":"Table obs4MIPs_Lmon"
     },
     "variable_entry":{

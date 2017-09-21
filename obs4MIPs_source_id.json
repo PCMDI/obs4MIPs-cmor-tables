@@ -8,7 +8,8 @@
             "release_year":"2013",
             "source_id":"NOAA-NCEI-AVHRR-NDVI-4-0",
             "source_label":"NOAA-NCEI-AVHRR-NDVI",
-            "source_type":"satellite_retrieval"
+            "source_type":"satellite_retrieval",
+            "source_version_number":"4.0"
         },
         "REMSS-PRW-6-6-0":{
             "description":"Water Vapor Path",
@@ -18,7 +19,8 @@
             "release_year":"2017",
             "source_id":"REMSS-PRW-6-6-0",
             "source_label":"REMSS-PRW",
-            "source_type":"satellite_blended"
+            "source_type":"satellite_blended",
+            "source_version_number":"6.6.0"
         }
     }
 }
