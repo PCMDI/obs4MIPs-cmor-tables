@@ -22,7 +22,7 @@
             "modeling_realm":"atmos",
             "out_name":"ndviStderr",
             "standard_name":"normalized_difference_vegetation_index standard_error",
-            "type":"integer",
+            "type":"real",
             "units":""
         }
     }

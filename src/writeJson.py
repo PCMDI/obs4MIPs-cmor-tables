@@ -454,7 +454,7 @@ monStderr['variable_entry'][u'ndviStderr']['long_name'] = 'Normalized Difference
 monStderr['variable_entry'][u'ndviStderr'].pop('ok_max_mean_abs')
 monStderr['variable_entry'][u'ndviStderr'].pop('ok_min_mean_abs')
 monStderr['variable_entry'][u'ndviStderr'].pop('positive')
-monStderr['variable_entry'][u'ndviStderr']['type'] = 'integer'
+monStderr['variable_entry'][u'ndviStderr']['type'] = 'real'
 monStderr['variable_entry'][u'ndviStderr'].pop('valid_max')
 monStderr['variable_entry'][u'ndviStderr'].pop('valid_min')
 #--------
