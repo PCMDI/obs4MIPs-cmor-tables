@@ -10,27 +10,20 @@
         "missing_value":"1e20",
         "product":"observations",
         "realm":"aerosol atmos atmosChem land landIce ocean ocnBgchem seaIce",
-        "table_date":"20 September 2017",
+        "table_date":"21 September 2017",
         "table_id":"Table obs4MIPs_monStderr"
     },
     "variable_entry":{
         "ndviStderr":{
-            "cell_measures":"",
-            "cell_methods":"",
             "comment":"",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
-            "long_name":"NDVI standard error",
+            "long_name":"Normalized Difference Vegetation Index Standard Error",
             "modeling_realm":"atmos",
-            "ok_max_mean_abs":"",
-            "ok_min_mean_abs":"",
             "out_name":"ndviStderr",
-            "positive":"",
             "standard_name":"normalized_difference_vegetation_index standard_error",
-            "type":"real",
-            "units":"",
-            "valid_max":"",
-            "valid_min":""
+            "type":"integer",
+            "units":""
         }
     }
 }

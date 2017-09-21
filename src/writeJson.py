@@ -55,6 +55,7 @@ PJD 19 Sep 2017     - Update demo input.json to remove controlled fields https:/
 PJD 20 Sep 2017     - Set all cell_measures to '' see discussion https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/66#issuecomment-330853106
 PJD 20 Sep 2017     - Fix cell_measures for newly defined variables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/66
 PJD 20 Sep 2017     - Updates in preparation for ODS-2.1 https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/91
+PJD 21 Sep 2017     - Further updates to monNobs and monStderr templates https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/86
                     - TODO: Ensure demo runs CMOR to validate current repo contents
 
 @author: durack1
@@ -417,6 +418,15 @@ Amon['variable_entry']['pctCLARA']['valid_max'] = ''
 Amon['variable_entry']['pctCLARA']['valid_min'] = ''
 
 # monNobs
+monNobs['variable_entry'][u'ndviNobs'].pop('cell_measures')
+monNobs['variable_entry'][u'ndviNobs'].pop('cell_methods')
+monNobs['variable_entry'][u'ndviNobs']['long_name'] = 'Normalized Difference Vegetation Index Number of Observations'
+monNobs['variable_entry'][u'ndviNobs'].pop('ok_max_mean_abs')
+monNobs['variable_entry'][u'ndviNobs'].pop('ok_min_mean_abs')
+monNobs['variable_entry'][u'ndviNobs'].pop('positive')
+monNobs['variable_entry'][u'ndviNobs']['type'] = 'integer'
+monNobs['variable_entry'][u'ndviNobs'].pop('valid_max')
+monNobs['variable_entry'][u'ndviNobs'].pop('valid_min')
 #--------
 # Example new monNobs entry
 #monNobs['variable_entry'][u'ndviNobs'] = {}
@@ -438,6 +448,15 @@ Amon['variable_entry']['pctCLARA']['valid_min'] = ''
 #monNobs['variable_entry'][u'ndviNobs']['valid_min'] = ''
 
 # monStderr
+monStderr['variable_entry'][u'ndviStderr'].pop('cell_measures')
+monStderr['variable_entry'][u'ndviStderr'].pop('cell_methods')
+monStderr['variable_entry'][u'ndviStderr']['long_name'] = 'Normalized Difference Vegetation Index Standard Error'
+monStderr['variable_entry'][u'ndviStderr'].pop('ok_max_mean_abs')
+monStderr['variable_entry'][u'ndviStderr'].pop('ok_min_mean_abs')
+monStderr['variable_entry'][u'ndviStderr'].pop('positive')
+monStderr['variable_entry'][u'ndviStderr']['type'] = 'integer'
+monStderr['variable_entry'][u'ndviStderr'].pop('valid_max')
+monStderr['variable_entry'][u'ndviStderr'].pop('valid_min')
 #--------
 # Example new monStderr entry
 #monStderr['variable_entry'][u'ndviStderr'] = {}
