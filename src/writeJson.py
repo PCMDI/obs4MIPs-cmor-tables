@@ -421,9 +421,9 @@ Amon['variable_entry']['pctCLARA']['valid_min'] = ''
 Amon['variable_entry'][u'pme'] = {}
 Amon['variable_entry']['pme']['cell_measures'] = ''
 Amon['variable_entry']['pme']['cell_methods'] = 'area: mean time: mean'
-Amon['variable_entry']['pme']['comment'] = '''Net flux of water (in all phases) between the atmosphere and underlying surface
-                                            including vegetation), mainly resulting from the difference of precipitation
-                                            and evaporation'''
+Amon['variable_entry']['pme']['comment'] = ('Net flux of water (in all phases) between the atmosphere and underlying surface '
+                                            'including vegetation), mainly resulting from the difference of precipitation '
+                                            'and evaporation')
 Amon['variable_entry']['pme']['dimensions'] = 'longitude latitude time'
 Amon['variable_entry']['pme']['frequency'] = 'mon'
 Amon['variable_entry']['pme']['long_name'] = 'Surface Downward Freshwater Flux'
