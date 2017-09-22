@@ -56,6 +56,7 @@ PJD 20 Sep 2017     - Set all cell_measures to '' see discussion https://github.
 PJD 20 Sep 2017     - Fix cell_measures for newly defined variables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/66
 PJD 20 Sep 2017     - Updates in preparation for ODS-2.1 https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/91
 PJD 21 Sep 2017     - Further updates to monNobs and monStderr templates https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/86
+PJD 21 Sep 2017     - Register new variable pme https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/72
                     - TODO: Ensure demo runs CMOR to validate current repo contents
 
 @author: durack1
@@ -416,66 +417,52 @@ Amon['variable_entry']['pctCLARA']['type'] = 'real'
 Amon['variable_entry']['pctCLARA']['units'] = 'Pa'
 Amon['variable_entry']['pctCLARA']['valid_max'] = ''
 Amon['variable_entry']['pctCLARA']['valid_min'] = ''
+# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/72
+Amon['variable_entry'][u'pme'] = {}
+Amon['variable_entry']['pme']['cell_measures'] = ''
+Amon['variable_entry']['pme']['cell_methods'] = 'area: mean time: mean'
+Amon['variable_entry']['pme']['comment'] = ('Net flux of water (in all phases) between the atmosphere and underlying surface ',
+                                            '(including vegetation), mainly resulting from the difference of precipitation ',
+                                            'and evaporation')
+Amon['variable_entry']['pme']['dimensions'] = 'longitude latitude time'
+Amon['variable_entry']['pme']['frequency'] = 'mon'
+Amon['variable_entry']['pme']['long_name'] = 'Surface Downward Freshwater Flux'
+Amon['variable_entry']['pme']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['pme']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['pme']['out_name'] = 'pme'
+Amon['variable_entry']['pme']['positive'] = ''
+Amon['variable_entry']['pme']['standard_name'] = 'surface_downward_water_flux'
+Amon['variable_entry']['pme']['type'] = 'real'
+Amon['variable_entry']['pme']['units'] = 'kg m-2 s-1'
+Amon['variable_entry']['pme']['valid_max'] = ''
+Amon['variable_entry']['pme']['valid_min'] = ''
 
 # monNobs
-monNobs['variable_entry'][u'ndviNobs'].pop('cell_measures')
-monNobs['variable_entry'][u'ndviNobs'].pop('cell_methods')
-monNobs['variable_entry'][u'ndviNobs']['long_name'] = 'Normalized Difference Vegetation Index Number of Observations'
-monNobs['variable_entry'][u'ndviNobs'].pop('ok_max_mean_abs')
-monNobs['variable_entry'][u'ndviNobs'].pop('ok_min_mean_abs')
-monNobs['variable_entry'][u'ndviNobs'].pop('positive')
-monNobs['variable_entry'][u'ndviNobs']['type'] = 'integer'
-monNobs['variable_entry'][u'ndviNobs'].pop('valid_max')
-monNobs['variable_entry'][u'ndviNobs'].pop('valid_min')
 #--------
 # Example new monNobs entry
-#monNobs['variable_entry'][u'ndviNobs'] = {}
-#monNobs['variable_entry'][u'ndviNobs']['cell_measures'] = ''
-#monNobs['variable_entry'][u'ndviNobs']['cell_methods'] = ''
 #monNobs['variable_entry'][u'ndviNobs']['comment'] = ''
 #monNobs['variable_entry'][u'ndviNobs']['dimensions'] = 'longitude latitude time'
 #monNobs['variable_entry'][u'ndviNobs']['frequency'] = 'mon'
 #monNobs['variable_entry'][u'ndviNobs']['long_name'] = 'NDVI number of observations'
 #monNobs['variable_entry'][u'ndviNobs']['modeling_realm'] = 'atmos' ; # Overwrites table realm entry (CMOR will fail if multiple realms are set in the header and this field is missing)
-#monNobs['variable_entry'][u'ndviNobs']['ok_max_mean_abs'] = ''
-#monNobs['variable_entry'][u'ndviNobs']['ok_min_mean_abs'] = ''
 #monNobs['variable_entry'][u'ndviNobs']['out_name'] = 'ndviNobs'
-#monNobs['variable_entry'][u'ndviNobs']['positive'] = ''
 #monNobs['variable_entry'][u'ndviNobs']['standard_name'] = 'number_of_observations'
 #monNobs['variable_entry'][u'ndviNobs']['type'] = ''
 #monNobs['variable_entry'][u'ndviNobs']['units'] = '1'
-#monNobs['variable_entry'][u'ndviNobs']['valid_max'] = ''
-#monNobs['variable_entry'][u'ndviNobs']['valid_min'] = ''
 
 # monStderr
-monStderr['variable_entry'][u'ndviStderr'].pop('cell_measures')
-monStderr['variable_entry'][u'ndviStderr'].pop('cell_methods')
-monStderr['variable_entry'][u'ndviStderr']['long_name'] = 'Normalized Difference Vegetation Index Standard Error'
-monStderr['variable_entry'][u'ndviStderr'].pop('ok_max_mean_abs')
-monStderr['variable_entry'][u'ndviStderr'].pop('ok_min_mean_abs')
-monStderr['variable_entry'][u'ndviStderr'].pop('positive')
-monStderr['variable_entry'][u'ndviStderr']['type'] = 'real'
-monStderr['variable_entry'][u'ndviStderr'].pop('valid_max')
-monStderr['variable_entry'][u'ndviStderr'].pop('valid_min')
 #--------
 # Example new monStderr entry
 #monStderr['variable_entry'][u'ndviStderr'] = {}
-#monStderr['variable_entry'][u'ndviStderr']['cell_measures'] = ''
-#monStderr['variable_entry'][u'ndviStderr']['cell_methods'] = ''
 #monStderr['variable_entry'][u'ndviStderr']['comment'] = ''
 #monStderr['variable_entry'][u'ndviStderr']['dimensions'] = 'longitude latitude time'
 #monStderr['variable_entry'][u'ndviStderr']['frequency'] = 'mon'
 #monStderr['variable_entry'][u'ndviStderr']['long_name'] = 'NDVI standard error'
 #monStderr['variable_entry'][u'ndviStderr']['modeling_realm'] = 'atmos' ; # Overwrites table realm entry (CMOR will fail if multiple realms are set in the header and this field is missing)
-#monStderr['variable_entry'][u'ndviStderr']['ok_max_mean_abs'] = ''
-#monStderr['variable_entry'][u'ndviStderr']['ok_min_mean_abs'] = ''
 #monStderr['variable_entry'][u'ndviStderr']['out_name'] = 'ndviStderr'
-#monStderr['variable_entry'][u'ndviStderr']['positive'] = ''
 #monStderr['variable_entry'][u'ndviStderr']['standard_name'] = 'normalized_difference_vegetation_index standard_error'
 #monStderr['variable_entry'][u'ndviStderr']['type'] = 'real'
 #monStderr['variable_entry'][u'ndviStderr']['units'] = ''
-#monStderr['variable_entry'][u'ndviStderr']['valid_max'] = ''
-#monStderr['variable_entry'][u'ndviStderr']['valid_min'] = ''
 
 #%% Coordinate
 
