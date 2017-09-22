@@ -834,11 +834,7 @@
         "pme":{
             "cell_measures":"",
             "cell_methods":"area: mean time: mean",
-            "comment":[
-                "Net flux of water (in all phases) between the atmosphere and underlying surface ",
-                "(including vegetation), mainly resulting from the difference of precipitation ",
-                "and evaporation"
-            ],
+            "comment":"Net flux of water (in all phases) between the atmosphere and underlying surface\n                                            including vegetation), mainly resulting from the difference of precipitation\n                                            and evaporation",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
             "long_name":"Surface Downward Freshwater Flux",
