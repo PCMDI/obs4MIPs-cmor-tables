@@ -831,6 +831,23 @@
             "valid_max":"",
             "valid_min":""
         },
+        "pme":{
+            "cell_measures":"",
+            "cell_methods":"area: mean time: mean",
+            "comment":"Net flux of water (in all phases) between the atmosphere and underlying surface including vegetation), mainly resulting from the difference of precipitation and evaporation",
+            "dimensions":"longitude latitude time",
+            "frequency":"mon",
+            "long_name":"Surface Downward Freshwater Flux",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"pme",
+            "positive":"",
+            "standard_name":"surface_downward_water_flux",
+            "type":"real",
+            "units":"kg m-2 s-1",
+            "valid_max":"",
+            "valid_min":""
+        },
         "pr":{
             "cell_measures":"",
             "cell_methods":"area: time: mean",
