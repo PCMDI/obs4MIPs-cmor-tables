@@ -11,7 +11,7 @@
         "missing_value":"1e20",
         "product":"observations",
         "realm":"atmos",
-        "table_date":"21 September 2017",
+        "table_date":"25 September 2017",
         "table_id":"Table obs4MIPs_Amon"
     },
     "variable_entry":{
@@ -204,7 +204,7 @@
         },
         "clCCI":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean",
+            "cell_methods":"area: mean time: mean",
             "comment":"Percentage cloud cover in optical depth categories.",
             "dimensions":"longitude latitude plev7c tau time",
             "frequency":"mon",
@@ -289,7 +289,7 @@
         },
         "cltCCI":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean",
+            "cell_methods":"area: mean time: mean",
             "comment":"Total cloud area fraction for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Includes both large-scale and convective cloud.",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -340,7 +340,7 @@
         },
         "clwCCI":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean",
+            "cell_methods":"area: mean time: mean",
             "comment":"Percentage liquid cloud cover in optical depth categories.",
             "dimensions":"longitude latitude plev7c tau time",
             "frequency":"mon",
@@ -374,7 +374,7 @@
         },
         "clwtCCI":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean",
+            "cell_methods":"area: mean time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -799,7 +799,7 @@
         },
         "pctCCI":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean",
+            "cell_methods":"area: mean time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "frequency":"mon",

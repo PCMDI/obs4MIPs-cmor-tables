@@ -11,7 +11,7 @@
         "missing_value":"1e20",
         "product":"observations",
         "realm":"land",
-        "table_date":"21 September 2017",
+        "table_date":"25 September 2017",
         "table_id":"Table obs4MIPs_Lmon"
     },
     "variable_entry":{
@@ -425,7 +425,7 @@
         },
         "fapar":{
             "cell_measures":"",
-            "cell_methods":"time: mean area: mean where land",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"The fraction of incoming solar radiation in the photosynthetically active radiation spectral region that is absorbed by a vegetation canopy.",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -629,7 +629,7 @@
         },
         "ndvi":{
             "cell_measures":"",
-            "cell_methods":"time: mean area: mean where land",
+            "cell_methods":"area: mean where land time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
