@@ -618,23 +618,20 @@ source_id = source_id.get('source_id')
 key = 'NOAA-NCEI-AVHRR-NDVI-4-0'
 
 source_id['source_id'][key].pop('description')
+source_id['source_id'][key]['source_label'] = "NOAA-NCEI-AVHRR-NDVI"  
 source_id['source_id'][key].pop('label')
-
 source_id['source_id'][key]['source_description'] = "Normalized Difference Vegetation Index" 
 source_id['source_id'][key]['source_name'] = "NOAA NCEI AVHRR NDVI"
-
-source_id['source_id'][key]['source'] = source_id['source_id'][key]['source_name'] + ' ' + source_id['source_id'][key]['source_version_number'] + ' ' + '(' + source_id['source_id'][key]['release_year'] + '): ' + source_id['source_id'][key]['source_description']   
 
 
 key = 'REMSS-PRW-6-6-0'
 
 source_id['source_id'][key].pop('description')
 source_id['source_id'][key].pop('label')
-
 source_id['source_id'][key]['source_description'] = "Water Vapor Path"
 source_id['source_id'][key]['source_name'] = "REMSS PRW"
+source_id['source_id'][key]['source_label'] = "REMSS-PRW"
 
-source_id['source_id'][key]['source'] = source_id['source_id'][key]['source_name'] + ' ' + source_id['source_id'][key]['source_version_number'] + ' ' + '(' + source_id['source_id'][key]['release_year'] + '): ' + source_id['source_id'][key]['source_description']
 
 # END FIXES
 
@@ -763,6 +760,8 @@ for count,CV in enumerate(inputJson):
     vars()[CV] = json.load(open(''.join([path,'obs4MIPs_',CV,'.json'])))
 
 # Build CV master dictionary
+
+
 obs4MIPs_CV = {}
 obs4MIPs_CV['CV'] = {}
 for count,CV in enumerate(CVJsonList):
@@ -772,7 +771,9 @@ for count,CV in enumerate(CVJsonList):
         obs4MIPs_CV['CV']['source_id'] = {}
         for key,values in source_id_.iteritems():
             obs4MIPs_CV['CV']['source_id'][key] = {}
-            string = ''.join([source_id_[key]['source_label'],' (',
+
+            string = ''.join([source_id_[key]['source_label'],' ',
+                              source_id_[key]['source_version_number'],' (',
                               source_id_[key]['release_year'],'): ',
                               source_id_[key]['source_description']])
             obs4MIPs_CV['CV']['source_id'][key]['source_label'] = values['source_label']
