@@ -1,24 +1,24 @@
 {
     "source_id":{
         "NOAA-NCEI-AVHRR-NDVI-4-0":{
-            "description":"Normalized Difference Vegetation Index",
             "institution_id":"NOAA-NCEI",
-            "label":"NOAA NCEI AVHRR NDVI v4.0",
             "region":"global_land",
             "release_year":"2013",
+            "source_description":"Normalized Difference Vegetation Index",
             "source_id":"NOAA-NCEI-AVHRR-NDVI-4-0",
             "source_label":"NOAA-NCEI-AVHRR-NDVI",
+            "source_name":"NOAA NCEI AVHRR NDVI",
             "source_type":"satellite_retrieval",
             "source_version_number":"4.0"
         },
         "REMSS-PRW-6-6-0":{
-            "description":"Water Vapor Path",
             "institution_id":"RSS",
-            "label":"REMSS PRW v6.6.0",
             "region":"global",
             "release_year":"2017",
+            "source_description":"Water Vapor Path",
             "source_id":"REMSS-PRW-6-6-0",
             "source_label":"REMSS-PRW",
+            "source_name":"REMSS PRW",
             "source_type":"satellite_blended",
             "source_version_number":"6.6.0"
         }
