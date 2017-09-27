@@ -198,14 +198,14 @@
         "source_id":{
             "NOAA-NCEI-AVHRR-NDVI-4-0":{
                 "region":"global_land",
-                "source":"NOAA NCEI AVHRR NDVI v4.0 (2013): Normalized Difference Vegetation Index",
+                "source":"NOAA-NCEI-AVHRR-NDVI (2013): Normalized Difference Vegetation Index",
                 "source_label":"NOAA-NCEI-AVHRR-NDVI",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"4.0"
             },
             "REMSS-PRW-6-6-0":{
                 "region":"global",
-                "source":"REMSS PRW v6.6.0 (2017): Water Vapor Path",
+                "source":"REMSS-PRW (2017): Water Vapor Path",
                 "source_label":"REMSS-PRW",
                 "source_type":"satellite_blended",
                 "source_version_number":"6.6.0"

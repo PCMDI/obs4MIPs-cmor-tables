@@ -621,12 +621,9 @@ source_id['source_id'][key].pop('description')
 source_id['source_id'][key].pop('label')
 
 source_id['source_id'][key]['source_description'] = "Normalized Difference Vegetation Index" 
+source_id['source_id'][key]['source_name'] = "NOAA NCEI AVHRR NDVI"
 
 source_id['source_id'][key]['source'] = source_id['source_id'][key]['source_name'] + ' ' + source_id['source_id'][key]['source_version_number'] + ' ' + '(' + source_id['source_id'][key]['release_year'] + '): ' + source_id['source_id'][key]['source_description']   
-
-
-#source = <source_name> <source_version_number> (<release_year>): <source_description>
-
 
 
 key = 'REMSS-PRW-6-6-0'
@@ -635,10 +632,11 @@ source_id['source_id'][key].pop('description')
 source_id['source_id'][key].pop('label')
 
 source_id['source_id'][key]['source_description'] = "Water Vapor Path"
+source_id['source_id'][key]['source_name'] = "REMSS PRW"
 
 source_id['source_id'][key]['source'] = source_id['source_id'][key]['source_name'] + ' ' + source_id['source_id'][key]['source_version_number'] + ' ' + '(' + source_id['source_id'][key]['release_year'] + '): ' + source_id['source_id'][key]['source_description']
 
-
+# END FIXES
 
 #==============================================================================
 # Example new source_id entry
@@ -836,10 +834,10 @@ del(coordinate,count,formula_terms,frequency,grid_label,homePath,institution_id,
 #%% Generate zip archive
 # Add machine local 7za to path - solve for @gleckler1
 env7za = os.environ.copy()
-if 'oceanonly' in os.environ.get('HOST'):
-    env7za['PATH'] = env7za['PATH'] + '/export/durack1/bin/downloads/p7zip9.38.1/150916_build/p7zip_9.38.1/bin'
-elif 'crunchy' in os.environ.get('HOST'):
-    env7za['PATH'] = env7za['PATH'] + '/export/durack1/bin/downloads/p7zip9.20.1/130123_build/p7zip_9.20.1/bin'
+if 'oceanonly' in os.environ.get('HOSTNAME'):
+    env7za['PATH'] = env7za['PATH'] + ':/export/durack1/bin/downloads/p7zip9.38.1/150916_build/p7zip_9.38.1/bin'
+elif 'crunchy' in os.environ.get('HOSTNAME'):
+    env7za['PATH'] = env7za['PATH'] + ':/export/durack1/bin/downloads/p7zip9.20.1/130123_build/p7zip_9.20.1/bin'
 else:
     print 'No 7za path found'
 
