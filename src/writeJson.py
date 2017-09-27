@@ -616,9 +616,30 @@ source_id = source_id.get('source_id')
 
 # Fix issues
 key = 'NOAA-NCEI-AVHRR-NDVI-4-0'
-source_id['source_id'][key]['source_version_number'] = '4.0'
+
+source_id['source_id'][key].pop('description')
+source_id['source_id'][key].pop('label')
+
+source_id['source_id'][key]['source_description'] = "Normalized Difference Vegetation Index" 
+
+source_id['source_id'][key]['source'] = source_id['source_id'][key]['source_name'] + ' ' + source_id['source_id'][key]['source_version_number'] + ' ' + '(' + source_id['source_id'][key]['release_year'] + '): ' + source_id['source_id'][key]['source_description']   
+
+
+#source = <source_name> <source_version_number> (<release_year>): <source_description>
+
+
+
 key = 'REMSS-PRW-6-6-0'
-source_id['source_id'][key]['source_version_number'] = '6.6.0'
+
+source_id['source_id'][key].pop('description')
+source_id['source_id'][key].pop('label')
+
+source_id['source_id'][key]['source_description'] = "Water Vapor Path"
+
+source_id['source_id'][key]['source'] = source_id['source_id'][key]['source_name'] + ' ' + source_id['source_id'][key]['source_version_number'] + ' ' + '(' + source_id['source_id'][key]['release_year'] + '): ' + source_id['source_id'][key]['source_description']
+
+
+
 #==============================================================================
 # Example new source_id entry
 #key = 'REMSS-PRW-6-6-0' # Attempting to scratch something together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51
@@ -753,9 +774,9 @@ for count,CV in enumerate(CVJsonList):
         obs4MIPs_CV['CV']['source_id'] = {}
         for key,values in source_id_.iteritems():
             obs4MIPs_CV['CV']['source_id'][key] = {}
-            string = ''.join([source_id_[key]['label'],' (',
+            string = ''.join([source_id_[key]['source_label'],' (',
                               source_id_[key]['release_year'],'): ',
-                              source_id_[key]['description']])
+                              source_id_[key]['source_description']])
             obs4MIPs_CV['CV']['source_id'][key]['source_label'] = values['source_label']
             obs4MIPs_CV['CV']['source_id'][key]['source_type'] = values['source_type']
             obs4MIPs_CV['CV']['source_id'][key]['source_version_number'] = values['source_version_number']
