@@ -58,7 +58,7 @@ PJD 20 Sep 2017     - Updates in preparation for ODS-2.1 https://github.com/PCMD
 PJD 21 Sep 2017     - Further updates to monNobs and monStderr templates https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/86
 PJD 21 Sep 2017     - Register new variable pme https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/72
 PJD 25 Sep 2017     - Updated cell_methods to maintain consistency for new registations https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/95
-                    - TODO: Ensure demo runs CMOR to validate current repo contents
+PJG 27 Sep 2017     - added NCEI content
 
 @author: durack1
 """
