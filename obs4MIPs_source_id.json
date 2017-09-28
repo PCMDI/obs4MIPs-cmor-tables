@@ -11,6 +11,72 @@
             "source_type":"satellite_retrieval",
             "source_version_number":"4.0"
         },
+        "NOAA-NCEI-ERSST-4-0":{
+            "institution_id":"NOAA-NCEI",
+            "region":"global_ocean",
+            "release_year":"2015",
+            "source_description":"Extended Reconstructed Sea Surface Temperatures",
+            "source_id":"NOAA-NCEI-ERSST-4-0",
+            "source_label":"NOAA-NCEI-ERSST",
+            "source_name":"NOAA NCEI ERSST",
+            "source_type":"gridded_insitu",
+            "source_version_number":"4.0"
+        },
+        "NOAA-NCEI-FAPAR-4-0":{
+            "institution_id":"NOAA-NCEI",
+            "region":"global_land",
+            "release_year":"2014",
+            "source_description":"AVHRR Fraction of Absorbed Photosynthetically Active Radiation",
+            "source_id":"NOAA-NCEI-FAPAR-4-0",
+            "source_label":"NOAA-NCEI-FAPAR",
+            "source_name":"NOAA NCEI FAPAR",
+            "source_type":"satellite_retrieval",
+            "source_version_number":"4.0"
+        },
+        "NOAA-NCEI-GridSat-4-0":{
+            "institution_id":"NOAA-NCEI",
+            "region":"global",
+            "release_year":"2015",
+            "source_description":"Gridded Satellite ISCCP B1 11 Micron Brightness Temperature",
+            "source_id":"NOAA-NCEI-GridSat-4-0",
+            "source_label":"NOAA-NCEI-GridSat",
+            "source_name":"NOAA NCEI GridSat",
+            "source_type":"satellite_retrieval",
+            "source_version_number":"2.1"
+        },
+        "NOAA-NCEI-LAI-4-0":{
+            "institution_id":"NOAA-NCEI",
+            "region":"global_land",
+            "release_year":"2014",
+            "source_description":"AVHRR Leaf Area Index",
+            "source_id":"NOAA-NCEI-LAI-4-0",
+            "source_label":"NOAA-NCEI-LAI",
+            "source_name":"NOAA NCEI LAI",
+            "source_type":"satellite_retrieval",
+            "source_version_number":"4.0"
+        },
+        "NOAA-NCEI-PERSIANN-1-1":{
+            "institution_id":"NOAA-NCEI",
+            "region":"global",
+            "release_year":"2014",
+            "source_description":"Precipitation Estimation from Remotely Sensed Information using Artificial Neural Network",
+            "source_id":"NOAA-NCEI-PERSIANN-1-1",
+            "source_label":"NOAA-NCEI-PERSIANN",
+            "source_name":"NOAA NCEI PERSIANN",
+            "source_type":"satellite_retrieval",
+            "source_version_number":"1.1"
+        },
+        "NOAA-NCEI-SeaWinds-1-2":{
+            "institution_id":"NOAA-NCEI",
+            "region":"global_ocean",
+            "release_year":"2008",
+            "source_description":"Blended Sea Surface Winds",
+            "source_id":"NOAA-NCEI-SeaWinds-1-2",
+            "source_label":"NOAA-NCEI-SeaWinds",
+            "source_name":"NOAA NCEI SeaWinds",
+            "source_type":"satellite_blended",
+            "source_version_number":"1.2"
+        },
         "REMSS-PRW-6-6-0":{
             "institution_id":"RSS",
             "region":"global",
