@@ -614,39 +614,103 @@ tmp = [['source_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-table
 source_id = readJsonCreateDict(tmp)
 source_id = source_id.get('source_id')
 
-# Fix issues
-key = 'NOAA-NCEI-AVHRR-NDVI-4-0'
+# NEW ENTRIES 
 
-source_id['source_id'][key].pop('description')
-source_id['source_id'][key]['source_label'] = "NOAA-NCEI-AVHRR-NDVI"  
-source_id['source_id'][key].pop('label')
-source_id['source_id'][key]['source_description'] = "Normalized Difference Vegetation Index" 
-source_id['source_id'][key]['source_name'] = "NOAA NCEI AVHRR NDVI"
+key = 'NOAA-NCEI-ERSST-4-0' 
+
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'Extended Reconstructed Sea Surface Temperatures'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['release_year'] = '2015'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-ERSST'
+source_id['source_id'][key]['source_name'] = 'NOAA NCEI ERSST'
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['region'] = 'global_ocean'
+source_id['source_id'][key]['source_version_number'] = '4.0'
+
+key = 'NOAA-NCEI-FAPAR-4-0'
+
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'AVHRR Fraction of Absorbed Photosynthetically Active Radiation'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['release_year'] = '2014'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-FAPAR'
+source_id['source_id'][key]['source_name'] = 'NOAA NCEI FAPAR'
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['region'] = 'global_land'
+source_id['source_id'][key]['source_version_number'] = '4.0'
+
+key = 'NOAA-NCEI-GridSat-4-0'
+
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'Gridded Satellite ISCCP B1 11 Micron Brightness Temperature'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['release_year'] = '2015'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-GridSat'
+source_id['source_id'][key]['source_name'] = 'NOAA NCEI GridSat'
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['region'] = 'global'
+source_id['source_id'][key]['source_version_number'] = '2.1'
+
+key = 'NOAA-NCEI-LAI-4-0'
+
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'AVHRR Leaf Area Index'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['release_year'] = '2014'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-LAI'
+source_id['source_id'][key]['source_name'] = 'NOAA NCEI LAI'
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['region'] = 'global_land'
+source_id['source_id'][key]['source_version_number'] = '4.0'
+
+key = 'NOAA-NCEI-PERSIANN-1-1'
+
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'Precipitation Estimation from Remotely Sensed Information using Artificial Neural Network'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['release_year'] = '2014'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-PERSIANN'
+source_id['source_id'][key]['source_name'] = 'NOAA NCEI PERSIANN'
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['region'] = 'global'
+source_id['source_id'][key]['source_version_number'] = '1.1'
+
+key = 'NOAA-NCEI-SeaWinds-1-2'
+
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'Blended Sea Surface Winds'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['release_year'] = '2008'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-SeaWinds'
+source_id['source_id'][key]['source_name'] = 'NOAA NCEI SeaWinds'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = 'global_ocean'
+source_id['source_id'][key]['source_version_number'] = '1.2'
 
 
-key = 'REMSS-PRW-6-6-0'
-
-source_id['source_id'][key].pop('description')
-source_id['source_id'][key].pop('label')
-source_id['source_id'][key]['source_description'] = "Water Vapor Path"
-source_id['source_id'][key]['source_name'] = "REMSS PRW"
-source_id['source_id'][key]['source_label'] = "REMSS-PRW"
-
-
-# END FIXES
+# END ENTRIES 
 
 #==============================================================================
 # Example new source_id entry
-#key = 'REMSS-PRW-6-6-0' # Attempting to scratch something together from https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json#L3-L51
+#key = 'REMSS-PRW-6-6-0' 
 #source_id['source_id'][key] = {}
-#source_id['source_id'][key]['description'] = 'Water Vapor Path'
+#source_id['source_id'][key]['source_description'] = 'Water Vapor Path'
 #source_id['source_id'][key]['institution_id'] = 'RSS'
-#source_id['source_id'][key]['label'] = 'REMSS PRW v6.6.0'
 #source_id['source_id'][key]['release_year'] = '2017'
 #source_id['source_id'][key]['source_id'] = key
 #source_id['source_id'][key]['source_label'] = 'REMSS-PRW'
+#source_id['source_id'][key]['source_name'] = 'REMSS PRW'
 #source_id['source_id'][key]['source_type'] = 'satellite_blended'
 #source_id['source_id'][key]['region'] = 'global'
+#source_id['source_id'][key]['source_version_number'] = 'satellite_blended'
+#source_id['source_id'][key]['source'] = source_id['source_id'][key]['source_name'] + ' ' + source_id['source_id'][key]['source_version_number'] + ' ' + '(' + source_id['source_id'][key]['release_year'] + '): ' + source_id['source_id'][key]['source_description']
 
 #%% Source type
 source_type = [
@@ -771,7 +835,6 @@ for count,CV in enumerate(CVJsonList):
         obs4MIPs_CV['CV']['source_id'] = {}
         for key,values in source_id_.iteritems():
             obs4MIPs_CV['CV']['source_id'][key] = {}
-
             string = ''.join([source_id_[key]['source_label'],' ',
                               source_id_[key]['source_version_number'],' (',
                               source_id_[key]['release_year'],'): ',
