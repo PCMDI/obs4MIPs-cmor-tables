@@ -58,7 +58,8 @@ PJD 20 Sep 2017     - Updates in preparation for ODS-2.1 https://github.com/PCMD
 PJD 21 Sep 2017     - Further updates to monNobs and monStderr templates https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/86
 PJD 21 Sep 2017     - Register new variable pme https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/72
 PJD 25 Sep 2017     - Updated cell_methods to maintain consistency for new registations https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/95
-PJG 27 Sep 2017     - added NCEI content
+PJG 27 Sep 2017     - added NCEI RC
+PJG 28 Sep 2017     - added DWD RC
 
 @author: durack1
 """
@@ -616,83 +617,45 @@ source_id = source_id.get('source_id')
 
 # NEW ENTRIES 
 
-key = 'NOAA-NCEI-ERSST-4-0' 
+key = 'CMSAF-HOAPS-4-0' 
 
 source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_description'] = 'Extended Reconstructed Sea Surface Temperatures'
-source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
-source_id['source_id'][key]['release_year'] = '2015'
+source_id['source_id'][key]['source_description'] = 'Hamburg Ocean Atmosphere Parameters and fluxes from Satellite data, based on SSM/I and SSMIS aboard DMSP'
+source_id['source_id'][key]['institution_id'] = 'DWD'
+source_id['source_id'][key]['release_year'] = '2017'
 source_id['source_id'][key]['source_id'] = key
-source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-ERSST'
-source_id['source_id'][key]['source_name'] = 'NOAA NCEI ERSST'
-source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_label'] = 'CMSAF-HOAPS'
+source_id['source_id'][key]['source_name'] = 'CMSAF HOAPS'
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['region'] = 'global_ocean'
 source_id['source_id'][key]['source_version_number'] = '4.0'
 
-key = 'NOAA-NCEI-FAPAR-4-0'
+key = 'CMSAF-SARAH-2.0'    
 
 source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_description'] = 'AVHRR Fraction of Absorbed Photosynthetically Active Radiation'
-source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
-source_id['source_id'][key]['release_year'] = '2014'
+source_id['source_id'][key]['source_description'] = 'Surface solAr RAdiation data set - Heliosat, based on MVIRI/SEVIRI aboard METEOSAT'
+source_id['source_id'][key]['institution_id'] = 'DWD'
+source_id['source_id'][key]['release_year'] = '2017'
 source_id['source_id'][key]['source_id'] = key
-source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-FAPAR'
-source_id['source_id'][key]['source_name'] = 'NOAA NCEI FAPAR'
+source_id['source_id'][key]['source_label'] = 'CMSAF-HOAPS'
+source_id['source_id'][key]['source_name'] = 'CMSAF HOAPS'
 source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['region'] = 'global_land'
-source_id['source_id'][key]['source_version_number'] = '4.0'
+source_id['source_id'][key]['region'] = ['africa', 'atlantic_ocean', 'europe'] 
+source_id['source_id'][key]['source_version_number'] = '2.0'
 
-key = 'NOAA-NCEI-GridSat-4-0'
+key = 'CMSAF-CLARA-A-2-0'
 
 source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_description'] = 'Gridded Satellite ISCCP B1 11 Micron Brightness Temperature'
-source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
-source_id['source_id'][key]['release_year'] = '2015'
+source_id['source_id'][key]['source_description'] = 'CM SAF cLoud, Albedo and surface RAdiation dataset from AVHRR data'
+source_id['source_id'][key]['institution_id'] = 'DWD'
+source_id['source_id'][key]['release_year'] = '2017'
 source_id['source_id'][key]['source_id'] = key
-source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-GridSat'
-source_id['source_id'][key]['source_name'] = 'NOAA NCEI GridSat'
+source_id['source_id'][key]['source_label'] = 'CMSAF-CLARA-A'
+source_id['source_id'][key]['source_name'] = 'CMSAF-CLARA-A'
 source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['region'] = 'global'
-source_id['source_id'][key]['source_version_number'] = '2.1'
+source_id['source_id'][key]['region'] = 'global' 
+source_id['source_id'][key]['source_version_number'] = '2.0'
 
-key = 'NOAA-NCEI-LAI-4-0'
-
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_description'] = 'AVHRR Leaf Area Index'
-source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
-source_id['source_id'][key]['release_year'] = '2014'
-source_id['source_id'][key]['source_id'] = key
-source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-LAI'
-source_id['source_id'][key]['source_name'] = 'NOAA NCEI LAI'
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['region'] = 'global_land'
-source_id['source_id'][key]['source_version_number'] = '4.0'
-
-key = 'NOAA-NCEI-PERSIANN-1-1'
-
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_description'] = 'Precipitation Estimation from Remotely Sensed Information using Artificial Neural Network'
-source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
-source_id['source_id'][key]['release_year'] = '2014'
-source_id['source_id'][key]['source_id'] = key
-source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-PERSIANN'
-source_id['source_id'][key]['source_name'] = 'NOAA NCEI PERSIANN'
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['region'] = 'global'
-source_id['source_id'][key]['source_version_number'] = '1.1'
-
-key = 'NOAA-NCEI-SeaWinds-1-2'
-
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_description'] = 'Blended Sea Surface Winds'
-source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
-source_id['source_id'][key]['release_year'] = '2008'
-source_id['source_id'][key]['source_id'] = key
-source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-SeaWinds'
-source_id['source_id'][key]['source_name'] = 'NOAA NCEI SeaWinds'
-source_id['source_id'][key]['source_type'] = 'satellite_blended'
-source_id['source_id'][key]['region'] = 'global_ocean'
-source_id['source_id'][key]['source_version_number'] = '1.2'
 
 
 # END ENTRIES 
