@@ -68,6 +68,7 @@ PJG 28 Sep 2017     - added DWD RC
 import copy,gc,json,os,shutil,ssl,subprocess,time
 from durolib import readJsonCreateDict
 #from durolib import getGitInfo
+import sys
 
 #%% Determine path
 homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
@@ -615,48 +616,27 @@ tmp = [['source_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-table
 source_id = readJsonCreateDict(tmp)
 source_id = source_id.get('source_id')
 
-# NEW ENTRIES 
+#  ADD source_variables to existing keys 
 
-key = 'CMSAF-HOAPS-4-0' 
+all_current_keys =  source_id['source_id'].keys()
 
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_description'] = 'Hamburg Ocean Atmosphere Parameters and fluxes from Satellite data, based on SSM/I and SSMIS aboard DMSP'
-source_id['source_id'][key]['institution_id'] = 'DWD'
-source_id['source_id'][key]['release_year'] = '2017'
-source_id['source_id'][key]['source_id'] = key
-source_id['source_id'][key]['source_label'] = 'CMSAF-HOAPS'
-source_id['source_id'][key]['source_name'] = 'CMSAF HOAPS'
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['region'] = 'global_ocean'
-source_id['source_id'][key]['source_version_number'] = '4.0'
+# contents of all_current_keys
+#[u'NOAA-NCEI-FAPAR-4-0', u'CMSAF-CLARA-A-2-0', u'NOAA-NCEI-AVHRR-NDVI-4-0', u'NOAA-NCEI-SeaWinds-1-2', u'CMSAF-HOAPS-4-0', u'NOAA-NCEI-PERSIANN-1-1', u'NOAA-NCEI-LAI-4-0', u'REMSS-PRW-6-6-0', u'NOAA-NCEI-GridSat-4-0', u'CMSAF-SARAH-2.0', u'NOAA-NCEI-ERSST-4-0']
 
-key = 'CMSAF-SARAH-2.0'    
-
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_description'] = 'Surface solAr RAdiation data set - Heliosat, based on MVIRI/SEVIRI aboard METEOSAT'
-source_id['source_id'][key]['institution_id'] = 'DWD'
-source_id['source_id'][key]['release_year'] = '2017'
-source_id['source_id'][key]['source_id'] = key
-source_id['source_id'][key]['source_label'] = 'CMSAF-HOAPS'
-source_id['source_id'][key]['source_name'] = 'CMSAF HOAPS'
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['region'] = ['africa', 'atlantic_ocean', 'europe'] 
-source_id['source_id'][key]['source_version_number'] = '2.0'
-
-key = 'CMSAF-CLARA-A-2-0'
-
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_description'] = 'CM SAF cLoud, Albedo and surface RAdiation dataset from AVHRR data'
-source_id['source_id'][key]['institution_id'] = 'DWD'
-source_id['source_id'][key]['release_year'] = '2017'
-source_id['source_id'][key]['source_id'] = key
-source_id['source_id'][key]['source_label'] = 'CMSAF-CLARA-A'
-source_id['source_id'][key]['source_name'] = 'CMSAF-CLARA-A'
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['region'] = 'global' 
-source_id['source_id'][key]['source_version_number'] = '2.0'
-
-
+for k in all_current_keys:
+  if k == 'NOAA-NCEI-FAPAR-4-0': source_id['source_id'][k]['source_variables'] = ['fapar'] 
+  if k == 'CMSAF-CLARA-A-2-0': source_id['source_id'][k]['source_variables'] = ['clCLARA', 'cltCLARA', 'clwCLARA', 'clwtCLARA', 'pctCLARA', 'clivi', 'clwvi', 'rsds', 'rsdscs'] 
+  if k == 'NOAA-NCEI-AVHRR-NDVI-4-0': source_id['source_id'][k]['source_variables'] = ['ndvi']  
+  if k == 'NOAA-NCEI-SeaWinds-1-2': source_id['source_id'][k]['source_variables'] = ['uas','vas','sfcWind']
+  if k == 'CMSAF-HOAPS-4-0': source_id['source_id'][k]['source_variables'] = ['pme', 'sfcWind', 'pr','huss','hfls', 'evspsbl', 'hfss', 'prw']
+  if k == 'NOAA-NCEI-PERSIANN-1-1': source_id['source_id'][k]['source_variables'] = ['pr']
+  if k == 'NOAA-NCEI-LAI-4-0': source_id['source_id'][k]['source_variables'] = ['lai']
+  if k == 'REMSS-PRW-6-6-0': source_id['source_id'][k]['source_variables'] = ['prw']
+  if k == 'NOAA-NCEI-GridSat-4-0': source_id['source_id'][k]['source_variables'] = ['ttbr']
+  if k == 'CMSAF-SARAH-2.0': source_id['source_id'][k]['source_variables'] = ['rsds']
+  if k == 'NOAA-NCEI-ERSST-4-0': source_id['source_id'][k]['source_variables'] = ['tos']
+#  if k != 'NOAA-NCEI-FAPAR-4-0': source_id['source_id'][k]['source_variables'] = ['MISSING']
+#w = sys.stdin.readline()
 
 # END ENTRIES 
 
