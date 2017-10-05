@@ -1,6 +1,6 @@
 {
     "Header":{
-        "#dataRequest_specs_version":"01.00.15",
+        "#dataRequest_specs_version":"01.00.16",
         "#mip_era":"CMIP6",
         "Conventions":"CF-1.7 ODS-2.1",
         "approx_interval":"30.00000",
@@ -1201,7 +1201,7 @@
             "positive":"down",
             "standard_name":"surface_downward_mass_flux_of_carbon13_dioxide_abiotic_analogue_expressed_as_carbon13",
             "type":"real",
-            "units":"mol m-2 s-1",
+            "units":"kg m-2 s-1",
             "valid_max":"",
             "valid_min":""
         },
@@ -1887,9 +1887,9 @@
         },
         "hfx":{
             "cell_measures":"",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"Contains all contributions to 'x-ward' heat transport from resolved and parameterized processes.  Use Celsius for temperature scale.",
-            "dimensions":"longitude latitude olevel time",
+            "dimensions":"longitude latitude time",
             "frequency":"mon",
             "long_name":"Ocean Heat X Transport",
             "ok_max_mean_abs":"",
@@ -1904,9 +1904,9 @@
         },
         "hfy":{
             "cell_measures":"",
-            "cell_methods":"time: mean",
+            "cell_methods":"area: mean where sea time: mean",
             "comment":"Contains all contributions to 'y-ward' heat transport from resolved and parameterized processes. Use Celsius for temperature scale.",
-            "dimensions":"longitude latitude olevel time",
+            "dimensions":"longitude latitude time",
             "frequency":"mon",
             "long_name":"Ocean Heat Y Transport",
             "ok_max_mean_abs":"",

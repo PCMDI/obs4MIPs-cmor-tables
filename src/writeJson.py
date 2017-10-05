@@ -60,15 +60,14 @@ PJD 21 Sep 2017     - Register new variable pme https://github.com/PCMDI/obs4MIP
 PJD 25 Sep 2017     - Updated cell_methods to maintain consistency for new registations https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/95
 PJG 27 Sep 2017     - added NCEI RC
 PJG 28 Sep 2017     - added DWD RC
+PJD  4 Oct 2017     - Revise cell_methods for numerous DWD contributed variables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/72
 
 @author: durack1
 """
 
 #%% Import statements
 import copy,gc,json,os,shutil,ssl,subprocess,time
-from durolib import readJsonCreateDict
-#from durolib import getGitInfo
-import sys
+from durolib import readJsonCreateDict ; # getGitInfo
 
 #%% Determine path
 homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
@@ -253,7 +252,7 @@ Lmon['variable_entry']['fapar']['valid_min'] = '0.0'
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'clCCI'] = {}
 Amon['variable_entry']['clCCI']['cell_measures'] = ''
-Amon['variable_entry']['clCCI']['cell_methods'] = 'area: mean time: mean'
+Amon['variable_entry']['clCCI']['cell_methods'] = 'area: time: mean'
 Amon['variable_entry']['clCCI']['comment'] = 'Percentage cloud cover in optical depth categories.'
 Amon['variable_entry']['clCCI']['dimensions'] = 'longitude latitude plev7c tau time'
 Amon['variable_entry']['clCCI']['frequency'] = 'mon'
@@ -287,7 +286,7 @@ Amon['variable_entry']['clCLARA']['valid_min'] = ''
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'cltCCI'] = {}
 Amon['variable_entry']['cltCCI']['cell_measures'] = ''
-Amon['variable_entry']['cltCCI']['cell_methods'] = 'area: mean time: mean'
+Amon['variable_entry']['cltCCI']['cell_methods'] = 'area: time: mean'
 Amon['variable_entry']['cltCCI']['comment'] = 'Total cloud area fraction for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Includes both large-scale and convective cloud.'
 Amon['variable_entry']['cltCCI']['dimensions'] = 'longitude latitude time'
 Amon['variable_entry']['cltCCI']['frequency'] = 'mon'
@@ -321,7 +320,7 @@ Amon['variable_entry']['cltCLARA']['valid_min'] = ''
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'clwCCI'] = {}
 Amon['variable_entry']['clwCCI']['cell_measures'] = ''
-Amon['variable_entry']['clwCCI']['cell_methods'] = 'area: mean time: mean'
+Amon['variable_entry']['clwCCI']['cell_methods'] = 'area: time: mean'
 Amon['variable_entry']['clwCCI']['comment'] = 'Percentage liquid cloud cover in optical depth categories.'
 Amon['variable_entry']['clwCCI']['dimensions'] = 'longitude latitude plev7c tau time'
 Amon['variable_entry']['clwCCI']['frequency'] = 'mon'
@@ -355,7 +354,7 @@ Amon['variable_entry']['clwCLARA']['valid_min'] = ''
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'clwtCCI'] = {}
 Amon['variable_entry']['clwtCCI']['cell_measures'] = ''
-Amon['variable_entry']['clwtCCI']['cell_methods'] = 'area: mean time: mean'
+Amon['variable_entry']['clwtCCI']['cell_methods'] = 'area: time: mean'
 Amon['variable_entry']['clwtCCI']['comment'] = ''
 Amon['variable_entry']['clwtCCI']['dimensions'] = 'longitude latitude time'
 Amon['variable_entry']['clwtCCI']['frequency'] = 'mon'
@@ -389,7 +388,7 @@ Amon['variable_entry']['clwtCLARA']['valid_min'] = ''
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'pctCCI'] = {}
 Amon['variable_entry']['pctCCI']['cell_measures'] = ''
-Amon['variable_entry']['pctCCI']['cell_methods'] = 'area: mean time: mean'
+Amon['variable_entry']['pctCCI']['cell_methods'] = 'area: time: mean'
 Amon['variable_entry']['pctCCI']['comment'] = ''
 Amon['variable_entry']['pctCCI']['dimensions'] = 'longitude latitude time'
 Amon['variable_entry']['pctCCI']['frequency'] = 'mon'
@@ -423,7 +422,7 @@ Amon['variable_entry']['pctCLARA']['valid_min'] = ''
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/72
 Amon['variable_entry'][u'pme'] = {}
 Amon['variable_entry']['pme']['cell_measures'] = ''
-Amon['variable_entry']['pme']['cell_methods'] = 'area: mean time: mean'
+Amon['variable_entry']['pme']['cell_methods'] = 'area: time: mean'
 Amon['variable_entry']['pme']['comment'] = ('Net flux of water (in all phases) between the atmosphere and underlying surface '
                                             'including vegetation), mainly resulting from the difference of precipitation '
                                             'and evaporation')
@@ -615,30 +614,6 @@ tmp = [['source_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-table
       ] ;
 source_id = readJsonCreateDict(tmp)
 source_id = source_id.get('source_id')
-
-#  ADD source_variables to existing keys 
-
-all_current_keys =  source_id['source_id'].keys()
-
-# contents of all_current_keys
-#[u'NOAA-NCEI-FAPAR-4-0', u'CMSAF-CLARA-A-2-0', u'NOAA-NCEI-AVHRR-NDVI-4-0', u'NOAA-NCEI-SeaWinds-1-2', u'CMSAF-HOAPS-4-0', u'NOAA-NCEI-PERSIANN-1-1', u'NOAA-NCEI-LAI-4-0', u'REMSS-PRW-6-6-0', u'NOAA-NCEI-GridSat-4-0', u'CMSAF-SARAH-2.0', u'NOAA-NCEI-ERSST-4-0']
-
-for k in all_current_keys:
-  if k == 'NOAA-NCEI-FAPAR-4-0': source_id['source_id'][k]['source_variables'] = ['fapar'] 
-  if k == 'CMSAF-CLARA-A-2-0': source_id['source_id'][k]['source_variables'] = ['clCLARA', 'cltCLARA', 'clwCLARA', 'clwtCLARA', 'pctCLARA', 'clivi', 'clwvi', 'rsds', 'rsdscs'] 
-  if k == 'NOAA-NCEI-AVHRR-NDVI-4-0': source_id['source_id'][k]['source_variables'] = ['ndvi']  
-  if k == 'NOAA-NCEI-SeaWinds-1-2': source_id['source_id'][k]['source_variables'] = ['uas','vas','sfcWind']
-  if k == 'CMSAF-HOAPS-4-0': source_id['source_id'][k]['source_variables'] = ['pme', 'sfcWind', 'pr','huss','hfls', 'evspsbl', 'hfss', 'prw']
-  if k == 'NOAA-NCEI-PERSIANN-1-1': source_id['source_id'][k]['source_variables'] = ['pr']
-  if k == 'NOAA-NCEI-LAI-4-0': source_id['source_id'][k]['source_variables'] = ['lai']
-  if k == 'REMSS-PRW-6-6-0': source_id['source_id'][k]['source_variables'] = ['prw']
-  if k == 'NOAA-NCEI-GridSat-4-0': source_id['source_id'][k]['source_variables'] = ['ttbr']
-  if k == 'CMSAF-SARAH-2.0': source_id['source_id'][k]['source_variables'] = ['rsds']
-  if k == 'NOAA-NCEI-ERSST-4-0': source_id['source_id'][k]['source_variables'] = ['tos']
-#  if k != 'NOAA-NCEI-FAPAR-4-0': source_id['source_id'][k]['source_variables'] = ['MISSING']
-#w = sys.stdin.readline()
-
-# END ENTRIES 
 
 #==============================================================================
 # Example new source_id entry
@@ -841,12 +816,13 @@ del(coordinate,count,formula_terms,frequency,grid_label,homePath,institution_id,
 #%% Generate zip archive
 # Add machine local 7za to path - solve for @gleckler1
 env7za = os.environ.copy()
-if 'oceanonly' in os.environ.get('HOSTNAME'):
-    env7za['PATH'] = env7za['PATH'] + ':/export/durack1/bin/downloads/p7zip9.38.1/150916_build/p7zip_9.38.1/bin'
-elif 'crunchy' in os.environ.get('HOSTNAME'):
-    env7za['PATH'] = env7za['PATH'] + ':/export/durack1/bin/downloads/p7zip9.20.1/130123_build/p7zip_9.20.1/bin'
-else:
-    print 'No 7za path found'
+if os.environ.get('USER') == 'gleckler1':
+    if 'oceanonly' in os.environ.get('HOSTNAME'):
+        env7za['PATH'] = env7za['PATH'] + ':/export/durack1/bin/downloads/p7zip9.38.1/150916_build/p7zip_9.38.1/bin'
+    elif 'crunchy' in os.environ.get('HOSTNAME'):
+        env7za['PATH'] = env7za['PATH'] + ':/export/durack1/bin/downloads/p7zip9.20.1/130123_build/p7zip_9.20.1/bin'
+    else:
+        print 'No 7za path found'
 
 # Cleanup rogue files
 os.chdir(demoPath)
