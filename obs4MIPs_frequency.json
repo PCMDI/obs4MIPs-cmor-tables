@@ -12,6 +12,7 @@
         "fx":"fixed (time invariant) field",
         "mon":"monthly mean samples",
         "monC":"monthly climatology computed from monthly mean samples",
+        "monPt":"sampled monthly, at specified time point within the time period",
         "subhrPt":"sampled sub-hourly, at specified time point within an hour",
         "yr":"annual mean samples",
         "yrPt":"sampled yearly, at specified time point within the time period"
