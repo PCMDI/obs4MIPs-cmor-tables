@@ -1,6 +1,6 @@
 {
     "Header":{
-        "#dataRequest_specs_version":"01.00.15",
+        "#dataRequest_specs_version":"01.00.16",
         "#mip_era":"CMIP6",
         "Conventions":"CF-1.7 ODS-2.1",
         "approx_interval":"0.00000",
@@ -53,8 +53,8 @@
         },
         "mrsofc":{
             "cell_measures":"area: areacella",
-            "cell_methods":"area: mean",
-            "comment":"'reported *where land*: divide the total water holding capacity of all the soil in the grid cell by the land area in the grid cell;  reported as *missing* where the land fraction is 0.'",
+            "cell_methods":"area: mean where land",
+            "comment":"The bulk water content retained by the soil at -33 J/kg of suction pressure, expressed as mass per unit land area; report as missing where there is no land",
             "dimensions":"longitude latitude",
             "frequency":"fx",
             "long_name":"Capacity of Soil to Store Water",
