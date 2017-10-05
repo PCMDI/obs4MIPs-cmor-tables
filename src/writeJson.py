@@ -62,6 +62,7 @@ PJG 27 Sep 2017     - added NCEI RC
 PJG 28 Sep 2017     - added DWD RC
 PJD  4 Oct 2017     - Revise Amon variable ttbr https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/115
 PJD  4 Oct 2017     - Revise cell_methods for numerous DWD contributed variables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/72
+PJD  4 Oct 2017     - Update Aday table cell_measures entries https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/120
 
 @author: durack1
 """
@@ -182,7 +183,7 @@ fx['Header']['realm']       = 'fx'
 Aday['Header']['table_id']  = 'Table obs4MIPs_Aday' ; # Cleanup from upstream
 
 # Clean out modeling_realm
-for jsonName in ['Amon','Lmon','Omon','SImon']:  #,'Aday']:
+for jsonName in ['Aday','Amon','Lmon','Omon','SImon']:
     dictToClean = eval(jsonName)
     for key, value in dictToClean.iteritems():
         if key == 'Header':
@@ -194,7 +195,7 @@ for jsonName in ['Amon','Lmon','Omon','SImon']:  #,'Aday']:
                 dictToClean[key][key1]['cell_measures'] = '' ; # Set all cell_measures entries to blank
 
 # Set missing value for integer variables
-for tab in (Amon, Lmon, Omon, SImon, fx, Aday, monNobs, monStderr):
+for tab in (Aday, Amon, Lmon, Omon, SImon, fx, Aday, monNobs, monStderr):
     tab['Header']['int_missing_value'] = str(-2**31)
 
 # Add new variables

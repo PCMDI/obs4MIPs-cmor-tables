@@ -16,13 +16,12 @@
     },
     "variable_entry":{
         "clt":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"Total cloud area fraction for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Includes both large-scale and convective cloud.",
             "dimensions":"longitude latitude time",
             "frequency":"day",
             "long_name":"Total Cloud Fraction",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"clt",
@@ -34,13 +33,12 @@
             "valid_min":""
         },
         "hfls":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "frequency":"day",
             "long_name":"Surface Upward Latent Heat Flux",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"hfls",
@@ -52,13 +50,12 @@
             "valid_min":""
         },
         "hfss":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "frequency":"day",
             "long_name":"Surface Upward Sensible Heat Flux",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"hfss",
@@ -70,13 +67,12 @@
             "valid_min":""
         },
         "hur":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"time: mean",
             "comment":"The relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C.",
             "dimensions":"longitude latitude plev8 time",
             "frequency":"day",
             "long_name":"Relative Humidity",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"hur",
@@ -88,13 +84,12 @@
             "valid_min":""
         },
         "hurs":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"The relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C.",
             "dimensions":"longitude latitude time height2m",
             "frequency":"day",
             "long_name":"Near-Surface Relative Humidity",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"hurs",
@@ -106,13 +101,12 @@
             "valid_min":""
         },
         "hursmax":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: mean time: maximum",
             "comment":"",
             "dimensions":"longitude latitude time height2m",
             "frequency":"day",
             "long_name":"Surface Daily Maximum Relative Humidity",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"hursmax",
@@ -124,13 +118,12 @@
             "valid_min":""
         },
         "hursmin":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: mean time: minimum",
             "comment":"",
             "dimensions":"longitude latitude time height2m",
             "frequency":"day",
             "long_name":"Surface Daily Minimum Relative Humidity",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"hursmin",
@@ -142,13 +135,12 @@
             "valid_min":""
         },
         "hus":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"time: mean",
             "comment":"",
             "dimensions":"longitude latitude plev8 time",
             "frequency":"day",
             "long_name":"Specific Humidity",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"hus",
@@ -160,13 +152,12 @@
             "valid_min":""
         },
         "huss":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"Near-surface (usually, 2 meter) specific humidity.",
             "dimensions":"longitude latitude time height2m",
             "frequency":"day",
             "long_name":"Near-Surface Specific Humidity",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"huss",
@@ -178,13 +169,12 @@
             "valid_min":""
         },
         "mrro":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: mean where land time: mean",
             "comment":"The total run-off (including drainage through the base of the soil model) per unit area leaving the land portion of the grid cell.",
             "dimensions":"longitude latitude time",
             "frequency":"day",
             "long_name":"Total Runoff",
-            "modeling_realm":"land",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"mrro",
@@ -196,13 +186,12 @@
             "valid_min":""
         },
         "mrso":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: mean where land time: mean",
             "comment":"the mass per unit area  (summed over all soil layers) of water in all phases.",
             "dimensions":"longitude latitude time",
             "frequency":"day",
             "long_name":"Total Soil Moisture Content",
-            "modeling_realm":"land",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"mrso",
@@ -214,13 +203,12 @@
             "valid_min":""
         },
         "mrsos":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: mean where land time: mean",
             "comment":"The mass of water in all phases in the upper 10cm of the  soil layer.",
             "dimensions":"longitude latitude time sdepth1",
             "frequency":"day",
             "long_name":"Moisture in Upper Portion of Soil Column",
-            "modeling_realm":"land",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"mrsos",
@@ -232,13 +220,12 @@
             "valid_min":""
         },
         "pr":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"includes both liquid and solid phases",
             "dimensions":"longitude latitude time",
             "frequency":"day",
             "long_name":"Precipitation",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"pr",
@@ -250,13 +237,12 @@
             "valid_min":""
         },
         "prc":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"Convective precipitation at surface; includes both liquid and solid phases.",
             "dimensions":"longitude latitude time",
             "frequency":"day",
             "long_name":"Convective Precipitation",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"prc",
@@ -268,13 +254,12 @@
             "valid_min":""
         },
         "prsn":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"at surface; includes precipitation of all forms of water in the solid phase",
             "dimensions":"longitude latitude time",
             "frequency":"day",
             "long_name":"Snowfall Flux",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"prsn",
@@ -286,13 +271,12 @@
             "valid_min":""
         },
         "psl":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"Sea Level Pressure",
             "dimensions":"longitude latitude time",
             "frequency":"day",
             "long_name":"Sea Level Pressure",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"psl",
@@ -304,13 +288,12 @@
             "valid_min":""
         },
         "rlds":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "frequency":"day",
             "long_name":"Surface Downwelling Longwave Radiation",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"rlds",
@@ -322,13 +305,12 @@
             "valid_min":""
         },
         "rlus":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "frequency":"day",
             "long_name":"Surface Upwelling Longwave Radiation",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"rlus",
@@ -340,13 +322,12 @@
             "valid_min":""
         },
         "rlut":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"at the top of the atmosphere (to be compared with satellite measurements)",
             "dimensions":"longitude latitude time",
             "frequency":"day",
             "long_name":"TOA Outgoing Longwave Radiation",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"rlut",
@@ -358,13 +339,12 @@
             "valid_min":""
         },
         "rsds":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"surface solar irradiance for UV calculations",
             "dimensions":"longitude latitude time",
             "frequency":"day",
             "long_name":"Surface Downwelling Shortwave Radiation",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"rsds",
@@ -376,13 +356,12 @@
             "valid_min":""
         },
         "rsus":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "frequency":"day",
             "long_name":"Surface Upwelling Shortwave Radiation",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"rsus",
@@ -394,13 +373,12 @@
             "valid_min":""
         },
         "sfcWind":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"near-surface (usually, 10 meters) wind speed.",
             "dimensions":"longitude latitude time height10m",
             "frequency":"day",
             "long_name":"Daily-Mean Near-Surface Wind Speed",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"sfcWind",
@@ -412,13 +390,12 @@
             "valid_min":""
         },
         "sfcWindmax":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: mean time: maximum",
             "comment":"Daily maximum near-surface (usually, 10 meters) wind speed.",
             "dimensions":"longitude latitude time height10m",
             "frequency":"day",
             "long_name":"Daily Maximum Near-Surface Wind Speed",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"sfcWindmax",
@@ -430,13 +407,12 @@
             "valid_min":""
         },
         "snc":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"Fraction of each grid cell that is occupied by snow that rests on land portion of cell.",
             "dimensions":"longitude latitude time",
             "frequency":"day",
             "long_name":"Snow Area Fraction",
-            "modeling_realm":"landIce land",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"snc",
@@ -448,13 +424,12 @@
             "valid_min":""
         },
         "snw":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: mean where land time: mean",
             "comment":"The mass of surface snow on the land portion of the grid cell divided by the land area in the grid cell; reported as missing where the land fraction is 0; excludes snow on vegetation canopy or on sea ice.",
             "dimensions":"longitude latitude time",
             "frequency":"day",
             "long_name":"Surface Snow Amount",
-            "modeling_realm":"landIce land",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"snw",
@@ -466,13 +441,12 @@
             "valid_min":""
         },
         "ta":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"time: mean",
             "comment":"Air Temperature",
             "dimensions":"longitude latitude plev8 time",
             "frequency":"day",
             "long_name":"Air Temperature",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"ta",
@@ -484,13 +458,12 @@
             "valid_min":""
         },
         "tas":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"near-surface (usually, 2 meter) air temperature",
             "dimensions":"longitude latitude time height2m",
             "frequency":"day",
             "long_name":"Near-Surface Air Temperature",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"tas",
@@ -502,13 +475,12 @@
             "valid_min":""
         },
         "tasmax":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: mean time: maximum",
             "comment":"maximum near-surface (usually, 2 meter) air temperature (add cell_method attribute 'time: max')",
             "dimensions":"longitude latitude time height2m",
             "frequency":"day",
             "long_name":"Daily Maximum Near-Surface Air Temperature",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"tasmax",
@@ -520,13 +492,12 @@
             "valid_min":""
         },
         "tasmin":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: mean time: minimum",
             "comment":"minimum near-surface (usually, 2 meter) air temperature (add cell_method attribute 'time: min')",
             "dimensions":"longitude latitude time height2m",
             "frequency":"day",
             "long_name":"Daily Minimum Near-Surface Air Temperature",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"tasmin",
@@ -538,13 +509,12 @@
             "valid_min":""
         },
         "tslsi":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean (comment: over land and sea ice)",
             "comment":"Surface temperature of all surfaces except open ocean.",
             "dimensions":"longitude latitude time",
             "frequency":"day",
             "long_name":"Surface Temperature Where Land or Sea Ice",
-            "modeling_realm":"land",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"tslsi",
@@ -556,13 +526,12 @@
             "valid_min":""
         },
         "ua":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"time: mean",
             "comment":"",
             "dimensions":"longitude latitude plev8 time",
             "frequency":"day",
             "long_name":"Eastward Wind",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"ua",
@@ -574,13 +543,12 @@
             "valid_min":""
         },
         "uas":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"Eastward component of the near-surface (usually, 10 meters)  wind",
             "dimensions":"longitude latitude time height10m",
             "frequency":"day",
             "long_name":"Eastward Near-Surface Wind",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"uas",
@@ -592,13 +560,12 @@
             "valid_min":""
         },
         "va":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"time: mean",
             "comment":"",
             "dimensions":"longitude latitude plev8 time",
             "frequency":"day",
             "long_name":"Northward Wind",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"va",
@@ -610,13 +577,12 @@
             "valid_min":""
         },
         "vas":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"Northward component of the near surface wind",
             "dimensions":"longitude latitude time height10m",
             "frequency":"day",
             "long_name":"Northward Near-Surface Wind",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"vas",
@@ -628,13 +594,12 @@
             "valid_min":""
         },
         "wap":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"time: mean",
             "comment":"Omega (vertical velocity in pressure coordinates, positive downwards)",
             "dimensions":"longitude latitude plev8 time",
             "frequency":"day",
             "long_name":"omega (=dp/dt)",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"wap",
@@ -646,13 +611,12 @@
             "valid_min":""
         },
         "zg":{
-            "cell_measures":"area: areacella",
+            "cell_measures":"",
             "cell_methods":"time: mean",
             "comment":"",
             "dimensions":"longitude latitude plev8 time",
             "frequency":"day",
             "long_name":"Geopotential Height",
-            "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"zg",
