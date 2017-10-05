@@ -60,15 +60,14 @@ PJD 21 Sep 2017     - Register new variable pme https://github.com/PCMDI/obs4MIP
 PJD 25 Sep 2017     - Updated cell_methods to maintain consistency for new registations https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/95
 PJG 27 Sep 2017     - added NCEI RC
 PJG 28 Sep 2017     - added DWD RC
+PJD  4 Oct 2017     - Revise Amon variable ttbr https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/115
 
 @author: durack1
 """
 
 #%% Import statements
 import copy,gc,json,os,shutil,ssl,subprocess,time
-from durolib import readJsonCreateDict
-#from durolib import getGitInfo
-import sys
+from durolib import readJsonCreateDict ; #getGitInfo
 
 #%% Determine path
 homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
@@ -209,12 +208,12 @@ Amon['variable_entry']['ttbr']['long_name'] = 'Top of Atmosphere Brightness Temp
 Amon['variable_entry']['ttbr']['ok_max_mean_abs'] = ''
 Amon['variable_entry']['ttbr']['ok_min_mean_abs'] = ''
 Amon['variable_entry']['ttbr']['out_name'] = 'ttbr'
-Amon['variable_entry']['ttbr']['positive'] = 'time: mean'
+Amon['variable_entry']['ttbr']['positive'] = ''
 Amon['variable_entry']['ttbr']['standard_name'] = 'toa_brightness_temperature'
 Amon['variable_entry']['ttbr']['type'] = 'real'
 Amon['variable_entry']['ttbr']['units'] = 'K'
-Amon['variable_entry']['ttbr']['valid_max'] = '375.0'
-Amon['variable_entry']['ttbr']['valid_min'] = '140.0'
+Amon['variable_entry']['ttbr']['valid_max'] = ''
+Amon['variable_entry']['ttbr']['valid_min'] = ''
 # Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/16
 Lmon['variable_entry'][u'ndvi'] = {}
 Lmon['variable_entry']['ndvi']['cell_measures'] = ''
@@ -616,33 +615,9 @@ tmp = [['source_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-table
 source_id = readJsonCreateDict(tmp)
 source_id = source_id.get('source_id')
 
-#  ADD source_variables to existing keys 
-
-all_current_keys =  source_id['source_id'].keys()
-
-# contents of all_current_keys
-#[u'NOAA-NCEI-FAPAR-4-0', u'CMSAF-CLARA-A-2-0', u'NOAA-NCEI-AVHRR-NDVI-4-0', u'NOAA-NCEI-SeaWinds-1-2', u'CMSAF-HOAPS-4-0', u'NOAA-NCEI-PERSIANN-1-1', u'NOAA-NCEI-LAI-4-0', u'REMSS-PRW-6-6-0', u'NOAA-NCEI-GridSat-4-0', u'CMSAF-SARAH-2.0', u'NOAA-NCEI-ERSST-4-0']
-
-for k in all_current_keys:
-  if k == 'NOAA-NCEI-FAPAR-4-0': source_id['source_id'][k]['source_variables'] = ['fapar'] 
-  if k == 'CMSAF-CLARA-A-2-0': source_id['source_id'][k]['source_variables'] = ['clCLARA', 'cltCLARA', 'clwCLARA', 'clwtCLARA', 'pctCLARA', 'clivi', 'clwvi', 'rsds', 'rsdscs'] 
-  if k == 'NOAA-NCEI-AVHRR-NDVI-4-0': source_id['source_id'][k]['source_variables'] = ['ndvi']  
-  if k == 'NOAA-NCEI-SeaWinds-1-2': source_id['source_id'][k]['source_variables'] = ['uas','vas','sfcWind']
-  if k == 'CMSAF-HOAPS-4-0': source_id['source_id'][k]['source_variables'] = ['pme', 'sfcWind', 'pr','huss','hfls', 'evspsbl', 'hfss', 'prw']
-  if k == 'NOAA-NCEI-PERSIANN-1-1': source_id['source_id'][k]['source_variables'] = ['pr']
-  if k == 'NOAA-NCEI-LAI-4-0': source_id['source_id'][k]['source_variables'] = ['lai']
-  if k == 'REMSS-PRW-6-6-0': source_id['source_id'][k]['source_variables'] = ['prw']
-  if k == 'NOAA-NCEI-GridSat-4-0': source_id['source_id'][k]['source_variables'] = ['ttbr']
-  if k == 'CMSAF-SARAH-2.0': source_id['source_id'][k]['source_variables'] = ['rsds']
-  if k == 'NOAA-NCEI-ERSST-4-0': source_id['source_id'][k]['source_variables'] = ['tos']
-#  if k != 'NOAA-NCEI-FAPAR-4-0': source_id['source_id'][k]['source_variables'] = ['MISSING']
-#w = sys.stdin.readline()
-
-# END ENTRIES 
-
 #==============================================================================
 # Example new source_id entry
-#key = 'REMSS-PRW-6-6-0' 
+#key = 'REMSS-PRW-6-6-0'
 #source_id['source_id'][key] = {}
 #source_id['source_id'][key]['source_description'] = 'Water Vapor Path'
 #source_id['source_id'][key]['institution_id'] = 'RSS'
@@ -841,12 +816,13 @@ del(coordinate,count,formula_terms,frequency,grid_label,homePath,institution_id,
 #%% Generate zip archive
 # Add machine local 7za to path - solve for @gleckler1
 env7za = os.environ.copy()
-if 'oceanonly' in os.environ.get('HOSTNAME'):
-    env7za['PATH'] = env7za['PATH'] + ':/export/durack1/bin/downloads/p7zip9.38.1/150916_build/p7zip_9.38.1/bin'
-elif 'crunchy' in os.environ.get('HOSTNAME'):
-    env7za['PATH'] = env7za['PATH'] + ':/export/durack1/bin/downloads/p7zip9.20.1/130123_build/p7zip_9.20.1/bin'
-else:
-    print 'No 7za path found'
+if os.environ.get('USER') == 'gleckler1':
+    if 'oceanonly' in os.environ.get('HOSTNAME'):
+        env7za['PATH'] = env7za['PATH'] + ':/export/durack1/bin/downloads/p7zip9.38.1/150916_build/p7zip_9.38.1/bin'
+    elif 'crunchy' in os.environ.get('HOSTNAME'):
+        env7za['PATH'] = env7za['PATH'] + ':/export/durack1/bin/downloads/p7zip9.20.1/130123_build/p7zip_9.20.1/bin'
+    else:
+        print 'No 7za path found'
 
 # Cleanup rogue files
 os.chdir(demoPath)

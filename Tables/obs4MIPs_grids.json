@@ -1,6 +1,6 @@
 {
     "Header":{
-        "#dataRequest_specs_version":"01.00.15",
+        "#dataRequest_specs_version":"01.00.16",
         "Conventions":"CF-1.7 ODS-2.1",
         "cmor_version":"3.2",
         "data_specs_version":"2.1.0",
