@@ -60,6 +60,7 @@ PJD 21 Sep 2017     - Register new variable pme https://github.com/PCMDI/obs4MIP
 PJD 25 Sep 2017     - Updated cell_methods to maintain consistency for new registations https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/95
 PJG 27 Sep 2017     - added NCEI RC
 PJG 28 Sep 2017     - added DWD RC
+PJD  4 Oct 2017     - Revise Amon variable ttbr https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/115
 PJD  4 Oct 2017     - Revise cell_methods for numerous DWD contributed variables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/72
 
 @author: durack1
@@ -67,7 +68,7 @@ PJD  4 Oct 2017     - Revise cell_methods for numerous DWD contributed variables
 
 #%% Import statements
 import copy,gc,json,os,shutil,ssl,subprocess,time
-from durolib import readJsonCreateDict ; # getGitInfo
+from durolib import readJsonCreateDict ; #getGitInfo
 
 #%% Determine path
 homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
@@ -208,12 +209,12 @@ Amon['variable_entry']['ttbr']['long_name'] = 'Top of Atmosphere Brightness Temp
 Amon['variable_entry']['ttbr']['ok_max_mean_abs'] = ''
 Amon['variable_entry']['ttbr']['ok_min_mean_abs'] = ''
 Amon['variable_entry']['ttbr']['out_name'] = 'ttbr'
-Amon['variable_entry']['ttbr']['positive'] = 'time: mean'
+Amon['variable_entry']['ttbr']['positive'] = ''
 Amon['variable_entry']['ttbr']['standard_name'] = 'toa_brightness_temperature'
 Amon['variable_entry']['ttbr']['type'] = 'real'
 Amon['variable_entry']['ttbr']['units'] = 'K'
-Amon['variable_entry']['ttbr']['valid_max'] = '375.0'
-Amon['variable_entry']['ttbr']['valid_min'] = '140.0'
+Amon['variable_entry']['ttbr']['valid_max'] = ''
+Amon['variable_entry']['ttbr']['valid_min'] = ''
 # Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/16
 Lmon['variable_entry'][u'ndvi'] = {}
 Lmon['variable_entry']['ndvi']['cell_measures'] = ''
@@ -617,7 +618,7 @@ source_id = source_id.get('source_id')
 
 #==============================================================================
 # Example new source_id entry
-#key = 'REMSS-PRW-6-6-0' 
+#key = 'REMSS-PRW-6-6-0'
 #source_id['source_id'][key] = {}
 #source_id['source_id'][key]['source_description'] = 'Water Vapor Path'
 #source_id['source_id'][key]['institution_id'] = 'RSS'

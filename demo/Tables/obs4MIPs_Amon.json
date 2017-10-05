@@ -1351,12 +1351,12 @@
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"ttbr",
-            "positive":"time: mean",
+            "positive":"",
             "standard_name":"toa_brightness_temperature",
             "type":"real",
             "units":"K",
-            "valid_max":"375.0",
-            "valid_min":"140.0"
+            "valid_max":"",
+            "valid_min":""
         },
         "ua":{
             "cell_measures":"",
