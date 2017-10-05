@@ -204,7 +204,7 @@
         },
         "clCCI":{
             "cell_measures":"",
-            "cell_methods":"area: mean time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Percentage cloud cover in optical depth categories.",
             "dimensions":"longitude latitude plev7c tau time",
             "frequency":"mon",
@@ -289,7 +289,7 @@
         },
         "cltCCI":{
             "cell_measures":"",
-            "cell_methods":"area: mean time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Total cloud area fraction for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Includes both large-scale and convective cloud.",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -340,7 +340,7 @@
         },
         "clwCCI":{
             "cell_measures":"",
-            "cell_methods":"area: mean time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Percentage liquid cloud cover in optical depth categories.",
             "dimensions":"longitude latitude plev7c tau time",
             "frequency":"mon",
@@ -374,7 +374,7 @@
         },
         "clwtCCI":{
             "cell_measures":"",
-            "cell_methods":"area: mean time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -799,7 +799,7 @@
         },
         "pctCCI":{
             "cell_measures":"",
-            "cell_methods":"area: mean time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -833,7 +833,7 @@
         },
         "pme":{
             "cell_measures":"",
-            "cell_methods":"area: mean time: mean",
+            "cell_methods":"area: time: mean",
             "comment":"Net flux of water (in all phases) between the atmosphere and underlying surface including vegetation), mainly resulting from the difference of precipitation and evaporation",
             "dimensions":"longitude latitude time",
             "frequency":"mon",

@@ -61,6 +61,7 @@ PJD 25 Sep 2017     - Updated cell_methods to maintain consistency for new regis
 PJG 27 Sep 2017     - added NCEI RC
 PJG 28 Sep 2017     - added DWD RC
 PJD  4 Oct 2017     - Revise Amon variable ttbr https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/115
+PJD  4 Oct 2017     - Revise cell_methods for numerous DWD contributed variables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/72
 
 @author: durack1
 """
@@ -252,7 +253,7 @@ Lmon['variable_entry']['fapar']['valid_min'] = '0.0'
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'clCCI'] = {}
 Amon['variable_entry']['clCCI']['cell_measures'] = ''
-Amon['variable_entry']['clCCI']['cell_methods'] = 'area: mean time: mean'
+Amon['variable_entry']['clCCI']['cell_methods'] = 'area: time: mean'
 Amon['variable_entry']['clCCI']['comment'] = 'Percentage cloud cover in optical depth categories.'
 Amon['variable_entry']['clCCI']['dimensions'] = 'longitude latitude plev7c tau time'
 Amon['variable_entry']['clCCI']['frequency'] = 'mon'
@@ -286,7 +287,7 @@ Amon['variable_entry']['clCLARA']['valid_min'] = ''
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'cltCCI'] = {}
 Amon['variable_entry']['cltCCI']['cell_measures'] = ''
-Amon['variable_entry']['cltCCI']['cell_methods'] = 'area: mean time: mean'
+Amon['variable_entry']['cltCCI']['cell_methods'] = 'area: time: mean'
 Amon['variable_entry']['cltCCI']['comment'] = 'Total cloud area fraction for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Includes both large-scale and convective cloud.'
 Amon['variable_entry']['cltCCI']['dimensions'] = 'longitude latitude time'
 Amon['variable_entry']['cltCCI']['frequency'] = 'mon'
@@ -320,7 +321,7 @@ Amon['variable_entry']['cltCLARA']['valid_min'] = ''
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'clwCCI'] = {}
 Amon['variable_entry']['clwCCI']['cell_measures'] = ''
-Amon['variable_entry']['clwCCI']['cell_methods'] = 'area: mean time: mean'
+Amon['variable_entry']['clwCCI']['cell_methods'] = 'area: time: mean'
 Amon['variable_entry']['clwCCI']['comment'] = 'Percentage liquid cloud cover in optical depth categories.'
 Amon['variable_entry']['clwCCI']['dimensions'] = 'longitude latitude plev7c tau time'
 Amon['variable_entry']['clwCCI']['frequency'] = 'mon'
@@ -354,7 +355,7 @@ Amon['variable_entry']['clwCLARA']['valid_min'] = ''
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'clwtCCI'] = {}
 Amon['variable_entry']['clwtCCI']['cell_measures'] = ''
-Amon['variable_entry']['clwtCCI']['cell_methods'] = 'area: mean time: mean'
+Amon['variable_entry']['clwtCCI']['cell_methods'] = 'area: time: mean'
 Amon['variable_entry']['clwtCCI']['comment'] = ''
 Amon['variable_entry']['clwtCCI']['dimensions'] = 'longitude latitude time'
 Amon['variable_entry']['clwtCCI']['frequency'] = 'mon'
@@ -388,7 +389,7 @@ Amon['variable_entry']['clwtCLARA']['valid_min'] = ''
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'pctCCI'] = {}
 Amon['variable_entry']['pctCCI']['cell_measures'] = ''
-Amon['variable_entry']['pctCCI']['cell_methods'] = 'area: mean time: mean'
+Amon['variable_entry']['pctCCI']['cell_methods'] = 'area: time: mean'
 Amon['variable_entry']['pctCCI']['comment'] = ''
 Amon['variable_entry']['pctCCI']['dimensions'] = 'longitude latitude time'
 Amon['variable_entry']['pctCCI']['frequency'] = 'mon'
@@ -422,7 +423,7 @@ Amon['variable_entry']['pctCLARA']['valid_min'] = ''
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/72
 Amon['variable_entry'][u'pme'] = {}
 Amon['variable_entry']['pme']['cell_measures'] = ''
-Amon['variable_entry']['pme']['cell_methods'] = 'area: mean time: mean'
+Amon['variable_entry']['pme']['cell_methods'] = 'area: time: mean'
 Amon['variable_entry']['pme']['comment'] = ('Net flux of water (in all phases) between the atmosphere and underlying surface '
                                             'including vegetation), mainly resulting from the difference of precipitation '
                                             'and evaporation')
