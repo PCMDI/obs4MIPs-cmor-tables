@@ -251,6 +251,7 @@ Lmon['variable_entry']['fapar']['type'] = 'real'
 Lmon['variable_entry']['fapar']['units'] = '1'
 Lmon['variable_entry']['fapar']['valid_max'] = '1.0'
 Lmon['variable_entry']['fapar']['valid_min'] = '0.0'
+#####################################################################################################################
 # DWD cloud variables (CM SAF CLARA & ESA Cloud_CCI) ...
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'clCCI'] = {}
