@@ -1,7 +1,7 @@
 {
     "frequency":{
         "1hr":"sampled hourly",
-        "1hrCM":"monthly climatology of diurnal cycle computed from hourly samples",
+        "1hrCM":"monthly-mean diurnal cycle resolving each day into 1-hour means",
         "1hrPt":"sampled hourly, at specified time point within an hour",
         "3hr":"sampled every 3 hours",
         "3hrPt":"sampled 3 hourly, at specified time point within the time period",

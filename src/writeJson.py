@@ -63,6 +63,7 @@ PJG 28 Sep 2017     - added DWD RC
 PJD  4 Oct 2017     - Revise Amon variable ttbr https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/115
 PJD  4 Oct 2017     - Revise cell_methods for numerous DWD contributed variables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/72
 PJD  4 Oct 2017     - Update Aday table cell_measures entries https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/120
+PJG  3 Nov 2017     - finish DWD RC
 
 @author: durack1
 """
