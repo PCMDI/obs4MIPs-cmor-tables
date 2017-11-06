@@ -245,10 +245,10 @@
             },
             "NOAA-NCEI-GridSat-4-0":{
                 "region":"global",
-                "source":"NOAA-NCEI-GridSat 2.1 (2015): Gridded Satellite ISCCP B1 11 Micron Brightness Temperature",
+                "source":"NOAA-NCEI-GridSat 4.0 (2015): Gridded Satellite ISCCP B1 11 Micron Brightness Temperature",
                 "source_label":"NOAA-NCEI-GridSat",
                 "source_type":"satellite_retrieval",
-                "source_version_number":"2.1"
+                "source_version_number":"4.0"
             },
             "NOAA-NCEI-LAI-4-0":{
                 "region":"global_land",
@@ -277,6 +277,15 @@
                 "source_label":"REMSS-PRW",
                 "source_type":"satellite_blended",
                 "source_version_number":"6.6.0"
+            },
+            "variable_entry":{
+                "region":[
+                    "global"
+                ],
+                "source":"ESACCI-CLOUD-MERIS-AATSR 2.0 (2017): Cloud properties derived from MERIS and AATSR (aboard ENVISAT) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.",
+                "source_label":"ESACCI-CLOUD-MERIS-AATSR",
+                "source_type":"satellite_retrival",
+                "source_version_number":"2.0"
             }
         },
         "source_type":[
