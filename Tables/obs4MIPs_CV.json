@@ -3,7 +3,7 @@
         "activity_id":"obs4MIPs",
         "frequency":{
             "1hr":"sampled hourly",
-            "1hrCM":"monthly climatology of diurnal cycle computed from hourly samples",
+            "1hrCM":"monthly-mean diurnal cycle resolving each day into 1-hour means",
             "1hrPt":"sampled hourly, at specified time point within an hour",
             "3hr":"sampled every 3 hours",
             "3hrPt":"sampled 3 hourly, at specified time point within the time period",
@@ -222,6 +222,42 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
             },
+            "ESACCI-CLOUD-ATSR2-AATSR-2-0":{
+                "region":[
+                    "global"
+                ],
+                "source":"ESACCI-CLOUD-ATSR2-AATSR 2.0 (2017): Cloud properties derived from ATSR2 and AATSR (aboard ERS2 and ENVISAT) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.",
+                "source_label":"ESACCI-CLOUD-ATSR2-AATSR",
+                "source_type":"satellite_retrival",
+                "source_version_number":"2.0"
+            },
+            "ESACCI-CLOUD-AVHRR-AM-2-0":{
+                "region":[
+                    "global"
+                ],
+                "source":"ESACCI-CLOUD-AVHRR-AM 2.0 (2017): Cloud properties derived from AVHRR (aboard NOAA and MetOp AM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets",
+                "source_label":"ESACCI-CLOUD-AVHRR-AM",
+                "source_type":"satellite_retrival",
+                "source_version_number":"2.0"
+            },
+            "ESACCI-CLOUD-AVHRR-PM-2-0":{
+                "region":[
+                    "global"
+                ],
+                "source":"ESACCI-CLOUD-AVHRR-PM 2.0 (2017): Cloud properties derived from AVHRR (aboard NOAA and MetOp PM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets",
+                "source_label":"ESACCI-CLOUD-AVHRR-PM",
+                "source_type":"satellite_retrival",
+                "source_version_number":"2.0"
+            },
+            "ESACCI-CLOUD-MERIS-AATSR-2-0":{
+                "region":[
+                    "global"
+                ],
+                "source":"ESACCI-CLOUD-MERIS-AATSR 2.0 (2017): Cloud properties derived from MERIS and AATSR (aboard ENVISAT) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.",
+                "source_label":"ESACCI-CLOUD-MERIS-AATSR",
+                "source_type":"satellite_retrival",
+                "source_version_number":"2.0"
+            },
             "NOAA-NCEI-AVHRR-NDVI-4-0":{
                 "region":"global_land",
                 "source":"NOAA-NCEI-AVHRR-NDVI 4.0 (2013): Normalized Difference Vegetation Index",
@@ -245,10 +281,10 @@
             },
             "NOAA-NCEI-GridSat-4-0":{
                 "region":"global",
-                "source":"NOAA-NCEI-GridSat 2.1 (2015): Gridded Satellite ISCCP B1 11 Micron Brightness Temperature",
+                "source":"NOAA-NCEI-GridSat 4.0 (2015): Gridded Satellite ISCCP B1 11 Micron Brightness Temperature",
                 "source_label":"NOAA-NCEI-GridSat",
                 "source_type":"satellite_retrieval",
-                "source_version_number":"2.1"
+                "source_version_number":"4.0"
             },
             "NOAA-NCEI-LAI-4-0":{
                 "region":"global_land",
