@@ -222,6 +222,42 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
             },
+            "ESACCI-CLOUD-ATSR2-AATSR-2-0":{
+                "region":[
+                    "global"
+                ],
+                "source":"ESACCI-CLOUD-ATSR2-AATSR 2.0 (2017): Cloud properties derived from ATSR2 and AATSR (aboard ERS2 and ENVISAT) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.",
+                "source_label":"ESACCI-CLOUD-ATSR2-AATSR",
+                "source_type":"satellite_retrival",
+                "source_version_number":"2.0"
+            },
+            "ESACCI-CLOUD-AVHRR-AM-2-0":{
+                "region":[
+                    "global"
+                ],
+                "source":"ESACCI-CLOUD-AVHRR-AM 2.0 (2017): Cloud properties derived from AVHRR (aboard NOAA and MetOp AM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets",
+                "source_label":"ESACCI-CLOUD-AVHRR-AM",
+                "source_type":"satellite_retrival",
+                "source_version_number":"2.0"
+            },
+            "ESACCI-CLOUD-AVHRR-PM-2-0":{
+                "region":[
+                    "global"
+                ],
+                "source":"ESACCI-CLOUD-AVHRR-PM 2.0 (2017): Cloud properties derived from AVHRR (aboard NOAA and MetOp PM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets",
+                "source_label":"ESACCI-CLOUD-AVHRR-PM",
+                "source_type":"satellite_retrival",
+                "source_version_number":"2.0"
+            },
+            "ESACCI-CLOUD-MERIS-AATSR-2-0":{
+                "region":[
+                    "global"
+                ],
+                "source":"ESACCI-CLOUD-MERIS-AATSR 2.0 (2017): Cloud properties derived from MERIS and AATSR (aboard ENVISAT) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.",
+                "source_label":"ESACCI-CLOUD-MERIS-AATSR",
+                "source_type":"satellite_retrival",
+                "source_version_number":"2.0"
+            },
             "NOAA-NCEI-AVHRR-NDVI-4-0":{
                 "region":"global_land",
                 "source":"NOAA-NCEI-AVHRR-NDVI 4.0 (2013): Normalized Difference Vegetation Index",
@@ -277,15 +313,6 @@
                 "source_label":"REMSS-PRW",
                 "source_type":"satellite_blended",
                 "source_version_number":"6.6.0"
-            },
-            "variable_entry":{
-                "region":[
-                    "global"
-                ],
-                "source":"ESACCI-CLOUD-MERIS-AATSR 2.0 (2017): Cloud properties derived from MERIS and AATSR (aboard ENVISAT) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.",
-                "source_label":"ESACCI-CLOUD-MERIS-AATSR",
-                "source_type":"satellite_retrival",
-                "source_version_number":"2.0"
             }
         },
         "source_type":[
