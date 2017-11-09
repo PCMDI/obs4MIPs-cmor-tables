@@ -67,6 +67,7 @@ PJG  5 Nov 2017     - Continuing DWD RC
 PJD  9 Nov 2017     - Review source_id format for regions and variables; Fix inconsistencies https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/133
 PJD  9 Nov 2017     - Added source_id validation for valid characters following https://goo.gl/jVZsQl
 PJD  9 Nov 2017     - Updated obs4MIPs_CV.json region format following CMOR3.2.8 release https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/136
+PJD  9 Nov 2017     - Updated source_type format adding descriptions https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/98
 
 @author: durack1
 """
@@ -654,12 +655,11 @@ source_id = source_id.get('source_id')
 #source_id['source_id'][key] = source_id['source_id'].pop('CMSAF-SARAH-2-0')
 
 #%% Source type
-source_type = [
- 'gridded_insitu',
- 'reanalysis',
- 'satellite_blended',
- 'satellite_retrieval'
-] ;
+source_type = {}
+source_type['gridded_insitu'] = 'gridded product based on measurements collected from in-situ instruments'
+source_type['reanalysis'] = 'gridded product generated from a model reanalysis based on in-situ instruments and possibly satellite measurements'
+source_type['satellite_blended'] = 'gridded product based on both in-situ instruments and satellite measurements'
+source_type['satellite_retrieval'] = 'gridded product based on satellite measurements'
 
 #%% Table ID
 table_id = [
