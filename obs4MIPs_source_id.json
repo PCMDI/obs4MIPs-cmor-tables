@@ -2,21 +2,23 @@
     "source_id":{
         "CMSAF-CLARA-A-2-0":{
             "institution_id":"DWD",
-            "region":"global",
+            "region":[
+                "global"
+            ],
             "release_year":"2017",
             "source_description":"CM SAF cLoud, Albedo and surface RAdiation dataset from AVHRR data",
             "source_id":"CMSAF-CLARA-A-2-0",
             "source_label":"CMSAF-CLARA-A",
-            "source_name":"CMSAF-CLARA-A",
+            "source_name":"CMSAF CLARA A",
             "source_type":"satellite_retrieval",
             "source_variables":[
                 "clCLARA",
+                "clivi",
                 "cltCLARA",
                 "clwCLARA",
                 "clwtCLARA",
-                "pctCLARA",
-                "clivi",
                 "clwvi",
+                "pctCLARA",
                 "rsds",
                 "rsdscs"
             ],
@@ -24,7 +26,9 @@
         },
         "CMSAF-HOAPS-4-0":{
             "institution_id":"DWD",
-            "region":"global_ocean",
+            "region":[
+                "global_ocean"
+            ],
             "release_year":"2017",
             "source_description":"Hamburg Ocean Atmosphere Parameters and fluxes from Satellite data, based on SSM/I and SSMIS aboard DMSP",
             "source_id":"CMSAF-HOAPS-4-0",
@@ -32,18 +36,18 @@
             "source_name":"CMSAF HOAPS",
             "source_type":"satellite_retrieval",
             "source_variables":[
-                "pme",
-                "sfcWind",
-                "pr",
-                "huss",
-                "hfls",
                 "evspsbl",
+                "hfls",
                 "hfss",
-                "prw"
+                "huss",
+                "pme",
+                "pr",
+                "prw",
+                "sfcWind"
             ],
             "source_version_number":"4.0"
         },
-        "CMSAF-SARAH-2.0":{
+        "CMSAF-SARAH-2-0":{
             "institution_id":"DWD",
             "region":[
                 "africa",
@@ -53,8 +57,8 @@
             "release_year":"2017",
             "source_description":"Surface solAr RAdiation data set - Heliosat, based on MVIRI/SEVIRI aboard METEOSAT",
             "source_id":"CMSAF-SARAH-2.0",
-            "source_label":"CMSAF-HOAPS",
-            "source_name":"CMSAF HOAPS",
+            "source_label":"CMSAF-SARAH",
+            "source_name":"CMSAF SARAH",
             "source_type":"satellite_retrieval",
             "source_variables":[
                 "rsds"
@@ -70,16 +74,16 @@
             "source_description":"Cloud properties derived from ATSR2 and AATSR (aboard ERS2 and ENVISAT) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.",
             "source_id":"ESACCI-CLOUD-ATSR2-AATSR-2-0",
             "source_label":"ESACCI-CLOUD-ATSR2-AATSR",
-            "source_name":"ESACCI-CLOUD-ATSR2-AATSR",
-            "source_type":"satellite_retrival",
+            "source_name":"ESACCI CLOUD ATSR2 AATSR",
+            "source_type":"satellite_retrieval",
             "source_variables":[
                 "clCCI",
+                "clivi",
                 "cltCCI",
                 "clwCCI",
                 "clwtCCI",
-                "pctCCI",
-                "clivi",
-                "clwvi"
+                "clwvi",
+                "pctCCI"
             ],
             "source_version_number":"2.0"
         },
@@ -92,16 +96,16 @@
             "source_description":"Cloud properties derived from AVHRR (aboard NOAA and MetOp AM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets",
             "source_id":"ESACCI-CLOUD-AVHRR-AM-2-0",
             "source_label":"ESACCI-CLOUD-AVHRR-AM",
-            "source_name":"ESACCI-CLOUD-AVHRR-AM",
-            "source_type":"satellite_retrival",
+            "source_name":"ESACCI CLOUD AVHRR AM",
+            "source_type":"satellite_retrieval",
             "source_variables":[
                 "clCCI",
+                "clivi",
                 "cltCCI",
                 "clwCCI",
                 "clwtCCI",
-                "pctCCI",
-                "clivi",
-                "clwvi"
+                "clwvi",
+                "pctCCI"
             ],
             "source_version_number":"2.0"
         },
@@ -114,16 +118,16 @@
             "source_description":"Cloud properties derived from AVHRR (aboard NOAA and MetOp PM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets",
             "source_id":"ESACCI-CLOUD-AVHRR-PM-2-0",
             "source_label":"ESACCI-CLOUD-AVHRR-PM",
-            "source_name":"ESACCI-CLOUD-AVHRR-PM",
-            "source_type":"satellite_retrival",
+            "source_name":"ESACCI CLOUD AVHRR PM",
+            "source_type":"satellite_retrieval",
             "source_variables":[
                 "clCCI",
+                "clivi",
                 "cltCCI",
                 "clwCCI",
                 "clwtCCI",
-                "pctCCI",
-                "clivi",
-                "clwvi"
+                "clwvi",
+                "pctCCI"
             ],
             "source_version_number":"2.0"
         },
@@ -136,22 +140,24 @@
             "source_description":"Cloud properties derived from MERIS and AATSR (aboard ENVISAT) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.",
             "source_id":"ESACCI-CLOUD-MERIS-AATSR-2-0",
             "source_label":"ESACCI-CLOUD-MERIS-AATSR",
-            "source_name":"ESACCI-CLOUD-MERIS-AATSR",
-            "source_type":"satellite_retrival",
+            "source_name":"ESACCI CLOUD MERIS AATSR",
+            "source_type":"satellite_retrieval",
             "source_variables":[
                 "clCCI",
+                "clivi",
                 "cltCCI",
                 "clwCCI",
                 "clwtCCI",
-                "pctCCI",
-                "clivi",
-                "clwvi"
+                "clwvi",
+                "pctCCI"
             ],
             "source_version_number":"2.0"
         },
         "NOAA-NCEI-AVHRR-NDVI-4-0":{
             "institution_id":"NOAA-NCEI",
-            "region":"global_land",
+            "region":[
+                "global_land"
+            ],
             "release_year":"2013",
             "source_description":"Normalized Difference Vegetation Index",
             "source_id":"NOAA-NCEI-AVHRR-NDVI-4-0",
@@ -165,7 +171,9 @@
         },
         "NOAA-NCEI-ERSST-4-0":{
             "institution_id":"NOAA-NCEI",
-            "region":"global_ocean",
+            "region":[
+                "global_ocean"
+            ],
             "release_year":"2015",
             "source_description":"Extended Reconstructed Sea Surface Temperatures",
             "source_id":"NOAA-NCEI-ERSST-4-0",
@@ -179,7 +187,9 @@
         },
         "NOAA-NCEI-FAPAR-4-0":{
             "institution_id":"NOAA-NCEI",
-            "region":"global_land",
+            "region":[
+                "global_land"
+            ],
             "release_year":"2014",
             "source_description":"AVHRR Fraction of Absorbed Photosynthetically Active Radiation",
             "source_id":"NOAA-NCEI-FAPAR-4-0",
@@ -193,7 +203,9 @@
         },
         "NOAA-NCEI-GridSat-4-0":{
             "institution_id":"NOAA-NCEI",
-            "region":"global",
+            "region":[
+                "global"
+            ],
             "release_year":"2015",
             "source_description":"Gridded Satellite ISCCP B1 11 Micron Brightness Temperature",
             "source_id":"NOAA-NCEI-GridSat-4-0",
@@ -207,7 +219,9 @@
         },
         "NOAA-NCEI-LAI-4-0":{
             "institution_id":"NOAA-NCEI",
-            "region":"global_land",
+            "region":[
+                "global_land"
+            ],
             "release_year":"2014",
             "source_description":"AVHRR Leaf Area Index",
             "source_id":"NOAA-NCEI-LAI-4-0",
@@ -221,7 +235,9 @@
         },
         "NOAA-NCEI-PERSIANN-1-1":{
             "institution_id":"NOAA-NCEI",
-            "region":"global",
+            "region":[
+                "global"
+            ],
             "release_year":"2014",
             "source_description":"Precipitation Estimation from Remotely Sensed Information using Artificial Neural Network",
             "source_id":"NOAA-NCEI-PERSIANN-1-1",
@@ -235,7 +251,9 @@
         },
         "NOAA-NCEI-SeaWinds-1-2":{
             "institution_id":"NOAA-NCEI",
-            "region":"global_ocean",
+            "region":[
+                "global_ocean"
+            ],
             "release_year":"2008",
             "source_description":"Blended Sea Surface Winds",
             "source_id":"NOAA-NCEI-SeaWinds-1-2",
@@ -243,15 +261,17 @@
             "source_name":"NOAA NCEI SeaWinds",
             "source_type":"satellite_blended",
             "source_variables":[
+                "sfcWind",
                 "uas",
-                "vas",
-                "sfcWind"
+                "vas"
             ],
             "source_version_number":"1.2"
         },
         "REMSS-PRW-6-6-0":{
             "institution_id":"RSS",
-            "region":"global",
+            "region":[
+                "global"
+            ],
             "release_year":"2017",
             "source_description":"Water Vapor Path",
             "source_id":"REMSS-PRW-6-6-0",
