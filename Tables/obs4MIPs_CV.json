@@ -198,27 +198,31 @@
         ],
         "source_id":{
             "CMSAF-CLARA-A-2-0":{
-                "region":"global",
+                "region":[
+                    "global"
+                ],
                 "source":"CMSAF-CLARA-A 2.0 (2017): CM SAF cLoud, Albedo and surface RAdiation dataset from AVHRR data",
                 "source_label":"CMSAF-CLARA-A",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
             },
             "CMSAF-HOAPS-4-0":{
-                "region":"global_ocean",
+                "region":[
+                    "global_ocean"
+                ],
                 "source":"CMSAF-HOAPS 4.0 (2017): Hamburg Ocean Atmosphere Parameters and fluxes from Satellite data, based on SSM/I and SSMIS aboard DMSP",
                 "source_label":"CMSAF-HOAPS",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"4.0"
             },
-            "CMSAF-SARAH-2.0":{
+            "CMSAF-SARAH-2-0":{
                 "region":[
                     "africa",
                     "atlantic_ocean",
                     "europe"
                 ],
-                "source":"CMSAF-HOAPS 2.0 (2017): Surface solAr RAdiation data set - Heliosat, based on MVIRI/SEVIRI aboard METEOSAT",
-                "source_label":"CMSAF-HOAPS",
+                "source":"CMSAF-SARAH 2.0 (2017): Surface solAr RAdiation data set - Heliosat, based on MVIRI/SEVIRI aboard METEOSAT",
+                "source_label":"CMSAF-SARAH",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
             },
@@ -259,56 +263,72 @@
                 "source_version_number":"2.0"
             },
             "NOAA-NCEI-AVHRR-NDVI-4-0":{
-                "region":"global_land",
+                "region":[
+                    "global_land"
+                ],
                 "source":"NOAA-NCEI-AVHRR-NDVI 4.0 (2013): Normalized Difference Vegetation Index",
                 "source_label":"NOAA-NCEI-AVHRR-NDVI",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"4.0"
             },
             "NOAA-NCEI-ERSST-4-0":{
-                "region":"global_ocean",
+                "region":[
+                    "global_ocean"
+                ],
                 "source":"NOAA-NCEI-ERSST 4.0 (2015): Extended Reconstructed Sea Surface Temperatures",
                 "source_label":"NOAA-NCEI-ERSST",
                 "source_type":"gridded_insitu",
                 "source_version_number":"4.0"
             },
             "NOAA-NCEI-FAPAR-4-0":{
-                "region":"global_land",
+                "region":[
+                    "global_land"
+                ],
                 "source":"NOAA-NCEI-FAPAR 4.0 (2014): AVHRR Fraction of Absorbed Photosynthetically Active Radiation",
                 "source_label":"NOAA-NCEI-FAPAR",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"4.0"
             },
             "NOAA-NCEI-GridSat-4-0":{
-                "region":"global",
+                "region":[
+                    "global"
+                ],
                 "source":"NOAA-NCEI-GridSat 4.0 (2015): Gridded Satellite ISCCP B1 11 Micron Brightness Temperature",
                 "source_label":"NOAA-NCEI-GridSat",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"4.0"
             },
             "NOAA-NCEI-LAI-4-0":{
-                "region":"global_land",
+                "region":[
+                    "global_land"
+                ],
                 "source":"NOAA-NCEI-LAI 4.0 (2014): AVHRR Leaf Area Index",
                 "source_label":"NOAA-NCEI-LAI",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"4.0"
             },
             "NOAA-NCEI-PERSIANN-1-1":{
-                "region":"global",
+                "region":[
+                    "global"
+                ],
                 "source":"NOAA-NCEI-PERSIANN 1.1 (2014): Precipitation Estimation from Remotely Sensed Information using Artificial Neural Network",
                 "source_label":"NOAA-NCEI-PERSIANN",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.1"
             },
             "NOAA-NCEI-SeaWinds-1-2":{
-                "region":"global_ocean",
+                "region":[
+                    "global_ocean"
+                ],
                 "source":"NOAA-NCEI-SeaWinds 1.2 (2008): Blended Sea Surface Winds",
                 "source_label":"NOAA-NCEI-SeaWinds",
                 "source_type":"satellite_blended",
                 "source_version_number":"1.2"
             },
             "REMSS-PRW-6-6-0":{
-                "region":"global",
+                "region":[
+                    "global"
+                ],
                 "source":"REMSS-PRW 6.6.0 (2017): Water Vapor Path",
                 "source_label":"REMSS-PRW",
                 "source_type":"satellite_blended",
