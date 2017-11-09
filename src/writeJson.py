@@ -692,7 +692,7 @@ for key in source_id['source_id'].keys():
     val = source_id['source_id'][key]['source_label']
     if not entryCheck(key):
         print 'Invalid source_label format for entry:',key,'- aborting'
-        sys.exit()    
+        sys.exit()
     # Validate source_type
     val = source_id['source_id'][key]['source_type']
     if val not in source_type:
