@@ -66,6 +66,7 @@ PJD  4 Oct 2017     - Update Aday table cell_measures entries https://github.com
 PJG  5 Nov 2017     - Continuing DWD RC
 PJD  9 Nov 2017     - Review source_id format for regions and variables; Fix inconsistencies https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/133
 PJD  9 Nov 2017     - Added source_id validation for valid characters following https://goo.gl/jVZsQl
+PJD  9 Nov 2017     - Updated obs4MIPs_CV.json region format following CMOR3.2.8 release https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/136
 
 @author: durack1
 """
@@ -815,7 +816,7 @@ for count,CV in enumerate(CVJsonList):
             obs4MIPs_CV['CV']['source_id'][key]['source_label'] = values['source_label']
             obs4MIPs_CV['CV']['source_id'][key]['source_type'] = values['source_type']
             obs4MIPs_CV['CV']['source_id'][key]['source_version_number'] = values['source_version_number']
-            obs4MIPs_CV['CV']['source_id'][key]['region'] = values['region']
+            obs4MIPs_CV['CV']['source_id'][key]['region'] = ', '.join(str(a) for a in values['region'])
             obs4MIPs_CV['CV']['source_id'][key]['source'] = string
     # Rewrite table names
     elif CV == 'table_id':
