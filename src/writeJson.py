@@ -621,52 +621,7 @@ tmp = [['source_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-table
 source_id = readJsonCreateDict(tmp)
 source_id = source_id.get('source_id')
 
-# Fix all regions to be list type
-for key in source_id['source_id'].keys():
-    #print key
-    vals = source_id['source_id'][key]['region']
-    if not isinstance(vals,list):
-        vals = list([vals])
-    #print vals
-    source_id['source_id'][key]['region'] = vals
-    # Fix all source_variables to be list type
-    vals = source_id['source_id'][key]['source_variables']
-    if not isinstance(vals,list):
-        vals = list(vals); vals.sort()
-    else:
-        vals.sort()
-    #print vals
-    source_id['source_id'][key]['source_variables'] = vals
-    # Fix source_name entries - remove hyphens
-    val = source_id['source_id'][key]['source_name']
-    #print val
-    val = val.replace('-',' ')
-    source_id['source_id'][key]['source_name'] = val
-    #print val
-
-# Fix standing issues
-# Rename CMSAF-SARAH-2-0
-key = 'CMSAF-SARAH-2-0'
-source_id['source_id'][key] = {}
-source_id['source_id'][key] = source_id['source_id'].pop('CMSAF-SARAH-2.0')
-# Fix rogue entries
-source_id['source_id'][key]['source_label'] = 'CMSAF-SARAH'
-source_id['source_id'][key]['source_name'] = 'CMSAF SARAH'
-# Fix source_types
-key = 'ESACCI-CLOUD-ATSR2-AATSR-2-0'
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-key = 'ESACCI-CLOUD-AVHRR-AM-2-0'
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-key = 'ESACCI-CLOUD-AVHRR-PM-2-0'
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-key = 'ESACCI-CLOUD-MERIS-AATSR-2-0'
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-
-
-# Test invalid chars
-#key = 'CMSAF-SARAH-2 0' ; # Tested ".", “_”, “(“, “)”, “/”, and " "
-#source_id['source_id'][key] = {}
-#source_id['source_id'][key] = source_id['source_id'].pop('CMSAF-SARAH-2-0')
+# Enter fixes or additions below
 
 #==============================================================================
 # Example new source_id entry
@@ -676,19 +631,26 @@ source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 #source_id['source_id'][key]['institution_id'] = 'DWD'
 #source_id['source_id'][key]['release_year'] = '2017'
 #source_id['source_id'][key]['source_id'] = key
-#source_id['source_id'][key]['source_label'] = 'CMSAF-HOAPS'
-#source_id['source_id'][key]['source_name'] = 'CMSAF HOAPS'
+#source_id['source_id'][key]['source_label'] = 'CMSAF-SARAH'
+#source_id['source_id'][key]['source_name'] = 'CMSAF SARAH'
 #source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 #source_id['source_id'][key]['region'] = list('africa','atlantic_ocean','europe')
-#source_id['source_id'][key]['source_variables'] = list('rsds').sort()
+#source_id['source_id'][key]['source_variables'] = list('rsds')
 #source_id['source_id'][key]['source_version_number'] = '2.0'
+
 # Example rename source_id entry
 #key = 'CMSAF-SARAH-2-0'
 #source_id['source_id'][key] = {}
 #source_id['source_id'][key] = source_id['source_id'].pop('CMSAF-SARAH-2.0')
+
 # Example remove source_id entry
 #key = 'CMSAF-SARAH-2.0'
 #source_id['source_id'].pop(key)
+
+# Test invalid chars
+#key = 'CMSAF-SARAH-2 0' ; # Tested ".", “_”, “(“, “)”, “/”, and " "
+#source_id['source_id'][key] = {}
+#source_id['source_id'][key] = source_id['source_id'].pop('CMSAF-SARAH-2-0')
 
 #%% Source type
 source_type = [
@@ -716,8 +678,9 @@ def entryCheck(entry,search=re.compile(r'[^a-zA-Z0-9-]').search):
 
 # source_id
 for key in source_id['source_id'].keys():
+    # Validate source_id format
     if not entryCheck(key):
-        print 'Invalid source_id format for entry:',key,' - aborting'
+        print 'Invalid source_id format for entry:',key,'- aborting'
         sys.exit()
     # Sort variable entries
     vals = source_id['source_id'][key]['source_variables']
@@ -725,7 +688,12 @@ for key in source_id['source_id'].keys():
         vals = list(vals); vals.sort()
     else:
         vals.sort()
-    # Validate source type
+    # Validate source_label format
+    val = source_id['source_id'][key]['source_label']
+    if not entryCheck(key):
+        print 'Invalid source_label format for entry:',key,'- aborting'
+        sys.exit()    
+    # Validate source_type
     val = source_id['source_id'][key]['source_type']
     if val not in source_type:
         print'Invalid source_type for entry:',key,'- aborting'
