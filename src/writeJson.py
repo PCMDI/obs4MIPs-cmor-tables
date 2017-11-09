@@ -637,6 +637,12 @@ for key in source_id['source_id'].keys():
         vals.sort()
     #print vals
     source_id['source_id'][key]['source_variables'] = vals
+    # Fix source_name entries - remove hyphens
+    val = source_id['source_id'][key]['source_name']
+    #print val
+    val = val.replace('-',' ')
+    source_id['source_id'][key]['source_name'] = val
+    #print val
 
 # Fix standing issues
 # Rename CMSAF-SARAH-2-0
@@ -646,6 +652,21 @@ source_id['source_id'][key] = source_id['source_id'].pop('CMSAF-SARAH-2.0')
 # Fix rogue entries
 source_id['source_id'][key]['source_label'] = 'CMSAF-SARAH'
 source_id['source_id'][key]['source_name'] = 'CMSAF SARAH'
+# Fix source_types
+key = 'ESACCI-CLOUD-ATSR2-AATSR-2-0'
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+key = 'ESACCI-CLOUD-AVHRR-AM-2-0'
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+key = 'ESACCI-CLOUD-AVHRR-PM-2-0'
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+key = 'ESACCI-CLOUD-MERIS-AATSR-2-0'
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+
+
+# Test invalid chars
+#key = 'CMSAF-SARAH-2 0' ; # Tested ".", “_”, “(“, “)”, “/”, and " "
+#source_id['source_id'][key] = {}
+#source_id['source_id'][key] = source_id['source_id'].pop('CMSAF-SARAH-2-0')
 
 #==============================================================================
 # Example new source_id entry
@@ -690,7 +711,7 @@ table_id = [
 ] ;
 
 #%% Validate entries
-def entryCheck(entry,search=re.compile(r'[^a-zA-z0-9-]').search):
+def entryCheck(entry,search=re.compile(r'[^a-zA-Z0-9-]').search):
     return not bool(search(entry))
 
 # source_id
@@ -704,6 +725,17 @@ for key in source_id['source_id'].keys():
         vals = list(vals); vals.sort()
     else:
         vals.sort()
+    # Validate source type
+    val = source_id['source_id'][key]['source_type']
+    if val not in source_type:
+        print'Invalid source_type for entry:',key,'- aborting'
+        sys.exit()
+    # Validate region
+    vals = source_id['source_id'][key]['region']
+    for val in vals:
+        if val not in region:
+            print'Invalid region for entry:',key,'- aborting'
+            sys.exit()
 
 #%% Write variables to files
 for jsonName in masterTargets:
