@@ -6,7 +6,7 @@ To register (or edit) some or all of the obs4MIPs RC, please title this github i
 Note: It is presumed that you have already registered your proposed obs4MIPs contribution with the WDAC's task team.  If you have not, please do so now (https://goo.gl/forms/0QaXZXS8UFu24rl03) before registering content 
 ________________________________________________________________________________________________________
 The following are required registered content (with example content). Please replace the example text below with your information:
-1) source_name = 'GPCP'
+1) source_id['source_id'][key]['source_name'] = 'GPCP'
 2) release_year = '2011'
 3) source_description = 'Global Precipitation Climatology Project'
 4) source_version_number = '2.3'
