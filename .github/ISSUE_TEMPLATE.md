@@ -5,14 +5,14 @@ To register (or edit) some or all of the obs4MIPs RC, please title this github i
 
 Note: It is presumed that you have already registered your proposed obs4MIPs contribution with the WDAC's task team.  If you have not, please do so now (https://goo.gl/forms/0QaXZXS8UFu24rl03) before registering content 
 ________________________________________________________________________________________________________
-The following are required registered content (with example content). Please replace the example text below with your information to the right of the equal sign (DO NOT MAKE ANY CHANGES TO THE LEFT HAND SIDE OF THE EQUAL SIGN):
+The following are required registered content (with example content for each item in **bold**). Please replace the example text below with your information to the right of the equal sign (DO NOT MAKE ANY CHANGES TO THE LEFT HAND SIDE OF THE EQUAL SIGN):
 1) source_id['source_id'][key][**'source_name'**] = 'GPCP'
-2) source_id['source_id'][key]['release_year'] = '2011'
-3) source_id['source_id'][key]['source_description'] = 'Global Precipitation Climatology Project'
-4) source_id['source_id'][key]['source_version_number'] = '2.3'
-5) source_id['source_id'][key]['institution_id'] = 'UofMD'
-6) source_id['source_id'][key]['region'] = 'Global'
-7) source_id['source_id'][key]['source_type'] = 'satellite_blended'
+2) source_id['source_id'][key][**'release_year'**] = '2011'
+3) source_id['source_id'][key][**'source_description'**] = 'Global Precipitation Climatology Project'
+4) source_id['source_id'][key][**'source_version_number'**] = '2.3'
+5) source_id['source_id'][key][**'institution_id'**] = 'UofMD'
+6) source_id['source_id'][key][**'region'**] = 'Global'
+7) source_id['source_id'][key][**'source_type'**] = 'satellite_blended'
 8) A list of CMIP variable_ids that the above information refers to.  In most cases it will only be for one variable_id.  If it is for more than one, please make sure your source_description is sufficiently general to apply to all relevant variable_ids.
 
 If you are planning to provide ancillary files for Nobs or Stderr, please let us know (Yes or No).  If Yes, please indicate for which variable_ids, and we will promptly update the obs4MIPs_monNobs.json and obs4MIPs_monStderr.json CMOR tables.
