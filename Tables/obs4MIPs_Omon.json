@@ -1,6 +1,6 @@
 {
     "Header":{
-        "#dataRequest_specs_version":"01.00.16",
+        "#dataRequest_specs_version":"01.00.20",
         "#mip_era":"CMIP6",
         "Conventions":"CF-1.7 ODS-2.1",
         "approx_interval":"30.00000",
@@ -11,7 +11,7 @@
         "missing_value":"1e20",
         "product":"observations",
         "realm":"ocean",
-        "table_date":"09 November 2017",
+        "table_date":"02 February 2018",
         "table_id":"Table obs4MIPs_Omon"
     },
     "variable_entry":{
@@ -1317,7 +1317,7 @@
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"fgdms",
-            "positive":"down",
+            "positive":"up",
             "standard_name":"surface_upward_mole_flux_of_dimethyl_sulfide",
             "type":"real",
             "units":"mol m-2 s-1",
@@ -1352,7 +1352,7 @@
             "ok_min_mean_abs":"",
             "out_name":"fgsf6",
             "positive":"down",
-            "standard_name":"surface_downward_mole_flux_of_sf6",
+            "standard_name":"surface_downward_mole_flux_of_sulfur_hexafluoride",
             "type":"real",
             "units":"mol sec-1 m-2",
             "valid_max":"",
@@ -2684,7 +2684,7 @@
             "valid_max":"",
             "valid_min":""
         },
-        "msftmyz":{
+        "msftmz":{
             "cell_measures":"",
             "cell_methods":"longitude: mean (comment: basin mean[ along zig-zag grid path]) time: mean",
             "comment":"Overturning mass streamfunction arising from all advective mass transport processes, resolved and parameterized.",
@@ -2693,7 +2693,7 @@
             "long_name":"Ocean Meridional Overturning Mass Streamfunction",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
-            "out_name":"msftmyz",
+            "out_name":"msftmz",
             "positive":"",
             "standard_name":"ocean_meridional_overturning_mass_streamfunction",
             "type":"real",
@@ -2769,7 +2769,7 @@
             "valid_max":"",
             "valid_min":""
         },
-        "msftyyz":{
+        "msftyz":{
             "cell_measures":"",
             "cell_methods":"time: mean grid_longitude: mean",
             "comment":"Overturning mass streamfunction arising from all advective mass transport processes, resolved and parameterized.",
@@ -2778,7 +2778,7 @@
             "long_name":"Ocean Y Overturning Mass Streamfunction",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
-            "out_name":"msftyyz",
+            "out_name":"msftyz",
             "positive":"",
             "standard_name":"ocean_y_overturning_mass_streamfunction",
             "type":"real",
@@ -4074,7 +4074,7 @@
             "positive":"",
             "standard_name":"sea_surface_temperature",
             "type":"real",
-            "units":"K",
+            "units":"degC",
             "valid_max":"",
             "valid_min":""
         },
@@ -4177,6 +4177,23 @@
             "standard_name":"sea_water_y_velocity",
             "type":"real",
             "units":"m s-1",
+            "valid_max":"",
+            "valid_min":""
+        },
+        "volcello":{
+            "cell_measures":"",
+            "cell_methods":"area: mean where sea time: mean",
+            "comment":"grid-cell volume ca. 2000.",
+            "dimensions":"longitude latitude olevel time",
+            "frequency":"fx",
+            "long_name":"Ocean Grid-Cell Volume",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"volcello",
+            "positive":"",
+            "standard_name":"ocean_volume",
+            "type":"real",
+            "units":"m3",
             "valid_max":"",
             "valid_min":""
         },

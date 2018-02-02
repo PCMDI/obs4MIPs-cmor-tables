@@ -68,6 +68,7 @@ PJD  9 Nov 2017     - Review source_id format for regions and variables; Fix inc
 PJD  9 Nov 2017     - Added source_id validation for valid characters following https://goo.gl/jVZsQl
 PJD  9 Nov 2017     - Updated obs4MIPs_CV.json region format following CMOR3.2.8 release https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/136
 PJD  9 Nov 2017     - Updated source_type format adding descriptions https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/98
+PJD  2 Feb 2018     - Updated institution_id JPL -> NASA-JPL https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/139
 
 @author: durack1
 """
@@ -489,6 +490,8 @@ institution_id = readJsonCreateDict(tmp)
 institution_id = institution_id.get('institution_id')
 
 # Fix issues
+institution_id['institution_id']['NASA-JPL'] = 'NASA\'s Jet Propulsion Laboratory, Pasadena, CA 91109, USA'
+institution_id['institution_id'].pop('JPL')
 #==============================================================================
 # Example new institution_id entry
 #institution_id['institution_id']['NOAA-NCEI'] = 'NOAA\'s National Centers for Environmental Information, Asheville, NC 28801, USA'

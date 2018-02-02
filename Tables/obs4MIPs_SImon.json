@@ -1,6 +1,6 @@
 {
     "Header":{
-        "#dataRequest_specs_version":"01.00.16",
+        "#dataRequest_specs_version":"01.00.20",
         "#mip_era":"CMIP6",
         "Conventions":"CF-1.7 ODS-2.1",
         "approx_interval":"30.00000",
@@ -11,13 +11,13 @@
         "missing_value":"1e20",
         "product":"observations",
         "realm":"seaIce",
-        "table_date":"09 November 2017",
+        "table_date":"02 February 2018",
         "table_id":"Table obs4MIPs_SImon"
     },
     "variable_entry":{
         "sfdsi":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"This field is physical, and it arises since sea ice has a nonzero salt content, so it exchanges salt with the liquid ocean upon melting and freezing.",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -34,7 +34,7 @@
         },
         "siage":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"Age of sea ice",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -102,7 +102,7 @@
         },
         "sicompstren":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"Computed strength of the ice pack, defined as the energy (J m-2) dissipated per unit area removed from the ice pack under compression, and assumed proportional to the change in potential energy caused by ridging. For Hibler-type models, this is P (= P*hexp(-C(1-A)))",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -123,7 +123,7 @@
             "comment":"Area fraction of grid cell covered by sea ice",
             "dimensions":"longitude latitude time typesi",
             "frequency":"mon",
-            "long_name":"Sea Ice Area Fraction",
+            "long_name":"Sea Ice Area Fraction (Ocean Grid)",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"siconc",
@@ -134,16 +134,16 @@
             "valid_max":"",
             "valid_min":""
         },
-        "siconco":{
+        "siconca":{
             "cell_measures":"",
             "cell_methods":"area: time: mean",
             "comment":"Area fraction of grid cell covered by sea ice",
             "dimensions":"longitude latitude time typesi",
             "frequency":"mon",
-            "long_name":"Sea Ice Area Fraction",
+            "long_name":"Sea Ice Area Fraction (Atmospheric Grid)",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
-            "out_name":"siconco",
+            "out_name":"siconca",
             "positive":"",
             "standard_name":"sea_ice_area_fraction",
             "type":"real",
@@ -391,7 +391,7 @@
         },
         "sidragbot":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"Oceanic drag coefficient that is used to calculate the oceanic momentum drag on sea ice",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -408,7 +408,7 @@
         },
         "sidragtop":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"Atmospheric drag coefficient that is used to calculate the atmospheric momentum drag on sea ice",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -459,7 +459,7 @@
         },
         "sifb":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"Mean height of sea-ice surface (=snow-ice interface when snow covered) above sea level",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -476,7 +476,7 @@
         },
         "siflcondbot":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"the net heat conduction flux at the ice base",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -493,7 +493,7 @@
         },
         "siflcondtop":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"the net heat conduction flux at the ice surface",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -510,7 +510,7 @@
         },
         "siflfwbot":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"Total flux of fresh water from water into sea ice divided by grid-cell area; This flux is negative during ice growth (liquid water mass decreases, hence upward flux of freshwater), positive during ice melt (liquid water mass increases, hence downward flux of freshwater)",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -527,7 +527,7 @@
         },
         "siflfwdrain":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"Total flux of fresh water from sea-ice surface into underlying ocean. This combines both surface melt water that drains directly into the ocean and the drainage of surface melt pond. By definition, this flux is always positive.",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -544,7 +544,7 @@
         },
         "sifllatstop":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"the net latent heat flux over sea ice",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -561,7 +561,7 @@
         },
         "sifllwdtop":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"the downwelling longwave flux over sea ice (always positive)",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -578,7 +578,7 @@
         },
         "sifllwutop":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"the upwelling longwave flux over sea ice (always negative)",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -595,7 +595,7 @@
         },
         "siflsenstop":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"the net sensible heat flux over sea ice",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -612,7 +612,7 @@
         },
         "siflsensupbot":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"the net sensible heat flux under sea ice from the ocean",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -629,7 +629,7 @@
         },
         "siflswdbot":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"The downwelling shortwave flux underneath sea ice (always positive)",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -646,7 +646,7 @@
         },
         "siflswdtop":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"The downwelling shortwave flux over sea ice (always positive by sign convention)",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -663,7 +663,7 @@
         },
         "siflswutop":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"The upwelling shortwave flux over sea ice (always negative)",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -952,7 +952,7 @@
         },
         "sipr":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"mass of liquid precipitation falling onto sea ice divided by grid-cell area",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -969,7 +969,7 @@
         },
         "sirdgconc":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"Fraction of sea ice, by area, which is covered by sea ice ridges, giving equal weight to every square metre of sea ice .",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -1003,7 +1003,7 @@
         },
         "sisali":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"Mean sea-ice salinity of all sea ice in grid cell",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -1054,7 +1054,7 @@
         },
         "sisnconc":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"Fraction of sea ice, by area, which is covered by snow, giving equal weight to every square metre of sea ice . Exclude snow that lies on land or land ice.",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -1071,7 +1071,7 @@
         },
         "sisnhc":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"Heat-content of all snow in grid cell divided by total grid-cell area. Snow-water equivalent at 0 Celsius is assumed to have a heat content of 0 J.  Does not include heat content of sea ice.",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -1088,7 +1088,7 @@
         },
         "sisnmass":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"Total mass of snow on sea ice divided by grid-cell area",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -1122,7 +1122,7 @@
         },
         "sispeed":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"Speed of ice (i.e. mean absolute velocity) to account for back-and-forth movement of the ice",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -1190,7 +1190,7 @@
         },
         "sistrxubot":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"X-component of ocean stress on sea ice",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -1224,7 +1224,7 @@
         },
         "sistryubot":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"Y-component of ocean stress on sea ice",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -1241,7 +1241,7 @@
         },
         "sitempbot":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"Report temperature at interface, NOT temperature within lowermost model layer",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -1258,7 +1258,7 @@
         },
         "sitempsnic":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"Report surface temperature of ice where snow thickness is zero",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -1275,7 +1275,7 @@
         },
         "sitemptop":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"Report surface temperature of snow where snow covers the sea ice.",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
@@ -1292,7 +1292,7 @@
         },
         "sithick":{
             "cell_measures":"",
-            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc)",
+            "cell_methods":"area: time: mean where sea_ice (comment: mask=siconc or siconca)",
             "comment":"Actual (floe) thickness of sea ice (NOT volume divided by grid area as was done in CMIP5)",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
