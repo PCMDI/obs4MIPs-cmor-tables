@@ -490,8 +490,8 @@ institution_id = readJsonCreateDict(tmp)
 institution_id = institution_id.get('institution_id')
 
 # Fix issues
-#institution_id['institution_id']['NASA-JPL'] = 'NASA\'s Jet Propulsion Laboratory, Pasadena, CA 91109, USA'
-#institution_id['institution_id'].pop('JPL')
+institution_id['institution_id']['NASA-JPL'] = 'NASA\'s Jet Propulsion Laboratory, Pasadena, CA 91109, USA'
+institution_id['institution_id'].pop('JPL')
 #==============================================================================
 # Example new institution_id entry
 #institution_id['institution_id']['NOAA-NCEI'] = 'NOAA\'s National Centers for Environmental Information, Asheville, NC 28801, USA'
