@@ -664,6 +664,7 @@ source_id = source_id.get('source_id')
 ## ADDING obs4MIPs1.0 
 ###################################################################################
 
+key = 'AIRS-1-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'AIRS'
 source_id['source_id'][key]['release_year'] = '2011'
