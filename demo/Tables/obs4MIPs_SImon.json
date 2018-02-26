@@ -1,6 +1,6 @@
 {
     "Header":{
-        "#dataRequest_specs_version":"01.00.20",
+        "#dataRequest_specs_version":"01.00.21",
         "#mip_era":"CMIP6",
         "Conventions":"CF-1.7 ODS-2.1",
         "approx_interval":"30.00000",
@@ -11,7 +11,7 @@
         "missing_value":"1e20",
         "product":"observations",
         "realm":"seaIce",
-        "table_date":"02 February 2018",
+        "table_date":"26 February 2018",
         "table_id":"Table obs4MIPs_SImon"
     },
     "variable_entry":{
@@ -27,7 +27,7 @@
             "out_name":"sfdsi",
             "positive":"down",
             "standard_name":"downward_sea_ice_basal_salt_flux",
-            "type":"",
+            "type":"real",
             "units":"kg m-2 s-1",
             "valid_max":"",
             "valid_min":""
@@ -44,7 +44,7 @@
             "out_name":"siage",
             "positive":"",
             "standard_name":"age_of_sea_ice",
-            "type":"",
+            "type":"real",
             "units":"s",
             "valid_max":"",
             "valid_min":""
@@ -61,7 +61,7 @@
             "out_name":"siareaacrossline",
             "positive":"",
             "standard_name":"sea_ice_area_transport_across_line",
-            "type":"",
+            "type":"real",
             "units":"m2 s-1",
             "valid_max":"",
             "valid_min":""
@@ -78,7 +78,7 @@
             "out_name":"siarean",
             "positive":"",
             "standard_name":"sea_ice_area",
-            "type":"",
+            "type":"real",
             "units":"1e6 km2",
             "valid_max":"",
             "valid_min":""
@@ -95,7 +95,7 @@
             "out_name":"siareas",
             "positive":"",
             "standard_name":"sea_ice_area",
-            "type":"",
+            "type":"real",
             "units":"1e6 km2",
             "valid_max":"",
             "valid_min":""
@@ -112,7 +112,7 @@
             "out_name":"sicompstren",
             "positive":"",
             "standard_name":"compressive_strength_of_sea_ice",
-            "type":"",
+            "type":"real",
             "units":"N m-1",
             "valid_max":"",
             "valid_min":""
@@ -163,7 +163,7 @@
             "out_name":"sidconcdyn",
             "positive":"",
             "standard_name":"tendency_of_sea_ice_area_fraction_due_to_dynamics",
-            "type":"",
+            "type":"real",
             "units":"s-1",
             "valid_max":"",
             "valid_min":""
@@ -180,7 +180,7 @@
             "out_name":"sidconcth",
             "positive":"",
             "standard_name":"tendency_of_sea_ice_area_fraction_due_to_thermodynamics",
-            "type":"",
+            "type":"real",
             "units":"s-1",
             "valid_max":"",
             "valid_min":""
@@ -197,7 +197,7 @@
             "out_name":"sidivvel",
             "positive":"",
             "standard_name":"divergence_of_sea_ice_velocity",
-            "type":"",
+            "type":"real",
             "units":"s-1",
             "valid_max":"",
             "valid_min":""
@@ -214,7 +214,7 @@
             "out_name":"sidmassdyn",
             "positive":"",
             "standard_name":"tendency_of_sea_ice_amount_due_to_dynamics",
-            "type":"",
+            "type":"real",
             "units":"kg m-2 s-1",
             "valid_max":"",
             "valid_min":""
@@ -231,7 +231,7 @@
             "out_name":"sidmassevapsubl",
             "positive":"up",
             "standard_name":"water_evaporation_flux",
-            "type":"",
+            "type":"real",
             "units":"kg m-2 s-1",
             "valid_max":"",
             "valid_min":""
@@ -248,7 +248,7 @@
             "out_name":"sidmassgrowthbot",
             "positive":"",
             "standard_name":"tendency_of_sea_ice_amount_due_to_congelation_ice_accumulation",
-            "type":"",
+            "type":"real",
             "units":"kg m-2 s-1",
             "valid_max":"",
             "valid_min":""
@@ -265,7 +265,7 @@
             "out_name":"sidmassgrowthwat",
             "positive":"",
             "standard_name":"tendency_of_sea_ice_amount_due_to_freezing_in_open_water",
-            "type":"",
+            "type":"real",
             "units":"kg m-2 s-1",
             "valid_max":"",
             "valid_min":""
@@ -282,7 +282,7 @@
             "out_name":"sidmasslat",
             "positive":"",
             "standard_name":"tendency_of_sea_ice_amount_due_to_lateral_melting",
-            "type":"",
+            "type":"real",
             "units":"kg m-2 s-1",
             "valid_max":"",
             "valid_min":""
@@ -299,7 +299,7 @@
             "out_name":"sidmassmeltbot",
             "positive":"",
             "standard_name":"tendency_of_sea_ice_amount_due_to_basal_melting",
-            "type":"",
+            "type":"real",
             "units":"kg m-2 s-1",
             "valid_max":"",
             "valid_min":""
@@ -316,7 +316,7 @@
             "out_name":"sidmassmelttop",
             "positive":"",
             "standard_name":"tendency_of_sea_ice_amount_due_to_surface_melting",
-            "type":"",
+            "type":"real",
             "units":"kg m-2 s-1",
             "valid_max":"",
             "valid_min":""
@@ -333,7 +333,7 @@
             "out_name":"sidmasssi",
             "positive":"",
             "standard_name":"tendency_of_sea_ice_amount_due_to_snow_conversion",
-            "type":"",
+            "type":"real",
             "units":"kg m-2 s-1",
             "valid_max":"",
             "valid_min":""
@@ -350,7 +350,7 @@
             "out_name":"sidmassth",
             "positive":"",
             "standard_name":"tendency_of_sea_ice_amount_due_to_thermodynamics",
-            "type":"",
+            "type":"real",
             "units":"kg m-2 s-1",
             "valid_max":"",
             "valid_min":""
@@ -367,7 +367,7 @@
             "out_name":"sidmasstranx",
             "positive":"",
             "standard_name":"sea_ice_x_transport",
-            "type":"",
+            "type":"real",
             "units":"kg s-1",
             "valid_max":"",
             "valid_min":""
@@ -384,7 +384,7 @@
             "out_name":"sidmasstrany",
             "positive":"",
             "standard_name":"sea_ice_y_transport",
-            "type":"",
+            "type":"real",
             "units":"kg s-1",
             "valid_max":"",
             "valid_min":""
@@ -401,8 +401,8 @@
             "out_name":"sidragbot",
             "positive":"",
             "standard_name":"surface_drag_coefficient_for_momentum_in_water",
-            "type":"",
-            "units":"1.0",
+            "type":"real",
+            "units":"1",
             "valid_max":"",
             "valid_min":""
         },
@@ -418,8 +418,8 @@
             "out_name":"sidragtop",
             "positive":"",
             "standard_name":"surface_drag_coefficient_for_momentum_in_air",
-            "type":"",
-            "units":"1.0",
+            "type":"real",
+            "units":"1",
             "valid_max":"",
             "valid_min":""
         },
@@ -435,7 +435,7 @@
             "out_name":"siextentn",
             "positive":"",
             "standard_name":"sea_ice_extent",
-            "type":"",
+            "type":"real",
             "units":"1e6 km2",
             "valid_max":"",
             "valid_min":""
@@ -452,7 +452,7 @@
             "out_name":"siextents",
             "positive":"",
             "standard_name":"sea_ice_extent",
-            "type":"",
+            "type":"real",
             "units":"1e6 km2",
             "valid_max":"",
             "valid_min":""
@@ -469,7 +469,7 @@
             "out_name":"sifb",
             "positive":"",
             "standard_name":"sea_ice_freeboard",
-            "type":"",
+            "type":"real",
             "units":"m",
             "valid_max":"",
             "valid_min":""
@@ -484,9 +484,9 @@
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"siflcondbot",
-            "positive":"",
+            "positive":"down",
             "standard_name":"conductive_heat_flux_at_sea_ice_bottom",
-            "type":"",
+            "type":"real",
             "units":"W m-2",
             "valid_max":"",
             "valid_min":""
@@ -501,9 +501,9 @@
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"siflcondtop",
-            "positive":"",
+            "positive":"down",
             "standard_name":"conductive_heat_flux_at_sea_ice_surface",
-            "type":"",
+            "type":"real",
             "units":"W m-2",
             "valid_max":"",
             "valid_min":""
@@ -520,7 +520,7 @@
             "out_name":"siflfwbot",
             "positive":"",
             "standard_name":"freshwater_flux_from_ice",
-            "type":"",
+            "type":"real",
             "units":"kg m-2 s-1",
             "valid_max":"",
             "valid_min":""
@@ -537,7 +537,7 @@
             "out_name":"siflfwdrain",
             "positive":"",
             "standard_name":"freshwater_flux_from_ice_surface",
-            "type":"",
+            "type":"real",
             "units":"kg m-2 s-1",
             "valid_max":"",
             "valid_min":""
@@ -554,7 +554,7 @@
             "out_name":"sifllatstop",
             "positive":"up",
             "standard_name":"surface_upward_latent_heat_flux",
-            "type":"",
+            "type":"real",
             "units":"W m-2",
             "valid_max":"",
             "valid_min":""
@@ -571,7 +571,7 @@
             "out_name":"sifllwdtop",
             "positive":"down",
             "standard_name":"surface_downwelling_longwave_flux_in_air",
-            "type":"",
+            "type":"real",
             "units":"W m-2",
             "valid_max":"",
             "valid_min":""
@@ -588,7 +588,7 @@
             "out_name":"sifllwutop",
             "positive":"up",
             "standard_name":"surface_upwelling_longwave_flux_in_air",
-            "type":"",
+            "type":"real",
             "units":"W m-2",
             "valid_max":"",
             "valid_min":""
@@ -605,7 +605,7 @@
             "out_name":"siflsenstop",
             "positive":"up",
             "standard_name":"surface_upward_sensible_heat_flux",
-            "type":"",
+            "type":"real",
             "units":"W m-2",
             "valid_max":"",
             "valid_min":""
@@ -622,7 +622,7 @@
             "out_name":"siflsensupbot",
             "positive":"up",
             "standard_name":"upward_sea_ice_basal_heat_flux",
-            "type":"",
+            "type":"real",
             "units":"W m-2",
             "valid_max":"",
             "valid_min":""
@@ -639,7 +639,7 @@
             "out_name":"siflswdbot",
             "positive":"down",
             "standard_name":"bottom_downwelling_shortwave_flux_into_ocean",
-            "type":"",
+            "type":"real",
             "units":"W m-2",
             "valid_max":"",
             "valid_min":""
@@ -656,7 +656,7 @@
             "out_name":"siflswdtop",
             "positive":"down",
             "standard_name":"surface_downwelling_shortwave_flux_in_air",
-            "type":"",
+            "type":"real",
             "units":"W m-2",
             "valid_max":"",
             "valid_min":""
@@ -673,7 +673,7 @@
             "out_name":"siflswutop",
             "positive":"up",
             "standard_name":"surface_upwelling_shortwave_flux_in_air",
-            "type":"",
+            "type":"real",
             "units":"W m-2",
             "valid_max":"",
             "valid_min":""
@@ -690,7 +690,7 @@
             "out_name":"siforcecoriolx",
             "positive":"",
             "standard_name":"coriolis_force_on_sea_ice_x",
-            "type":"",
+            "type":"real",
             "units":"N m-2",
             "valid_max":"",
             "valid_min":""
@@ -707,7 +707,7 @@
             "out_name":"siforcecorioly",
             "positive":"",
             "standard_name":"coriolis_force_on_sea_ice_y",
-            "type":"",
+            "type":"real",
             "units":"N m-2",
             "valid_max":"",
             "valid_min":""
@@ -724,7 +724,7 @@
             "out_name":"siforceintstrx",
             "positive":"",
             "standard_name":"internal_stress_in_sea_ice_x",
-            "type":"",
+            "type":"real",
             "units":"N m-2",
             "valid_max":"",
             "valid_min":""
@@ -741,7 +741,7 @@
             "out_name":"siforceintstry",
             "positive":"",
             "standard_name":"internal_stress_in_sea_ice_y",
-            "type":"",
+            "type":"real",
             "units":"N m-2",
             "valid_max":"",
             "valid_min":""
@@ -758,7 +758,7 @@
             "out_name":"siforcetiltx",
             "positive":"",
             "standard_name":"sea_surface_tilt_force_on_sea_ice_x",
-            "type":"",
+            "type":"real",
             "units":"N m-2",
             "valid_max":"",
             "valid_min":""
@@ -775,7 +775,7 @@
             "out_name":"siforcetilty",
             "positive":"",
             "standard_name":"sea_surface_tilt_force_on_sea_ice_y",
-            "type":"",
+            "type":"real",
             "units":"N m-2",
             "valid_max":"",
             "valid_min":""
@@ -792,7 +792,7 @@
             "out_name":"sihc",
             "positive":"",
             "standard_name":"integral_of_sea_ice_temperature_wrt_depth_expressed_as_heat_content",
-            "type":"",
+            "type":"real",
             "units":"J m-2",
             "valid_max":"",
             "valid_min":""
@@ -809,7 +809,7 @@
             "out_name":"siitdconc",
             "positive":"",
             "standard_name":"sea_ice_area_fraction_over_categories",
-            "type":"",
+            "type":"real",
             "units":"%",
             "valid_max":"",
             "valid_min":""
@@ -826,7 +826,7 @@
             "out_name":"siitdsnconc",
             "positive":"",
             "standard_name":"snow_area_fraction_over_categories",
-            "type":"",
+            "type":"real",
             "units":"%",
             "valid_max":"",
             "valid_min":""
@@ -843,7 +843,7 @@
             "out_name":"siitdsnthick",
             "positive":"",
             "standard_name":"snow_thickness_over_categories",
-            "type":"",
+            "type":"real",
             "units":"m",
             "valid_max":"",
             "valid_min":""
@@ -860,7 +860,7 @@
             "out_name":"siitdthick",
             "positive":"",
             "standard_name":"sea_ice_thickness_over_categories",
-            "type":"",
+            "type":"real",
             "units":"m",
             "valid_max":"",
             "valid_min":""
@@ -877,7 +877,7 @@
             "out_name":"simass",
             "positive":"",
             "standard_name":"sea_ice_amount",
-            "type":"",
+            "type":"real",
             "units":"kg m-2",
             "valid_max":"",
             "valid_min":""
@@ -894,7 +894,7 @@
             "out_name":"simassacrossline",
             "positive":"",
             "standard_name":"sea_ice_transport_across_line",
-            "type":"",
+            "type":"real",
             "units":"kg s-1",
             "valid_max":"",
             "valid_min":""
@@ -911,7 +911,7 @@
             "out_name":"simpconc",
             "positive":"",
             "standard_name":"area_fraction",
-            "type":"",
+            "type":"real",
             "units":"%",
             "valid_max":"",
             "valid_min":""
@@ -928,7 +928,7 @@
             "out_name":"simpmass",
             "positive":"",
             "standard_name":"surface_liquid_water_amount",
-            "type":"",
+            "type":"real",
             "units":"kg m-2",
             "valid_max":"",
             "valid_min":""
@@ -945,7 +945,7 @@
             "out_name":"simprefrozen",
             "positive":"",
             "standard_name":"melt_pond_refrozen_ice",
-            "type":"",
+            "type":"real",
             "units":"m",
             "valid_max":"",
             "valid_min":""
@@ -962,7 +962,7 @@
             "out_name":"sipr",
             "positive":"",
             "standard_name":"rainfall_flux",
-            "type":"",
+            "type":"real",
             "units":"kg m-2 s-1",
             "valid_max":"",
             "valid_min":""
@@ -979,8 +979,8 @@
             "out_name":"sirdgconc",
             "positive":"",
             "standard_name":"fraction_of_ridged_sea_ice",
-            "type":"",
-            "units":"1.0",
+            "type":"real",
+            "units":"1",
             "valid_max":"",
             "valid_min":""
         },
@@ -996,7 +996,7 @@
             "out_name":"sirdgthick",
             "positive":"",
             "standard_name":"thickness_of_ridged_sea_ice",
-            "type":"",
+            "type":"real",
             "units":"m",
             "valid_max":"",
             "valid_min":""
@@ -1013,7 +1013,7 @@
             "out_name":"sisali",
             "positive":"",
             "standard_name":"sea_ice_salinity",
-            "type":"",
+            "type":"real",
             "units":"0.001",
             "valid_max":"",
             "valid_min":""
@@ -1030,7 +1030,7 @@
             "out_name":"sisaltmass",
             "positive":"",
             "standard_name":"sea_ice_salt_mass",
-            "type":"",
+            "type":"real",
             "units":"kg m-2",
             "valid_max":"",
             "valid_min":""
@@ -1047,7 +1047,7 @@
             "out_name":"sishevel",
             "positive":"",
             "standard_name":"maximum_shear_of_sea_ice_velocity",
-            "type":"",
+            "type":"real",
             "units":"s-1",
             "valid_max":"",
             "valid_min":""
@@ -1064,7 +1064,7 @@
             "out_name":"sisnconc",
             "positive":"",
             "standard_name":"surface_snow_area_fraction",
-            "type":"",
+            "type":"real",
             "units":"%",
             "valid_max":"",
             "valid_min":""
@@ -1081,7 +1081,7 @@
             "out_name":"sisnhc",
             "positive":"",
             "standard_name":"thermal_energy_content_of_surface_snow",
-            "type":"",
+            "type":"real",
             "units":"J m-2",
             "valid_max":"",
             "valid_min":""
@@ -1098,7 +1098,7 @@
             "out_name":"sisnmass",
             "positive":"",
             "standard_name":"liquid_water_content_of_surface_snow",
-            "type":"",
+            "type":"real",
             "units":"kg m-2",
             "valid_max":"",
             "valid_min":""
@@ -1115,7 +1115,7 @@
             "out_name":"sisnthick",
             "positive":"",
             "standard_name":"surface_snow_thickness",
-            "type":"",
+            "type":"real",
             "units":"m",
             "valid_max":"",
             "valid_min":""
@@ -1132,7 +1132,7 @@
             "out_name":"sispeed",
             "positive":"",
             "standard_name":"sea_ice_speed",
-            "type":"",
+            "type":"real",
             "units":"m s-1",
             "valid_max":"",
             "valid_min":""
@@ -1149,7 +1149,7 @@
             "out_name":"sistremax",
             "positive":"",
             "standard_name":"maximum_shear_stress",
-            "type":"",
+            "type":"real",
             "units":"N m-1",
             "valid_max":"",
             "valid_min":""
@@ -1166,7 +1166,7 @@
             "out_name":"sistresave",
             "positive":"",
             "standard_name":"average_normal_stress",
-            "type":"",
+            "type":"real",
             "units":"N m-1",
             "valid_max":"",
             "valid_min":""
@@ -1183,7 +1183,7 @@
             "out_name":"sistrxdtop",
             "positive":"down",
             "standard_name":"surface_downward_x_stress",
-            "type":"",
+            "type":"real",
             "units":"N m-2",
             "valid_max":"",
             "valid_min":""
@@ -1200,7 +1200,7 @@
             "out_name":"sistrxubot",
             "positive":"up",
             "standard_name":"upward_x_stress_at_sea_ice_base",
-            "type":"",
+            "type":"real",
             "units":"N m-2",
             "valid_max":"",
             "valid_min":""
@@ -1217,7 +1217,7 @@
             "out_name":"sistrydtop",
             "positive":"down",
             "standard_name":"surface_downward_y_stress",
-            "type":"",
+            "type":"real",
             "units":"N m-2",
             "valid_max":"",
             "valid_min":""
@@ -1234,7 +1234,7 @@
             "out_name":"sistryubot",
             "positive":"up",
             "standard_name":"upward_y_stress_at_sea_ice_base",
-            "type":"",
+            "type":"real",
             "units":"N m-2",
             "valid_max":"",
             "valid_min":""
@@ -1251,7 +1251,7 @@
             "out_name":"sitempbot",
             "positive":"",
             "standard_name":"sea_ice_bottom_temperature",
-            "type":"",
+            "type":"real",
             "units":"K",
             "valid_max":"",
             "valid_min":""
@@ -1268,7 +1268,7 @@
             "out_name":"sitempsnic",
             "positive":"",
             "standard_name":"sea_ice_surface_temperature",
-            "type":"",
+            "type":"real",
             "units":"K",
             "valid_max":"",
             "valid_min":""
@@ -1285,7 +1285,7 @@
             "out_name":"sitemptop",
             "positive":"",
             "standard_name":"sea_ice_surface_temperature",
-            "type":"",
+            "type":"real",
             "units":"K",
             "valid_max":"",
             "valid_min":""
@@ -1319,8 +1319,8 @@
             "out_name":"sitimefrac",
             "positive":"",
             "standard_name":"sea_ice_time_fraction",
-            "type":"",
-            "units":"1.0",
+            "type":"real",
+            "units":"1",
             "valid_max":"",
             "valid_min":""
         },
@@ -1336,7 +1336,7 @@
             "out_name":"siu",
             "positive":"",
             "standard_name":"sea_ice_x_velocity",
-            "type":"",
+            "type":"real",
             "units":"m s-1",
             "valid_max":"",
             "valid_min":""
@@ -1353,7 +1353,7 @@
             "out_name":"siv",
             "positive":"",
             "standard_name":"sea_ice_y_velocity",
-            "type":"",
+            "type":"real",
             "units":"m s-1",
             "valid_max":"",
             "valid_min":""
@@ -1370,7 +1370,7 @@
             "out_name":"sivol",
             "positive":"",
             "standard_name":"sea_ice_thickness",
-            "type":"",
+            "type":"real",
             "units":"m",
             "valid_max":"",
             "valid_min":""
@@ -1387,7 +1387,7 @@
             "out_name":"sivoln",
             "positive":"",
             "standard_name":"sea_ice_volume",
-            "type":"",
+            "type":"real",
             "units":"1e3 km3",
             "valid_max":"",
             "valid_min":""
@@ -1404,7 +1404,7 @@
             "out_name":"sivols",
             "positive":"",
             "standard_name":"sea_ice_volume",
-            "type":"",
+            "type":"real",
             "units":"1e3 km3",
             "valid_max":"",
             "valid_min":""
@@ -1421,7 +1421,7 @@
             "out_name":"sndmassdyn",
             "positive":"",
             "standard_name":"tendency_of_snow_mass_due_to_sea_ice_dynamics",
-            "type":"",
+            "type":"real",
             "units":"kg m-2 s-1",
             "valid_max":"",
             "valid_min":""
@@ -1438,7 +1438,7 @@
             "out_name":"sndmassmelt",
             "positive":"",
             "standard_name":"surface_snow_melt_flux",
-            "type":"",
+            "type":"real",
             "units":"kg m-2 s-1",
             "valid_max":"",
             "valid_min":""
@@ -1455,7 +1455,7 @@
             "out_name":"sndmasssi",
             "positive":"",
             "standard_name":"tendency_of_surface_snow_amount_due_to_conversion_of_snow_to_sea_ice",
-            "type":"",
+            "type":"real",
             "units":"kg m-2 s-1",
             "valid_max":"",
             "valid_min":""
@@ -1472,7 +1472,7 @@
             "out_name":"sndmasssnf",
             "positive":"",
             "standard_name":"snowfall_flux",
-            "type":"",
+            "type":"real",
             "units":"kg m-2 s-1",
             "valid_max":"",
             "valid_min":""
@@ -1489,7 +1489,7 @@
             "out_name":"sndmasssubl",
             "positive":"",
             "standard_name":"surface_snow_sublimation_flux",
-            "type":"",
+            "type":"real",
             "units":"kg m-2 s-1",
             "valid_max":"",
             "valid_min":""
@@ -1506,7 +1506,7 @@
             "out_name":"sndmasswindrif",
             "positive":"",
             "standard_name":"tendency_of_snow_mass_due_to_drifting_snow",
-            "type":"",
+            "type":"real",
             "units":"kg m-2 s-1",
             "valid_max":"",
             "valid_min":""
@@ -1523,7 +1523,7 @@
             "out_name":"snmassacrossline",
             "positive":"",
             "standard_name":"snow_mass_transport_across_line",
-            "type":"",
+            "type":"real",
             "units":"kg s-1",
             "valid_max":"",
             "valid_min":""

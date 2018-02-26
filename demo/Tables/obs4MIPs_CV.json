@@ -197,6 +197,13 @@
             "variant_label"
         ],
         "source_id":{
+            "AIRS-1-0":{
+                "region":"global",
+                "source":"AIRS 1.0 (2011): Atmospheric Infrared Sounder",
+                "source_label":"AIRS",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"1.0"
+            },
             "CMSAF-CLARA-A-2-0":{
                 "region":"global",
                 "source":"CMSAF-CLARA-A 2.0 (2017): CM SAF cLoud, Albedo and surface RAdiation dataset from AVHRR data",

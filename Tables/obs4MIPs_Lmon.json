@@ -1,6 +1,6 @@
 {
     "Header":{
-        "#dataRequest_specs_version":"01.00.20",
+        "#dataRequest_specs_version":"01.00.21",
         "#mip_era":"CMIP6",
         "Conventions":"CF-1.7 ODS-2.1",
         "approx_interval":"30.00000",
@@ -11,7 +11,7 @@
         "missing_value":"1e20",
         "product":"observations",
         "realm":"land",
-        "table_date":"02 February 2018",
+        "table_date":"26 February 2018",
         "table_id":"Table obs4MIPs_Lmon"
     },
     "variable_entry":{
@@ -297,7 +297,7 @@
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"evspsblsoi",
-            "positive":"up",
+            "positive":"",
             "standard_name":"water_evaporation_flux_from_soil",
             "type":"real",
             "units":"kg m-2 s-1",
@@ -314,7 +314,7 @@
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"evspsblveg",
-            "positive":"up",
+            "positive":"",
             "standard_name":"water_evaporation_flux_from_canopy",
             "type":"real",
             "units":"kg m-2 s-1",
@@ -450,7 +450,7 @@
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"gpp",
-            "positive":"down",
+            "positive":"",
             "standard_name":"gross_primary_productivity_of_biomass_expressed_as_carbon",
             "type":"real",
             "units":"kg m-2 s-1",
@@ -487,7 +487,7 @@
             "positive":"",
             "standard_name":"leaf_area_index",
             "type":"real",
-            "units":"1.0",
+            "units":"1",
             "valid_max":"",
             "valid_min":""
         },
@@ -936,7 +936,7 @@
         "tsl":{
             "cell_measures":"",
             "cell_methods":"area: mean where land time: mean",
-            "comment":"Temperature of each soil layer. Reported as missing for grid cells with no land.",
+            "comment":"Temperature of soil. Reported as missing for grid cells with no land.",
             "dimensions":"longitude latitude sdepth time",
             "frequency":"mon",
             "long_name":"Temperature of Soil",

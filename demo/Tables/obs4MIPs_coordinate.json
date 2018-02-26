@@ -681,31 +681,6 @@
             "z_bounds_factors":"",
             "z_factors":""
         },
-        "icesheet":{
-            "axis":"",
-            "bounds_values":"",
-            "climatology":"",
-            "formula":"",
-            "long_name":"Ice Sheet",
-            "must_have_bounds":"no",
-            "out_name":"region",
-            "positive":"",
-            "requested":[
-                "antarctic",
-                "greenland"
-            ],
-            "requested_bounds":"",
-            "standard_name":"region",
-            "stored_direction":"",
-            "tolerance":"",
-            "type":"character",
-            "units":"",
-            "valid_max":"",
-            "valid_min":"",
-            "value":"",
-            "z_bounds_factors":"",
-            "z_factors":""
-        },
         "landUse":{
             "axis":"",
             "bounds_values":"",
@@ -1758,7 +1733,7 @@
             "stored_direction":"increasing",
             "tolerance":"",
             "type":"double",
-            "units":"1.0",
+            "units":"1",
             "valid_max":"",
             "valid_min":"",
             "value":"0.005, 0.605, 2.1, 4, 6, 8.5, 12.5, 17.5, 22.5, 27.5, 35, 45, 55, 70, 50040",
@@ -1819,14 +1794,10 @@
             "out_name":"line",
             "positive":"",
             "requested":[
-                "Fram",
-                "Strait,",
-                "Canadian",
-                "Archipelego,",
-                "Barents",
-                "opening,",
-                "Bering",
-                "Strait"
+                "fram_strait,",
+                "canadian_archipelego,",
+                "barents_opening,",
+                "bering_strait"
             ],
             "requested_bounds":"",
             "standard_name":"region",
@@ -2082,7 +2053,7 @@
             "stored_direction":"increasing",
             "tolerance":"",
             "type":"double",
-            "units":"1.0",
+            "units":"1",
             "valid_max":"",
             "valid_min":"",
             "value":"",

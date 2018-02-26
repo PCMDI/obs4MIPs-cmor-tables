@@ -1,5 +1,21 @@
 {
     "source_id":{
+        "AIRS-1-0":{
+            "institution_id":"NASA-JPL",
+            "region":[
+                "global"
+            ],
+            "release_year":"2011",
+            "source_description":"Atmospheric Infrared Sounder",
+            "source_label":"AIRS",
+            "source_name":"AIRS",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "hus",
+                "ta"
+            ],
+            "source_version_number":"1.0"
+        },
         "CMSAF-CLARA-A-2-0":{
             "institution_id":"DWD",
             "region":[

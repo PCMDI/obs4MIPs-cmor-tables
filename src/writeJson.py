@@ -116,6 +116,7 @@ masterTargets = [
  ] ;
 
 #%% Tables
+sha = '87218055a04f6e01c36039a75652d3824d1649ad'
 tableSource = [
  ['coordinate','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_coordinate.json'],
  ['formula_terms','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_formula_terms.json'],
@@ -129,8 +130,8 @@ tableSource = [
  ['Omon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Omon.json'],
  ['SImon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_SImon.json'],
  ['Aday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_day.json'],
- ['monNobs','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monNobs.json'],
- ['monStderr','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monStderr.json'],
+ ['monNobs','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/87218055a04f6e01c36039a75652d3824d1649ad/Tables/obs4MIPs_monNobs.json'],
+ ['monStderr','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/87218055a04f6e01c36039a75652d3824d1649ad/Tables/obs4MIPs_monStderr.json'],
  ] ;
 
 #%% Loop through tables and create in-memory objects
@@ -490,8 +491,6 @@ institution_id = readJsonCreateDict(tmp)
 institution_id = institution_id.get('institution_id')
 
 # Fix issues
-institution_id['institution_id']['NASA-JPL'] = 'NASA\'s Jet Propulsion Laboratory, Pasadena, CA 91109, USA'
-institution_id['institution_id'].pop('JPL')
 #==============================================================================
 # Example new institution_id entry
 #institution_id['institution_id']['NOAA-NCEI'] = 'NOAA\'s National Centers for Environmental Information, Asheville, NC 28801, USA'
@@ -627,7 +626,20 @@ source_id = readJsonCreateDict(tmp)
 source_id = source_id.get('source_id')
 
 # Enter fixes or additions below
-
+key = 'variable_entry'
+source_id['source_id'].pop(key)
+key = 'AIRS-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'AIRS'
+source_id['source_id'][key]['release_year'] = '2011'
+source_id['source_id'][key]['source_description'] = 'Atmospheric Infrared Sounder'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'NASA-JPL'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['ta','hus']
+## derived
+source_id['source_id'][key]['source_label'] = 'AIRS'
 #==============================================================================
 # Example new source_id entry
 #key = 'CMSAF-SARAH-2-0'
