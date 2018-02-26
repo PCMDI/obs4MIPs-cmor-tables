@@ -1,6 +1,6 @@
 {
     "Header":{
-        "#dataRequest_specs_version":"01.00.16",
+        "#dataRequest_specs_version":"01.00.21",
         "#mip_era":"CMIP6",
         "Conventions":"CF-1.7 ODS-2.1",
         "approx_interval":"1.00000",
@@ -11,7 +11,7 @@
         "missing_value":"1e20",
         "product":"observations",
         "realm":"atmos",
-        "table_date":"04 October 2017",
+        "table_date":"26 February 2018",
         "table_id":"Table obs4MIPs_Aday"
     },
     "variable_entry":{
@@ -147,7 +147,7 @@
             "positive":"",
             "standard_name":"specific_humidity",
             "type":"real",
-            "units":"1.0",
+            "units":"1",
             "valid_max":"",
             "valid_min":""
         },
@@ -164,7 +164,7 @@
             "positive":"",
             "standard_name":"specific_humidity",
             "type":"real",
-            "units":"1.0",
+            "units":"1",
             "valid_max":"",
             "valid_min":""
         },

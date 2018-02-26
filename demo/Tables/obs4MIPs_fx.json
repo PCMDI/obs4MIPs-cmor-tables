@@ -1,6 +1,6 @@
 {
     "Header":{
-        "#dataRequest_specs_version":"01.00.16",
+        "#dataRequest_specs_version":"01.00.21",
         "#mip_era":"CMIP6",
         "Conventions":"CF-1.7 ODS-2.1",
         "approx_interval":"0.00000",
@@ -11,17 +11,17 @@
         "missing_value":"1e20",
         "product":"observations",
         "realm":"fx",
-        "table_date":"04 October 2017",
+        "table_date":"26 February 2018",
         "table_id":"Table obs4MIPs_fx"
     },
     "variable_entry":{
         "areacella":{
-            "cell_measures":"area: areacella",
-            "cell_methods":"area: mean",
+            "cell_measures":"",
+            "cell_methods":"area: sum",
             "comment":"For atmospheres with more than 1 mesh (e.g., staggered grids), report areas that apply to surface vertical fluxes of energy.",
             "dimensions":"longitude latitude",
             "frequency":"fx",
-            "long_name":"Atmosphere Grid-Cell Area",
+            "long_name":"Grid-Cell Area for Atmospheric Variables",
             "modeling_realm":"atmos land",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
@@ -34,12 +34,12 @@
             "valid_min":""
         },
         "areacellr":{
-            "cell_measures":"area: areacella",
-            "cell_methods":"area: mean",
+            "cell_measures":"",
+            "cell_methods":"area: sum",
             "comment":"For river routing model, if grid differs from the atmospheric grid.",
             "dimensions":"longitude latitude",
             "frequency":"fx",
-            "long_name":"River Model Grid-Cell Area",
+            "long_name":"Grid-Cell Area for River Model Variables",
             "modeling_realm":"land",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
@@ -154,7 +154,7 @@
             "out_name":"zfull",
             "positive":"",
             "standard_name":"height_above_reference_ellipsoid",
-            "type":"float",
+            "type":"real",
             "units":"m",
             "valid_max":"",
             "valid_min":""

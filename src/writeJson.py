@@ -441,6 +441,10 @@ Amon['variable_entry']['pme']['units'] = 'kg m-2 s-1'
 Amon['variable_entry']['pme']['valid_max'] = ''
 Amon['variable_entry']['pme']['valid_min'] = ''
 
+###
+
+
+
 # monNobs
 #--------
 # Example new monNobs entry
@@ -631,6 +635,23 @@ source_id = source_id.get('source_id')
 #source_id['source_id'][key]['region'] = 'global'
 #source_id['source_id'][key]['source_version_number'] = 'satellite_blended'
 #source_id['source_id'][key]['source'] = source_id['source_id'][key]['source_name'] + ' ' + source_id['source_id'][key]['source_version_number'] + ' ' + '(' + source_id['source_id'][key]['release_year'] + '): ' + source_id['source_id'][key]['source_description']
+
+## ADDING obs4MIPs1.0 
+###################################################################################
+
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'AIRS'
+source_id['source_id'][key]['release_year'] = '2011'
+source_id['source_id'][key]['source_description'] = 'Atmospheric Infrared Sounder'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'NASA-JPL'
+source_id['source_id'][key]['region'] = 'Global'
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['ta','hus'] 
+## derived
+source_id['source_id'][key]['source_label'] = 'AIRS'
+
+###################################################################################
 
 #%% Source type
 source_type = [

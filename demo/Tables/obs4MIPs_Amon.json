@@ -1,6 +1,6 @@
 {
     "Header":{
-        "#dataRequest_specs_version":"01.00.16",
+        "#dataRequest_specs_version":"01.00.21",
         "#mip_era":"CMIP6",
         "Conventions":"CF-1.7 ODS-2.1",
         "approx_interval":"30.00000",
@@ -11,7 +11,7 @@
         "missing_value":"1e20",
         "product":"observations",
         "realm":"atmos",
-        "table_date":"04 October 2017",
+        "table_date":"26 February 2018",
         "table_id":"Table obs4MIPs_Amon"
     },
     "variable_entry":{
@@ -181,7 +181,7 @@
             "positive":"",
             "standard_name":"convection_time_fraction",
             "type":"real",
-            "units":"1.0",
+            "units":"1",
             "valid_max":"",
             "valid_min":""
         },
@@ -501,7 +501,7 @@
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"evspsbl",
-            "positive":"up",
+            "positive":"",
             "standard_name":"water_evaporation_flux",
             "type":"real",
             "units":"kg m-2 s-1",
@@ -518,7 +518,7 @@
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"fco2antt",
-            "positive":"up",
+            "positive":"",
             "standard_name":"tendency_of_atmosphere_mass_content_of_carbon_dioxide_expressed_as_carbon_due_to_anthropogenic_emission",
             "type":"real",
             "units":"kg m-2 s-1",
@@ -535,7 +535,7 @@
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"fco2fos",
-            "positive":"up",
+            "positive":"",
             "standard_name":"tendency_of_atmosphere_mass_content_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_fossil_fuel_combustion",
             "type":"real",
             "units":"kg m-2 s-1",
@@ -552,7 +552,7 @@
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"fco2nat",
-            "positive":"up",
+            "positive":"",
             "standard_name":"surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_natural_sources",
             "type":"real",
             "units":"kg m-2 s-1",
@@ -657,7 +657,7 @@
             "positive":"",
             "standard_name":"specific_humidity",
             "type":"real",
-            "units":"1.0",
+            "units":"1",
             "valid_max":"",
             "valid_min":""
         },
@@ -674,7 +674,7 @@
             "positive":"",
             "standard_name":"specific_humidity",
             "type":"real",
-            "units":"1.0",
+            "units":"1",
             "valid_max":"",
             "valid_min":""
         },
@@ -1201,7 +1201,7 @@
             "positive":"",
             "standard_name":"shallow_convection_time_fraction",
             "type":"real",
-            "units":"1.0",
+            "units":"1",
             "valid_max":"",
             "valid_min":""
         },
