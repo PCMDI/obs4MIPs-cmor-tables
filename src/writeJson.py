@@ -76,6 +76,7 @@ PJD  2 Feb 2018     - Updated institution_id JPL -> NASA-JPL https://github.com/
 #%% Import statements
 import copy,gc,json,os,re,shutil,ssl,subprocess,sys,time
 from durolib import readJsonCreateDict ; #getGitInfo
+import pdb
 
 #%% Determine path
 homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
@@ -644,6 +645,13 @@ source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] = ['ta','hus']
 ## derived
 source_id['source_id'][key]['source_label'] = 'AIRS'
+#pdb.set_trace()
+# Fix region non-list
+for keyVal in source_id['source_id'].keys():
+    print source_id['source_id'][key]['region']
+    if type(source_id['source_id'][key]['region']) != list:
+        source_id['source_id'][key]['region'] = list(source_id['source_id'][key]['region'])
+
 #==============================================================================
 # Example new source_id entry
 #key = 'CMSAF-SARAH-2-0'
@@ -673,22 +681,7 @@ source_id['source_id'][key]['source_label'] = 'AIRS'
 #source_id['source_id'][key] = {}
 #source_id['source_id'][key] = source_id['source_id'].pop('CMSAF-SARAH-2-0')
 
-## ADDING obs4MIPs1.0 
-###################################################################################
-
-key = 'AIRS-1-0'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'AIRS'
-source_id['source_id'][key]['release_year'] = '2011'
-source_id['source_id'][key]['source_description'] = 'Atmospheric Infrared Sounder'
-source_id['source_id'][key]['source_version_number'] = '1.0'
-source_id['source_id'][key]['institution_id'] = 'NASA-JPL'
-source_id['source_id'][key]['region'] = ['global']
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['source_variables'] = ['ta','hus'] 
-## derived
-source_id['source_id'][key]['source_label'] = 'AIRS'
-
+## ADDING obs4MIPs1.0
 ###################################################################################
 
 #%% Source type
