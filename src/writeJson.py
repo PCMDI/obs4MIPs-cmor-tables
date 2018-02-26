@@ -652,6 +652,7 @@ for keyVal in source_id['source_id'].keys():
     if type(source_id['source_id'][key]['region']) != list:
         source_id['source_id'][key]['region'] = list(source_id['source_id'][key]['region'])
 
+pdb.set_trace()
 #==============================================================================
 # Example new source_id entry
 #key = 'CMSAF-SARAH-2-0'
