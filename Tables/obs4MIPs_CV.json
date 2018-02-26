@@ -216,47 +216,67 @@
                 "source_version_number":"4.0"
             },
             "CMSAF-SARAH-2-0":{
+<<<<<<< HEAD
                 "region":[
                     "africa",
                     "atlantic_ocean",
                     "europe"
                 ],
+=======
+                "region":"africa, atlantic_ocean, europe",
+>>>>>>> 87218055a04f6e01c36039a75652d3824d1649ad
                 "source":"CMSAF-SARAH 2.0 (2017): Surface solAr RAdiation data set - Heliosat, based on MVIRI/SEVIRI aboard METEOSAT",
                 "source_label":"CMSAF-SARAH",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
             },
             "ESACCI-CLOUD-ATSR2-AATSR-2-0":{
+<<<<<<< HEAD
                 "region":[
                     "global"
                 ],
+=======
+                "region":"global",
+>>>>>>> 87218055a04f6e01c36039a75652d3824d1649ad
                 "source":"ESACCI-CLOUD-ATSR2-AATSR 2.0 (2017): Cloud properties derived from ATSR2 and AATSR (aboard ERS2 and ENVISAT) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.",
                 "source_label":"ESACCI-CLOUD-ATSR2-AATSR",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
             },
             "ESACCI-CLOUD-AVHRR-AM-2-0":{
+<<<<<<< HEAD
                 "region":[
                     "global"
                 ],
+=======
+                "region":"global",
+>>>>>>> 87218055a04f6e01c36039a75652d3824d1649ad
                 "source":"ESACCI-CLOUD-AVHRR-AM 2.0 (2017): Cloud properties derived from AVHRR (aboard NOAA and MetOp AM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets",
                 "source_label":"ESACCI-CLOUD-AVHRR-AM",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
             },
             "ESACCI-CLOUD-AVHRR-PM-2-0":{
+<<<<<<< HEAD
                 "region":[
                     "global"
                 ],
+=======
+                "region":"global",
+>>>>>>> 87218055a04f6e01c36039a75652d3824d1649ad
                 "source":"ESACCI-CLOUD-AVHRR-PM 2.0 (2017): Cloud properties derived from AVHRR (aboard NOAA and MetOp PM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets",
                 "source_label":"ESACCI-CLOUD-AVHRR-PM",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
             },
             "ESACCI-CLOUD-MERIS-AATSR-2-0":{
+<<<<<<< HEAD
                 "region":[
                     "global"
                 ],
+=======
+                "region":"global",
+>>>>>>> 87218055a04f6e01c36039a75652d3824d1649ad
                 "source":"ESACCI-CLOUD-MERIS-AATSR 2.0 (2017): Cloud properties derived from MERIS and AATSR (aboard ENVISAT) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.",
                 "source_label":"ESACCI-CLOUD-MERIS-AATSR",
                 "source_type":"satellite_retrieval",
@@ -290,9 +310,13 @@
                 "source_version_number":"4.0"
             },
             "NOAA-NCEI-GridSat-4-0":{
+<<<<<<< HEAD
                 "region":[
                     "global"
                 ],
+=======
+                "region":"global",
+>>>>>>> 87218055a04f6e01c36039a75652d3824d1649ad
                 "source":"NOAA-NCEI-GridSat 4.0 (2015): Gridded Satellite ISCCP B1 11 Micron Brightness Temperature",
                 "source_label":"NOAA-NCEI-GridSat",
                 "source_type":"satellite_retrieval",
@@ -342,12 +366,12 @@
                 "source_version_number":"1.0"
             }
         },
-        "source_type":[
-            "gridded_insitu",
-            "reanalysis",
-            "satellite_blended",
-            "satellite_retrieval"
-        ],
+        "source_type":{
+            "gridded_insitu":"gridded product based on measurements collected from in-situ instruments",
+            "reanalysis":"gridded product generated from a model reanalysis based on in-situ instruments and possibly satellite measurements",
+            "satellite_blended":"gridded product based on both in-situ instruments and satellite measurements",
+            "satellite_retrieval":"gridded product based on satellite measurements"
+        },
         "table_id":[
             "obs4MIPs_Aday",
             "obs4MIPs_Amon",

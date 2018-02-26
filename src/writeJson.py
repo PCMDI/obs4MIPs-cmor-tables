@@ -63,12 +63,18 @@ PJG 28 Sep 2017     - added DWD RC
 PJD  4 Oct 2017     - Revise Amon variable ttbr https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/115
 PJD  4 Oct 2017     - Revise cell_methods for numerous DWD contributed variables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/72
 PJD  4 Oct 2017     - Update Aday table cell_measures entries https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/120
+PJG  5 Nov 2017     - Continuing DWD RC
+PJD  9 Nov 2017     - Review source_id format for regions and variables; Fix inconsistencies https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/133
+PJD  9 Nov 2017     - Added source_id validation for valid characters following https://goo.gl/jVZsQl
+PJD  9 Nov 2017     - Updated obs4MIPs_CV.json region format following CMOR3.2.8 release https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/136
+PJD  9 Nov 2017     - Updated source_type format adding descriptions https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/98
+PJD  2 Feb 2018     - Updated institution_id JPL -> NASA-JPL https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/139
 
 @author: durack1
 """
 
 #%% Import statements
-import copy,gc,json,os,shutil,ssl,subprocess,time
+import copy,gc,json,os,re,shutil,ssl,subprocess,sys,time
 from durolib import readJsonCreateDict ; #getGitInfo
 
 #%% Determine path
@@ -250,6 +256,7 @@ Lmon['variable_entry']['fapar']['type'] = 'real'
 Lmon['variable_entry']['fapar']['units'] = '1'
 Lmon['variable_entry']['fapar']['valid_max'] = '1.0'
 Lmon['variable_entry']['fapar']['valid_min'] = '0.0'
+#####################################################################################################################
 # DWD cloud variables (CM SAF CLARA & ESA Cloud_CCI) ...
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
 Amon['variable_entry'][u'clCCI'] = {}
@@ -487,6 +494,8 @@ institution_id = readJsonCreateDict(tmp)
 institution_id = institution_id.get('institution_id')
 
 # Fix issues
+institution_id['institution_id']['NASA-JPL'] = 'NASA\'s Jet Propulsion Laboratory, Pasadena, CA 91109, USA'
+institution_id['institution_id'].pop('JPL')
 #==============================================================================
 # Example new institution_id entry
 #institution_id['institution_id']['NOAA-NCEI'] = 'NOAA\'s National Centers for Environmental Information, Asheville, NC 28801, USA'
@@ -621,20 +630,36 @@ tmp = [['source_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-table
 source_id = readJsonCreateDict(tmp)
 source_id = source_id.get('source_id')
 
+# Enter fixes or additions below
+
 #==============================================================================
 # Example new source_id entry
-#key = 'REMSS-PRW-6-6-0'
+#key = 'CMSAF-SARAH-2-0'
 #source_id['source_id'][key] = {}
-#source_id['source_id'][key]['source_description'] = 'Water Vapor Path'
-#source_id['source_id'][key]['institution_id'] = 'RSS'
+#source_id['source_id'][key]['source_description'] = 'Surface solAr RAdiation data set - Heliosat, based on MVIRI/SEVIRI aboard METEOSAT'
+#source_id['source_id'][key]['institution_id'] = 'DWD'
 #source_id['source_id'][key]['release_year'] = '2017'
 #source_id['source_id'][key]['source_id'] = key
-#source_id['source_id'][key]['source_label'] = 'REMSS-PRW'
-#source_id['source_id'][key]['source_name'] = 'REMSS PRW'
-#source_id['source_id'][key]['source_type'] = 'satellite_blended'
-#source_id['source_id'][key]['region'] = 'global'
-#source_id['source_id'][key]['source_version_number'] = 'satellite_blended'
-#source_id['source_id'][key]['source'] = source_id['source_id'][key]['source_name'] + ' ' + source_id['source_id'][key]['source_version_number'] + ' ' + '(' + source_id['source_id'][key]['release_year'] + '): ' + source_id['source_id'][key]['source_description']
+#source_id['source_id'][key]['source_label'] = 'CMSAF-SARAH'
+#source_id['source_id'][key]['source_name'] = 'CMSAF SARAH'
+#source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+#source_id['source_id'][key]['region'] = list('africa','atlantic_ocean','europe')
+#source_id['source_id'][key]['source_variables'] = list('rsds')
+#source_id['source_id'][key]['source_version_number'] = '2.0'
+
+# Example rename source_id entry
+#key = 'CMSAF-SARAH-2-0'
+#source_id['source_id'][key] = {}
+#source_id['source_id'][key] = source_id['source_id'].pop('CMSAF-SARAH-2.0')
+
+# Example remove source_id entry
+#key = 'CMSAF-SARAH-2.0'
+#source_id['source_id'].pop(key)
+
+# Test invalid chars
+#key = 'CMSAF-SARAH-2 0' ; # Tested ".", “_”, “(“, “)”, “/”, and " "
+#source_id['source_id'][key] = {}
+#source_id['source_id'][key] = source_id['source_id'].pop('CMSAF-SARAH-2-0')
 
 ## ADDING obs4MIPs1.0 
 ###################################################################################
@@ -654,12 +679,11 @@ source_id['source_id'][key]['source_label'] = 'AIRS'
 ###################################################################################
 
 #%% Source type
-source_type = [
- 'gridded_insitu',
- 'reanalysis',
- 'satellite_blended',
- 'satellite_retrieval'
-] ;
+source_type = {}
+source_type['gridded_insitu'] = 'gridded product based on measurements collected from in-situ instruments'
+source_type['reanalysis'] = 'gridded product generated from a model reanalysis based on in-situ instruments and possibly satellite measurements'
+source_type['satellite_blended'] = 'gridded product based on both in-situ instruments and satellite measurements'
+source_type['satellite_retrieval'] = 'gridded product based on satellite measurements'
 
 #%% Table ID
 table_id = [
@@ -672,6 +696,39 @@ table_id = [
   'obs4MIPs_monNobs',
   'obs4MIPs_monStderr'
 ] ;
+
+#%% Validate entries
+def entryCheck(entry,search=re.compile(r'[^a-zA-Z0-9-]').search):
+    return not bool(search(entry))
+
+# source_id
+for key in source_id['source_id'].keys():
+    # Validate source_id format
+    if not entryCheck(key):
+        print 'Invalid source_id format for entry:',key,'- aborting'
+        sys.exit()
+    # Sort variable entries
+    vals = source_id['source_id'][key]['source_variables']
+    if not isinstance(vals,list):
+        vals = list(vals); vals.sort()
+    else:
+        vals.sort()
+    # Validate source_label format
+    val = source_id['source_id'][key]['source_label']
+    if not entryCheck(key):
+        print 'Invalid source_label format for entry:',key,'- aborting'
+        sys.exit()
+    # Validate source_type
+    val = source_id['source_id'][key]['source_type']
+    if val not in source_type:
+        print'Invalid source_type for entry:',key,'- aborting'
+        sys.exit()
+    # Validate region
+    vals = source_id['source_id'][key]['region']
+    for val in vals:
+        if val not in region:
+            print'Invalid region for entry:',key,'- aborting'
+            sys.exit()
 
 #%% Write variables to files
 for jsonName in masterTargets:
@@ -783,7 +840,7 @@ for count,CV in enumerate(CVJsonList):
             obs4MIPs_CV['CV']['source_id'][key]['source_label'] = values['source_label']
             obs4MIPs_CV['CV']['source_id'][key]['source_type'] = values['source_type']
             obs4MIPs_CV['CV']['source_id'][key]['source_version_number'] = values['source_version_number']
-            obs4MIPs_CV['CV']['source_id'][key]['region'] = values['region']
+            obs4MIPs_CV['CV']['source_id'][key]['region'] = ', '.join(str(a) for a in values['region'])
             obs4MIPs_CV['CV']['source_id'][key]['source'] = string
     # Rewrite table names
     elif CV == 'table_id':

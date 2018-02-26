@@ -1,6 +1,10 @@
 {
     "Header":{
+<<<<<<< HEAD
         "#dataRequest_specs_version":"01.00.21",
+=======
+        "#dataRequest_specs_version":"01.00.20",
+>>>>>>> 87218055a04f6e01c36039a75652d3824d1649ad
         "#mip_era":"CMIP6",
         "Conventions":"CF-1.7 ODS-2.1",
         "approx_interval":"30.00000",
@@ -11,7 +15,11 @@
         "missing_value":"1e20",
         "product":"observations",
         "realm":"atmos",
+<<<<<<< HEAD
         "table_date":"26 February 2018",
+=======
+        "table_date":"02 February 2018",
+>>>>>>> 87218055a04f6e01c36039a75652d3824d1649ad
         "table_id":"Table obs4MIPs_Amon"
     },
     "variable_entry":{

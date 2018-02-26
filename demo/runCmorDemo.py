@@ -7,7 +7,7 @@ import numpy as np
 #%% User provided input
 cmorTable = 'Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'rssSsmiPrw-input.json' ; # Update contents of this file to set your global_attributes
-inputDataPath = 'rss_ssmi_prw_v06.6-demo.nc'
+inputFilePath = 'rss_ssmi_prw_v06.6-demo.nc'
 inputVarName = 'prw'
 outputVarName = 'prw'
 outputUnits = 'kg m-2'
@@ -15,7 +15,7 @@ outputUnits = 'kg m-2'
 ### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE...
 #%% Process variable (with time axis)
 # Open and read input netcdf file
-f = cdm.open(inputDataPath)
+f = cdm.open(inputFilePath)
 d = f(inputVarName)
 lat = d.getLatitude()
 lon = d.getLongitude()
@@ -61,8 +61,8 @@ varid   = cmor.variable(outputVarName,d.units,axisIds,missing_value=d.missing)
 values  = np.array(d[:],np.float32)
 
 # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-cmor.set_variable_attribute(varid,'valid_min',2.0)
-cmor.set_variable_attribute(varid,'valid_max',3.0)
+cmor.set_variable_attribute(varid,'valid_min','f',2.0)
+cmor.set_variable_attribute(varid,'valid_max','f',3.0)
 
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
 cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
