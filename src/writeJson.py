@@ -629,7 +629,7 @@ tmp = [['source_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-table
       ] ;
 source_id = readJsonCreateDict(tmp)
 source_id = source_id.get('source_id')
-
+"""
 # Enter fixes or additions below
 #key = 'variable_entry'
 #source_id['source_id'].pop(key)
@@ -645,6 +645,24 @@ source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] = ['ta','hus']
 ## derived
 source_id['source_id'][key]['source_label'] = 'AIRS'
+"""
+
+# Enter fixes or additions below
+#key = 'variable_entry'
+#source_id['source_id'].pop(key)
+key = 'GNSS-RO-1-3'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'GNSS RO'
+source_id['source_id'][key]['release_year'] = '2016'
+source_id['source_id'][key]['source_description'] = 'Global Navigation Satellite Systems Radio Occultation'
+source_id['source_id'][key]['source_version_number'] = '1.3'
+source_id['source_id'][key]['institution_id'] = 'NASA-JPL'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['ta','zg']
+## derived
+source_id['source_id'][key]['source_label'] = 'GNSS-RO'
+
 #pdb.set_trace()
 # Fix region non-list
 for keyVal in source_id['source_id'].keys():
