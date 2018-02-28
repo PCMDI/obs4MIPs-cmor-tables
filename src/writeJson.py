@@ -76,7 +76,7 @@ PJD  2 Feb 2018     - Updated institution_id JPL -> NASA-JPL https://github.com/
 #%% Import statements
 import copy,gc,json,os,re,shutil,ssl,subprocess,sys,time
 from durolib import readJsonCreateDict ; #getGitInfo
-import pdb
+#import pdb
 
 #%% Determine path
 homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
@@ -131,8 +131,8 @@ tableSource = [
  ['Omon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Omon.json'],
  ['SImon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_SImon.json'],
  ['Aday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_day.json'],
- ['monNobs','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/87218055a04f6e01c36039a75652d3824d1649ad/Tables/obs4MIPs_monNobs.json'],
- ['monStderr','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/87218055a04f6e01c36039a75652d3824d1649ad/Tables/obs4MIPs_monStderr.json'],
+ ['monNobs','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monNobs.json'],
+ ['monStderr','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monStderr.json'],
  ] ;
 
 #%% Loop through tables and create in-memory objects
@@ -631,8 +631,8 @@ source_id = readJsonCreateDict(tmp)
 source_id = source_id.get('source_id')
 
 # Enter fixes or additions below
-key = 'variable_entry'
-source_id['source_id'].pop(key)
+#key = 'variable_entry'
+#source_id['source_id'].pop(key)
 key = 'AIRS-1-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'AIRS'
@@ -652,7 +652,7 @@ for keyVal in source_id['source_id'].keys():
     if type(source_id['source_id'][key]['region']) != list:
         source_id['source_id'][key]['region'] = list(source_id['source_id'][key]['region'])
 
-pdb.set_trace()
+#pdb.set_trace()
 #==============================================================================
 # Example new source_id entry
 #key = 'CMSAF-SARAH-2-0'
