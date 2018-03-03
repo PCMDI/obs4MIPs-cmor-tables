@@ -309,6 +309,13 @@
                 "source_type":"satellite_blended",
                 "source_version_number":"1.2"
             },
+            "QuikSCAT-v20110531":{
+                "region":"global",
+                "source":"QuikSCAT v20110531 (2011): QuikSCAT winds monthly climatology derived from QuikSCAT L2B using the 2006 model function and processing algorithms.",
+                "source_label":"QuikSCAT",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"v20110531"
+            },
             "REMSS-PRW-6-6-0":{
                 "region":"global",
                 "source":"REMSS-PRW 6.6.0 (2017): Water Vapor Path",
