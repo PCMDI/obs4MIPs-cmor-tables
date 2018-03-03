@@ -653,7 +653,8 @@ source_id['source_id'][key]['source_name'] = 'QuikSCAT'
 source_id['source_id'][key]['release_year'] = '2011'
 source_id['source_id'][key]['source_description'] = 'QuikSCAT winds monthly climatology derived from QuikSCAT L2B using the 2006 model function and processing algorithms.'
 source_id['source_id'][key]['source_version_number'] = 'v20110531'
-source_id['source_id'][key]['institution_id'] = 'National Aeronautics and Space Administration, Jet Propulsion Laboratory'
+#source_id['source_id'][key]['institution_id'] = 'National Aeronautics and Space Administration, Jet Propulsion Laboratory'
+source_id['source_id'][key]['institution_id'] = 'NASA-JPL'
 source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] =  ['sfcWind','uas','vas']
@@ -674,7 +675,6 @@ source_id['source_id'][key]['source_variables'] = ['ta','zg']
 ## derived
 source_id['source_id'][key]['source_label'] = 'GNSS-RO'
 """
-
 
 #pdb.set_trace()
 # Fix region non-list
