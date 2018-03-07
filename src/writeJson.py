@@ -647,7 +647,6 @@ source_id['source_id'][key]['source_variables'] = ['ta','hus']
 source_id['source_id'][key]['source_label'] = 'AIRS'
 """
 
-"""
 key = 'QuikSCAT-v20110531' 
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'QuikSCAT'
@@ -661,6 +660,7 @@ source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] =  ['sfcWind','uas','vas']
 ## derived from RC
 source_id['source_id'][key]['source_label'] = 'QuikSCAT'
+
 """
 key = 'Aura-MLS-v04-2'
 source_id['source_id'][key] = {}
@@ -674,7 +674,7 @@ source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] =  ['ta','hus','cli']
 ## derived from RC
 source_id['source_id'][key]['source_label'] = 'Aura-MLS'
-
+"""
 """
 key = 'GNSS-RO-1-3'
 source_id['source_id'][key] = {}
