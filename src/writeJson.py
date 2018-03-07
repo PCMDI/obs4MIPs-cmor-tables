@@ -647,9 +647,35 @@ source_id['source_id'][key]['source_variables'] = ['ta','hus']
 source_id['source_id'][key]['source_label'] = 'AIRS'
 """
 
-# Enter fixes or additions below
-#key = 'variable_entry'
-#source_id['source_id'].pop(key)
+"""
+key = 'QuikSCAT-v20110531' 
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'QuikSCAT'
+source_id['source_id'][key]['release_year'] = '2011'
+source_id['source_id'][key]['source_description'] = 'QuikSCAT winds monthly climatology derived from QuikSCAT L2B using the 2006 model function and processing algorithms.'
+source_id['source_id'][key]['source_version_number'] = 'v20110531'
+#source_id['source_id'][key]['institution_id'] = 'National Aeronautics and Space Administration, Jet Propulsion Laboratory'
+source_id['source_id'][key]['institution_id'] = 'NASA-JPL'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] =  ['sfcWind','uas','vas']
+## derived from RC
+source_id['source_id'][key]['source_label'] = 'QuikSCAT'
+"""
+key = 'Aura-MLS-v04-2'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'Aura MLS'
+source_id['source_id'][key]['release_year'] = '2018'
+source_id['source_id'][key]['source_description'] = 'EOS Aura Microwave Limb Sounder'
+source_id['source_id'][key]['source_version_number'] = 'v04.2'
+source_id['source_id'][key]['institution_id'] = 'NASA-JPL'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] =  ['ta','hus','cli']
+## derived from RC
+source_id['source_id'][key]['source_label'] = 'Aura-MLS'
+
+"""
 key = 'GNSS-RO-1-3'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'GNSS RO'
@@ -662,6 +688,7 @@ source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] = ['ta','zg']
 ## derived
 source_id['source_id'][key]['source_label'] = 'GNSS-RO'
+"""
 
 #pdb.set_trace()
 # Fix region non-list

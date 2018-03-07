@@ -204,6 +204,13 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.0"
             },
+            "Aura-MLS-v04-2":{
+                "region":"global",
+                "source":"Aura-MLS v04.2 (2018): EOS Aura Microwave Limb Sounder",
+                "source_label":"Aura-MLS",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"v04.2"
+            },
             "CMSAF-CLARA-A-2-0":{
                 "region":"global",
                 "source":"CMSAF-CLARA-A 2.0 (2017): CM SAF cLoud, Albedo and surface RAdiation dataset from AVHRR data",
