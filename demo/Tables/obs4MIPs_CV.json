@@ -204,6 +204,13 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.0"
             },
+            "Aura-MLS-v04-2":{
+                "region":"global",
+                "source":"Aura-MLS v04.2 (2018): EOS Aura Microwave Limb Sounder",
+                "source_label":"Aura-MLS",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"v04.2"
+            },
             "CMSAF-CLARA-A-2-0":{
                 "region":"global",
                 "source":"CMSAF-CLARA-A 2.0 (2017): CM SAF cLoud, Albedo and surface RAdiation dataset from AVHRR data",
@@ -308,13 +315,6 @@
                 "source_label":"NOAA-NCEI-SeaWinds",
                 "source_type":"satellite_blended",
                 "source_version_number":"1.2"
-            },
-            "QuikSCAT-v20110531":{
-                "region":"global",
-                "source":"QuikSCAT v20110531 (2011): QuikSCAT winds monthly climatology derived from QuikSCAT L2B using the 2006 model function and processing algorithms.",
-                "source_label":"QuikSCAT",
-                "source_type":"satellite_retrieval",
-                "source_version_number":"v20110531"
             },
             "REMSS-PRW-6-6-0":{
                 "region":"global",

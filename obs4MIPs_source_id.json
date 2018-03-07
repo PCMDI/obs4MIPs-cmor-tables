@@ -16,6 +16,23 @@
             ],
             "source_version_number":"1.0"
         },
+        "Aura-MLS-v04-2":{
+            "institution_id":"NASA-JPL",
+            "region":[
+                "global"
+            ],
+            "release_year":"2018",
+            "source_description":"EOS Aura Microwave Limb Sounder",
+            "source_label":"Aura-MLS",
+            "source_name":"Aura MLS",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "cli",
+                "hus",
+                "ta"
+            ],
+            "source_version_number":"v04.2"
+        },
         "CMSAF-CLARA-A-2-0":{
             "institution_id":"DWD",
             "region":[
@@ -298,23 +315,6 @@
                 "vas"
             ],
             "source_version_number":"1.2"
-        },
-        "QuikSCAT-v20110531":{
-            "institution_id":"NASA-JPL",
-            "region":[
-                "global"
-            ],
-            "release_year":"2011",
-            "source_description":"QuikSCAT winds monthly climatology derived from QuikSCAT L2B using the 2006 model function and processing algorithms.",
-            "source_label":"QuikSCAT",
-            "source_name":"QuikSCAT",
-            "source_type":"satellite_retrieval",
-            "source_variables":[
-                "sfcWind",
-                "uas",
-                "vas"
-            ],
-            "source_version_number":"v20110531"
         },
         "REMSS-PRW-6-6-0":{
             "institution_id":"RSS",
