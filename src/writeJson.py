@@ -659,7 +659,19 @@ source_id['source_id'][key]['source_type'] = 'satellite_blended'
 source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-OISST'
 source_id['source_id'][key]['source_variables'] = ['tos']
 """
+key = 'NOAA-NCEI-OLR-1-2'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'NOAA NCEI OLR'
+source_id['source_id'][key]['release_year'] = '2014'
+source_id['source_id'][key]['source_description'] = 'Outgoing Longwave Radiation'
+source_id['source_id'][key]['source_version_number'] = '1.2'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-OLR'
+source_id['source_id'][key]['source_variables'] = ['rlut'] 
 
+"""
 key = 'NOAA-NCEI-SeaIce-2-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'NOAA NCEI SeaIce'
@@ -671,7 +683,7 @@ source_id['source_id'][key]['region'] = ['global_ocean']
 source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-SeaIce'
 source_id['source_id'][key]['source_variables'] = ['siconc']
-
+"""
 """
 key = 'QuikSCAT-v20110531' 
 source_id['source_id'][key] = {}

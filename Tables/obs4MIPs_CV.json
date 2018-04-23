@@ -302,19 +302,19 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"4.0"
             },
+            "NOAA-NCEI-OLR-1-2":{
+                "region":"global",
+                "source":"NOAA-NCEI-OLR 1.2 (2014): Outgoing Longwave Radiation",
+                "source_label":"NOAA-NCEI-OLR",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"1.2"
+            },
             "NOAA-NCEI-PERSIANN-1-1":{
                 "region":"global",
                 "source":"NOAA-NCEI-PERSIANN 1.1 (2014): Precipitation Estimation from Remotely Sensed Information using Artificial Neural Network",
                 "source_label":"NOAA-NCEI-PERSIANN",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.1"
-            },
-            "NOAA-NCEI-SeaIce-2-0":{
-                "region":"global_ocean",
-                "source":"NOAA-NCEI-SeaIce 2.0 (2013): Passive Microwave Sea Ice Area Fraction",
-                "source_label":"NOAA-NCEI-SeaIce",
-                "source_type":"satellite_retrieval",
-                "source_version_number":"2.0"
             },
             "NOAA-NCEI-SeaWinds-1-2":{
                 "region":"global_ocean",
