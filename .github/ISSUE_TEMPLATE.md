@@ -11,7 +11,7 @@ The following are required registered content (with example content for each ite
 3) source_id['source_id'][key][**'source_description'**] = 'Global Precipitation Climatology Project'
 4) source_id['source_id'][key][**'source_version_number'**] = '2.3'
 5) source_id['source_id'][key][**'institution_id'**] = 'UofMD'
-6) source_id['source_id'][key][**'region'**] = 'Global'
+6) source_id['source_id'][key][**'region'**] = 'global'
 7) source_id['source_id'][key][**'source_type'**] = 'satellite_blended'
 8) A list of CMIP variable_ids that the above information refers to.  In most cases it will only be for one variable_id.  If it is for more than one, please make sure your source_description is sufficiently general to apply to all relevant variable_ids.
 
