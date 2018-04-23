@@ -1,17 +1,17 @@
 {
     "Header":{
-        "#dataRequest_specs_version":"01.00.21",
+        "#dataRequest_specs_version":"01.00.23",
         "#mip_era":"CMIP6",
         "Conventions":"CF-1.7 ODS-2.1",
         "approx_interval":"30.00000",
-        "cmor_version":"3.2",
+        "cmor_version":"3.3",
         "data_specs_version":"2.1.0",
         "generic_levels":"alevel alevhalf",
         "int_missing_value":"-2147483648",
         "missing_value":"1e20",
         "product":"observations",
         "realm":"atmos",
-        "table_date":"07 March 2018",
+        "table_date":"23 April 2018",
         "table_id":"Table obs4MIPs_Amon"
     },
     "variable_entry":{
@@ -103,7 +103,7 @@
         "ch4":{
             "cell_measures":"",
             "cell_methods":"time: mean",
-            "comment":"",
+            "comment":"Mole fraction is used in the construction mole_fraction_of_X_in_Y, where X is a material constituent of Y.",
             "dimensions":"longitude latitude plev19 time",
             "frequency":"mon",
             "long_name":"Mole Fraction of CH4",
@@ -120,7 +120,7 @@
         "ch4Clim":{
             "cell_measures":"",
             "cell_methods":"area: mean time: mean within years time: mean over years",
-            "comment":"",
+            "comment":"Mole fraction is used in the construction mole_fraction_of_X_in_Y, where X is a material constituent of Y.",
             "dimensions":"longitude latitude plev19 time2",
             "frequency":"monC",
             "long_name":"Mole Fraction of CH4",
@@ -426,7 +426,7 @@
         "co2":{
             "cell_measures":"",
             "cell_methods":"time: mean",
-            "comment":"",
+            "comment":"Mole fraction is used in the construction mole_fraction_of_X_in_Y, where X is a material constituent of Y.",
             "dimensions":"longitude latitude plev19 time",
             "frequency":"mon",
             "long_name":"Mole Fraction of CO2",
@@ -443,7 +443,7 @@
         "co2Clim":{
             "cell_measures":"",
             "cell_methods":"area: mean time: mean within years time: mean over years",
-            "comment":"",
+            "comment":"Mole fraction is used in the construction mole_fraction_of_X_in_Y, where X is a material constituent of Y.",
             "dimensions":"longitude latitude plev19 time2",
             "frequency":"monC",
             "long_name":"Mole Fraction of CO2",
@@ -579,7 +579,7 @@
         "hfls":{
             "cell_measures":"",
             "cell_methods":"area: time: mean",
-            "comment":"",
+            "comment":"The surface called 'surface' means the lower boundary of the atmosphere. 'Upward' indicates a vector component which is positive when directed upward (negative downward). The surface latent heat flux is the exchange of heat between the surface and the air on account of evaporation (including sublimation). In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics.",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
             "long_name":"Surface Upward Latent Heat Flux",
@@ -596,7 +596,7 @@
         "hfss":{
             "cell_measures":"",
             "cell_methods":"area: time: mean",
-            "comment":"",
+            "comment":"The surface called 'surface' means the lower boundary of the atmosphere. 'Upward' indicates a vector component which is positive when directed upward (negative downward). The surface sensible heat flux, also called 'turbulent' heat flux, is the exchange of heat between the surface and the air by motion of air. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics. Unless indicated in the cell_methods attribute, a quantity is assumed to apply to the whole area of each horizontal grid box. Previously, the qualifier where_type was used to specify that the quantity applies only to the part of the grid box of the named type.  Names containing the where_type qualifier are deprecated and newly created data should use the cell_methods attribute to indicate the horizontal area to which the quantity applies.",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
             "long_name":"Surface Upward Sensible Heat Flux",
@@ -647,7 +647,7 @@
         "hus":{
             "cell_measures":"",
             "cell_methods":"time: mean",
-            "comment":"",
+            "comment":"'specific' means per unit mass. Specific humidity is the mass fraction of water vapor in (moist) air.",
             "dimensions":"longitude latitude plev19 time",
             "frequency":"mon",
             "long_name":"Specific Humidity",
@@ -698,7 +698,7 @@
         "n2o":{
             "cell_measures":"",
             "cell_methods":"time: mean",
-            "comment":"",
+            "comment":"Mole fraction is used in the construction mole_fraction_of_X_in_Y, where X is a material constituent of Y.   The chemical formula of  nitrous oxide is N2O.",
             "dimensions":"longitude latitude plev19 time",
             "frequency":"mon",
             "long_name":"Mole Fraction of N2O",
@@ -715,7 +715,7 @@
         "n2oClim":{
             "cell_measures":"",
             "cell_methods":"area: mean time: mean within years time: mean over years",
-            "comment":"",
+            "comment":"Mole fraction is used in the construction mole_fraction_of_X_in_Y, where X is a material constituent of Y.   The chemical formula of  nitrous oxide is N2O.",
             "dimensions":"longitude latitude plev19 time2",
             "frequency":"monC",
             "long_name":"Mole Fraction of N2O",
@@ -766,7 +766,7 @@
         "o3":{
             "cell_measures":"",
             "cell_methods":"time: mean",
-            "comment":"",
+            "comment":"Mole fraction is used in the construction mole_fraction_of_X_in_Y, where X is a material constituent of Y.",
             "dimensions":"longitude latitude plev19 time",
             "frequency":"mon",
             "long_name":"Mole Fraction of O3",
@@ -783,7 +783,7 @@
         "o3Clim":{
             "cell_measures":"",
             "cell_methods":"area: mean time: mean within years time: mean over years",
-            "comment":"",
+            "comment":"Mole fraction is used in the construction mole_fraction_of_X_in_Y, where X is a material constituent of Y.",
             "dimensions":"longitude latitude plev19 time2",
             "frequency":"monC",
             "long_name":"Mole Fraction of O3",
@@ -953,7 +953,7 @@
         "rlds":{
             "cell_measures":"",
             "cell_methods":"area: time: mean",
-            "comment":"",
+            "comment":"The surface called 'surface' means the lower boundary of the atmosphere. 'longwave' means longwave radiation. Downwelling radiation is radiation from above. It does not mean 'net downward'. When thought of as being incident on a surface, a radiative flux is sometimes called 'irradiance'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called 'vector irradiance'. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics.",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
             "long_name":"Surface Downwelling Longwave Radiation",
@@ -987,7 +987,7 @@
         "rlus":{
             "cell_measures":"",
             "cell_methods":"area: time: mean",
-            "comment":"",
+            "comment":"The surface called 'surface' means the lower boundary of the atmosphere. 'longwave' means longwave radiation. Upwelling radiation is radiation from below. It does not mean 'net upward'. When thought of as being incident on a surface, a radiative flux is sometimes called 'irradiance'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called 'vector irradiance'. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics.",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
             "long_name":"Surface Upwelling Longwave Radiation",
@@ -1089,7 +1089,7 @@
         "rsus":{
             "cell_measures":"",
             "cell_methods":"area: time: mean",
-            "comment":"",
+            "comment":"The surface called 'surface' means the lower boundary of the atmosphere. 'shortwave' means shortwave radiation. Upwelling radiation is radiation from below. It does not mean 'net upward'. When thought of as being incident on a surface, a radiative flux is sometimes called 'irradiance'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called 'vector irradiance'. In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics.",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
             "long_name":"Surface Upwelling Shortwave Radiation",
@@ -1361,7 +1361,7 @@
         "ua":{
             "cell_measures":"",
             "cell_methods":"time: mean",
-            "comment":"",
+            "comment":"'Eastward' indicates a vector component which is positive when directed eastward (negative westward). Wind is defined as a two-dimensional (horizontal) air velocity vector, with no vertical component. (Vertical motion in the atmosphere has the standard name upward_air_velocity.)",
             "dimensions":"longitude latitude plev19 time",
             "frequency":"mon",
             "long_name":"Eastward Wind",
@@ -1395,7 +1395,7 @@
         "va":{
             "cell_measures":"",
             "cell_methods":"time: mean",
-            "comment":"",
+            "comment":"'Northward' indicates a vector component which is positive when directed northward (negative southward). Wind is defined as a two-dimensional (horizontal) air velocity vector, with no vertical component. (Vertical motion in the atmosphere has the standard name upward_air_velocity.)",
             "dimensions":"longitude latitude plev19 time",
             "frequency":"mon",
             "long_name":"Northward Wind",
@@ -1446,7 +1446,7 @@
         "zg":{
             "cell_measures":"",
             "cell_methods":"time: mean",
-            "comment":"",
+            "comment":"Geopotential is the sum of the specific gravitational potential energy relative to the geoid and the specific centripetal potential energy. Geopotential height is the geopotential divided by the standard acceleration due to gravity. It is numerically similar to the altitude (or geometric height) and not to the quantity with standard name height, which is relative to the surface.",
             "dimensions":"longitude latitude plev19 time",
             "frequency":"mon",
             "long_name":"Geopotential Height",

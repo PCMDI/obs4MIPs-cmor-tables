@@ -1,17 +1,17 @@
 {
     "Header":{
-        "#dataRequest_specs_version":"01.00.21",
+        "#dataRequest_specs_version":"01.00.23",
         "#mip_era":"CMIP6",
         "Conventions":"CF-1.7 ODS-2.1",
         "approx_interval":"30.00000",
-        "cmor_version":"3.2",
+        "cmor_version":"3.3",
         "data_specs_version":"2.1.0",
         "generic_levels":"",
         "int_missing_value":"-2147483648",
         "missing_value":"1e20",
         "product":"observations",
         "realm":"land",
-        "table_date":"07 March 2018",
+        "table_date":"23 April 2018",
         "table_id":"Table obs4MIPs_Lmon"
     },
     "variable_entry":{
@@ -477,7 +477,7 @@
         "lai":{
             "cell_measures":"",
             "cell_methods":"area: mean where land time: mean",
-            "comment":"",
+            "comment":"'X_area' means the horizontal area occupied by X within the grid cell.",
             "dimensions":"longitude latitude time",
             "frequency":"mon",
             "long_name":"Leaf Area Index",

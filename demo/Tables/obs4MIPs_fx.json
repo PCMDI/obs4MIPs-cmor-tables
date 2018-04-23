@@ -1,17 +1,17 @@
 {
     "Header":{
-        "#dataRequest_specs_version":"01.00.21",
+        "#dataRequest_specs_version":"01.00.23",
         "#mip_era":"CMIP6",
         "Conventions":"CF-1.7 ODS-2.1",
         "approx_interval":"0.00000",
-        "cmor_version":"3.2",
+        "cmor_version":"3.3",
         "data_specs_version":"2.1.0",
         "generic_levels":"alevel",
         "int_missing_value":"-2147483648",
         "missing_value":"1e20",
         "product":"observations",
         "realm":"fx",
-        "table_date":"07 March 2018",
+        "table_date":"23 April 2018",
         "table_id":"Table obs4MIPs_fx"
     },
     "variable_entry":{
@@ -144,7 +144,7 @@
         "zfull":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: mean",
-            "comment":"",
+            "comment":"'Height_above_X' means the vertical distance above the named surface X. A reference ellipsoid is a mathematical figure that approximates the geoid. The geoid is a surface of constant geopotential with which mean sea level would coincide if the ocean were at rest. The ellipsoid is an approximation because the geoid is an irregular shape. A number of reference ellipsoids are defined for use in the field of geodesy. To specify which reference ellipsoid is being used, a grid_mapping variable should be attached to the data variable as described in Chapter 5.6 of the CF Convention.",
             "dimensions":"longitude latitude alevel",
             "frequency":"fx",
             "long_name":"Altitude of Model Full-Levels",

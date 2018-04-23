@@ -647,6 +647,19 @@ source_id['source_id'][key]['source_variables'] = ['ta','hus']
 source_id['source_id'][key]['source_label'] = 'AIRS'
 """
 
+key = 'NOAA-NCEI-OISST-2-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'NOAA NCEI OISST'
+source_id['source_id'][key]['release_year'] = '2008'
+source_id['source_id'][key]['source_description'] = 'Optimal Interpolation Sea Surface Temperature'
+source_id['source_id'][key]['source_version_number'] = '2.0'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['global_ocean']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-OISST'
+source_id['source_id'][key]['source_variables'] = ['tos']
+
+"""
 key = 'QuikSCAT-v20110531' 
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'QuikSCAT'
@@ -660,7 +673,7 @@ source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] =  ['sfcWind','uas','vas']
 ## derived from RC
 source_id['source_id'][key]['source_label'] = 'QuikSCAT'
-
+"""
 """
 key = 'Aura-MLS-v04-2'
 source_id['source_id'][key] = {}

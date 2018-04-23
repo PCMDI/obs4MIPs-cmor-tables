@@ -102,7 +102,7 @@
             "dimensions":"",
             "long_name":"vertical coordinate formula term: reference pressure",
             "out_name":"p0",
-            "type":"",
+            "type":"double",
             "units":"Pa"
         },
         "ps":{
@@ -130,7 +130,7 @@
             "dimensions":"",
             "long_name":"pressure at top of model",
             "out_name":"ptop",
-            "type":"",
+            "type":"double",
             "units":"Pa"
         },
         "sigma":{
@@ -179,7 +179,7 @@
             "dimensions":"",
             "long_name":"height of top of model",
             "out_name":"ztop",
-            "type":"",
+            "type":"double",
             "units":"m"
         }
     }
