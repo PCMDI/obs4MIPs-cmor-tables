@@ -282,6 +282,21 @@
             ],
             "source_version_number":"4.0"
         },
+        "NOAA-NCEI-OISST-2-0":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2008",
+            "source_description":"Optimal Interpolation Sea Surface Temperature",
+            "source_label":"NOAA-NCEI-OISST",
+            "source_name":"NOAA NCEI OISST",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "tos"
+            ],
+            "source_version_number":"2.0"
+        },
         "NOAA-NCEI-OLR-1-2":{
             "institution_id":"NOAA-NCEI",
             "region":[
@@ -312,6 +327,21 @@
                 "pr"
             ],
             "source_version_number":"1.1"
+        },
+        "NOAA-NCEI-SeaIce-2-0":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2013",
+            "source_description":"Passive Microwave Sea Ice Area Fraction",
+            "source_label":"NOAA-NCEI-SeaIce",
+            "source_name":"NOAA NCEI SeaIce",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "siconc"
+            ],
+            "source_version_number":"2.0"
         },
         "NOAA-NCEI-SeaWinds-1-2":{
             "institution_id":"NOAA-NCEI",

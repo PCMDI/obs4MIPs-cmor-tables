@@ -302,6 +302,13 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"4.0"
             },
+            "NOAA-NCEI-OISST-2-0":{
+                "region":"global_ocean",
+                "source":"NOAA-NCEI-OISST 2.0 (2008): Optimal Interpolation Sea Surface Temperature",
+                "source_label":"NOAA-NCEI-OISST",
+                "source_type":"satellite_blended",
+                "source_version_number":"2.0"
+            },
             "NOAA-NCEI-OLR-1-2":{
                 "region":"global",
                 "source":"NOAA-NCEI-OLR 1.2 (2014): Outgoing Longwave Radiation",
@@ -315,6 +322,13 @@
                 "source_label":"NOAA-NCEI-PERSIANN",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.1"
+            },
+            "NOAA-NCEI-SeaIce-2-0":{
+                "region":"global_ocean",
+                "source":"NOAA-NCEI-SeaIce 2.0 (2013): Passive Microwave Sea Ice Area Fraction",
+                "source_label":"NOAA-NCEI-SeaIce",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"2.0"
             },
             "NOAA-NCEI-SeaWinds-1-2":{
                 "region":"global_ocean",

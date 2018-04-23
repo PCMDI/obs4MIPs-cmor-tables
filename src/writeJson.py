@@ -646,7 +646,6 @@ source_id['source_id'][key]['source_variables'] = ['ta','hus']
 ## derived
 source_id['source_id'][key]['source_label'] = 'AIRS'
 """
-"""
 key = 'NOAA-NCEI-OISST-2-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'NOAA NCEI OISST'
@@ -658,7 +657,7 @@ source_id['source_id'][key]['region'] = ['global_ocean']
 source_id['source_id'][key]['source_type'] = 'satellite_blended'
 source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-OISST'
 source_id['source_id'][key]['source_variables'] = ['tos']
-"""
+
 key = 'NOAA-NCEI-OLR-1-2'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'NOAA NCEI OLR'
@@ -671,7 +670,6 @@ source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-OLR'
 source_id['source_id'][key]['source_variables'] = ['rlut'] 
 
-"""
 key = 'NOAA-NCEI-SeaIce-2-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'NOAA NCEI SeaIce'
@@ -683,7 +681,7 @@ source_id['source_id'][key]['region'] = ['global_ocean']
 source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-SeaIce'
 source_id['source_id'][key]['source_variables'] = ['siconc']
-"""
+
 """
 key = 'QuikSCAT-v20110531' 
 source_id['source_id'][key] = {}
