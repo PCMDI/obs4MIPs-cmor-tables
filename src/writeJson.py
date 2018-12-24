@@ -69,6 +69,7 @@ PJD  9 Nov 2017     - Added source_id validation for valid characters following 
 PJD  9 Nov 2017     - Updated obs4MIPs_CV.json region format following CMOR3.2.8 release https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/136
 PJD  9 Nov 2017     - Updated source_type format adding descriptions https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/98
 PJD  2 Feb 2018     - Updated institution_id JPL -> NASA-JPL https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/139
+PJD 24 Dec 2018     - Update from upstreams 01.00.29 https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/164
 
 @author: durack1
 """
@@ -117,7 +118,7 @@ masterTargets = [
  ] ;
 
 #%% Tables
-sha = '87218055a04f6e01c36039a75652d3824d1649ad'
+#sha = '87218055a04f6e01c36039a75652d3824d1649ad'
 tableSource = [
  ['coordinate','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_coordinate.json'],
  ['formula_terms','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_formula_terms.json'],
@@ -449,10 +450,7 @@ Amon['variable_entry']['pme']['type'] = 'real'
 Amon['variable_entry']['pme']['units'] = 'kg m-2 s-1'
 Amon['variable_entry']['pme']['valid_max'] = ''
 Amon['variable_entry']['pme']['valid_min'] = ''
-
 ###
-
-
 
 # monNobs
 #--------
@@ -646,8 +644,8 @@ source_id['source_id'][key]['source_variables'] = ['ta','hus']
 ## derived
 source_id['source_id'][key]['source_label'] = 'AIRS'
 """
-
-key = 'QuikSCAT-v20110531' 
+"""
+key = 'QuikSCAT-v20110531'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'QuikSCAT'
 source_id['source_id'][key]['release_year'] = '2011'
@@ -660,7 +658,7 @@ source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] =  ['sfcWind','uas','vas']
 ## derived from RC
 source_id['source_id'][key]['source_label'] = 'QuikSCAT'
-
+"""
 """
 key = 'Aura-MLS-v04-2'
 source_id['source_id'][key] = {}
@@ -693,9 +691,10 @@ source_id['source_id'][key]['source_label'] = 'GNSS-RO'
 #pdb.set_trace()
 # Fix region non-list
 for keyVal in source_id['source_id'].keys():
-    print source_id['source_id'][key]['region']
-    if type(source_id['source_id'][key]['region']) != list:
-        source_id['source_id'][key]['region'] = list(source_id['source_id'][key]['region'])
+    #print 'keyVal:',keyVal
+    print source_id['source_id'][keyVal]['region']
+    if type(source_id['source_id'][keyVal]['region']) != list:
+        source_id['source_id'][keyVal]['region'] = list(source_id['source_id'][keyVal]['region'])
 
 #pdb.set_trace()
 #==============================================================================
