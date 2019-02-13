@@ -266,6 +266,21 @@
             ],
             "source_version_number":"4.0"
         },
+        "NOAA-NCEI-HIRS-OLR":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global"
+            ],
+            "release_year":"2014",
+            "source_description":"HIRS Outgoing Longwave Radiation",
+            "source_label":"NOAA NCEI HIRS OLR",
+            "source_name":"NOAA NCEI HIRS OLR",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "rlut"
+            ],
+            "source_version_number":"1.2"
+        },
         "NOAA-NCEI-LAI-4-0":{
             "institution_id":"NOAA-NCEI",
             "region":[
@@ -282,6 +297,21 @@
             ],
             "source_version_number":"4.0"
         },
+        "NOAA-NCEI-OISST":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2008",
+            "source_description":"Optimal Interpolation Sea Surface Temperature",
+            "source_label":"NOAA-NCEI-SSMI-SeaIce",
+            "source_name":"NOAA NCEI OISST",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "tos"
+            ],
+            "source_version_number":"2.0"
+        },
         "NOAA-NCEI-PERSIANN-1-1":{
             "institution_id":"NOAA-NCEI",
             "region":[
@@ -297,6 +327,22 @@
                 "pr"
             ],
             "source_version_number":"1.1"
+        },
+        "NOAA-NCEI-SSMI-SeaIce":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "arctic_ocean",
+                "antarctica"
+            ],
+            "release_year":"2013",
+            "source_description":"SSMI Passive Microwave Sea Ice Area Fraction",
+            "source_label":"NOAA-NCEI-SSMI-SeaIce",
+            "source_name":"NOAA NCEI SSMI SeaIce",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "siconc"
+            ],
+            "source_version_number":"2.0"
         },
         "NOAA-NCEI-SeaWinds-1-2":{
             "institution_id":"NOAA-NCEI",

@@ -70,13 +70,13 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-                "CV_collection_modified":"Sun Dec 23 18:45:50 2018 -0800",
-                "CV_collection_version":"6.2.15.1",
+                "CV_collection_modified":"Tue Feb 12 08:46:26 2019 -0800",
+                "CV_collection_version":"6.2.18.3",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
-                "previous_commit":"27357922199883d6c2ea89f412c60ea6130de6c9",
+                "previous_commit":"f0b28f062005f049505be08ccf6fb65a35d67254",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -309,6 +309,13 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"4.0"
             },
+            "NOAA-NCEI-HIRS-OLR":{
+                "region":"global",
+                "source":"NOAA NCEI HIRS OLR 1.2 (2014): HIRS Outgoing Longwave Radiation",
+                "source_label":"NOAA NCEI HIRS OLR",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"1.2"
+            },
             "NOAA-NCEI-LAI-4-0":{
                 "region":"global_land",
                 "source":"NOAA-NCEI-LAI 4.0 (2014): AVHRR Leaf Area Index",
@@ -316,12 +323,26 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"4.0"
             },
+            "NOAA-NCEI-OISST":{
+                "region":"global_ocean",
+                "source":"NOAA-NCEI-SSMI-SeaIce 2.0 (2008): Optimal Interpolation Sea Surface Temperature",
+                "source_label":"NOAA-NCEI-SSMI-SeaIce",
+                "source_type":"satellite_blended",
+                "source_version_number":"2.0"
+            },
             "NOAA-NCEI-PERSIANN-1-1":{
                 "region":"global",
                 "source":"NOAA-NCEI-PERSIANN 1.1 (2014): Precipitation Estimation from Remotely Sensed Information using Artificial Neural Network",
                 "source_label":"NOAA-NCEI-PERSIANN",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.1"
+            },
+            "NOAA-NCEI-SSMI-SeaIce":{
+                "region":"arctic_ocean, antarctica",
+                "source":"NOAA-NCEI-SSMI-SeaIce 2.0 (2013): SSMI Passive Microwave Sea Ice Area Fraction",
+                "source_label":"NOAA-NCEI-SSMI-SeaIce",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"2.0"
             },
             "NOAA-NCEI-SeaWinds-1-2":{
                 "region":"global_ocean",

@@ -698,11 +698,47 @@ source_id['source_id'][key]['source_variables'] = ['ta','zg']
 ## derived
 source_id['source_id'][key]['source_label'] = 'GNSS-RO'
 """
+key = 'NOAA-NCEI-HIRS-OLR'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'NOAA NCEI HIRS OLR'
+source_id['source_id'][key]['release_year'] = '2014'
+source_id['source_id'][key]['source_description'] = 'HIRS Outgoing Longwave Radiation'
+source_id['source_id'][key]['source_version_number'] = '1.2'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['rlut']
+## derived
+source_id['source_id'][key]['source_label'] = 'NOAA NCEI HIRS OLR'
+
+key = 'NOAA-NCEI-SSMI-SeaIce'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'NOAA NCEI SSMI SeaIce'
+source_id['source_id'][key]['release_year'] = '2013'
+source_id['source_id'][key]['source_description'] = 'SSMI Passive Microwave Sea Ice Area Fraction'
+source_id['source_id'][key]['source_version_number'] = '2.0'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['arctic_ocean','antarctica']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['siconc']
+source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-SSMI-SeaIce'
+
+key = 'NOAA-NCEI-OISST'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'NOAA NCEI OISST'
+source_id['source_id'][key]['release_year'] = '2008'
+source_id['source_id'][key]['source_description'] = 'Optimal Interpolation Sea Surface Temperature'
+source_id['source_id'][key]['source_version_number'] = '2.0'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['global_ocean']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] = ['tos']
+source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-SSMI-SeaIce'
 
 #pdb.set_trace()
 # Fix region non-list
 for keyVal in source_id['source_id'].keys():
-    print source_id['source_id'][key]['region']
+    print(source_id['source_id'][key]['region'])
     if type(source_id['source_id'][key]['region']) != list:
         source_id['source_id'][key]['region'] = list(source_id['source_id'][key]['region'])
 
