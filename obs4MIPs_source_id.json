@@ -297,14 +297,14 @@
             ],
             "source_version_number":"4.0"
         },
-        "NOAA-NCEI-OISST":{
+        "NOAA-NCEI-OISST-2-0":{
             "institution_id":"NOAA-NCEI",
             "region":[
                 "global_ocean"
             ],
             "release_year":"2008",
             "source_description":"Optimal Interpolation Sea Surface Temperature",
-            "source_label":"NOAA-NCEI-SSMI-SeaIce",
+            "source_label":"NOAA NCEI OISST",
             "source_name":"NOAA NCEI OISST",
             "source_type":"satellite_blended",
             "source_variables":[
