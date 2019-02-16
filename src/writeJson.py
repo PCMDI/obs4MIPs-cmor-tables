@@ -718,7 +718,7 @@ source_id['source_id'][key]['release_year'] = '2013'
 source_id['source_id'][key]['source_description'] = 'SSMI Passive Microwave Sea Ice Area Fraction'
 source_id['source_id'][key]['source_version_number'] = '2.0'
 source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
-source_id['source_id'][key]['region'] = ['arctic_ocean','antarctica']
+source_id['source_id'][key]['region'] = ['arctic_ocean','southern_ocean']
 source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] = ['siconc']
 source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-SSMI-SeaIce'
@@ -735,9 +735,9 @@ source_id['source_id'][key]['source_type'] = 'satellite_blended'
 source_id['source_id'][key]['source_variables'] = ['tos']
 source_id['source_id'][key]['source_label'] = 'NOAA NCEI OISST'
 
-key = 'NOAA-NCEI-OISST-2-0'
+key = 'NOAA-NCEI-SSMI-SeaIce-2-0'
 source_id['source_id'][key] = {}
-source_id['source_id'][key] = source_id['source_id'].pop('NOAA-NCEI-OISST')
+source_id['source_id'][key] = source_id['source_id'].pop('NOAA-NCEI-SSMI-SeaIce')
 
 #pdb.set_trace()
 # Fix region non-list

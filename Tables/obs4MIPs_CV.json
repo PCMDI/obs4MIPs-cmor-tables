@@ -323,6 +323,13 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"4.0"
             },
+            "NOAA-NCEI-OISST":{
+                "region":"global_ocean",
+                "source":"NOAA NCEI OISST 2.0 (2008): Optimal Interpolation Sea Surface Temperature",
+                "source_label":"NOAA NCEI OISST",
+                "source_type":"satellite_blended",
+                "source_version_number":"2.0"
+            },
             "NOAA-NCEI-OISST-2-0":{
                 "region":"global_ocean",
                 "source":"NOAA NCEI OISST 2.0 (2008): Optimal Interpolation Sea Surface Temperature",
@@ -337,8 +344,8 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.1"
             },
-            "NOAA-NCEI-SSMI-SeaIce":{
-                "region":"arctic_ocean, antarctica",
+            "NOAA-NCEI-SSMI-SeaIce-2-0":{
+                "region":"arctic_ocean, southern_ocean",
                 "source":"NOAA-NCEI-SSMI-SeaIce 2.0 (2013): SSMI Passive Microwave Sea Ice Area Fraction",
                 "source_label":"NOAA-NCEI-SSMI-SeaIce",
                 "source_type":"satellite_retrieval",
