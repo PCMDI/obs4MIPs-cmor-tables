@@ -309,7 +309,7 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"4.0"
             },
-            "NOAA-NCEI-HIRS-OLR":{
+            "NOAA-NCEI-HIRS-OLR-1-2":{
                 "region":"global",
                 "source":"NOAA NCEI HIRS OLR 1.2 (2014): HIRS Outgoing Longwave Radiation",
                 "source_label":"NOAA NCEI HIRS OLR",

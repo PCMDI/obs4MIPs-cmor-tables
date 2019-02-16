@@ -698,6 +698,7 @@ source_id['source_id'][key]['source_variables'] = ['ta','zg']
 ## derived
 source_id['source_id'][key]['source_label'] = 'GNSS-RO'
 """
+"""
 key = 'NOAA-NCEI-HIRS-OLR'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'NOAA NCEI HIRS OLR'
@@ -710,6 +711,7 @@ source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] = ['rlut']
 ## derived
 source_id['source_id'][key]['source_label'] = 'NOAA NCEI HIRS OLR'
+
 
 key = 'NOAA-NCEI-SSMI-SeaIce'
 source_id['source_id'][key] = {}
@@ -734,10 +736,11 @@ source_id['source_id'][key]['region'] = ['global_ocean']
 source_id['source_id'][key]['source_type'] = 'satellite_blended'
 source_id['source_id'][key]['source_variables'] = ['tos']
 source_id['source_id'][key]['source_label'] = 'NOAA NCEI OISST'
+"""
 
-key = 'NOAA-NCEI-SSMI-SeaIce-2-0'
-source_id['source_id'][key] = {}
-source_id['source_id'][key] = source_id['source_id'].pop('NOAA-NCEI-SSMI-SeaIce')
+#key = 'NOAA-NCEI-OISST'
+#source_id['source_id'].pop(key)
+
 
 #pdb.set_trace()
 # Fix region non-list
