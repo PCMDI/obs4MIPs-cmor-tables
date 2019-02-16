@@ -638,6 +638,10 @@ tmp = [['source_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-table
       ] ;
 source_id = readJsonCreateDict(tmp)
 source_id = source_id.get('source_id')
+
+key = 'NOAA-NCEI-OISST'
+source_id['source_id'].pop(key)
+
 """
 # Enter fixes or additions below
 #key = 'variable_entry'
@@ -739,7 +743,7 @@ source_id['source_id'][key]['source_label'] = 'NOAA NCEI OISST'
 """
 
 #key = 'NOAA-NCEI-OISST'
-#source_id['source_id'].pop(key)
+#ksource_id['source_id'].pop(key)
 
 
 #pdb.set_trace()
