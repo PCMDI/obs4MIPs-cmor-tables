@@ -509,7 +509,7 @@ institution_id = institution_id.get('institution_id')
 # Example new institution_id entry
 #institution_id['institution_id']['NOAA-NCEI'] = 'NOAA\'s National Centers for Environmental Information, Asheville, NC 28801, USA'
 #institution_id['institution_id']['RSS'] = 'Remote Sensing Systems, Santa Rosa, CA 95401, USA'
-institution_id['institution_id']['CNES'] = "Centre national d'etudes spatiales"
+#institution_id['institution_id']['CNES'] = "Centre national d'etudes spatiales"
 
 
 #%% License
@@ -752,7 +752,6 @@ source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] = ['tro3']
 source_id['source_id'][key]['source_label'] = 'TES 1 0'
 source_id['source_id'][key]['source_id'] = key 
-"""
 
 key = 'AVISO-1-0'
 source_id['source_id'][key] = {}
@@ -765,6 +764,19 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] = ['zos']
 source_id['source_id'][key]['source_label'] = 'AVISO 1 0'
+source_id['source_id'][key]['source_id'] = key
+"""
+key = 'AMSRE-v7'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'Sea Surface Temperature'
+source_id['source_id'][key]['release_year'] = '2011'
+source_id['source_id'][key]['source_description'] = 'Sea Surface Temperature from AMSR-E onboard AQUA'
+source_id['source_id'][key]['source_version_number'] = 'v7'
+source_id['source_id'][key]['institution_id'] = 'RSS'
+source_id['source_id'][key]['region'] = ['global_ocean']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['tos']
+source_id['source_id'][key]['source_label'] = 'AMRSE v7'
 source_id['source_id'][key]['source_id'] = key
 
 

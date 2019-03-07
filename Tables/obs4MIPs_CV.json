@@ -219,6 +219,13 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.0"
             },
+            "AMSRE-v7":{
+                "region":"global_ocean",
+                "source":"AMRSE v7 v7 (2011): Sea Surface Temperature from AMSR-E onboard AQUA",
+                "source_label":"AMRSE v7",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"v7"
+            },
             "AVISO-1-0":{
                 "region":"global",
                 "source":"AVISO 1 0 1.0 (2011): Sea Surface Height Above Geoid",
