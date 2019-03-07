@@ -639,9 +639,6 @@ tmp = [['source_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-table
 source_id = readJsonCreateDict(tmp)
 source_id = source_id.get('source_id')
 
-key = 'NOAA-NCEI-OISST'
-source_id['source_id'].pop(key)
-
 """
 # Enter fixes or additions below
 #key = 'variable_entry'
@@ -741,6 +738,20 @@ source_id['source_id'][key]['source_type'] = 'satellite_blended'
 source_id['source_id'][key]['source_variables'] = ['tos']
 source_id['source_id'][key]['source_label'] = 'NOAA NCEI OISST'
 """
+
+key = 'TES-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'JPL AURA satellite retrieval'
+source_id['source_id'][key]['release_year'] = '2011'
+source_id['source_id'][key]['source_description'] = 'Mole Fraction of O3'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'NASA-JPL'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['tro3']
+source_id['source_id'][key]['source_label'] = 'TES 1 0'
+source_id['source_id'][key]['source_id'] = key 
+
 
 #key = 'NOAA-NCEI-OISST'
 #ksource_id['source_id'].pop(key)

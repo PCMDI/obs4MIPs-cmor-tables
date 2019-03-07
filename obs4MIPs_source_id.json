@@ -394,6 +394,22 @@
                 "prw"
             ],
             "source_version_number":"6.6.0"
+        },
+        "TES-1-0":{
+            "institution_id":"NASA-JPL",
+            "region":[
+                "global"
+            ],
+            "release_year":"2011",
+            "source_description":"Mole Fraction of O3",
+            "source_id":"TES-1-0",
+            "source_label":"TES 1 0",
+            "source_name":"JPL AURA satellite retrieval",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "tro3"
+            ],
+            "source_version_number":"1.0"
         }
     }
 }
