@@ -510,6 +510,7 @@ institution_id = institution_id.get('institution_id')
 #institution_id['institution_id']['NOAA-NCEI'] = 'NOAA\'s National Centers for Environmental Information, Asheville, NC 28801, USA'
 #institution_id['institution_id']['RSS'] = 'Remote Sensing Systems, Santa Rosa, CA 95401, USA'
 #institution_id['institution_id']['CNES'] = "Centre national d'etudes spatiales"
+institution_id['institution_id']['NASA-GSFC'] = "National Aeronautics and Space Administration, Goddard Space Flight Center"
 
 
 #%% License
@@ -657,6 +658,19 @@ source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] = ['ta','hus']
 ## derived
 source_id['source_id'][key]['source_label'] = 'AIRS'
+
+key = 'MODIS-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'MODIS'
+source_id['source_id'][key]['release_year'] = '2011'
+source_id['source_id'][key]['source_description'] = 'Atmospheric Infrared Sounder'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['clt']
+## derived
+source_id['source_id'][key]['source_label'] = 'MODIS'
 
 
 key = 'QuikSCAT-v20110531' 
