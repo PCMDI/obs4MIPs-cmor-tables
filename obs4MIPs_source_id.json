@@ -16,6 +16,22 @@
             ],
             "source_version_number":"1.0"
         },
+        "AVISO-1-0":{
+            "institution_id":"CNES",
+            "region":[
+                "global"
+            ],
+            "release_year":"2011",
+            "source_description":"Sea Surface Height Above Geoid",
+            "source_id":"AVISO-1-0",
+            "source_label":"AVISO 1 0",
+            "source_name":"SSALTO/DUACS",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "zos"
+            ],
+            "source_version_number":"1.0"
+        },
         "Aura-MLS-v04-2":{
             "institution_id":"NASA-JPL",
             "region":[

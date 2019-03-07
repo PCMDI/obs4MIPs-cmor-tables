@@ -81,6 +81,7 @@
             }
         },
         "institution_id":{
+            "CNES":"Centre national d'etudes spatiales",
             "DWD":"Deutscher Wetterdienst, Offenbach 63067, Germany",
             "NASA-JPL":"NASA's Jet Propulsion Laboratory, Pasadena, CA 91109, USA",
             "NOAA-NCEI":"NOAA's National Centers for Environmental Information, Asheville, NC 28801, USA",
@@ -215,6 +216,13 @@
                 "region":"global",
                 "source":"AIRS 1.0 (2011): Atmospheric Infrared Sounder",
                 "source_label":"AIRS",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"1.0"
+            },
+            "AVISO-1-0":{
+                "region":"global",
+                "source":"AVISO 1 0 1.0 (2011): Sea Surface Height Above Geoid",
+                "source_label":"AVISO 1 0",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.0"
             },
