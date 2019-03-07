@@ -427,6 +427,24 @@
             ],
             "source_version_number":"6.6.0"
         },
+        "RSS-v7":{
+            "institution_id":"RSS",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2011",
+            "source_description":"Satellite derived fields produced by RSS",
+            "source_id":"RSS-v7",
+            "source_label":"RSS-v7",
+            "source_name":"Satellite derived fields",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "prw",
+                "sfcWind",
+                "tos"
+            ],
+            "source_version_number":"v7"
+        },
         "TES-1-0":{
             "institution_id":"NASA-JPL",
             "region":[

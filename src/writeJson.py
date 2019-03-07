@@ -765,7 +765,7 @@ source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] = ['zos']
 source_id['source_id'][key]['source_label'] = 'AVISO 1 0'
 source_id['source_id'][key]['source_id'] = key
-"""
+
 key = 'AMSRE-v7'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'Sea Surface Temperature'
@@ -777,6 +777,19 @@ source_id['source_id'][key]['region'] = ['global_ocean']
 source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] = ['tos']
 source_id['source_id'][key]['source_label'] = 'AMRSE v7'
+source_id['source_id'][key]['source_id'] = key
+"""
+key = 'RSS-v7'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'Satellite derived fields'
+source_id['source_id'][key]['release_year'] = '2011'
+source_id['source_id'][key]['source_description'] = 'Satellite derived fields produced by RSS'
+source_id['source_id'][key]['source_version_number'] = 'v7'
+source_id['source_id'][key]['institution_id'] = 'RSS'
+source_id['source_id'][key]['region'] = ['global_ocean']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['tos','prw','sfcWind']
+source_id['source_id'][key]['source_label'] = 'RSS-v7'
 source_id['source_id'][key]['source_id'] = key
 
 
