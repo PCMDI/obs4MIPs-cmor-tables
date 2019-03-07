@@ -641,23 +641,23 @@ tmp = [['source_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-table
 source_id = readJsonCreateDict(tmp)
 source_id = source_id.get('source_id')
 
-"""
+
 # Enter fixes or additions below
 #key = 'variable_entry'
 #source_id['source_id'].pop(key)
-key = 'AIRS-1-0'
+key = 'AIRS-2-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'AIRS'
 source_id['source_id'][key]['release_year'] = '2011'
 source_id['source_id'][key]['source_description'] = 'Atmospheric Infrared Sounder'
-source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['source_version_number'] = '2.0'
 source_id['source_id'][key]['institution_id'] = 'NASA-JPL'
 source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] = ['ta','hus']
 ## derived
 source_id['source_id'][key]['source_label'] = 'AIRS'
-"""
+
 
 key = 'QuikSCAT-v20110531' 
 source_id['source_id'][key] = {}
