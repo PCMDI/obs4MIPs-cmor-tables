@@ -70,13 +70,13 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-                "CV_collection_modified":"Tue Mar  5 14:27:11 2019 -0800",
-                "CV_collection_version":"6.2.19.0",
+                "CV_collection_modified":"Mon Mar 25 14:32:35 2019 -0700",
+                "CV_collection_version":"6.2.20.1",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
-                "previous_commit":"8ff00a17c503ada9b8590e6f62c58618abcdd5a1",
+                "previous_commit":"690451863bfd7a92a6fa13d879a9df6af32e0379",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -303,6 +303,20 @@
                 "source_label":"GNSS-RO",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.3"
+            },
+            "GPCP-1DD":{
+                "region":"global",
+                "source":"GPCP 1DD 1.3 (2013): Global Precipitation Climatology Project One Degree Daily",
+                "source_label":"GPCP 1DD",
+                "source_type":"satellite_blended",
+                "source_version_number":"1.3"
+            },
+            "GPCP-SG":{
+                "region":"global",
+                "source":"GPCP SG 2.3 (2016): Global Precipitation Climatology Project Satellite-Gauge",
+                "source_label":"GPCP SG",
+                "source_type":"satellite_blended",
+                "source_version_number":"2.3"
             },
             "MODIS-1-0":{
                 "region":"global",

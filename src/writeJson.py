@@ -807,6 +807,32 @@ source_id['source_id'][key]['source_label'] = 'RSS-v7'
 source_id['source_id'][key]['source_id'] = key
 
 
+key = 'GPCP-SG'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'GPCP SG'
+source_id['source_id'][key]['release_year'] = '2016'
+source_id['source_id'][key]['source_description'] = 'Global Precipitation Climatology Project Satellite-Gauge'
+source_id['source_id'][key]['source_version_number'] = '2.3'
+source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] = ['pr']
+source_id['source_id'][key]['source_label'] = 'GPCP SG'
+
+key = 'GPCP-1DD'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'GPCP 1DD'
+source_id['source_id'][key]['release_year'] = '2013'
+source_id['source_id'][key]['source_description'] = 'Global Precipitation Climatology Project One Degree Daily'
+source_id['source_id'][key]['source_version_number'] = '1.3'
+source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] = ['pr']
+source_id['source_id'][key]['source_label'] = 'GPCP 1DD'
+
+
+
 #key = 'NOAA-NCEI-OISST'
 #ksource_id['source_id'].pop(key)
 
