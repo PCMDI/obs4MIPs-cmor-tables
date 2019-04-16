@@ -1,20 +1,792 @@
 {
-        "id:obs4MIPs.NASA-JPL.AIRS.ta.mon.v1|esgf-dev.jpl.nasa.gov": {
-                "quality_control_flags": ["obs4mips_indicators:1:red",
-                                         "obs4mips_indicators:2:orange",
-                                         "obs4mips_indicators:3:yellow",
-                                         "obs4mips_indicators:4:green",
-                                         "obs4mips_indicators:5:gray",
-                                         "obs4mips_indicators:6:dark_gray"
-                                         ]
-        },
-        "id:obs4MIPs.NASA-JPL.AIRS.hus.mon.v1|esgf-dev.jpl.nasa.gov": {
-                "quality_control_flags": ["obs4mips_indicators:1:green",
-                                         "obs4mips_indicators:2:green",
-                                         "obs4mips_indicators:3:green",
-                                         "obs4mips_indicators:4:green",
-                                         "obs4mips_indicators:5:yellow",
-                                         "obs4mips_indicators:6:light_gray"
-                                         ]
-        }
+    "id:obs4MIPs.ECMWF.ERA-interim.atmos.mon.v20160614|esgf.nccs.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:green", 
+            "obs4mips_indicators:4:green", 
+            "obs4mips_indicators:5:yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.FUB-DWD.SSMI-MERIS.prw.mon.v20140616|esgf1.dkrz.de": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:green", 
+            "obs4mips_indicators:4:green", 
+            "obs4mips_indicators:5:yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.cfad2Lidarsr532.mon.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:orange", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.cfad2Lidarsr532.mon_day_time.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:orange", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.cfad2Lidarsr532.mon_night_time.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:orange", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.cfadLidarsr532.mon.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:orange", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.cfadLidarsr532.mon_day_time.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:orange", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.cfadLidarsr532.mon_night_time.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:orange", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.clcalipso.mon.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:yellow", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.clcalipso.mon_day_time.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:yellow", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.clcalipso.mon_night_time.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:yellow", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.clccalipso.mon.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:orange", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.clccalipso.mon_day_time.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:orange", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.clccalipso.mon_night_time.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:orange", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.clhcalipso.mon.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:yellow", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.clhcalipso.mon_day_time.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:yellow", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.clhcalipso.mon_night_time.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:yellow", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.cllcalipso.mon.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:yellow", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.cllcalipso.mon_day_time.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:yellow", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.cllcalipso.mon_night_time.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:yellow", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.clmcalipso.mon.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:yellow", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.clmcalipso.mon_day_time.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:yellow", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.clmcalipso.mon_night_time.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:yellow", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.clrcalipso.mon.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:orange", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.clrcalipso.mon_day_time.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:orange", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.clrcalipso.mon_night_time.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:orange", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.cltcalipso.mon.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:yellow", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.cltcalipso.mon_day_time.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:yellow", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.cltcalipso.mon_night_time.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:yellow", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.uncalipso.mon.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:orange", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.uncalipso.mon_day_time.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:orange", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IPSL.CFMIP-Obs-CALIPSO.uncalipso.mon_night_time.v20110323|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:orange", 
+            "obs4mips_indicators:4:yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:black"
+        ]
+    }, 
+    "id:obs4MIPs.IUP.XCH4_CRDP3.xch4.mon.v100|esgf-data1.ceda.ac.uk": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:green", 
+            "obs4mips_indicators:4:Yellow", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.IUP.XCO2_CRDP3.xco2.mon.v100|esgf-data1.ceda.ac.uk": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:green", 
+            "obs4mips_indicators:4:Yellow", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.NASA-GSFC.GPCP.atmos.day.v20160610|esgf.nccs.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.NASA-GSFC.GPCP.atmos.mon.v20160610|esgf.nccs.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.NASA-GSFC.MISR.atmos.mon.v20160614|esgf.nccs.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.NASA-GSFC.MODIS.atmos.mon.v20160614|esgf.nccs.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Orange", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.NASA-GSFC.MODIS.land.mon.v20160614|esgf.nccs.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Orange", 
+            "obs4mips_indicators:4:Yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.NASA-GSFC.TRMM.atmos.3hr.v20160613|esgf.nccs.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.NASA-GSFC.TRMM.atmos.mon.v20160613|esgf.nccs.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.NASA-LaRC.CERES-EBAF.atmos.mon.v20160610|esgf.nccs.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Green", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.NASA-LaRC.CERES-EBAF_Surface.atmos.mon.v20160610|esgf.nccs.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Orange", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.NCEI.OISST.tos.day.v20160401|esgdata.gfdl.noaa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Green", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.NCEI.OISST.tos.mon.v20160401|esgdata.gfdl.noaa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Green", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.NCEI.OLR.rlut.day.v20160401|esgdata.gfdl.noaa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Green", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.NCEI.OLR.rlut.mon.v20160401|esgdata.gfdl.noaa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Green", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.NCEI.PMSIC.NH.sic.day.v20160401|esgdata.gfdl.noaa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.NCEI.PMSIC.NH.sic.mon.v20160401|esgdata.gfdl.noaa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.NCEI.PMSIC.SH.sic.day.v20160401|esgdata.gfdl.noaa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.NCEI.PMSIC.SH.sic.mon.v20160401|esgdata.gfdl.noaa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.PCMDI.CFMIP-Obs-ISCCP.albisccp.mon.v20130503|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Yellow", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.PCMDI.CFMIP-Obs-ISCCP.albisccpunweighted.mon.v20130503|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Orange", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.PCMDI.CFMIP-Obs-ISCCP.clisccp.mon.v20130503|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.PCMDI.CFMIP-Obs-ISCCP.cltisccp.mon.v20130503|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.PCMDI.CFMIP-Obs-ISCCP.cttisccp.mon.v20130503|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.PCMDI.CFMIP-Obs-ISCCP.cttisccpunweighted.mon.v20130503|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Orange", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.PCMDI.CFMIP-Obs-ISCCP.pctisccp.mon.v20130503|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.PCMDI.CFMIP-Obs-ISCCP.pctisccpunweighted.mon.v20130503|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Orange", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.UOE.ARC-SST-1-1.mon.v1|esgf-data1.ceda.ac.uk": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Green", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.UW.CFMIP-Obs-MISR.clMISR.mon.v20131113|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Orange", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4MIPs.UW.CFMIP-Obs-MISR.samplesMISR.mon.v20131113|vesg.ipsl.polytechnique.fr": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Green", 
+            "obs4mips_indicators:4:Orange", 
+            "obs4mips_indicators:5:Orange", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4mips.CNES.AVISO.zos.mon.v20110829|esgf-data.jpl.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:green", 
+            "obs4mips_indicators:4:green", 
+            "obs4mips_indicators:5:yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4mips.NASA-GSFC.MODIS.clt.mon.v20111130|esgf-data.jpl.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4mips.NASA-JPL.AIRS.hus.mon.v20110608|esgf-data.jpl.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Yellow", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4mips.NASA-JPL.AIRS.ta.mon.v20110608|esgf-data.jpl.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:green", 
+            "obs4mips_indicators:4:green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4mips.NASA-JPL.GNSS_RO.ta.monClim.v20160601|esgf-data.jpl.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4mips.NASA-JPL.GNSS_RO.zg.monClim.v20160601|esgf-data.jpl.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Yellow", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4mips.NASA-JPL.MLS.cli.mon.v20160504|esgf-data.jpl.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4mips.NASA-JPL.MLS.hus.mon.v20111025|esgf-data.jpl.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4mips.NASA-JPL.MLS.ta.mon.v20111025|esgf-data.jpl.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4mips.NASA-JPL.QuikSCAT.sfcWind.mon.v20120411|esgf-data.jpl.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4mips.NASA-JPL.QuikSCAT.uas.mon.v20120411|esgf-data.jpl.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4mips.NASA-JPL.QuikSCAT.vas.mon.v20120411|esgf-data.jpl.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4mips.NASA-JPL.TES.tro3.mon.v20110608|esgf-data.jpl.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4mips.REMSS.AMSRE.tos.mon.v20111031|esgf-data.jpl.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Green", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4mips.RSS.SSMI.prw.mon.v20160523|esgf-data.jpl.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Green", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4mips.RSS.SSMI.sfcWind.mon.v20160523|esgf-data.jpl.nasa.gov": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Green", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }, 
+    "id:obs4mips.SU.ATSR2-AATSR.od550aer.mon.v20160922|eridanus.eoc.dlr.de": {
+        "quality_control_flags": [
+            "obs4mips_indicators:1:green", 
+            "obs4mips_indicators:2:green", 
+            "obs4mips_indicators:3:Yellow", 
+            "obs4mips_indicators:4:Orange", 
+            "obs4mips_indicators:5:Yellow", 
+            "obs4mips_indicators:6:light_gray"
+        ]
+    }
 }
