@@ -1,17 +1,17 @@
 {
     "Header":{
-        "#dataRequest_specs_version":"01.00.29",
+        "#dataRequest_specs_version":"01.00.31",
         "#mip_era":"CMIP6",
         "Conventions":"CF-1.7 ODS-2.1",
         "approx_interval":"0.00000",
-        "cmor_version":"3.4",
+        "cmor_version":"3.5",
         "data_specs_version":"2.1.0",
         "generic_levels":"alevel",
         "int_missing_value":"-2147483648",
         "missing_value":"1e20",
         "product":"observations",
         "realm":"fx",
-        "table_date":"11 April 2019",
+        "table_date":"26 August 2019",
         "table_id":"Table obs4MIPs_fx"
     },
     "variable_entry":{
@@ -108,8 +108,8 @@
         "sftgif":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: mean",
-            "comment":"Fraction of grid cell covered by land ice (ice sheet, ice shelf, ice cap, glacier)",
-            "dimensions":"longitude latitude typeli",
+            "comment":"Percentage of grid cell covered by land ice (ice sheet, ice shelf, ice cap, glacier)",
+            "dimensions":"longitude latitude",
             "frequency":"fx",
             "long_name":"Land Ice Area Percentage",
             "modeling_realm":"land",
@@ -126,8 +126,8 @@
         "sftlf":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: mean",
-            "comment":"Please express 'X_area_fraction' as the percentage of horizontal area occupied by X.",
-            "dimensions":"longitude latitude typeland",
+            "comment":"Percentage of horizontal area occupied by land.",
+            "dimensions":"longitude latitude",
             "frequency":"fx",
             "long_name":"Percentage of the grid  cell occupied by land (including lakes)",
             "modeling_realm":"atmos",

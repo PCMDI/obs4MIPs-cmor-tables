@@ -70,13 +70,13 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-                "CV_collection_modified":"Mon Mar 25 14:32:35 2019 -0700",
-                "CV_collection_version":"6.2.20.1",
+                "CV_collection_modified":"Thu Aug 22 15:41:35 2019 -0700",
+                "CV_collection_version":"6.2.37.3",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
-                "previous_commit":"690451863bfd7a92a6fa13d879a9df6af32e0379",
+                "previous_commit":"d0261dc94cdfba37af81e07b8ebc801aa47a7ae7",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -422,6 +422,20 @@
                 "source_label":"TES 1 0",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.0"
+            },
+            "TRMM-TMPA-3B42":{
+                "region":"global",
+                "source":"TRMM TMPA 3B42 v7A (2013): Tropical Rainfall Measuring Mission Multi-satellite Precipitation Analysis 3B42",
+                "source_label":"TRMM TMPA 3B42",
+                "source_type":"satellite_blended",
+                "source_version_number":"v7A"
+            },
+            "TRMM-TMPA-3B43":{
+                "region":"global",
+                "source":"TRMM TMPA 3B43 v7-7A (2013): Tropical Rainfall Measuring Mission Multi-satellite Precipitation Analysis 3B43",
+                "source_label":"TRMM TMPA 3B43",
+                "source_type":"satellite_blended",
+                "source_version_number":"v7-7A"
             }
         },
         "source_type":{

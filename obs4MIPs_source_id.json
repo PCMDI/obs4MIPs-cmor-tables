@@ -257,6 +257,7 @@
             ],
             "release_year":"2013",
             "source_description":"Global Precipitation Climatology Project One Degree Daily",
+            "source_id":"GPCP-1DD",
             "source_label":"GPCP 1DD",
             "source_name":"GPCP 1DD",
             "source_type":"satellite_blended",
@@ -521,6 +522,37 @@
                 "tro3"
             ],
             "source_version_number":"1.0"
+        },
+        "TRMM-TMPA-3B42":{
+            "institution_id":"NASA-GSFC",
+            "region":[
+                "global"
+            ],
+            "release_year":"2013",
+            "source_description":"Tropical Rainfall Measuring Mission Multi-satellite Precipitation Analysis 3B42",
+            "source_id":"TRMM-TMPA-3B42",
+            "source_label":"TRMM TMPA 3B42",
+            "source_name":"TRMM TMPA 3B42",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"v7A"
+        },
+        "TRMM-TMPA-3B43":{
+            "institution_id":"NASA-GSFC",
+            "region":[
+                "global"
+            ],
+            "release_year":"2013",
+            "source_description":"Tropical Rainfall Measuring Mission Multi-satellite Precipitation Analysis 3B43",
+            "source_label":"TRMM TMPA 3B43",
+            "source_name":"TRMM TMPA 3B43",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"v7-7A"
         }
     }
 }

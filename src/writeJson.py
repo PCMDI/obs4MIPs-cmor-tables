@@ -454,6 +454,7 @@ Amon['variable_entry']['pme']['valid_min'] = ''
 
 
 
+
 # monNobs
 #--------
 # Example new monNobs entry
@@ -830,7 +831,34 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_type'] = 'satellite_blended'
 source_id['source_id'][key]['source_variables'] = ['pr']
 source_id['source_id'][key]['source_label'] = 'GPCP 1DD'
+source_id['source_id'][key]['source_id'] = key
 
+
+key = 'TRMM-TMPA-3B42'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'TRMM TMPA 3B42'
+source_id['source_id'][key]['release_year'] = '2013'
+source_id['source_id'][key]['source_description'] = 'Tropical Rainfall Measuring Mission Multi-satellite Precipitation Analysis 3B42'
+source_id['source_id'][key]['source_version_number'] = 'v7A'
+source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_label'] = 'TRMM TMPA 3B42'
+source_id['source_id'][key]['source_variables'] = ['pr']
+source_id['source_id'][key]['source_id'] = key
+
+
+key = 'TRMM-TMPA-3B43'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'TRMM TMPA 3B43'
+source_id['source_id'][key]['release_year'] = '2013'
+source_id['source_id'][key]['source_description'] = 'Tropical Rainfall Measuring Mission Multi-satellite Precipitation Analysis 3B43'
+source_id['source_id'][key]['source_version_number'] = 'v7-7A'
+source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_label'] = 'TRMM TMPA 3B43'
+source_id['source_id'][key]['source_variables'] = ['pr']
 
 
 #key = 'NOAA-NCEI-OISST'
