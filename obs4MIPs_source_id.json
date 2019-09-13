@@ -331,15 +331,15 @@
         "NOAA-NCEI-FAPAR":{
             "institution_id":"NOAA-NCEI",
             "region":[
-                "global_land"
+                "global_ocean"
             ],
-            "release_year":"2019",
-            "source_description":"AVHRR Fraction of Absorbed Photosynthetically Active Radiation",
-            "source_label":"NOAA NCEI FAPAR",
-            "source_name":"NOAA NCEI FAPAR",
-            "source_type":"satellite_retrieval",
+            "release_year":"2017",
+            "source_description":"Extended Reconstructed Sea Surface Temperatures",
+            "source_label":"NOAA NCEI ERSST",
+            "source_name":"NOAA NCEI ERSST",
+            "source_type":"gridded_insitu",
             "source_variables":[
-                "fapar"
+                "tos"
             ],
             "source_version_number":"5.0"
         },

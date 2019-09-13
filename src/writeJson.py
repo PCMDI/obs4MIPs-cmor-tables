@@ -873,6 +873,20 @@ source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_label'] = 'NOAA NCEI FAPAR'
 source_id['source_id'][key]['source_variables'] = ['fapar']
 
+source_id['source_id'][key]['source_id'] = key
+key = 'NOAA-NCEI-FAPAR'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'NOAA NCEI ERSST'
+source_id['source_id'][key]['release_year'] = '2017'
+source_id['source_id'][key]['source_description'] = 'Extended Reconstructed Sea Surface Temperatures'
+source_id['source_id'][key]['source_version_number'] = '5.0'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['global_ocean']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_label'] = 'NOAA NCEI ERSST'
+source_id['source_id'][key]['source_variables'] = ['tos']
+
+
 #key = 'NOAA-NCEI-OISST'
 #ksource_id['source_id'].pop(key)
 
