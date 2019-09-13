@@ -886,6 +886,19 @@ source_id['source_id'][key]['source_type'] = 'gridded_insitu'
 source_id['source_id'][key]['source_label'] = 'NOAA NCEI ERSST'
 source_id['source_id'][key]['source_variables'] = ['tos']
 
+source_id['source_id'][key]['source_id'] = key
+key = 'NOAA-NCEI-LAI'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'NOAA NCEI LAI'
+source_id['source_id'][key]['release_year'] = '2019'
+source_id['source_id'][key]['source_description'] = 'AVHRR Leaf Area Index'
+source_id['source_id'][key]['source_version_number'] = '5.0'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_label'] = 'NOAA NCEI LAI'
+source_id['source_id'][key]['source_variables'] = ['lai']
+
 
 #key = 'NOAA-NCEI-OISST'
 #ksource_id['source_id'].pop(key)
