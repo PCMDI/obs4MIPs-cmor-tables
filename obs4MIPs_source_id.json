@@ -398,6 +398,7 @@
             ],
             "release_year":"2019",
             "source_description":"AVHRR Leaf Area Index",
+            "source_id":"NOAA-NCEI-LAI",
             "source_label":"NOAA NCEI LAI",
             "source_name":"NOAA NCEI LAI",
             "source_type":"satellite_retrieval",
@@ -421,6 +422,22 @@
                 "lai"
             ],
             "source_version_number":"4.0"
+        },
+        "NOAA-NCEI-NDVI":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2019",
+            "source_description":"Normalized Difference Vegetation Index",
+            "source_id":"NOAA-NCEI-NDVI",
+            "source_label":"NOAA NCEI NDVI",
+            "source_name":"NOAA NCEI AVHRR NDVI",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "ndvi"
+            ],
+            "source_version_number":"5.0"
         },
         "NOAA-NCEI-OISST-2-0":{
             "institution_id":"NOAA-NCEI",
@@ -468,6 +485,21 @@
                 "siconc"
             ],
             "source_version_number":"2.0"
+        },
+        "NOAA-NCEI-SeaIce":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2017",
+            "source_description":"SSMI Passive Microwave Sea Ice Area Fraction",
+            "source_label":"NOAA NCEI SeaIce",
+            "source_name":"NOAA NCEI SSMI SeaIce",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "siconc"
+            ],
+            "source_version_number":"3.1"
         },
         "NOAA-NCEI-SeaWinds-1-2":{
             "institution_id":"NOAA-NCEI",

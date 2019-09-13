@@ -900,6 +900,40 @@ source_id['source_id'][key]['source_label'] = 'NOAA NCEI LAI'
 source_id['source_id'][key]['source_variables'] = ['lai']
 
 
+source_id['source_id'][key]['source_id'] = key
+key = 'NOAA-NCEI-NDVI'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'NOAA NCEI AVHRR NDVI'
+source_id['source_id'][key]['release_year'] = '2019'
+source_id['source_id'][key]['source_description'] = 'Normalized Difference Vegetation Index'
+source_id['source_id'][key]['source_version_number'] = '5.0'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_label'] = 'NOAA NCEI NDVI'
+source_id['source_id'][key]['source_variables'] = ['ndvi']
+
+
+source_id['source_id'][key]['source_id'] = key
+key = 'NOAA-NCEI-SeaIce'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'NOAA NCEI SSMI SeaIce'
+source_id['source_id'][key]['release_year'] = '2017'
+source_id['source_id'][key]['source_description'] = 'SSMI Passive Microwave Sea Ice Area Fraction'
+source_id['source_id'][key]['source_version_number'] = '3.1'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['global_ocean']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_label'] = 'NOAA NCEI SeaIce'
+source_id['source_id'][key]['source_variables'] = ['siconc']
+
+
+
+
+
+
+
+
 #key = 'NOAA-NCEI-OISST'
 #ksource_id['source_id'].pop(key)
 
