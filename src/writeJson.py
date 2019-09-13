@@ -449,8 +449,8 @@ Amon['variable_entry']['pme']['type'] = 'real'
 Amon['variable_entry']['pme']['units'] = 'kg m-2 s-1'
 Amon['variable_entry']['pme']['valid_max'] = ''
 Amon['variable_entry']['pme']['valid_min'] = ''
-
 ###
+
 
 
 
@@ -859,7 +859,19 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_type'] = 'satellite_blended'
 source_id['source_id'][key]['source_label'] = 'TRMM TMPA 3B43'
 source_id['source_id'][key]['source_variables'] = ['pr']
+source_id['source_id'][key]['source_id'] = key
 
+key = 'NOAA-NCEI-FAPAR' 
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'NOAA NCEI FAPAR'
+source_id['source_id'][key]['release_year'] = '2019'
+source_id['source_id'][key]['source_description'] = 'AVHRR Fraction of Absorbed Photosynthetically Active Radiation'
+source_id['source_id'][key]['source_version_number'] = '5.0'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_label'] = 'NOAA NCEI FAPAR'
+source_id['source_id'][key]['source_variables'] = ['fapar']
 
 #key = 'NOAA-NCEI-OISST'
 #ksource_id['source_id'].pop(key)
