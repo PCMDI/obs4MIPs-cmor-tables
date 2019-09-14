@@ -207,6 +207,25 @@ for tab in (Aday, Amon, Lmon, Omon, SImon, fx, Aday, monNobs, monStderr):
     tab['Header']['int_missing_value'] = str(-2**31)
 
 # Add new variables
+
+# Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics)
+Aday['variable_entry']['ts'] = {}
+Aday['variable_entry']['ts']['cell_measures'] = ''
+Aday['variable_entry']['ts']['cell_methods'] = 'time: mean'
+Aday['variable_entry']['ts']['comment'] = ''
+Aday['variable_entry']['ts']['dimensions'] = 'longitude latitude time'
+Aday['variable_entry']['ts']['frequency'] = 'day'
+Aday['variable_entry']['ts']['long_name'] = 'Sea Surface Temperature'
+Aday['variable_entry']['ts']['ok_max_mean_abs'] = ''
+Aday['variable_entry']['ts']['ok_min_mean_abs'] = ''
+Aday['variable_entry']['ts']['out_name'] = 'ts'
+Aday['variable_entry']['ts']['positive'] = ''
+Aday['variable_entry']['ts']['standard_name'] = 'surface_temperature'
+Aday['variable_entry']['ts']['type'] = 'real'
+Aday['variable_entry']['ts']['units'] = 'K'
+Aday['variable_entry']['ts']['valid_max'] = ''
+Aday['variable_entry']['ts']['valid_min'] = ''
+
 # Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics)
 Amon['variable_entry'][u'ttbr'] = {}
 Amon['variable_entry']['ttbr']['cell_measures'] = ''
@@ -861,7 +880,7 @@ source_id['source_id'][key]['source_label'] = 'TRMM TMPA 3B43'
 source_id['source_id'][key]['source_variables'] = ['pr']
 source_id['source_id'][key]['source_id'] = key
 
-key = 'NOAA-NCEI-FAPAR' 
+key = 'NOAA-NCEI-FAPAR-5-0' 
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'NOAA NCEI FAPAR'
 source_id['source_id'][key]['release_year'] = '2019'
@@ -874,7 +893,7 @@ source_id['source_id'][key]['source_label'] = 'NOAA NCEI FAPAR'
 source_id['source_id'][key]['source_variables'] = ['fapar']
 
 source_id['source_id'][key]['source_id'] = key
-key = 'NOAA-NCEI-FAPAR'
+key = 'NOAA-NCEI-ERSST-5-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'NOAA NCEI ERSST'
 source_id['source_id'][key]['release_year'] = '2017'
@@ -887,7 +906,7 @@ source_id['source_id'][key]['source_label'] = 'NOAA NCEI ERSST'
 source_id['source_id'][key]['source_variables'] = ['tos']
 
 source_id['source_id'][key]['source_id'] = key
-key = 'NOAA-NCEI-LAI'
+key = 'NOAA-NCEI-LAI-5-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'NOAA NCEI LAI'
 source_id['source_id'][key]['release_year'] = '2019'
@@ -901,7 +920,7 @@ source_id['source_id'][key]['source_variables'] = ['lai']
 
 
 source_id['source_id'][key]['source_id'] = key
-key = 'NOAA-NCEI-NDVI'
+key = 'NOAA-NCEI-NDVI-5-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'NOAA NCEI AVHRR NDVI'
 source_id['source_id'][key]['release_year'] = '2019'
@@ -915,7 +934,7 @@ source_id['source_id'][key]['source_variables'] = ['ndvi']
 
 
 source_id['source_id'][key]['source_id'] = key
-key = 'NOAA-NCEI-SeaIce'
+key = 'NOAA-NCEI-SeaIce-3-1'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'NOAA NCEI SSMI SeaIce'
 source_id['source_id'][key]['release_year'] = '2017'
@@ -926,13 +945,6 @@ source_id['source_id'][key]['region'] = ['global_ocean']
 source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_label'] = 'NOAA NCEI SeaIce'
 source_id['source_id'][key]['source_variables'] = ['siconc']
-
-
-
-
-
-
-
 
 #key = 'NOAA-NCEI-OISST'
 #ksource_id['source_id'].pop(key)
