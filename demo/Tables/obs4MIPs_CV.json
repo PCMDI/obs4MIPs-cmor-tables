@@ -381,13 +381,6 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.2"
             },
-            "NOAA-NCEI-LAI":{
-                "region":"global_land",
-                "source":"NOAA NCEI LAI 5.0 (2019): AVHRR Leaf Area Index",
-                "source_label":"NOAA NCEI LAI",
-                "source_type":"satellite_retrieval",
-                "source_version_number":"5.0"
-            },
             "NOAA-NCEI-LAI-4-0":{
                 "region":"global_land",
                 "source":"NOAA-NCEI-LAI 4.0 (2014): AVHRR Leaf Area Index",

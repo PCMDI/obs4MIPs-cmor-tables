@@ -10,7 +10,7 @@
         "missing_value":"1e20",
         "product":"observations",
         "realm":"aerosol atmos atmosChem land landIce ocean ocnBgchem seaIce",
-        "table_date":"13 September 2019",
+        "table_date":"15 September 2019",
         "table_id":"Table obs4MIPs_monStderr"
     },
     "variable_entry":{
