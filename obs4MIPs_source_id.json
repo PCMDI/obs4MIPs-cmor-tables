@@ -534,21 +534,6 @@
             ],
             "source_version_number":"2.0"
         },
-        "NOAA-NCEI-SeaIce":{
-            "institution_id":"NOAA-NCEI",
-            "region":[
-                "global_ocean"
-            ],
-            "release_year":"2017",
-            "source_description":"SSMI Passive Microwave Sea Ice Area Fraction",
-            "source_label":"NOAA NCEI SeaIce",
-            "source_name":"NOAA NCEI SSMI SeaIce",
-            "source_type":"satellite_retrieval",
-            "source_variables":[
-                "siconc"
-            ],
-            "source_version_number":"3.1"
-        },
         "NOAA-NCEI-SeaIce-3-1":{
             "institution_id":"NOAA-NCEI",
             "region":[

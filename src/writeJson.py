@@ -667,7 +667,7 @@ source_id = source_id.get('source_id')
 #key = 'variable_entry'
 #source_id['source_id'].pop(key)
 
-del source_id['source_id']['NOAA-NCEI-LAI']
+del source_id['source_id']['NOAA-NCEI-SeaIce']
 
 key = 'AIRS-2-0'
 source_id['source_id'][key] = {}
