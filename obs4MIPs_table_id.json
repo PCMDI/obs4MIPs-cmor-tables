@@ -1,6 +1,7 @@
 {
     "table_id":[
         "obs4MIPs_Aday",
+        "obs4MIPs_Oday",
         "obs4MIPs_Amon",
         "obs4MIPs_Lmon",
         "obs4MIPs_Omon",
