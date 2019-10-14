@@ -517,13 +517,13 @@ Amon['variable_entry']['pme']['valid_min'] = ''
 
 #%% Grid label
 
-tmp = [['grid_label','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_grid_label.json']
+tmp = [['grid_label','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_grid_label.json']
       ] ;
 grid_label = readJsonCreateDict(tmp)
 grid_label = grid_label.get('grid_label')
 #rint "grid label type",grid_label['grid_label'].keys()
-#grid_label['grid_label']['gnNH'] = "data reported on a native grid in the Northern Hemisphere"
-#grid_label['grid_label']['gnSH'] = "data reported on a native grid in the Southern Hemisphere"
+grid_label['grid_label']['gnNH'] = "data reported on a native grid in the Northern Hemisphere"
+grid_label['grid_label']['gnSH'] = "data reported on a native grid in the Southern Hemisphere"
 
 
 #%% Institution
