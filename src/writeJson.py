@@ -69,13 +69,17 @@ PJD  9 Nov 2017     - Added source_id validation for valid characters following 
 PJD  9 Nov 2017     - Updated obs4MIPs_CV.json region format following CMOR3.2.8 release https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/136
 PJD  9 Nov 2017     - Updated source_type format adding descriptions https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/98
 PJD  2 Feb 2018     - Updated institution_id JPL -> NASA-JPL https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/139
+PJD 14 Oct 2019     - Updated to include Oday table from cmip6-cmor-tables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/181 & 178
+PJD 14 Oct 2019     - Added durolib local import to get around cdms2 conflicts
 
 @author: durack1
 """
 
 #%% Import statements
 import copy,gc,json,os,re,shutil,ssl,subprocess,sys,time
-from durolib import readJsonCreateDict ; #getGitInfo
+if os.environ.get('USER') == 'durack1':
+    sys.path.insert(0,'/sync/git/durolib/durolib/')
+    from durolib import readJsonCreateDict ; #getGitInfo
 #import pdb
 
 #%% Determine path
@@ -92,6 +96,7 @@ ctx.verify_mode     = ssl.CERT_NONE
 #%% List target tables
 masterTargets = [
  'Aday',
+ 'Oday',
  'Amon',
  'Lmon',
  'Omon',
@@ -131,6 +136,7 @@ tableSource = [
  ['Omon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Omon.json'],
  ['SImon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_SImon.json'],
  ['Aday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_day.json'],
+ ['Oday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Oday.json'],
  ['monNobs','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monNobs.json'],
  ['monStderr','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monStderr.json'],
  ] ;
@@ -189,9 +195,11 @@ Omon['Header']['realm']     = 'ocean'
 SImon['Header']['realm']    = 'seaIce'
 fx['Header']['realm']       = 'fx'
 Aday['Header']['table_id']  = 'Table obs4MIPs_Aday' ; # Cleanup from upstream
+Oday['Header']['table_id']  = 'Table obs4MIPs_Oday' ; # Cleanup from upstream
+Oday['Header']['realm']     = 'ocean'
 
 # Clean out modeling_realm
-for jsonName in ['Aday','Amon','Lmon','Omon','SImon']:
+for jsonName in ['Aday','Oday','Amon','Lmon','Omon','SImon']:
     dictToClean = eval(jsonName)
     for key, value in dictToClean.iteritems():
         if key == 'Header':
@@ -203,7 +211,7 @@ for jsonName in ['Aday','Amon','Lmon','Omon','SImon']:
                 dictToClean[key][key1]['cell_measures'] = '' ; # Set all cell_measures entries to blank
 
 # Set missing value for integer variables
-for tab in (Aday, Amon, Lmon, Omon, SImon, fx, Aday, monNobs, monStderr):
+for tab in (Aday, Oday, Amon, Lmon, Omon, SImon, fx, monNobs, monStderr):
     tab['Header']['int_missing_value'] = str(-2**31)
 
 # Add new variables
@@ -530,7 +538,7 @@ institution_id = institution_id.get('institution_id')
 #institution_id['institution_id']['NOAA-NCEI'] = 'NOAA\'s National Centers for Environmental Information, Asheville, NC 28801, USA'
 #institution_id['institution_id']['RSS'] = 'Remote Sensing Systems, Santa Rosa, CA 95401, USA'
 #institution_id['institution_id']['CNES'] = "Centre national d'etudes spatiales"
-institution_id['institution_id']['NASA-GSFC'] = "National Aeronautics and Space Administration, Goddard Space Flight Center"
+#institution_id['institution_id']['NASA-GSFC'] = "National Aeronautics and Space Administration, Goddard Space Flight Center"
 
 
 #%% License
@@ -664,6 +672,7 @@ source_id = source_id.get('source_id')
 
 
 # Enter fixes or additions below
+'''
 #key = 'variable_entry'
 #source_id['source_id'].pop(key)
 
@@ -696,7 +705,7 @@ source_id['source_id'][key]['source_variables'] = ['clt']
 source_id['source_id'][key]['source_label'] = 'MODIS'
 
 
-key = 'QuikSCAT-v20110531' 
+key = 'QuikSCAT-v20110531'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'QuikSCAT'
 source_id['source_id'][key]['release_year'] = '2011'
@@ -709,7 +718,7 @@ source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] =  ['sfcWind','uas','vas']
 ## derived from RC
 source_id['source_id'][key]['source_label'] = 'QuikSCAT'
-
+'''
 """
 key = 'Aura-MLS-v04-2'
 source_id['source_id'][key] = {}
@@ -788,7 +797,7 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] = ['tro3']
 source_id['source_id'][key]['source_label'] = 'TES 1 0'
-source_id['source_id'][key]['source_id'] = key 
+source_id['source_id'][key]['source_id'] = key
 
 key = 'AVISO-1-0'
 source_id['source_id'][key] = {}
@@ -816,6 +825,7 @@ source_id['source_id'][key]['source_variables'] = ['tos']
 source_id['source_id'][key]['source_label'] = 'AMRSE v7'
 source_id['source_id'][key]['source_id'] = key
 """
+'''
 key = 'RSS-v7'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'Satellite derived fields'
@@ -828,7 +838,6 @@ source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] = ['tos','prw','sfcWind']
 source_id['source_id'][key]['source_label'] = 'RSS-v7'
 source_id['source_id'][key]['source_id'] = key
-
 
 key = 'GPCP-SG'
 source_id['source_id'][key] = {}
@@ -883,7 +892,7 @@ source_id['source_id'][key]['source_label'] = 'TRMM TMPA 3B43'
 source_id['source_id'][key]['source_variables'] = ['pr']
 source_id['source_id'][key]['source_id'] = key
 
-key = 'NOAA-NCEI-FAPAR-5-0' 
+key = 'NOAA-NCEI-FAPAR-5-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'NOAA NCEI FAPAR'
 source_id['source_id'][key]['release_year'] = '2019'
@@ -951,8 +960,8 @@ source_id['source_id'][key]['source_variables'] = ['siconc']
 
 #key = 'NOAA-NCEI-OISST'
 #ksource_id['source_id'].pop(key)
-
-
+'''
+'''
 #pdb.set_trace()
 # Fix region non-list
 for keyVal in source_id['source_id'].keys():
@@ -961,6 +970,7 @@ for keyVal in source_id['source_id'].keys():
         source_id['source_id'][key]['region'] = list(source_id['source_id'][key]['region'])
 
 #pdb.set_trace()
+'''
 #==============================================================================
 # Example new source_id entry
 #key = 'CMSAF-SARAH-2-0'
@@ -1003,6 +1013,7 @@ source_type['satellite_retrieval'] = 'gridded product based on satellite measure
 #%% Table ID
 table_id = [
   'obs4MIPs_Aday',
+  'obs4MIPs_Oday',
   'obs4MIPs_Amon',
   'obs4MIPs_Lmon',
   'obs4MIPs_Omon',
@@ -1065,8 +1076,8 @@ for jsonName in masterTargets:
                 dictToClean[key][value2[0]] = string
         vars()[jsonName] = dictToClean
     # Write file
-    if jsonName in ['Aday', 'Amon', 'Lmon', 'Omon', 'SImon', 'coordinate',
-                    'formula_terms', 'fx', 'grids', 'monNobs', 'monStderr']:
+    if jsonName in ['Aday','Oday','Amon','Lmon','Omon','SImon','coordinate',
+                    'formula_terms','fx','grids','monNobs','monStderr']:
         outFile = ''.join(['../Tables/obs4MIPs_',jsonName,'.json'])
     elif jsonName == 'license_':
         outFile = ''.join(['../obs4MIPs_license.json'])
@@ -1083,8 +1094,8 @@ for jsonName in masterTargets:
         jsonDict = {}
         jsonDict[jsonName.replace('_','')] = eval(jsonName)
     elif jsonName not in ['coordinate','formula_terms','fx','grids',
-                          'institution_id','source_id','Aday','Amon','Lmon',
-                          'Omon','SImon','monNobs','monStderr']:
+                          'institution_id','source_id','Aday','Oday','Amon',
+                          'Lmon','Omon','SImon','monNobs','monStderr']:
         jsonDict = {}
         jsonDict[jsonName] = eval(jsonName)
     else:
@@ -1115,8 +1126,8 @@ inputJson = ['frequency','grid_label','institution_id','license',
              'coordinate','grids','formula_terms', # These are not controlled vocabs - rather lookup tables for CMOR
              'Aday','Amon','Lmon','Omon','SImon','fx' # Update/add if new tables are generated
             ]
-tableList = ['Aday', 'Amon', 'Lmon', 'Omon', 'SImon', 'coordinate',
-             'formula_terms', 'fx', 'grids', 'monNobs', 'monStderr']
+tableList = ['Aday','Oday','Amon','Lmon','Omon','SImon','coordinate',
+             'formula_terms','fx','grids','monNobs','monStderr']
 
 # Load dictionaries from local files
 CVJsonList = copy.deepcopy(inputJson)
