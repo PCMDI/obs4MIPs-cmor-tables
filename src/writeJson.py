@@ -81,6 +81,8 @@ import copy,gc,json,os,re,shutil,ssl,subprocess,sys,time
 if os.environ.get('USER') == 'durack1':
     sys.path.insert(0,'/sync/git/durolib/durolib/')
     from durolib import readJsonCreateDict ; #getGitInfo
+from durolib import readJsonCreateDict
+
 #import pdb
 
 #%% Determine path
@@ -483,6 +485,9 @@ Amon['variable_entry']['pme']['valid_max'] = ''
 Amon['variable_entry']['pme']['valid_min'] = ''
 ###
 
+# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/72
+
+
 # siconc vVariable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics)
 '''
 # Test for variable lists
@@ -547,6 +552,8 @@ institution_id = institution_id.get('institution_id')
 #institution_id['institution_id']['RSS'] = 'Remote Sensing Systems, Santa Rosa, CA 95401, USA'
 #institution_id['institution_id']['CNES'] = "Centre national d'etudes spatiales"
 #institution_id['institution_id']['NASA-GSFC'] = "National Aeronautics and Space Administration, Goddard Space Flight Center"
+
+institution_id['institution_id']['ImperialCollege'] = "Imperial College, London, U.K."
 
 #%% License
 license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
@@ -679,6 +686,20 @@ source_id = source_id.get('source_id')
 
 
 # Enter fixes or additions below
+
+key = 'GERB-HR-ED01-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'GERB'
+source_id['source_id'][key]['release_year'] = '2018'
+source_id['source_id'][key]['source_description'] = 'Geostationary Earth Radiation Budget'
+source_id['source_id'][key]['source_version_number'] = 'HR_ED01_1.0'
+source_id['source_id'][key]['institution_id'] = 'ImperialCollege'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] = ['rlut','rsut']
+## derived
+source_id['source_id'][key]['source_label'] = 'GERB'
+
 '''
 #key = 'variable_entry'
 #source_id['source_id'].pop(key)
@@ -1239,6 +1260,7 @@ if os.environ.get('USER') == 'gleckler1':
     else:
         print 'No 7za path found'
 
+'''
 # Cleanup rogue files
 os.chdir(demoPath)
 if os.path.exists('.DS_Store'):
@@ -1252,10 +1274,11 @@ if os.path.exists('../demo/demo.zip'):
 # Jump up one directory
 os.chdir(demoPath.replace('/demo',''))
 # Zip demo dir
-p = subprocess.Popen(['7za','a','demo.zip','demo','tzip','-xr!demo/demo'],
-                         stdout=subprocess.PIPE,stderr=subprocess.PIPE,
+ p = subprocess.Popen(['7za','a','demo.zip','demo','tzip','-xr!demo/demo'],
+                          stdout=subprocess.PIPE,stderr=subprocess.PIPE,
                          cwd=os.getcwd(),env=env7za)
 stdout = p.stdout.read() ; # Use persistent variables for tests below
 stderr = p.stderr.read()
 # Move to demo dir
 shutil.move('demo.zip', 'demo/demo.zip')
+'''

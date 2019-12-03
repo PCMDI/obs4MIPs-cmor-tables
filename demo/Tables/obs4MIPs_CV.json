@@ -70,19 +70,20 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-                "CV_collection_modified":"Thu Oct  3 10:54:58 2019 -0700",
-                "CV_collection_version":"6.2.39.0",
+                "CV_collection_modified":"Tue Nov 19 11:20:50 2019 -0800",
+                "CV_collection_version":"6.2.39.14",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
-                "previous_commit":"217b201e08c5fff8785f0535ee76eb5b3fd971f4",
+                "previous_commit":"27155103722fd532bb99465f080f060d1a3e40a2",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
         "institution_id":{
             "CNES":"Centre national d'etudes spatiales",
             "DWD":"Deutscher Wetterdienst, Offenbach 63067, Germany",
+            "ImperialCollege":"Imperial College, London, U.K.",
             "NASA-GSFC":"National Aeronautics and Space Administration, Goddard Space Flight Center",
             "NASA-JPL":"NASA's Jet Propulsion Laboratory, Pasadena, CA 91109, USA",
             "NOAA-NCEI":"NOAA's National Centers for Environmental Information, Asheville, NC 28801, USA",
@@ -296,6 +297,13 @@
                 "source_label":"ESACCI-CLOUD-MERIS-AATSR",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
+            },
+            "GERB-HR-ED01-1-0":{
+                "region":"global",
+                "source":"GERB HR_ED01_1.0 (2018): Geostationary Earth Radiation Budget",
+                "source_label":"GERB",
+                "source_type":"satellite_blended",
+                "source_version_number":"HR_ED01_1.0"
             },
             "GNSS-RO-1-3":{
                 "region":"global",
