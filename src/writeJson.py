@@ -700,6 +700,10 @@ source_id['source_id'][key]['source_variables'] = ['rlut','rsut']
 ## derived
 source_id['source_id'][key]['source_label'] = 'GERB'
 
+
+del source_id['source_id']['TRMM-TMPA-3B42']
+del source_id['source_id']['TRMM-TMPA-3B43']
+
 '''
 #key = 'variable_entry'
 #source_id['source_id'].pop(key)
@@ -866,8 +870,9 @@ source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] = ['tos','prw','sfcWind']
 source_id['source_id'][key]['source_label'] = 'RSS-v7'
 source_id['source_id'][key]['source_id'] = key
+'''
 
-key = 'GPCP-SG'
+key = 'GPCP-SG-2-3'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'GPCP SG'
 source_id['source_id'][key]['release_year'] = '2016'
@@ -879,7 +884,7 @@ source_id['source_id'][key]['source_type'] = 'satellite_blended'
 source_id['source_id'][key]['source_variables'] = ['pr']
 source_id['source_id'][key]['source_label'] = 'GPCP SG'
 
-key = 'GPCP-1DD'
+key = 'GPCP-1DD-1-3'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'GPCP 1DD'
 source_id['source_id'][key]['release_year'] = '2013'
@@ -893,12 +898,12 @@ source_id['source_id'][key]['source_label'] = 'GPCP 1DD'
 source_id['source_id'][key]['source_id'] = key
 
 
-key = 'TRMM-TMPA-3B42'
+key = 'TRMM-TMPA-3B42-v7-7A'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'TRMM TMPA 3B42'
 source_id['source_id'][key]['release_year'] = '2013'
 source_id['source_id'][key]['source_description'] = 'Tropical Rainfall Measuring Mission Multi-satellite Precipitation Analysis 3B42'
-source_id['source_id'][key]['source_version_number'] = 'v7A'
+source_id['source_id'][key]['source_version_number'] = 'v7-7A'
 source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
 source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_type'] = 'satellite_blended'
@@ -907,7 +912,7 @@ source_id['source_id'][key]['source_variables'] = ['pr']
 source_id['source_id'][key]['source_id'] = key
 
 
-key = 'TRMM-TMPA-3B43'
+key = 'TRMM-TMPA-3B43-v7-7A'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'TRMM TMPA 3B43'
 source_id['source_id'][key]['release_year'] = '2013'
@@ -920,6 +925,7 @@ source_id['source_id'][key]['source_label'] = 'TRMM TMPA 3B43'
 source_id['source_id'][key]['source_variables'] = ['pr']
 source_id['source_id'][key]['source_id'] = key
 
+'''
 key = 'NOAA-NCEI-FAPAR-5-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'NOAA NCEI FAPAR'
