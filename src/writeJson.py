@@ -99,6 +99,7 @@ ctx.verify_mode     = ssl.CERT_NONE
 #%% List target tables
 masterTargets = [
  'Aday',
+ 'A3hr',
  'Oday',
  'SIday',
  'Amon',
@@ -140,6 +141,7 @@ tableSource = [
  ['Omon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Omon.json'],
  ['SImon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_SImon.json'],
  ['Aday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_day.json'],
+ ['A3hr','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_3hr.json'],
  ['Oday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Oday.json'],
  ['SIday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_SIday.json'],
  ['monNobs','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monNobs.json'],
@@ -200,13 +202,15 @@ Omon['Header']['realm']     = 'ocean'
 SImon['Header']['realm']    = 'seaIce'
 fx['Header']['realm']       = 'fx'
 Aday['Header']['table_id']  = 'Table obs4MIPs_Aday'
+A3hr['Header']['table_id']  = 'Table obs4MIPs_A3hr'
+A3hr['Header']['realm']     = 'atmos'
 Oday['Header']['table_id']  = 'Table obs4MIPs_Oday'
 Oday['Header']['realm']     = 'ocean'
 SIday['Header']['table_id'] = 'Table obs4MIPs_SIday'
 SIday['Header']['realm']    = 'seaIce'
 
 # Clean out modeling_realm
-for jsonName in ['Aday','Oday','SIday','Amon','Lmon','Omon','SImon']:
+for jsonName in ['Aday','A3hr','Oday','SIday','Amon','Lmon','Omon','SImon']:
     dictToClean = eval(jsonName)
     for key, value in dictToClean.iteritems():
         if key == 'Header':
@@ -218,7 +222,7 @@ for jsonName in ['Aday','Oday','SIday','Amon','Lmon','Omon','SImon']:
                 dictToClean[key][key1]['cell_measures'] = '' ; # Set all cell_measures entries to blank
 
 # Set missing value for integer variables
-for tab in (Aday,Oday,SIday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr):
+for tab in (Aday,A3hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr):
     tab['Header']['int_missing_value'] = str(-2**31)
 
 # Add new variables
@@ -701,9 +705,6 @@ source_id['source_id'][key]['source_variables'] = ['rlut','rsut']
 source_id['source_id'][key]['source_label'] = 'GERB'
 
 
-del source_id['source_id']['TRMM-TMPA-3B42']
-del source_id['source_id']['TRMM-TMPA-3B43']
-
 '''
 #key = 'variable_entry'
 #source_id['source_id'].pop(key)
@@ -1047,6 +1048,7 @@ source_type['satellite_retrieval'] = 'gridded product based on satellite measure
 #%% Table ID
 table_id = [
   'obs4MIPs_Aday',
+  'obs4MIPs_A3hr',
   'obs4MIPs_Oday',
   'obs4MIPs_SIday',
   'obs4MIPs_Amon',
@@ -1111,7 +1113,7 @@ for jsonName in masterTargets:
                 dictToClean[key][value2[0]] = string
         vars()[jsonName] = dictToClean
     # Write file
-    if jsonName in ['Aday','Oday','SIday','Amon','Lmon','Omon','SImon',
+    if jsonName in ['Aday','A3hr','Oday','SIday','Amon','Lmon','Omon','SImon',
                     'coordinate','formula_terms','fx','grids','monNobs',
                     'monStderr']:
         outFile = ''.join(['../Tables/obs4MIPs_',jsonName,'.json'])
@@ -1130,7 +1132,7 @@ for jsonName in masterTargets:
         jsonDict = {}
         jsonDict[jsonName.replace('_','')] = eval(jsonName)
     elif jsonName not in ['coordinate','formula_terms','fx','grids',
-                          'institution_id','source_id','Aday','Oday','SIday',
+                          'institution_id','source_id','Aday','A3hr','Oday','SIday',
                           'Amon','Lmon','Omon','SImon','monNobs','monStderr']:
         jsonDict = {}
         jsonDict[jsonName] = eval(jsonName)
@@ -1162,7 +1164,7 @@ inputJson = ['frequency','grid_label','institution_id','license',
              'coordinate','grids','formula_terms', # These are not controlled vocabs - rather lookup tables for CMOR
              'Aday','Amon','Lmon','Omon','SImon','fx' # Update/add if new tables are generated
             ]
-tableList = ['Aday','Oday','SIday','Amon','Lmon','Omon','SImon','coordinate',
+tableList = ['Aday','A3hr','Oday','SIday','Amon','Lmon','Omon','SImon','coordinate',
              'formula_terms','fx','grids','monNobs','monStderr']
 
 # Load dictionaries from local files
