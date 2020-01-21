@@ -700,6 +700,10 @@ source_id['source_id'][key]['source_variables'] = ['rlut','rsut']
 ## derived
 source_id['source_id'][key]['source_label'] = 'GERB'
 
+
+del source_id['source_id']['TRMM-TMPA-3B42']
+del source_id['source_id']['TRMM-TMPA-3B43']
+
 '''
 #key = 'variable_entry'
 #source_id['source_id'].pop(key)
@@ -866,6 +870,7 @@ source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] = ['tos','prw','sfcWind']
 source_id['source_id'][key]['source_label'] = 'RSS-v7'
 source_id['source_id'][key]['source_id'] = key
+'''
 
 key = 'GPCP-SG-2-3'
 source_id['source_id'][key] = {}
@@ -920,6 +925,7 @@ source_id['source_id'][key]['source_label'] = 'TRMM TMPA 3B43'
 source_id['source_id'][key]['source_variables'] = ['pr']
 source_id['source_id'][key]['source_id'] = key
 
+'''
 key = 'NOAA-NCEI-FAPAR-5-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'NOAA NCEI FAPAR'
