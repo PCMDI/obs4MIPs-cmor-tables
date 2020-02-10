@@ -1,11 +1,12 @@
 import cmor
 import cdms2 as cdm
 import numpy as np
+from obs4mips import tables
 #cdm.setAutoBounds('on') # Caution, this attempts to automatically set coordinate bounds - please check outputs using this option
 #import pdb ; # Debug statement - import if enabling below
 
 #%% User provided input
-cmorTable = 'Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+cmorTable = tables.get_path_to_table('Amon') ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'rssSsmiPrw-input.json' ; # Update contents of this file to set your global_attributes
 inputFilePath = 'rss_ssmi_prw_v06.6-demo.nc'
 inputVarName = 'prw'
