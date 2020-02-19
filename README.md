@@ -8,10 +8,5 @@
 ```
 git clone git@github.com:PCMDI/obs4MIPs-cmor-tables.git
 cd obs4MIPs-cmor-tables
-pip install . # normal installation
+pip install . 
 ```
-or
-```
-pip install -e . # development mode
-```
-
