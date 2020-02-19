@@ -5,3 +5,7 @@
 *.py~
 *.swp
 demo/demo
+build
+dist
+*.egg-info
+
