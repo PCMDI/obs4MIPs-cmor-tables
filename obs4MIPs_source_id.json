@@ -146,6 +146,22 @@
             ],
             "source_version_number":"2.0"
         },
+        "ESA-CCI-SST-v2-1":{
+            "institution_id":"UReading",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2019",
+            "source_description":"Sea Surface Temperature (SST) from the European Space Agency Climate Change Initiative (ESA CCI)",
+            "source_id":"ESA-CCI-SST-v2-1",
+            "source_label":"ESA CCI SST",
+            "source_name":"ESA CCI SST",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "tos"
+            ],
+            "source_version_number":"v2.1"
+        },
         "ESACCI-CLOUD-ATSR2-AATSR-2-0":{
             "institution_id":"DWD",
             "region":[
