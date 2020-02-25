@@ -558,6 +558,7 @@ institution_id = institution_id.get('institution_id')
 #institution_id['institution_id']['NASA-GSFC'] = "National Aeronautics and Space Administration, Goddard Space Flight Center"
 
 institution_id['institution_id']['ImperialCollege'] = "Imperial College, London, U.K."
+institution_id['institution_id']['UReading'] = "University of Reading, Reading, U.K."
 
 #%% License
 license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
@@ -924,6 +925,19 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_type'] = 'satellite_blended'
 source_id['source_id'][key]['source_label'] = 'TRMM TMPA 3B43'
 source_id['source_id'][key]['source_variables'] = ['pr']
+source_id['source_id'][key]['source_id'] = key
+
+key = 'ESA-CCI-SST-v2-1'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'ESA CCI SST'
+source_id['source_id'][key]['release_year'] = '2019'
+source_id['source_id'][key]['source_description'] = 'Sea Surface Temperature (SST) from the European Space Agency Climate Change Initiative (ESA CCI)'
+source_id['source_id'][key]['source_version_number'] = 'v2.1'
+source_id['source_id'][key]['institution_id'] = 'UReading'
+source_id['source_id'][key]['region'] = ['global_ocean']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_label'] = 'ESA CCI SST'
+source_id['source_id'][key]['source_variables'] = ['tos']
 source_id['source_id'][key]['source_id'] = key
 
 '''
