@@ -1,6 +1,6 @@
 {
     "Header":{
-        "#dataRequest_specs_version":"01.00.31",
+        "#dataRequest_specs_version":"01.00.32",
         "#mip_era":"CMIP6",
         "Conventions":"CF-1.7 ODS-2.1",
         "approx_interval":"30.00000",
@@ -11,7 +11,7 @@
         "missing_value":"1e20",
         "product":"observations",
         "realm":"land",
-        "table_date":"24 February 2020",
+        "table_date":"02 June 2020",
         "table_id":"Table obs4MIPs_Lmon"
     },
     "variable_entry":{
@@ -38,7 +38,7 @@
             "comment":"Percentage of grid cell burned due to all fires including natural and anthropogenic fires and those associated with anthropogenic Land-use change",
             "dimensions":"longitude latitude time typeburnt",
             "frequency":"mon",
-            "long_name":"Percentage of Entire Grid cell  that is Covered by Burnt Vegetation (All Classes)",
+            "long_name":"Percentage of Entire Grid Cell That Is Covered by Burnt Vegetation (All Classes)",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"burntFractionAll",

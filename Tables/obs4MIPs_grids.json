@@ -1,12 +1,12 @@
 {
     "Header":{
-        "#dataRequest_specs_version":"01.00.31",
+        "#dataRequest_specs_version":"01.00.32",
         "Conventions":"CF-1.7 ODS-2.1",
         "cmor_version":"3.5",
         "data_specs_version":"2.1.0",
         "missing_value":"1e20",
         "product":"observations",
-        "table_date":"24 February 2020",
+        "table_date":"02 June 2020",
         "table_id":"Table obs4MIPs_grids"
     },
     "axis_entry":{

@@ -1,6 +1,6 @@
 {
     "Header":{
-        "#dataRequest_specs_version":"01.00.31",
+        "#dataRequest_specs_version":"01.00.32",
         "#mip_era":"CMIP6",
         "Conventions":"CF-1.7 ODS-2.1",
         "approx_interval":"30.00000",
@@ -11,7 +11,7 @@
         "missing_value":"1e20",
         "product":"observations",
         "realm":"seaIce",
-        "table_date":"24 February 2020",
+        "table_date":"02 June 2020",
         "table_id":"Table obs4MIPs_SImon"
     },
     "variable_entry":{
