@@ -567,6 +567,8 @@ institution_id = institution_id.get('institution_id')
 institution_id['institution_id']['ImperialCollege'] = "Imperial College, London, U.K."
 institution_id['institution_id']['UReading'] = "University of Reading, Reading, U.K."
 
+institution_id['institution_id']['UW'] = "University of Washington, USA"
+
 #%% License
 license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
             ' a Creative Commons Attribution-ShareAlike 4.0 International License'
