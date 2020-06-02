@@ -100,6 +100,7 @@ ctx.verify_mode     = ssl.CERT_NONE
 masterTargets = [
  'Aday',
  'A3hr',
+ 'A6hr',
  'Oday',
  'SIday',
  'Amon',
@@ -141,8 +142,9 @@ tableSource = [
  ['Omon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Omon.json'],
  ['SImon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_SImon.json'],
  ['Aday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_day.json'],
- ['A3hr','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_3hr.json'],
- ['Oday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Oday.json'],
+ ['A6hr','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_6hrPlev.json'],
+ ['A3hr','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_3hr.json'], 
+['Oday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Oday.json'],
  ['SIday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_SIday.json'],
  ['monNobs','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monNobs.json'],
  ['monStderr','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monStderr.json'],
@@ -203,14 +205,16 @@ SImon['Header']['realm']    = 'seaIce'
 fx['Header']['realm']       = 'fx'
 Aday['Header']['table_id']  = 'Table obs4MIPs_Aday'
 A3hr['Header']['table_id']  = 'Table obs4MIPs_A3hr'
+A6hr['Header']['table_id']  = 'Table obs4MIPs_A6hr'
 A3hr['Header']['realm']     = 'atmos'
+A6hr['Header']['realm']     = 'atmos'
 Oday['Header']['table_id']  = 'Table obs4MIPs_Oday'
 Oday['Header']['realm']     = 'ocean'
 SIday['Header']['table_id'] = 'Table obs4MIPs_SIday'
 SIday['Header']['realm']    = 'seaIce'
 
 # Clean out modeling_realm
-for jsonName in ['Aday','A3hr','Oday','SIday','Amon','Lmon','Omon','SImon']:
+for jsonName in ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon']:
     dictToClean = eval(jsonName)
     for key, value in dictToClean.iteritems():
         if key == 'Header':
@@ -222,10 +226,13 @@ for jsonName in ['Aday','A3hr','Oday','SIday','Amon','Lmon','Omon','SImon']:
                 dictToClean[key][key1]['cell_measures'] = '' ; # Set all cell_measures entries to blank
 
 # Set missing value for integer variables
-for tab in (Aday,A3hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr):
+for tab in (Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr):
     tab['Header']['int_missing_value'] = str(-2**31)
 
 # Add new variables
+# 
+
+
 
 # Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics)
 Aday['variable_entry']['ts'] = {}
@@ -940,6 +947,19 @@ source_id['source_id'][key]['source_label'] = 'ESA CCI SST'
 source_id['source_id'][key]['source_variables'] = ['tos']
 source_id['source_id'][key]['source_id'] = key
 
+key = 'IMERG-v06B-Final'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'IMERG'
+source_id['source_id'][key]['release_year'] = '2019'
+source_id['source_id'][key]['source_description'] = 'Integrated Multi-satellitE Retrievals for Global Precipitation Measurement (IMERG)'
+source_id['source_id'][key]['source_version_number'] = 'v06B_Final'
+source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_label'] = 'IMERG v06B Final'
+source_id['source_id'][key]['source_variables'] = ['pr']
+source_id['source_id'][key]['source_id'] = key
+
 '''
 key = 'NOAA-NCEI-FAPAR-5-0'
 source_id['source_id'][key] = {}
@@ -1063,6 +1083,7 @@ source_type['satellite_retrieval'] = 'gridded product based on satellite measure
 table_id = [
   'obs4MIPs_Aday',
   'obs4MIPs_A3hr',
+  'obs4MIPs_A6hr',
   'obs4MIPs_Oday',
   'obs4MIPs_SIday',
   'obs4MIPs_Amon',
@@ -1127,7 +1148,7 @@ for jsonName in masterTargets:
                 dictToClean[key][value2[0]] = string
         vars()[jsonName] = dictToClean
     # Write file
-    if jsonName in ['Aday','A3hr','Oday','SIday','Amon','Lmon','Omon','SImon',
+    if jsonName in ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon',
                     'coordinate','formula_terms','fx','grids','monNobs',
                     'monStderr']:
         outFile = ''.join(['../Tables/obs4MIPs_',jsonName,'.json'])
@@ -1146,7 +1167,7 @@ for jsonName in masterTargets:
         jsonDict = {}
         jsonDict[jsonName.replace('_','')] = eval(jsonName)
     elif jsonName not in ['coordinate','formula_terms','fx','grids',
-                          'institution_id','source_id','Aday','A3hr','Oday','SIday',
+                          'institution_id','source_id','Aday','A3hr','A6hr','Oday','SIday',
                           'Amon','Lmon','Omon','SImon','monNobs','monStderr']:
         jsonDict = {}
         jsonDict[jsonName] = eval(jsonName)
@@ -1178,7 +1199,7 @@ inputJson = ['frequency','grid_label','institution_id','license',
              'coordinate','grids','formula_terms', # These are not controlled vocabs - rather lookup tables for CMOR
              'Aday','Amon','Lmon','Omon','SImon','fx' # Update/add if new tables are generated
             ]
-tableList = ['Aday','A3hr','Oday','SIday','Amon','Lmon','Omon','SImon','coordinate',
+tableList = ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon','coordinate',
              'formula_terms','fx','grids','monNobs','monStderr']
 
 # Load dictionaries from local files

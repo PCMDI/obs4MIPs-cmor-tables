@@ -554,7 +554,7 @@
                 "60.0",
                 "90.0"
             ],
-            "standard_name":"effective_radius_of_convective_cloud_ice_particle",
+            "standard_name":"effective_radius_of_convective_cloud_ice_particles",
             "stored_direction":"",
             "tolerance":"",
             "type":"double",
@@ -597,7 +597,7 @@
                 "20.0",
                 "30.0"
             ],
-            "standard_name":"effective_radius_of_cloud_liquid_water_particle",
+            "standard_name":"effective_radius_of_cloud_liquid_water_particles",
             "stored_direction":"",
             "tolerance":"",
             "type":"double",
@@ -1751,7 +1751,7 @@
                 "80.0",
                 "100000.0"
             ],
-            "standard_name":"backscattering_ratio",
+            "standard_name":"backscattering_ratio_in_air",
             "stored_direction":"increasing",
             "tolerance":"",
             "type":"double",

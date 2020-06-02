@@ -70,13 +70,13 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-                "CV_collection_modified":"Sun Feb  2 17:21:05 2020 -0800",
-                "CV_collection_version":"6.2.48.1",
+                "CV_collection_modified":"Wed May 20 16:39:54 2020 -0700",
+                "CV_collection_version":"6.2.53.0",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
-                "previous_commit":"99b8845a4ae5130db9fd3f06aa0ad964dfe61d05",
+                "previous_commit":"284fc5e798e19f44d3c81682f1719c5fa462ad86",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -348,6 +348,13 @@
                 "source_type":"satellite_blended",
                 "source_version_number":"2.3"
             },
+            "IMERG-v06B-Final":{
+                "region":"global",
+                "source":"IMERG v06B Final v06B_Final (2019): Integrated Multi-satellitE Retrievals for Global Precipitation Measurement (IMERG)",
+                "source_label":"IMERG v06B Final",
+                "source_type":"satellite_blended",
+                "source_version_number":"v06B_Final"
+            },
             "MODIS-1-0":{
                 "region":"global",
                 "source":"MODIS 1.0 (2011): Atmospheric Infrared Sounder",
@@ -526,6 +533,7 @@
         "table_id":[
             "obs4MIPs_Aday",
             "obs4MIPs_A3hr",
+            "obs4MIPs_A6hr",
             "obs4MIPs_Oday",
             "obs4MIPs_SIday",
             "obs4MIPs_Amon",
