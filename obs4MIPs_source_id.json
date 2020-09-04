@@ -146,6 +146,22 @@
             ],
             "source_version_number":"2.0"
         },
+        "ESA-CCI-SST-v2-1":{
+            "institution_id":"UReading",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2019",
+            "source_description":"Sea Surface Temperature (SST) from the European Space Agency Climate Change Initiative (ESA CCI)",
+            "source_id":"ESA-CCI-SST-v2-1",
+            "source_label":"ESA CCI SST",
+            "source_name":"ESA CCI SST",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "tos"
+            ],
+            "source_version_number":"v2.1"
+        },
         "ESACCI-CLOUD-ATSR2-AATSR-2-0":{
             "institution_id":"DWD",
             "region":[
@@ -327,6 +343,22 @@
                 "pr"
             ],
             "source_version_number":"2.3"
+        },
+        "IMERG-v06B-Final":{
+            "institution_id":"NASA-GSFC",
+            "region":[
+                "global"
+            ],
+            "release_year":"2019",
+            "source_description":"Integrated Multi-satellitE Retrievals for Global Precipitation Measurement (IMERG)",
+            "source_id":"IMERG-v06B-Final",
+            "source_label":"IMERG v06B Final",
+            "source_name":"IMERG",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"v06B_Final"
         },
         "MODIS-1-0":{
             "institution_id":"NASA-GSFC",

@@ -70,13 +70,13 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-                "CV_collection_modified":"Wed Jan 15 16:44:36 2020 -0800",
-                "CV_collection_version":"6.2.45.7",
+                "CV_collection_modified":"Wed May 20 16:39:54 2020 -0700",
+                "CV_collection_version":"6.2.53.0",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
-                "previous_commit":"f07f21c4a1fa5b87a39d1fa51106fd7fad1583b8",
+                "previous_commit":"284fc5e798e19f44d3c81682f1719c5fa462ad86",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -88,7 +88,9 @@
             "NASA-JPL":"NASA's Jet Propulsion Laboratory, Pasadena, CA 91109, USA",
             "NOAA-NCEI":"NOAA's National Centers for Environmental Information, Asheville, NC 28801, USA",
             "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
-            "RSS":"Remote Sensing Systems, Santa Rosa, CA 95401, USA"
+            "RSS":"Remote Sensing Systems, Santa Rosa, CA 95401, USA",
+            "UReading":"University of Reading, Reading, U.K.",
+            "UW":"University of Washington, USA"
         },
         "license":"Data in this file produced by <Your Centre Name> is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Use of the data must be acknowledged following guidelines found at <a URL maintained by you>. Further information about this data, including some limitations, can be found via <some URL maintained by you>.)",
         "nominal_resolution":[
@@ -270,6 +272,13 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
             },
+            "ESA-CCI-SST-v2-1":{
+                "region":"global_ocean",
+                "source":"ESA CCI SST v2.1 (2019): Sea Surface Temperature (SST) from the European Space Agency Climate Change Initiative (ESA CCI)",
+                "source_label":"ESA CCI SST",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"v2.1"
+            },
             "ESACCI-CLOUD-ATSR2-AATSR-2-0":{
                 "region":"global",
                 "source":"ESACCI-CLOUD-ATSR2-AATSR 2.0 (2017): Cloud properties derived from ATSR2 and AATSR (aboard ERS2 and ENVISAT) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.",
@@ -339,6 +348,13 @@
                 "source_label":"GPCP SG",
                 "source_type":"satellite_blended",
                 "source_version_number":"2.3"
+            },
+            "IMERG-v06B-Final":{
+                "region":"global",
+                "source":"IMERG v06B Final v06B_Final (2019): Integrated Multi-satellitE Retrievals for Global Precipitation Measurement (IMERG)",
+                "source_label":"IMERG v06B Final",
+                "source_type":"satellite_blended",
+                "source_version_number":"v06B_Final"
             },
             "MODIS-1-0":{
                 "region":"global",
@@ -518,6 +534,7 @@
         "table_id":[
             "obs4MIPs_Aday",
             "obs4MIPs_A3hr",
+            "obs4MIPs_A6hr",
             "obs4MIPs_Oday",
             "obs4MIPs_SIday",
             "obs4MIPs_Amon",
