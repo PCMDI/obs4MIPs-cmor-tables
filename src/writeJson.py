@@ -498,6 +498,13 @@ Amon['variable_entry']['pme']['valid_min'] = ''
 
 # Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/72
 
+###
+
+
+
+
+
+
 
 # siconc vVariable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics)
 '''
@@ -698,7 +705,6 @@ tmp = [['source_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-table
 source_id = readJsonCreateDict(tmp)
 source_id = source_id.get('source_id')
 
-
 # Enter fixes or additions below
 
 key = 'GERB-HR-ED01-1-0'
@@ -714,6 +720,49 @@ source_id['source_id'][key]['source_variables'] = ['rlut','rsut']
 ## derived
 source_id['source_id'][key]['source_label'] = 'GERB'
 
+#####
+
+key = 'ESACCI-CLOUD-ATSR2-AATSR'
+source_id['source_id'][key] = {}
+
+source_id['source_id'][key]['source_name'] = 'ESACCI-CLOUD-ATSR2-AATSR'
+source_id['source_id'][key]['release_year'] = '2020'
+source_id['source_id'][key]['source_description'] = 'Cloud properties derived from ATSR2 and AATSR (aboard ERS2 and ENVISAT) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.'
+source_id['source_id'][key]['source_version_number'] = '3.0'
+source_id['source_id'][key]['institution_id'] = 'DWD'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['clCCI', 'cltCCI', 'clwCCI', 'clwtCCI', 'pctCCI', 'clivi', 'clwvi']
+source_id['source_id'][key]['source_label'] = 'ESACCI-CLOUD-ATSR2-AATSR'
+
+
+key = 'ESACCI-CLOUD-AVHRR-PM'
+source_id['source_id'][key] = {}
+
+source_id['source_id'][key]['source_name'] = 'ESACCI-CLOUD-AVHRR-PM'
+source_id['source_id'][key]['release_year'] = '2020'
+source_id['source_id'][key]['source_description'] = 'Cloud properties derived from AVHRR (aboard NOAA and MetOp PM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.'
+source_id['source_id'][key]['source_version_number'] = '3.0'
+source_id['source_id'][key]['institution_id'] = 'DWD'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['clCCI', 'cltCCI','clwCCI', 'clwtCCI', 'pctCCI', 'clivi', 'clwvi']
+source_id['source_id'][key]['source_label'] = 'ESACCI-CLOUD-AVHRR-PM'
+
+key = 'ESACCI-CLOUD-AVHRR-AM'
+source_id['source_id'][key] = {}
+
+source_id['source_id'][key]['source_name'] = 'ESACCI-CLOUD-AVHRR-AM'
+source_id['source_id'][key]['release_year'] = '2020'
+source_id['source_id'][key]['source_description'] = 'Cloud properties derived from AVHRR (aboard NOAA and MetOp AM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.'
+source_id['source_id'][key]['source_version_number'] = '3.0'
+source_id['source_id'][key]['institution_id'] = 'DWD'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['clCCI', 'cltCCI', 'clwCCI', 'clwtCCI', 'pctCCI', 'clivi', 'clwvi']
+source_id['source_id'][key]['source_label'] = 'ESACCI-CLOUD-AVHRR-AM'
+
+#####
 
 '''
 #key = 'variable_entry'
