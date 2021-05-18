@@ -251,12 +251,12 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"v04.2"
             },
-            "CMSAF-CLARA-A-2-0":{
+            "CMSAF-CLARA-A-2-1":{
                 "region":"global",
-                "source":"CMSAF-CLARA-A 2.0 (2017): CM SAF cLoud, Albedo and surface RAdiation dataset from AVHRR data",
+                "source":"CMSAF-CLARA-A 2.1 (2020): CM SAF cLoud, Albedo and surface RAdiation dataset from AVHRR data",
                 "source_label":"CMSAF-CLARA-A",
                 "source_type":"satellite_retrieval",
-                "source_version_number":"2.0"
+                "source_version_number":"2.1"
             },
             "CMSAF-HOAPS-4-0":{
                 "region":"global_ocean",

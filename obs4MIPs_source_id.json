@@ -81,14 +81,14 @@
             ],
             "source_version_number":"v04.2"
         },
-        "CMSAF-CLARA-A-2-0":{
+        "CMSAF-CLARA-A-2-1":{
             "institution_id":"DWD",
             "region":[
                 "global"
             ],
-            "release_year":"2017",
+            "release_year":"2020",
             "source_description":"CM SAF cLoud, Albedo and surface RAdiation dataset from AVHRR data",
-            "source_id":"CMSAF-CLARA-A-2-0",
+            "source_id":"CMSAF-CLARA-A-2-1",
             "source_label":"CMSAF-CLARA-A",
             "source_name":"CMSAF CLARA A",
             "source_type":"satellite_retrieval",
@@ -103,7 +103,7 @@
                 "rsds",
                 "rsdscs"
             ],
-            "source_version_number":"2.0"
+            "source_version_number":"2.1"
         },
         "CMSAF-HOAPS-4-0":{
             "institution_id":"DWD",
