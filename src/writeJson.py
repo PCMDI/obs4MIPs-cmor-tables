@@ -78,7 +78,7 @@ PJD 14 Oct 2019     - Updated to include SIday table from cmip6-cmor-tables http
 
 #%% Import statements
 
-import os, json, ssl,shutil,sys
+import os, json, ssl,shutil,sys, gc, re
 
 #######################################################################
 def readJsonCreateDict_dep(buildList):
@@ -215,8 +215,8 @@ masterTargets = [
  'Omon',
  'SImon',
  'fx',
- 'monNobs',
- 'monStderr',
+# 'monNobs',
+# 'monStderr',
  'coordinate',
  'formula_terms',
  'frequency',
@@ -269,6 +269,7 @@ for count,table in enumerate(tmp.keys()):
 del(tmp,count,table) ; gc.collect()
 
 # Cleanup by extracting only variable lists
+'''
 for count2,table in enumerate(tableSource):
     tableName = table[0]
     #print 'tableName:',tableName
@@ -290,19 +291,24 @@ for count2,table in enumerate(tableSource):
         eval(tableName)['Header']['product'] = 'observations' ; # Cannot be 'observations reanalysis'
         eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
         eval(tableName)['Header']['table_id'] = ''.join(['Table obs4MIPs_',tableName])
-        # Attempt to move information from input.json to table files - #84 - CMOR-limited
-        #eval(tableName)['Header']['activity_id'] = 'obs4MIPs'
-        #eval(tableName)['Header']['_further_info_url_tmpl'] = 'http://furtherinfo.es-doc.org/<activity_id><institution_id><source_label><source_id><variable_id>'
-        #eval(tableName)['Header']['output_file_template'] = '<variable_id><table_id><source_id><variant_label><grid_label>'
-        #eval(tableName)['Header']['output_path_template'] = '<activity_id><institution_id><source_id><table_id><variable_id><grid_label><version>'
-        #eval(tableName)['Header']['tracking_prefix'] = 'hdl:21.14102'
-        #eval(tableName)['Header']['_control_vocabulary_file'] = 'obs4MIPs_CV.json'
-        #eval(tableName)['Header']['_AXIS_ENTRY_FILE'] = 'obs4MIPs_coordinate.json'
-        #eval(tableName)['Header']['_FORMULA_VAR_FILE'] = 'obs4MIPs_formula_terms.json'
+
         if 'baseURL' in eval(tableName)['Header'].keys():
             del(eval(tableName)['Header']['baseURL']) ; # Remove spurious entry
+'''
 
 # Cleanup realms
+
+Amon = eval(Amon)
+Lmon = eval(Lmon)
+Omon = eval(Omon)
+SImon = eval(SImon)
+fx = eval(fx)
+Aday = eval(Aday)
+A3hr = eval(A3hr)
+A6hr = eval(A6hr)
+Oday = eval(Oday)
+SIday = eval(SIday)
+
 Amon['Header']['realm']     = 'atmos'
 Amon['variable_entry'].pop('pfull')
 Amon['variable_entry'].pop('phalf')
@@ -321,7 +327,9 @@ SIday['Header']['table_id'] = 'Table obs4MIPs_SIday'
 SIday['Header']['realm']    = 'seaIce'
 
 # Clean out modeling_realm
-for jsonName in ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon']:
+#for jsonName in ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon']:
+for jsonName in masterTargets:
+  if jsonName in []:
     dictToClean = eval(jsonName)
     for key, value in dictToClean.iteritems():
         if key == 'Header':
@@ -332,9 +340,11 @@ for jsonName in ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon
             if 'cell_measures' in dictToClean[key][key1].keys():
                 dictToClean[key][key1]['cell_measures'] = '' ; # Set all cell_measures entries to blank
 
+'''
 # Set missing value for integer variables
 for tab in (Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr):
     tab['Header']['int_missing_value'] = str(-2**31)
+'''
 
 # Add new variables
 # 
@@ -656,6 +666,8 @@ sys.exit()
 
 #%% Grid label
 
+'''
+
 tmp = [['grid_label','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_grid_label.json']
       ] ;
 grid_label = readJsonCreateDict(tmp)
@@ -667,8 +679,11 @@ grid_label['grid_label']['gnSH'] = "data reported on a native grid in the Southe
 #%% Institution
 tmp = [['institution_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/obs4MIPs_institution_id.json']
       ] ;
+'''
+tmp = [['grid_label','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_grid_label.json'] ] 
 institution_id = readJsonCreateDict(tmp)
 institution_id = institution_id.get('institution_id')
+
 
 # Fix issues
 #==============================================================================
@@ -677,12 +692,11 @@ institution_id = institution_id.get('institution_id')
 #institution_id['institution_id']['RSS'] = 'Remote Sensing Systems, Santa Rosa, CA 95401, USA'
 #institution_id['institution_id']['CNES'] = "Centre national d'etudes spatiales"
 #institution_id['institution_id']['NASA-GSFC'] = "National Aeronautics and Space Administration, Goddard Space Flight Center"
-
+'''
 institution_id['institution_id']['ImperialCollege'] = "Imperial College, London, U.K."
 institution_id['institution_id']['UReading'] = "University of Reading, Reading, U.K."
-
 institution_id['institution_id']['UW'] = "University of Washington, USA"
-
+'''
 #%% License
 license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
             ' a Creative Commons Attribution-ShareAlike 4.0 International License'
@@ -813,6 +827,8 @@ source_id = readJsonCreateDict(tmp)
 source_id = source_id.get('source_id')
 
 # Enter fixes or additions below
+source_id = {}
+source_id['source_id'] = {}
 
 key = 'GERB-HR-ED01-1-0'
 source_id['source_id'][key] = {}
@@ -1289,7 +1305,7 @@ for key in source_id['source_id'].keys():
 #%% Write variables to files
 for jsonName in masterTargets:
     # Clean experiment formats
-    if jsonName in ['coordinate','grids']: #,'Amon','Lmon','Omon','SImon']:
+    if jsonName in []:   #['coordinate','grids']: #,'Amon','Lmon','Omon','SImon']:
         dictToClean = eval(jsonName)
         for key, value1 in dictToClean.iteritems():
             for value2 in value1.iteritems():
@@ -1332,7 +1348,23 @@ for jsonName in masterTargets:
     else:
         jsonDict = eval(jsonName)
     fH = open(outFile,'w')
-    json.dump(jsonDict,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
+    if jsonName in ['coordinate','formula_terms','grids']: jsonDict = eval(jsonDict)
+    if jsonName in ['frequency']: jsonDict['frequency']  = eval(jsonDict['frequency'])
+    if jsonName in ['grid_label']: jsonDict['grid_label']  = eval(jsonDict['grid_label'])
+    if jsonName in ['nominal_resolution']: jsonDict['nominal_resolution']  = eval(jsonDict['nominal_resolution'])
+    if jsonName in ['product']: jsonDict['product']  = eval(jsonDict['product'])
+    if jsonName in ['realm']: jsonDict['realm']  = eval(jsonDict['realm'])
+    if jsonName in ['region']: jsonDict['region']  = eval(jsonDict['region'])
+
+#   print('starting ', fH,' ', jsonDict.keys(),' ' ,type(jsonDict))
+    print('starting ', fH,' ', type(jsonDict))
+
+
+#   json.dump(jsonDict,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
+    json.dump(jsonDict,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'))
+
+    print(fH,' ','DONE------------------')
+
     fH.close()
 
 del(jsonName,outFile) ; gc.collect()

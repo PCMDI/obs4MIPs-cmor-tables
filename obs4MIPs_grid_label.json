@@ -3,8 +3,6 @@
         "grid_label":{
             "gm":"global mean data",
             "gn":"data reported on a model's native grid",
-            "gnNH":"data reported on a native grid in the Northern Hemisphere",
-            "gnSH":"data reported on a native grid in the Southern Hemisphere",
             "gna":"data reported on a native grid in the region of Antarctica",
             "gng":"data reported on a native grid in the region of Greenland",
             "gnz":"zonal mean data reported on a model's native latitude grid",
@@ -50,13 +48,13 @@
             "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
         },
         "version_metadata":{
-            "CV_collection_modified":"Tue Dec 15 12:34:07 2020 -0800",
-            "CV_collection_version":"6.2.55.1",
+            "CV_collection_modified":"Mon Jun 21 11:28:21 2021 -0700",
+            "CV_collection_version":"6.2.56.2",
             "author":"Paul J. Durack <durack1@llnl.gov>",
             "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
             "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
             "institution_id":"PCMDI",
-            "previous_commit":"87621e2d55ecbe6cf0b1d28a48f618ece6cd5a7d",
+            "previous_commit":"66344226746627e0b6c12db974666126c343ce27",
             "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
         }
     }
