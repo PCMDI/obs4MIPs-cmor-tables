@@ -572,23 +572,6 @@
             "valid_max":"",
             "valid_min":""
         },
-        "ts":{
-            "cell_measures":"",
-            "cell_methods":"time: mean",
-            "comment":"",
-            "dimensions":"longitude latitude time",
-            "frequency":"day",
-            "long_name":"Sea Surface Temperature",
-            "ok_max_mean_abs":"",
-            "ok_min_mean_abs":"",
-            "out_name":"ts",
-            "positive":"",
-            "standard_name":"surface_temperature",
-            "type":"real",
-            "units":"K",
-            "valid_max":"",
-            "valid_min":""
-        },
         "tslsi":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: time: mean (comment: over land and sea ice)",

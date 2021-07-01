@@ -78,7 +78,7 @@ PJD 14 Oct 2019     - Updated to include SIday table from cmip6-cmor-tables http
 
 #%% Import statements
 
-import os, json, ssl,shutil,sys, gc, re
+import os, json, ssl,shutil,sys, gc, re, copy
 
 #######################################################################
 def readJsonCreateDict_dep(buildList):
@@ -225,13 +225,13 @@ masterTargets = [
  'institution_id',
  'license_',
  'nominal_resolution',
- 'product',
- 'realm',
- 'region',
+#'product',
+#'realm',
+#'region',
  'required_global_attributes',
  'source_id',
- 'source_type',
- 'table_id'
+#'source_type',
+#'table_id'
  ] ;
 
 #%% Tables
@@ -244,6 +244,7 @@ tableSource = [
  ['grid_label','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_grid_label.json'],
  ['grids','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_grids.json'],
  ['nominal_resolution','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_nominal_resolution.json'],
+ ['product','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_product.json'],
  ['Amon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Amon.json'],
  ['Lmon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Lmon.json'],
  ['Omon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Omon.json'],
@@ -349,281 +350,6 @@ for tab in (Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr)
 # Add new variables
 # 
 
-
-
-# Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics)
-Aday['variable_entry']['ts'] = {}
-Aday['variable_entry']['ts']['cell_measures'] = ''
-Aday['variable_entry']['ts']['cell_methods'] = 'time: mean'
-Aday['variable_entry']['ts']['comment'] = ''
-Aday['variable_entry']['ts']['dimensions'] = 'longitude latitude time'
-Aday['variable_entry']['ts']['frequency'] = 'day'
-Aday['variable_entry']['ts']['long_name'] = 'Sea Surface Temperature'
-Aday['variable_entry']['ts']['ok_max_mean_abs'] = ''
-Aday['variable_entry']['ts']['ok_min_mean_abs'] = ''
-Aday['variable_entry']['ts']['out_name'] = 'ts'
-Aday['variable_entry']['ts']['positive'] = ''
-Aday['variable_entry']['ts']['standard_name'] = 'surface_temperature'
-Aday['variable_entry']['ts']['type'] = 'real'
-Aday['variable_entry']['ts']['units'] = 'K'
-Aday['variable_entry']['ts']['valid_max'] = ''
-Aday['variable_entry']['ts']['valid_min'] = ''
-
-# Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics)
-Amon['variable_entry'][u'ttbr'] = {}
-Amon['variable_entry']['ttbr']['cell_measures'] = ''
-Amon['variable_entry']['ttbr']['cell_methods'] = 'time: mean'
-Amon['variable_entry']['ttbr']['comment'] = ''
-Amon['variable_entry']['ttbr']['dimensions'] = 'longitude latitude time'
-Amon['variable_entry']['ttbr']['frequency'] = 'mon'
-Amon['variable_entry']['ttbr']['long_name'] = 'Top of Atmosphere Brightness Temperature'
-Amon['variable_entry']['ttbr']['ok_max_mean_abs'] = ''
-Amon['variable_entry']['ttbr']['ok_min_mean_abs'] = ''
-Amon['variable_entry']['ttbr']['out_name'] = 'ttbr'
-Amon['variable_entry']['ttbr']['positive'] = ''
-Amon['variable_entry']['ttbr']['standard_name'] = 'toa_brightness_temperature'
-Amon['variable_entry']['ttbr']['type'] = 'real'
-Amon['variable_entry']['ttbr']['units'] = 'K'
-Amon['variable_entry']['ttbr']['valid_max'] = ''
-Amon['variable_entry']['ttbr']['valid_min'] = ''
-# Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/16
-Lmon['variable_entry'][u'ndvi'] = {}
-Lmon['variable_entry']['ndvi']['cell_measures'] = ''
-Lmon['variable_entry']['ndvi']['cell_methods'] = 'area: mean where land time: mean'
-Lmon['variable_entry']['ndvi']['comment'] = ''
-Lmon['variable_entry']['ndvi']['dimensions'] = 'longitude latitude time'
-Lmon['variable_entry']['ndvi']['frequency'] = 'mon'
-Lmon['variable_entry']['ndvi']['long_name'] = 'Normalized Difference Vegetation Index'
-Lmon['variable_entry']['ndvi']['ok_max_mean_abs'] = ''
-Lmon['variable_entry']['ndvi']['ok_min_mean_abs'] = ''
-Lmon['variable_entry']['ndvi']['out_name'] = 'ndvi'
-Lmon['variable_entry']['ndvi']['positive'] = ''
-Lmon['variable_entry']['ndvi']['standard_name'] = 'normalized_difference_vegetation_index'
-Lmon['variable_entry']['ndvi']['type'] = 'real'
-Lmon['variable_entry']['ndvi']['units'] = '1'
-Lmon['variable_entry']['ndvi']['valid_max'] = '1.0'
-Lmon['variable_entry']['ndvi']['valid_min'] = '-0.1'
-# Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/15
-Lmon['variable_entry'][u'fapar'] = {}
-Lmon['variable_entry']['fapar']['cell_measures'] = ''
-Lmon['variable_entry']['fapar']['cell_methods'] = 'area: mean where land time: mean'
-Lmon['variable_entry']['fapar']['comment'] = 'The fraction of incoming solar radiation in the photosynthetically active radiation spectral region that is absorbed by a vegetation canopy.'
-Lmon['variable_entry']['fapar']['dimensions'] = 'longitude latitude time'
-Lmon['variable_entry']['fapar']['frequency'] = 'mon'
-Lmon['variable_entry']['fapar']['long_name'] = 'Fraction of Absorbed Photosynthetically Active Radiation'
-Lmon['variable_entry']['fapar']['ok_max_mean_abs'] = ''
-Lmon['variable_entry']['fapar']['ok_min_mean_abs'] = ''
-Lmon['variable_entry']['fapar']['out_name'] = 'fapar'
-Lmon['variable_entry']['fapar']['positive'] = ''
-Lmon['variable_entry']['fapar']['standard_name'] = 'fraction_of_surface_downwelling_photosynthetic_radiative_flux_absorbed_by_vegetation'
-Lmon['variable_entry']['fapar']['type'] = 'real'
-Lmon['variable_entry']['fapar']['units'] = '1'
-Lmon['variable_entry']['fapar']['valid_max'] = '1.0'
-Lmon['variable_entry']['fapar']['valid_min'] = '0.0'
-#####################################################################################################################
-# DWD cloud variables (CM SAF CLARA & ESA Cloud_CCI) ...
-# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
-Amon['variable_entry'][u'clCCI'] = {}
-Amon['variable_entry']['clCCI']['cell_measures'] = ''
-Amon['variable_entry']['clCCI']['cell_methods'] = 'area: time: mean'
-Amon['variable_entry']['clCCI']['comment'] = 'Percentage cloud cover in optical depth categories.'
-Amon['variable_entry']['clCCI']['dimensions'] = 'longitude latitude plev7c tau time'
-Amon['variable_entry']['clCCI']['frequency'] = 'mon'
-Amon['variable_entry']['clCCI']['long_name'] = 'CCI Cloud Area Fraction'
-Amon['variable_entry']['clCCI']['ok_max_mean_abs'] = ''
-Amon['variable_entry']['clCCI']['ok_min_mean_abs'] = ''
-Amon['variable_entry']['clCCI']['out_name'] = 'clCCI'
-Amon['variable_entry']['clCCI']['positive'] = ''
-Amon['variable_entry']['clCCI']['standard_name'] = 'cloud_area_fraction_in_atmosphere_layer'
-Amon['variable_entry']['clCCI']['type'] = 'real'
-Amon['variable_entry']['clCCI']['units'] = '%'
-Amon['variable_entry']['clCCI']['valid_max'] = ''
-Amon['variable_entry']['clCCI']['valid_min'] = ''
-# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
-Amon['variable_entry'][u'clCLARA'] = {}
-Amon['variable_entry']['clCLARA']['cell_measures'] = ''
-Amon['variable_entry']['clCLARA']['cell_methods'] = 'area: mean time: mean'
-Amon['variable_entry']['clCLARA']['comment'] = 'Percentage cloud cover in optical depth categories.'
-Amon['variable_entry']['clCLARA']['dimensions'] = 'longitude latitude plev7c tau time'
-Amon['variable_entry']['clCLARA']['frequency'] = 'mon'
-Amon['variable_entry']['clCLARA']['long_name'] = 'CLARA Cloud Area Fraction'
-Amon['variable_entry']['clCLARA']['ok_max_mean_abs'] = ''
-Amon['variable_entry']['clCLARA']['ok_min_mean_abs'] = ''
-Amon['variable_entry']['clCLARA']['out_name'] = 'clCLARA'
-Amon['variable_entry']['clCLARA']['positive'] = ''
-Amon['variable_entry']['clCLARA']['standard_name'] = 'cloud_area_fraction_in_atmosphere_layer'
-Amon['variable_entry']['clCLARA']['type'] = 'real'
-Amon['variable_entry']['clCLARA']['units'] = '%'
-Amon['variable_entry']['clCLARA']['valid_max'] = ''
-Amon['variable_entry']['clCLARA']['valid_min'] = ''
-# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
-Amon['variable_entry'][u'cltCCI'] = {}
-Amon['variable_entry']['cltCCI']['cell_measures'] = ''
-Amon['variable_entry']['cltCCI']['cell_methods'] = 'area: time: mean'
-Amon['variable_entry']['cltCCI']['comment'] = 'Total cloud area fraction for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Includes both large-scale and convective cloud.'
-Amon['variable_entry']['cltCCI']['dimensions'] = 'longitude latitude time'
-Amon['variable_entry']['cltCCI']['frequency'] = 'mon'
-Amon['variable_entry']['cltCCI']['long_name'] = 'CCI Total Cloud Fraction'
-Amon['variable_entry']['cltCCI']['ok_max_mean_abs'] = ''
-Amon['variable_entry']['cltCCI']['ok_min_mean_abs'] = ''
-Amon['variable_entry']['cltCCI']['out_name'] = 'cltCCI'
-Amon['variable_entry']['cltCCI']['positive'] = ''
-Amon['variable_entry']['cltCCI']['standard_name'] = 'cloud_area_fraction'
-Amon['variable_entry']['cltCCI']['type'] = 'real'
-Amon['variable_entry']['cltCCI']['units'] = '%'
-Amon['variable_entry']['cltCCI']['valid_max'] = ''
-Amon['variable_entry']['cltCCI']['valid_min'] = ''
-# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
-Amon['variable_entry'][u'cltCLARA'] = {}
-Amon['variable_entry']['cltCLARA']['cell_measures'] = ''
-Amon['variable_entry']['cltCLARA']['cell_methods'] = 'area: mean time: mean'
-Amon['variable_entry']['cltCLARA']['comment'] = 'Total cloud area fraction for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Includes both large-scale and convective cloud.'
-Amon['variable_entry']['cltCLARA']['dimensions'] = 'longitude latitude time'
-Amon['variable_entry']['cltCLARA']['frequency'] = 'mon'
-Amon['variable_entry']['cltCLARA']['long_name'] = 'CLARA Total Cloud Fraction'
-Amon['variable_entry']['cltCLARA']['ok_max_mean_abs'] = ''
-Amon['variable_entry']['cltCLARA']['ok_min_mean_abs'] = ''
-Amon['variable_entry']['cltCLARA']['out_name'] = 'cltCLARA'
-Amon['variable_entry']['cltCLARA']['positive'] = ''
-Amon['variable_entry']['cltCLARA']['standard_name'] = 'cloud_area_fraction'
-Amon['variable_entry']['cltCLARA']['type'] = 'real'
-Amon['variable_entry']['cltCLARA']['units'] = '%'
-Amon['variable_entry']['cltCLARA']['valid_max'] = ''
-Amon['variable_entry']['cltCLARA']['valid_min'] = ''
-# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
-Amon['variable_entry'][u'clwCCI'] = {}
-Amon['variable_entry']['clwCCI']['cell_measures'] = ''
-Amon['variable_entry']['clwCCI']['cell_methods'] = 'area: time: mean'
-Amon['variable_entry']['clwCCI']['comment'] = 'Percentage liquid cloud cover in optical depth categories.'
-Amon['variable_entry']['clwCCI']['dimensions'] = 'longitude latitude plev7c tau time'
-Amon['variable_entry']['clwCCI']['frequency'] = 'mon'
-Amon['variable_entry']['clwCCI']['long_name'] = 'CCI Liquid Cloud Area Fraction'
-Amon['variable_entry']['clwCCI']['ok_max_mean_abs'] = ''
-Amon['variable_entry']['clwCCI']['ok_min_mean_abs'] = ''
-Amon['variable_entry']['clwCCI']['out_name'] = 'clwCCI'
-Amon['variable_entry']['clwCCI']['positive'] = ''
-Amon['variable_entry']['clwCCI']['standard_name'] = 'liquid_water_cloud_area_fraction_in_atmosphere_layer'
-Amon['variable_entry']['clwCCI']['type'] = 'real'
-Amon['variable_entry']['clwCCI']['units'] = '%'
-Amon['variable_entry']['clwCCI']['valid_max'] = ''
-Amon['variable_entry']['clwCCI']['valid_min'] = ''
-# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
-Amon['variable_entry'][u'clwCLARA'] = {}
-Amon['variable_entry']['clwCLARA']['cell_measures'] = ''
-Amon['variable_entry']['clwCLARA']['cell_methods'] = 'area: mean time: mean'
-Amon['variable_entry']['clwCLARA']['comment'] = 'Percentage liquid cloud cover in optical depth categories.'
-Amon['variable_entry']['clwCLARA']['dimensions'] = 'longitude latitude plev7c tau time'
-Amon['variable_entry']['clwCLARA']['frequency'] = 'mon'
-Amon['variable_entry']['clwCLARA']['long_name'] = 'CLARA Liquid Cloud Area Fraction'
-Amon['variable_entry']['clwCLARA']['ok_max_mean_abs'] = ''
-Amon['variable_entry']['clwCLARA']['ok_min_mean_abs'] = ''
-Amon['variable_entry']['clwCLARA']['out_name'] = 'clwCLARA'
-Amon['variable_entry']['clwCLARA']['positive'] = ''
-Amon['variable_entry']['clwCLARA']['standard_name'] = 'liquid_water_cloud_area_fraction_in_atmosphere_layer'
-Amon['variable_entry']['clwCLARA']['type'] = 'real'
-Amon['variable_entry']['clwCLARA']['units'] = '%'
-Amon['variable_entry']['clwCLARA']['valid_max'] = ''
-Amon['variable_entry']['clwCLARA']['valid_min'] = ''
-# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
-Amon['variable_entry'][u'clwtCCI'] = {}
-Amon['variable_entry']['clwtCCI']['cell_measures'] = ''
-Amon['variable_entry']['clwtCCI']['cell_methods'] = 'area: time: mean'
-Amon['variable_entry']['clwtCCI']['comment'] = ''
-Amon['variable_entry']['clwtCCI']['dimensions'] = 'longitude latitude time'
-Amon['variable_entry']['clwtCCI']['frequency'] = 'mon'
-Amon['variable_entry']['clwtCCI']['long_name'] = 'CCI Total Liquid Cloud Area Fraction'
-Amon['variable_entry']['clwtCCI']['ok_max_mean_abs'] = ''
-Amon['variable_entry']['clwtCCI']['ok_min_mean_abs'] = ''
-Amon['variable_entry']['clwtCCI']['out_name'] = 'clwtCCI'
-Amon['variable_entry']['clwtCCI']['positive'] = ''
-Amon['variable_entry']['clwtCCI']['standard_name'] = 'liquid_water_cloud_area_fraction'
-Amon['variable_entry']['clwtCCI']['type'] = 'real'
-Amon['variable_entry']['clwtCCI']['units'] = '%'
-Amon['variable_entry']['clwtCCI']['valid_max'] = ''
-Amon['variable_entry']['clwtCCI']['valid_min'] = ''
-# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
-Amon['variable_entry'][u'clwtCLARA'] = {}
-Amon['variable_entry']['clwtCLARA']['cell_measures'] = ''
-Amon['variable_entry']['clwtCLARA']['cell_methods'] = 'area: mean time: mean'
-Amon['variable_entry']['clwtCLARA']['comment'] = ''
-Amon['variable_entry']['clwtCLARA']['dimensions'] = 'longitude latitude time'
-Amon['variable_entry']['clwtCLARA']['frequency'] = 'mon'
-Amon['variable_entry']['clwtCLARA']['long_name'] = 'CLARA Total Liquid Cloud Area Fraction'
-Amon['variable_entry']['clwtCLARA']['ok_max_mean_abs'] = ''
-Amon['variable_entry']['clwtCLARA']['ok_min_mean_abs'] = ''
-Amon['variable_entry']['clwtCLARA']['out_name'] = 'clwtCLARA'
-Amon['variable_entry']['clwtCLARA']['positive'] = ''
-Amon['variable_entry']['clwtCLARA']['standard_name'] = 'liquid_water_cloud_area_fraction'
-Amon['variable_entry']['clwtCLARA']['type'] = 'real'
-Amon['variable_entry']['clwtCLARA']['units'] = '%'
-Amon['variable_entry']['clwtCLARA']['valid_max'] = ''
-Amon['variable_entry']['clwtCLARA']['valid_min'] = ''
-# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
-Amon['variable_entry'][u'pctCCI'] = {}
-Amon['variable_entry']['pctCCI']['cell_measures'] = ''
-Amon['variable_entry']['pctCCI']['cell_methods'] = 'area: time: mean'
-Amon['variable_entry']['pctCCI']['comment'] = ''
-Amon['variable_entry']['pctCCI']['dimensions'] = 'longitude latitude time'
-Amon['variable_entry']['pctCCI']['frequency'] = 'mon'
-Amon['variable_entry']['pctCCI']['long_name'] = 'CCI Mean Cloud Top Pressure'
-Amon['variable_entry']['pctCCI']['ok_max_mean_abs'] = ''
-Amon['variable_entry']['pctCCI']['ok_min_mean_abs'] = ''
-Amon['variable_entry']['pctCCI']['out_name'] = 'pctCCI'
-Amon['variable_entry']['pctCCI']['positive'] = ''
-Amon['variable_entry']['pctCCI']['standard_name'] = 'air_pressure_at_cloud_top'
-Amon['variable_entry']['pctCCI']['type'] = 'real'
-Amon['variable_entry']['pctCCI']['units'] = 'Pa'
-Amon['variable_entry']['pctCCI']['valid_max'] = ''
-Amon['variable_entry']['pctCCI']['valid_min'] = ''
-# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
-Amon['variable_entry'][u'pctCLARA'] = {}
-Amon['variable_entry']['pctCLARA']['cell_measures'] = ''
-Amon['variable_entry']['pctCLARA']['cell_methods'] = 'area: mean time: mean'
-Amon['variable_entry']['pctCLARA']['comment'] = ''
-Amon['variable_entry']['pctCLARA']['dimensions'] = 'longitude latitude time'
-Amon['variable_entry']['pctCLARA']['frequency'] = 'mon'
-Amon['variable_entry']['pctCLARA']['long_name'] = 'CLARA Mean Cloud Top Pressure'
-Amon['variable_entry']['pctCLARA']['ok_max_mean_abs'] = ''
-Amon['variable_entry']['pctCLARA']['ok_min_mean_abs'] = ''
-Amon['variable_entry']['pctCLARA']['out_name'] = 'pctCLARA'
-Amon['variable_entry']['pctCLARA']['positive'] = ''
-Amon['variable_entry']['pctCLARA']['standard_name'] = 'air_pressure_at_cloud_top'
-Amon['variable_entry']['pctCLARA']['type'] = 'real'
-Amon['variable_entry']['pctCLARA']['units'] = 'Pa'
-Amon['variable_entry']['pctCLARA']['valid_max'] = ''
-Amon['variable_entry']['pctCLARA']['valid_min'] = ''
-# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/72
-Amon['variable_entry'][u'pme'] = {}
-Amon['variable_entry']['pme']['cell_measures'] = ''
-Amon['variable_entry']['pme']['cell_methods'] = 'area: time: mean'
-Amon['variable_entry']['pme']['comment'] = ('Net flux of water (in all phases) between the atmosphere and underlying surface '
-                                            'including vegetation), mainly resulting from the difference of precipitation '
-                                            'and evaporation')
-Amon['variable_entry']['pme']['dimensions'] = 'longitude latitude time'
-Amon['variable_entry']['pme']['frequency'] = 'mon'
-Amon['variable_entry']['pme']['long_name'] = 'Surface Downward Freshwater Flux'
-Amon['variable_entry']['pme']['ok_max_mean_abs'] = ''
-Amon['variable_entry']['pme']['ok_min_mean_abs'] = ''
-Amon['variable_entry']['pme']['out_name'] = 'pme'
-Amon['variable_entry']['pme']['positive'] = ''
-Amon['variable_entry']['pme']['standard_name'] = 'surface_downward_water_flux'
-Amon['variable_entry']['pme']['type'] = 'real'
-Amon['variable_entry']['pme']['units'] = 'kg m-2 s-1'
-Amon['variable_entry']['pme']['valid_max'] = ''
-Amon['variable_entry']['pme']['valid_min'] = ''
-###
-
-# Variable sponsor - DWD; Stephan Finkensieper (Funkensieper) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/72
-
-###
-
-
-
-
-
-
-
-# siconc vVariable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics)
 '''
 # Test for variable lists
 for var in SIday['variable_entry'].keys():
@@ -703,15 +429,15 @@ license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
             ' (https://creativecommons.org/licenses/). Use of the data must be'
             ' acknowledged following guidelines found at <a URL maintained by you>.'
             ' Further information about this data, including some limitations,'
-            ' can be found via <some URL maintained by you>.)')
+            ' can be found via <some URL maintained by you>.')
 
 #%% Nominal resolution
 
 #%% Product
-product = [
+product = ([
  'observations',
  'reanalysis'
- ] ;
+ ]) ;
 
 #%% Realm
 realm = [
@@ -830,381 +556,9 @@ source_id = source_id.get('source_id')
 source_id = {}
 source_id['source_id'] = {}
 
-key = 'GERB-HR-ED01-1-0'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'GERB'
-source_id['source_id'][key]['release_year'] = '2018'
-source_id['source_id'][key]['source_description'] = 'Geostationary Earth Radiation Budget'
-source_id['source_id'][key]['source_version_number'] = 'HR_ED01_1.0'
-source_id['source_id'][key]['institution_id'] = 'ImperialCollege'
-source_id['source_id'][key]['region'] = ['global']
-source_id['source_id'][key]['source_type'] = 'satellite_blended'
-source_id['source_id'][key]['source_variables'] = ['rlut','rsut']
-## derived
-source_id['source_id'][key]['source_label'] = 'GERB'
 
 #####
 
-key = 'ESACCI-CLOUD-ATSR2-AATSR'
-source_id['source_id'][key] = {}
-
-source_id['source_id'][key]['source_name'] = 'ESACCI-CLOUD-ATSR2-AATSR'
-source_id['source_id'][key]['release_year'] = '2020'
-source_id['source_id'][key]['source_description'] = 'Cloud properties derived from ATSR2 and AATSR (aboard ERS2 and ENVISAT) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.'
-source_id['source_id'][key]['source_version_number'] = '3.0'
-source_id['source_id'][key]['institution_id'] = 'DWD'
-source_id['source_id'][key]['region'] = ['global']
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['source_variables'] = ['clCCI', 'cltCCI', 'clwCCI', 'clwtCCI', 'pctCCI', 'clivi', 'clwvi']
-source_id['source_id'][key]['source_label'] = 'ESACCI-CLOUD-ATSR2-AATSR'
-
-
-key = 'ESACCI-CLOUD-AVHRR-PM'
-source_id['source_id'][key] = {}
-
-source_id['source_id'][key]['source_name'] = 'ESACCI-CLOUD-AVHRR-PM'
-source_id['source_id'][key]['release_year'] = '2020'
-source_id['source_id'][key]['source_description'] = 'Cloud properties derived from AVHRR (aboard NOAA and MetOp PM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.'
-source_id['source_id'][key]['source_version_number'] = '3.0'
-source_id['source_id'][key]['institution_id'] = 'DWD'
-source_id['source_id'][key]['region'] = ['global']
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['source_variables'] = ['clCCI', 'cltCCI','clwCCI', 'clwtCCI', 'pctCCI', 'clivi', 'clwvi']
-source_id['source_id'][key]['source_label'] = 'ESACCI-CLOUD-AVHRR-PM'
-
-key = 'ESACCI-CLOUD-AVHRR-AM'
-source_id['source_id'][key] = {}
-
-source_id['source_id'][key]['source_name'] = 'ESACCI-CLOUD-AVHRR-AM'
-source_id['source_id'][key]['release_year'] = '2020'
-source_id['source_id'][key]['source_description'] = 'Cloud properties derived from AVHRR (aboard NOAA and MetOp AM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.'
-source_id['source_id'][key]['source_version_number'] = '3.0'
-source_id['source_id'][key]['institution_id'] = 'DWD'
-source_id['source_id'][key]['region'] = ['global']
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['source_variables'] = ['clCCI', 'cltCCI', 'clwCCI', 'clwtCCI', 'pctCCI', 'clivi', 'clwvi']
-source_id['source_id'][key]['source_label'] = 'ESACCI-CLOUD-AVHRR-AM'
-
-#####
-
-'''
-#key = 'variable_entry'
-#source_id['source_id'].pop(key)
-
-del source_id['source_id']['NOAA-NCEI-SeaIce']
-
-key = 'AIRS-2-0'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'AIRS'
-source_id['source_id'][key]['release_year'] = '2011'
-source_id['source_id'][key]['source_description'] = 'Atmospheric Infrared Sounder'
-source_id['source_id'][key]['source_version_number'] = '2.0'
-source_id['source_id'][key]['institution_id'] = 'NASA-JPL'
-source_id['source_id'][key]['region'] = ['global']
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['source_variables'] = ['ta','hus']
-## derived
-source_id['source_id'][key]['source_label'] = 'AIRS'
-
-key = 'MODIS-1-0'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'MODIS'
-source_id['source_id'][key]['release_year'] = '2011'
-source_id['source_id'][key]['source_description'] = 'Atmospheric Infrared Sounder'
-source_id['source_id'][key]['source_version_number'] = '1.0'
-source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
-source_id['source_id'][key]['region'] = ['global']
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['source_variables'] = ['clt']
-## derived
-source_id['source_id'][key]['source_label'] = 'MODIS'
-
-
-key = 'QuikSCAT-v20110531'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'QuikSCAT'
-source_id['source_id'][key]['release_year'] = '2011'
-source_id['source_id'][key]['source_description'] = 'QuikSCAT winds monthly climatology derived from QuikSCAT L2B using the 2006 model function and processing algorithms.'
-source_id['source_id'][key]['source_version_number'] = 'v20110531'
-#source_id['source_id'][key]['institution_id'] = 'National Aeronautics and Space Administration, Jet Propulsion Laboratory'
-source_id['source_id'][key]['institution_id'] = 'NASA-JPL'
-source_id['source_id'][key]['region'] = ['global']
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['source_variables'] =  ['sfcWind','uas','vas']
-## derived from RC
-source_id['source_id'][key]['source_label'] = 'QuikSCAT'
-'''
-"""
-key = 'Aura-MLS-v04-2'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'Aura MLS'
-source_id['source_id'][key]['release_year'] = '2018'
-source_id['source_id'][key]['source_description'] = 'EOS Aura Microwave Limb Sounder'
-source_id['source_id'][key]['source_version_number'] = 'v04.2'
-source_id['source_id'][key]['institution_id'] = 'NASA-JPL'
-source_id['source_id'][key]['region'] = ['global']
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['source_variables'] =  ['ta','hus','cli']
-## derived from RC
-source_id['source_id'][key]['source_label'] = 'Aura-MLS'
-"""
-"""
-key = 'GNSS-RO-1-3'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'GNSS RO'
-source_id['source_id'][key]['release_year'] = '2016'
-source_id['source_id'][key]['source_description'] = 'Global Navigation Satellite Systems Radio Occultation'
-source_id['source_id'][key]['source_version_number'] = '1.3'
-source_id['source_id'][key]['institution_id'] = 'NASA-JPL'
-source_id['source_id'][key]['region'] = ['global']
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['source_variables'] = ['ta','zg']
-## derived
-source_id['source_id'][key]['source_label'] = 'GNSS-RO'
-"""
-"""
-key = 'NOAA-NCEI-HIRS-OLR'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'NOAA NCEI HIRS OLR'
-source_id['source_id'][key]['release_year'] = '2014'
-source_id['source_id'][key]['source_description'] = 'HIRS Outgoing Longwave Radiation'
-source_id['source_id'][key]['source_version_number'] = '1.2'
-source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
-source_id['source_id'][key]['region'] = ['global']
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['source_variables'] = ['rlut']
-## derived
-source_id['source_id'][key]['source_label'] = 'NOAA NCEI HIRS OLR'
-
-
-key = 'NOAA-NCEI-SSMI-SeaIce'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'NOAA NCEI SSMI SeaIce'
-source_id['source_id'][key]['release_year'] = '2013'
-source_id['source_id'][key]['source_description'] = 'SSMI Passive Microwave Sea Ice Area Fraction'
-source_id['source_id'][key]['source_version_number'] = '2.0'
-source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
-source_id['source_id'][key]['region'] = ['arctic_ocean','southern_ocean']
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['source_variables'] = ['siconc']
-source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-SSMI-SeaIce'
-
-key = 'NOAA-NCEI-OISST'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'NOAA NCEI OISST'
-source_id['source_id'][key]['release_year'] = '2008'
-source_id['source_id'][key]['source_description'] = 'Optimal Interpolation Sea Surface Temperature'
-source_id['source_id'][key]['source_version_number'] = '2.0'
-source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
-source_id['source_id'][key]['region'] = ['global_ocean']
-source_id['source_id'][key]['source_type'] = 'satellite_blended'
-source_id['source_id'][key]['source_variables'] = ['tos']
-source_id['source_id'][key]['source_label'] = 'NOAA NCEI OISST'
-
-key = 'TES-1-0'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'JPL AURA satellite retrieval'
-source_id['source_id'][key]['release_year'] = '2011'
-source_id['source_id'][key]['source_description'] = 'Mole Fraction of O3'
-source_id['source_id'][key]['source_version_number'] = '1.0'
-source_id['source_id'][key]['institution_id'] = 'NASA-JPL'
-source_id['source_id'][key]['region'] = ['global']
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['source_variables'] = ['tro3']
-source_id['source_id'][key]['source_label'] = 'TES 1 0'
-source_id['source_id'][key]['source_id'] = key
-
-key = 'AVISO-1-0'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'SSALTO/DUACS'
-source_id['source_id'][key]['release_year'] = '2011'
-source_id['source_id'][key]['source_description'] = 'Sea Surface Height Above Geoid'
-source_id['source_id'][key]['source_version_number'] = '1.0'
-source_id['source_id'][key]['institution_id'] = 'CNES'
-source_id['source_id'][key]['region'] = ['global']
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['source_variables'] = ['zos']
-source_id['source_id'][key]['source_label'] = 'AVISO 1 0'
-source_id['source_id'][key]['source_id'] = key
-
-key = 'AMSRE-v7'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'Sea Surface Temperature'
-source_id['source_id'][key]['release_year'] = '2011'
-source_id['source_id'][key]['source_description'] = 'Sea Surface Temperature from AMSR-E onboard AQUA'
-source_id['source_id'][key]['source_version_number'] = 'v7'
-source_id['source_id'][key]['institution_id'] = 'RSS'
-source_id['source_id'][key]['region'] = ['global_ocean']
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['source_variables'] = ['tos']
-source_id['source_id'][key]['source_label'] = 'AMRSE v7'
-source_id['source_id'][key]['source_id'] = key
-"""
-'''
-key = 'RSS-v7'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'Satellite derived fields'
-source_id['source_id'][key]['release_year'] = '2011'
-source_id['source_id'][key]['source_description'] = 'Satellite derived fields produced by RSS'
-source_id['source_id'][key]['source_version_number'] = 'v7'
-source_id['source_id'][key]['institution_id'] = 'RSS'
-source_id['source_id'][key]['region'] = ['global_ocean']
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['source_variables'] = ['tos','prw','sfcWind']
-source_id['source_id'][key]['source_label'] = 'RSS-v7'
-source_id['source_id'][key]['source_id'] = key
-'''
-
-key = 'GPCP-SG-2-3'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'GPCP SG'
-source_id['source_id'][key]['release_year'] = '2016'
-source_id['source_id'][key]['source_description'] = 'Global Precipitation Climatology Project Satellite-Gauge'
-source_id['source_id'][key]['source_version_number'] = '2.3'
-source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
-source_id['source_id'][key]['region'] = ['global']
-source_id['source_id'][key]['source_type'] = 'satellite_blended'
-source_id['source_id'][key]['source_variables'] = ['pr']
-source_id['source_id'][key]['source_label'] = 'GPCP SG'
-
-key = 'GPCP-1DD-1-3'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'GPCP 1DD'
-source_id['source_id'][key]['release_year'] = '2013'
-source_id['source_id'][key]['source_description'] = 'Global Precipitation Climatology Project One Degree Daily'
-source_id['source_id'][key]['source_version_number'] = '1.3'
-source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
-source_id['source_id'][key]['region'] = ['global']
-source_id['source_id'][key]['source_type'] = 'satellite_blended'
-source_id['source_id'][key]['source_variables'] = ['pr']
-source_id['source_id'][key]['source_label'] = 'GPCP 1DD'
-source_id['source_id'][key]['source_id'] = key
-
-
-key = 'TRMM-TMPA-3B42-v7-7A'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'TRMM TMPA 3B42'
-source_id['source_id'][key]['release_year'] = '2013'
-source_id['source_id'][key]['source_description'] = 'Tropical Rainfall Measuring Mission Multi-satellite Precipitation Analysis 3B42'
-source_id['source_id'][key]['source_version_number'] = 'v7-7A'
-source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
-source_id['source_id'][key]['region'] = ['global']
-source_id['source_id'][key]['source_type'] = 'satellite_blended'
-source_id['source_id'][key]['source_label'] = 'TRMM TMPA 3B42'
-source_id['source_id'][key]['source_variables'] = ['pr']
-source_id['source_id'][key]['source_id'] = key
-
-
-key = 'TRMM-TMPA-3B43-v7-7A'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'TRMM TMPA 3B43'
-source_id['source_id'][key]['release_year'] = '2013'
-source_id['source_id'][key]['source_description'] = 'Tropical Rainfall Measuring Mission Multi-satellite Precipitation Analysis 3B43'
-source_id['source_id'][key]['source_version_number'] = 'v7-7A'
-source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
-source_id['source_id'][key]['region'] = ['global']
-source_id['source_id'][key]['source_type'] = 'satellite_blended'
-source_id['source_id'][key]['source_label'] = 'TRMM TMPA 3B43'
-source_id['source_id'][key]['source_variables'] = ['pr']
-source_id['source_id'][key]['source_id'] = key
-
-key = 'ESA-CCI-SST-v2-1'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'ESA CCI SST'
-source_id['source_id'][key]['release_year'] = '2019'
-source_id['source_id'][key]['source_description'] = 'Sea Surface Temperature (SST) from the European Space Agency Climate Change Initiative (ESA CCI)'
-source_id['source_id'][key]['source_version_number'] = 'v2.1'
-source_id['source_id'][key]['institution_id'] = 'UReading'
-source_id['source_id'][key]['region'] = ['global_ocean']
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['source_label'] = 'ESA CCI SST'
-source_id['source_id'][key]['source_variables'] = ['tos']
-source_id['source_id'][key]['source_id'] = key
-
-key = 'IMERG-v06B-Final'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'IMERG'
-source_id['source_id'][key]['release_year'] = '2019'
-source_id['source_id'][key]['source_description'] = 'Integrated Multi-satellitE Retrievals for Global Precipitation Measurement (IMERG)'
-source_id['source_id'][key]['source_version_number'] = 'v06B_Final'
-source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
-source_id['source_id'][key]['region'] = ['global']
-source_id['source_id'][key]['source_type'] = 'satellite_blended'
-source_id['source_id'][key]['source_label'] = 'IMERG v06B Final'
-source_id['source_id'][key]['source_variables'] = ['pr']
-source_id['source_id'][key]['source_id'] = key
-
-'''
-key = 'NOAA-NCEI-FAPAR-5-0'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'NOAA NCEI FAPAR'
-source_id['source_id'][key]['release_year'] = '2019'
-source_id['source_id'][key]['source_description'] = 'AVHRR Fraction of Absorbed Photosynthetically Active Radiation'
-source_id['source_id'][key]['source_version_number'] = '5.0'
-source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
-source_id['source_id'][key]['region'] = ['global_land']
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['source_label'] = 'NOAA NCEI FAPAR'
-source_id['source_id'][key]['source_variables'] = ['fapar']
-
-source_id['source_id'][key]['source_id'] = key
-key = 'NOAA-NCEI-ERSST-5-0'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'NOAA NCEI ERSST'
-source_id['source_id'][key]['release_year'] = '2017'
-source_id['source_id'][key]['source_description'] = 'Extended Reconstructed Sea Surface Temperatures'
-source_id['source_id'][key]['source_version_number'] = '5.0'
-source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
-source_id['source_id'][key]['region'] = ['global_ocean']
-source_id['source_id'][key]['source_type'] = 'gridded_insitu'
-source_id['source_id'][key]['source_label'] = 'NOAA NCEI ERSST'
-source_id['source_id'][key]['source_variables'] = ['tos']
-
-source_id['source_id'][key]['source_id'] = key
-key = 'NOAA-NCEI-LAI-5-0'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'NOAA NCEI LAI'
-source_id['source_id'][key]['release_year'] = '2019'
-source_id['source_id'][key]['source_description'] = 'AVHRR Leaf Area Index'
-source_id['source_id'][key]['source_version_number'] = '5.0'
-source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
-source_id['source_id'][key]['region'] = ['global_land']
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['source_label'] = 'NOAA NCEI LAI'
-source_id['source_id'][key]['source_variables'] = ['lai']
-
-
-source_id['source_id'][key]['source_id'] = key
-key = 'NOAA-NCEI-NDVI-5-0'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'NOAA NCEI AVHRR NDVI'
-source_id['source_id'][key]['release_year'] = '2019'
-source_id['source_id'][key]['source_description'] = 'Normalized Difference Vegetation Index'
-source_id['source_id'][key]['source_version_number'] = '5.0'
-source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
-source_id['source_id'][key]['region'] = ['global_land']
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['source_label'] = 'NOAA NCEI NDVI'
-source_id['source_id'][key]['source_variables'] = ['ndvi']
-
-
-source_id['source_id'][key]['source_id'] = key
-key = 'NOAA-NCEI-SeaIce-3-1'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'NOAA NCEI SSMI SeaIce'
-source_id['source_id'][key]['release_year'] = '2017'
-source_id['source_id'][key]['source_description'] = 'SSMI Passive Microwave Sea Ice Area Fraction'
-source_id['source_id'][key]['source_version_number'] = '3.1'
-source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
-source_id['source_id'][key]['region'] = ['global_ocean']
-source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['source_label'] = 'NOAA NCEI SeaIce'
-source_id['source_id'][key]['source_variables'] = ['siconc']
-
-#key = 'NOAA-NCEI-OISST'
-#ksource_id['source_id'].pop(key)
-'''
-'''
 #pdb.set_trace()
 # Fix region non-list
 for keyVal in source_id['source_id'].keys():
@@ -1213,7 +567,6 @@ for keyVal in source_id['source_id'].keys():
         source_id['source_id'][key]['region'] = list(source_id['source_id'][key]['region'])
 
 #pdb.set_trace()
-'''
 #==============================================================================
 # Example new source_id entry
 #key = 'CMSAF-SARAH-2-0'
@@ -1246,28 +599,6 @@ for keyVal in source_id['source_id'].keys():
 ## ADDING obs4MIPs1.0
 ###################################################################################
 
-#%% Source type
-source_type = {}
-source_type['gridded_insitu'] = 'gridded product based on measurements collected from in-situ instruments'
-source_type['reanalysis'] = 'gridded product generated from a model reanalysis based on in-situ instruments and possibly satellite measurements'
-source_type['satellite_blended'] = 'gridded product based on both in-situ instruments and satellite measurements'
-source_type['satellite_retrieval'] = 'gridded product based on satellite measurements'
-
-#%% Table ID
-table_id = [
-  'obs4MIPs_Aday',
-  'obs4MIPs_A3hr',
-  'obs4MIPs_A6hr',
-  'obs4MIPs_Oday',
-  'obs4MIPs_SIday',
-  'obs4MIPs_Amon',
-  'obs4MIPs_Lmon',
-  'obs4MIPs_Omon',
-  'obs4MIPs_SImon',
-  'obs4MIPs_fx',
-  'obs4MIPs_monNobs',
-  'obs4MIPs_monStderr'
-] ;
 
 #%% Validate entries
 def entryCheck(entry,search=re.compile(r'[^a-zA-Z0-9-]').search):
@@ -1324,7 +655,7 @@ for jsonName in masterTargets:
     # Write file
     if jsonName in ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon',
                     'coordinate','formula_terms','fx','grids','monNobs',
-                    'monStderr']:
+                    'monStderr','product']:
         outFile = ''.join(['../Tables/obs4MIPs_',jsonName,'.json'])
     elif jsonName == 'license_':
         outFile = ''.join(['../obs4MIPs_license.json'])
@@ -1342,7 +673,7 @@ for jsonName in masterTargets:
         jsonDict[jsonName.replace('_','')] = eval(jsonName)
     elif jsonName not in ['coordinate','formula_terms','fx','grids',
                           'institution_id','source_id','Aday','A3hr','A6hr','Oday','SIday',
-                          'Amon','Lmon','Omon','SImon','monNobs','monStderr']:
+                          'Amon','Lmon','Omon','SImon','monNobs','monStderr','product']:
         jsonDict = {}
         jsonDict[jsonName] = eval(jsonName)
     else:
@@ -1353,12 +684,11 @@ for jsonName in masterTargets:
     if jsonName in ['grid_label']: jsonDict['grid_label']  = eval(jsonDict['grid_label'])
     if jsonName in ['nominal_resolution']: jsonDict['nominal_resolution']  = eval(jsonDict['nominal_resolution'])
     if jsonName in ['product']: jsonDict['product']  = eval(jsonDict['product'])
-    if jsonName in ['realm']: jsonDict['realm']  = eval(jsonDict['realm'])
-    if jsonName in ['region']: jsonDict['region']  = eval(jsonDict['region'])
+#   if jsonName in ['realm']: jsonDict['realm']  = eval(jsonDict['realm'])
+#   if jsonName in ['region']: jsonDict['region']  = eval(jsonDict['region'])
 
 #   print('starting ', fH,' ', jsonDict.keys(),' ' ,type(jsonDict))
-    print('starting ', fH,' ', type(jsonDict))
-
+    print('starting ', fH,' ', type(jsonDict),jsonDict)
 
 #   json.dump(jsonDict,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
     json.dump(jsonDict,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'))
@@ -1478,40 +808,5 @@ for count,CV in enumerate(tableList):
     fH.close()
 
 # Cleanup
-del(coordinate,count,formula_terms,frequency,grid_label,homePath,institution_id,
-    nominal_resolution,obs4MIPs_CV,product,realm,inputJson,tableList,
-    required_global_attributes,table_id)
 
-#%% Generate zip archive
-# Add machine local 7za to path - solve for @gleckler1
-env7za = os.environ.copy()
-if os.environ.get('USER') == 'gleckler1':
-    if 'oceanonly' in os.environ.get('HOSTNAME'):
-        env7za['PATH'] = env7za['PATH'] + ':/export/durack1/bin/downloads/p7zip9.38.1/150916_build/p7zip_9.38.1/bin'
-    elif 'crunchy' in os.environ.get('HOSTNAME'):
-        env7za['PATH'] = env7za['PATH'] + ':/export/durack1/bin/downloads/p7zip9.20.1/130123_build/p7zip_9.20.1/bin'
-    else:
-        print('No 7za path found')
-
-'''
-# Cleanup rogue files
-os.chdir(demoPath)
-if os.path.exists('.DS_Store'):
-    os.remove('.DS_Store')
-if os.path.exists('demo.zip'):
-    os.remove('demo.zip')
-if os.path.exists('demo/demo.zip'):
-    os.remove('demo/demo.zip')
-if os.path.exists('../demo/demo.zip'):
-    os.remove('../demo/demo.zip')
-# Jump up one directory
-os.chdir(demoPath.replace('/demo',''))
-# Zip demo dir
- p = subprocess.Popen(['7za','a','demo.zip','demo','tzip','-xr!demo/demo'],
-                          stdout=subprocess.PIPE,stderr=subprocess.PIPE,
-                         cwd=os.getcwd(),env=env7za)
-stdout = p.stdout.read() ; # Use persistent variables for tests below
-stderr = p.stderr.read()
-# Move to demo dir
-shutil.move('demo.zip', 'demo/demo.zip')
-'''
+del(coordinate,count,formula_terms,frequency,grid_label,homePath,institution_id, nominal_resolution,obs4MIPs_CV,product,realm,inputJson,tableList, required_global_attributes,table_id) 
