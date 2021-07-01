@@ -262,9 +262,9 @@ tableSource = [
 tmp = readJsonCreateDict(tableSource)
 for count,table in enumerate(tmp.keys()):
     #print 'table:', table
-    if table in ['frequency','grid_label','nominal_resolution']:
-        vars()[table] = tmp[table].get(table)
-    else:
+#   if table in ['frequency','grid_label','nominal_resolution']:
+#       vars()[table] = tmp[table].get(table)
+#   else:
         vars()[table] = tmp[table]
 del(tmp,count,table) ; gc.collect()
 
