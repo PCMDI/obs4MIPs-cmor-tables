@@ -77,11 +77,118 @@ PJD 14 Oct 2019     - Updated to include SIday table from cmip6-cmor-tables http
 """
 
 #%% Import statements
+
+import os, json, ssl,shutil,sys
+
+#######################################################################
+def readJsonCreateDict_dep(buildList):
+    """
+    Documentation for readJsonCreateDict(buildList):
+    -------
+    The readJsonCreateDict() function reads web-based json files and writes
+    their contents to a dictionary in memory
+    Author: Paul J. Durack : pauldurack@llnl.gov
+    The function takes a list argument with two entries. The first is the
+    variable name for the assigned dictionary, and the second is the URL
+    of the json file to be read and loaded into memory. Multiple entries
+    can be included by generating additional embedded lists
+    Usage:
+    ------
+
+    Taken from Durolib to be used in PCMDIObs.  NEEDS TO BE CONVERTED TO PY3
+
+        >>> from durolib import readJsonCreateDict
+        >>> tmp = readJsonCreateDict([['Omon','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/Tables/obs4MIPs_Omon.json']])
+        >>> Omon = tmp.get('Omon')
+    Notes:
+    -----
+        ...
+    """
+
+    import os, json, ssl  #, urllib2   # urllib.request this is for PY3
+
+#   import urllib2  # PY2
+    import urllib.request  # PY3
+    from urllib.request import urlopen #PY3
+
+    # Test for list input of length == 2
+    if len(buildList[0]) != 2:
+        print('Invalid inputs, exiting..')
+        sys.exit()
+    # Create urllib2 context to deal with lab/LLNL web certificates
+    ctx                 = ssl.create_default_context()
+    ctx.check_hostname  = False
+    ctx.verify_mode     = ssl.CERT_NONE
+    # Iterate through buildList and write results to jsonDict
+    jsonDict = {}
+    for count,table in enumerate(buildList):
+        #print 'Processing:',table[0]
+        # Read web file
+#       jsonOutput = urllib2.urlopen(table[1], context=ctx) # Py2
+        jsonOutput = urlopen(table[1], context=ctx) # Py3
+        tmp = jsonOutput.read()
+        vars()[table[0]] = tmp
+        jsonOutput.close()
+        # Write local json
+        tmpFile = open('tmp.json','w')
+        tmpFile.write(eval(table[0]))
+        tmpFile.close()
+        # Read local json
+        vars()[table[0]] = json.load(open('tmp.json','r'))
+        os.remove('tmp.json')
+        jsonDict[table[0]] = eval(table[0]) ; # Write to dictionary
+
+    return jsonDict
+
+def readJsonCreateDict(buildList):
+
+    import os, json, ssl  #, urllib2   # urllib.request this is for PY3
+
+#   import urllib2  # PY2
+    import urllib.request  # PY3
+    from urllib.request import urlopen #PY3
+
+    # Test for list input of length == 2
+    if len(buildList[0]) != 2:
+        print('Invalid inputs, exiting..')
+        sys.exit()
+    # Create urllib2 context to deal with lab/LLNL web certificates
+    ctx                 = ssl.create_default_context()
+    ctx.check_hostname  = False
+    ctx.verify_mode     = ssl.CERT_NONE
+    # Iterate through buildList and write results to jsonDict
+    jsonDict = {}
+    for count,table in enumerate(buildList):
+        print('Processing:',table[0])
+        # Read web file
+#       jsonOutput = urllib2.urlopen(table[1], context=ctx) # Py2
+        jsonOutput = urlopen(table[1], context=ctx) # Py3
+        tmp = jsonOutput.read()
+
+#       vars()[table[0]] = tmp
+#       jsonOutput.close()
+#       # Write local json
+#       tmpFile = open('tmp.json','w')
+#       tmpFile.write(eval(table[0]))
+#       tmpFile.close()
+#       # Read local json
+#       vars()[table[0]] = json.load(open('tmp.json','r'))
+#       res = urllib.request.urlopen(pth)
+#       res_body = res.read()
+#       j = json.loads(res_body.decode("utf-8"))
+#       os.remove('tmp.json')
+
+        jsonDict[table[0]] = tmp #eval(table[0]) ; # Write to dictionary
+
+    return jsonDict
+
+'''
 import copy,gc,json,os,re,shutil,ssl,subprocess,sys,time
 if os.environ.get('USER') == 'durack1':
     sys.path.insert(0,'/sync/git/durolib/durolib/')
     from durolib import readJsonCreateDict ; #getGitInfo
 from durolib import readJsonCreateDict
+'''
 
 #import pdb
 
@@ -1154,7 +1261,7 @@ def entryCheck(entry,search=re.compile(r'[^a-zA-Z0-9-]').search):
 for key in source_id['source_id'].keys():
     # Validate source_id format
     if not entryCheck(key):
-        print 'Invalid source_id format for entry:',key,'- aborting'
+        print('Invalid source_id format for entry:',key,'- aborting')
         sys.exit()
     # Sort variable entries
     vals = source_id['source_id'][key]['source_variables']
@@ -1165,18 +1272,18 @@ for key in source_id['source_id'].keys():
     # Validate source_label format
     val = source_id['source_id'][key]['source_label']
     if not entryCheck(key):
-        print 'Invalid source_label format for entry:',key,'- aborting'
+        print('Invalid source_label format for entry:',key,'- aborting')
         sys.exit()
     # Validate source_type
     val = source_id['source_id'][key]['source_type']
     if val not in source_type:
-        print'Invalid source_type for entry:',key,'- aborting'
+        print('Invalid source_type for entry:',key,'- aborting')
         sys.exit()
     # Validate region
     vals = source_id['source_id'][key]['region']
     for val in vals:
         if val not in region:
-            print'Invalid region for entry:',key,'- aborting'
+            print('Invalid region for entry:',key,'- aborting')
             sys.exit()
 
 #%% Write variables to files
@@ -1209,7 +1316,7 @@ for jsonName in masterTargets:
         outFile = ''.join(['../obs4MIPs_',jsonName,'.json'])
     # Check file exists
     if os.path.exists(outFile):
-        print 'File existing, purging:',outFile
+        print('File existing, purging:',outFile)
         os.remove(outFile)
     if not os.path.exists('../Tables'):
         os.mkdir('../Tables')
@@ -1312,7 +1419,7 @@ obs4MIPs_CV['CV']['activity_id'] = 'obs4MIPs'
 
 # Write demo obs4MIPs_CV.json
 if os.path.exists('Tables/obs4MIPs_CV.json'):
-    print 'File existing, purging:','obs4MIPs_CV.json'
+    print('File existing, purging:','obs4MIPs_CV.json')
     os.remove('Tables/obs4MIPs_CV.json')
 fH = open('Tables/obs4MIPs_CV.json','w')
 json.dump(obs4MIPs_CV,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
@@ -1320,7 +1427,7 @@ fH.close()
 
 # Write ../Tables obs4MIPs_CV.json
 if os.path.exists('../Tables/obs4MIPs_CV.json'):
-    print 'File existing, purging:','obs4MIPs_CV.json'
+    print('File existing, purging:','obs4MIPs_CV.json')
     os.remove('../Tables/obs4MIPs_CV.json')
 fH = open('../Tables/obs4MIPs_CV.json','w')
 json.dump(obs4MIPs_CV,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
@@ -1332,7 +1439,7 @@ os.chdir('Tables')
 for count,CV in enumerate(tableList):
     outFile = ''.join(['obs4MIPs_',CV,'.json'])
     if os.path.exists(outFile):
-        print 'File existing, purging:',outFile
+        print('File existing, purging:',outFile)
         os.remove(outFile)
     fH = open(outFile,'w')
     json.dump(eval(CV),fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
@@ -1352,7 +1459,7 @@ if os.environ.get('USER') == 'gleckler1':
     elif 'crunchy' in os.environ.get('HOSTNAME'):
         env7za['PATH'] = env7za['PATH'] + ':/export/durack1/bin/downloads/p7zip9.20.1/130123_build/p7zip_9.20.1/bin'
     else:
-        print 'No 7za path found'
+        print('No 7za path found')
 
 '''
 # Cleanup rogue files
