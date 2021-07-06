@@ -1,31 +1,29 @@
 {
-    "nominal_resolution":{
-        "nominal_resolution":[
-            "0.5 km",
-            "1 km",
-            "10 km",
-            "100 km",
-            "1000 km",
-            "10000 km",
-            "1x1 degree",
-            "2.5 km",
-            "25 km",
-            "250 km",
-            "2500 km",
-            "5 km",
-            "50 km",
-            "500 km",
-            "5000 km"
-        ],
-        "version_metadata":{
-            "CV_collection_modified":"Mon Jun 21 11:28:21 2021 -0700",
-            "CV_collection_version":"6.2.56.2",
-            "author":"Paul J. Durack <durack1@llnl.gov>",
-            "institution_id":"PCMDI",
-            "nominal_resolution_CV_modified":"Tues Nov 15 16:04:00 2016 -0700",
-            "nominal_resolution_CV_note":"Issue141 durack1 update grid_resolution to nominal_resolution (#143)",
-            "previous_commit":"66344226746627e0b6c12db974666126c343ce27",
-            "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
-        }
+    "nominal_resolution":[
+        "0.5 km",
+        "1 km",
+        "10 km",
+        "100 km",
+        "1000 km",
+        "10000 km",
+        "1x1 degree",
+        "2.5 km",
+        "25 km",
+        "250 km",
+        "2500 km",
+        "5 km",
+        "50 km",
+        "500 km",
+        "5000 km"
+    ],
+    "version_metadata":{
+        "CV_collection_modified":"Mon Jun 21 11:28:21 2021 -0700",
+        "CV_collection_version":"6.2.56.2",
+        "author":"Paul J. Durack <durack1@llnl.gov>",
+        "institution_id":"PCMDI",
+        "nominal_resolution_CV_modified":"Tues Nov 15 16:04:00 2016 -0700",
+        "nominal_resolution_CV_note":"Issue141 durack1 update grid_resolution to nominal_resolution (#143)",
+        "previous_commit":"66344226746627e0b6c12db974666126c343ce27",
+        "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
     }
 }

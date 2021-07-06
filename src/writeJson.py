@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#/!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
 Created on Tue Jul 12 16:11:44 2016
@@ -156,13 +156,13 @@ masterTargets = [
  'institution_id',
  'license_',
  'nominal_resolution',
-#'product',
-#'realm',
-#'region',
+ 'product',
+ 'realm',
+ 'region',
  'required_global_attributes',
  'source_id',
-#'source_type',
-#'table_id'
+ 'source_type',
+ 'table_id'
  ] ;
 
 #%% Tables
@@ -187,6 +187,10 @@ tableSource = [
  ['SIday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_SIday.json'],
  ['monNobs','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monNobs.json'],
  ['monStderr','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monStderr.json'],
+ ['region','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_region.json'],
+ ['source_type','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_source_type.json'],
+ ['table_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_table_id.json'],
+
  ] ;
 
 #%% Loop through tables and create in-memory objects
@@ -365,12 +369,13 @@ license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
             ' can be found via <some URL maintained by you>.')
 
 #%% Nominal resolution
-
 #%% Product
-product = ([
+product = [
  'observations',
  'reanalysis'
- ]) ;
+ ] ;
+
+#vars()['product'] = product    #0706
 
 #%% Realm
 realm = [
@@ -565,6 +570,13 @@ for key in source_id['source_id'].keys():
         if val not in region:
             print('Invalid region for entry:',key,'- aborting')
             sys.exit()
+    # Validate product   
+    vals = source_id['source_id'][key]['product']
+    for val in vals:
+        if val not in product:
+            print('Invalid product for entry:',key,'- aborting')
+            sys.exit()
+
 
 #%% Write variables to files
 for jsonName in masterTargets:
@@ -587,8 +599,8 @@ for jsonName in masterTargets:
         vars()[jsonName] = dictToClean
     # Write file
     if jsonName in ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon',
-                    'coordinate','formula_terms','fx','grids','monNobs',
-                    'monStderr','product']:
+                    'coordinate','formula_terms','fx','grids','product','monNobs','frequency',
+                    'monStderr']:
         outFile = ''.join(['../Tables/obs4MIPs_',jsonName,'.json'])
     elif jsonName == 'license_':
         outFile = ''.join(['../obs4MIPs_license.json'])
@@ -604,19 +616,22 @@ for jsonName in masterTargets:
     if jsonName == 'license_':
         jsonDict = {}
         jsonDict[jsonName.replace('_','')] = eval(jsonName)
-    elif jsonName not in ['coordinate','formula_terms','fx','grids',
-                          'institution_id','source_id','Aday','A3hr','A6hr','Oday','SIday',
-                          'Amon','Lmon','Omon','SImon','monNobs','monStderr','product']:
+
+#   elif jsonName not in ['coordinate','formula_terms','fx','grids',
+#                         'institution_id','source_id','Aday','A3hr','A6hr','Oday','SIday',
+#                         'Amon','Lmon','Omon','SImon','monNobs','monStderr','product']:
+
         jsonDict = {}
         jsonDict[jsonName] = eval(jsonName)
     else:
         jsonDict = eval(jsonName)
     fH = open(outFile,'w')
-    if jsonName in ['coordinate','formula_terms','grids']: jsonDict = eval(jsonDict)
-    if jsonName in ['frequency']: jsonDict['frequency']  = eval(jsonDict['frequency'])
-    if jsonName in ['grid_label']: jsonDict['grid_label']  = eval(jsonDict['grid_label'])
-    if jsonName in ['nominal_resolution']: jsonDict['nominal_resolution']  = eval(jsonDict['nominal_resolution'])
-    if jsonName in ['product']: jsonDict['product']  = eval(jsonDict['product'])
+    if jsonName in ['coordinate','formula_terms','grids','frequency','grid_label','nominal_resolution','source_type','table_id']: 
+        jsonDict = eval(jsonDict)
+#   if jsonName in ['frequency']: jsonDict['frequency']  = eval(jsonDict['frequency'])
+#   if jsonName in ['grid_label']: jsonDict['grid_label']  = eval(jsonDict['grid_label'])
+#   if jsonName in ['nominal_resolution']: jsonDict['nominal_resolution']  = eval(jsonDict['nominal_resolution'])
+#   if jsonName in ['product']: jsonDict['product']  = eval(jsonDict['product'])
 #   if jsonName in ['realm']: jsonDict['realm']  = eval(jsonDict['realm'])
 #   if jsonName in ['region']: jsonDict['region']  = eval(jsonDict['region'])
 
