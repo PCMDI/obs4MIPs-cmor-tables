@@ -2,78 +2,9 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Jul 12 16:11:44 2016
-
 Paul J. Durack 12th July 2016
-
 This script generates all json files residing in this subdirectory
 
-PJD 12 Jul 2016     - Started
-PJD 13 Jul 2016     - Updated to download existing tables
-PJD 14 Jul 2016     - Successfully loaded dictionaries
-PJD 15 Jul 2016     - Tables successfully created, coordinates from CMIP6_CVs
-PJD 18 Jul 2016     - Generate CVs and tables from CMIP6_CVs and CMIP6-cmor-tables
-PJD 19 Jul 2016     - Remove activity_id - no longer in A/O/etc tables
-PJD 20 Jul 2016     - Removed target_mip from required_global_attributes
-PJD 20 Jul 2016     - Removed source_id
-PJD 20 Jul 2016     - Added fx table_id
-PJD 20 Jul 2016     - Added readJsonCreateDict function
-PJD 20 Jul 2016     - Removed modeling_realm from all variable_entry entries
-PJD 27 Sep 2016     - Updated to deal with new upstream data formats
-PJD 27 Sep 2016     - Updated tables to "01.beta.30" -> "01.beta.32"
-PJD 27 Sep 2016     - Update jsons to include 'identifier' dictionary name (following CMIP6_CVs)
-PJD 27 Sep 2016     - Add NOAA-NCEI to institution_id https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/8
-PJD 27 Sep 2016     - Correct RSS zip
-PJD 28 Sep 2016     - Correct missing 'generic_levels' in Amon table
-PJD 29 Sep 2016     - Added ttbr (NOAA-NCEI; Jim Baird [JimBiardCics]) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/14
-PJD 30 Jan 2017     - Updated to latest cmip6-cmor-tables and CMIP6_CVs
-PJD 30 Jan 2017     - Remove header from coordinate
-PJD  3 Mar 2017     - Fixed issue with 'grids' subdict in obs4MIPs_grids.json https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/22
-PJD  3 Mar 2017     - Add ndvi to LMon table https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/16
-PJD  3 Mar 2017     - Add fapar to LMon table https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/15
-PJD 29 Mar 2017     - Correct required_global_attribute grids -> grid
-PJG 05 Apr 2017     - Added daily atm table
-PJD 11 May 2017     - Added formula_terms; Updated upstream; corrected product to 'observations'
-PJD 19 Jun 2017     - Update to deal with CMOR 3.2.4 and tables v01.00.11
-PJD 21 Jun 2017     - Updated PR #46 by Funkensieper/DWD to add new Amon variables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/48
-PJD 28 Jun 2017     - Rerun to fix formula_terms to work with CMOR 3.2.4 https://github.com/PCMDI/cmor/issues/198
-PJD 17 Jul 2017     - Implement new CVs in obs4MIPs Data Specifications (ODS) https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/40
-PJD 17 Jul 2017     - Updated tableNames to deal with 3.2.5 hard codings
-PJD 20 Jul 2017     - Updates to v2.0.0 release https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/53, 54, 57, 58, 59
-PJD 25 Jul 2017     - Further changes to deal with issues described in https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/60#issuecomment-317832149
-PJD 26 Jul 2017     - Cleanup source_id source entry duplicate https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/60
-PJD 27 Jul 2017     - Remove mip_era from tables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/61
-PJD  1 Aug 2017     - Cleanup source* entries; purge data_structure https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/64
-PJD 16 Aug 2017     - Further cleanup to improve consistency between source_id and obs4MIPs_CV #64
-PJD 24 Aug 2017     - Further cleanup for source_id in obs4MIPs_CV following CMOR3.2.6 tweaks #64
-PJD 25 Aug 2017     - Remove further_info_url from required_global_attributes #64
-PJD 14 Sep 2017     - Revise REMSS source_id registration; Update all upstreams https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/75
-PJD 14 Sep 2017     - Revise REMSS source_id registration; Update all upstreams https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/67
-PJD 14 Sep 2017     - Deal with repo reorganization https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/75
-PJD 15 Sep 2017     - Update table_id names for consistency https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/79
-PJD 15 Sep 2017     - Register source_id AVHRR-NDVI-4-0 https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/73
-PJD 19 Sep 2017     - Update demo input.json to remove controlled fields https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/84
-PJD 20 Sep 2017     - Set all cell_measures to '' see discussion https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/66#issuecomment-330853106
-PJD 20 Sep 2017     - Fix cell_measures for newly defined variables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/66
-PJD 20 Sep 2017     - Updates in preparation for ODS-2.1 https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/91
-PJD 21 Sep 2017     - Further updates to monNobs and monStderr templates https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/86
-PJD 21 Sep 2017     - Register new variable pme https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/72
-PJD 25 Sep 2017     - Updated cell_methods to maintain consistency for new registations https://github.com/PCMDI/obs4MIPs-cmor-tables/pull/95
-PJG 27 Sep 2017     - added NCEI RC
-PJG 28 Sep 2017     - added DWD RC
-PJD  4 Oct 2017     - Revise Amon variable ttbr https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/115
-PJD  4 Oct 2017     - Revise cell_methods for numerous DWD contributed variables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/72
-PJD  4 Oct 2017     - Update Aday table cell_measures entries https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/120
-PJG  5 Nov 2017     - Continuing DWD RC
-PJD  9 Nov 2017     - Review source_id format for regions and variables; Fix inconsistencies https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/133
-PJD  9 Nov 2017     - Added source_id validation for valid characters following https://goo.gl/jVZsQl
-PJD  9 Nov 2017     - Updated obs4MIPs_CV.json region format following CMOR3.2.8 release https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/136
-PJD  9 Nov 2017     - Updated source_type format adding descriptions https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/98
-PJD  2 Feb 2018     - Updated institution_id JPL -> NASA-JPL https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/139
-PJD 14 Oct 2019     - Updated to include Oday table from cmip6-cmor-tables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/181
-PJD 14 Oct 2019     - Added durolib local import to get around cdms2 conflicts
-PJD 14 Oct 2019     - Updated to include SIday table from cmip6-cmor-tables https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/178
-
-@author: durack1
 """
 
 #%% Import statements
@@ -252,7 +183,7 @@ tableSource = [
  ['Aday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_day.json'],
  ['A6hr','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_6hrPlev.json'],
  ['A3hr','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_3hr.json'], 
-['Oday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Oday.json'],
+ ['Oday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Oday.json'],
  ['SIday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_SIday.json'],
  ['monNobs','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monNobs.json'],
  ['monStderr','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monStderr.json'],
@@ -268,6 +199,8 @@ for count,table in enumerate(tmp.keys()):
 #   else:
         vars()[table] = tmp[table]
 del(tmp,count,table) ; gc.collect()
+
+#w = sys.stdin.readline()
 
 # Cleanup by extracting only variable lists
 '''
