@@ -1,9 +1,9 @@
 {
     "Header":{
-        "Conventions":"CF-1.7 CMIP-6.2",
+        "Conventions":"CF-1.7 ODS-2.1",
         "approx_interval":"1.00000",
         "cmor_version":"3.5",
-        "data_specs_version":"01.00.33",
+        "data_specs_version":"2.1.0",
         "generic_levels":"",
         "int_missing_value":"-999",
         "mip_era":"CMIP6",

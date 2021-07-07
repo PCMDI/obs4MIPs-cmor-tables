@@ -172,6 +172,44 @@ print('product dic is ', vars()['product'])
 
 #w = sys.stdin.readline()
 
+#########
+'''
+# Cleanup by extracting only variable lists
+for count2,table in enumerate(tableSource):
+    tableName = table[0]
+    print('tableName:',tableName)
+    #print eval(tableName)
+    if tableName in ['coordinate','formula_terms','frequency','grid_label','nominal_resolution']:
+        continue
+    else:
+        if tableName in ['monNobs', 'monStderr']:
+            eval(tableName)['Header'] = copy.deepcopy(Amon['Header']) ; # Copy header info from upstream file
+            del(eval(tableName)['Header']['#dataRequest_specs_version']) ; # Purge upstream identifier
+            eval(tableName)['Header']['realm'] = 'aerosol atmos atmosChem land landIce ocean ocnBgchem seaIce' ; # Append all realms
+        eval(tableName)['Header']['Conventions'] = 'CF-1.7 ODS-2.1' ; # Update "Conventions": "CF-1.7 CMIP-6.0"
+        if tableName not in ['monNobs', 'monStderr']:
+            eval(tableName)['Header']['#dataRequest_specs_version'] = eval(tableName)['Header']['data_specs_version']
+        eval(tableName)['Header']['data_specs_version'] = '2.1.0'
+        if 'mip_era' in eval(tableName)['Header'].keys():
+            eval(tableName)['Header']['#mip_era'] = eval(tableName)['Header']['mip_era']
+            del(eval(tableName)['Header']['mip_era']) ; # Remove after rewriting
+        eval(tableName)['Header']['product'] = 'observations' ; # Cannot be 'observations reanalysis'
+        eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
+        eval(tableName)['Header']['table_id'] = ''.join(['Table obs4MIPs_',tableName])
+        # Attempt to move information from input.json to table files - #84 - CMOR-limited
+        #eval(tableName)['Header']['activity_id'] = 'obs4MIPs'
+        #eval(tableName)['Header']['_further_info_url_tmpl'] = 'http://furtherinfo.es-doc.org/<activity_id><institution_id><source_label><source_id><variable_id>'
+        #eval(tableName)['Header']['output_file_template'] = '<variable_id><table_id><source_id><variant_label><grid_label>'
+        #eval(tableName)['Header']['output_path_template'] = '<activity_id><institution_id><source_id><table_id><variable_id><grid_label><version>'
+        #eval(tableName)['Header']['tracking_prefix'] = 'hdl:21.14102'
+        #eval(tableName)['Header']['_control_vocabulary_file'] = 'obs4MIPs_CV.json'
+        #eval(tableName)['Header']['_AXIS_ENTRY_FILE'] = 'obs4MIPs_coordinate.json'
+        #eval(tableName)['Header']['_FORMULA_VAR_FILE'] = 'obs4MIPs_formula_terms.json'
+        if 'baseURL' in eval(tableName)['Header'].keys():
+            del(eval(tableName)['Header']['baseURL']) ; # Remove spurious entry
+'''
+########
+
 # Cleanup realms
 
 Amon = eval(Amon)
@@ -203,7 +241,13 @@ SIday['Header']['table_id'] = 'Table obs4MIPs_SIday'
 SIday['Header']['realm']    = 'seaIce'
 
 # Clean out modeling_realm
-#for jsonName in ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon']:
+for jsonName in [Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx]:
+  try:
+   jsonName['Header']["Conventions"] = "CF-1.7 ODS-2.1"
+   jsonName['Header']["data_specs_version"] = "2.1.0"
+  except:
+   pass
+
 for jsonName in masterTargets:
   if jsonName in []:
     dictToClean = eval(jsonName)
