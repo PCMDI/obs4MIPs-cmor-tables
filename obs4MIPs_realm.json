@@ -1,10 +1,14 @@
-[
-    "aerosol",
-    "atmos",
-    "atmosChem",
-    "land",
-    "landIce",
-    "ocean",
-    "ocnBgchem",
-    "seaIce"
-]
+{
+    "realm":{
+        "realm":[
+            "aerosol",
+            "atmos",
+            "atmosChem",
+            "land",
+            "landIce",
+            "ocean",
+            "ocnBgchem",
+            "seaIce"
+        ]
+    }
+}

@@ -175,7 +175,8 @@ tableSource = [
  ['grid_label','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_grid_label.json'],
  ['grids','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_grids.json'],
  ['nominal_resolution','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_nominal_resolution.json'],
- ['product','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_product.json'],
+#['product','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_product.json'],
+ ['product','https://raw.githubusercontent.com/PCMDI/input4MIPs-cmor-tables/master/input4MIPs_product.json'],
  ['Amon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Amon.json'],
  ['Lmon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Lmon.json'],
  ['Omon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Omon.json'],
@@ -188,9 +189,10 @@ tableSource = [
  ['monNobs','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monNobs.json'],
  ['monStderr','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monStderr.json'],
  ['region','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_region.json'],
+ ['realm','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_realm.json'],
  ['source_type','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_source_type.json'],
  ['table_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_table_id.json'],
-
+ ['institution_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_institution_id.json']
  ] ;
 
 #%% Loop through tables and create in-memory objects
@@ -203,6 +205,8 @@ for count,table in enumerate(tmp.keys()):
 #   else:
         vars()[table] = tmp[table]
 del(tmp,count,table) ; gc.collect()
+
+print('product dic is ', vars()['product'])
 
 #w = sys.stdin.readline()
 
@@ -340,12 +344,20 @@ grid_label['grid_label']['gnNH'] = "data reported on a native grid in the Northe
 grid_label['grid_label']['gnSH'] = "data reported on a native grid in the Southern Hemisphere"
 
 #%% Institution
-tmp = [['institution_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/obs4MIPs_institution_id.json']
-      ] ;
 '''
-tmp = [['grid_label','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_grid_label.json'] ] 
+
+tmp = [['institution_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_institution_id.json']
+      ] ;
 institution_id = readJsonCreateDict(tmp)
 institution_id = institution_id.get('institution_id')
+
+exec(open("./institution_ids.py").read())
+
+
+tmp = [['grid_label','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_grid_label.json'] ] 
+
+#institution_id = readJsonCreateDict(tmp)
+#institution_id = institution_id.get('institution_id')
 
 
 # Fix issues
@@ -370,13 +382,16 @@ license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
 
 #%% Nominal resolution
 #%% Product
+'''
 product = [
  'observations',
  'reanalysis'
  ] ;
+'''
 
 #vars()['product'] = product    #0706
 
+'''
 #%% Realm
 realm = [
  'aerosol',
@@ -388,7 +403,9 @@ realm = [
  'ocnBgchem',
  'seaIce'
  ] ;
+'''
 
+'''
 #%% Region (taken from http://cfconventions.org/Data/cf-standard-names/docs/standardized-region-names.html)
 region = [
  'africa',
@@ -460,6 +477,7 @@ region = [
  'windward_passage',
  'yellow_sea'
  ] ;
+'''
 
 #%% Required global attributes - # indicates source
 required_global_attributes = [
@@ -490,10 +508,14 @@ tmp = [['source_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-table
 source_id = readJsonCreateDict(tmp)
 source_id = source_id.get('source_id')
 
+#execfile('source_ids.py')
+exec(open("./source_ids.py").read())
+
 # Enter fixes or additions below
+'''
 source_id = {}
 source_id['source_id'] = {}
-
+'''
 
 #####
 
@@ -538,6 +560,24 @@ for keyVal in source_id['source_id'].keys():
 ###################################################################################
 
 
+#%% Source type
+source_type = {}
+source_type['gridded_insitu'] = 'gridded product based on measurements collected from in-situ instruments'
+source_type['reanalysis'] = 'gridded product generated from a model reanalysis based on in-situ instruments and possibly satellite measurements'
+source_type['satellite_blended'] = 'gridded product based on both in-situ instruments and satellite measurements'
+source_type['satellite_retrieval'] = 'gridded product based on satellite measurements'
+
+#%% Table ID
+table_id = [
+  'PMPObs_Amon',
+  'PMPObs_Aday',
+  'PMPObs_A3hr',
+  'PMPObs_Lmon',
+  'PMPObs_Omon',
+  'PMPObs_SImon',
+  'PMPObs_fx'
+] ;
+
 #%% Validate entries
 def entryCheck(entry,search=re.compile(r'[^a-zA-Z0-9-]').search):
     return not bool(search(entry))
@@ -567,15 +607,15 @@ for key in source_id['source_id'].keys():
     # Validate region
     vals = source_id['source_id'][key]['region']
     for val in vals:
-        if val not in region:
+        if val not in eval(region)['region']:  # region:
             print('Invalid region for entry:',key,'- aborting')
             sys.exit()
     # Validate product   
-    vals = source_id['source_id'][key]['product']
-    for val in vals:
-        if val not in product:
-            print('Invalid product for entry:',key,'- aborting')
-            sys.exit()
+#   vals = source_id['source_id'][key]['product']
+#   for val in vals:
+#       if val not in product:
+#           print('Invalid product for entry:',key,'- aborting')
+#           sys.exit()
 
 
 #%% Write variables to files
@@ -599,7 +639,7 @@ for jsonName in masterTargets:
         vars()[jsonName] = dictToClean
     # Write file
     if jsonName in ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon',
-                    'coordinate','formula_terms','fx','grids','product','monNobs','frequency',
+                    'coordinate','formula_terms','fx','grids','monNobs',
                     'monStderr']:
         outFile = ''.join(['../Tables/obs4MIPs_',jsonName,'.json'])
     elif jsonName == 'license_':
@@ -617,23 +657,33 @@ for jsonName in masterTargets:
         jsonDict = {}
         jsonDict[jsonName.replace('_','')] = eval(jsonName)
 
-#   elif jsonName not in ['coordinate','formula_terms','fx','grids',
-#                         'institution_id','source_id','Aday','A3hr','A6hr','Oday','SIday',
-#                         'Amon','Lmon','Omon','SImon','monNobs','monStderr','product']:
-
+    elif jsonName not in ['coordinate','formula_terms','fx','grids',
+                          'institution_id','source_id','Aday','Amon','A3hr','Lmon',
+                          'Omon','SImon']: #,'product','realm','region']:
         jsonDict = {}
         jsonDict[jsonName] = eval(jsonName)
+
     else:
         jsonDict = eval(jsonName)
     fH = open(outFile,'w')
-    if jsonName in ['coordinate','formula_terms','grids','frequency','grid_label','nominal_resolution','source_type','table_id']: 
-        jsonDict = eval(jsonDict)
+#   if jsonName in ['coordinate','formula_terms','grids','frequency','grid_label','nominal_resolution','source_type','table_id','institution_id']:
+#        jsonDict = eval(jsonDict)
+
 #   if jsonName in ['frequency']: jsonDict['frequency']  = eval(jsonDict['frequency'])
 #   if jsonName in ['grid_label']: jsonDict['grid_label']  = eval(jsonDict['grid_label'])
 #   if jsonName in ['nominal_resolution']: jsonDict['nominal_resolution']  = eval(jsonDict['nominal_resolution'])
 #   if jsonName in ['product']: jsonDict['product']  = eval(jsonDict['product'])
 #   if jsonName in ['realm']: jsonDict['realm']  = eval(jsonDict['realm'])
 #   if jsonName in ['region']: jsonDict['region']  = eval(jsonDict['region'])
+
+    if jsonName in ['coordinate','formula_terms','grids']: jsonDict = eval(jsonDict)
+    if jsonName in ['frequency']: jsonDict['frequency']  = eval(jsonDict['frequency'])
+    if jsonName in ['grid_label']: jsonDict['grid_label']  = eval(jsonDict['grid_label'])
+    if jsonName in ['nominal_resolution']: jsonDict['nominal_resolution']  = eval(jsonDict['nominal_resolution'])
+    if jsonName in ['product']: jsonDict['product']  = eval(jsonDict['product'])
+    if jsonName in ['realm']: jsonDict['realm']  = eval(jsonDict['realm'])
+    if jsonName in ['region']: jsonDict['region']  = eval(jsonDict['region'])
+
 
 #   print('starting ', fH,' ', jsonDict.keys(),' ' ,type(jsonDict))
     print('starting ', fH,' ', type(jsonDict),jsonDict)
@@ -688,6 +738,9 @@ for count,CV in enumerate(inputJson):
         path = '../'
     vars()[CV] = json.load(open(''.join([path,'obs4MIPs_',CV,'.json'])))
 
+#       vars()[table[0]] = json.load(open('tmp.json','r'))
+
+
 # Build CV master dictionary
 
 
@@ -698,7 +751,7 @@ for count,CV in enumerate(CVJsonList):
     if CV == 'source_id':
         source_id_ = source_id['source_id']
         obs4MIPs_CV['CV']['source_id'] = {}
-        for key,values in source_id_.iteritems():
+        for key,values in source_id_.items():
             obs4MIPs_CV['CV']['source_id'][key] = {}
             string = ''.join([source_id_[key]['source_label'],' ',
                               source_id_[key]['source_version_number'],' (',
@@ -716,6 +769,7 @@ for count,CV in enumerate(CVJsonList):
             obs4MIPs_CV['CV']['table_id'].append(value)
     # Else all other CVs
     elif CV not in tableList:
+        print('CV line 725 is ', CV)
         obs4MIPs_CV['CV'].update(eval(CV))
 # Add static entries to obs4MIPs_CV.json
 obs4MIPs_CV['CV']['activity_id'] = 'obs4MIPs'
@@ -732,7 +786,9 @@ if os.path.exists('Tables/obs4MIPs_CV.json'):
     print('File existing, purging:','obs4MIPs_CV.json')
     os.remove('Tables/obs4MIPs_CV.json')
 fH = open('Tables/obs4MIPs_CV.json','w')
-json.dump(obs4MIPs_CV,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
+#json.dump(obs4MIPs_CV,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
+json.dump(obs4MIPs_CV,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'))
+
 fH.close()
 
 # Write ../Tables obs4MIPs_CV.json
@@ -740,9 +796,12 @@ if os.path.exists('../Tables/obs4MIPs_CV.json'):
     print('File existing, purging:','obs4MIPs_CV.json')
     os.remove('../Tables/obs4MIPs_CV.json')
 fH = open('../Tables/obs4MIPs_CV.json','w')
-json.dump(obs4MIPs_CV,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
+#json.dump(obs4MIPs_CV,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
+json.dump(obs4MIPs_CV,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'))
 fH.close()
 
+
+''' NOT SURE THE THIS IS NEEDED 
 # Loop and write all other files
 os.chdir('Tables')
 #tableList.extend(lookupList)
@@ -752,9 +811,10 @@ for count,CV in enumerate(tableList):
         print('File existing, purging:',outFile)
         os.remove(outFile)
     fH = open(outFile,'w')
-    json.dump(eval(CV),fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
+#   json.dump(eval(CV),fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
+    json.dump(eval(CV),fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'))
     fH.close()
-
+'''
 # Cleanup
 
 del(coordinate,count,formula_terms,frequency,grid_label,homePath,institution_id, nominal_resolution,obs4MIPs_CV,product,realm,inputJson,tableList, required_global_attributes,table_id) 
