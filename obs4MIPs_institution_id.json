@@ -1,18 +1,22 @@
 {
     "institution_id":{
+        "CNES":"Centre national d'etudes spatiales",
         "DWD":"Deutscher Wetterdienst, Offenbach 63067, Germany",
         "ECMWF":"The European Centre for Medium-Range Weather Forecasts, Shinfield Park, Reading RG2 9AX, UK",
         "ESSO":"Indian National Centre for Ocean Information Services",
         "INCOIS-NIO-IPSL":"Joint research colloboration between INCOIS(India), NIO(India) and IPSL(France)",
+        "ImperialCollege":"Imperial College, London, U.K.",
         "MOHC":"Met Office Hadley Centre",
         "MRI":"Meteorological Research Institute, Tsukuba, Ibaraki 305-0052, Japan",
         "NASA-GSFC":"NASA Goddard Space Flight Center, Greenbelt MD, USA",
         "NASA-JPL":"NASA Jet Propulsion Laboratory, Pasadena, CA 91109, USA",
-        "NASA/LaRC":"NASA/LaRC (Langley Research Center) Hampton, Va",
+        "NASA-LaRC":"NASA/LaRC (Langley Research Center) Hampton, Va",
         "NCAR":"National Center for Atmospheric Research, Boulder, CO 80307, USA",
-        "NOAA-ESRL/PSD":"NOAA Earth System Research Laboratory, Physical Sciences Division, Boulder, CO 80305, USA",
+        "NOAA-ESRL-PSD":"NOAA Earth System Research Laboratory, Physical Sciences Division, Boulder, CO 80305, USA",
         "NOAA-NCEI":"NOAA National Centers for Environmental Information, Asheville, NC 28801, USA",
         "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
-        "RSS":"Remote Sensing Systems, Santa Rosa, CA 95401, USA"
+        "RSS":"Remote Sensing Systems, Santa Rosa, CA 95401, USA",
+        "UReading":"University of Reading, Reading, U.K.",
+        "UW":"University of Washington, USA"
     }
 }

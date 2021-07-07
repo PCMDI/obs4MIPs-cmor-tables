@@ -340,7 +340,7 @@ exec(open("./source_ids.py").read())
 for s in source_id_orig['source_id'].keys():
   source_id['source_id'][s] = source_id_orig['source_id'][s] 
 
-w = sys.stdin.readline()
+#w = sys.stdin.readline()
 
 # Enter fixes or additions below
 '''
