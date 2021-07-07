@@ -1,11 +1,11 @@
 {
     "table_id":[
-        "PMPObs_Amon",
-        "PMPObs_Aday",
-        "PMPObs_A3hr",
-        "PMPObs_Lmon",
-        "PMPObs_Omon",
-        "PMPObs_SImon",
-        "PMPObs_fx"
+        "obs4MIPs_Amon",
+        "obs4MIPs_Aday",
+        "obs4MIPs_A3hr",
+        "obs4MIPs_Lmon",
+        "obs4MIPs_Omon",
+        "obs4MIPs_SImon",
+        "obs4MIPs_fx"
     ]
 }

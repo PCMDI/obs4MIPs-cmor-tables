@@ -1,13 +1,14 @@
 #/!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Jul 12 16:11:44 2016
-Paul J. Durack 12th July 2016
-This script generates all json files residing in this subdirectory
 
 """
+This script generates all necessary json files for obs4MIPs 
 
-#%% Import statements
+Original version created Tue Jul 12 16:11:44 2016 Paul J. Durack (PJD) 
+Substantially modified by Peter Gleckler (PJG) since 2016
+Several functions adopted from durolib now included and updated to PY3
+
+"""
 
 import os, json, ssl,shutil,sys, gc, re, copy
 
@@ -25,21 +26,12 @@ def readJsonCreateDict_dep(buildList):
     can be included by generating additional embedded lists
     Usage:
     ------
+    Adopted from Durolib to be used in obs4MIPS.  CONVERTED TO PY3 by PJG in 2021
 
-    Taken from Durolib to be used in PCMDIObs.  NEEDS TO BE CONVERTED TO PY3
-
-        >>> from durolib import readJsonCreateDict
-        >>> tmp = readJsonCreateDict([['Omon','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/Tables/obs4MIPs_Omon.json']])
-        >>> Omon = tmp.get('Omon')
-    Notes:
-    -----
-        ...
     """
 
     import os, json, ssl  #, urllib2   # urllib.request this is for PY3
-
-#   import urllib2  # PY2
-    import urllib.request  # PY3
+    import urllib.request  # CONVERTED TO PY3 by PJG in 2021 
     from urllib.request import urlopen #PY3
 
     # Test for list input of length == 2
@@ -74,9 +66,7 @@ def readJsonCreateDict_dep(buildList):
 def readJsonCreateDict(buildList):
 
     import os, json, ssl  #, urllib2   # urllib.request this is for PY3
-
-#   import urllib2  # PY2
-    import urllib.request  # PY3
+    import urllib.request  # CONVERTED TO PY3 by PJG in 2021 
     from urllib.request import urlopen #PY3
 
     # Test for list input of length == 2
@@ -91,43 +81,15 @@ def readJsonCreateDict(buildList):
     jsonDict = {}
     for count,table in enumerate(buildList):
         print('Processing:',table[0])
-        # Read web file
-#       jsonOutput = urllib2.urlopen(table[1], context=ctx) # Py2
         jsonOutput = urlopen(table[1], context=ctx) # Py3
         tmp = jsonOutput.read()
-
-#       vars()[table[0]] = tmp
-#       jsonOutput.close()
-#       # Write local json
-#       tmpFile = open('tmp.json','w')
-#       tmpFile.write(eval(table[0]))
-#       tmpFile.close()
-#       # Read local json
-#       vars()[table[0]] = json.load(open('tmp.json','r'))
-#       res = urllib.request.urlopen(pth)
-#       res_body = res.read()
-#       j = json.loads(res_body.decode("utf-8"))
-#       os.remove('tmp.json')
-
         jsonDict[table[0]] = tmp #eval(table[0]) ; # Write to dictionary
 
     return jsonDict
 
-'''
-import copy,gc,json,os,re,shutil,ssl,subprocess,sys,time
-if os.environ.get('USER') == 'durack1':
-    sys.path.insert(0,'/sync/git/durolib/durolib/')
-    from durolib import readJsonCreateDict ; #getGitInfo
-from durolib import readJsonCreateDict
-'''
-
-#import pdb
 
 #%% Determine path
 homePath = os.path.join('/','/'.join(os.path.realpath(__file__).split('/')[0:-1]))
-#homePath = '/export/durack1/git/obs4MIPs-cmor-tables/' ; # Linux
-#homePath = '/sync/git/obs4MIPs-cmor-tables/src' ; # OS-X
-#os.chdir(homePath)
 
 #%% Create urllib2 context to deal with lab/LLNL web certificates
 ctx                 = ssl.create_default_context()
@@ -209,34 +171,6 @@ del(tmp,count,table) ; gc.collect()
 print('product dic is ', vars()['product'])
 
 #w = sys.stdin.readline()
-
-# Cleanup by extracting only variable lists
-'''
-for count2,table in enumerate(tableSource):
-    tableName = table[0]
-    #print 'tableName:',tableName
-    #print eval(tableName)
-    if tableName in ['coordinate','formula_terms','frequency','grid_label','nominal_resolution']:
-        continue
-    else:
-        if tableName in ['monNobs', 'monStderr']:
-            eval(tableName)['Header'] = copy.deepcopy(Amon['Header']) ; # Copy header info from upstream file
-            del(eval(tableName)['Header']['#dataRequest_specs_version']) ; # Purge upstream identifier
-            eval(tableName)['Header']['realm'] = 'aerosol atmos atmosChem land landIce ocean ocnBgchem seaIce' ; # Append all realms
-        eval(tableName)['Header']['Conventions'] = 'CF-1.7 ODS-2.1' ; # Update "Conventions": "CF-1.7 CMIP-6.0"
-        if tableName not in ['monNobs', 'monStderr']:
-            eval(tableName)['Header']['#dataRequest_specs_version'] = eval(tableName)['Header']['data_specs_version']
-        eval(tableName)['Header']['data_specs_version'] = '2.1.0'
-        if 'mip_era' in eval(tableName)['Header'].keys():
-            eval(tableName)['Header']['#mip_era'] = eval(tableName)['Header']['mip_era']
-            del(eval(tableName)['Header']['mip_era']) ; # Remove after rewriting
-        eval(tableName)['Header']['product'] = 'observations' ; # Cannot be 'observations reanalysis'
-        eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
-        eval(tableName)['Header']['table_id'] = ''.join(['Table obs4MIPs_',tableName])
-
-        if 'baseURL' in eval(tableName)['Header'].keys():
-            del(eval(tableName)['Header']['baseURL']) ; # Remove spurious entry
-'''
 
 # Cleanup realms
 
@@ -326,26 +260,14 @@ sys.exit()
 #monStderr['variable_entry'][u'ndviStderr']['units'] = ''
 
 #%% Coordinate
-
 #%% Frequency
-
 #%% Grid
-
 #%% Grid label
 
-'''
-
-tmp = [['grid_label','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_grid_label.json']
-      ] ;
-grid_label = readJsonCreateDict(tmp)
-grid_label = grid_label.get('grid_label')
-#rint "grid label type",grid_label['grid_label'].keys()
-grid_label['grid_label']['gnNH'] = "data reported on a native grid in the Northern Hemisphere"
-grid_label['grid_label']['gnSH'] = "data reported on a native grid in the Southern Hemisphere"
+#grid_label['grid_label']['gnNH'] = "data reported on a native grid in the Northern Hemisphere"
+#grid_label['grid_label']['gnSH'] = "data reported on a native grid in the Southern Hemisphere"
 
 #%% Institution
-'''
-
 tmp = [['institution_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_institution_id.json']
       ] ;
 institution_id = readJsonCreateDict(tmp)
@@ -353,12 +275,7 @@ institution_id = institution_id.get('institution_id')
 
 exec(open("./institution_ids.py").read())
 
-
 tmp = [['grid_label','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_grid_label.json'] ] 
-
-#institution_id = readJsonCreateDict(tmp)
-#institution_id = institution_id.get('institution_id')
-
 
 # Fix issues
 #==============================================================================
@@ -382,102 +299,6 @@ license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
 
 #%% Nominal resolution
 #%% Product
-'''
-product = [
- 'observations',
- 'reanalysis'
- ] ;
-'''
-
-#vars()['product'] = product    #0706
-
-'''
-#%% Realm
-realm = [
- 'aerosol',
- 'atmos',
- 'atmosChem',
- 'land',
- 'landIce',
- 'ocean',
- 'ocnBgchem',
- 'seaIce'
- ] ;
-'''
-
-'''
-#%% Region (taken from http://cfconventions.org/Data/cf-standard-names/docs/standardized-region-names.html)
-region = [
- 'africa',
- 'antarctica',
- 'arabian_sea',
- 'aral_sea',
- 'arctic_ocean',
- 'asia',
- 'atlantic_ocean',
- 'australia',
- 'baltic_sea',
- 'barents_opening',
- 'barents_sea',
- 'beaufort_sea',
- 'bellingshausen_sea',
- 'bering_sea',
- 'bering_strait',
- 'black_sea',
- 'canadian_archipelago',
- 'caribbean_sea',
- 'caspian_sea',
- 'central_america',
- 'chukchi_sea',
- 'contiguous_united_states',
- 'denmark_strait',
- 'drake_passage',
- 'east_china_sea',
- 'english_channel',
- 'eurasia',
- 'europe',
- 'faroe_scotland_channel',
- 'florida_bahamas_strait',
- 'fram_strait',
- 'global',
- 'global_land',
- 'global_ocean',
- 'great_lakes',
- 'greenland',
- 'gulf_of_alaska',
- 'gulf_of_mexico',
- 'hudson_bay',
- 'iceland_faroe_channel',
- 'indian_ocean',
- 'indo_pacific_ocean',
- 'indonesian_throughflow',
- 'irish_sea',
- 'lake_baykal',
- 'lake_chad',
- 'lake_malawi',
- 'lake_tanganyika',
- 'lake_victoria',
- 'mediterranean_sea',
- 'mozambique_channel',
- 'north_america',
- 'north_sea',
- 'norwegian_sea',
- 'pacific_equatorial_undercurrent',
- 'pacific_ocean',
- 'persian_gulf',
- 'red_sea',
- 'ross_sea',
- 'sea_of_japan',
- 'sea_of_okhotsk',
- 'south_america',
- 'south_china_sea',
- 'southern_ocean',
- 'taiwan_luzon_straits',
- 'weddell_sea',
- 'windward_passage',
- 'yellow_sea'
- ] ;
-'''
 
 #%% Required global attributes - # indicates source
 required_global_attributes = [
@@ -503,13 +324,23 @@ required_global_attributes = [
 ] ;
 
 #%% Source ID
+'''
 tmp = [['source_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/obs4MIPs_source_id.json']
       ] ;
-source_id = readJsonCreateDict(tmp)
-source_id = source_id.get('source_id')
+source_ida = readJsonCreateDict(tmp)
+source_ida = source_ida.get('source_id')
+print(type(source_ida))
+'''
+## LOAD EXISTING SOURCE_ID
+source_id_orig = json.load(open('../obs4MIPs_source_id.json','r'))
+print(source_id_orig.keys())
 
-#execfile('source_ids.py')
 exec(open("./source_ids.py").read())
+
+for s in source_id_orig['source_id'].keys():
+  source_id['source_id'][s] = source_id_orig['source_id'][s] 
+
+w = sys.stdin.readline()
 
 # Enter fixes or additions below
 '''
@@ -569,13 +400,13 @@ source_type['satellite_retrieval'] = 'gridded product based on satellite measure
 
 #%% Table ID
 table_id = [
-  'PMPObs_Amon',
-  'PMPObs_Aday',
-  'PMPObs_A3hr',
-  'PMPObs_Lmon',
-  'PMPObs_Omon',
-  'PMPObs_SImon',
-  'PMPObs_fx'
+  'obs4MIPs_Amon',
+  'obs4MIPs_Aday',
+  'obs4MIPs_A3hr',
+  'obs4MIPs_Lmon',
+  'obs4MIPs_Omon',
+  'obs4MIPs_SImon',
+  'obs4MIPs_fx'
 ] ;
 
 #%% Validate entries
@@ -666,16 +497,6 @@ for jsonName in masterTargets:
     else:
         jsonDict = eval(jsonName)
     fH = open(outFile,'w')
-#   if jsonName in ['coordinate','formula_terms','grids','frequency','grid_label','nominal_resolution','source_type','table_id','institution_id']:
-#        jsonDict = eval(jsonDict)
-
-#   if jsonName in ['frequency']: jsonDict['frequency']  = eval(jsonDict['frequency'])
-#   if jsonName in ['grid_label']: jsonDict['grid_label']  = eval(jsonDict['grid_label'])
-#   if jsonName in ['nominal_resolution']: jsonDict['nominal_resolution']  = eval(jsonDict['nominal_resolution'])
-#   if jsonName in ['product']: jsonDict['product']  = eval(jsonDict['product'])
-#   if jsonName in ['realm']: jsonDict['realm']  = eval(jsonDict['realm'])
-#   if jsonName in ['region']: jsonDict['region']  = eval(jsonDict['region'])
-
     if jsonName in ['coordinate','formula_terms','grids']: jsonDict = eval(jsonDict)
     if jsonName in ['frequency']: jsonDict['frequency']  = eval(jsonDict['frequency'])
     if jsonName in ['grid_label']: jsonDict['grid_label']  = eval(jsonDict['grid_label'])
