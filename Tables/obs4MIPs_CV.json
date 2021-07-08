@@ -2,29 +2,39 @@
     "CV":{
         "activity_id":"obs4MIPs",
         "frequency":{
-            "1hr":"sampled hourly",
-            "1hrCM":"monthly-mean diurnal cycle resolving each day into 1-hour means",
-            "1hrPt":"sampled hourly, at specified time point within an hour",
-            "3hr":"sampled every 3 hours",
-            "3hrPt":"sampled 3 hourly, at specified time point within the time period",
-            "6hr":"sampled every 6 hours",
-            "6hrPt":"sampled 6 hourly, at specified time point within the time period",
-            "day":"daily mean samples",
-            "dec":"decadal mean samples",
-            "fx":"fixed (time invariant) field",
-            "mon":"monthly mean samples",
-            "monC":"monthly climatology computed from monthly mean samples",
-            "monPt":"sampled monthly, at specified time point within the time period",
-            "subhrPt":"sampled sub-hourly, at specified time point within an hour",
-            "yr":"annual mean samples",
-            "yrPt":"sampled yearly, at specified time point within the time period"
+            "frequency":{
+                "1hr":"sampled hourly",
+                "1hrCM":"monthly-mean diurnal cycle resolving each day into 1-hour means",
+                "1hrPt":"sampled hourly, at specified time point within an hour",
+                "3hr":"3 hourly mean samples",
+                "3hrPt":"sampled 3 hourly, at specified time point within the time period",
+                "6hr":"6 hourly mean samples",
+                "6hrPt":"sampled 6 hourly, at specified time point within the time period",
+                "day":"daily mean samples",
+                "dec":"decadal mean samples",
+                "fx":"fixed (time invariant) field",
+                "mon":"monthly mean samples",
+                "monC":"monthly climatology computed from monthly mean samples",
+                "monPt":"sampled monthly, at specified time point within the time period",
+                "subhrPt":"sampled sub-hourly, at specified time point within an hour",
+                "yr":"annual mean samples",
+                "yrPt":"sampled yearly, at specified time point within the time period"
+            },
+            "version_metadata":{
+                "CV_collection_modified":"Mon Jun 21 11:28:21 2021 -0700",
+                "CV_collection_version":"6.2.56.2",
+                "author":"Paul J. Durack <durack1@llnl.gov>",
+                "frequency_CV_modified":"Mon May 24 13:48:15 2021 00100",
+                "frequency_CV_note":"Update description of 3hr and 6hr frequencies",
+                "institution_id":"PCMDI",
+                "previous_commit":"66344226746627e0b6c12db974666126c343ce27",
+                "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
+            }
         },
         "grid_label":{
             "grid_label":{
                 "gm":"global mean data",
                 "gn":"data reported on a model's native grid",
-                "gnNH":"data reported on a native grid in the Northern Hemisphere",
-                "gnSH":"data reported on a native grid in the Southern Hemisphere",
                 "gna":"data reported on a native grid in the region of Antarctica",
                 "gng":"data reported on a native grid in the region of Greenland",
                 "gnz":"zonal mean data reported on a model's native latitude grid",
@@ -70,130 +80,157 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-                "CV_collection_modified":"Tue Dec 15 12:34:07 2020 -0800",
-                "CV_collection_version":"6.2.55.1",
+                "CV_collection_modified":"Mon Jun 21 11:28:21 2021 -0700",
+                "CV_collection_version":"6.2.56.2",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
-                "previous_commit":"87621e2d55ecbe6cf0b1d28a48f618ece6cd5a7d",
+                "previous_commit":"66344226746627e0b6c12db974666126c343ce27",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
         "institution_id":{
             "CNES":"Centre national d'etudes spatiales",
             "DWD":"Deutscher Wetterdienst, Offenbach 63067, Germany",
+            "ECMWF":"The European Centre for Medium-Range Weather Forecasts, Shinfield Park, Reading RG2 9AX, UK",
+            "ESSO":"Indian National Centre for Ocean Information Services",
+            "INCOIS-NIO-IPSL":"Joint research colloboration between INCOIS(India), NIO(India) and IPSL(France)",
             "ImperialCollege":"Imperial College, London, U.K.",
-            "NASA-GSFC":"National Aeronautics and Space Administration, Goddard Space Flight Center",
-            "NASA-JPL":"NASA's Jet Propulsion Laboratory, Pasadena, CA 91109, USA",
-            "NOAA-NCEI":"NOAA's National Centers for Environmental Information, Asheville, NC 28801, USA",
+            "MOHC":"Met Office Hadley Centre",
+            "MRI":"Meteorological Research Institute, Tsukuba, Ibaraki 305-0052, Japan",
+            "NASA-GSFC":"NASA Goddard Space Flight Center, Greenbelt MD, USA",
+            "NASA-JPL":"NASA Jet Propulsion Laboratory, Pasadena, CA 91109, USA",
+            "NASA-LaRC":"NASA/LaRC (Langley Research Center) Hampton, Va",
+            "NCAR":"National Center for Atmospheric Research, Boulder, CO 80307, USA",
+            "NOAA-ESRL-PSD":"NOAA Earth System Research Laboratory, Physical Sciences Division, Boulder, CO 80305, USA",
+            "NOAA-NCEI":"NOAA National Centers for Environmental Information, Asheville, NC 28801, USA",
             "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
             "RSS":"Remote Sensing Systems, Santa Rosa, CA 95401, USA",
             "UReading":"University of Reading, Reading, U.K.",
             "UW":"University of Washington, USA"
         },
-        "license":"Data in this file produced by <Your Centre Name> is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Use of the data must be acknowledged following guidelines found at <a URL maintained by you>. Further information about this data, including some limitations, can be found via <some URL maintained by you>.)",
-        "nominal_resolution":[
-            "0.5 km",
-            "1 km",
-            "10 km",
-            "100 km",
-            "1000 km",
-            "10000 km",
-            "1x1 degree",
-            "2.5 km",
-            "25 km",
-            "250 km",
-            "2500 km",
-            "5 km",
-            "50 km",
-            "500 km",
-            "5000 km"
-        ],
-        "product":[
-            "observations",
-            "reanalysis"
-        ],
-        "realm":[
-            "aerosol",
-            "atmos",
-            "atmosChem",
-            "land",
-            "landIce",
-            "ocean",
-            "ocnBgchem",
-            "seaIce"
-        ],
-        "region":[
-            "africa",
-            "antarctica",
-            "arabian_sea",
-            "aral_sea",
-            "arctic_ocean",
-            "asia",
-            "atlantic_ocean",
-            "australia",
-            "baltic_sea",
-            "barents_opening",
-            "barents_sea",
-            "beaufort_sea",
-            "bellingshausen_sea",
-            "bering_sea",
-            "bering_strait",
-            "black_sea",
-            "canadian_archipelago",
-            "caribbean_sea",
-            "caspian_sea",
-            "central_america",
-            "chukchi_sea",
-            "contiguous_united_states",
-            "denmark_strait",
-            "drake_passage",
-            "east_china_sea",
-            "english_channel",
-            "eurasia",
-            "europe",
-            "faroe_scotland_channel",
-            "florida_bahamas_strait",
-            "fram_strait",
-            "global",
-            "global_land",
-            "global_ocean",
-            "great_lakes",
-            "greenland",
-            "gulf_of_alaska",
-            "gulf_of_mexico",
-            "hudson_bay",
-            "iceland_faroe_channel",
-            "indian_ocean",
-            "indo_pacific_ocean",
-            "indonesian_throughflow",
-            "irish_sea",
-            "lake_baykal",
-            "lake_chad",
-            "lake_malawi",
-            "lake_tanganyika",
-            "lake_victoria",
-            "mediterranean_sea",
-            "mozambique_channel",
-            "north_america",
-            "north_sea",
-            "norwegian_sea",
-            "pacific_equatorial_undercurrent",
-            "pacific_ocean",
-            "persian_gulf",
-            "red_sea",
-            "ross_sea",
-            "sea_of_japan",
-            "sea_of_okhotsk",
-            "south_america",
-            "south_china_sea",
-            "southern_ocean",
-            "taiwan_luzon_straits",
-            "weddell_sea",
-            "windward_passage",
-            "yellow_sea"
-        ],
+        "license":"Data in this file produced by <Your Centre Name> is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Use of the data must be acknowledged following guidelines found at <a URL maintained by you>. Further information about this data, including some limitations, can be found via <some URL maintained by you>.",
+        "nominal_resolution":{
+            "nominal_resolution":[
+                "0.5 km",
+                "1 km",
+                "10 km",
+                "100 km",
+                "1000 km",
+                "10000 km",
+                "1x1 degree",
+                "2.5 km",
+                "25 km",
+                "250 km",
+                "2500 km",
+                "5 km",
+                "50 km",
+                "500 km",
+                "5000 km"
+            ],
+            "version_metadata":{
+                "CV_collection_modified":"Mon Jun 21 11:28:21 2021 -0700",
+                "CV_collection_version":"6.2.56.2",
+                "author":"Paul J. Durack <durack1@llnl.gov>",
+                "institution_id":"PCMDI",
+                "nominal_resolution_CV_modified":"Tues Nov 15 16:04:00 2016 -0700",
+                "nominal_resolution_CV_note":"Issue141 durack1 update grid_resolution to nominal_resolution (#143)",
+                "previous_commit":"66344226746627e0b6c12db974666126c343ce27",
+                "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
+            }
+        },
+        "product":{
+            "product":[
+                "derived",
+                "observations",
+                "reanalysis"
+            ]
+        },
+        "realm":{
+            "realm":[
+                "aerosol",
+                "atmos",
+                "atmosChem",
+                "land",
+                "landIce",
+                "ocean",
+                "ocnBgchem",
+                "seaIce"
+            ]
+        },
+        "region":{
+            "region":[
+                "africa",
+                "antarctica",
+                "arabian_sea",
+                "aral_sea",
+                "arctic_ocean",
+                "asia",
+                "atlantic_ocean",
+                "australia",
+                "baltic_sea",
+                "barents_opening",
+                "barents_sea",
+                "beaufort_sea",
+                "bellingshausen_sea",
+                "bering_sea",
+                "bering_strait",
+                "black_sea",
+                "canadian_archipelago",
+                "caribbean_sea",
+                "caspian_sea",
+                "central_america",
+                "chukchi_sea",
+                "contiguous_united_states",
+                "denmark_strait",
+                "drake_passage",
+                "east_china_sea",
+                "english_channel",
+                "eurasia",
+                "europe",
+                "faroe_scotland_channel",
+                "florida_bahamas_strait",
+                "fram_strait",
+                "global",
+                "global_land",
+                "global_ocean",
+                "great_lakes",
+                "greenland",
+                "gulf_of_alaska",
+                "gulf_of_mexico",
+                "hudson_bay",
+                "iceland_faroe_channel",
+                "indian_ocean",
+                "indo_pacific_ocean",
+                "indonesian_throughflow",
+                "irish_sea",
+                "lake_baykal",
+                "lake_chad",
+                "lake_malawi",
+                "lake_tanganyika",
+                "lake_victoria",
+                "mediterranean_sea",
+                "mozambique_channel",
+                "north_america",
+                "north_sea",
+                "norwegian_sea",
+                "pacific_equatorial_undercurrent",
+                "pacific_ocean",
+                "persian_gulf",
+                "red_sea",
+                "ross_sea",
+                "sea_of_japan",
+                "sea_of_okhotsk",
+                "south_america",
+                "south_china_sea",
+                "southern_ocean",
+                "taiwan_luzon_straits",
+                "weddell_sea",
+                "windward_passage",
+                "yellow_sea"
+            ]
+        },
         "required_global_attributes":[
             "Conventions",
             "activity_id",
@@ -216,6 +253,13 @@
             "variant_label"
         ],
         "source_id":{
+            "20CR":{
+                "region":"global",
+                "source":"20CR N/A (2006): Monthly NOAA-CIRES 20th Century Reanalysis V2",
+                "source_label":"20CR",
+                "source_type":"reanalysis",
+                "source_version_number":"N/A"
+            },
             "AIRS-1-0":{
                 "region":"global",
                 "source":"AIRS 1.0 (2011): Atmospheric Infrared Sounder",
@@ -251,12 +295,40 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"v04.2"
             },
-            "CMSAF-CLARA-A-2-0":{
+            "CERES-EBAF-4-0":{
                 "region":"global",
-                "source":"CMSAF-CLARA-A 2.0 (2017): CM SAF cLoud, Albedo and surface RAdiation dataset from AVHRR data",
+                "source":"CERES-EBAF-4-0 4.0 (2018): CERES EBAF (Energy Balanced and Filled) TOA Fluxes. Monthly Averages",
+                "source_label":"CERES-EBAF-4-0",
+                "source_type":"satellite_blended",
+                "source_version_number":"4.0"
+            },
+            "CERES-EBAF-4-1":{
+                "region":"global",
+                "source":"CERES-EBAF-4-1 4.1 (2019): CERES EBAF (Energy Balanced and Filled) TOA Fluxes. Monthly Averages",
+                "source_label":"CERES-EBAF-4-1",
+                "source_type":"satellite_blended",
+                "source_version_number":"4.1"
+            },
+            "CMAP-V1902":{
+                "region":"global",
+                "source":"CMAP V1902 (N/A): CMAP Precipitation",
+                "source_label":"CMAP",
+                "source_type":"satellite_blended",
+                "source_version_number":"V1902"
+            },
+            "CMORPH-1-0":{
+                "region":"global",
+                "source":"CMORPH 1.0 (N/A): CMORPH",
+                "source_label":"CMORPH",
+                "source_type":"satellite_blended",
+                "source_version_number":"1.0"
+            },
+            "CMSAF-CLARA-A-2-1":{
+                "region":"global",
+                "source":"CMSAF-CLARA-A 2.1 (2020): CM SAF cLoud, Albedo and surface RAdiation dataset from AVHRR data",
                 "source_label":"CMSAF-CLARA-A",
                 "source_type":"satellite_retrieval",
-                "source_version_number":"2.0"
+                "source_version_number":"2.1"
             },
             "CMSAF-HOAPS-4-0":{
                 "region":"global_ocean",
@@ -271,6 +343,34 @@
                 "source_label":"CMSAF-SARAH",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
+            },
+            "ERA-20C":{
+                "region":"global",
+                "source":"ECMWF-ERA-20C 1.0 (2014): ECMWF - ERA-20C (European ReAnalysis 1900-2010)",
+                "source_label":"ECMWF-ERA-20C",
+                "source_type":"reanalysis",
+                "source_version_number":"1.0"
+            },
+            "ERA-40":{
+                "region":"global",
+                "source":"ECMWF-ERA-40 1.0 (2005): ECMWF - ERA-40 (European ReAnalysis 1957-2002)",
+                "source_label":"ECMWF-ERA-40",
+                "source_type":"reanalysis",
+                "source_version_number":"1.0"
+            },
+            "ERA-5":{
+                "region":"global",
+                "source":"ECMWF-ERA-5 1.0 (2019): ECMWF - ERA5 (European ReAnalysis)",
+                "source_label":"ECMWF-ERA-5",
+                "source_type":"reanalysis",
+                "source_version_number":"1.0"
+            },
+            "ERA-INT":{
+                "region":"global",
+                "source":"ECMWF-ERAINT N/A (2010): ECMWF-ERAINT 1.0 (2010): ECMWF - ERAINT (European ReAnalysis 1989-2010)",
+                "source_label":"ECMWF-ERAINT",
+                "source_type":"reanalysis",
+                "source_version_number":"N/A"
             },
             "ESA-CCI-SST-v2-1":{
                 "region":"global_ocean",
@@ -342,6 +442,13 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.3"
             },
+            "GPCP-1-3":{
+                "region":"global",
+                "source":"GPCP 1.3 (N/A): Merged Precipitation",
+                "source_label":"GPCP",
+                "source_type":"satellite_blended",
+                "source_version_number":"1.3"
+            },
             "GPCP-1DD":{
                 "region":"global",
                 "source":"GPCP 1DD 1.3 (2013): Global Precipitation Climatology Project One Degree Daily",
@@ -355,6 +462,13 @@
                 "source_label":"GPCP 1DD",
                 "source_type":"satellite_blended",
                 "source_version_number":"1.3"
+            },
+            "GPCP-2-3":{
+                "region":"global",
+                "source":"GPCP 2.3 (N/A): Merged Precipitation",
+                "source_label":"GPCP",
+                "source_type":"satellite_blended",
+                "source_version_number":"2.3"
             },
             "GPCP-SG":{
                 "region":"global",
@@ -370,12 +484,26 @@
                 "source_type":"satellite_blended",
                 "source_version_number":"2.3"
             },
+            "HadISST-1-1":{
+                "region":"global_ocean",
+                "source":"HadISST-1-1 1-1 (2016): HadISST 1.1 monthly average sea surface temperature",
+                "source_label":"HadISST-1-1",
+                "source_type":"satellite_blended",
+                "source_version_number":"1-1"
+            },
             "IMERG-v06B-Final":{
                 "region":"global",
                 "source":"IMERG v06B Final v06B_Final (2019): Integrated Multi-satellitE Retrievals for Global Precipitation Measurement (IMERG)",
                 "source_label":"IMERG v06B Final",
                 "source_type":"satellite_blended",
                 "source_version_number":"v06B_Final"
+            },
+            "JRA25":{
+                "region":"global",
+                "source":"MRI-JRA25 N/A (2002): JRA25 1.0 (2002): JRA25 (Japanese ReAnalysis 1957-2002)",
+                "source_label":"MRI-JRA25",
+                "source_type":"reanalysis",
+                "source_version_number":"N/A"
             },
             "MODIS-1-0":{
                 "region":"global",
@@ -503,6 +631,13 @@
                 "source_type":"satellite_blended",
                 "source_version_number":"1.2"
             },
+            "OISST-L4-AVHRR-only-v2":{
+                "region":"global_ocean",
+                "source":"OISST_L4_AVHRR-only-v2 v2 (2016): SST-AVHRR_only.v2 2008 NOAA 1/4 Degree Daily Optimum Interpolation Sea Surface Temperature Analysis using AVHRR, Version 2",
+                "source_label":"OISST_L4_AVHRR-only-v2",
+                "source_type":"satellite_blended",
+                "source_version_number":"v2"
+            },
             "QuikSCAT-v20110531":{
                 "region":"global",
                 "source":"QuikSCAT v20110531 (2011): QuikSCAT winds monthly climatology derived from QuikSCAT L2B using the 2006 model function and processing algorithms.",
@@ -531,6 +666,13 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.0"
             },
+            "TRMM-3B43v-7":{
+                "region":"global",
+                "source":"TRMM 3B43v.7 (N/A): NASA-TRMM (observation 2000-2009)",
+                "source_label":"TRMM",
+                "source_type":"satellite_blended",
+                "source_version_number":"3B43v.7"
+            },
             "TRMM-TMPA-3B42-v7-7A":{
                 "region":"global",
                 "source":"TRMM TMPA 3B42 v7-7A (2013): Tropical Rainfall Measuring Mission Multi-satellite Precipitation Analysis 3B42",
@@ -544,6 +686,13 @@
                 "source_label":"TRMM TMPA 3B43",
                 "source_type":"satellite_blended",
                 "source_version_number":"v7-7A"
+            },
+            "TropFlux-1-0":{
+                "region":"global_ocean",
+                "source":"TropFlux-1-0 1.0 (2018): TropFlux - Air-Sea Fluxes for the Global Tropical Oceans",
+                "source_label":"TropFlux-1-0",
+                "source_type":"satellite_blended",
+                "source_version_number":"1.0"
             }
         },
         "source_type":{
@@ -553,18 +702,13 @@
             "satellite_retrieval":"gridded product based on satellite measurements"
         },
         "table_id":[
+            "obs4MIPs_Amon",
             "obs4MIPs_Aday",
             "obs4MIPs_A3hr",
-            "obs4MIPs_A6hr",
-            "obs4MIPs_Oday",
-            "obs4MIPs_SIday",
-            "obs4MIPs_Amon",
             "obs4MIPs_Lmon",
             "obs4MIPs_Omon",
             "obs4MIPs_SImon",
-            "obs4MIPs_fx",
-            "obs4MIPs_monNobs",
-            "obs4MIPs_monStderr"
+            "obs4MIPs_fx"
         ]
     }
 }

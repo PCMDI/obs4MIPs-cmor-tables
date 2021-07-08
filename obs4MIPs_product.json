@@ -1,6 +1,9 @@
 {
-    "product":[
-        "observations",
-        "reanalysis"
-    ]
+    "product":{
+        "product":[
+            "derived",
+            "observations",
+            "reanalysis"
+        ]
+    }
 }

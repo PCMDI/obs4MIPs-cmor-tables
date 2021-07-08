@@ -1,5 +1,22 @@
 {
     "source_id":{
+        "20CR":{
+            "institution_id":"NOAA-ESRL/PSD",
+            "region":[
+                "global"
+            ],
+            "release_year":"2006",
+            "source_description":"Monthly NOAA-CIRES 20th Century Reanalysis V2",
+            "source_id":"20CR",
+            "source_label":"20CR",
+            "source_name":"20CR",
+            "source_type":"reanalysis",
+            "source_variables":[
+                "psl",
+                "ts"
+            ],
+            "source_version_number":"N/A"
+        },
         "AIRS-1-0":{
             "institution_id":"NASA-JPL",
             "region":[
@@ -81,14 +98,84 @@
             ],
             "source_version_number":"v04.2"
         },
-        "CMSAF-CLARA-A-2-0":{
+        "CERES-EBAF-4-0":{
+            "institution_id":"NASA/LaRC",
+            "region":[
+                "global"
+            ],
+            "release_year":"2018",
+            "source_description":"CERES EBAF (Energy Balanced and Filled) TOA Fluxes. Monthly Averages",
+            "source_id":"CERES-EBAF-4-0",
+            "source_label":"CERES-EBAF-4-0",
+            "source_name":"CERES-EBAF4-0",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "rlut",
+                "rlutcs",
+                "rsut",
+                "rsutcs"
+            ],
+            "source_version_number":"4.0"
+        },
+        "CERES-EBAF-4-1":{
+            "institution_id":"NASA/LaRC",
+            "region":[
+                "global"
+            ],
+            "release_year":"2019",
+            "source_description":"CERES EBAF (Energy Balanced and Filled) TOA Fluxes. Monthly Averages",
+            "source_id":"CERES-EBAF-4-1",
+            "source_label":"CERES-EBAF-4-1",
+            "source_name":"CERES-EBAF4-1",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "rlut",
+                "rlutcs",
+                "rsut",
+                "rsutcs"
+            ],
+            "source_version_number":"4.1"
+        },
+        "CMAP-V1902":{
+            "institution_id":"NOAA",
+            "region":[
+                "global"
+            ],
+            "release_year":"N/A",
+            "source_description":"CMAP Precipitation",
+            "source_id":"CMAP-V1902",
+            "source_label":"CMAP",
+            "source_name":"CMAP",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"V1902"
+        },
+        "CMORPH-1-0":{
+            "institution_id":"NOAA",
+            "region":[
+                "global"
+            ],
+            "release_year":"N/A",
+            "source_description":"CMORPH",
+            "source_id":"CMORPH-1-0",
+            "source_label":"CMORPH",
+            "source_name":"CMORPH",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"1.0"
+        },
+        "CMSAF-CLARA-A-2-1":{
             "institution_id":"DWD",
             "region":[
                 "global"
             ],
-            "release_year":"2017",
+            "release_year":"2020",
             "source_description":"CM SAF cLoud, Albedo and surface RAdiation dataset from AVHRR data",
-            "source_id":"CMSAF-CLARA-A-2-0",
+            "source_id":"CMSAF-CLARA-A-2-1",
             "source_label":"CMSAF-CLARA-A",
             "source_name":"CMSAF CLARA A",
             "source_type":"satellite_retrieval",
@@ -103,7 +190,7 @@
                 "rsds",
                 "rsdscs"
             ],
-            "source_version_number":"2.0"
+            "source_version_number":"2.1"
         },
         "CMSAF-HOAPS-4-0":{
             "institution_id":"DWD",
@@ -145,6 +232,81 @@
                 "rsds"
             ],
             "source_version_number":"2.0"
+        },
+        "ERA-20C":{
+            "institution_id":"ECMWF",
+            "region":[
+                "global"
+            ],
+            "release_year":"2014",
+            "source_description":"ECMWF - ERA-20C (European ReAnalysis 1900-2010)",
+            "source_id":"ERA-20C",
+            "source_label":"ECMWF-ERA-20C",
+            "source_name":"ECMWF ERA-20C",
+            "source_type":"reanalysis",
+            "source_variables":[
+                "psl",
+                "ts"
+            ],
+            "source_version_number":"1.0"
+        },
+        "ERA-40":{
+            "institution_id":"ECMWF",
+            "region":[
+                "global"
+            ],
+            "release_year":"2005",
+            "source_description":"ECMWF - ERA-40 (European ReAnalysis 1957-2002)",
+            "source_id":"ERA-40",
+            "source_label":"ECMWF-ERA-40",
+            "source_name":"ECMWF ERA-40",
+            "source_type":"reanalysis",
+            "source_variables":[
+                "ta",
+                "ua",
+                "va"
+            ],
+            "source_version_number":"1.0"
+        },
+        "ERA-5":{
+            "institution_id":"ECMWF",
+            "region":[
+                "global"
+            ],
+            "release_year":"2019",
+            "source_description":"ECMWF - ERA5 (European ReAnalysis)",
+            "source_id":"ERA-5",
+            "source_label":"ECMWF-ERA-5",
+            "source_name":"ECMWF ERA-5",
+            "source_type":"reanalysis",
+            "source_variables":[
+                "psl",
+                "ta",
+                "tas",
+                "ua",
+                "va",
+                "zg"
+            ],
+            "source_version_number":"1.0"
+        },
+        "ERA-INT":{
+            "institution_id":"ECMWF",
+            "region":[
+                "global"
+            ],
+            "release_year":"2010",
+            "source_description":"ECMWF-ERAINT 1.0 (2010): ECMWF - ERAINT (European ReAnalysis 1989-2010)",
+            "source_id":"ERA-INT",
+            "source_label":"ECMWF-ERAINT",
+            "source_name":"ECMWF-ERAINT",
+            "source_type":"reanalysis",
+            "source_variables":[
+                "ta",
+                "ua",
+                "va",
+                "zg"
+            ],
+            "source_version_number":"N/A"
         },
         "ESA-CCI-SST-v2-1":{
             "institution_id":"UReading",
@@ -345,6 +507,22 @@
             ],
             "source_version_number":"1.3"
         },
+        "GPCP-1-3":{
+            "institution_id":"NASA-JPL",
+            "region":[
+                "global"
+            ],
+            "release_year":"N/A",
+            "source_description":"Merged Precipitation",
+            "source_id":"GPCP-1-3",
+            "source_label":"GPCP",
+            "source_name":"GPCP",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"1.3"
+        },
         "GPCP-1DD":{
             "institution_id":"NASA-GSFC",
             "region":[
@@ -377,6 +555,22 @@
             ],
             "source_version_number":"1.3"
         },
+        "GPCP-2-3":{
+            "institution_id":"NOAA",
+            "region":[
+                "global"
+            ],
+            "release_year":"N/A",
+            "source_description":"Merged Precipitation",
+            "source_id":"GPCP-2-3",
+            "source_label":"GPCP",
+            "source_name":"GPCP",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"2.3"
+        },
         "GPCP-SG":{
             "institution_id":"NASA-GSFC",
             "region":[
@@ -407,6 +601,22 @@
             ],
             "source_version_number":"2.3"
         },
+        "HadISST-1-1":{
+            "institution_id":"MOHC",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2016",
+            "source_description":"HadISST 1.1 monthly average sea surface temperature",
+            "source_id":"HadISST-1-1",
+            "source_label":"HadISST-1-1",
+            "source_name":"HadISST-1-1",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "ts"
+            ],
+            "source_version_number":"1-1"
+        },
         "IMERG-v06B-Final":{
             "institution_id":"NASA-GSFC",
             "region":[
@@ -422,6 +632,25 @@
                 "pr"
             ],
             "source_version_number":"v06B_Final"
+        },
+        "JRA25":{
+            "institution_id":"MRI",
+            "region":[
+                "global"
+            ],
+            "release_year":"2002",
+            "source_description":"JRA25 1.0 (2002): JRA25 (Japanese ReAnalysis 1957-2002)",
+            "source_id":"JRA25",
+            "source_label":"MRI-JRA25",
+            "source_name":"MRI-JRA25",
+            "source_type":"reanalysis",
+            "source_variables":[
+                "ta",
+                "ua",
+                "va",
+                "zg"
+            ],
+            "source_version_number":"N/A"
         },
         "MODIS-1-0":{
             "institution_id":"NASA-GSFC",
@@ -709,6 +938,22 @@
             ],
             "source_version_number":"1.2"
         },
+        "OISST-L4-AVHRR-only-v2":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2016",
+            "source_description":"SST-AVHRR_only.v2 2008 NOAA 1/4 Degree Daily Optimum Interpolation Sea Surface Temperature Analysis using AVHRR, Version 2",
+            "source_id":"OISST-L4-AVHRR-only-v2",
+            "source_label":"OISST_L4_AVHRR-only-v2",
+            "source_name":"OISST_L4_AVHRR-only-v2",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "ts"
+            ],
+            "source_version_number":"v2"
+        },
         "QuikSCAT-v20110531":{
             "institution_id":"NASA-JPL",
             "region":[
@@ -776,6 +1021,22 @@
             ],
             "source_version_number":"1.0"
         },
+        "TRMM-3B43v-7":{
+            "institution_id":"NASA-GSFC",
+            "region":[
+                "global"
+            ],
+            "release_year":"N/A",
+            "source_description":"NASA-TRMM (observation 2000-2009)",
+            "source_id":"TRMM-3B43v-7",
+            "source_label":"TRMM",
+            "source_name":"TRMM",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"3B43v.7"
+        },
         "TRMM-TMPA-3B42-v7-7A":{
             "institution_id":"NASA-GSFC",
             "region":[
@@ -807,6 +1068,28 @@
                 "pr"
             ],
             "source_version_number":"v7-7A"
+        },
+        "TropFlux-1-0":{
+            "institution_id":"INCOIS-NIO-IPSL",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2018",
+            "source_description":"TropFlux - Air-Sea Fluxes for the Global Tropical Oceans",
+            "source_id":"TropFlux-1-0",
+            "source_label":"TropFlux-1-0",
+            "source_name":"TropFlux-1-0",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "hfls",
+                "hfns",
+                "hfss",
+                "tas",
+                "tauu",
+                "tauv",
+                "ts"
+            ],
+            "source_version_number":"1.0"
         }
     }
 }
