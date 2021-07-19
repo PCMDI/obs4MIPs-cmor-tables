@@ -11,7 +11,7 @@
         "product":"model-output",
         "realm":"atmos",
         "table_date":"18 November 2020",
-        "table_id":"Table Amon"
+        "table_id":"Table obs4MIPs_Amon"
     },
     "variable_entry":{
         "ccb":{
