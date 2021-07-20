@@ -247,6 +247,8 @@ Oday['Header']['table_id']  = 'Table obs4MIPs_Oday'
 SIday['Header']['table_id'] = 'Table obs4MIPs_SIday'
 SIday['Header']['realm']    = 'seaIce'
 
+#realm = eval(realm)
+
 # Clean out modeling_realm
 for jsonName in [Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx]:
   try:
@@ -492,6 +494,9 @@ for key in source_id['source_id'].keys():
         if val not in eval(region)['region']['region']:  # region:
             print('Invalid region for entry:',key,'- aborting')
             sys.exit()
+
+
+
     # Validate product   
 #   vals = source_id['source_id'][key]['product']
 #   for val in vals:
@@ -553,17 +558,38 @@ for jsonName in masterTargets:
     if jsonName in ['grid_label']: jsonDict['grid_label']  = eval(jsonDict['grid_label'])
     if jsonName in ['nominal_resolution']: jsonDict['nominal_resolution']  = eval(jsonDict['nominal_resolution'])
     if jsonName in ['product']: jsonDict['product']  = eval(jsonDict['product'])
-    if jsonName in ['realm']: jsonDict['realm']  = eval(jsonDict['realm'])
-    if jsonName in ['region']: jsonDict['region']  = eval(jsonDict['region'])
+
+#   if jsonName in ['product']: 
+#     if isinstance(jsonDict[jsonName],list):
+#      try:
+#       jsonDict[jsonName] = jsonDict[jsonName]
+#      except:
+#       pass
+
+    if jsonName in ['realm','region']: 
+      jsonDict[jsonName]  = eval(jsonDict[jsonName])
+      try:
+       if isinstance(jsonDict[jsonName][jsonName],list):
+        jsonDict[jsonName] = jsonDict[jsonName][jsonName]  
+      except:
+       pass
+      try:
+       if isinstance(jsonDict[jsonName][jsonName][jsonName],list):
+        jsonDict[jsonName] = jsonDict[jsonName][jsonName][jsonName]   
+      except:
+       pass
+ 
+      print(jsonName,' ---------------- ', jsonDict[jsonName])
+#   if jsonName in ['region']: jsonDict['region']  = eval(jsonDict['region'])
 
 
 #   print('starting ', fH,' ', jsonDict.keys(),' ' ,type(jsonDict))
-    print('starting ', fH,' ', type(jsonDict),jsonDict)
+#   print('starting ', fH,' ', type(jsonDict),jsonDict)
 
 #   json.dump(jsonDict,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
     json.dump(jsonDict,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'))
 
-    print(fH,' ','DONE------------------')
+#   print(fH,' ','DONE------------------')
 
     fH.close()
 
