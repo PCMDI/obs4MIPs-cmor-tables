@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
         "realm":[
             "aerosol",
             "atmos",
@@ -9,4 +10,16 @@
             "ocnBgchem",
             "seaIce"
         ]
+=======
+    "realm":[
+        "aerosol",
+        "atmos",
+        "atmosChem",
+        "land",
+        "landIce",
+        "ocean",
+        "ocnBgchem",
+        "seaIce"
+    ]
+>>>>>>> 202_pjg_fixtablenames
 }

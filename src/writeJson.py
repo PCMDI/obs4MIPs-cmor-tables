@@ -148,8 +148,8 @@ tableSource = [
  ['A3hr','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_3hr.json'], 
  ['Oday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Oday.json'],
  ['SIday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_SIday.json'],
- ['monNobs','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monNobs.json'],
- ['monStderr','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monStderr.json'],
+#['monNobs','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monNobs.json'],
+#['monStderr','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monStderr.json'],
  ['region','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_region.json'],
  ['realm','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_realm.json'],
  ['source_type','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_source_type.json'],
@@ -230,15 +230,24 @@ Lmon['Header']['realm']     = 'land'
 Omon['Header']['realm']     = 'ocean'
 SImon['Header']['realm']    = 'seaIce'
 fx['Header']['realm']       = 'fx'
+A3hr['Header']['realm']     = 'atmos'
+A6hr['Header']['realm']     = 'atmos'
+Oday['Header']['realm']     = 'ocean'
+SIday['Header']['realm']    = 'seaIce'
+
+Amon['Header']['table_id']  = 'Table obs4MIPs_Amon'
+Lmon['Header']['table_id']  = 'Table obs4MIPs_Lmon'
+Omon['Header']['table_id']  = 'Table obs4MIPs_Omon'
+SImon['Header']['table_id']  = 'Table obs4MIPs_SImon'
+fx['Header']['table_id']  = 'Table obs4MIPs_fx'
 Aday['Header']['table_id']  = 'Table obs4MIPs_Aday'
 A3hr['Header']['table_id']  = 'Table obs4MIPs_A3hr'
 A6hr['Header']['table_id']  = 'Table obs4MIPs_A6hr'
-A3hr['Header']['realm']     = 'atmos'
-A6hr['Header']['realm']     = 'atmos'
 Oday['Header']['table_id']  = 'Table obs4MIPs_Oday'
-Oday['Header']['realm']     = 'ocean'
 SIday['Header']['table_id'] = 'Table obs4MIPs_SIday'
 SIday['Header']['realm']    = 'seaIce'
+
+#realm = eval(realm)
 
 # Clean out modeling_realm
 for jsonName in [Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx]:
@@ -482,9 +491,12 @@ for key in source_id['source_id'].keys():
     # Validate region
     vals = source_id['source_id'][key]['region']
     for val in vals:
-        if val not in eval(region)['region']:  # region:
+        if val not in eval(region)['region']['region']:  # region:
             print('Invalid region for entry:',key,'- aborting')
             sys.exit()
+
+
+
     # Validate product   
 #   vals = source_id['source_id'][key]['product']
 #   for val in vals:
@@ -546,17 +558,38 @@ for jsonName in masterTargets:
     if jsonName in ['grid_label']: jsonDict['grid_label']  = eval(jsonDict['grid_label'])
     if jsonName in ['nominal_resolution']: jsonDict['nominal_resolution']  = eval(jsonDict['nominal_resolution'])
     if jsonName in ['product']: jsonDict['product']  = eval(jsonDict['product'])
-    if jsonName in ['realm']: jsonDict['realm']  = eval(jsonDict['realm'])
-    if jsonName in ['region']: jsonDict['region']  = eval(jsonDict['region'])
+
+#   if jsonName in ['product']: 
+#     if isinstance(jsonDict[jsonName],list):
+#      try:
+#       jsonDict[jsonName] = jsonDict[jsonName]
+#      except:
+#       pass
+
+    if jsonName in ['realm','region']: 
+      jsonDict[jsonName]  = eval(jsonDict[jsonName])
+      try:
+       if isinstance(jsonDict[jsonName][jsonName],list):
+        jsonDict[jsonName] = jsonDict[jsonName][jsonName]  
+      except:
+       pass
+      try:
+       if isinstance(jsonDict[jsonName][jsonName][jsonName],list):
+        jsonDict[jsonName] = jsonDict[jsonName][jsonName][jsonName]   
+      except:
+       pass
+ 
+      print(jsonName,' ---------------- ', jsonDict[jsonName])
+#   if jsonName in ['region']: jsonDict['region']  = eval(jsonDict['region'])
 
 
 #   print('starting ', fH,' ', jsonDict.keys(),' ' ,type(jsonDict))
-    print('starting ', fH,' ', type(jsonDict),jsonDict)
+#   print('starting ', fH,' ', type(jsonDict),jsonDict)
 
 #   json.dump(jsonDict,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'),encoding="utf-8")
     json.dump(jsonDict,fH,ensure_ascii=True,sort_keys=True,indent=4,separators=(',',':'))
 
-    print(fH,' ','DONE------------------')
+#   print(fH,' ','DONE------------------')
 
     fH.close()
 
