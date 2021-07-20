@@ -1,5 +1,5 @@
 {
-#    "realm":{
+    "realm":{
         "realm":[
             "aerosol",
             "atmos",
@@ -10,5 +10,5 @@
             "ocnBgchem",
             "seaIce"
         ]
-#    }
+    }
 }
