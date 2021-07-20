@@ -140,13 +140,11 @@
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
-        "product":{
-            "product":[
-                "derived",
-                "observations",
-                "reanalysis"
-            ]
-        },
+        "product":[
+            "derived",
+            "observations",
+            "reanalysis"
+        ],
         "realm":[
             "aerosol",
             "atmos",
