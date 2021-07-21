@@ -1,7 +1,7 @@
 {
     "source_id":{
         "20CR":{
-            "institution_id":"NOAA-ESRL/PSD",
+            "institution_id":"NOAA-ESRL-PSD",
             "region":[
                 "global"
             ],
@@ -99,7 +99,7 @@
             "source_version_number":"v04.2"
         },
         "CERES-EBAF-4-0":{
-            "institution_id":"NASA/LaRC",
+            "institution_id":"NASA-LaRC",
             "region":[
                 "global"
             ],
@@ -118,7 +118,7 @@
             "source_version_number":"4.0"
         },
         "CERES-EBAF-4-1":{
-            "institution_id":"NASA/LaRC",
+            "institution_id":"NASA-LaRC",
             "region":[
                 "global"
             ],
