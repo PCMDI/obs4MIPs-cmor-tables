@@ -397,7 +397,7 @@ for s in source_id_orig['source_id'].keys():
 source_id['source_id']['20CR']['institution_id'] = 'NOAA-ESRL-PSD' 
 source_id['source_id']['CERES-EBAF-4-0']['institution_id'] = 'NASA-LaRC'
 source_id['source_id']['CERES-EBAF-4-1']['institution_id'] = 'NASA-LaRC'
-
+source_id['source_id']['CERES-EBAF-4-1']['institution_id'] = 'NASA-LaRC--PCMDI'
 
 #w = sys.stdin.readline()
 
@@ -650,7 +650,12 @@ obs4MIPs_CV = {}
 obs4MIPs_CV['CV'] = {}
 for count,CV in enumerate(CVJsonList):
     # Create source entry from source_id
-    if CV == 'source_id': obs4MIPs_CV['CV']['source_id'] = source_id['source_id'] 
+    if CV == 'source_id': 
+      obs4MIPs_CV['CV']['source_id'] = source_id['source_id'] 
+
+      for s in obs4MIPs_CV['CV']['source_id'].keys():
+        obs4MIPs_CV['CV']['source_id'][s]['source'] = obs4MIPs_CV['CV']['source_id'][s]['source_description'] 
+
     if CV == 'source_idd':
         source_id_ = source_id['source_id']
         obs4MIPs_CV['CV']['source_id'] = {}

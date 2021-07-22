@@ -118,7 +118,7 @@
             "source_version_number":"4.0"
         },
         "CERES-EBAF-4-1":{
-            "institution_id":"NASA-LaRC",
+            "institution_id":"NASA-LaRC--PCMDI",
             "region":[
                 "global"
             ],
