@@ -248,3 +248,18 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['prw']
 source_id['source_id'][key]['source_version_number'] = '6.6.0'
 
+key = 'REMSS-PRW-v07r01'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'REMSS-PRW 7.0 (2019): Water Vapor Path'
+source_id['source_id'][key]['institution_id'] = 'RSS'
+source_id['source_id'][key]['release_year'] = '2017'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'REMSS-PRW'
+source_id['source_id'][key]['source_name'] = 'REMSS-PRW'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['prw']
+source_id['source_id'][key]['source_version_number'] = '7.1'
+
+
+

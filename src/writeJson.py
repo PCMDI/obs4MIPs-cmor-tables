@@ -398,6 +398,7 @@ source_id['source_id']['20CR']['institution_id'] = 'NOAA-ESRL-PSD'
 source_id['source_id']['CERES-EBAF-4-0']['institution_id'] = 'NASA-LaRC'
 source_id['source_id']['CERES-EBAF-4-1']['institution_id'] = 'NASA-LaRC'
 source_id['source_id']['CERES-EBAF-4-1']['institution_id'] = 'NASA-LaRC--PCMDI'
+source_id['source_id']['TropFlux-1-0']['institution_id'] = 'ESSO--PCMDI'
 
 #w = sys.stdin.readline()
 

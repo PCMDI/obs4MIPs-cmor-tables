@@ -18,5 +18,6 @@ institution_id['institution_id']['CNES'] = "Centre national d'etudes spatiales"
 institution_id['institution_id']['ImperialCollege'] = 'Imperial College, London, U.K.'
 institution_id['institution_id']['UReading'] = 'University of Reading, Reading, U.K.'
 institution_id['institution_id']['UW'] = 'University of Washington, USA'
-institution_id['institution_id']['NASA-LaRC--PCMDI'] = 'NASA-LaRC (Langley Research Center) Hampton, Va'
+institution_id['institution_id']['NASA-LaRC--PCMDI'] = 'NASA-LaRC data processed at PCMDI'
+institution_id['institution_id']['ESSO--PCMDI'] = 'ESSO data processed at PCMDI'
 

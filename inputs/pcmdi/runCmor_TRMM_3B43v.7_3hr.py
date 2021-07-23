@@ -7,7 +7,7 @@ cdm.setAutoBounds('on') # Caution, this attempts to automatically set coordinate
 #import pdb ; # Debug statement - import if enabling below
 
 #%% User provided input
-cmorTable = '../Tables/PMPObs_A3hr.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+cmorTable = '../../Tables/obs4MIPs_A3hr.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'TRMM_3B43v.7-input_3hr.json' ; # Update contents of this file to set your global_attributes
 inputFilePathbgn = '/p/user_pub/pmp/pmp_obs_preparation/orig/data/'
 inputFilePathend = '/TRMM_3hr_ccovey/gpfs/fs1/p/cgd/cas/zhangyx/TRMM.3HRLY/'   # '/TRMM_3B43v.7_mo_03162018/python_rewrite/'

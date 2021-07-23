@@ -18,6 +18,7 @@ for l in lst:   #[0:2]:
 
 # LOAD DICTIONARY CONTENTS 
  try:  
+#for a in [1]:
    f =  open(l,'r')
    d = json.load(f)
    f.close()
@@ -25,12 +26,27 @@ for l in lst:   #[0:2]:
 ###########
 # THIS IS THE INFO THAT GETS MODIFIED
    d['outpath'] = '/p/user_pub/PCMDIobs/'
-   d['activity_id'] = 'PCMDIobs2'
    d['curation_provenance'] = 'work-in-progress'
-   d['output_file_template'] = '<variable_id><frequency><source_id><variant_label><grid_label><version>'
-   d['_controlled_vocabulary_file'] = d['_control_vocabulary_file']
+#  d['output_file_template'] = '<variable_id><frequency><source_id><variant_label><grid_label><version>'
+#  d['_controlled_vocabulary_file'] = d['_control_vocabulary_file']
 
-   d.pop('_control_vocabulary_file')
+   d['output_file_template'] = "<variable_id><frequency><source_id><variant_label><grid_label>"
+   d['output_path_template'] = "<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>" 
+   d["variant_label"] = "PCMDI"
+   d["product"] = "observations"
+   d["activity_id"] = "obs4MIPs"
+   d["license"] = "Data in this file processed for obs4MIPs by PCMDI and is for research purposes only."
+   d["_AXIS_ENTRY_FILE"] = "obs4MIPs_coordinate.json"
+   d["_FORMULA_VAR_FILE"] = "obs4MIPs_formula_terms.json"
+   d["_controlled_vocabulary_file"] = "obs4MIPs_CV.json"
+   d["institution_id"] =  d["institution_id"] + '--PCMDI'
+   d["institution"] = 'tmp' 
+
+
+#  try:
+#   d.pop('_control_vocabulary_file')
+#  except:
+#   pass
 
 ###########
 ### SAVE CHANGED VALUES
