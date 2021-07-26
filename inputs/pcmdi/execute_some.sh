@@ -13,4 +13,4 @@ python runCmor_GPCP2.3.py
 python runCmor_ERA40_2D.py
 
 
-chmod -R 755 /p/user_pub/pmp/PCMDIobs 
+chmod -R 755 /p/user_pub/pmp/PCMDIobs/obs4MIPs

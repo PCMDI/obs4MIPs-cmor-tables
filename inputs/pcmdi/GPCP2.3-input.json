@@ -12,7 +12,7 @@
     "grid":"2.5x2.5 degree latitude x longitude",
     "grid_label":"gn",
     "history":"",
-    "institution_id":"NOAA",
+    "institution_id":"NOAA-ESRL-PSD",
     "license":"Data in this file processed for obs4MIPs by PCMDI and is for research purposes only.",
     "nominal_resolution":"250 km",
     "outpath":"/p/user_pub/PCMDIobs/",
