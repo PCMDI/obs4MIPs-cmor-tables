@@ -109,6 +109,7 @@
             "NOAA-NCEI":"NOAA National Centers for Environmental Information, Asheville, NC 28801, USA",
             "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
             "RSS":"Remote Sensing Systems, Santa Rosa, CA 95401, USA",
+            "RSS--PCMDI":"RSS data processed at PCMDI",
             "UReading":"University of Reading, Reading, U.K.",
             "UW":"University of Washington, USA"
         },
@@ -374,7 +375,7 @@
                 "source_version_number":"4.0"
             },
             "CERES-EBAF-4-1":{
-                "institution_id":"NASA-LaRC--PCMDI",
+                "institution_id":"NASA-LaRC",
                 "region":[
                     "global"
                 ],
@@ -1293,6 +1294,24 @@
                 ],
                 "source_version_number":"6.6.0"
             },
+            "REMSS-PRW-v07r01":{
+                "institution":"RSS data prepared by PCMDI for obs4MIPs",
+                "institution_id":"RSS",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2017",
+                "source":"REMSS-PRW 7.0 (2019): Water Vapor Path",
+                "source_description":"REMSS-PRW 7.0 (2019): Water Vapor Path",
+                "source_id":"REMSS-PRW-v07r01",
+                "source_label":"REMSS-PRW",
+                "source_name":"REMSS-PRW",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "prw"
+                ],
+                "source_version_number":"7.1"
+            },
             "RSS-v7":{
                 "institution_id":"RSS",
                 "region":[
@@ -1381,7 +1400,7 @@
                 "source_version_number":"v7-7A"
             },
             "TropFlux-1-0":{
-                "institution_id":"ESSO--PCMDI",
+                "institution_id":"ESSO",
                 "region":[
                     "global_ocean"
                 ],

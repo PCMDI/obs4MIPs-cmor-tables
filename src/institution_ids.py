@@ -20,4 +20,5 @@ institution_id['institution_id']['UReading'] = 'University of Reading, Reading, 
 institution_id['institution_id']['UW'] = 'University of Washington, USA'
 institution_id['institution_id']['NASA-LaRC--PCMDI'] = 'NASA-LaRC data processed at PCMDI'
 institution_id['institution_id']['ESSO--PCMDI'] = 'ESSO data processed at PCMDI'
+institution_id['institution_id']['RSS--PCMDI'] = 'RSS data processed at PCMDI'
 

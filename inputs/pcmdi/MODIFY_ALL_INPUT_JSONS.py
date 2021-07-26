@@ -39,8 +39,8 @@ for l in lst:   #[0:2]:
    d["_AXIS_ENTRY_FILE"] = "obs4MIPs_coordinate.json"
    d["_FORMULA_VAR_FILE"] = "obs4MIPs_formula_terms.json"
    d["_controlled_vocabulary_file"] = "obs4MIPs_CV.json"
-   d["institution_id"] =  d["institution_id"] + '--PCMDI'
-   d["institution"] = 'tmp' 
+#  d["institution_id"] =  d["institution_id"] + '--PCMDI'
+#  d["institution"] = 'tmp' 
 
 
 #  try:

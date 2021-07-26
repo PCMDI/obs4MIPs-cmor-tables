@@ -18,6 +18,7 @@
         "NOAA-NCEI":"NOAA National Centers for Environmental Information, Asheville, NC 28801, USA",
         "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
         "RSS":"Remote Sensing Systems, Santa Rosa, CA 95401, USA",
+        "RSS--PCMDI":"RSS data processed at PCMDI",
         "UReading":"University of Reading, Reading, U.K.",
         "UW":"University of Washington, USA"
     }

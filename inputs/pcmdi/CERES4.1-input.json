@@ -7,7 +7,7 @@
     "activity_id":"obs4MIPs",
     "calendar":"gregorian",
     "comment":"",
-    "institution_id":"NASA-LaRC--PCMDI",
+    "institution_id":"NASA-LaRC",
     "contact":"PCMDI (pcmdi-metrics@llnl.gov)",
     "curation_provenance":"work-in-progress",
     "grid":"1x1 degree latitude x longitude",
