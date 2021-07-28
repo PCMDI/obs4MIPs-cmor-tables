@@ -285,6 +285,41 @@ for var in SIday['variable_entry'].keys():
 sys.exit()
 '''
 
+Amon['variable_entry'][u'rltcre'] = {}
+Amon['variable_entry']['rltcre']['cell_measures'] = ''
+Amon['variable_entry']['rltcre']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['rltcre']['comment'] = ''
+Amon['variable_entry']['rltcre']['dimensions'] = 'longitude latitude time'
+Amon['variable_entry']['rltcre']['frequency'] = 'mon'
+Amon['variable_entry']['rltcre']['long_name'] = 'Top of Atmosphere Longwave CRE'
+Amon['variable_entry']['rltcre']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['rltcre']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['rltcre']['out_name'] = 'rltcre'
+Amon['variable_entry']['rltcre']['positive'] = 'up'
+Amon['variable_entry']['rltcre']['standard_name'] = 'TOA_LW_cloud_forcing'
+Amon['variable_entry']['rltcre']['type'] = 'real'
+Amon['variable_entry']['rltcre']['units'] = 'W m-2'
+Amon['variable_entry']['rltcre']['valid_max'] = ''
+Amon['variable_entry']['rltcre']['valid_min'] = ''
+
+# Add new variables
+# Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics)
+Amon['variable_entry'][u'rstcre'] = {}
+Amon['variable_entry']['rstcre']['cell_measures'] = ''
+Amon['variable_entry']['rstcre']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['rstcre']['comment'] = ''
+Amon['variable_entry']['rstcre']['dimensions'] = 'longitude latitude time'
+Amon['variable_entry']['rstcre']['frequency'] = 'mon'
+Amon['variable_entry']['rstcre']['long_name'] = 'Top of Atmosphere Shortwave CRE'
+Amon['variable_entry']['rstcre']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['rstcre']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['rstcre']['out_name'] = 'rstcre'
+Amon['variable_entry']['rstcre']['positive'] = 'up'
+Amon['variable_entry']['rstcre']['standard_name'] = 'TOA_SW_cloud_forcing'
+Amon['variable_entry']['rstcre']['type'] = 'real'
+Amon['variable_entry']['rstcre']['units'] = 'W m-2'
+Amon['variable_entry']['rstcre']['valid_max'] = ''
+Amon['variable_entry']['rstcre']['valid_min'] = ''
 
 Amon['variable_entry'][u'rt'] = {}
 Amon['variable_entry']['rt']['cell_measures'] = ''

@@ -41,10 +41,10 @@ python runCmor_GPCP_v1.3_da.py
 python runCmor_TRMM_3B43v.7_3hr.py
 ###python CMORPH_V1.0_3hr.py
 
-python runCmor_ERA5_2d_CREATEIP.py
-python runCmor_ERA5_alllevs_CREATEIP.py
+#python runCmor_ERA5_2d_CREATEIP.py
+#python runCmor_ERA5_alllevs_CREATEIP.py
 
 
 ######################
-chmod -R 755 /p/user_pub/PCMDIobs/PCMDIobs2
+chmod -R 755 /p/user_pub/PCMDIobs/obs4MIPs
 

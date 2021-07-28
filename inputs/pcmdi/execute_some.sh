@@ -26,7 +26,7 @@ python runCmor_HadISSTv1.1.py
 
 # 3HR Data
 
-python runCmor_TRMM_3B43v.7_3hr.py
+#python runCmor_TRMM_3B43v.7_3hr.py
 
 
 
