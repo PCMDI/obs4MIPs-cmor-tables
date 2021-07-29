@@ -222,6 +222,7 @@ A3hr = eval(A3hr)
 A6hr = eval(A6hr)
 Oday = eval(Oday)
 SIday = eval(SIday)
+#coordinate = eval(coordinate)
 
 Amon['Header']['realm']     = 'atmos'
 Amon['variable_entry'].pop('pfull')
@@ -284,6 +285,106 @@ for var in SIday['variable_entry'].keys():
     print var
 sys.exit()
 '''
+'''
+coordinate[u'plev37_ERA5'] = {}
+coordinate['plev37_ERA5']['axis'] = 'Z'
+coordinate['plev37_ERA5']['out_name'] = 'plev'
+coordinate['plev37_ERA5']['standard_name']='air_pressure'
+coordinate['plev37_ERA5']['long_name']='pressure'
+coordinate['plev37_ERA5']['stored_direction']='decreasing'
+coordinate['plev37_ERA5']['positive']='down'
+coordinate['plev37_ERA5']['units']='Pa'
+coordinate['plev37_ERA5']['bounds_values']= ''
+coordinate['plev37_ERA5']['climatology']= ''
+coordinate['plev37_ERA5']['generic_level_name']= ''
+coordinate['plev37_ERA5']['must_have_bounds']= 'no'
+coordinate['plev37_ERA5']['forumula']= ''
+coordinate['plev37_ERA5']["requested_bounds"]=""
+coordinate['plev37_ERA5']["standard_name"]="air_pressure"
+coordinate['plev37_ERA5']["stored_direction"]="decreasing"
+coordinate['plev37_ERA5']["tolerance"]=""
+coordinate['plev37_ERA5']["type"]="double"
+coordinate['plev37_ERA5']["units"]="Pa"
+coordinate['plev37_ERA5']["valid_max"]=""
+coordinate['plev37_ERA5']["valid_min"]=""
+coordinate['plev37_ERA5']["value"]=""
+coordinate['plev37_ERA5']["z_bounds_factors"]=""
+coordinate['plev37_ERA5']["z_factors"]=""
+coordinate['plev37_ERA5']['requested'] = [ "100000.", "97500.", "95000.", "92500.", "90000.", "87500.", "85000.", "82500.", "80000.", "77500.", "75000.", "70000.", "65000.", "60000.", "55000.", "50000.", "45000.", "40000.", "35000.", "30000.", "25000.", "22500.", "20000.", "17500.", "15000.", "12500.", "10000.", "7000.", "5000.", "3000.", "2000.", "1000.", "700.", "500.", "300.", "200.", "100."]
+'''
+
+
+Amon['variable_entry']['uaplev37_ERA5'] = {}
+Amon['variable_entry']['uaplev37_ERA5']['cell_measures'] = ''
+Amon['variable_entry']['uaplev37_ERA5']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['uaplev37_ERA5']['comment'] = ''
+Amon['variable_entry']['uaplev37_ERA5']['dimensions'] = 'longitude latitude plev37_ERA5 time'
+Amon['variable_entry']['uaplev37_ERA5']['frequency'] = 'mon'
+Amon['variable_entry']['uaplev37_ERA5']['long_name'] = 'Eastward Wind'
+Amon['variable_entry']['uaplev37_ERA5']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['uaplev37_ERA5']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['uaplev37_ERA5']['out_name'] = 'ua'
+Amon['variable_entry']['uaplev37_ERA5']['positive'] = ''
+Amon['variable_entry']['uaplev37_ERA5']['standard_name'] = 'eastward_wind'
+Amon['variable_entry']['uaplev37_ERA5']['type'] = 'real'
+Amon['variable_entry']['uaplev37_ERA5']['units'] = 'm s-1'
+Amon['variable_entry']['uaplev37_ERA5']['valid_max'] = ''
+Amon['variable_entry']['uaplev37_ERA5']['valid_min'] = ''
+
+Amon['variable_entry']['vaplev37_ERA5'] = {}
+Amon['variable_entry']['vaplev37_ERA5']['cell_measures'] = ''
+Amon['variable_entry']['vaplev37_ERA5']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['vaplev37_ERA5']['comment'] = ''
+Amon['variable_entry']['vaplev37_ERA5']['dimensions'] = 'longitude latitude plev37_ERA5 time'
+Amon['variable_entry']['vaplev37_ERA5']['frequency'] = 'mon'
+Amon['variable_entry']['vaplev37_ERA5']['long_name'] = 'Northward Wind'
+Amon['variable_entry']['vaplev37_ERA5']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['vaplev37_ERA5']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['vaplev37_ERA5']['out_name'] = 'va'
+Amon['variable_entry']['vaplev37_ERA5']['positive'] = ''
+Amon['variable_entry']['vaplev37_ERA5']['standard_name'] = 'northward_wind'
+Amon['variable_entry']['vaplev37_ERA5']['type'] = 'real'
+Amon['variable_entry']['vaplev37_ERA5']['units'] = 'm s-1'
+Amon['variable_entry']['vaplev37_ERA5']['valid_max'] = ''
+Amon['variable_entry']['vaplev37_ERA5']['valid_min'] = ''
+
+
+Amon['variable_entry']['zgplev37_ERA5'] = {}
+Amon['variable_entry']['zgplev37_ERA5']['cell_measures'] = ''
+Amon['variable_entry']['zgplev37_ERA5']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['zgplev37_ERA5']['comment'] = ''
+Amon['variable_entry']['zgplev37_ERA5']['dimensions'] = 'longitude latitude plev37_ERA5 time'
+Amon['variable_entry']['zgplev37_ERA5']['frequency'] = 'mon'
+Amon['variable_entry']['zgplev37_ERA5']['long_name'] = 'Geopotential Height'
+Amon['variable_entry']['zgplev37_ERA5']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['zgplev37_ERA5']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['zgplev37_ERA5']['out_name'] = 'zg'
+Amon['variable_entry']['zgplev37_ERA5']['positive'] = ''
+Amon['variable_entry']['zgplev37_ERA5']['standard_name'] = 'geopotential_height'
+Amon['variable_entry']['zgplev37_ERA5']['type'] = 'real'
+Amon['variable_entry']['zgplev37_ERA5']['units'] = 'm'
+Amon['variable_entry']['zgplev37_ERA5']['valid_max'] = ''
+Amon['variable_entry']['zgplev37_ERA5']['valid_min'] = ''
+
+# Add new variables
+
+Amon['variable_entry']['taplev37_ERA5'] = {}
+Amon['variable_entry']['taplev37_ERA5']['cell_measures'] = ''
+Amon['variable_entry']['taplev37_ERA5']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['taplev37_ERA5']['comment'] = ''
+Amon['variable_entry']['taplev37_ERA5']['dimensions'] = 'longitude latitude plev37_ERA5 time'
+Amon['variable_entry']['taplev37_ERA5']['frequency'] = 'mon'
+Amon['variable_entry']['taplev37_ERA5']['long_name'] = 'Temperature'
+Amon['variable_entry']['taplev37_ERA5']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['taplev37_ERA5']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['taplev37_ERA5']['out_name'] = 'ta'
+Amon['variable_entry']['taplev37_ERA5']['positive'] = ''
+Amon['variable_entry']['taplev37_ERA5']['standard_name'] = 'air_temperature'
+Amon['variable_entry']['taplev37_ERA5']['type'] = 'real'
+Amon['variable_entry']['taplev37_ERA5']['units'] = 'K'
+Amon['variable_entry']['taplev37_ERA5']['valid_max'] = ''
+Amon['variable_entry']['taplev37_ERA5']['valid_min'] = ''
+
 
 Amon['variable_entry'][u'rltcre'] = {}
 Amon['variable_entry']['rltcre']['cell_measures'] = ''
@@ -640,7 +741,7 @@ for jsonName in masterTargets:
         jsonDict = eval(jsonName)
 
     fH = open(outFile,'w')
-    if jsonName in ['coordinate','formula_terms','grids']: jsonDict = eval(jsonDict)
+    if jsonName in ['formula_terms','grids','coordinate']: jsonDict = eval(jsonDict)
     if jsonName in ['frequency']: jsonDict['frequency']  = eval(jsonDict['frequency'])
     if jsonName in ['grid_label']: jsonDict['grid_label']  = eval(jsonDict['grid_label'])
     if jsonName in ['nominal_resolution']: jsonDict['nominal_resolution']  = eval(jsonDict['nominal_resolution'])

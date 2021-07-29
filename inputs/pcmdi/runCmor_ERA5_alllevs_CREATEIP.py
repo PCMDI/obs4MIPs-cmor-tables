@@ -17,7 +17,8 @@ inputFilePathend = ['']
 inputFileName = ['ua_ERA5.xml','va_ERA5.xml','ta_ERA5.xml','zg_ERA5.xml']
 inputVarName = ['ua','va']  #,'ta','zg']
 inputVarName = ['ta','zg']
-  
+inputVarName = ['ua']
+ 
 outputVarName = ['uaplev37_ERA5'] 
 outputUnits = ['m s-1','m s-1','K','m']
 
