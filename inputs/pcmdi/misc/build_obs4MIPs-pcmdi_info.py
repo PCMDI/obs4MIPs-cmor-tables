@@ -15,38 +15,66 @@ import datetime
 
 ver = datetime.datetime.now().strftime('v%Y%m%d')
 
+verin = 'v20210727'
+verin = 'latest'
+#verin = 'v20210804'
 
 ###############################################################
-datatype = 'clim'  #'timeSeries'
-#datatype = 'timeSeries'
-datatype = 'monthly'
-#datatype = 'day'
+datatype = 'clim'  
+#datatype = 'monthly'
+datatype = 'day'
 #datatype = '3hr'
-
 
 if len(sys.argv) > 1:
     data_path = sys.argv[1]
 else:
-#   data_path = '/work/gleckler1/processed_data/obs'
-    data_path = '/p/user_pub/PCMDIobs/PCMDIobs2/'
+    data_path = '/p/user_pub/PCMDIobs/obs4MIPs/'
 
 if datatype == 'clim': 
-    data_path = '/p/user_pub/PCMDIobs/PCMDIobs2_clims/'
-    comb = data_path + '/atmos/mon/*/*/*/*/climo/*AC.nc'
-    comb = data_path + 'atmos/*/*/*AC.nc'
+    data_path = '/p/user_pub/PCMDIobs/obs4MIPs_clims/'
+    comb = data_path + '/*/*/' + verin + '/*_*AC.*nc'
 
-#if datatype == 'timeSeries': comb = data_path + '/atmos/mon/*/*/gn/*/*.nc'
-#if datatype == 'timeSeries': comb = data_path + '/*/mon/*/*/*/*/*.nc'
-if datatype == 'monthly': comb = data_path + '*/mon/*/*/*/*/*.nc'
-if datatype == 'day': comb = data_path + 'atmos/day/*/*/*/*/*.nc'
-if datatype == '3hr': comb = data_path + 'atmos/3hr/*/*/*/*/*.nc'
+if datatype == 'monthly': comb = data_path + '*/*/mon/*/*/' + verin + '/*.nc' 
+if datatype == 'day': comb = data_path + '*/*/day/*/*/' + verin + '/*.nc'
+if datatype == '3hr': comb = data_path + '*/*/3hr/*/*/' + verin + '/*.xml'
 
 pathout = '/p/user_pub/PCMDIobs/catalogue/'
 
-#lst = glob.glob(os.path.join(data_path, '/atmos/mon/rlut/*/gn/*/ac/*.nc'))
+lstt = glob.glob(comb)
+lst = []
 
-lst = glob.glob(comb)
+##### DO NOT INCLUDE CASES WITH MULTIPLE NC FILES - THOSE ARE ADDED AS XMLS IN SEPERATE SCRIPT
+for l in lstt:
+  print(l.split('/'))
+  source_tmp = l.split('/')[6]
+  if datatype != 'clim':
+   vr  = l.split('/')[8]
+   gr  = l.split('/')[9]
+  if datatype == 'clim':
+   vr  = l.split('/')[5]
+#  gr  = l.split('/')[9]
+#  w = sys.stdin.readline()
 
+# print(source_tmp,' ', vr)
+  if datatype == 'monthly':
+    if source_tmp !='ERA-5': lst.append(l)
+    if source_tmp =='ERA-5' and vr not in ['ua','va','ta','zg']: lst.append(l)
+    if source_tmp =='ERA-5' and vr in ['ua','va','ta','zg']:
+       tmpdir = os.path.dirname(l)
+       xfile = glob.glob(tmpdir + '/*.xml')[0] 
+       if xfile not in lst and xfile.find('1x1') !=-1:  
+         lst.append(xfile)
+         print('xfile is ', xfile)
+
+  if datatype == 'day': lst.append(l)
+  if datatype == '3hr': lst.append(l)
+
+if datatype == 'clim': lst = lstt
+
+#################################################################
+
+print ('len of list ', len(lst))
+#w = sys.stdin.readline()
 
 
 # FOR MONTHLY MEAN OBS
@@ -117,81 +145,85 @@ obs_dic = {}
 
 for filePath in lst:
     subp = filePath.split('/')
+    tmp = os.path.dirname(filePath)
+    versiontmp = os.readlink(tmp)
+    template = filePath.split(data_path)[1]
+    template = template.replace('latest',versiontmp)
+    version = 'latest'
+
     if datatype != 'clim':
-     template = filePath.split(data_path)[1]
-     realm = subp[5]
-     var = subp[7]
-     product = subp[8]
+#    template = filePath.split(data_path)[1]
+#    realm = subp[5]
+     source = subp[6] 
+     var = subp[8]
+     product = source  #subp[8]
      grid = subp[9]
 
+#    tmp = os.path.dirname(filePath)
+#    versiontmp = os.readlink(tmp)
+#    template = template.replace('latest',versiontmp)
+#    version = 'latest' 
+
+#    w = sys.stdin.readline()
+
+##########
     if datatype == 'clim':
-     template = filePath.split(data_path)[1]
-     realm = subp[5]
-     var = subp[6]
-     product = subp[7]
-     grid = subp[8].split('_')[4]
+#    template = filePath.split(data_path)[1]
+#    realm = subp[5]
+     print('subp is ', subp)
+     var = subp[5]
+     source = subp[6]
+     product = source 
+     tmp1 = subp[8]
+     tmp2 = tmp1.split('_')[4]
+     grid = tmp2.split('.')[0]
+     period = tmp2.split('.')[1]
+#    version = subp[7] 
 
 
-    # Assign tableId
-    if realm == 'atmos':
-        tableId = 'Amon'
-    elif realm == 'ocean':   #'ocn':
-        tableId = 'Omon'
-    elif realm == 'fx':
-        tableId = 'fx'
-    print('tableId:', tableId)
-    print('subp:', subp)
-    print('var:', var)
-    print('product:', product)
-
+#    w = sys.stdin.readline()
+###########
     fileName = subp[len(subp)-1]
     print('Filename:', fileName)
-    # Fix rgd2.5_ac issue
-    fileName = fileName.replace('rgd2.5_ac', 'ac')
-    if '-clim' in fileName:
-        period = fileName.split('_')[-1]
-    # Fix durack1 formatted files
-    elif 'sftlf_pcmdi-metrics_fx' in fileName:
-        period = fileName.split('_')[-1]
-        period = period.replace('.nc', '')
-    else:
-        period = fileName.split('_')[-1]
-    period = period.replace('-clim.nc', '')  # .replace('ac.nc','')
-    period = period.replace('.nc','')
-    print('period:', period)
 
     if datatype == 'clim':  period = period.split('.')[0]
-
+    if datatype in ['monthly','day']:
+      tmp1 = fileName.split('_')[5]
+      period = tmp1.split('.nc')[0]
+    if datatype == '3hr':
+      tmp1 = fileName.split('_')[4]
+      period = tmp1.split('.xml')[0]
+#     print('3hr period is ', period)
+#   w = sys.stdin.readline()
 
     # TRAP FILE NAME FOR OBS DATA
     if var not in list(obs_dic.keys()):
+#       print('CREATING FOR ---- ', var,' ', product,' ', obs_dic.keys())
         obs_dic[var] = {}
-    if product not in list(obs_dic[var].keys()) and os.path.isfile(filePath):
-#       if isinstance(obs_dic[var][product],dict) is False: obs_dic[var][product] = {}
-#       obs_dic[var][product][grid] = {}
 
-        obs_dic[var][product] = {}
+    if product not in list(obs_dic[var].keys()): obs_dic[var][product] = {}
 
-        obs_dic[var][product]['template'] = template 
-        obs_dic[var][product]['filename'] = fileName
-        obs_dic[var][product]['CMIP_CMOR_TABLE'] = tableId
-        obs_dic[var][product]['period'] = period
-        obs_dic[var][product]['RefName'] = product
-        obs_dic[var][product]['RefTrackingDate'] = time.ctime(
-            os.path.getmtime(filePath.strip()))
-        md5 = os.popen('md5sum ' + filePath)
-        md5 = md5.readlines()[0].split()[0]
-        obs_dic[var][product]['MD5sum'] = md5
-        f = cdms2.open(filePath)
-        d = f(var)
-        shape = d.shape
-        f.close()
-        shape = repr(d.shape)
-        obs_dic[var][product]['shape'] = shape
-        print('md5:', md5)
-        print('')
-        del(d, fileName)
-        gc.collect()
+#   obs_dic[var][product]['version'] = version 
+    obs_dic[var][product]['template'] = template 
+    obs_dic[var][product]['filename'] = fileName
+#   obs_dic[var][product]['CMIP_CMOR_TABLE'] = tableId
+    obs_dic[var][product]['period'] = period
+#       obs_dic[var][product]['RefName'] = source 
+    obs_dic[var][product]['RefTrackingDate'] = time.ctime(os.path.getmtime(filePath.strip()))
+    md5 = os.popen('md5sum ' + filePath)
+    md5 = md5.readlines()[0].split()[0]
+    obs_dic[var][product]['MD5sum'] = md5
+    f = cdms2.open(filePath)
+    table_id = f.table_id
+    d = f[var]
+    shape = d.shape
+    shape = repr(d.shape)
+    obs_dic[var][product]['CMIP_CMOR_TABLE'] = table_id.replace('obs4MIPs_','')
+    f.close()
+    obs_dic[var][product]['shape'] = shape
+    obs_dic[var][product]['shape'] = shape
+    del(d, fileName)
+    gc.collect()
 
     try:
         for r in list(obs_dic_in[var].keys()):
@@ -202,25 +234,37 @@ for filePath in lst:
                 obs_dic[var][r] = product
     except BaseException:
         pass
-#del(filePath, lst, md5, period, product, r, realm, shape, subp, tableId, var)
-#del(filePath, lst, md5, period, product, realm, shape, subp, tableId, var)
 
 gc.collect()
-# pdb.set_trace()
+
+# ADD SPECIAL CASE SFTLF FROM TEST DIR
+#product = 'UKMETOFFICE-HadISST-v1-1'
+#var = 'sftlf'
+#obs_dic[var][product] = {}
+#obs_dic[var][product]['CMIP_CMOR_TABLE'] = 'fx'
+#obs_dic[var][product]['shape'] = '(180, 360)'
+#obs_dic[var][product]['filename'] = \
+#    'sftlf_pcmdi-metrics_fx_UKMETOFFICE-HadISST-v1-1_198002-200501-clim.nc'
+#obs_dic[var][product]['RefName'] = product
+#obs_dic[var][product]['MD5sum'] = ''
+#obs_dic[var][product]['RefTrackingDate'] = ''
+#obs_dic[var][product]['period'] = '198002-200501'
+#del(product, var)
+#gc.collect()
 
 # Save dictionary locally and in doc subdir
 if datatype == 'clim':  
-  json_name = pathout + 'pcmdiobs2_clims_byVar_catalogue_' + ver + '.json'
-  json_name_GH = '../catalogue/' + 'pcmdiobs2_clims_byVar_catalogue_' + ver + '.json'
+  json_name = pathout + 'obs4MIPs_PCMDI_clims_byVar_catalogue_' + ver + '.json'
+  json_name_GH = '../catalogue/' + 'obs4MIPs_PCMDI_clims_byVar_catalogue_' + ver + '.json'
 if datatype == 'monthly':  
-  json_name = pathout + 'pcmdiobs_monthly_byVar_catalogue_' + ver + '.json'
-  json_name_GH = '../catalogue/' + 'pcmdiobs_monthly_byVar_catalogue_' + ver + '.json'
+  json_name = pathout + 'obs4MIPs_PCMDI_monthly_byVar_catalogue_' + ver + '.json'
+  json_name_GH = '../catalogue/' + 'obs4MIPs_PCMDI_monthly_byVar_catalogue_' + ver + '.json'
 if datatype == 'day':  
-  json_name = pathout + 'pcmdiobs_day_byVar_catalogue_' + ver + '.json'
-  json_name_GH = '../catalogue/' + 'pcmdiobs_day_byVar_catalogue_' + ver + '.json'
+  json_name = pathout + 'obs4MIPs_PCMDI_day_byVar_catalogue_' + ver + '.json'
+  json_name_GH = '../catalogue/' + 'obs4MIPs_PCMDI_day_byVar_catalogue_' + ver + '.json'
 if datatype == '3hr':  
-  json_name = pathout + 'pcmdiobs_3hr_byVar_catalogue_' + ver + '.json'
-  json_name_GH = '../catalogue/'  + 'pcmdiobs_3hr_byVar_catalogue_' + ver + '.json'
+  json_name = pathout + 'obs4MIPs_PCMDI_3hr_byVar_catalogue_' + ver + '.json'
+  json_name_GH = '../catalogue/'  + 'obs4MIPs_PCMDI_3hr_byVar_catalogue_' + ver + '.json'
 
 json.dump(obs_dic, open(json_name, 'w'), sort_keys=True, indent=4,
           separators=(',', ': '))

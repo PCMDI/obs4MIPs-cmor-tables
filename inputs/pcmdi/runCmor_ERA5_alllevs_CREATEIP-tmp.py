@@ -15,19 +15,16 @@ inputFilePathbgn = '/p/user_pub/pmp/pmp_obs_preparation/orig/data/ERA5-CREATEIP/
 
 inputFilePathend = ['']
 inputFileName = ['ua_ERA5.xml','va_ERA5.xml','ta_ERA5.xml','zg_ERA5.xml']
-inputFileName = ['ta_ERA5.xml','zg_ERA5.xml']
-inputFileName = ['zg_ERA5.xml']
+inputFileName = ['va_ERA5.xml','ta_ERA5.xml','zg_ERA5.xml']
 
 inputVarName = ['ua','va']  #,'ta','zg']
-inputVarName = ['zg']
-#inputVarName = ['va','ta','zg']
+inputVarName = ['ta','zg']
+inputVarName = ['va','ta','zg']
  
-outputVarName = ['zgplev37_ERA5']
-#outputVarName = ['vaplev37_ERA5','taplev37_ERA5','zgplev37_ERA5'] 
-#outputVarName = ['taplev37_ERA5','zgplev37_ERA5']
+outputVarName = ['uaplev37_ERA5']
+outputVarName = ['vaplev37_ERA5','taplev37_ERA5','zgplev37_ERA5'] 
  
 outputUnits = ['m s-1','K','m']
-outputUnits = ['m']
 
 
 ### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE...

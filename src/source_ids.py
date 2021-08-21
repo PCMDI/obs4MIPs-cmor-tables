@@ -261,5 +261,16 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['prw']
 source_id['source_id'][key]['source_version_number'] = '7.1'
 
-
+key = 'PERSIANN-CDRv1r1'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'PERSIANN-CDRv1r1 (2019): Precipitation'
+source_id['source_id'][key]['institution_id'] = 'NOAA'
+source_id['source_id'][key]['release_year'] = '2019'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'PERSIANN'
+source_id['source_id'][key]['source_name'] = 'PERSIANN'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['pr']
+source_id['source_id'][key]['source_version_number'] = 'CDRv1r1'
 

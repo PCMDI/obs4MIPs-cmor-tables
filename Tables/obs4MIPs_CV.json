@@ -1259,6 +1259,23 @@
                 ],
                 "source_version_number":"v2"
             },
+            "PERSIANN-CDRv1r1":{
+                "institution_id":"NOAA",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2019",
+                "source":"PERSIANN-CDRv1r1 (2019): Precipitation",
+                "source_description":"PERSIANN-CDRv1r1 (2019): Precipitation",
+                "source_id":"PERSIANN-CDRv1r1",
+                "source_label":"PERSIANN",
+                "source_name":"PERSIANN",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"CDRv1r1"
+            },
             "QuikSCAT-v20110531":{
                 "institution_id":"NASA-JPL",
                 "region":[
