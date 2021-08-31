@@ -7,10 +7,10 @@ cdm.setAutoBounds('on') # Caution, this attempts to automatically set coordinate
 
 #%% User provided input
 cmorTable = '../../Tables/obs4MIPs_Aday.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
-inputJson = 'PERSIANN_CDRv1r1_da-input.json' ; # Update contents of this file to set your global_attributes
+inputJson = 'GPCP_1DD_CDR_v1.3_FROGS_da-input.json' ; # Update contents of this file to set your global_attributes
 inputFilePathbgn = '/p/user_pub/pmp/pmp_obs_preparation/orig/data/FROGS_precip/'
-inputFilePathend = '/PERSIANN_v1_r1/'
-inputFileName = ['PERSIANN-CDRv1r1.1DD.1983-2018.xml']
+inputFilePathend = '/GPCP_1DD_CDR_v1.3_v20210823/'
+inputFileName = ['GPCP_CDR_1996-2020.xml']
 inputVarName = ['rain']
 outputVarName = ['pr']
 outputUnits = ['kg m-2 s-1']
@@ -24,7 +24,7 @@ for fi in range(len(inputVarName)):
   f = cdm.open(inputFilePath+inputFileName[fi])
   d = f(inputVarName[fi])
   d = MV2.where(MV2.equal(d, np.nan), 1.e20, d)
-  d = MV2.divide(d,86400.)  # CONVERT mm/day to kg m-2 s-1
+  d = MV2.divide(d,86400.) 
   lat = d.getLatitude()
   lon = d.getLongitude()
   print(d.shape)
@@ -33,9 +33,9 @@ for fi in range(len(inputVarName)):
 
 # Deal with problematic "months since" calendar/time axis
   time_bounds = time.getBounds()
-  time_bounds[:,0] = time[:]
-  time_bounds[:-1,1] = time[1:]
-  time_bounds[-1,1] = time_bounds[-1,0]+1
+# time_bounds[:,0] = time[:]
+# time_bounds[:-1,1] = time[1:]
+# time_bounds[-1,1] = time_bounds[-1,0]+1
 #####time.setBounds() #####time_bounds)
 #####del(time_bounds) ; # Cleanup
 

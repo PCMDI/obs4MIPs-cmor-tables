@@ -5,7 +5,9 @@ import time
 
 ## TIME SERIES
 pin = '/p/user_pub/PCMDIobs/obs4MIPs/'
-lst = glob.glob(pin + '*/*/*/*/*/')
+#lst = glob.glob(pin + '*/*/*/*/*/')
+lst = glob.glob(pin + '*/*/day/*/*/')
+
 
 ### CLIMS
 #pin = '/p/user_pub/PCMDIobs/obs4MIPs_clims/'
@@ -17,11 +19,6 @@ for l in lst:
    vers = os.listdir(pthi)
    latest = sorted(vers)[-1]
    print(pthi,'   ', vers,'   ', latest)
-
-#  try:
-#   os.popen('rm ' + pthi + '/latest').readlines()
-#  except:
-#   pass
 
    os.chdir(pthi)
 

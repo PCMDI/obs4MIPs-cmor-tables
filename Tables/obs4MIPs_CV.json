@@ -98,6 +98,7 @@
             "ESSO--PCMDI":"ESSO data processed at PCMDI",
             "INCOIS-NIO-IPSL":"Joint research colloboration between INCOIS(India), NIO(India) and IPSL(France)",
             "ImperialCollege":"Imperial College, London, U.K.",
+            "JAXA":"The Japan Aerospace Exploration Agency",
             "MOHC":"Met Office Hadley Centre",
             "MRI":"Meteorological Research Institute, Tsukuba, Ibaraki 305-0052, Japan",
             "NASA-GSFC":"NASA Goddard Space Flight Center, Greenbelt MD, USA",
@@ -427,6 +428,23 @@
                     "pr"
                 ],
                 "source_version_number":"1.0"
+            },
+            "CMORPH-1-0-CRT":{
+                "institution_id":"NOAA",
+                "region":[
+                    "global"
+                ],
+                "release_year":"N/A",
+                "source":"NOAA CMORPH prepared for FROGS",
+                "source_description":"NOAA CMORPH prepared for FROGS",
+                "source_id":"CMORPH-1-0-CRT",
+                "source_label":"CMORPH",
+                "source_name":"CMORPH",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"1.0-CRT"
             },
             "CMSAF-CLARA-A-2-1":{
                 "institution_id":"DWD",
@@ -835,6 +853,23 @@
                 ],
                 "source_version_number":"1.3"
             },
+            "GPCP-1DD-CDR-v1-3":{
+                "institution_id":"NASA-GSFC",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2017",
+                "source":"Daily GPCP CDR prepared for FROGS",
+                "source_description":"Daily GPCP CDR prepared for FROGS",
+                "source_id":"GPCP-1DD-CDR-v1-3",
+                "source_label":"GPCP",
+                "source_name":"GPCP",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"1.3"
+            },
             "GPCP-2-3":{
                 "institution_id":"NOAA-NCEI",
                 "region":[
@@ -851,6 +886,23 @@
                     "pr"
                 ],
                 "source_version_number":"2.3"
+            },
+            "GPCP-IP":{
+                "institution_id":"NASA-GSFC",
+                "region":[
+                    "global"
+                ],
+                "release_year":"N/A",
+                "source":"NASA GPCP prepared for FROGS",
+                "source_description":"NASA GPCP prepared for FROGS",
+                "source_id":"GPCP-IP",
+                "source_label":"GPCP",
+                "source_name":"GPCP",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"1.3"
             },
             "GPCP-SG":{
                 "institution_id":"NASA-GSFC",
@@ -884,6 +936,23 @@
                 ],
                 "source_version_number":"2.3"
             },
+            "GSMAP-gauges-NRT-v6-0":{
+                "institution_id":"JAXA",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2017",
+                "source":"JAXA GSMAP prepared for FROGS",
+                "source_description":"JAXA GSMAP prepared for FROGS",
+                "source_id":"GSMAP-gauges-NRT-v6-0",
+                "source_label":"GSMAP",
+                "source_name":"GSMAP",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"6.0"
+            },
             "HadISST-1-1":{
                 "institution_id":"MOHC",
                 "region":[
@@ -900,6 +969,74 @@
                     "ts"
                 ],
                 "source_version_number":"1-1"
+            },
+            "IMERG-V06-EU":{
+                "institution_id":"NASA-GSFC",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2017",
+                "source":"NASA IMERG prepared for FROGS",
+                "source_description":"NASA IMERG prepared for FROGS",
+                "source_id":"IMERG-V06-EU",
+                "source_label":"IMERG-V06-EU",
+                "source_name":"IMERG-V06-EU",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"V06-EU"
+            },
+            "IMERG-V06-FC":{
+                "institution_id":"NASA-GSFC",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2017",
+                "source":"NASA IMERG prepared for FROGS",
+                "source_description":"NASA IMERG prepared for FROGS",
+                "source_id":"IMERG-V06-FC",
+                "source_label":"IMERG-V06-EU",
+                "source_name":"IMERG-V06-EU",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"V06-FC"
+            },
+            "IMERG-V06-FU":{
+                "institution_id":"NASA-GSFC",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2017",
+                "source":"NASA IMERG prepared for FROGS",
+                "source_description":"NASA IMERG prepared for FROGS",
+                "source_id":"IMERG-V06-FU",
+                "source_label":"IMERG-V06-FU",
+                "source_name":"IMERG-V06-FU",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"V06-FU"
+            },
+            "IMERG-V06-LU":{
+                "institution_id":"NASA-GSFC",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2017",
+                "source":"NASA IMERG prepared for FROGS",
+                "source_description":"NASA IMERG prepared for FROGS",
+                "source_id":"IMERG-V06-LU",
+                "source_label":"IMERG-V06-LU",
+                "source_name":"IMERG-V06-LU",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"V06-LU"
             },
             "IMERG-v06B-Final":{
                 "institution_id":"NASA-GSFC",
@@ -1364,6 +1501,57 @@
                     "tro3"
                 ],
                 "source_version_number":"1.0"
+            },
+            "TRMM-3B42-IR-v7-0":{
+                "institution_id":"NASA-GSFC",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2017",
+                "source":"NASA-TRMM prepared for FROGS",
+                "source_description":"NASA-TRMM prepared for FROGS",
+                "source_id":"TRMM-3B42-IR-v7-0",
+                "source_label":"TRMM",
+                "source_name":"TRMM",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"3B42.IR.v7.0"
+            },
+            "TRMM-3B42-MW-v7-0":{
+                "institution_id":"NASA-GSFC",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2017",
+                "source":"NASA-TRMM prepared for FROGS",
+                "source_description":"NASA-TRMM prepared for FROGS",
+                "source_id":"TRMM-3B42-MW-v7-0",
+                "source_label":"TRMM",
+                "source_name":"TRMM",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"3B42.MW.v7.0"
+            },
+            "TRMM-3B42v-7":{
+                "institution_id":"NASA-GSFC",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2017",
+                "source":"NASA-TRMM prepared for FROGS",
+                "source_description":"NASA-TRMM prepared for FROGS",
+                "source_id":"TRMM-3B42v-7",
+                "source_label":"TRMM",
+                "source_name":"TRMM",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"3B42v.7"
             },
             "TRMM-3B43v-7":{
                 "institution_id":"NASA-GSFC",
