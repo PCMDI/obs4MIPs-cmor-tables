@@ -286,6 +286,7 @@ for var in SIday['variable_entry'].keys():
 sys.exit()
 '''
 
+'''
 Amon['variable_entry']['uaplev37_ERA5'] = {}
 Amon['variable_entry']['uaplev37_ERA5']['cell_measures'] = ''
 Amon['variable_entry']['uaplev37_ERA5']['cell_methods'] = 'time: mean'
@@ -356,7 +357,7 @@ Amon['variable_entry']['taplev37_ERA5']['type'] = 'real'
 Amon['variable_entry']['taplev37_ERA5']['units'] = 'K'
 Amon['variable_entry']['taplev37_ERA5']['valid_max'] = ''
 Amon['variable_entry']['taplev37_ERA5']['valid_min'] = ''
-
+'''
 
 Amon['variable_entry'][u'rltcre'] = {}
 Amon['variable_entry']['rltcre']['cell_measures'] = ''
@@ -601,7 +602,33 @@ for keyVal in source_id['source_id'].keys():
 
 ## ADDING obs4MIPs1.0
 ###################################################################################
-
+'''
+coordinate['plev37_ERA5'] = {}
+coordinate['plev37_ERA5']['axis'] = 'Z'
+coordinate['plev37_ERA5']['out_name'] = 'plev'
+coordinate['plev37_ERA5']['standard_name']='air_pressure'
+coordinate['plev37_ERA5']['long_name']='pressure'
+coordinate['plev37_ERA5']['stored_direction']='decreasing'
+coordinate['plev37_ERA5']['positive']='down'
+coordinate['plev37_ERA5']['units']='Pa'
+coordinate['plev37_ERA5']['bounds_values']= ''
+coordinate['plev37_ERA5']['climatology']= ''
+coordinate['plev37_ERA5']['generic_level_name']= ''
+coordinate['plev37_ERA5']['must_have_bounds']= 'no'
+coordinate['plev37_ERA5']['forumula']= ''
+coordinate['plev37_ERA5']["requested_bounds"]=""
+coordinate['plev37_ERA5']["standard_name"]="air_pressure"
+coordinate['plev37_ERA5']["stored_direction"]="decreasing"
+coordinate['plev37_ERA5']["tolerance"]=""
+coordinate['plev37_ERA5']["type"]="double"
+coordinate['plev37_ERA5']["units"]="Pa"
+coordinate['plev37_ERA5']["valid_max"]=""
+coordinate['plev37_ERA5']["valid_min"]=""
+coordinate['plev37_ERA5']["value"]=""
+coordinate['plev37_ERA5']["z_bounds_factors"]=""
+coordinate['plev37_ERA5']["z_factors"]=""
+coordinate['plev37_ERA5']['requested'] = [ "100000.", "97500.", "95000.", "92500.", "90000.", "87500.", "85000.", "82500.", "80000.", "77500.", "75000.", "70000.", "65000.", "60000.", "55000.", "50000.", "45000.", "40000.", "35000.", "30000.", "25000.", "22500.", "20000.", "17500.", "15000.", "12500.", "10000.", "7000.", "5000.", "3000.", "2000.", "1000.", "700.", "500.", "300.", "200.", "100."]
+'''
 
 #%% Source type
 source_type = {}
@@ -740,6 +767,35 @@ for jsonName in masterTargets:
        pass
       print(jsonName,' ---------------- ', jsonDict[jsonName])
 
+      if jsonName in ['yyyycoordznate']:
+        jsonDict['coordinate']['plev37_ERA5'] = {}
+        jsonDict['coordinate']['plev37_ERA5']['axis'] = 'Z'
+        jsonDict['coordinate']['plev37_ERA5']['out_name'] = 'plev'
+        jsonDict['coordinate']['plev37_ERA5']['standard_name']='air_pressure'
+        jsonDict['coordinate']['plev37_ERA5']['long_name']='pressure'
+        jsonDict['coordinate']['plev37_ERA5']['stored_direction']='decreasing'
+        jsonDict['coordinate']['plev37_ERA5']['positive']='down'
+        jsonDict['coordinate']['plev37_ERA5']['units']='Pa'
+        jsonDict['coordinate']['plev37_ERA5']['bounds_values']= ''
+        jsonDict['coordinate']['plev37_ERA5']['climatology']= ''
+        jsonDict['coordinate']['plev37_ERA5']['generic_level_name']= ''
+        jsonDict['coordinate']['plev37_ERA5']['must_have_bounds']= 'no'
+        jsonDict['coordinate']['plev37_ERA5']['forumula']= ''
+        jsonDict['coordinate']['plev37_ERA5']["requested_bounds"]=""
+        jsonDict['coordinate']['plev37_ERA5']["standard_name"]="air_pressure"
+        jsonDict['coordinate']['plev37_ERA5']["stored_direction"]="decreasing"
+        jsonDict['coordinate']['plev37_ERA5']["tolerance"]=""
+        jsonDict['coordinate']['plev37_ERA5']["type"]="double"
+        jsonDict['coordinate']['plev37_ERA5']["units"]="Pa"
+        jsonDict['coordinate']['plev37_ERA5']["valid_max"]=""
+        jsonDict['coordinate']['plev37_ERA5']["valid_min"]=""
+        jsonDict['coordinate']['plev37_ERA5']["value"]=""
+        jsonDict['coordinate']['plev37_ERA5']["z_bounds_factors"]=""
+        jsonDict['coordinate']['plev37_ERA5']["z_factors"]=""
+        jsonDict['coordinate']['plev37_ERA5']['requested'] = [ "100000.", "97500.", "95000.", "92500.", "90000.", "87500.", "85000.", "82500.", "80000.", "77500.", "75000.", "70000.", "65000.", "60000.", "55000.", "50000.", "45000.", "40000.", "35000.", "30000.", "25000.", "22500.", "20000.", "17500.", "15000.", "12500.", "10000.", "7000.", "5000.", "3000.", "2000.", "1000.", "700.", "500.", "300.", "200.", "100."]
+        print('coord dic is '), jsonDict.keys()
+
+
 #   if jsonName in ['region']: jsonDict['region']  = eval(jsonDict['region'])
 #   print('starting ', fH,' ', jsonDict.keys(),' ' ,type(jsonDict))
     print('starting ', fH,' ', type(jsonDict))   #,jsonDict)
@@ -777,7 +833,7 @@ tableList = ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon','c
 
 # Load dictionaries from local files
 CVJsonList = copy.deepcopy(inputJson)
-CVJsonList.remove('coordinate')
+#CVJsonList.remove('coordinate')
 CVJsonList.remove('grids')
 CVJsonList.remove('formula_terms')
 CVJsonList.remove('Aday')

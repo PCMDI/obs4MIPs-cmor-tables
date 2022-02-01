@@ -21,13 +21,13 @@
                 "yrPt":"sampled yearly, at specified time point within the time period"
             },
             "version_metadata":{
-                "CV_collection_modified":"Mon Jul 26 10:57:20 2021 -0700",
-                "CV_collection_version":"6.2.56.4",
-                "author":"Paul J. Durack <durack1@llnl.gov>",
+                "CV_collection_modified":"Wed Jan 19 16:48:00 2022 00000",
+                "CV_collection_version":"6.2.56.7",
+                "author":"Matthew Mizielinski <matthew.mizielinski@metoffice.gov.uk>",
                 "frequency_CV_modified":"Mon May 24 13:48:15 2021 00100",
                 "frequency_CV_note":"Update description of 3hr and 6hr frequencies",
-                "institution_id":"PCMDI",
-                "previous_commit":"5afeb3ffd3b98e23b9c2ff76015fc7c87a5dbd71",
+                "institution_id":"MOHC",
+                "previous_commit":"0d11ab0b5c745f9a6824f63ef317458d62d7df53",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -80,13 +80,13 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-                "CV_collection_modified":"Mon Jul 26 10:57:20 2021 -0700",
-                "CV_collection_version":"6.2.56.4",
-                "author":"Paul J. Durack <durack1@llnl.gov>",
+                "CV_collection_modified":"Wed Jan 19 16:48:00 2022 00000",
+                "CV_collection_version":"6.2.56.7",
+                "author":"Matthew Mizielinski <matthew.mizielinski@metoffice.gov.uk>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
-                "institution_id":"PCMDI",
-                "previous_commit":"5afeb3ffd3b98e23b9c2ff76015fc7c87a5dbd71",
+                "institution_id":"MOHC",
+                "previous_commit":"0d11ab0b5c745f9a6824f63ef317458d62d7df53",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -134,13 +134,13 @@
                 "5000 km"
             ],
             "version_metadata":{
-                "CV_collection_modified":"Mon Jul 26 10:57:20 2021 -0700",
-                "CV_collection_version":"6.2.56.4",
-                "author":"Paul J. Durack <durack1@llnl.gov>",
-                "institution_id":"PCMDI",
+                "CV_collection_modified":"Wed Jan 19 16:48:00 2022 00000",
+                "CV_collection_version":"6.2.56.7",
+                "author":"Matthew Mizielinski <matthew.mizielinski@metoffice.gov.uk>",
+                "institution_id":"MOHC",
                 "nominal_resolution_CV_modified":"Tues Nov 15 16:04:00 2016 -0700",
                 "nominal_resolution_CV_note":"Issue141 durack1 update grid_resolution to nominal_resolution (#143)",
-                "previous_commit":"5afeb3ffd3b98e23b9c2ff76015fc7c87a5dbd71",
+                "previous_commit":"0d11ab0b5c745f9a6824f63ef317458d62d7df53",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
