@@ -222,6 +222,7 @@ A3hr = eval(A3hr)
 A6hr = eval(A6hr)
 Oday = eval(Oday)
 SIday = eval(SIday)
+#coordinate = eval(coordinate)
 
 Amon['Header']['realm']     = 'atmos'
 Amon['variable_entry'].pop('pfull')
@@ -284,6 +285,152 @@ for var in SIday['variable_entry'].keys():
     print var
 sys.exit()
 '''
+
+'''
+Amon['variable_entry']['uaplev37_ERA5'] = {}
+Amon['variable_entry']['uaplev37_ERA5']['cell_measures'] = ''
+Amon['variable_entry']['uaplev37_ERA5']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['uaplev37_ERA5']['comment'] = ''
+Amon['variable_entry']['uaplev37_ERA5']['dimensions'] = 'longitude latitude plev37_ERA5 time'
+Amon['variable_entry']['uaplev37_ERA5']['frequency'] = 'mon'
+Amon['variable_entry']['uaplev37_ERA5']['long_name'] = 'Eastward Wind'
+Amon['variable_entry']['uaplev37_ERA5']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['uaplev37_ERA5']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['uaplev37_ERA5']['out_name'] = 'ua'
+Amon['variable_entry']['uaplev37_ERA5']['positive'] = ''
+Amon['variable_entry']['uaplev37_ERA5']['standard_name'] = 'eastward_wind'
+Amon['variable_entry']['uaplev37_ERA5']['type'] = 'real'
+Amon['variable_entry']['uaplev37_ERA5']['units'] = 'm s-1'
+Amon['variable_entry']['uaplev37_ERA5']['valid_max'] = ''
+Amon['variable_entry']['uaplev37_ERA5']['valid_min'] = ''
+
+Amon['variable_entry']['vaplev37_ERA5'] = {}
+Amon['variable_entry']['vaplev37_ERA5']['cell_measures'] = ''
+Amon['variable_entry']['vaplev37_ERA5']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['vaplev37_ERA5']['comment'] = ''
+Amon['variable_entry']['vaplev37_ERA5']['dimensions'] = 'longitude latitude plev37_ERA5 time'
+Amon['variable_entry']['vaplev37_ERA5']['frequency'] = 'mon'
+Amon['variable_entry']['vaplev37_ERA5']['long_name'] = 'Northward Wind'
+Amon['variable_entry']['vaplev37_ERA5']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['vaplev37_ERA5']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['vaplev37_ERA5']['out_name'] = 'va'
+Amon['variable_entry']['vaplev37_ERA5']['positive'] = ''
+Amon['variable_entry']['vaplev37_ERA5']['standard_name'] = 'northward_wind'
+Amon['variable_entry']['vaplev37_ERA5']['type'] = 'real'
+Amon['variable_entry']['vaplev37_ERA5']['units'] = 'm s-1'
+Amon['variable_entry']['vaplev37_ERA5']['valid_max'] = ''
+Amon['variable_entry']['vaplev37_ERA5']['valid_min'] = ''
+
+
+Amon['variable_entry']['zgplev37_ERA5'] = {}
+Amon['variable_entry']['zgplev37_ERA5']['cell_measures'] = ''
+Amon['variable_entry']['zgplev37_ERA5']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['zgplev37_ERA5']['comment'] = ''
+Amon['variable_entry']['zgplev37_ERA5']['dimensions'] = 'longitude latitude plev37_ERA5 time'
+Amon['variable_entry']['zgplev37_ERA5']['frequency'] = 'mon'
+Amon['variable_entry']['zgplev37_ERA5']['long_name'] = 'Geopotential Height'
+Amon['variable_entry']['zgplev37_ERA5']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['zgplev37_ERA5']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['zgplev37_ERA5']['out_name'] = 'zg'
+Amon['variable_entry']['zgplev37_ERA5']['positive'] = ''
+Amon['variable_entry']['zgplev37_ERA5']['standard_name'] = 'geopotential_height'
+Amon['variable_entry']['zgplev37_ERA5']['type'] = 'real'
+Amon['variable_entry']['zgplev37_ERA5']['units'] = 'm'
+Amon['variable_entry']['zgplev37_ERA5']['valid_max'] = ''
+Amon['variable_entry']['zgplev37_ERA5']['valid_min'] = ''
+
+# Add new variables
+
+Amon['variable_entry']['taplev37_ERA5'] = {}
+Amon['variable_entry']['taplev37_ERA5']['cell_measures'] = ''
+Amon['variable_entry']['taplev37_ERA5']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['taplev37_ERA5']['comment'] = ''
+Amon['variable_entry']['taplev37_ERA5']['dimensions'] = 'longitude latitude plev37_ERA5 time'
+Amon['variable_entry']['taplev37_ERA5']['frequency'] = 'mon'
+Amon['variable_entry']['taplev37_ERA5']['long_name'] = 'Temperature'
+Amon['variable_entry']['taplev37_ERA5']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['taplev37_ERA5']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['taplev37_ERA5']['out_name'] = 'ta'
+Amon['variable_entry']['taplev37_ERA5']['positive'] = ''
+Amon['variable_entry']['taplev37_ERA5']['standard_name'] = 'air_temperature'
+Amon['variable_entry']['taplev37_ERA5']['type'] = 'real'
+Amon['variable_entry']['taplev37_ERA5']['units'] = 'K'
+Amon['variable_entry']['taplev37_ERA5']['valid_max'] = ''
+Amon['variable_entry']['taplev37_ERA5']['valid_min'] = ''
+'''
+
+Amon['variable_entry'][u'rltcre'] = {}
+Amon['variable_entry']['rltcre']['cell_measures'] = ''
+Amon['variable_entry']['rltcre']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['rltcre']['comment'] = ''
+Amon['variable_entry']['rltcre']['dimensions'] = 'longitude latitude time'
+Amon['variable_entry']['rltcre']['frequency'] = 'mon'
+Amon['variable_entry']['rltcre']['long_name'] = 'Top of Atmosphere Longwave CRE'
+Amon['variable_entry']['rltcre']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['rltcre']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['rltcre']['out_name'] = 'rltcre'
+Amon['variable_entry']['rltcre']['positive'] = 'up'
+Amon['variable_entry']['rltcre']['standard_name'] = 'TOA_LW_cloud_forcing'
+Amon['variable_entry']['rltcre']['type'] = 'real'
+Amon['variable_entry']['rltcre']['units'] = 'W m-2'
+Amon['variable_entry']['rltcre']['valid_max'] = ''
+Amon['variable_entry']['rltcre']['valid_min'] = ''
+
+# Add new variables
+# Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics)
+Amon['variable_entry'][u'rstcre'] = {}
+Amon['variable_entry']['rstcre']['cell_measures'] = ''
+Amon['variable_entry']['rstcre']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['rstcre']['comment'] = ''
+Amon['variable_entry']['rstcre']['dimensions'] = 'longitude latitude time'
+Amon['variable_entry']['rstcre']['frequency'] = 'mon'
+Amon['variable_entry']['rstcre']['long_name'] = 'Top of Atmosphere Shortwave CRE'
+Amon['variable_entry']['rstcre']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['rstcre']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['rstcre']['out_name'] = 'rstcre'
+Amon['variable_entry']['rstcre']['positive'] = 'up'
+Amon['variable_entry']['rstcre']['standard_name'] = 'TOA_SW_cloud_forcing'
+Amon['variable_entry']['rstcre']['type'] = 'real'
+Amon['variable_entry']['rstcre']['units'] = 'W m-2'
+Amon['variable_entry']['rstcre']['valid_max'] = ''
+Amon['variable_entry']['rstcre']['valid_min'] = ''
+
+Amon['variable_entry'][u'rt'] = {}
+Amon['variable_entry']['rt']['cell_measures'] = ''
+Amon['variable_entry']['rt']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['rt']['comment'] = ''
+Amon['variable_entry']['rt']['dimensions'] = 'longitude latitude time'
+Amon['variable_entry']['rt']['frequency'] = 'mon'
+Amon['variable_entry']['rt']['long_name'] = 'Top of Atmosphere Net Radation'
+Amon['variable_entry']['rt']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['rt']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['rt']['out_name'] = 'rt'
+Amon['variable_entry']['rt']['positive'] = ''
+Amon['variable_entry']['rt']['standard_name'] = 'Net_TOA_Radiation'
+Amon['variable_entry']['rt']['type'] = 'real'
+Amon['variable_entry']['rt']['units'] = 'W m-2'
+Amon['variable_entry']['rt']['valid_max'] = ''
+Amon['variable_entry']['rt']['valid_min'] = ''
+
+# Add new variables
+# Variable sponsor - PCMDI; PjG 
+Amon['variable_entry'][u'hfns'] = {}
+Amon['variable_entry']['hfns']['cell_measures'] = ''
+Amon['variable_entry']['hfns']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['hfns']['comment'] = ''
+Amon['variable_entry']['hfns']['dimensions'] = 'longitude latitude time'
+Amon['variable_entry']['hfns']['frequency'] = 'mon'
+Amon['variable_entry']['hfns']['long_name'] = 'Net Surface Energy'
+Amon['variable_entry']['hfns']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['hfns']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['hfns']['out_name'] = 'hfns'
+Amon['variable_entry']['hfns']['positive'] = ''
+Amon['variable_entry']['hfns']['standard_name'] = 'Net_Surface_Energy'
+Amon['variable_entry']['hfns']['type'] = 'real'
+Amon['variable_entry']['hfns']['units'] = 'W m-2'
+Amon['variable_entry']['hfns']['valid_max'] = ''
+Amon['variable_entry']['hfns']['valid_min'] = ''
+
 
 # monNobs
 #--------
@@ -397,6 +544,13 @@ for s in source_id_orig['source_id'].keys():
 source_id['source_id']['20CR']['institution_id'] = 'NOAA-ESRL-PSD' 
 source_id['source_id']['CERES-EBAF-4-0']['institution_id'] = 'NASA-LaRC'
 source_id['source_id']['CERES-EBAF-4-1']['institution_id'] = 'NASA-LaRC'
+#source_id['source_id']['CERES-EBAF-4-1']['institution_id'] = 'NASA-LaRC--PCMDI'
+source_id['source_id']['TropFlux-1-0']['institution_id'] = 'ESSO'
+
+source_id['source_id']['REMSS-PRW-v07r01']['institution_id'] = 'RSS'
+#source_id['source_id']['REMSS-PRW-v07r01']['institution'] = 'RSS data prepared by PCMDI for obs4MIPs'
+source_id['source_id']['CMAP-V1902']['institution_id'] = 'NOAA-NCEI'
+source_id['source_id']['GPCP-2-3']['institution_id'] = 'NOAA-NCEI'
 
 
 #w = sys.stdin.readline()
@@ -448,7 +602,33 @@ for keyVal in source_id['source_id'].keys():
 
 ## ADDING obs4MIPs1.0
 ###################################################################################
-
+'''
+coordinate['plev37_ERA5'] = {}
+coordinate['plev37_ERA5']['axis'] = 'Z'
+coordinate['plev37_ERA5']['out_name'] = 'plev'
+coordinate['plev37_ERA5']['standard_name']='air_pressure'
+coordinate['plev37_ERA5']['long_name']='pressure'
+coordinate['plev37_ERA5']['stored_direction']='decreasing'
+coordinate['plev37_ERA5']['positive']='down'
+coordinate['plev37_ERA5']['units']='Pa'
+coordinate['plev37_ERA5']['bounds_values']= ''
+coordinate['plev37_ERA5']['climatology']= ''
+coordinate['plev37_ERA5']['generic_level_name']= ''
+coordinate['plev37_ERA5']['must_have_bounds']= 'no'
+coordinate['plev37_ERA5']['forumula']= ''
+coordinate['plev37_ERA5']["requested_bounds"]=""
+coordinate['plev37_ERA5']["standard_name"]="air_pressure"
+coordinate['plev37_ERA5']["stored_direction"]="decreasing"
+coordinate['plev37_ERA5']["tolerance"]=""
+coordinate['plev37_ERA5']["type"]="double"
+coordinate['plev37_ERA5']["units"]="Pa"
+coordinate['plev37_ERA5']["valid_max"]=""
+coordinate['plev37_ERA5']["valid_min"]=""
+coordinate['plev37_ERA5']["value"]=""
+coordinate['plev37_ERA5']["z_bounds_factors"]=""
+coordinate['plev37_ERA5']["z_factors"]=""
+coordinate['plev37_ERA5']['requested'] = [ "100000.", "97500.", "95000.", "92500.", "90000.", "87500.", "85000.", "82500.", "80000.", "77500.", "75000.", "70000.", "65000.", "60000.", "55000.", "50000.", "45000.", "40000.", "35000.", "30000.", "25000.", "22500.", "20000.", "17500.", "15000.", "12500.", "10000.", "7000.", "5000.", "3000.", "2000.", "1000.", "700.", "500.", "300.", "200.", "100."]
+'''
 
 #%% Source type
 source_type = {}
@@ -560,7 +740,7 @@ for jsonName in masterTargets:
         jsonDict = eval(jsonName)
 
     fH = open(outFile,'w')
-    if jsonName in ['coordinate','formula_terms','grids']: jsonDict = eval(jsonDict)
+    if jsonName in ['formula_terms','grids','coordinate']: jsonDict = eval(jsonDict)
     if jsonName in ['frequency']: jsonDict['frequency']  = eval(jsonDict['frequency'])
     if jsonName in ['grid_label']: jsonDict['grid_label']  = eval(jsonDict['grid_label'])
     if jsonName in ['nominal_resolution']: jsonDict['nominal_resolution']  = eval(jsonDict['nominal_resolution'])
@@ -586,6 +766,35 @@ for jsonName in masterTargets:
       except:
        pass
       print(jsonName,' ---------------- ', jsonDict[jsonName])
+
+      if jsonName in ['yyyycoordznate']:
+        jsonDict['coordinate']['plev37_ERA5'] = {}
+        jsonDict['coordinate']['plev37_ERA5']['axis'] = 'Z'
+        jsonDict['coordinate']['plev37_ERA5']['out_name'] = 'plev'
+        jsonDict['coordinate']['plev37_ERA5']['standard_name']='air_pressure'
+        jsonDict['coordinate']['plev37_ERA5']['long_name']='pressure'
+        jsonDict['coordinate']['plev37_ERA5']['stored_direction']='decreasing'
+        jsonDict['coordinate']['plev37_ERA5']['positive']='down'
+        jsonDict['coordinate']['plev37_ERA5']['units']='Pa'
+        jsonDict['coordinate']['plev37_ERA5']['bounds_values']= ''
+        jsonDict['coordinate']['plev37_ERA5']['climatology']= ''
+        jsonDict['coordinate']['plev37_ERA5']['generic_level_name']= ''
+        jsonDict['coordinate']['plev37_ERA5']['must_have_bounds']= 'no'
+        jsonDict['coordinate']['plev37_ERA5']['forumula']= ''
+        jsonDict['coordinate']['plev37_ERA5']["requested_bounds"]=""
+        jsonDict['coordinate']['plev37_ERA5']["standard_name"]="air_pressure"
+        jsonDict['coordinate']['plev37_ERA5']["stored_direction"]="decreasing"
+        jsonDict['coordinate']['plev37_ERA5']["tolerance"]=""
+        jsonDict['coordinate']['plev37_ERA5']["type"]="double"
+        jsonDict['coordinate']['plev37_ERA5']["units"]="Pa"
+        jsonDict['coordinate']['plev37_ERA5']["valid_max"]=""
+        jsonDict['coordinate']['plev37_ERA5']["valid_min"]=""
+        jsonDict['coordinate']['plev37_ERA5']["value"]=""
+        jsonDict['coordinate']['plev37_ERA5']["z_bounds_factors"]=""
+        jsonDict['coordinate']['plev37_ERA5']["z_factors"]=""
+        jsonDict['coordinate']['plev37_ERA5']['requested'] = [ "100000.", "97500.", "95000.", "92500.", "90000.", "87500.", "85000.", "82500.", "80000.", "77500.", "75000.", "70000.", "65000.", "60000.", "55000.", "50000.", "45000.", "40000.", "35000.", "30000.", "25000.", "22500.", "20000.", "17500.", "15000.", "12500.", "10000.", "7000.", "5000.", "3000.", "2000.", "1000.", "700.", "500.", "300.", "200.", "100."]
+        print('coord dic is '), jsonDict.keys()
+
 
 #   if jsonName in ['region']: jsonDict['region']  = eval(jsonDict['region'])
 #   print('starting ', fH,' ', jsonDict.keys(),' ' ,type(jsonDict))
@@ -624,7 +833,7 @@ tableList = ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon','c
 
 # Load dictionaries from local files
 CVJsonList = copy.deepcopy(inputJson)
-CVJsonList.remove('coordinate')
+#CVJsonList.remove('coordinate')
 CVJsonList.remove('grids')
 CVJsonList.remove('formula_terms')
 CVJsonList.remove('Aday')
@@ -649,8 +858,16 @@ for count,CV in enumerate(inputJson):
 obs4MIPs_CV = {}
 obs4MIPs_CV['CV'] = {}
 for count,CV in enumerate(CVJsonList):
+#   if CV == 'institution':
+#      obs4MIPs_CV['CV']['institution'] = source_id['institude_id']
+
     # Create source entry from source_id
-    if CV == 'source_id': obs4MIPs_CV['CV']['source_id'] = source_id['source_id'] 
+    if CV == 'source_id': 
+      obs4MIPs_CV['CV']['source_id'] = source_id['source_id'] 
+
+      for s in obs4MIPs_CV['CV']['source_id'].keys():
+        obs4MIPs_CV['CV']['source_id'][s]['source'] = obs4MIPs_CV['CV']['source_id'][s]['source_description'] 
+
     if CV == 'source_idd':
         source_id_ = source_id['source_id']
         obs4MIPs_CV['CV']['source_id'] = {}
