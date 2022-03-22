@@ -1,5 +1,4 @@
 <img src="assets/imgs/obs4MIPsRLogo.png" width="15%" height="15%" align="right" />
-<h5 align="right"></h5>
 
 # obs4MIPs-cmor-tables
 
