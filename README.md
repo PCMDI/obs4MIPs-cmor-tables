@@ -10,7 +10,7 @@
     - source_id
     - nominal_resolution
     - frequency
-    - required_global_attributes 
+    - many other required_global_attributes 
 
 # Implementation of new source_ids 
 
