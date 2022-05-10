@@ -10,7 +10,7 @@ python runCmor_CERES4.0_2D.py
 python runCmor_CERES4.0_SURFACE_2D.py
 python runCmor_CMAP-V1902.py
 python runCmor_GPCP2.3.py
-python runCmor_RSS_v07r01_2D.py 
+python ./RSS/runCmor_RSS_v07r01_2D.py 
 python runCmor_TRMM_3B43v.7.py
 python runCmor_AVISO-1-0.py
 python runCmor_TropFlux.py
