@@ -14,12 +14,10 @@ institution_id['institution_id']['NCAR'] = 'National Center for Atmospheric Rese
 institution_id['institution_id']['ESSO'] = 'Indian National Centre for Ocean Information Services'
 institution_id['institution_id']['MOHC'] = 'Met Office Hadley Centre'
 institution_id['institution_id']['INCOIS-NIO-IPSL'] =  'Joint research colloboration between INCOIS(India), NIO(India) and IPSL(France)'
+institution_id['institution_id']['ESPRI-IPSL'] =  'Ensemble de Services Pour la Recherche, Institut Pierre Simon Laplace (France)'
 institution_id['institution_id']['CNES'] = "Centre national d'etudes spatiales"
 institution_id['institution_id']['ImperialCollege'] = 'Imperial College, London, U.K.'
 institution_id['institution_id']['UReading'] = 'University of Reading, Reading, U.K.'
 institution_id['institution_id']['UW'] = 'University of Washington, USA'
 institution_id['institution_id']['JAXA'] = 'The Japan Aerospace Exploration Agency'
-institution_id['institution_id']['NASA-LaRC--PCMDI'] = 'NASA-LaRC data processed at PCMDI'
-institution_id['institution_id']['ESSO--PCMDI'] = 'ESSO data processed at PCMDI'
-institution_id['institution_id']['RSS--PCMDI'] = 'RSS data processed at PCMDI'
 
