@@ -21,4 +21,5 @@ Both CMOR and CDAT can be obtained via Conda-forge.  Efforts are currently under
 **Example**
 
 Sample README (txt), input table (json) and script using CDAT and CMOR (python):
+
 https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/inputs/pcmdi/RSS
