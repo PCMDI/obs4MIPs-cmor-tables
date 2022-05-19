@@ -20,4 +20,4 @@ institution_id['institution_id']['ImperialCollege'] = 'Imperial College, London,
 institution_id['institution_id']['UReading'] = 'University of Reading, Reading, U.K.'
 institution_id['institution_id']['UW'] = 'University of Washington, USA'
 institution_id['institution_id']['JAXA'] = 'The Japan Aerospace Exploration Agency'
-
+institution_id['institution_id']['UCI-CHRS'] = 'Center for Hydrometeorology and Remote Sensing'

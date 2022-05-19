@@ -21,13 +21,13 @@
                 "yrPt":"sampled yearly, at specified time point within the time period"
             },
             "version_metadata":{
-                "CV_collection_modified":"Fri Feb 18 16:16:09 2022 -0800",
-                "CV_collection_version":"6.2.56.10",
+                "CV_collection_modified":"Mon May  9 11:03:31 2022 -0700",
+                "CV_collection_version":"6.2.56.12",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "frequency_CV_modified":"Mon May 24 13:48:15 2021 00100",
                 "frequency_CV_note":"Update description of 3hr and 6hr frequencies",
                 "institution_id":"PCMDI",
-                "previous_commit":"ba0173c3a83bb3df5034bf2c5739cc0eb3237622",
+                "previous_commit":"c2c813f65ef217b974996f72ba9c6f2b4eca41f8",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -80,13 +80,13 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-                "CV_collection_modified":"Fri Feb 18 16:16:09 2022 -0800",
-                "CV_collection_version":"6.2.56.10",
+                "CV_collection_modified":"Mon May  9 11:03:31 2022 -0700",
+                "CV_collection_version":"6.2.56.12",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
-                "previous_commit":"ba0173c3a83bb3df5034bf2c5739cc0eb3237622",
+                "previous_commit":"c2c813f65ef217b974996f72ba9c6f2b4eca41f8",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -94,8 +94,8 @@
             "CNES":"Centre national d'etudes spatiales",
             "DWD":"Deutscher Wetterdienst, Offenbach 63067, Germany",
             "ECMWF":"The European Centre for Medium-Range Weather Forecasts, Shinfield Park, Reading RG2 9AX, UK",
+            "ESPRI-IPSL":"Ensemble de Services Pour la Recherche, Institut Pierre Simon Laplace (France)",
             "ESSO":"Indian National Centre for Ocean Information Services",
-            "ESSO--PCMDI":"ESSO data processed at PCMDI",
             "INCOIS-NIO-IPSL":"Joint research colloboration between INCOIS(India), NIO(India) and IPSL(France)",
             "ImperialCollege":"Imperial College, London, U.K.",
             "JAXA":"The Japan Aerospace Exploration Agency",
@@ -104,13 +104,12 @@
             "NASA-GSFC":"NASA Goddard Space Flight Center, Greenbelt MD, USA",
             "NASA-JPL":"NASA Jet Propulsion Laboratory, Pasadena, CA 91109, USA",
             "NASA-LaRC":"NASA-LaRC (Langley Research Center) Hampton, Va",
-            "NASA-LaRC--PCMDI":"NASA-LaRC data processed at PCMDI",
             "NCAR":"National Center for Atmospheric Research, Boulder, CO 80307, USA",
             "NOAA-ESRL-PSD":"NOAA Earth System Research Laboratory, Physical Sciences Division, Boulder, CO 80305, USA",
             "NOAA-NCEI":"NOAA National Centers for Environmental Information, Asheville, NC 28801, USA",
             "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
             "RSS":"Remote Sensing Systems, Santa Rosa, CA 95401, USA",
-            "RSS--PCMDI":"RSS data processed at PCMDI",
+            "UCI-CHRS":"Center for Hydrometeorology and Remote Sensing",
             "UReading":"University of Reading, Reading, U.K.",
             "UW":"University of Washington, USA"
         },
@@ -134,13 +133,13 @@
                 "5000 km"
             ],
             "version_metadata":{
-                "CV_collection_modified":"Fri Feb 18 16:16:09 2022 -0800",
-                "CV_collection_version":"6.2.56.10",
+                "CV_collection_modified":"Mon May  9 11:03:31 2022 -0700",
+                "CV_collection_version":"6.2.56.12",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "institution_id":"PCMDI",
                 "nominal_resolution_CV_modified":"Tues Nov 15 16:04:00 2016 -0700",
                 "nominal_resolution_CV_note":"Issue141 durack1 update grid_resolution to nominal_resolution (#143)",
-                "previous_commit":"ba0173c3a83bb3df5034bf2c5739cc0eb3237622",
+                "previous_commit":"c2c813f65ef217b974996f72ba9c6f2b4eca41f8",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
