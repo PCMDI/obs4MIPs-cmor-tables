@@ -17,3 +17,8 @@ Both CMOR and CDAT can be obtained via Conda-forge.  Efforts are currently under
 3) Create download Readme.txt from which text will be extracted when preparing data
 4) Prepare input table for running CMOR
 5) Prepare python script for reading in data an writing with CMOR.
+
+**Example**
+
+Sample README (txt), input table (json) and script using CDAT and CMOR (python):
+https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/inputs/pcmdi/RSS
