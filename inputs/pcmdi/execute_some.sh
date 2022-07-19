@@ -5,7 +5,7 @@
 # MONTHLY
 
 python runCmor_CERES4.1_SURFACE_2D.py
-python runCmor_CERES4.1_2D.py
+python NASA-LaRC/runCmor_CERES4.1_2D.py
 python runCmor_CERES4.0_SURFACE_2D.py
 python runCmor_CERES4.0_2D.py
 python runCmor_RSS_v07r01_2D.py
