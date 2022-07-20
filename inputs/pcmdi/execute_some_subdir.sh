@@ -4,10 +4,18 @@
 
 # MONTHLY
 
+(cd RSS && runCmor_RSS_v07r01_2D.py)
 (cd NASA-LaRC && python runCmor_CERES4.1_2D.py)
 (cd NASA-LaRC && python runCmor_CERES4.1_SURFACE_2D.py)
 (cd NASA-LaRC && python runCmor_CERES4.0_2D.py)
 (cd NASA-LaRC && python runCmor_CERES4.0_SURFACE_2D.py)
+(cd NOAA-NCEI && python runCmor_OISST-L4-AVHRR-only-v2.py)
+(cd MOHC && python runCmor_HadISSTv1.1.py)
+(cd ESSO && python runCmor_TropFlux.py) 
+(cd CNRS && python runCmor_AVISO-1-0.py)
+(cd MRI && python runCmor_JRA25_2D.py)  
+(cd MRI && python runCmor_JRA25_3D.py)
+
 
 # LONGER TIME SCALE MONTHLY 
 #python runCmor_20CR_2D.py
