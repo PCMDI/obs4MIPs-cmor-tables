@@ -8,8 +8,8 @@ cdm.setAutoBounds('on') # Caution, this attempts to automatically set coordinate
 #import pdb ; # Debug statement - import if enabling below
 
 #%% User provided input
-cmorTable = '../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
-inputJson = 'CERES4.1-input.json' ; # Update contents of this file to set your global_attributes
+cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+inputJson = './CERES4.1-input.json' ; # Update contents of this file to set your global_attributes
 inputFilePathbgn = '/p/user_pub/pmp/pmp_obs_preparation/orig/data/'
 inputFilePathend = '/CERES_EBAF4.1/'
 inputFileName = 'CERES_EBAF-SURFACE_Ed4.1_Subset_200003-201905.nc' 
