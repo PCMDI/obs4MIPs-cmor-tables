@@ -17,6 +17,9 @@
 (cd MRI && python runCmor_JRA25_3D.py)
 (cd ECMWF && python runCmor_ERA5_2d_CREATEIP.py)
 
+# LONGER TIME SCALE MONTHLY 
+(cd ECMWF && python runCmor_ERA20C_2D.py)
+(cd NOAA-ESRL-PSD && python runCmor_20CR_2D.py)
 
 # LONGER TIME SCALE MONTHLY 
 #python runCmor_20CR_2D.py

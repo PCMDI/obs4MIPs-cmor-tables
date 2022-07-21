@@ -6,10 +6,10 @@ cdm.setAutoBounds('on') # Caution, this attempts to automatically set coordinate
 #import pdb ; # Debug statement - import if enabling below
 
 #%% User provided input
-cmorTable = '../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = '20CR-input.json' ; # Update contents of this file to set your global_attributes
 inputFilePathbgn = '/p/user_pub/pmp/pmp_obs_preparation/orig/data/'
-inputFilePathend = '20CR/'
+inputFilePathend = 'NOAA-ESRL-PSD/20CR/'
 inputFileName = ['slp_monthly/prmsl.mon.mean.nc','air_temperature_monthly/air.sfc.mon.mean.nc']
 inputVarName = ['prmsl','air']
 outputVarName = ['psl','ts']
