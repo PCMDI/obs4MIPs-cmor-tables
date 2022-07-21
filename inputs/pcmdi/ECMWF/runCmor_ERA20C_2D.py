@@ -6,7 +6,7 @@ cdm.setAutoBounds('on') # Caution, this attempts to automatically set coordinate
 #import pdb ; # Debug statement - import if enabling below
 
 #%% User provided input
-cmorTable = '../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'ERA20C-input.json' ; # Update contents of this file to set your global_attributes
 inputFilePathbgn = '/p/user_pub/pmp/pmp_obs_preparation/orig/data/'
 inputFilePathend = 'ERA20C/'
@@ -27,7 +27,7 @@ for fi in range(len(inputVarName)):
   lat = d.getLatitude()
   lon = d.getLongitude()
   print (d.shape)
-#time = d.getTime() ; # Assumes variable is named 'time', for the demo file this is named 'months'
+#time = d.getTime() ; # Assumes variable is named 'time', for the demo file this is named 'months
   time = d.getAxis(0) ; # Rather use a file dimension-based load statement
 
 # Deal with problematic "months since" calendar/time axis

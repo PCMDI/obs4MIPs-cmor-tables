@@ -15,6 +15,7 @@
 (cd CNRS && python runCmor_AVISO-1-0.py)
 (cd MRI && python runCmor_JRA25_2D.py)  
 (cd MRI && python runCmor_JRA25_3D.py)
+(cd ECMWF && python runCmor_ERA5_2d_CREATEIP.py)
 
 
 # LONGER TIME SCALE MONTHLY 
