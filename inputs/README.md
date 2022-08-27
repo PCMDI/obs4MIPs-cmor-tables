@@ -1,8 +1,6 @@
 ## Recipie for preparation of obs4MIPs compliant data (work in progress)
 
-Currently, all obs4MIPs compliant data products need to be prepared with [Climate Model Output Rewriter (CMOR)](https://cmor.llnl.gov) 
-
-CMOR can be obtained via conda-forge.  
+Currently, all obs4MIPs compliant data products need to be prepared with [Climate Model Output Rewriter (CMOR)](https://cmor.llnl.gov).  CMOR can be obtained [via conda-forge](https://cmor.llnl.gov/mydoc_cmor3_conda/).  
 
 
 **Recipie overview**
