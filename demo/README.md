@@ -1,8 +1,13 @@
 
 This demo must be run with CMOR 3.2.6 or a more recent version.
 
-CMOR can be obtained via Anaconda at https://anaconda.org/PCMDI/cmor once the user has installed Anaconda (https://continuum.io)
+CMOR can be obtained via Anaconda at https://anaconda.org/conda-forge/cmor once the user has installed Anaconda (https://continuum.io)
 
 More information about CMOR is available at: https://cmor.llnl.gov
 
 If you have any difficulties, please contact us at obs4MIPs-admin@llnl.gov
+
+The current demo uses CDMS2 to read the demo data before sending it to CMOR. CDMS2 is also available via conda-forge at://anaconda.org/conda-forge/cdms2
+
+Demos will also be provide here using software other than CDMS2, e.g., xcdat, xarray, and IRIS.  
+
