@@ -7,7 +7,7 @@ PCMDI prepares some datasets to be made obs4MIPs compliant in support of PCMDI's
 
 [Community Data Analysis Tools (CDAT)](https://cdat.llnl.gov/) (other options are possible)
 
-Both CMOR and CDAT can be obtained via Conda-forge.  Efforts are currently underway to modernize the essential capabilities of CDAT with [XCDAT](https://xcdat.readthedocs.io/en/latest), and xarray based utility.  
+Both CMOR and CDAT can be obtained via Conda-forge.  Efforts are currently underway to modernize the essential capabilities of CDAT with [XCDAT](https://xcdat.readthedocs.io/en/latest), an xarray based utility.  As this advances, the "runCMOR.py" scripts prepared by PCMDI will be updated to use XCDAT rather than CDAT.  
 
 
 **Recipie:**
