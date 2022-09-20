@@ -595,6 +595,12 @@ for keyVal in source_id['source_id'].keys():
 #key = 'CMSAF-SARAH-2.0'
 #source_id['source_id'].pop(key)
 
+#key = 'REMSS-PRW-v07r01'
+#source_id['source_id'].pop(key)
+#key = 'REMSS-PRW-6-6-0'
+#source_id['source_id'].pop(key)
+
+
 # Test invalid chars
 #key = 'CMSAF-SARAH-2 0' ; # Tested ".", “_”, “(“, “)”, “/”, and " "
 #source_id['source_id'][key] = {}

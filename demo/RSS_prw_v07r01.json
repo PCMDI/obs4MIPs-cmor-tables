@@ -20,7 +20,7 @@
     "output_path_template":"<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>",
     "product":"observations",
     "references":"",
-    "source_id":"REMSS-PRW-v07r01",
+    "source_id":"RSS-PRW-v07r01",
     "title":"PRW v07r01 prepared for obs4MIPs (ODS-v2.1.0)",
     "tracking_prefix":"hdl:21.14102",
     "variant_info":"Best Estimate",

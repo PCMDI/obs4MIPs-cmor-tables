@@ -21,13 +21,13 @@
                 "yrPt":"sampled yearly, at specified time point within the time period"
             },
             "version_metadata":{
-                "CV_collection_modified":"Mon May  9 11:03:31 2022 -0700",
-                "CV_collection_version":"6.2.56.12",
+                "CV_collection_modified":"Thu Sep  1 13:47:30 2022 -0700",
+                "CV_collection_version":"6.2.58.34",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "frequency_CV_modified":"Mon May 24 13:48:15 2021 00100",
                 "frequency_CV_note":"Update description of 3hr and 6hr frequencies",
                 "institution_id":"PCMDI",
-                "previous_commit":"c2c813f65ef217b974996f72ba9c6f2b4eca41f8",
+                "previous_commit":"9ddb8352c2f51fc999549425ea7b4648da5ccd31",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -80,13 +80,13 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-                "CV_collection_modified":"Mon May  9 11:03:31 2022 -0700",
-                "CV_collection_version":"6.2.56.12",
+                "CV_collection_modified":"Thu Sep  1 13:47:30 2022 -0700",
+                "CV_collection_version":"6.2.58.34",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
-                "previous_commit":"c2c813f65ef217b974996f72ba9c6f2b4eca41f8",
+                "previous_commit":"9ddb8352c2f51fc999549425ea7b4648da5ccd31",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -133,13 +133,13 @@
                 "5000 km"
             ],
             "version_metadata":{
-                "CV_collection_modified":"Mon May  9 11:03:31 2022 -0700",
-                "CV_collection_version":"6.2.56.12",
+                "CV_collection_modified":"Thu Sep  1 13:47:30 2022 -0700",
+                "CV_collection_version":"6.2.58.34",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "institution_id":"PCMDI",
                 "nominal_resolution_CV_modified":"Tues Nov 15 16:04:00 2016 -0700",
                 "nominal_resolution_CV_note":"Issue141 durack1 update grid_resolution to nominal_resolution (#143)",
-                "previous_commit":"c2c813f65ef217b974996f72ba9c6f2b4eca41f8",
+                "previous_commit":"9ddb8352c2f51fc999549425ea7b4648da5ccd31",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -1430,35 +1430,34 @@
                 ],
                 "source_version_number":"v20110531"
             },
-            "REMSS-PRW-6-6-0":{
+            "RSS-PRW-6-6-0":{
                 "institution_id":"RSS",
                 "region":[
                     "global"
                 ],
                 "release_year":"2017",
-                "source":"Water Vapor Path",
-                "source_description":"Water Vapor Path",
-                "source_id":"REMSS-PRW-6-6-0",
-                "source_label":"REMSS-PRW",
-                "source_name":"REMSS PRW",
+                "source":"RSS-PRW 6.6.0 (2017): Water Vapor Path",
+                "source_description":"RSS-PRW 6.6.0 (2017): Water Vapor Path",
+                "source_id":"RSS-PRW-6-6-0",
+                "source_label":"RSS-PRW",
+                "source_name":"RSS-PRW",
                 "source_type":"satellite_blended",
                 "source_variables":[
                     "prw"
                 ],
                 "source_version_number":"6.6.0"
             },
-            "REMSS-PRW-v07r01":{
-                "institution":"RSS data prepared by PCMDI for obs4MIPs",
+            "RSS-PRW-v07r01":{
                 "institution_id":"RSS",
                 "region":[
                     "global"
                 ],
                 "release_year":"2017",
-                "source":"REMSS-PRW 7.0 (2019): Water Vapor Path",
-                "source_description":"REMSS-PRW 7.0 (2019): Water Vapor Path",
-                "source_id":"REMSS-PRW-v07r01",
-                "source_label":"REMSS-PRW",
-                "source_name":"REMSS-PRW",
+                "source":"RSS-PRW 7.0 (2019): Water Vapor Path",
+                "source_description":"RSS-PRW 7.0 (2019): Water Vapor Path",
+                "source_id":"RSS-PRW-v07r01",
+                "source_label":"RSS-PRW",
+                "source_name":"RSS-PRW",
                 "source_type":"satellite_blended",
                 "source_variables":[
                     "prw"
