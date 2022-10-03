@@ -3,7 +3,7 @@
 Currently, all obs4MIPs compliant data products need to be prepared with [Climate Model Output Rewriter (CMOR)](https://cmor.llnl.gov).  CMOR can be obtained [via conda-forge](https://cmor.llnl.gov/mydoc_cmor3_conda/).  
 
 
-**Recipie overview**
+**Recipie overview** (detailed below)
 
 1) Retrieve data desired to be made obs4MIPs compliant.
 2) Register a new source_id on this repo (a template is provided when creating an issue)
@@ -22,5 +22,5 @@ https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/inputs/pcmdi/RSS
 
 1) _*Retrieve data desired to be made obs4MIPs compliant*_.  Through the process outlined below, publically available data can be downloaded and processed to be made obs4MIPs compliant. To accomplish this, typically a dataset is downloaded from the internet before beginning the process.  The examples on this repo assume the data downloaded is in netCDF format, but it does not have to be.  The next step is to determine if this version of the dataset already has a registered obs4MIPs "source_id".  
 
-2) _*Register a new source_id*_, if it does not already exists. Once data has been downloaded, an issue can be submited on this repo with a proposal for a new "source_id".  The source_id is used for to identify the product/version and generally closely resembles an existing identifier but is slightly modified to be consistent with CMIP/obs4MIPs conventions.  For example:  A compliant source_id for "GPCP 2.4" is "GPCP-2-4".  More information on the source_id is available in [Table 1 of the obs4MIPs data specifications](https://docs.google.com/document/d/1FXXBhUh71Hjus557ZTD3EKPi_2zxeLvi1aICXOjVYPc/edit#heading=h.7zmnv8xlfe08). 
+2) _*Register a new source_id*_, if it does not already exists. Once data has been downloaded, an issue can be submited on this repo with a proposal for a new "source_id".  The source_id is used to identify the product/version and generally closely resembles an existing identifier but is slightly modified to be consistent with CMIP/obs4MIPs conventions.  For example:  A compliant source_id for "GPCP 2.4" is "GPCP-2-4".  More information on the source_id is available in [Table 1 of the obs4MIPs data specifications](https://docs.google.com/document/d/1FXXBhUh71Hjus557ZTD3EKPi_2zxeLvi1aICXOjVYPc/edit#heading=h.7zmnv8xlfe08). 
   
