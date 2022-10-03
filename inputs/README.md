@@ -20,7 +20,7 @@ https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/inputs/pcmdi/RSS
 
 **Recipie**
 
-1) Retrieve data desired to be made obs4MIPs compliant.  Through the process outlined here, data already publically available can be made obs4MIPs compliant. Typically, somebody will retrieve the data from the internet before beginning this process. 
+1) _*Retrieve data desired to be made obs4MIPs compliant*_.  Through the process outlined here, data already publically available can be made obs4MIPs compliant. Typically, somebody will retrieve the data from the internet before beginning this process. 
 
 2) Register a new source_id. Once data has been downloaded, an issue can be submited on this repo with a proposal for a new "source_id".  The source_id is used for to identify the product/version and generally closely resembles an existing identifier but is slightly modified to be consistent with CMIP/obs4MIPs conventions.  For example:  A compliant source_id for "GPCP 2.4" is "GPCP-2-4".  More information on the source_id is available in [Table 1 of the obs4MIPs data specifications](https://docs.google.com/document/d/1FXXBhUh71Hjus557ZTD3EKPi_2zxeLvi1aICXOjVYPc/edit#heading=h.7zmnv8xlfe08). 
   
