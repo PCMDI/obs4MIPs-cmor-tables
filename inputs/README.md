@@ -27,14 +27,15 @@ https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/inputs/pcmdi/RSS
 
 3) _*Register a new source_id*_, if it does not already exist. Once data has been downloaded, an issue can be submited on this GitHub repo with a proposed "source_id".  Somebody from the obs4MIPs team will quickly review this information and enter it into the obs4MIPs database of source_id's or propose an alternative if it does not conform to the obs4MIPs data specifications for the source_id.  When opening the an Issue the template below shows up and one simply needs to replace the information with the GPCP example with their own proposed source_id.
 
-***
+________________________________________________________________________________________________________
+**Provided Template for new issues**
 
 If you are *registering content* (RC) for obs4MIPs, please fill out the requested information below.   If you want to create an issue about something else, please delete the text below and title your issue as appropriate.  
 
 To register (or edit) some or all of the obs4MIPs RC, please title this github issue as follows:  
 "RC for " + your source_name (as you define below), and indicate if you are modifying your input from an earlier issue
 
-________________________________________________________________________________________________________
+
 The following are required registered content (with example content for each item in **bold**). Please replace the example text below with your information to the right of the equal sign (DO NOT MAKE ANY CHANGES TO THE LEFT HAND SIDE OF THE EQUAL SIGN):
 1) source_id['source_id'][key][**'source_name'**] = 'GPCP'
 2) source_id['source_id'][key][**'release_year'**] = '2011'
@@ -45,11 +46,11 @@ The following are required registered content (with example content for each ite
 7) source_id['source_id'][key][**'source_type'**] = 'satellite_merged'
 8) A list of CMIP variable_ids that the above information refers to.  In most cases it will only be for one variable_id.  If it is for more than one, please make sure your source_description is sufficiently general to apply to all relevant variable_ids.
 
+See note 14 and Appendix II of the obs4MIPs data specifications (https://goo.gl/jVZsQl) for more information regarding registered content, and feel free to ask questions!
 ________________________________________________________________________________________________________
 
-See note 14 and Appendix II of the obs4MIPs data specifications (https://goo.gl/jVZsQl) for more information regarding registered content, and feel free to ask questions!
 
-***
+
 
 
 
