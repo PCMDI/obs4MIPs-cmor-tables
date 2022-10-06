@@ -17,11 +17,11 @@ Closely aligned with CMIP, all metadata for obs4MIPs is managed in JSON files.
 1) Identify datset to prepare as obs4MIPs compliant.
 2) Retrieve data desired to be made obs4MIPs compliant.
 3) Register a new source_id on this repo (a template is provided when creating an issue)
-4) When a new source_id is provided, use "download-source_id.json" to document how data was downloaded. 
+4) When a new source_id is provided, create a "download-source_id.json" to document how data was downloaded. 
 5) Prepare input table for running CMOR
 6) Prepare python script for reading in data an writing with CMOR.
 7) Execute script
-8) Create an issue to include the processing code in this repository. 
+8) Create an issue to include the input JSONs and processing code in this repository. 
 
 
 **Example**
@@ -60,9 +60,11 @@ The following are required registered content (with example content for each ite
 See note 14 and Appendix II of the obs4MIPs data specifications (https://goo.gl/jVZsQl) for more information regarding registered content, and feel free to ask questions!
 ________________________________________________________________________________________________________
 
-4) _*Prepare a "download_source_id"*_.  We strive for all obs4MIPs products to clearly identify the origins of the data.  The way this is currently done is to prepare a simple [json](https://www.json.org/json-en.html) file that traps basic information. (As with the management of CMIP metadata, obs4MIPs metadata is managed in json files).  [An example download_source_id.json](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/demo/rss-PRW-v07r01_RetrievedInfo.json) file is provided with this demo.  The simplest thing to do is to save this file, rename it, and replace the demo content with the relevant information for a new source_id or dataset. 
+4) _*Prepare a "download-source_id"*_.  We strive for all obs4MIPs products to clearly identify the origins of the data.  The way this is currently done is to prepare a simple [json](https://www.json.org/json-en.html) file that traps basic information. (As with the management of CMIP metadata, obs4MIPs metadata is managed in json files).  [An example download-source_id.json](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/demo/rss-PRW-v07r01_RetrievedInfo.json) file is provided with this demo.  The simplest thing to do is to save this file, rename it, and replace the demo content with the relevant information for a new source_id or dataset.  Typically, this involves only making changes to the following attributes:  "contact", "grid", "grid_label", "institution_id", "nominal_resolution", "references", "outpath", "source_id", "title", "variant_info" and "variant_label". 
 
-) _*Prepare input table for running CMOR*_
+5) _*Prepare input table for running CMOR*_.  [An example input table](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/demo/RSS_prw_v07r01.json).  As with the download-source_id, the simplest thing to do is to save this file, rename it, and replace the demo content with the relevant information for a new source_id or dataset.  Typically, this involves only making changes to the following attributes:  "contact", "grid", "grid_label", "institution_id", "nominal_resolution", "references", "outpath", "source_id", "title", "variant_info" and "variant_label". 
+
+6)_*Prepare python script for reading in data an writing with CMOR._*
   
   
   
