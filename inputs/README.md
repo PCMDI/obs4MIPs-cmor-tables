@@ -64,9 +64,9 @@ ________________________________________________________________________________
 
 5) _*Prepare input table for running CMOR*_.  [An example input table](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/demo/RSS_prw_v07r01.json).  As with the download-source_id, the simplest thing to do is to save this file, rename it, and replace the demo content with the relevant information for a new source_id or dataset.  Typically, this involves only making changes to the following attributes:  "contact", "grid", "grid_label", "institution_id", "nominal_resolution", "references", "outpath", "source_id", "title", "variant_info" and "variant_label". 
 
-6)_*Prepare python script for reading in data an writing with CMOR._*  This is often the most time consume aspect of preparing an obs4MIPs compliant data set, but the examples provided on this repo are helping streamline this process.  It involves preparing a simple python script to read in the original data that has been downloaded in advance.  As with the steps before, one can start by downloading a [demo python script](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/demo/runCMORdemo-RSS-cdms.py), renaming it accordingly, and modifying as needed.  
-  
-  
+6)_*Prepare python script for reading in data an writing with CMOR._*  This is often the most time consume aspect of preparing an obs4MIPs compliant data set, but the examples provided on this repo are helping streamline this process.  It involves preparing a simple python script to read in the original data that has been downloaded in advance.  As with the steps before, one can start by downloading a [demo python script](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/demo/runCMORdemo-RSS-cdms.py), renaming it accordingly, and modifying as needed. The examples provided illustrate how data that is already in netCDF can be processed to be obs4MIPs compliant, but in principle data in other formats are not exluded if the user can process the data using CMOR. 
+
+7) _*Execute script.*_  The processed data will be located in a directory defined in the input_table: outpath + output_path_template, the former being the base directory (where the user wants to output the data) and the later being a directory template explicitly defined for obs4MIPs (<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>). 
   
   
   
