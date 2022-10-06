@@ -2,14 +2,14 @@
 
 The recipie and demos below describe the process of making a copy of an observational data product that is obs4MIPs compliant.  This is in support of, but independent of the process of "publishing" obs4MIPs compliant data to ESGF. A user does not need to clone this repository.  Instead, common usage involves copying information from the provided demo and modifying it for use to prepare a new obs4MIPs compliant dataset.  
 
-## Key resources (utilites, formats and conventions)##
+## Key resources (utilites, formats and conventions)
 
-Currently, all obs4MIPs compliant data products need to be prepared with [Climate Model Output Rewriter (CMOR)](https://cmor.llnl.gov).  CMOR can be obtained [via conda-forge](https://cmor.llnl.gov/mydoc_cmor3_conda/).  By preparing a simple [python](https://python.org) script, CMOR can be used to prepare an obs4MIPs compliant dataset.  The obs4MIPs data specifications    
+Currently, all obs4MIPs compliant data products need to be prepared with [Climate Model Output Rewriter (CMOR)](https://cmor.llnl.gov).  CMOR is used by most CMIP modeling groups to prepare their model output in advance of publishing it to ESGF.  CMOR can be obtained [via conda-forge](https://cmor.llnl.gov/mydoc_cmor3_conda/), a community-led collection of recipes, build infrastructure and distributions for the [conda package manager](https://docs.conda.io/projects/conda/en/latest).  By preparing a simple [python](https://python.org) script (example discussed below), CMOR is used to prepare an obs4MIPs compliant dataset.      
 
 Obs4MIPs data specificatons 
 JSON format
 
-
+---
 
 **Recipie overview** (detailed below)
 
