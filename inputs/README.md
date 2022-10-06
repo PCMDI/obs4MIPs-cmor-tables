@@ -4,11 +4,11 @@ The recipie and demos below describe the process of making a copy of an observat
 
 ## Key resources (utilites, formats and conventions)
 
-Currently, all obs4MIPs compliant data products need to be prepared with [Climate Model Output Rewriter (CMOR)](https://cmor.llnl.gov).  CMOR is used by most CMIP modeling groups to prepare their model output in advance of publishing it to ESGF.  CMOR can be obtained [via conda-forge](https://cmor.llnl.gov/mydoc_cmor3_conda/), a community-led collection of recipes, build infrastructure and distributions for the [conda package manager](https://docs.conda.io/projects/conda/en/latest).  By preparing a simple [python](https://python.org) script (example discussed below), CMOR is used to prepare an obs4MIPs compliant dataset.      
+Currently, all obs4MIPs compliant data products need to be prepared with [Climate Model Output Rewriter (CMOR)](https://cmor.llnl.gov).  **CMOR** is used by most CMIP modeling groups to prepare their model output in advance of publishing it to ESGF.  CMOR can be obtained [via conda-forge](https://cmor.llnl.gov/mydoc_cmor3_conda/), a community-led collection of recipes, build infrastructure and distributions for the [conda package manager](https://docs.conda.io/projects/conda/en/latest).  By preparing a simple [python](https://python.org) script (example discussed below), CMOR is used to prepare an obs4MIPs compliant dataset.      
 
-The [obs4MIPs data specificatons (ODS)](https://pcmdi.github.io/obs4MIPs/dataStandards.html) are technically aligned with the preparation of climate model output prepared for the Coupled Model Comparison Project). 
+The [obs4MIPs data specificatons (**ODS**)](https://pcmdi.github.io/obs4MIPs/dataStandards.html) are technically aligned with the preparation of climate model output prepared for the Coupled Model Comparison Project). 
 
-Closely aligned with CMIP, all metadata for obs4MIPs is managed in JSON files.  
+Closely aligned with CMIP, all metadata for obs4MIPs is managed in [**JSON**](https://json.org) files.  
 
 ---
 
