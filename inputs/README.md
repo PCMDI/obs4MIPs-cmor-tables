@@ -1,6 +1,6 @@
 ## Recipie for preparation of obs4MIPs compliant data (work in progress)
 
-The recipie and demos below describe the process of making a copy of an observational data product that is obs4MIPs compliant.  This is in support of, but independent of the process of "publishing" obs4MIPs compliant data to ESGF. A user does not need to clone this repository.  Instead, common usage involves copying information from the provided demo and modifying it for use to prepare a new obs4MIPs compliant dataset.  
+The recipie and demos below describe the process of making a copy of an observational data product that is obs4MIPs compliant.  This is in support of, but independent of the process of "publishing" obs4MIPs compliant data to ESGF. A user does not need to clone this repository to prepare obs4MIPs compliant data.  Instead, common usage involves copying information from the provided demo and modifying it for use to prepare a new obs4MIPs compliant dataset.  
 
 ## Key resources (utilites, formats and conventions)
 
@@ -64,7 +64,7 @@ ________________________________________________________________________________
 
 5) _*Prepare input table for running CMOR*_.  [An example input table](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/demo/RSS_prw_v07r01.json).  As with the download-source_id, the simplest thing to do is to save this file, rename it, and replace the demo content with the relevant information for a new source_id or dataset.  Typically, this involves only making changes to the following attributes:  "contact", "grid", "grid_label", "institution_id", "nominal_resolution", "references", "outpath", "source_id", "title", "variant_info" and "variant_label". 
 
-6)_*Prepare python script for reading in data an writing with CMOR._*
+6)_*Prepare python script for reading in data an writing with CMOR._*  This is often the most time consume aspect of preparing an obs4MIPs compliant data set, but the examples provided on this repo are helping streamline this process.  It involves preparing a simple python script to read in the original data that has been downloaded in advance.  As with the steps before, one can start by downloading a [demo python script](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/demo/runCMORdemo-RSS-cdms.py), renaming it accordingly, and modifying as needed.  
   
   
   
