@@ -8,7 +8,7 @@ import json
 #%% User provided input
 cmorTable = '../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'RSS_prw_v07r01.json' ; # Update contents of this file to set your global_attributes
-inputFilePath = 'tpw_v07r01_198801_202112.nc4.nc'
+inputFilePath = '/home/gleckler1/tpw_v07r01_198801_202112.nc4.nc'
 inputVarName = 'precipitable_water'
 outputVarName = 'prw'
 outputUnits = 'kg m-2'
