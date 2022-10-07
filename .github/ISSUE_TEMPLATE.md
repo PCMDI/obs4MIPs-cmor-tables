@@ -3,7 +3,6 @@ If you are *registering content* (RC) for obs4MIPs, please fill out the requeste
 To register (or edit) some or all of the obs4MIPs RC, please title this github issue as follows:  
 "RC for " + your source_name (as you define below), and indicate if you are modifying your input from an earlier issue
 
-Note: It is presumed that you have already registered your proposed obs4MIPs contribution with the WDAC's task team.  If you have not, please do so now (https://goo.gl/forms/0QaXZXS8UFu24rl03) before registering content 
 ________________________________________________________________________________________________________
 The following are required registered content (with example content for each item in **bold**). Please replace the example text below with your information to the right of the equal sign (DO NOT MAKE ANY CHANGES TO THE LEFT HAND SIDE OF THE EQUAL SIGN):
 1) source_id['source_id'][key][**'source_name'**] = 'GPCP'
