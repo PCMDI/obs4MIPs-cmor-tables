@@ -24,5 +24,8 @@
     "title":"PRW v07r01 prepared for obs4MIPs (ODS-v2.1.0)",
     "tracking_prefix":"hdl:21.14102",
     "variant_info":"Best Estimate",
-    "variant_label":"PCMDI"
+    "variant_label":"PCMDI",
+    "originData_URL": "http://data.remss.com/wind/monthly_1deg",
+    "originData_retrieved": "20190219; PJG @ PCMDI",
+    "originData_notes": "This space is for additional info relevant to how the retrieved data will be made obs4MIPs compliant."
 }
