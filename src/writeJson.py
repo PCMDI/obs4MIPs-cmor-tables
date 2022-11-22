@@ -547,7 +547,7 @@ source_id['source_id']['CERES-EBAF-4-1']['institution_id'] = 'NASA-LaRC'
 #source_id['source_id']['CERES-EBAF-4-1']['institution_id'] = 'NASA-LaRC--PCMDI'
 source_id['source_id']['TropFlux-1-0']['institution_id'] = 'ESSO'
 
-source_id['source_id']['REMSS-PRW-v07r01']['institution_id'] = 'RSS'
+#source_id['source_id']['REMSS-PRW-v07r01']['institution_id'] = 'RSS'
 #source_id['source_id']['REMSS-PRW-v07r01']['institution'] = 'RSS data prepared by PCMDI for obs4MIPs'
 source_id['source_id']['CMAP-V1902']['institution_id'] = 'NOAA-NCEI'
 source_id['source_id']['GPCP-2-3']['institution_id'] = 'NOAA-NCEI'
