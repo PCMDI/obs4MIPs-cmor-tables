@@ -45,8 +45,11 @@ for fi in range(len(inputVarName)):
  f = f.bounds.add_bounds("X")  #, width=0.5)
  f = f.bounds.add_bounds("Y")  #, width=0.5)
 
+ f = f.drop_vars(["time_bnds"])
+ f = f.bounds.add_bounds("T")
+
 # Deal with problematic "months since" calendar/time axis
- time_bounds = f.time_bnds.values  #getBounds()
+#time_bounds = f.time_bnds.values  #getBounds()
 #time_bounds[:,0] = time[:]
 #time_bounds[:-1,1] = time[1:]
 #time_bounds[-1,1] = time_bounds[-1,0]+1
@@ -89,6 +92,6 @@ for fi in range(len(inputVarName)):
 
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
  cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
- cmor.write(varid,values,time_vals=time[:],time_bnds=time_bounds) ; # Write variable with time axis
+ cmor.write(varid,values,time_vals=time[:],time_bnds=f.time_bnds.values) ; # Write variable with time axis
  f.close()
  cmor.close()
