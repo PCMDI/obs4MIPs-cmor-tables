@@ -18,13 +18,13 @@
     "output_file_template":"<variable_id><frequency><source_id><variant_label><grid_label>",
     "output_path_template":"<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>",
     "product":"observations",
-    "references":"",
+    "references":"Rayner, N. A., Parker, D. E., Horton, E. B., Folland, C. K., Alexander, L. V., Rowell, D. P., Kent, E. C., Kaplan, A.  Global analyses of sea surface temperature, sea ice, and night marine air temperature since the late nineteenth century J. Geophys. Res .Vol. 108, No. D14, 4407 10.1029/2002JD002670",
     "source_id":"HadISST-1-1",
     "title":"prepared for obs4MIPs (ODS-v2.1.0)",
     "tracking_prefix":"hdl:21.14102",
     "variant_info":"Best Estimate",
     "variant_label":"PCMDI",
-    "originData_URL": "http://data.remss.com/wind/monthly_1deg",
-    "originData_retrieved": "20190219; PJG @ PCMDI",
+    "originData_URL": "https://www.metoffice.gov.uk/hadobs/hadisst/",
+    "originData_retrieved": "20190913; PJG @ PCMDI",
     "originData_notes": "This space is for additional info relevant to how the retrieved data will be made obs4MIPs compliant."
 }
