@@ -32,8 +32,9 @@ for fi in range(len(inputVarName)):
 #cdm.setAutoBounds('on')
  d = f[inputVarName[fi]] 
  d = d + 273.15
- d = np.ma.masked_where(np.ma.equal(d,-1e+30), d)
- d = np.where(np.less(d,-100.),1.e20,d)
+#d = np.ma.masked_where(np.ma.equal(d,-1e+30), d)
+ d = np.where(np.less(d,-100),1.e20,d)
+ d = np.where(np.isnan(d),1.e20,d)
 
 #cdm.setAutoBounds('off')
 #cdutil.times.setTimeBoundsMonthly(d)
