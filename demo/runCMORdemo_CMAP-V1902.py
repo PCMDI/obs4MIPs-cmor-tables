@@ -1,5 +1,6 @@
 import cmor
 import cdms2 as cdm
+import xarray as xr
 import numpy as np
 import json
 #cdm.setAutoBounds('on') # Caution, this attempts to automatically set coordinate bounds - please check outputs using this option
@@ -7,28 +8,29 @@ import json
 
 #%% User provided input
 cmorTable = '../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
-inputJson = 'RSS_prw_v07r01.json' ; # Update contents of this file to set your global_attributes
-inputFilePath = 'tpw_v07r01_198801_202112.nc4.nc'
-inputVarName = 'precipitable_water'
-outputVarName = 'prw'
+inputJson = 'CMAP-V1902.json' ; # Update contents of this file to set your global_attributes
+inputFilePath = 'precip.mon.mean.nc'
+inputVarName = 'precip'
+outputVarName = 'pr'
 outputUnits = 'kg m-2'
-RetrievedInfoJson = 'rss-PRW-v07r01_RetrievedInfo.json'
-
 
 ### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE...
 #%% Process variable (with time axis)
 # Open and read input netcdf file
-f = cdm.open(inputFilePath)
-d = f(inputVarName)
-lat = d.getLatitude()
-lon = d.getLongitude()
-time = d.getAxis(0) ; # Rather use a file dimension-based load statement
-time_bounds = time.getBounds()
+
+#f = cdm.open(inputFilePath)
+f = xr.open_dataset(inputFilePath,decode_times=False)
+d = f[inputVarName]
+lat = f.lat.values 
+lon = f.lon.values 
+time = f.time.values ; # Rather use a file dimension-based load statement
+
+f = f.bounds.add_bounds("X")  #, width=0.5)
+f = f.bounds.add_bounds("Y")  #, width=0.5)
+f = f.bounds.add_bounds("T")
+
 
 comment_suffix = ' ***origins before obs4MIPs*** ' 
-download_info_dic =  json.load(open(RetrievedInfoJson))
-for dd in download_info_dic.keys():
- comment_suffix = comment_suffix + dd + ':' +download_info_dic[dd] + ' ' 
 
 #%% Initialize and run CMOR
 # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
@@ -43,11 +45,11 @@ axes    = [ {'table_entry': 'time',
              {'table_entry': 'latitude',
               'units': 'degrees_north',
               'coord_vals': lat[:],
-              'cell_bounds': lat.getBounds()},
+              'cell_bounds': f.latitude_bnds},
              {'table_entry': 'longitude',
               'units': 'degrees_east',
               'coord_vals': lon[:],
-              'cell_bounds': lon.getBounds()},
+              'cell_bounds': f.latitude_bnds},
           ]
 axisIds = list() ; # Create list of axes
 for axis in axes:
