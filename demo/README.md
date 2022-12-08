@@ -2,10 +2,10 @@
 The software and utilites used in this demo are available via Anaconda (https://continuum.io) and include: 
 
 **Python**\
-https://www.python.org \
-https://anaconda.org/conda-forge/python 
-\
-\
+https://www.python.org <br>
+https://anaconda.org/conda-forge/python <br>
+<br>
+
 **CMOR**\
 https://cmor.llnl.gov 
 \  
