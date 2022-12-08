@@ -19,7 +19,7 @@ python runCMORdemo_CMAP-V1902.py
 
 If you have any difficulties, please contact the obs4MIPs team at obs4MIPs-admin@llnl.gov
 
-[More details on the process of preparing obs4MIPs compliant data are available](https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/inputs/README.md)
+[More details on the process of preparing obs4MIPs compliant data are available in /inputs of this repo.](https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/inputs/README.md)
 
 
 
