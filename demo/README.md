@@ -1,8 +1,8 @@
 
-The software and utilites used in this demo are available via Anaconda (https://continuum.io) and include: 
+The software and utilites used in this demo are available via Anaconda (https://continuum.io) and include: <br>
 <br>
 **CMOR** <br>
-https://cmor.llnl.gov <br>  
+https://cmor.llnl.gov <br>
 https://anaconda.org/conda-forge/cmor <br>
 <br>
 **xarray** <br>
