@@ -431,6 +431,45 @@ Amon['variable_entry']['hfns']['units'] = 'W m-2'
 Amon['variable_entry']['hfns']['valid_max'] = ''
 Amon['variable_entry']['hfns']['valid_min'] = ''
 
+# Add new variables
+# Variable sponsor - PCMDI; PjG 
+Amon['variable_entry'][u'hfns'] = {}
+Amon['variable_entry']['hfns']['cell_measures'] = ''
+Amon['variable_entry']['hfns']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['hfns']['comment'] = ''
+Amon['variable_entry']['hfns']['dimensions'] = 'longitude latitude time'
+Amon['variable_entry']['hfns']['frequency'] = 'mon'
+Amon['variable_entry']['hfns']['long_name'] = 'Net Surface Energy'
+Amon['variable_entry']['hfns']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['hfns']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['hfns']['out_name'] = 'hfns'
+Amon['variable_entry']['hfns']['positive'] = ''
+Amon['variable_entry']['hfns']['standard_name'] = 'Net_Surface_Energy'
+Amon['variable_entry']['hfns']['type'] = 'real'
+Amon['variable_entry']['hfns']['units'] = 'W m-2'
+Amon['variable_entry']['hfns']['valid_max'] = ''
+Amon['variable_entry']['hfns']['valid_min'] = ''
+
+# Add new variables
+# Variable sponsor - PCMDI; PjG 
+Amon['variable_entry'][u'toz'] = {}
+Amon['variable_entry']['toz']['cell_measures'] = "area: areacella" 
+Amon['variable_entry']['toz']['cell_methods'] = "area: time: mean" 
+Amon['variable_entry']['toz']['comment'] = 'Total ozone column calculated at 0 degrees C and 1 bar, such that 1m = 1e5 DU.'
+Amon['variable_entry']['toz']['dimensions'] = 'longitude latitude time'
+Amon['variable_entry']['toz']['frequency'] = 'mon'
+Amon['variable_entry']['toz']['long_name'] = 'Total Column Ozone'
+Amon['variable_entry']['toz']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['toz']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['toz']['out_name'] = 'toz'
+Amon['variable_entry']['toz']['positive'] = ''
+Amon['variable_entry']['toz']['standard_name'] = 'equivalent_thickness_at_stp_of_atmosphere_ozone_content'
+Amon['variable_entry']['toz']['type'] = 'real'
+Amon['variable_entry']['toz']['units'] = 'm'
+Amon['variable_entry']['toz']['valid_max'] = ''
+Amon['variable_entry']['toz']['valid_min'] = ''
+
+
 
 # monNobs
 #--------
