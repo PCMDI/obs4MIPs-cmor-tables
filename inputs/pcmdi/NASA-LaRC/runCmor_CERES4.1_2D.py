@@ -1,11 +1,9 @@
 import cmor
-import cdms2 as cdm
+import xarray as xr
+import xcdat as xc
 import numpy as np
 import cdutil
 import cdtime
-
-cdm.setAutoBounds('on') # Caution, this attempts to automatically set coordinate bounds - please check outputs using this option
-#import pdb ; # Debug statement - import if enabling below
 
 #%% User provided input
 cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
@@ -35,16 +33,24 @@ for fi in range(len(inputVarName)):
   inputFilePath = inputFilePathbgn+inputFilePathend
 #%% Process variable (with time axis)
 # Open and read input netcdf file
-  f = cdm.open(inputFilePath+inputFileName)
-  d = f(inputVarName[fi],time = (cdtime.comptime(2003,0),cdtime.comptime(2019,1)))
+# f = cdm.open(inputFilePath+inputFileName)
+  f = xr.open_dataset(inputFilePath+inputFileName,decode_times=False)
+# d = f(inputVarName[fi],time = (cdtime.comptime(2003,0),cdtime.comptime(2019,1)))
+  d = f[inputVarName[fi]]
+  darr = f[inputVarName[fi]].values
 # cdutil.times.setTimeBoundsMonthly(d)
-  lat = d.getLatitude()
-  lon = d.getLongitude()
-  print(d.shape)
+  lat = f.lat.values 
+  lon = f.lon.values 
 #time = d.getTime() ; # Assumes variable is named 'time', for the demo file this is named 'months'
-  time = d.getAxis(0) ; # Rather use a file dimension-based load statement
+  time = f.time.values ; # Rather use a file dimension-based load statement
 
-  d.positive = outpos[fi]
+  d['positive']= outpos[fi]
+
+  f = f.bounds.add_bounds("X")  #, width=0.5)
+  f = f.bounds.add_bounds("Y")  #, width=0.5)
+ 
+# f = f.drop_vars(["time_bnds"])
+  f = f.bounds.add_bounds("T")
 
 #%% Initialize and run CMOR
 # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
@@ -53,16 +59,16 @@ for fi in range(len(inputVarName)):
   cmor.load_table(cmorTable)
 #cmor.set_cur_dataset_attribute('history',f.history) ; # Force input file attribute as history
   axes    = [ {'table_entry': 'time',
-             'units': time.units, # 'days since 1870-01-01',
+             'units': f.time.units, # 'days since 1870-01-01',
              },
              {'table_entry': 'latitude',
               'units': 'degrees_north',
               'coord_vals': lat[:],
-              'cell_bounds': lat.getBounds()},
+              'cell_bounds': f.lat_bnds},
              {'table_entry': 'longitude',
               'units': 'degrees_east',
               'coord_vals': lon[:],
-              'cell_bounds': lon.getBounds()},
+              'cell_bounds': f.lon_bnds},
           ]
   axisIds = list() ; # Create list of axes
   for axis in axes:
@@ -72,10 +78,9 @@ for fi in range(len(inputVarName)):
 #pdb.set_trace() ; # Debug statement
 
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-  d.units = outputUnits[fi]
-  d.positive = outpos[fi]
-  varid   = cmor.variable(outputVarName[fi],d.units,axisIds,missing_value=d.missing,positive=d.positive)
-  values  = np.array(d[:],np.float32)
+  d['units'] = outputUnits[fi]
+  varid   = cmor.variable(outputVarName[fi],outputUnits[fi],axisIds,missing_value=1.e20,positive=outpos[fi])
+  values  = f[inputVarName[fi]].values   #np.array(d[:],np.float32)
 
 # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   #cmor.set_variable_attribute(varid,'valid_min',2.0)
@@ -83,7 +88,7 @@ for fi in range(len(inputVarName)):
 
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
-  cmor.write(varid,values,time_vals=time[:],time_bnds=time.getBounds()) ; # Write variable with time axis
+  cmor.write(varid,darr,time_vals=time[:],time_bnds=f.time_bnds.values) ; # Write variable with time axis
   f.close()
 
   cmor.close()
