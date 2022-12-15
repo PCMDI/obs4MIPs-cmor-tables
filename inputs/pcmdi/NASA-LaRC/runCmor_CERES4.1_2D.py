@@ -2,8 +2,6 @@ import cmor
 import xarray as xr
 import xcdat as xc
 import numpy as np
-import cdutil
-import cdtime
 
 #%% User provided input
 cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
@@ -22,34 +20,23 @@ outpos = ['up','up','up','up','','down','up','up']
 #outputUnits = ['W m-2']
 #outpos = ['up']
 
-
-### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE...
 for fi in range(len(inputVarName)):
-
   inputFileName = 'CERES_EBAF-TOA_Ed4.1_Subset_200003-201906.nc' 
   if inputVarName[fi] in ['toa_cre_lw_mon','toa_cre_sw_mon']: inputFileName = 'CERES_EBAF_Ed4.1_Subset_200003-201905-CRE.nc'
 
   print(fi, inputVarName[fi])
   inputFilePath = inputFilePathbgn+inputFilePathend
-#%% Process variable (with time axis)
-# Open and read input netcdf file
-# f = cdm.open(inputFilePath+inputFileName)
   f = xr.open_dataset(inputFilePath+inputFileName,decode_times=False)
-# d = f(inputVarName[fi],time = (cdtime.comptime(2003,0),cdtime.comptime(2019,1)))
   d = f[inputVarName[fi]]
   darr = f[inputVarName[fi]].values
-# cdutil.times.setTimeBoundsMonthly(d)
   lat = f.lat.values 
   lon = f.lon.values 
-#time = d.getTime() ; # Assumes variable is named 'time', for the demo file this is named 'months'
-  time = f.time.values ; # Rather use a file dimension-based load statement
+  time = f.time.values 
 
   d['positive']= outpos[fi]
 
   f = f.bounds.add_bounds("X")  #, width=0.5)
   f = f.bounds.add_bounds("Y")  #, width=0.5)
- 
-# f = f.drop_vars(["time_bnds"])
   f = f.bounds.add_bounds("T")
 
 #%% Initialize and run CMOR
@@ -75,20 +62,13 @@ for fi in range(len(inputVarName)):
     axisId = cmor.axis(**axis)
     axisIds.append(axisId)
 
-#pdb.set_trace() ; # Debug statement
-
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   d['units'] = outputUnits[fi]
   varid   = cmor.variable(outputVarName[fi],outputUnits[fi],axisIds,missing_value=1.e20,positive=outpos[fi])
   values  = f[inputVarName[fi]].values   #np.array(d[:],np.float32)
 
-# Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-  #cmor.set_variable_attribute(varid,'valid_min',2.0)
-  #cmor.set_variable_attribute(varid,'valid_max',3.0)
-
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
   cmor.write(varid,darr,time_vals=time[:],time_bnds=f.time_bnds.values) ; # Write variable with time axis
   f.close()
-
   cmor.close()
