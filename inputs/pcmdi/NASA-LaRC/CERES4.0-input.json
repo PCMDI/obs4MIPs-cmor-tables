@@ -7,8 +7,7 @@
     "activity_id":"obs4MIPs",
     "calendar":"gregorian",
     "comment":"",
-    "contact":"PCMDI (pcmdi-metrics@llnl.gov)",
-    "curation_provenance":"work-in-progress",
+    "contact":"kathleen.dejwakh@nasa.gov",
     "grid":"1x1 degree latitude x longitude",
     "grid_label":"gn",
     "history":"",
@@ -19,10 +18,13 @@
     "output_file_template":"<variable_id><frequency><source_id><variant_label><grid_label>",
     "output_path_template":"<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>",
     "product":"observations",
-    "references":"",
+    "references":"Data in this file is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Use of the data must be acknowledged if guidelines are provide here.",
     "source_id":"CERES-EBAF-4-0",
-    "title":"CERES prepared for PMPObs (ODS-v2.1.0)",
+    "title":"CERES prepared for obs4MIPs (ODS-v2.1.0)",
     "tracking_prefix":"hdl:21.14102",
     "variant_info":"Best Estimate",
-    "variant_label":"PCMDI"
+    "variant_label":"PCMDI",
+    "originData_URL": "https://ceres.larc.nasa.gov/products.php?product=EBAF-TOA",
+    "originData_retrieved": "20200212; YZ @ PCMDI",
+    "originData_notes": "This space is for additional info relevant to how the retrieved data will be made obs4MIPs compliant."
 }
