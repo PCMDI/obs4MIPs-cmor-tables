@@ -1270,6 +1270,23 @@
             "valid_max":"",
             "valid_min":""
         },
+        "toz":{
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: time: mean",
+            "comment":"Total ozone column calculated at 0 degrees C and 1 bar, such that 1m = 1e5 DU.",
+            "dimensions":"longitude latitude time",
+            "frequency":"mon",
+            "long_name":"Total Column Ozone",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"toz",
+            "positive":"",
+            "standard_name":"equivalent_thickness_at_stp_of_atmosphere_ozone_content",
+            "type":"real",
+            "units":"m",
+            "valid_max":"",
+            "valid_min":""
+        },
         "ts":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: time: mean",

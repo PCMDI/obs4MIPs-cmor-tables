@@ -391,6 +391,19 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['prw']
 source_id['source_id'][key]['source_version_number'] = '7.1'
 
+key = 'RSS-SMAP-SSS-v05r01'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'Satellite derived SSS produced by RSS'
+source_id['source_id'][key]['institution_id'] = 'RSS'
+source_id['source_id'][key]['release_year'] = '2021'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'RSS-SMAP-SSS'
+source_id['source_id'][key]['source_name'] = 'RSS-SMAP-SSS'
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['region'] = ['global ocean']
+source_id['source_id'][key]['source_variables'] = ['sos']
+source_id['source_id'][key]['source_version_number'] = '5.0'
+
 key = 'PERSIANN-CDRv1r1'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_description'] = 'NOAA PERSIANN prepared for FROGS'
