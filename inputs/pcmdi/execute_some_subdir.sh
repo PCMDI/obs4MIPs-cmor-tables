@@ -1,14 +1,13 @@
 # EXECUTE THE BELOW TO PRODUCE obs4MIPs CONTRIBUTIONS PREPARED BY PCMDI 
-# REQUIRES CDMS2 and CMOR3 
-
+# REQUIRES PYTHON ENV WITH:  CMOR2, XARRAY and XCDAT 
 
 # MONTHLY
 
 #(cd RSS && runCmor_RSS_v07r01_2D.py)
-#(cd NASA-LaRC && python runCmor_CERES4.1_2D.py)
-#(cd NASA-LaRC && python runCmor_CERES4.1_SURFACE_2D.py)
-#(cd NASA-LaRC && python runCmor_CERES4.0_2D.py)
-#(cd NASA-LaRC && python runCmor_CERES4.0_SURFACE_2D.py)
+(cd NASA-LaRC && python runCmor_CERES4.1_2D.py)
+(cd NASA-LaRC && python runCmor_CERES4.1_SURFACE_2D.py)
+(cd NASA-LaRC && python runCmor_CERES4.0_2D.py)
+(cd NASA-LaRC && python runCmor_CERES4.0_SURFACE_2D.py)
 #(cd NOAA-NCEI && python runCmor_OISST-L4-AVHRR-only-v2.py)
 (cd MOHC/HadISST && python runCmor_HadISSTv1.1.py)
 #(cd ESSO && python runCmor_TropFlux.py) 
@@ -33,9 +32,5 @@
 # 3HR Data
 
 #python runCmor_TRMM_3B43v.7_3hr.py
-
-
-
-
 
 chmod -R 755 /p/user_pub/pmp/PCMDIobs/obs4MIPs
