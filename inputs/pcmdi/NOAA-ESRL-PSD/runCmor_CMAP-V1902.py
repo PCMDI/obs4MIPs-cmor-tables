@@ -61,8 +61,8 @@ for axis in axes:
 #pdb.set_trace() ; # Debug statement
 
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-d['units'] = outputUnits
-varid   = cmor.variable(outputVarName[fi],outputUnits, axisIds, missing_value=1.e20)
+#d['units'] = outputUnits
+varid   = cmor.variable(outputVarName,outputUnits, axisIds, missing_value=1.e20)
 values  = np.array(d[:],np.float32)
 
 # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
@@ -72,7 +72,7 @@ values  = np.array(d[:],np.float32)
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
 print('ABOVE WRITE')
 cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
-cmor.write(varid,values,time_vals=time[:],time_bnds=time_bnds_values)  #time.getBounds()) ; # Write variable with time axis
+cmor.write(varid,values,time_vals=time[:],time_bnds= f.time_bnds.values)  #time.getBounds()) ; # Write variable with time axis
 print('BELOW WRITE')
 f.close()
 

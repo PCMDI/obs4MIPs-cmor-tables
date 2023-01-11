@@ -8,6 +8,7 @@
 (cd NASA-LaRC && python runCmor_CERES4.1_SURFACE_2D.py)
 (cd NASA-LaRC && python runCmor_CERES4.0_2D.py)
 (cd NASA-LaRC && python runCmor_CERES4.0_SURFACE_2D.py)
+(cd NOAA-ESRL-PSD && python runCmor_CMAP-V1902.py)
 #(cd NOAA-NCEI && python runCmor_OISST-L4-AVHRR-only-v2.py)
 (cd MOHC/HadISST && python runCmor_HadISSTv1.1.py)
 #(cd ESSO && python runCmor_TropFlux.py) 
@@ -18,7 +19,7 @@
 
 # LONGER TIME SCALE MONTHLY 
 #(cd ECMWF && python runCmor_ERA20C_2D.py)
-#(cd NOAA-ESRL-PSD && python runCmor_20CR_2D.py)
+(cd NOAA-ESRL-PSD && python runCmor_20CR_2D.py)
 
 # LONGER TIME SCALE MONTHLY 
 #python runCmor_20CR_2D.py
