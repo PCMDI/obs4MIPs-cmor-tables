@@ -414,7 +414,7 @@ source_id['source_id'][key]['source_label'] = 'RSS-sfcWind'
 source_id['source_id'][key]['source_name'] = 'RSS-sfcWind'
 source_id['source_id'][key]['source_type'] = 'satellite_blended'
 source_id['source_id'][key]['region'] = ['global']
-source_id['source_id'][key]['source_variables'] = ['wind_speed']
+source_id['source_id'][key]['source_variables'] = ['sfcWind']
 source_id['source_id'][key]['source_version_number'] = '7.1'
 
 key = 'PERSIANN-CDRv1r1'
