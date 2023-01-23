@@ -404,6 +404,19 @@ source_id['source_id'][key]['region'] = ['global ocean']
 source_id['source_id'][key]['source_variables'] = ['sos']
 source_id['source_id'][key]['source_version_number'] = '5.0'
 
+key = 'RSS-sfcWind-v07r01'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'RSS-sfcWind 7.0 (2021): 10m Surface Wind'
+source_id['source_id'][key]['institution_id'] = 'RSS'
+source_id['source_id'][key]['release_year'] = '2021'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'RSS-sfcWind'
+source_id['source_id'][key]['source_name'] = 'RSS-sfcWind'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['wind_speed']
+source_id['source_id'][key]['source_version_number'] = '7.1'
+
 key = 'PERSIANN-CDRv1r1'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_description'] = 'NOAA PERSIANN prepared for FROGS'

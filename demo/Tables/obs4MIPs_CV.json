@@ -1481,6 +1481,23 @@
                 ],
                 "source_version_number":"5.0"
             },
+            "RSS-sfcWind-v07r01":{
+                "institution_id":"RSS",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2021",
+                "source":"RSS-sfcWind 7.0 (2021): 10m Surface Wind",
+                "source_description":"RSS-sfcWind 7.0 (2021): 10m Surface Wind",
+                "source_id":"RSS-sfcWind-v07r01",
+                "source_label":"RSS-sfcWind",
+                "source_name":"RSS-sfcWind",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "wind_speed"
+                ],
+                "source_version_number":"7.1"
+            },
             "RSS-v7":{
                 "institution_id":"RSS",
                 "region":[
