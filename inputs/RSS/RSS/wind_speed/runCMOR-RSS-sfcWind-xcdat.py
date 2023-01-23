@@ -31,7 +31,7 @@ lat_bounds = f.latitude_bounds
 
 #%% Initialize and run CMOR
 # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
-cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4,logfile='cmorLog.txt')
+cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4)
 cmor.dataset_json(inputJson)
 cmor.load_table(cmorTable)
 cmor.set_cur_dataset_attribute('history',f.history) 
