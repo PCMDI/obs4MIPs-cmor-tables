@@ -25,9 +25,7 @@ Closely aligned with CMIP, all metadata for obs4MIPs is managed in [**JSON**](ht
 
 **Example**
 
-Sample README (txt), input table (json) and script using CDAT and CMOR (python):
-
-https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/demo
+Input table (json) and script using CDAT and CMOR (python):  https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/demo
 
 **Recipie**
 
