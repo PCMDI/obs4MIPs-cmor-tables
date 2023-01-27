@@ -12,7 +12,7 @@
     "grid":"0.25x0.25 degree latitude x longitude",
     "grid_label":"gn",
     "history":"",
-    "license":"Data in this file processed for obs4MIPs by PCMDI and is for research purposes only.",
+    "license":"Data in this file is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses).",
     "institution_id":"RSS",
     "nominal_resolution":"25 km",
     "outpath":"./output",
@@ -24,7 +24,7 @@
     "title":"SMAP SSS v05r01 prepared for obs4MIPs (ODS-v2.1.0)",
     "tracking_prefix":"hdl:21.14102",
     "variant_info":"Best Estimate",
-    "variant_label":"PCMDI",
+    "variant_label":"RSS",
     "originData_URL": "http://data.remss.com/smap/SSS/V05.0/FINAL/L3/monthly/",
     "originData_retrieved": "20221031; AIM @ RSS",
     "originData_notes": "This space is for additional info relevant to how the retrieved data will be made obs4MIPs compliant."
