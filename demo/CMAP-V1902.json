@@ -11,7 +11,7 @@
     "grid":"1x1 degree latitude x longitude",
     "grid_label":"gn",
     "history":"",
-    "license":"Data in this file processed for obs4MIPs by PCMDI and is for research purposes only.",
+    "license":"Data in this file is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses).",
     "institution_id":"NOAA-ESRL-PSD",
     "nominal_resolution":"250 km",
     "outpath":"./demo",

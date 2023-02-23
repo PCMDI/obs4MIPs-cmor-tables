@@ -1,12 +1,14 @@
 {
     "institution_id":{
+        "CEDA":"Centre for Environmental Data Analysis, RAL Space, STFC Rutherford Appleton Laboratory, Chilton, Didcot; National Centre for Earth Observation, UK",
         "CNES":"Centre national d'etudes spatiales",
+        "DLR-BIRA":"Deutsches Zentrum fur Luft- und Raumfahrt, Royal Belgian Institute for Space Aeronomy",
         "DWD":"Deutscher Wetterdienst, Offenbach 63067, Germany",
         "ECMWF":"The European Centre for Medium-Range Weather Forecasts, Shinfield Park, Reading RG2 9AX, UK",
         "ESPRI-IPSL":"Ensemble de Services Pour la Recherche, Institut Pierre Simon Laplace (France)",
         "ESSO":"Indian National Centre for Ocean Information Services",
         "INCOIS-NIO-IPSL":"Joint research colloboration between INCOIS(India), NIO(India) and IPSL(France)",
-        "ImperialCollege":"Imperial College, London, U.K.",
+        "ImperialCollege":"Imperial College, London, UK",
         "JAXA":"The Japan Aerospace Exploration Agency",
         "MOHC":"Met Office Hadley Centre",
         "MRI":"Meteorological Research Institute, Tsukuba, Ibaraki 305-0052, Japan",
@@ -19,7 +21,7 @@
         "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
         "RSS":"Remote Sensing Systems, Santa Rosa, CA 95401, USA",
         "UCI-CHRS":"Center for Hydrometeorology and Remote Sensing",
-        "UReading":"University of Reading, Reading, U.K.",
+        "UReading":"University of Reading, Reading, UK",
         "UW":"University of Washington, USA"
     }
 }

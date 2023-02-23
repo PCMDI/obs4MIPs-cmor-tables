@@ -1,5 +1,7 @@
 institution_id ={}
 institution_id['institution_id'] = {}
+
+institution_id['institution_id']['CEDA'] = 'Centre for Environmental Data Analysis, RAL Space, STFC Rutherford Appleton Laboratory, Chilton, Didcot; National Centre for Earth Observation, UK'
 institution_id['institution_id']['ECMWF'] = 'The European Centre for Medium-Range Weather Forecasts, Shinfield Park, Reading RG2 9AX, UK'
 institution_id['institution_id']['MRI'] = 'Meteorological Research Institute, Tsukuba, Ibaraki 305-0052, Japan'
 institution_id['institution_id']['NASA-JPL'] = 'NASA Jet Propulsion Laboratory, Pasadena, CA 91109, USA'
@@ -16,8 +18,11 @@ institution_id['institution_id']['MOHC'] = 'Met Office Hadley Centre'
 institution_id['institution_id']['INCOIS-NIO-IPSL'] =  'Joint research colloboration between INCOIS(India), NIO(India) and IPSL(France)'
 institution_id['institution_id']['ESPRI-IPSL'] =  'Ensemble de Services Pour la Recherche, Institut Pierre Simon Laplace (France)'
 institution_id['institution_id']['CNES'] = "Centre national d'etudes spatiales"
-institution_id['institution_id']['ImperialCollege'] = 'Imperial College, London, U.K.'
-institution_id['institution_id']['UReading'] = 'University of Reading, Reading, U.K.'
+institution_id['institution_id']['ImperialCollege'] = 'Imperial College, London, UK'
+institution_id['institution_id']['UReading'] = 'University of Reading, Reading, UK'
 institution_id['institution_id']['UW'] = 'University of Washington, USA'
 institution_id['institution_id']['JAXA'] = 'The Japan Aerospace Exploration Agency'
 institution_id['institution_id']['UCI-CHRS'] = 'Center for Hydrometeorology and Remote Sensing'
+institution_id['institution_id']['DLR-BIRA'] = 'Deutsches Zentrum fur Luft- und Raumfahrt, Royal Belgian Institute for Space Aeronomy'
+
+
