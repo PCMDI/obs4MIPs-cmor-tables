@@ -144,6 +144,19 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['rlut','rsut','rsutcs','rlutcs']
 source_id['source_id'][key]['source_version_number'] = '4.1'
 
+key = 'CERES-EBAF-4-2'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'CERES EBAF (Energy Balanced and Filled) TOA Fluxes. Monthly Averages'
+source_id['source_id'][key]['institution_id'] = 'NASA-LaRC'
+source_id['source_id'][key]['release_year'] = '2022'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'CERES-EBAF-4-2'
+source_id['source_id'][key]['source_name'] = 'CERES-EBAF4-2'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['rlut','rsut','rsutcs','rlutcs']
+source_id['source_id'][key]['source_version_number'] = '4.2'
+
 key = 'ERA-40'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_description'] = 'ECMWF - ERA-40 (European ReAnalysis 1957-2002)'
