@@ -1,38 +1,50 @@
 import cmor
-import xarray as xr
-import xcdat as xc
+import cdms2 as cdm
 import numpy as np
+import cdutil
+import cdtime
+
+cdm.setAutoBounds('on') # Caution, this attempts to automatically set coordinate bounds - please check outputs using this option
+#import pdb ; # Debug statement - import if enabling below
 
 #%% User provided input
 cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = './CERES4.1-input.json' ; # Update contents of this file to set your global_attributes
 inputFilePathbgn = '/p/user_pub/pmp/pmp_obs_preparation/orig/data/'
-inputFilePathend = '/CERES_EBAF4.1/'
-inputFileName = 'CERES_EBAF-SURFACE_Ed4.1_Subset_200003-201905.nc' 
-inputVarName = ['sfc_lw_up_all_mon','sfc_sw_up_all_mon','sfc_sw_up_clr_c_mon','sfc_lw_down_all_mon','sfc_lw_down_clr_c_mon','sfc_sw_down_all_mon','sfc_sw_down_clr_c_mon'] #,'sfc_cre_net_sw_mon','sfc_cre_net_lw_mon','sfc_cre_net_tot_mon']
-outputVarName = ['rlus','rsus','rsuscs','rlds','rldscs','rsds','rsdscs'] #,'rsscre','rlscre','rnscre']
-outputUnits = ['W m-2','W m-2','W m-2','W m-2','W m-2','W m-2','W m-2'] #,'W m-2','W m-2','W m-2']
-outpos = ['up','up','up','down','down','down','down'] #,'down','down','down']
+inputFilePathend = '/CERES_EBAF4.1/TOA_separatefile/'
+
+inputFileName = 'CERES_EBAF-TOA_Ed4.1_Subset_200003-201906.nc'
+inputVarName = ['toa_lw_all_mon','toa_sw_all_mon','toa_sw_clr_c_mon','toa_lw_clr_c_mon','toa_net_all_mon','solar_mon','toa_cre_lw_mon','toa_cre_sw_mon']
+outputVarName = ['rlut','rsut','rsutcs','rlutcs','rt','rsdt','rltcre','rstcre']
+outputUnits = ['W m-2','W m-2','W m-2','W m-2','W m-2','W m-2','W m-2','W m-2']
+outpos = ['up','up','up','up','','down','up','up']
+
+#inputVarName = ['toa_cre_lw_mon']
+#outputVarName = ['rltcre']
+#outputUnits = ['W m-2']
+#outpos = ['up']
+
 
 ### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE...
 for fi in range(len(inputVarName)):
-  inputFileName = 'CERES_EBAF-SURFACE_Ed4.1_Subset_200003-201905.nc'
-  if inputVarName[fi] in ['sfc_cre_net_sw_mon','sfc_cre_net_lw_mon','sfc_cre_net_tot_mon']: inputFileName = 'CERES_EBAF_SurfaceCRE_Ed4.1_Subset_200003-201905.nc' 
+
+  inputFileName = 'CERES_EBAF-TOA_Ed4.1_Subset_200003-201906.nc' 
+  if inputVarName[fi] in ['toa_cre_lw_mon','toa_cre_sw_mon']: inputFileName = 'CERES_EBAF_Ed4.1_Subset_200003-201905-CRE.nc'
 
   print(fi, inputVarName[fi])
   inputFilePath = inputFilePathbgn+inputFilePathend
 #%% Process variable (with time axis)
 # Open and read input netcdf file
-  f = xr.open_dataset(inputFilePath+inputFileName,decode_times=False)
-  d = f[inputVarName[fi]]
-  darr = f[inputVarName[fi]].values
-  lat = f.lat.values
-  lon = f.lon.values
-  time = f.time.values
-  d['positive']= outpos[fi]
-  f = f.bounds.add_bounds("X")  #, width=0.5)
-  f = f.bounds.add_bounds("Y")  #, width=0.5)
-  f = f.bounds.add_bounds("T")
+  f = cdm.open(inputFilePath+inputFileName)
+  d = f(inputVarName[fi],time = (cdtime.comptime(2003,0),cdtime.comptime(2019,1)))
+# cdutil.times.setTimeBoundsMonthly(d)
+  lat = d.getLatitude()
+  lon = d.getLongitude()
+  print(d.shape)
+#time = d.getTime() ; # Assumes variable is named 'time', for the demo file this is named 'months'
+  time = d.getAxis(0) ; # Rather use a file dimension-based load statement
+
+  d.positive = outpos[fi]
 
 #%% Initialize and run CMOR
 # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
@@ -41,16 +53,16 @@ for fi in range(len(inputVarName)):
   cmor.load_table(cmorTable)
 #cmor.set_cur_dataset_attribute('history',f.history) ; # Force input file attribute as history
   axes    = [ {'table_entry': 'time',
-             'units': f.time.units, # 'days since 1870-01-01',
+             'units': time.units, # 'days since 1870-01-01',
              },
              {'table_entry': 'latitude',
               'units': 'degrees_north',
               'coord_vals': lat[:],
-              'cell_bounds': f.lat_bnds},
+              'cell_bounds': lat.getBounds()},
              {'table_entry': 'longitude',
               'units': 'degrees_east',
               'coord_vals': lon[:],
-              'cell_bounds': f.lon_bnds},
+              'cell_bounds': lon.getBounds()},
           ]
   axisIds = list() ; # Create list of axes
   for axis in axes:
@@ -60,8 +72,9 @@ for fi in range(len(inputVarName)):
 #pdb.set_trace() ; # Debug statement
 
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-  d['units'] = outputUnits[fi]
-  varid   = cmor.variable(outputVarName[fi],outputUnits[fi],axisIds,missing_value=1.e20,positive=outpos[fi])
+  d.units = outputUnits[fi]
+  d.positive = outpos[fi]
+  varid   = cmor.variable(outputVarName[fi],d.units,axisIds,missing_value=d.missing,positive=d.positive)
   values  = np.array(d[:],np.float32)
 
 # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
@@ -70,7 +83,7 @@ for fi in range(len(inputVarName)):
 
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
-  cmor.write(varid,values,time_vals=time[:],time_bnds=f.time_bnds.values) ; # Write variable with time axis
+  cmor.write(varid,values,time_vals=time[:],time_bnds=time.getBounds()) ; # Write variable with time axis
   f.close()
 
   cmor.close()
