@@ -53,6 +53,32 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['pr']
 source_id['source_id'][key]['source_version_number'] = 'V06-LU'
 
+key = 'nClimGrid-Monthly-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'nClimGrid-Monthly-1-0'
+source_id['source_id'][key]['release_year'] = '2014'
+source_id['source_id'][key]['source_description'] = 'NOAA nClimGrid-Monthly'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = 'north_america'
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'nClimGrid-Monthly-1-0'
+source_id['source_id'][key]['source_variables'] = ['pr','tas','tasmax','tasmin']
+
+key = 'nClimGrid-Daily-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'nClimGrid-Daily-1-0'
+source_id['source_id'][key]['release_year'] = '2014'
+source_id['source_id'][key]['source_description'] = 'NOAA nClimGrid-Daily'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = 'north_america'
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'nClimGrid-Daily-1-0'
+source_id['source_id'][key]['source_variables'] = ['pr','tas','tasmax','tasmin']
+
 key = 'OISST-L4-AVHRR-only-v2'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_description'] = 'SST-AVHRR_only.v2 2008 NOAA 1/4 Degree Daily Optimum Interpolation Sea Surface Temperature Analysis using AVHRR, Version 2'
