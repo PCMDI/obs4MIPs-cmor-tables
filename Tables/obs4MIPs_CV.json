@@ -21,13 +21,13 @@
                 "yrPt":"sampled yearly, at specified time point within the time period"
             },
             "version_metadata":{
-                "CV_collection_modified":"Tue Nov  8 11:56:41 2022 -0700",
-                "CV_collection_version":"6.2.58.49",
+                "CV_collection_modified":"Thu Feb 23 10:37:06 2023 -0800",
+                "CV_collection_version":"6.2.58.52",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "frequency_CV_modified":"Mon May 24 13:48:15 2021 00100",
                 "frequency_CV_note":"Update description of 3hr and 6hr frequencies",
                 "institution_id":"PCMDI",
-                "previous_commit":"ae07f5e0d910de6afde1cee7d9cedd9771dfc5f1",
+                "previous_commit":"d66efa2f0c9dfc8049450fe3eeda79b0c760dd1e",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -80,24 +80,26 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-                "CV_collection_modified":"Tue Nov  8 11:56:41 2022 -0700",
-                "CV_collection_version":"6.2.58.49",
+                "CV_collection_modified":"Thu Feb 23 10:37:06 2023 -0800",
+                "CV_collection_version":"6.2.58.52",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
-                "previous_commit":"ae07f5e0d910de6afde1cee7d9cedd9771dfc5f1",
+                "previous_commit":"d66efa2f0c9dfc8049450fe3eeda79b0c760dd1e",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
         "institution_id":{
+            "CEDA":"Centre for Environmental Data Analysis, RAL Space, STFC Rutherford Appleton Laboratory, Chilton, Didcot; National Centre for Earth Observation, UK",
             "CNES":"Centre national d'etudes spatiales",
+            "DLR-BIRA":"Deutsches Zentrum fur Luft- und Raumfahrt, Royal Belgian Institute for Space Aeronomy",
             "DWD":"Deutscher Wetterdienst, Offenbach 63067, Germany",
             "ECMWF":"The European Centre for Medium-Range Weather Forecasts, Shinfield Park, Reading RG2 9AX, UK",
             "ESPRI-IPSL":"Ensemble de Services Pour la Recherche, Institut Pierre Simon Laplace (France)",
             "ESSO":"Indian National Centre for Ocean Information Services",
             "INCOIS-NIO-IPSL":"Joint research colloboration between INCOIS(India), NIO(India) and IPSL(France)",
-            "ImperialCollege":"Imperial College, London, U.K.",
+            "ImperialCollege":"Imperial College, London, UK",
             "JAXA":"The Japan Aerospace Exploration Agency",
             "MOHC":"Met Office Hadley Centre",
             "MRI":"Meteorological Research Institute, Tsukuba, Ibaraki 305-0052, Japan",
@@ -110,7 +112,7 @@
             "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
             "RSS":"Remote Sensing Systems, Santa Rosa, CA 95401, USA",
             "UCI-CHRS":"Center for Hydrometeorology and Remote Sensing",
-            "UReading":"University of Reading, Reading, U.K.",
+            "UReading":"University of Reading, Reading, UK",
             "UW":"University of Washington, USA"
         },
         "license":"Data in this file produced by <Your Centre Name> is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Use of the data must be acknowledged following guidelines found at <a URL maintained by you>. Further information about this data, including some limitations, can be found via <some URL maintained by you>.",
@@ -133,13 +135,13 @@
                 "5000 km"
             ],
             "version_metadata":{
-                "CV_collection_modified":"Tue Nov  8 11:56:41 2022 -0700",
-                "CV_collection_version":"6.2.58.49",
+                "CV_collection_modified":"Thu Feb 23 10:37:06 2023 -0800",
+                "CV_collection_version":"6.2.58.52",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "institution_id":"PCMDI",
                 "nominal_resolution_CV_modified":"Tues Nov 15 16:04:00 2016 -0700",
                 "nominal_resolution_CV_note":"Issue141 durack1 update grid_resolution to nominal_resolution (#143)",
-                "previous_commit":"ae07f5e0d910de6afde1cee7d9cedd9771dfc5f1",
+                "previous_commit":"d66efa2f0c9dfc8049450fe3eeda79b0c760dd1e",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -354,6 +356,23 @@
                 ],
                 "source_version_number":"v04.2"
             },
+            "C3S-GTO-ECV-9-0":{
+                "institution_id":"DLR-BIRA",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2023",
+                "source":"GOME-type Total Ozone Essential Climate Variable (GTO-ECV), generated by combining measurements from several nadir-viewing satellite sensors (GOME/ERS-2, SCIAMACHY/Envisat, OMI/Aura, GOME-2/MetOp-A, GOME-2/MetOp-B, GOME-2/MetOp-C, and TROPOMI/Sentinel-5p",
+                "source_description":"GOME-type Total Ozone Essential Climate Variable (GTO-ECV), generated by combining measurements from several nadir-viewing satellite sensors (GOME/ERS-2, SCIAMACHY/Envisat, OMI/Aura, GOME-2/MetOp-A, GOME-2/MetOp-B, GOME-2/MetOp-C, and TROPOMI/Sentinel-5p",
+                "source_id":"C3S-GTO-ECV-9-0",
+                "source_label":"C3S-GTO-ECV",
+                "source_name":"C3S-GTO-ECV",
+                "source_type":"satellite_retrieval",
+                "source_variables":[
+                    "o3"
+                ],
+                "source_version_number":"9.0"
+            },
             "CERES-EBAF-4-0":{
                 "institution_id":"NASA-LaRC",
                 "region":[
@@ -393,6 +412,26 @@
                     "rsutcs"
                 ],
                 "source_version_number":"4.1"
+            },
+            "CERES-EBAF-4-2":{
+                "institution_id":"NASA-LaRC",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2022",
+                "source":"CERES EBAF (Energy Balanced and Filled) TOA Fluxes. Monthly Averages",
+                "source_description":"CERES EBAF (Energy Balanced and Filled) TOA Fluxes. Monthly Averages",
+                "source_id":"CERES-EBAF-4-2",
+                "source_label":"CERES-EBAF-4-2",
+                "source_name":"CERES-EBAF4-2",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "rlut",
+                    "rlutcs",
+                    "rsut",
+                    "rsutcs"
+                ],
+                "source_version_number":"4.2"
             },
             "CMAP-V1902":{
                 "institution_id":"NOAA-NCEI",
@@ -1481,6 +1520,23 @@
                 ],
                 "source_version_number":"5.0"
             },
+            "RSS-sfcWind-v07r01":{
+                "institution_id":"RSS",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2021",
+                "source":"RSS-sfcWind 7.0 (2021): 10m Surface Wind",
+                "source_description":"RSS-sfcWind 7.0 (2021): 10m Surface Wind",
+                "source_id":"RSS-sfcWind-v07r01",
+                "source_label":"RSS-sfcWind",
+                "source_name":"RSS-sfcWind",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "wind_speed"
+                ],
+                "source_version_number":"7.1"
+            },
             "RSS-v7":{
                 "institution_id":"RSS",
                 "region":[
@@ -1639,6 +1695,42 @@
                     "tauu",
                     "tauv",
                     "ts"
+                ],
+                "source_version_number":"1.0"
+            },
+            "nClimGrid-Daily-1-0":{
+                "institution_id":"NOAA-NCEI",
+                "region":"north_america",
+                "release_year":"2014",
+                "source":"NOAA nClimGrid-Daily",
+                "source_description":"NOAA nClimGrid-Daily",
+                "source_id":"nClimGrid-Daily-1-0",
+                "source_label":"nClimGrid-Daily-1-0",
+                "source_name":"nClimGrid-Daily-1-0",
+                "source_type":"gridded_insitu",
+                "source_variables":[
+                    "pr",
+                    "tas",
+                    "tasmax",
+                    "tasmin"
+                ],
+                "source_version_number":"1.0"
+            },
+            "nClimGrid-Monthly-1-0":{
+                "institution_id":"NOAA-NCEI",
+                "region":"north_america",
+                "release_year":"2014",
+                "source":"NOAA nClimGrid-Monthly",
+                "source_description":"NOAA nClimGrid-Monthly",
+                "source_id":"nClimGrid-Monthly-1-0",
+                "source_label":"nClimGrid-Monthly-1-0",
+                "source_name":"nClimGrid-Monthly-1-0",
+                "source_type":"gridded_insitu",
+                "source_variables":[
+                    "pr",
+                    "tas",
+                    "tasmax",
+                    "tasmin"
                 ],
                 "source_version_number":"1.0"
             }
