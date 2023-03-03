@@ -1,6 +1,5 @@
 # VARIABLES TO USE
 vars = ['ts']
-# vars = ['ua', 'ta']
 #vars = ['pr', 'ua', 'ta']
 
 # START AND END DATES FOR CLIMATOLOGY
@@ -16,6 +15,9 @@ infile = '/p/user_pub/PCMDIobs/obs4MIPs/MOHC/HadISST-1-1/mon/ts/gn/v20230109/ts_
 
 tmp = infile.replace('/mon/','/monC/')
 outfile = tmp.replace('_mon_','_monC_')
+
+periodinname = 'no'
+climlist = ['AC']
 
 print('outfile ',outfile.split('.'))
 
