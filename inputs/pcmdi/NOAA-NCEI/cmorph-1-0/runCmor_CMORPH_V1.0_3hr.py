@@ -5,8 +5,8 @@ cdm.setAutoBounds('on') # Caution, this attempts to automatically set coordinate
 #import pdb ; # Debug statement - import if enabling below
 
 #%% User provided input
-cmorTable = '../../Tables/obs4MIPs_Aday.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
-inputJson = 'GPCP_v1.3_da-input.json' ; # Update contents of this file to set your global_attributes
+cmorTable = '../../../../Tables/obs4MIPs_Aday.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+inputJson = 'CMORPH_V1.0_3hr-input-250km.json' ; # Update contents of this file to set your global_attributes
 inputFilePathbgn = '/p/user_pub/pmp/pmp_obs_preparation/orig/data/'
 inputFilePathend = '/GPCP_v1.3_da/'
 inputFileName = ['pr_GPCP-1DD_L3_v1.3_19961001-20161231.nc']
