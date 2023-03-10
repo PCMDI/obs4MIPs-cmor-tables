@@ -98,6 +98,7 @@
             "ECMWF":"The European Centre for Medium-Range Weather Forecasts, Shinfield Park, Reading RG2 9AX, UK",
             "ESPRI-IPSL":"Ensemble de Services Pour la Recherche, Institut Pierre Simon Laplace (France)",
             "ESSO":"Indian National Centre for Ocean Information Services",
+            "GloH2O":"gloh2o.org",
             "INCOIS-NIO-IPSL":"Joint research colloboration between INCOIS(India), NIO(India) and IPSL(France)",
             "ImperialCollege":"Imperial College, London, UK",
             "JAXA":"The Japan Aerospace Exploration Agency",
@@ -112,6 +113,7 @@
             "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
             "RSS":"Remote Sensing Systems, Santa Rosa, CA 95401, USA",
             "UCI-CHRS":"Center for Hydrometeorology and Remote Sensing",
+            "UCSD-SIO":"University of California, San Diego, Scripps Institution of Oceanography",
             "UReading":"University of Reading, Reading, UK",
             "UW":"University of Washington, USA"
         },
@@ -1129,6 +1131,22 @@
                 ],
                 "source_version_number":"1.0"
             },
+            "MSWEP-1-0":{
+                "institution_id":"GloH2O",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2021",
+                "source":"Multi-Source Weighted-Ensemble Precipitation",
+                "source_description":"Multi-Source Weighted-Ensemble Precipitation",
+                "source_label":"MSWEP",
+                "source_name":"MSWEP",
+                "source_type":"gridded_insitu",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"1.0"
+            },
             "NOAA-NCEI-AVHRR-NDVI-4-0":{
                 "institution_id":"NOAA-NCEI",
                 "region":[
@@ -1712,6 +1730,42 @@
                     "tauu",
                     "tauv",
                     "ts"
+                ],
+                "source_version_number":"1.0"
+            },
+            "livneh-1-0":{
+                "institution_id":"NOAA-ESRL-PSD",
+                "region":[
+                    "north_america"
+                ],
+                "release_year":"2021",
+                "source":"Livneh daily CONUS near-surface gridded meteorological and derived hydrometeorological data data provided by the NOAA PSL",
+                "source_description":"Livneh daily CONUS near-surface gridded meteorological and derived hydrometeorological data data provided by the NOAA PSL",
+                "source_label":"livneh",
+                "source_name":"livneh",
+                "source_type":"gridded_insitu",
+                "source_variables":[
+                    "pr",
+                    "sfcWind",
+                    "tasmax",
+                    "tasmin"
+                ],
+                "source_version_number":"1.0"
+            },
+            "livneh-unsplit-1-0":{
+                "institution_id":"UCSD-SIO",
+                "region":"north_america",
+                "release_year":"2021",
+                "source":"Livneh daily CONUS unsplit",
+                "source_description":"Livneh daily CONUS unsplit",
+                "source_label":"livneh_unsplit",
+                "source_name":"livneh_unsplit",
+                "source_type":"gridded_insitu",
+                "source_variables":[
+                    "pr",
+                    "sfcWind",
+                    "tasmax",
+                    "tasmin"
                 ],
                 "source_version_number":"1.0"
             },
