@@ -2,21 +2,30 @@ import cmor
 import xcdat 
 import xarray as xr
 import glob
-import cdms2 as cdm
 import numpy as np
 import sys, glob
-import MV2
-cdm.setAutoBounds('on') # Caution, this attempts to automatically set coordinate bounds - please check outputs using this option
-#import pdb ; # Debug statement - import if enabling below
 
 #%% User provided input
-cmorTable = '../../../../Tables/obs4MIPs_A3hr.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
-inputJson = 'CMORPH_V1.0_3hr-input.json' ; # Update contents of this file to set your global_attributes
+
+targetgrid = 'orig'
+targetgrid = '2deg'
+
+cmorTable = '../../../../Tables/obs4MIPs_A3hr.json' 
+
+if targetgrid == 'orig':
+  inputJson = 'CMORPH_V1.0_3hr-input.json' ; 
+  subdir = '3hr.center/'
+
+if targetgrid == '2deg':
+  inputJson = 'CMORPH_V1.0_3hr-input-250km.json' ;
+  subdir = '3hr.center_2deg/'
 
 inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/'
-inputFilePathend = '/NOAA-NCEI/CMOPRH_mahn_v20210719/CMORPH_v1.0/3hr.center/'
+inputFilePathend = '/NOAA-NCEI/CMOPRH_mahn_v20210719/CMORPH_v1.0/' + subdir
 
-lstall = glob.glob(inputFilePathbgn+inputFilePathend + '*2002*.nc')
+#lstall = glob.glob(inputFilePathbgn+inputFilePathend + '*2002*.nc')
+lstall = glob.glob(inputFilePathbgn+inputFilePathend + '*.nc')
+
 #lstall = [inputFilePathbgn+inputFilePathend + 'CMORPH_v1.0_0.25deg_3hr_200201.nc']
 
 print(len(lstall),' ', lstall)
@@ -39,7 +48,8 @@ for fi in lstall:
   lon = f.longitude.values  #d.getLongitude()
   time = f.time.values   #d.get
 
-  f = f.drop_vars(["lat_bounds","lon_bounds"])
+  if targetgrid == 'orig': f = f.drop_vars(["lat_bounds","lon_bounds"])
+  if targetgrid == '2deg': f = f.drop_vars(["bounds_latitude","bounds_longitude"])
 
   f = f.bounds.add_bounds("X")  #, width=0.5)
   f = f.bounds.add_bounds("Y")  
