@@ -430,6 +430,19 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['prw']
 source_id['source_id'][key]['source_version_number'] = '7.1'
 
+key = 'RSS-PRW-v07r02'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'RSS-PRW 7.2 (2022): Water Vapor Path'
+source_id['source_id'][key]['institution_id'] = 'RSS'
+source_id['source_id'][key]['release_year'] = '2022'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'RSS-PRW'
+source_id['source_id'][key]['source_name'] = 'RSS-PRW'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['prw']
+source_id['source_id'][key]['source_version_number'] = '7.2'
+
 key = 'RSS-SMAP-SSS-v05r01'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_description'] = 'Satellite derived SSS produced by RSS'
