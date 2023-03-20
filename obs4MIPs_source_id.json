@@ -845,6 +845,21 @@
             ],
             "source_version_number":"1.0"
         },
+        "MSWEP-V280":{
+            "institution_id":"GloH2O",
+            "region":[
+                "global"
+            ],
+            "release_year":"2021",
+            "source_description":"Multi-Source Weighted-Ensemble Precipitation",
+            "source_label":"MSWEP",
+            "source_name":"MSWEP",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"V280"
+        },
         "NOAA-NCEI-AVHRR-NDVI-4-0":{
             "institution_id":"NOAA-NCEI",
             "region":[
