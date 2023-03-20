@@ -21,13 +21,13 @@
                 "yrPt":"sampled yearly, at specified time point within the time period"
             },
             "version_metadata":{
-                "CV_collection_modified":"Thu Feb 23 10:37:06 2023 -0800",
-                "CV_collection_version":"6.2.58.52",
+                "CV_collection_modified":"Mon Mar 13 09:26:44 2023 -0700",
+                "CV_collection_version":"6.2.58.53",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "frequency_CV_modified":"Mon May 24 13:48:15 2021 00100",
                 "frequency_CV_note":"Update description of 3hr and 6hr frequencies",
                 "institution_id":"PCMDI",
-                "previous_commit":"d66efa2f0c9dfc8049450fe3eeda79b0c760dd1e",
+                "previous_commit":"8097b6d595fea1bdbc95fbcbf0c4dcc779e692c7",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -80,13 +80,13 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-                "CV_collection_modified":"Thu Feb 23 10:37:06 2023 -0800",
-                "CV_collection_version":"6.2.58.52",
+                "CV_collection_modified":"Mon Mar 13 09:26:44 2023 -0700",
+                "CV_collection_version":"6.2.58.53",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
-                "previous_commit":"d66efa2f0c9dfc8049450fe3eeda79b0c760dd1e",
+                "previous_commit":"8097b6d595fea1bdbc95fbcbf0c4dcc779e692c7",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -98,6 +98,7 @@
             "ECMWF":"The European Centre for Medium-Range Weather Forecasts, Shinfield Park, Reading RG2 9AX, UK",
             "ESPRI-IPSL":"Ensemble de Services Pour la Recherche, Institut Pierre Simon Laplace (France)",
             "ESSO":"Indian National Centre for Ocean Information Services",
+            "GloH2O":"gloh2o.org",
             "INCOIS-NIO-IPSL":"Joint research colloboration between INCOIS(India), NIO(India) and IPSL(France)",
             "ImperialCollege":"Imperial College, London, UK",
             "JAXA":"The Japan Aerospace Exploration Agency",
@@ -112,6 +113,7 @@
             "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
             "RSS":"Remote Sensing Systems, Santa Rosa, CA 95401, USA",
             "UCI-CHRS":"Center for Hydrometeorology and Remote Sensing",
+            "UCSD-SIO":"University of California, San Diego, Scripps Institution of Oceanography",
             "UReading":"University of Reading, Reading, UK",
             "UW":"University of Washington, USA"
         },
@@ -135,13 +137,13 @@
                 "5000 km"
             ],
             "version_metadata":{
-                "CV_collection_modified":"Thu Feb 23 10:37:06 2023 -0800",
-                "CV_collection_version":"6.2.58.52",
+                "CV_collection_modified":"Mon Mar 13 09:26:44 2023 -0700",
+                "CV_collection_version":"6.2.58.53",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "institution_id":"PCMDI",
                 "nominal_resolution_CV_modified":"Tues Nov 15 16:04:00 2016 -0700",
                 "nominal_resolution_CV_note":"Issue141 durack1 update grid_resolution to nominal_resolution (#143)",
-                "previous_commit":"d66efa2f0c9dfc8049450fe3eeda79b0c760dd1e",
+                "previous_commit":"8097b6d595fea1bdbc95fbcbf0c4dcc779e692c7",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -1129,6 +1131,38 @@
                 ],
                 "source_version_number":"1.0"
             },
+            "MSWEP-1-0":{
+                "institution_id":"GloH2O",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2021",
+                "source":"Multi-Source Weighted-Ensemble Precipitation",
+                "source_description":"Multi-Source Weighted-Ensemble Precipitation",
+                "source_label":"MSWEP",
+                "source_name":"MSWEP",
+                "source_type":"gridded_insitu",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"1.0"
+            },
+            "MSWEP-V280":{
+                "institution_id":"GloH2O",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2021",
+                "source":"Multi-Source Weighted-Ensemble Precipitation",
+                "source_description":"Multi-Source Weighted-Ensemble Precipitation",
+                "source_label":"MSWEP",
+                "source_name":"MSWEP",
+                "source_type":"gridded_insitu",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"V280"
+            },
             "NOAA-NCEI-AVHRR-NDVI-4-0":{
                 "institution_id":"NOAA-NCEI",
                 "region":[
@@ -1503,6 +1537,23 @@
                 ],
                 "source_version_number":"7.1"
             },
+            "RSS-PRW-v07r02":{
+                "institution_id":"RSS",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2022",
+                "source":"RSS-PRW 7.2 (2022): Water Vapor Path",
+                "source_description":"RSS-PRW 7.2 (2022): Water Vapor Path",
+                "source_id":"RSS-PRW-v07r02",
+                "source_label":"RSS-PRW",
+                "source_name":"RSS-PRW",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "prw"
+                ],
+                "source_version_number":"7.2"
+            },
             "RSS-SMAP-SSS-v05r01":{
                 "institution_id":"RSS",
                 "region":[
@@ -1695,6 +1746,42 @@
                     "tauu",
                     "tauv",
                     "ts"
+                ],
+                "source_version_number":"1.0"
+            },
+            "livneh-1-0":{
+                "institution_id":"NOAA-ESRL-PSD",
+                "region":[
+                    "north_america"
+                ],
+                "release_year":"2021",
+                "source":"Livneh daily CONUS near-surface gridded meteorological and derived hydrometeorological data data provided by the NOAA PSL",
+                "source_description":"Livneh daily CONUS near-surface gridded meteorological and derived hydrometeorological data data provided by the NOAA PSL",
+                "source_label":"livneh",
+                "source_name":"livneh",
+                "source_type":"gridded_insitu",
+                "source_variables":[
+                    "pr",
+                    "sfcWind",
+                    "tasmax",
+                    "tasmin"
+                ],
+                "source_version_number":"1.0"
+            },
+            "livneh-unsplit-1-0":{
+                "institution_id":"UCSD-SIO",
+                "region":"north_america",
+                "release_year":"2021",
+                "source":"Livneh daily CONUS unsplit",
+                "source_description":"Livneh daily CONUS unsplit",
+                "source_label":"livneh_unsplit",
+                "source_name":"livneh_unsplit",
+                "source_type":"gridded_insitu",
+                "source_variables":[
+                    "pr",
+                    "sfcWind",
+                    "tasmax",
+                    "tasmin"
                 ],
                 "source_version_number":"1.0"
             },

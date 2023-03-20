@@ -1,9 +1,47 @@
 source_id = {}
 source_id['source_id'] = {}
 
+key = 'livneh-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'livneh'
+source_id['source_id'][key]['source_label'] = 'livneh'
+source_id['source_id'][key]['release_year'] = '2021'
+source_id['source_id'][key]['source_description'] = 'Livneh daily CONUS near-surface gridded meteorological and derived hydrometeorological data data provided by the NOAA PSL'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'NOAA-ESRL-PSD'
+source_id['source_id'][key]['region'] = ['north_america']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['pr','tasmin', 'tasmax','sfcWind']
+source_id['source_id'][key]['source_version_number'] = '1.0'
+
+key = 'livneh-unsplit-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'livneh_unsplit' 
+source_id['source_id'][key]['source_label'] = 'livneh_unsplit'
+source_id['source_id'][key]['release_year'] = '2021'
+source_id['source_id'][key]['source_description'] = 'Livneh daily CONUS unsplit'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'UCSD-SIO'
+source_id['source_id'][key]['region'] = ['north_america']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['pr','tasmin', 'tasmax','sfcWind'] 
+source_id['source_id'][key]['source_version_number'] = '1.0'
+
+key = 'MSWEP-V280'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'MSWEP'
+source_id['source_id'][key]['source_label'] = 'MSWEP'
+source_id['source_id'][key]['release_year'] = '2021'
+source_id['source_id'][key]['source_description'] = 'Multi-Source Weighted-Ensemble Precipitation'
+source_id['source_id'][key]['institution_id'] = 'GloH2O'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['pr']
+source_id['source_id'][key]['source_version_number'] = 'V280'
+
 key = 'IMERG-V06-EU'
 source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_description'] = 'NASA IMERG prepared for FROGS'
+source_id['source_id'][key]['source_description'] = 'Livneh daily CONUS near-surface gridded meteorological and derived hydrometeorological data'
 source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
 source_id['source_id'][key]['release_year'] = '2017'
 source_id['source_id'][key]['source_id'] = key
@@ -429,6 +467,19 @@ source_id['source_id'][key]['source_type'] = 'satellite_blended'
 source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['prw']
 source_id['source_id'][key]['source_version_number'] = '7.1'
+
+key = 'RSS-PRW-v07r02'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'RSS-PRW 7.2 (2022): Water Vapor Path'
+source_id['source_id'][key]['institution_id'] = 'RSS'
+source_id['source_id'][key]['release_year'] = '2022'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'RSS-PRW'
+source_id['source_id'][key]['source_name'] = 'RSS-PRW'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['prw']
+source_id['source_id'][key]['source_version_number'] = '7.2'
 
 key = 'RSS-SMAP-SSS-v05r01'
 source_id['source_id'][key] = {}
