@@ -1,5 +1,5 @@
 import cmor
-import xcdat 
+import xcdat as xc 
 import xarray as xr
 import glob
 import numpy as np
@@ -21,11 +21,6 @@ if freq == 'Aday':
   avgp = 'Daily'
 
 
-#if freq == 'day': cmorTable = '../../../../Tables/obs4MIPs_Aday.json'
-#if freq == '3hr': cmorTable = '../../../../Tables/obs4MIPs_A3hr.json'
-
-
-
 
 if targetgrid == 'orig':
   inputJson = 'MSWEP-v280-input.json' ; 
@@ -37,9 +32,16 @@ if targetgrid == '2deg':
 inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/' 
 inputFilePathend = subdir
 
-#lstall = glob.glob(inputFilePathbgn+inputFilePathend + '*2002*.nc')
-lstall = glob.glob(inputFilePathbgn+inputFilePathend + '2017*.nc')
+lsttmp = glob.glob(inputFilePathbgn+inputFilePathend + '*.nc')  # TRAP ALL FILES
+lsttmp.sort()
 
+lstyrs = []  # TRAP ALL YEARS
+for i in lsttmp:
+  stryr = i.split(avgp+'/')[1].split('.nc')[0][0:4]
+  if stryr not in lstyrs:lstyrs.append(stryr)
+lstyrs.sort()
+ 
+#w = sys.stdin.readline()
 
 def extract_date(ds):   # preprocessing function when opening files
     for var in ds.variables:
@@ -51,39 +53,43 @@ def extract_date(ds):   # preprocessing function when opening files
     return ds
 
 
-print(len(lstall),' ', lstall)
-#w = sys.stdin.readline()
-
 inputVarName = 'precipitation'
 outputVarName = 'pr'
 outputUnits = 'kg m-2 s-1'
 
-### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE...
-#for fi in range(len(inputVarName)):
-#for fi in lstall:
-for a in [1]:
-# f = cdm.open(inputFilePath+inputFileName[fi])
-  f = xr.open_mfdataset(lstall,mask_and_scale=False, decode_times=False, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
+for yr in lstyrs[3:4]:
+  print('yr is', yr)
+  tmp = inputFilePathbgn+inputFilePathend + '*' + yr + '*.nc'
+  print(tmp)
+  lstall = glob.glob(inputFilePathbgn+inputFilePathend + '*' + yr + '*.nc')
+  lstall.sort()
+  print('len of lstall', len(lstall))
+#  w = sys.stdin.readline()
+
+# f = xr.open_mfdataset(lstall[0:30],mask_and_scale=False, decode_times=False, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
+  f = xc.open_mfdataset(lstall[0:30],add_bounds=True)
+
   d = f[inputVarName]
   d = np.divide(d,3600.)
   print('d read')
   time = f.time
-  lat = f.lat  #.values
-  lon = f.lon  #.values
+  lat = f.lat
+  lon = f.lon   #.values
 
   time['axis'] = "T"
   lat['axis'] = "Y"
   lon['axis'] = "X"
 
+  time["units"] = "days since 1900-1-1 00:00:00"
+  tunits = "days since 1900-1-1 00:00:00"
+
+
   f = f.bounds.add_bounds("X")  #, width=0.5)
   f = f.bounds.add_bounds("Y")  
   f = f.bounds.add_bounds("T")
 
-#####time.setBounds() #####time_bounds)
-#####del(time_bounds) ; # Cleanup
-
-  print('above cmor')
-  w = sys.stdin.readline()
+  print('above cmor', yr)
+# w = sys.stdin.readline()
 #%% Initialize and run CMOR
 # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
   cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4,logfile= 'cmorLog.txt')
@@ -91,16 +97,16 @@ for a in [1]:
   cmor.load_table(cmorTable)
 #cmor.set_cur_dataset_attribute('history',f.history) ; # Force input file attribute as history
   axes    = [ {'table_entry': 'time',
-             'units': f.time.units, # 'days since 1870-01-01',
+             'units': tunits, # 'days since 1870-01-01',
              },
              {'table_entry': 'latitude',
               'units': 'degrees_north',
-              'coord_vals': lat[:],
-              'cell_bounds': f.lat_bnds},
+              'coord_vals': lat.values,
+              'cell_bounds': f.lat_bnds.values},
              {'table_entry': 'longitude',
               'units': 'degrees_east',
-              'coord_vals': lon[:],
-              'cell_bounds': f.lon_bnds},
+              'coord_vals': lon.values,
+              'cell_bounds': f.lon_bnds.values},
           ]
   axisIds = list() ; # Create list of axes
   for axis in axes:
@@ -118,10 +124,10 @@ for a in [1]:
   #cmor.set_variable_attribute(varid,'valid_min',2.0)
   #cmor.set_variable_attribute(varid,'valid_max',3.0)
 
-# print('above cmor.write')
+  print('above cmor.write')
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
-  cmor.write(varid,values,time_vals=time[:],time_bnds=f.time_bnds.values) ; # Write variable with time axis
+  cmor.write(varid,values,time_vals=time.values,time_bnds=f.time_bnds.values) ; # Write variable with time axis
   cmor.close()
   f.close()
-  print('done cmorizing ', fi)
+  print('done cmorizing ', yr)
