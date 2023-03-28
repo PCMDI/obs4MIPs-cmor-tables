@@ -860,6 +860,51 @@
             ],
             "source_version_number":"V280"
         },
+        "MSWEP-V280-NRT":{
+            "institution_id":"GloH2O",
+            "region":[
+                "global"
+            ],
+            "release_year":"2021",
+            "source_description":"Multi-Source Weighted-Ensemble Precipitation",
+            "source_label":"MSWEP",
+            "source_name":"MSWEP",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"V280-Past-NRT"
+        },
+        "MSWEP-V280-Past":{
+            "institution_id":"GloH2O",
+            "region":[
+                "global"
+            ],
+            "release_year":"2021",
+            "source_description":"Multi-Source Weighted-Ensemble Precipitation",
+            "source_label":"MSWEP",
+            "source_name":"MSWEP",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"V280-Past"
+        },
+        "MSWEP-V280-Past-nogauge":{
+            "institution_id":"GloH2O",
+            "region":[
+                "global"
+            ],
+            "release_year":"2021",
+            "source_description":"Multi-Source Weighted-Ensemble Precipitation",
+            "source_label":"MSWEP",
+            "source_name":"MSWEP",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"V280-Past-nogauge"
+        },
         "NOAA-NCEI-AVHRR-NDVI-4-0":{
             "institution_id":"NOAA-NCEI",
             "region":[
