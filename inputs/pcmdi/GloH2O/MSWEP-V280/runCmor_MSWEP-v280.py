@@ -1,6 +1,8 @@
 import cmor
 import xcdat as xc 
 import xarray as xr
+from xarray.coding.times import encode_cf_datetime
+import cftime
 import glob
 import numpy as np
 import sys, glob
@@ -52,43 +54,74 @@ def extract_date(ds):   # preprocessing function when opening files
             ds["time"].attrs = {"units": dataset_units}
     return ds
 
+def dom(yr,mo):
+  if mo in ['01','03','05','07','08','10','12']: endofMoDay = '31' 
+  if mo in ['04','06','09','11']: endofMoDay = '30'
+  if mo == '02': endofMoDay = '28'
+  if mo == '02' and yr in ['1980','1984', '1988', '1992', '1996', '2000','2004', '2008', '2012', '2016', '2020']: endofMoDay = '29'
+  return endofMoDay
+#April, June, September, and November
+#January, March, May, July, August, October, and December.
 
 inputVarName = 'precipitation'
 outputVarName = 'pr'
 outputUnits = 'kg m-2 s-1'
 
+lstyrs = ['1979', '1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020']
+
 for yr in lstyrs[3:4]:
-  print('yr is', yr)
-  tmp = inputFilePathbgn+inputFilePathend + '*' + yr + '*.nc'
-  print(tmp)
-  lstall = glob.glob(inputFilePathbgn+inputFilePathend + '*' + yr + '*.nc')
-  lstall.sort()
-  print('len of lstall', len(lstall))
+ lstall = glob.glob(inputFilePathbgn+inputFilePathend + '*' + yr + '*.nc')
+ lstall.sort()
+ print(yr,'len of lstall', len(lstall))
 #  w = sys.stdin.readline()
+ pathin = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/Past/Daily/' + yr + '*.nc'
 
-# f = xr.open_mfdataset(lstall[0:30],mask_and_scale=False, decode_times=False, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
-  f = xc.open_mfdataset(lstall[0:30],add_bounds=True)
+ for mo in ['01','02','03','04','05','06','07','08','09','10','11','12']:
+  datestart = yr + '-' + mo + '-01'
+  endmo = dom(yr,mo)
+  dateend =   yr + '-' + mo + '-' + endmo 
 
-  d = f[inputVarName]
-  d = np.divide(d,3600.)
-  print('d read')
-  time = f.time
-  lat = f.lat
-  lon = f.lon   #.values
+  print('above fc')
+  fc = xc.open_mfdataset(pathin, mask_and_scale=False, decode_times=True, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
+  fc = fc.bounds.add_missing_bounds()   
+  print('below fc')
 
-  time['axis'] = "T"
+  tdc = fc.time.sel(time=slice(datestart, dateend))
+  tbds = fc.time_bnds.sel(time=slice(datestart, dateend))
+  ddc = fc[inputVarName].sel(time=slice(datestart, dateend))
+  tdc['axis'] = "T"
+  print('below tdc print')
+
+  units = tdc.time.encoding['units']
+  calendar = tdc.time.encoding['calendar']
+  tdc = encode_cf_datetime(tdc.time, units, calendar)
+  print('tdc ', tdc[0])
+
+# units = ddc.time.encoding['units']
+# calendar = ddc.time.encoding['calendar']
+  ddc = ddc.to_numpy()    
+  print('ddc[0:4,100,100]', ddc[0:4,100,100])
+
+  units = tbds.time.encoding['units']
+  calendar = tbds.time.encoding['calendar']
+  tbds = encode_cf_datetime(tbds.values, units, calendar)
+  print('tbds ', tbds[0])
+
+  d = np.divide(ddc,3600.)
+  print('d read',d.shape)
+# time = f.time
+# time = time.sel(time=slice('1980-01-01', '1980-02-01'))
+  lat = fc.lat
+  lon = fc.lon   #.values
+
+# time['axis'] = "T"
   lat['axis'] = "Y"
   lon['axis'] = "X"
 
-  time["units"] = "days since 1900-1-1 00:00:00"
+# time["units"] = "days since 1900-1-1 00:00:00"
   tunits = "days since 1900-1-1 00:00:00"
 
-
-  f = f.bounds.add_bounds("X")  #, width=0.5)
-  f = f.bounds.add_bounds("Y")  
-  f = f.bounds.add_bounds("T")
-
-  print('above cmor', yr)
+  print('above cmor ', yr,' ',mo)
 # w = sys.stdin.readline()
 #%% Initialize and run CMOR
 # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
@@ -102,11 +135,11 @@ for yr in lstyrs[3:4]:
              {'table_entry': 'latitude',
               'units': 'degrees_north',
               'coord_vals': lat.values,
-              'cell_bounds': f.lat_bnds.values},
+              'cell_bounds': fc.lat_bnds.values},
              {'table_entry': 'longitude',
               'units': 'degrees_east',
               'coord_vals': lon.values,
-              'cell_bounds': f.lon_bnds.values},
+              'cell_bounds': fc.lon_bnds.values},
           ]
   axisIds = list() ; # Create list of axes
   for axis in axes:
@@ -114,20 +147,20 @@ for yr in lstyrs[3:4]:
     axisIds.append(axisId)
 
 
-  print('above varid')
+# print('above varid')
+
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   varid   = cmor.variable(outputVarName,outputUnits,axisIds,missing_value=1.e20)
+# print('below varid')
+# w = sys.stdin.readline()
   values  = np.array(d[:],np.float32)
-  print('below values')
-
-# Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-  #cmor.set_variable_attribute(varid,'valid_min',2.0)
-  #cmor.set_variable_attribute(varid,'valid_max',3.0)
+# print('below values')
+# w = sys.stdin.readline()
 
   print('above cmor.write')
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
-  cmor.write(varid,values,time_vals=time.values,time_bnds=f.time_bnds.values) ; # Write variable with time axis
+  cmor.write(varid,values,time_vals=tdc[0],time_bnds=tbds[0]) ; # Write variable with time axis
   cmor.close()
-  f.close()
-  print('done cmorizing ', yr)
+  fc.close()
+  print('done cmorizing ', yr,' ',mo)
