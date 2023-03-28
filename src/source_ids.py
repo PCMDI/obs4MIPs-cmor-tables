@@ -27,7 +27,7 @@ source_id['source_id'][key]['source_type'] = 'gridded_insitu'
 source_id['source_id'][key]['source_variables'] = ['pr','tasmin', 'tasmax','sfcWind'] 
 source_id['source_id'][key]['source_version_number'] = '1.0'
 
-key = 'MSWEP-V280'
+key = 'MSWEP-V280-Past'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'MSWEP'
 source_id['source_id'][key]['source_label'] = 'MSWEP'
@@ -37,7 +37,32 @@ source_id['source_id'][key]['institution_id'] = 'GloH2O'
 source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_type'] = 'gridded_insitu'
 source_id['source_id'][key]['source_variables'] = ['pr']
-source_id['source_id'][key]['source_version_number'] = 'V280'
+source_id['source_id'][key]['source_version_number'] = 'V280-Past'
+
+key = 'MSWEP-V280-Past-nogauge'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'MSWEP'
+source_id['source_id'][key]['source_label'] = 'MSWEP'
+source_id['source_id'][key]['release_year'] = '2021'
+source_id['source_id'][key]['source_description'] = 'Multi-Source Weighted-Ensemble Precipitation'
+source_id['source_id'][key]['institution_id'] = 'GloH2O'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['pr']
+source_id['source_id'][key]['source_version_number'] = 'V280-Past-nogauge'
+
+key = 'MSWEP-V280-NRT'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'MSWEP'
+source_id['source_id'][key]['source_label'] = 'MSWEP'
+source_id['source_id'][key]['release_year'] = '2021'
+source_id['source_id'][key]['source_description'] = 'Multi-Source Weighted-Ensemble Precipitation'
+source_id['source_id'][key]['institution_id'] = 'GloH2O'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['pr']
+source_id['source_id'][key]['source_version_number'] = 'V280-Past-NRT'
+
 
 key = 'IMERG-V06-EU'
 source_id['source_id'][key] = {}

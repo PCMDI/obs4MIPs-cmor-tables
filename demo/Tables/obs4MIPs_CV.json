@@ -21,13 +21,13 @@
                 "yrPt":"sampled yearly, at specified time point within the time period"
             },
             "version_metadata":{
-                "CV_collection_modified":"Mon Mar 13 09:26:44 2023 -0700",
-                "CV_collection_version":"6.2.58.53",
+                "CV_collection_modified":"Tue Mar 21 10:41:04 2023 -0700",
+                "CV_collection_version":"6.2.58.54",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "frequency_CV_modified":"Mon May 24 13:48:15 2021 00100",
                 "frequency_CV_note":"Update description of 3hr and 6hr frequencies",
                 "institution_id":"PCMDI",
-                "previous_commit":"8097b6d595fea1bdbc95fbcbf0c4dcc779e692c7",
+                "previous_commit":"3cb5e465e9db02571fa2f6934978933440add7ee",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -80,13 +80,13 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-                "CV_collection_modified":"Mon Mar 13 09:26:44 2023 -0700",
-                "CV_collection_version":"6.2.58.53",
+                "CV_collection_modified":"Tue Mar 21 10:41:04 2023 -0700",
+                "CV_collection_version":"6.2.58.54",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
-                "previous_commit":"8097b6d595fea1bdbc95fbcbf0c4dcc779e692c7",
+                "previous_commit":"3cb5e465e9db02571fa2f6934978933440add7ee",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -137,13 +137,13 @@
                 "5000 km"
             ],
             "version_metadata":{
-                "CV_collection_modified":"Mon Mar 13 09:26:44 2023 -0700",
-                "CV_collection_version":"6.2.58.53",
+                "CV_collection_modified":"Tue Mar 21 10:41:04 2023 -0700",
+                "CV_collection_version":"6.2.58.54",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "institution_id":"PCMDI",
                 "nominal_resolution_CV_modified":"Tues Nov 15 16:04:00 2016 -0700",
                 "nominal_resolution_CV_note":"Issue141 durack1 update grid_resolution to nominal_resolution (#143)",
-                "previous_commit":"8097b6d595fea1bdbc95fbcbf0c4dcc779e692c7",
+                "previous_commit":"3cb5e465e9db02571fa2f6934978933440add7ee",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -1162,6 +1162,54 @@
                     "pr"
                 ],
                 "source_version_number":"V280"
+            },
+            "MSWEP-V280-NRT":{
+                "institution_id":"GloH2O",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2021",
+                "source":"Multi-Source Weighted-Ensemble Precipitation",
+                "source_description":"Multi-Source Weighted-Ensemble Precipitation",
+                "source_label":"MSWEP",
+                "source_name":"MSWEP",
+                "source_type":"gridded_insitu",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"V280-Past-NRT"
+            },
+            "MSWEP-V280-Past":{
+                "institution_id":"GloH2O",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2021",
+                "source":"Multi-Source Weighted-Ensemble Precipitation",
+                "source_description":"Multi-Source Weighted-Ensemble Precipitation",
+                "source_label":"MSWEP",
+                "source_name":"MSWEP",
+                "source_type":"gridded_insitu",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"V280-Past"
+            },
+            "MSWEP-V280-Past-nogauge":{
+                "institution_id":"GloH2O",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2021",
+                "source":"Multi-Source Weighted-Ensemble Precipitation",
+                "source_description":"Multi-Source Weighted-Ensemble Precipitation",
+                "source_label":"MSWEP",
+                "source_name":"MSWEP",
+                "source_type":"gridded_insitu",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"V280-Past-nogauge"
             },
             "NOAA-NCEI-AVHRR-NDVI-4-0":{
                 "institution_id":"NOAA-NCEI",
