@@ -19,7 +19,7 @@
     "output_path_template":"<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>",
     "product":"observations",
     "references":"Beck, H. E., Wood, E. F., Pan, M., Fisher, C. K., Miralles, D. M., van Dijk, A. I. J. M., McVicar, T. R., and Adler, R. F. MSWEP V2 global 3‑hourly 0.1° precipitation: methodology and quantitative assessment Bulletin of the American Meteorological Society 100(3), 473–500, 2019",
-    "source_id":"MSWEP-V280",
+    "source_id":"MSWEP-V280-Past",
     "title":"Multi-Source Weighted-Ensemble Precipitation",
     "tracking_prefix":"hdl:21.14102",
     "variant_info":"Best Estimate",

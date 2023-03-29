@@ -14,6 +14,7 @@ targetgrid = 'orig'
 
 freq = 'Aday'  #'Amon'
 opt = 'Past'
+version = 'Past'
 
 if freq == 'Amon': 
   cmorTable = '../../../../Tables/obs4MIPs_Amon.json' 
@@ -21,7 +22,6 @@ if freq == 'Amon':
 if freq == 'Aday':
   cmorTable = '../../../../Tables/obs4MIPs_Aday.json'
   avgp = 'Daily'
-
 
 
 if targetgrid == 'orig':
@@ -69,7 +69,7 @@ outputUnits = 'kg m-2 s-1'
 
 lstyrs = ['1979', '1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020']
 
-for yr in lstyrs[3:4]:
+for yr in lstyrs:
  lstall = glob.glob(inputFilePathbgn+inputFilePathend + '*' + yr + '*.nc')
  lstall.sort()
  print(yr,'len of lstall', len(lstall))
