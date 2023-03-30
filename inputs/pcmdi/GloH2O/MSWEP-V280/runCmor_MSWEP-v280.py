@@ -12,8 +12,7 @@ import sys, glob
 targetgrid = 'orig'
 #targetgrid = '2deg'
 
-freq = 'Aday'  #'Amon'
-opt = 'Past'
+freq = 'A3hr' #'Amon' #'Aday'  #'Amon'
 version = 'Past'
 
 if freq == 'Amon': 
@@ -22,17 +21,19 @@ if freq == 'Amon':
 if freq == 'Aday':
   cmorTable = '../../../../Tables/obs4MIPs_Aday.json'
   avgp = 'Daily'
-
+if freq == 'A3hr':
+  cmorTable = '../../../../Tables/obs4MIPs_A3hr.json'
+  avgp = '3hourly'
 
 if targetgrid == 'orig':
-  inputJson = 'MSWEP-v280-input.json' ; 
-subdir = opt + '/' + avgp + '/'
+  inputJson = 'MSWEP-v280-' + version + '_input.json' ; 
+  subdir = version + '/' + avgp + '/'
 
 if targetgrid == '2deg':
   inputJson = 'MSWEP-v280-input.json' ;
 
 inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/' 
-inputFilePathend = subdir
+inputFilePathend = version 
 
 lsttmp = glob.glob(inputFilePathbgn+inputFilePathend + '*.nc')  # TRAP ALL FILES
 lsttmp.sort()
@@ -69,67 +70,91 @@ outputUnits = 'kg m-2 s-1'
 
 lstyrs = ['1979', '1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020']
 
+lstyrs = ['1979']
+
 for yr in lstyrs:
- lstall = glob.glob(inputFilePathbgn+inputFilePathend + '*' + yr + '*.nc')
- lstall.sort()
- print(yr,'len of lstall', len(lstall))
-#  w = sys.stdin.readline()
- pathin = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/Past/Daily/' + yr + '*.nc'
+#lstall = glob.glob(inputFilePathbgn+inputFilePathend + '*' + yr + '*.nc')
+#lstall.sort()
+#print(yr,'len of lstall', len(lstall))
+#w = sys.stdin.readline()
 
- for mo in ['01','02','03','04','05','06','07','08','09','10','11','12']:
-  datestart = yr + '-' + mo + '-01'
+ pathin = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/Past/' + avgp + '/' + yr + '*.nc'
+
+ if avgp == 'Daily': mos = ['01','02','03','04','05','06','07','08','09','10','11','12'] 
+ if avgp == 'Monthly': mos = ['01']
+ if avgp == '3hourly': mos = ['01']
+
+ print('above fc')
+ fc = xc.open_mfdataset(pathin, mask_and_scale=False, decode_times=True, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
+ fc = fc.bounds.add_missing_bounds()   
+ print('below fc')
+
+ for mo in mos:
   endmo = dom(yr,mo)
-  dateend =   yr + '-' + mo + '-' + endmo 
 
-  print('above fc')
-  fc = xc.open_mfdataset(pathin, mask_and_scale=False, decode_times=True, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
-  fc = fc.bounds.add_missing_bounds()   
-  print('below fc')
+  for dy in range(1,int(endmo)+1):
+  
+   if avgp == 'Daily':
+    datestart = yr + '-' + mo + '-01'
+    dateend =   yr + '-' + mo + '-' + endmo 
 
-  tdc = fc.time.sel(time=slice(datestart, dateend))
-  tbds = fc.time_bnds.sel(time=slice(datestart, dateend))
-  ddc = fc[inputVarName].sel(time=slice(datestart, dateend))
-  tdc['axis'] = "T"
-  print('below tdc print')
+   if avgp == 'Monthly':
+    datestart = yr + '-01'  
+    dateend =   yr + '-12'
+#  if yr == '1979': datestart = yr + '-02'
 
-  units = tdc.time.encoding['units']
-  calendar = tdc.time.encoding['calendar']
-  tdc = encode_cf_datetime(tdc.time, units, calendar)
-  print('tdc ', tdc[0])
+   if avgp == '3hourly':
+    if str(dy) in ['1','2','3','4','5','6','7','8','9']: dy = '0' + str(dy)
+    datestart = yr + '-' + mo + '-' + str(dy) + ' 00'
+    dateend =   yr + '-' + mo + '-' + str(dy) + ' 21'
+#   if yr == '1979': datestart = yr + '-' + mo + '-01-00'
 
-# units = ddc.time.encoding['units']
-# calendar = ddc.time.encoding['calendar']
-  ddc = ddc.to_numpy()    
-  print('ddc[0:4,100,100]', ddc[0:4,100,100])
+#  print('above fc')
+#  fc = xc.open_mfdataset(pathin, mask_and_scale=False, decode_times=True, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
+#  fc = fc.bounds.add_missing_bounds()   
+#  print('below fc')
 
-  units = tbds.time.encoding['units']
-  calendar = tbds.time.encoding['calendar']
-  tbds = encode_cf_datetime(tbds.values, units, calendar)
-  print('tbds ', tbds[0])
+   tdc = fc.time.sel(time=slice(datestart, dateend))
+   tbds = fc.time_bnds.sel(time=slice(datestart, dateend))
+   ddc = fc[inputVarName].sel(time=slice(datestart, dateend))
+   tdc['axis'] = "T"
+   print('below tdc print')
 
-  d = np.divide(ddc,3600.)
-  print('d read',d.shape)
-# time = f.time
-# time = time.sel(time=slice('1980-01-01', '1980-02-01'))
-  lat = fc.lat
-  lon = fc.lon   #.values
+   units = tdc.time.encoding['units']
+   calendar = tdc.time.encoding['calendar']
+   tdc = encode_cf_datetime(tdc.time, units, calendar)
+   print('tdc ', tdc[0])
 
-# time['axis'] = "T"
-  lat['axis'] = "Y"
-  lon['axis'] = "X"
+   ddc = ddc.to_numpy()    
+   print('ddc[0:4,100,100]', ddc[0:4,100,100])
 
-# time["units"] = "days since 1900-1-1 00:00:00"
-  tunits = "days since 1900-1-1 00:00:00"
+   units = tbds.time.encoding['units']
+   calendar = tbds.time.encoding['calendar']
+   tbds = encode_cf_datetime(tbds.values, units, calendar)
+   print('tbds ', tbds[0])
 
-  print('above cmor ', yr,' ',mo)
-# w = sys.stdin.readline()
-#%% Initialize and run CMOR
-# For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
-  cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4,logfile= 'cmorLog.txt')
-  cmor.dataset_json(inputJson)
-  cmor.load_table(cmorTable)
+#  THE UNITS IN THE ORIGINAL FILES DEPEND ON FREQUENCY
+   if avgp == 'Daily':  conv = 3600.*24.
+   if avgp == '3hourly':  conv = 3600.*24.*3.
+   if avgp == 'Monthly': conv = 3600.*24.*float(endmo) 
+   d = np.divide(ddc,conv)
+   print('d read',d.shape)
+
+   lat = fc.lat
+   lon = fc.lon   #.values
+
+   lat['axis'] = "Y"
+   lon['axis'] = "X"
+
+   tunits = "days since 1900-1-1 00:00:00"
+
+   print('above cmor ', yr,' ',mo)
+
+   cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4,logfile= 'cmorLog.txt')
+   cmor.dataset_json(inputJson)
+   cmor.load_table(cmorTable)
 #cmor.set_cur_dataset_attribute('history',f.history) ; # Force input file attribute as history
-  axes    = [ {'table_entry': 'time',
+   axes    = [ {'table_entry': 'time',
              'units': tunits, # 'days since 1870-01-01',
              },
              {'table_entry': 'latitude',
@@ -141,8 +166,8 @@ for yr in lstyrs:
               'coord_vals': lon.values,
               'cell_bounds': fc.lon_bnds.values},
           ]
-  axisIds = list() ; # Create list of axes
-  for axis in axes:
+   axisIds = list() ; # Create list of axes
+   for axis in axes:
     axisId = cmor.axis(**axis)
     axisIds.append(axisId)
 
@@ -150,17 +175,17 @@ for yr in lstyrs:
 # print('above varid')
 
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-  varid   = cmor.variable(outputVarName,outputUnits,axisIds,missing_value=1.e20)
+   varid   = cmor.variable(outputVarName,outputUnits,axisIds,missing_value=1.e20)
 # print('below varid')
 # w = sys.stdin.readline()
-  values  = np.array(d[:],np.float32)
+   values  = np.array(d[:],np.float32)
 # print('below values')
 # w = sys.stdin.readline()
 
-  print('above cmor.write')
+   print('above cmor.write')
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-  cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
-  cmor.write(varid,values,time_vals=tdc[0],time_bnds=tbds[0]) ; # Write variable with time axis
-  cmor.close()
-  fc.close()
-  print('done cmorizing ', yr,' ',mo)
+   cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
+   cmor.write(varid,values,time_vals=tdc[0],time_bnds=tbds[0]) ; # Write variable with time axis
+   cmor.close()
+   fc.close()
+   print('done cmorizing ', yr,' ',mo)
