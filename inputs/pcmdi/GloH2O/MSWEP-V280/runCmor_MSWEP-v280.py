@@ -70,7 +70,7 @@ outputUnits = 'kg m-2 s-1'
 
 lstyrs = ['1979', '1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020']
 
-lstyrs = ['1979']
+#lstyrs = ['1979']
 
 for yr in lstyrs:
 #lstall = glob.glob(inputFilePathbgn+inputFilePathend + '*' + yr + '*.nc')
@@ -82,7 +82,7 @@ for yr in lstyrs:
 
  if avgp == 'Daily': mos = ['01','02','03','04','05','06','07','08','09','10','11','12'] 
  if avgp == 'Monthly': mos = ['01']
- if avgp == '3hourly': mos = ['01']
+ if avgp == '3hourly': mos = ['01','02','03','04','05','06','07','08','09','10','11','12'] 
 
  print('above fc')
  fc = xc.open_mfdataset(pathin, mask_and_scale=False, decode_times=True, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
