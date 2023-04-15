@@ -17,7 +17,7 @@ ver = datetime.datetime.now().strftime('v%Y%m%d')
 
 verin = 'v20210727'
 verin = 'latest'
-#verin = 'v20210804'
+verin = 'v20210804'
 
 ###############################################################
 datatype = 'clim'  
