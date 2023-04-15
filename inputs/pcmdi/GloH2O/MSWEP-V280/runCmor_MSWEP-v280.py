@@ -7,8 +7,6 @@ import glob
 import numpy as np
 import sys, glob
 
-#%% User provided input
-
 targetgrid = 'orig'
 #targetgrid = '2deg'
 
@@ -35,7 +33,7 @@ if targetgrid == '2deg':
 inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/' 
 inputFilePathend = version 
 
-lsttmp = glob.glob(inputFilePathbgn+inputFilePathend + '*.nc')  # TRAP ALL FILES
+lsttmp = glob.glob(inputFilePathbgn+inputFilePathend + '/' + '*.nc')  # TRAP ALL FILES
 lsttmp.sort()
 
 lstyrs = []  # TRAP ALL YEARS
@@ -70,9 +68,9 @@ outputUnits = 'kg m-2 s-1'
 
 lstyrs = ['1979', '1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020']
 
-#lstyrs = ['1979']
+#lstyrs = ['1981']
 
-for yr in lstyrs:
+for yr in lstyrs:  # LOOP OVER YEARS
 #lstall = glob.glob(inputFilePathbgn+inputFilePathend + '*' + yr + '*.nc')
 #lstall.sort()
 #print(yr,'len of lstall', len(lstall))
@@ -187,5 +185,7 @@ for yr in lstyrs:
    cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
    cmor.write(varid,values,time_vals=tdc[0],time_bnds=tbds[0]) ; # Write variable with time axis
    cmor.close()
-   fc.close()
    print('done cmorizing ', yr,' ',mo)
+
+ fc.close()
+
