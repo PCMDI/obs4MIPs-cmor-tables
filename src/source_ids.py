@@ -75,6 +75,18 @@ source_id['source_id'][key]['source_type'] = 'gridded_insitu'
 source_id['source_id'][key]['source_variables'] = ['pr']
 source_id['source_id'][key]['source_version_number'] = 'V280-Past-NRT'
 
+key = 'MUR25-4-2'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'MUR25'
+source_id['source_id'][key]['source_label'] = 'MUR25'
+source_id['source_id'][key]['release_year'] = '2019'
+source_id['source_id'][key]['source_description'] = 'Multiscale Ultrahigh Resolution L4 Sea-Surface Temperature'
+source_id['source_id'][key]['institution_id'] = 'NASA-JPL'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] = ['tos']
+source_id['source_id'][key]['source_version_number'] = 'v4.2'
+
 
 key = 'IMERG-V06-EU'
 source_id['source_id'][key] = {}

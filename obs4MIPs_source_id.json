@@ -921,6 +921,21 @@
             ],
             "source_version_number":"V280-Past-nogauge"
         },
+        "MUR25-4-2":{
+            "institution_id":"NASA-JPL",
+            "region":[
+                "global"
+            ],
+            "release_year":"2019",
+            "source_description":"Multiscale Ultrahigh Resolution L4 Sea-Surface Temperature",
+            "source_label":"MUR25",
+            "source_name":"MUR25",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "tos"
+            ],
+            "source_version_number":"v4.2"
+        },
         "NOAA-NCEI-AVHRR-NDVI-4-0":{
             "institution_id":"NOAA-NCEI",
             "region":[
