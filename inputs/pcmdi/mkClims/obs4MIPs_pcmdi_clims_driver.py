@@ -1,19 +1,36 @@
 import glob
 import xcdat as xc
-import os
+import os, sys
+import datetime
+
+ver_out = datetime.datetime.now().strftime('v%Y%m%d')
+
 
 ver = 'v20230109'
-lstt = '/p/user_pub/PCMDIobs/obs4MIPs/*/*/mon/*/gn/' + ver 
+ver = 'latest'
 
-lst = glob.glob(lstt + '/*.nc')
+
+pin = '/p/user_pub/PCMDIobs/obs4MIPs/*/*/mon/*/gn/' + ver 
+
+lstt = glob.glob(pin + '/*.nc')
+
+lst = []
+for l in lstt:
+  pd = os.path.dirname(l)
+  nf = glob.glob(pd + '/*.nc')
+  nfiles = len(nf)
+  if pd not in lst and nfiles ==1: lst.append(l)
 
 print(len(lst))
-for l in lst:
- print(l)
+w = sys.stdin.readline()
 
-f_time_series = lst[0]
-f_clim = f_time_series.replace('/mon/','/Cmon/')
-print(f_clim)
-base_path = f_clim.split('/Cmon/')[0] + '/Cmon'
-
-print(base_path) 
+for infile in lst:
+#  infile = os.path.realpath(infile) 
+   var = infile.split('/')[8]
+   tmp = infile.replace('/mon/','/Cmon/') 
+   outfile = tmp.replace('_mon_','_Cmon_')
+   outfile = outfile.replace(ver,ver_out)
+#  print(outfile)
+   cmd = 'pcmdi_compute_climatologies.py -p test_obs_param.py --infile ' + infile + ' --outfile ' + outfile + ' --vars ' + var
+   os.popen(cmd).readlines()
+   print(cmd)
