@@ -840,7 +840,7 @@
                     "rlut",
                     "rsut"
                 ],
-                "source_version_number":"HR_ED01_1.0"
+                "source_version_number":"HR_ED01_1.1"
             },
             "GNSS-RO-1-3":{
                 "institution_id":"NASA-JPL",
