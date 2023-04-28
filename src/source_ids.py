@@ -37,7 +37,7 @@ source_id['source_id'][key]['institution_id'] = 'ImperialCollege'
 source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_type'] = 'satellite_blended'
 source_id['source_id'][key]['source_variables'] = ['rlut','rsut']
-source_id['source_id'][key]['source_version_number'] = 'HR_ED01_1.0'
+source_id['source_id'][key]['source_version_number'] = 'HR_ED01_1.1'
 
 key = 'MSWEP-V280-Past'
 source_id['source_id'][key] = {}

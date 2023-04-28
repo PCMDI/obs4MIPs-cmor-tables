@@ -575,23 +575,27 @@ source_id_orig = json.load(open('../obs4MIPs_source_id.json','r'))
 print(source_id_orig.keys())
 
 exec(open("./source_ids.py").read())
+print('below exec')
+
+#print(source_id['source_id']['GERB-HR-ED01-1-1'])
+#w = sys.stdin.readline()
 
 for s in source_id_orig['source_id'].keys():
   source_id['source_id'][s] = source_id_orig['source_id'][s] 
 
+#print(source_id['source_id']['GERB-HR-ED01-1-1'])
 
 source_id['source_id']['20CR']['institution_id'] = 'NOAA-ESRL-PSD' 
 source_id['source_id']['CERES-EBAF-4-0']['institution_id'] = 'NASA-LaRC'
 source_id['source_id']['CERES-EBAF-4-1']['institution_id'] = 'NASA-LaRC'
 #source_id['source_id']['CERES-EBAF-4-1']['institution_id'] = 'NASA-LaRC--PCMDI'
 source_id['source_id']['TropFlux-1-0']['institution_id'] = 'ESSO'
-
 #source_id['source_id']['REMSS-PRW-v07r01']['institution_id'] = 'RSS'
 #source_id['source_id']['REMSS-PRW-v07r01']['institution'] = 'RSS data prepared by PCMDI for obs4MIPs'
 source_id['source_id']['CMAP-V1902']['institution_id'] = 'NOAA-NCEI'
 source_id['source_id']['GPCP-2-3']['institution_id'] = 'NOAA-NCEI'
 
-
+#print(source_id['source_id']['GERB-HR-ED01-1-1'])
 #w = sys.stdin.readline()
 
 # Enter fixes or additions below
