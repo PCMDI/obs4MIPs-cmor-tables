@@ -542,6 +542,22 @@
             ],
             "source_version_number":"HR_ED01_1.0"
         },
+        "GERB-HR-ED01-1-1":{
+            "institution_id":"ImperialCollege",
+            "region":[
+                "global"
+            ],
+            "release_year":"2018",
+            "source_description":"Geostationary Earth Radiation Budget",
+            "source_label":"GERB",
+            "source_name":"GERB",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "rlut",
+                "rsut"
+            ],
+            "source_version_number":"HR_ED01_1.0"
+        },
         "GNSS-RO-1-3":{
             "institution_id":"NASA-JPL",
             "region":[
