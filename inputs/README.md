@@ -1,4 +1,4 @@
-## Recipie for preparation of obs4MIPs compliant data (work in progress)
+## Recipe for preparation of obs4MIPs compliant data (work in progress)
 
 The recipie and demos below describe the process of making a copy of an observational data product that is obs4MIPs compliant.  This is in support of, but independent of the process of "publishing" obs4MIPs compliant data to ESGF. A user does not need to clone this repository to prepare obs4MIPs compliant data.  Instead, common usage involves copying information from the provided demo and modifying it for use to prepare a new obs4MIPs compliant dataset.  
 
