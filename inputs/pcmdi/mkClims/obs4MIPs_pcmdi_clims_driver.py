@@ -8,7 +8,7 @@ ver_out = datetime.datetime.now().strftime('v%Y%m%d')
 ver = 'v20230109'
 ver = 'latest'
 
-pin = '/p/user_pub/PCMDIobs/obs4MIPs/*/*/mon/*/gn/' + ver 
+pin = '/p/user_pub/PCMDIobs/obs4MIPs/*/ERA-5/mon/ta/*/' + ver 
 
 lstt = glob.glob(pin + '/*.nc')
 
@@ -19,8 +19,8 @@ for l in lstt:
   nfiles = len(nf)
   if pd not in lst and nfiles ==1: lst.append(l)
 
-print(len(lst))
-w = sys.stdin.readline()
+print('number of files ',len(lst))
+#w = sys.stdin.readline()
 
 for infile in lst:
 #  infile = os.path.realpath(infile) 
