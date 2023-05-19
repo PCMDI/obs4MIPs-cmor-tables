@@ -27,6 +27,18 @@ source_id['source_id'][key]['source_type'] = 'gridded_insitu'
 source_id['source_id'][key]['source_variables'] = ['pr','tasmin', 'tasmax','sfcWind'] 
 source_id['source_id'][key]['source_version_number'] = '1.0'
 
+key = 'GERB-HR-ED01-1-1'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'GERB'
+source_id['source_id'][key]['source_label'] = 'GERB'
+source_id['source_id'][key]['release_year'] = '2018'
+source_id['source_id'][key]['source_description'] = 'Geostationary Earth Radiation Budget'
+source_id['source_id'][key]['institution_id'] = 'ImperialCollege'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] = ['rlut','rsut']
+source_id['source_id'][key]['source_version_number'] = 'HR_ED01_1.1'
+
 key = 'MSWEP-V280-Past'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'MSWEP'
