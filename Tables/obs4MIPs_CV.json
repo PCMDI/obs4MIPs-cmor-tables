@@ -1604,6 +1604,23 @@
                 ],
                 "source_version_number":"v20110531"
             },
+            "RSS-MWIR-SST-5-1":{
+                "institution_id":"RSS",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2022",
+                "source":"RSS MWIR v5.1 Foundation OISST",
+                "source_description":"RSS MWIR v5.1 Foundation OISST",
+                "source_id":"RSS-MWIR-SST-5-1",
+                "source_label":"RSS-MWIR-SST",
+                "source_name":"RSS-MWIR-SST",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "tos"
+                ],
+                "source_version_number":"5.1"
+            },
             "RSS-PRW-6-6-0":{
                 "institution_id":"RSS",
                 "region":[

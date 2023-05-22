@@ -514,6 +514,19 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['pr']
 source_id['source_id'][key]['source_version_number'] = '3B42.MW.v7.0'
 
+key = 'RSS-MWIR-SST-5-1'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'RSS MWIR v5.1 Foundation OISST'
+source_id['source_id'][key]['institution_id'] = 'RSS'
+source_id['source_id'][key]['release_year'] = '2022'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'RSS-MWIR-SST'
+source_id['source_id'][key]['source_name'] = 'RSS-MWIR-SST'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['tos']
+source_id['source_id'][key]['source_version_number'] = '5.1'
+
 key = 'RSS-PRW-6-6-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_description'] = 'RSS-PRW 6.6.0 (2017): Water Vapor Path'
