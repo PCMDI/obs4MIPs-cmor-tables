@@ -1,6 +1,18 @@
 source_id = {}
 source_id['source_id'] = {}
 
+key = 'PRISM-M3'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'PRISM'
+source_id['source_id'][key]['source_label'] = 'PRISM'
+source_id['source_id'][key]['release_year'] = '2022'
+source_id['source_id'][key]['source_description'] = 'PRISM Spatial Climate Datasets for CONUS'
+source_id['source_id'][key]['source_version_number'] = 'M3'
+source_id['source_id'][key]['institution_id'] = 'OSU'
+source_id['source_id'][key]['region'] = ['north_america']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['pr','tasmin', 'tasmax','tas']
+
 key = 'livneh-1-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'livneh'
@@ -12,7 +24,6 @@ source_id['source_id'][key]['institution_id'] = 'NOAA-ESRL-PSD'
 source_id['source_id'][key]['region'] = ['north_america']
 source_id['source_id'][key]['source_type'] = 'gridded_insitu'
 source_id['source_id'][key]['source_variables'] = ['pr','tasmin', 'tasmax','sfcWind']
-source_id['source_id'][key]['source_version_number'] = '1.0'
 
 key = 'livneh-unsplit-1-0'
 source_id['source_id'][key] = {}
@@ -25,7 +36,6 @@ source_id['source_id'][key]['institution_id'] = 'UCSD-SIO'
 source_id['source_id'][key]['region'] = ['north_america']
 source_id['source_id'][key]['source_type'] = 'gridded_insitu'
 source_id['source_id'][key]['source_variables'] = ['pr','tasmin', 'tasmax','sfcWind'] 
-source_id['source_id'][key]['source_version_number'] = '1.0'
 
 key = 'GERB-HR-ED01-1-1'
 source_id['source_id'][key] = {}
