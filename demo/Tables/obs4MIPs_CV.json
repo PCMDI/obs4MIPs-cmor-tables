@@ -110,6 +110,7 @@
             "NCAR":"National Center for Atmospheric Research, Boulder, CO 80307, USA",
             "NOAA-ESRL-PSD":"NOAA Earth System Research Laboratory, Physical Sciences Division, Boulder, CO 80305, USA",
             "NOAA-NCEI":"NOAA National Centers for Environmental Information, Asheville, NC 28801, USA",
+            "OSU":"Oregon State University",
             "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
             "RSS":"Remote Sensing Systems, Santa Rosa, CA 95401, USA",
             "UCI-CHRS":"Center for Hydrometeorology and Remote Sensing",
@@ -1228,6 +1229,22 @@
                 ],
                 "source_version_number":"V280-Past-nogauge"
             },
+            "MUR25-4-2":{
+                "institution_id":"NASA-JPL",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2019",
+                "source":"Multiscale Ultrahigh Resolution L4 Sea-Surface Temperature",
+                "source_description":"Multiscale Ultrahigh Resolution L4 Sea-Surface Temperature",
+                "source_label":"MUR25",
+                "source_name":"MUR25",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "tos"
+                ],
+                "source_version_number":"v4.2"
+            },
             "NOAA-NCEI-AVHRR-NDVI-4-0":{
                 "institution_id":"NOAA-NCEI",
                 "region":[
@@ -1549,6 +1566,25 @@
                     "pr"
                 ],
                 "source_version_number":"CDRv1r1"
+            },
+            "PRISM-M3":{
+                "institution_id":"OSU",
+                "region":[
+                    "north_america"
+                ],
+                "release_year":"2022",
+                "source":"PRISM Spatial Climate Datasets for CONUS",
+                "source_description":"PRISM Spatial Climate Datasets for CONUS",
+                "source_label":"PRISM",
+                "source_name":"PRISM",
+                "source_type":"gridded_insitu",
+                "source_variables":[
+                    "pr",
+                    "tas",
+                    "tasmax",
+                    "tasmin"
+                ],
+                "source_version_number":"M3"
             },
             "QuikSCAT-v20110531":{
                 "institution_id":"NASA-JPL",
