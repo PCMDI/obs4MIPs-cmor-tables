@@ -1,7 +1,7 @@
 import os, sys
 import json
 import xcdat as xc
-
+import numpy as np
 
 var = 'pr'
 fq = 'day' # "monthly"
@@ -12,13 +12,13 @@ ddic = json.load(open(pathin))
 srcs = ddic[var].keys()
 
 for src in srcs:
-  print(src)
   template = '/p/user_pub/PCMDIobs/' + ddic['pr'][src]['template']
   f = xc.open_dataset(template, decode_times=False, decode_cf=False)
   d = f[var] 
   d0 = d[0]
-  ds_global_avg = d0.spatial.average(var)
+# ds_global_avg = d0.spatial.average(var)
+  ga = np.average(d0)
+  print(src,'  ', ga) 
 
 
-
-  w = sys.stdin.readline()
+# w = sys.stdin.readline()
