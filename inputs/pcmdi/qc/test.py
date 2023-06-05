@@ -16,9 +16,10 @@ for src in srcs:
 # f = xc.open_dataset(template, decode_times=False, decode_cf=False)
   f= xc.open_mfdataset(template, mask_and_scale=True, decode_times=False, combine='nested', concat_dim='time', data_vars='all')
   d = f[var] 
-  d0 = d[0]
-# ds_global_avg = d0.spatial.average(var)
-  ga = np.average(d0)
+# d0 = d[0]
+# ga = np.average(d0)
+  ga = d.isel(time=0).spatial.average(data_var = var)
+
   print(src,'  ', ga) 
 
 
