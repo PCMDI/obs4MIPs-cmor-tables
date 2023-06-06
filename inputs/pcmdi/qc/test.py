@@ -2,25 +2,44 @@ import os, sys
 import json
 import xcdat as xc
 import numpy as np
+import glob
 
-var = 'pr'
-fq = 'day' # "monthly"
+vars_list = ['pr']
+fqs_list = ['monthly']  #, 'day']
 
+for var in vars_list:
+    for fq in fqs_list:
+        
+        pathin_template = '/p/user_pub/PCMDIobs/catalogue/obs4MIPs_PCMDI_' + fq + '_byVar_catalogue_v????????.json'
+        pathin = sorted(glob.glob(pathin_template))[-1]  # select the latest catalogue file
 
-pathin = '/p/user_pub/PCMDIobs/catalogue/obs4MIPs_PCMDI_' + fq + '_byVar_catalogue_v20230530.json'
-ddic = json.load(open(pathin))
-srcs = ddic[var].keys()
+        print('\nvar, fq, catalogue:', var, fq, pathin.split('/')[-1])
 
-for src in srcs:
-  template = '/p/user_pub/PCMDIobs/' + ddic['pr'][src]['template']
-# f = xc.open_dataset(template, decode_times=False, decode_cf=False)
-  f= xc.open_mfdataset(template, mask_and_scale=True, decode_times=False, combine='nested', concat_dim='time', data_vars='all')
-  d = f[var] 
-# d0 = d[0]
-# ga = np.average(d0)
-  ga = d.isel(time=0).spatial.average(data_var = var)
+        ddic = json.load(open(pathin))
+        srcs = sorted(list(ddic[var].keys()))
+        
+        print('\nSource'.ljust(20), '\t', 'Mean @ t=0'.ljust(10), '\t','Min'.ljust(10),'\t','Max'.ljust(10),'\t', 'Units'.ljust(10))
+        print('----------------', '\t', '------------', '\t', '----------','\t', '------------', '\t', '----------')
+        
+        for src in srcs:
+            if 'default' not in src and 'alternate' not in src:  # exclude 'default' or 'alternate?' keys
+                template = '/p/user_pub/PCMDIobs/' + ddic[var][src]['template']
+                ds = xc.open_mfdataset(
+                    template,
+                    mask_and_scale=True,
+                    decode_times=False,
+                    combine='nested',
+                    concat_dim='time',
+                    data_vars='all')
+                # get spatial mean of the first time step
+                ds_avg = float(ds.isel(time=0).spatial.average(var)[var])
+                ds_max = ds.isel(time=0)[var].max().values
+                ds_min = ds.isel(time=0)[var].min().values
+                # print on screen 
+                print(src.ljust(20), '\t', '{:.10f}'.format(ds_avg),'\t','{:.10f}'.format(ds_min),'\t','{:.10f}'.format(ds_max), '\t', ds[var].units.ljust(10))
+#               w = sys.stdin.readline()
+                ds.close()
 
-  print(src,'  ', ga) 
+      
 
-
-# w = sys.stdin.readline()
+print('\n')
