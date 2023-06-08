@@ -16,7 +16,7 @@ def extract_date(ds):   # preprocessing function when opening files
 
 #%% User provided input
 cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
-inputJson = 'PRISM_OSU_inputs.json' ; # Update contents of this file to set your global_attributes
+inputJson = 'livneh_NOAA-PSL_inputs.json' ; # Update contents of this file to set your global_attributes
 inputDatasets = '/p/user_pub/PCMDIobs/obs4MIPs_input/OSU/PRISM/monthly/processed_final/PRISM_monthly*.nc' 
 inputVarName = 'PPT'
 #outputVarName = 'pr'

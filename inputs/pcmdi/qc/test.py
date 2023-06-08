@@ -5,7 +5,7 @@ import numpy as np
 import glob
 
 vars_list = ['pr']
-fqs_list = ['monthly']  #, 'day']
+fqs_list = ['monthly','day']
 
 for var in vars_list:
     for fq in fqs_list:
@@ -20,6 +20,7 @@ for var in vars_list:
         
         print('\nSource'.ljust(20), '\t', 'Mean @ t=0'.ljust(10), '\t','Min'.ljust(10),'\t','Max'.ljust(10),'\t', 'Units'.ljust(10))
         print('----------------', '\t', '------------', '\t', '----------','\t', '------------', '\t', '----------')
+
         
         for src in srcs:
             if 'default' not in src and 'alternate' not in src:  # exclude 'default' or 'alternate?' keys
