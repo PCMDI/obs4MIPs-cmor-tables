@@ -46,6 +46,9 @@ for varFile in lst:
  lat = f.lat.values
  lon = f.lon.values
 
+ w = sys.stdin.readline()
+
+
  lat_bounds = f.lat_bnds[0]
  lon_bounds = f.lon_bnds[0]
  time_bounds = f.time_bnds
