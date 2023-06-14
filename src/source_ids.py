@@ -110,7 +110,6 @@ source_id['source_id'][key]['source_type'] = 'satellite_blended'
 source_id['source_id'][key]['source_variables'] = ['tos']
 source_id['source_id'][key]['source_version_number'] = 'v4.2'
 
-
 key = 'IMERG-V06-EU'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_description'] = 'Livneh daily CONUS near-surface gridded meteorological and derived hydrometeorological data'

@@ -796,6 +796,38 @@
             ],
             "source_version_number":"V06-LU"
         },
+        "IMERG-V06B-FINAL":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global"
+            ],
+            "release_year":"2017",
+            "source_description":"IMERG blended rain rate product",
+            "source_id":"IMERG-V06B-FINAL",
+            "source_label":"IMERG-V06B-FINAL",
+            "source_name":"IMERG-V06B-FINAL",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"V06B"
+        },
+        "IMERG-v06B-FINAL":{
+            "institution_id":"NASA-GFSC",
+            "region":[
+                "global"
+            ],
+            "release_year":"2019",
+            "source_description":"IMERG blended rain rate product",
+            "source_id":"IMERG-v06B-FINAL",
+            "source_label":"IMERG-v06B-FINAL",
+            "source_name":"IMERG-v06B-FINAL",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"v06B"
+        },
         "IMERG-v06B-Final":{
             "institution_id":"NASA-GSFC",
             "region":[
@@ -1273,6 +1305,22 @@
                 "vas"
             ],
             "source_version_number":"v20110531"
+        },
+        "RSS-MWIR-SST-5-1":{
+            "institution_id":"RSS",
+            "region":[
+                "global"
+            ],
+            "release_year":"2022",
+            "source_description":"RSS MWIR v5.1 Foundation OISST",
+            "source_id":"RSS-MWIR-SST-5-1",
+            "source_label":"RSS-MWIR-SST",
+            "source_name":"RSS-MWIR-SST",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "tos"
+            ],
+            "source_version_number":"5.1"
         },
         "RSS-PRW-6-6-0":{
             "institution_id":"RSS",
