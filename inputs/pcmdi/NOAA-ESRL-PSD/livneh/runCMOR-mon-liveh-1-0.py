@@ -27,8 +27,7 @@ def dom(yr,mo):
 #%% User provided input
 cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'livneh_NOAA-PSL_inputs.json' ; # Update contents of this file to set your global_attributes
-inputDatasets = '/p/user_pub/PCMDIobs/obs4MIPs_input/NOAA-ESRL-PSD/Livney_monthly/*.mean.nc'
-inputVarName = 'PPT'
+inputDatasets = '/p/user_pub/PCMDIobs/obs4MIPs_input/NOAA-ESRL-PSD/Livney_monthly/*prec*.mean.nc'
 #outputVarName = 'pr'
 #outputUnits = 'kg m-2 s-1'
 
@@ -47,15 +46,21 @@ for varFile in lst:
 
  print('working on', inputVarName)
 
+
+ f1 = xc.open_dataset(varFile, mask_and_scale=False, decode_times=True)
+ f1 = f1.bounds.add_missing_bounds() # create lat,lon, and time bounds
+ d1 = f1[inputVarName].isel(time=slice(0,24))
+
  f = xc.open_dataset(varFile, mask_and_scale=True, decode_times=True)
  f = f.bounds.add_missing_bounds() # create lat,lon, and time bounds
+ d = f[inputVarName].isel(time=slice(0,24))
 
  g = xc.open_dataset(varFile, mask_and_scale=True, decode_times=False)
  time_units = g.time.units
- time_bounds_values = np.array(g.time_bnds,np.float64)
- time_values = np.array(g.time,np.float64) 
-
- d = f[inputVarName]
+ time_bounds_values = np.array(g.time_bnds,np.float64)[0:24]
+ time_values = np.array(g.time,np.float64)[0:24]
+ 
+#fillvalue = g[inputVarName]._FillValue
 
  time = f.time
  lat = f.lat.values
@@ -74,10 +79,9 @@ for varFile in lst:
        year = ds.time.values.tolist()[0].year
        month = ds.time.values.tolist()[0].month
        num_days = monthrange(year, month)[1]
-#      print('num days', num_days)
        conv = 3600.*24.*float(num_days) 
-       d[t] = np.divide(d[t],conv)
-     
+#      d[t] = ma.divide(d[t],conv)
+       d[t] = d[t]/conv
    
  if inputVarName == 'tmax':
    outputVarName = 'tasmax'
@@ -117,14 +121,19 @@ for varFile in lst:
 
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
  d["units"] = outputUnits
- varid   = cmor.variable(outputVarName,str(d.units.values),axisIds,missing_value=-9999.)
- d = np.where(np.isnan(d),ma.masked,d)
+ varid   = cmor.variable(outputVarName,str(d.units.values),axisIds,missing_value=1.e20)
+#values = np.where(np.isnan(d),1.e20,d)
+#values = d.to_masked_array()
  values  = np.array(d[:],np.float32)
+ values = np.where(np.isnan(d),1.e20,d)
+#values  = np.array(d.values,np.float32)
+
+#print('below values')
+#w = sys.stdin.readline()
 
 # Since 'analysed_sst' is stored as a 'short' integer array in these data files,
 # it is easiest to 'mask_and_scale' the data (as we do in 'xc.open_dataset' above)
 # and apply the conversion to degrees Celsius and set the missing data values here.
- values  = values 
 #values[np.isnan(values)] = -9999.
 
 # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
