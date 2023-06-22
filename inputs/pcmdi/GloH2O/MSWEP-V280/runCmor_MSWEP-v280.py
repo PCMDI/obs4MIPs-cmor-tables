@@ -12,8 +12,8 @@ import sys, glob
 targetgrid = 'orig'
 #targetgrid = '2deg'
 
-freq = 'A3hr' #'Amon' #'Aday'  #'Amon'
-version = 'Past'
+freq = 'Amon'  #'A3hr' #'Amon' #'Aday'  #'Amon'
+version = 'Past'  # MSWEP-v280-NRT   # MSWEP-v280-nogauge
 
 if freq == 'Amon': 
   cmorTable = '../../../../Tables/obs4MIPs_Amon.json' 
