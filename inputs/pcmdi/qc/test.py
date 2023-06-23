@@ -5,7 +5,7 @@ import numpy as np
 import glob
 
 vars_list = ['pr']
-fqs_list = ['monthly']  #, 'day']
+fqs_list = ['monthly', 'day']
 
 for var in vars_list:
     for fq in fqs_list:
