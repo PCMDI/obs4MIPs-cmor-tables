@@ -5,7 +5,7 @@ import numpy as np
 import glob
 
 vars_list = ['pr']
-fqs_list = ['monthly']  #, 'day']
+fqs_list = ['monthly','day']
 
 for var in vars_list:
     for fq in fqs_list:
@@ -18,8 +18,9 @@ for var in vars_list:
         ddic = json.load(open(pathin))
         srcs = sorted(list(ddic[var].keys()))
         
-        print('\nSource'.ljust(20), '\t', 'Mean @ t=0'.ljust(10), '\t','Min'.ljust(10),'\t','Max'.ljust(10),'\t', 'Units'.ljust(10))
-        print('----------------', '\t', '------------', '\t', '----------','\t', '------------', '\t', '----------')
+        print('\nSource'.ljust(20), '\t', 'Mean @ t=0'.ljust(10), '\t','Min'.ljust(10),'\t','Max'.ljust(10),'\t', 'Units'.ljust(10),'\t', 'missing_value'.ljust(10),'\t', 'FillValue'.ljust(10))
+        print('----------------', '\t', '------------', '\t', '----------','\t', '------------', '\t', '----------','\t', '------------', '\t', '----------')
+
         
         for src in srcs:
             if 'default' not in src and 'alternate' not in src:  # exclude 'default' or 'alternate?' keys
@@ -28,6 +29,7 @@ for var in vars_list:
                     template,
                     mask_and_scale=True,
                     decode_times=False,
+                    decode_cf=False,
                     combine='nested',
                     concat_dim='time',
                     data_vars='all')
@@ -36,7 +38,7 @@ for var in vars_list:
                 ds_max = ds.isel(time=0)[var].max().values
                 ds_min = ds.isel(time=0)[var].min().values
                 # print on screen 
-                print(src.ljust(20), '\t', '{:.10f}'.format(ds_avg),'\t','{:.10f}'.format(ds_min),'\t','{:.10f}'.format(ds_max), '\t', ds[var].units.ljust(10))
+                print(src.ljust(20), '\t', '{:.10f}'.format(ds_avg),'\t','{:.10f}'.format(ds_min),'\t','{:.10f}'.format(ds_max), '\t', ds[var].units.ljust(10),'\t',ds[var].attrs['missing_value'],'\t','\t', ds[var].attrs['_FillValue'])
 #               w = sys.stdin.readline()
                 ds.close()
 

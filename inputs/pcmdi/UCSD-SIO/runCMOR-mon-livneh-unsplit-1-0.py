@@ -15,10 +15,9 @@ def extract_date(ds):   # preprocessing function when opening files
     return ds
 
 #%% User provided input
-cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
-inputJson = 'PRISM_OSU_inputs.json' ; # Update contents of this file to set your global_attributes
-inputDatasets = '/p/user_pub/PCMDIobs/obs4MIPs_input/OSU/PRISM/monthly/processed_final/PRISM_monthly*.nc' 
-inputVarName = 'PPT'
+cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+inputJson = 'livneh-unsplit_UCSD-SIO_inputs.json' ; # Update contents of this file to set your global_attributes
+inputDatasets = '/p/user_pub/PCMDIobs/obs4MIPs_input/UCSD-SIO/nonsplit_precip/processed_monthly/Livneh_Unsplit_monthly_*1981-2005.nc' 
 #outputVarName = 'pr'
 #outputUnits = 'kg m-2 s-1'
 
@@ -28,14 +27,16 @@ lst.sort()
 print('Number of files ', len(lst))
 #w = sys.stdin.readline()
 
-# Opening and concatenating files from the dataset
+# Opening and concatenating files from the datasnet
 # Due to the way the data are stored + how CMOR outputs data, it is helpful to set 'mask_and_scale' to 'True' here
 
 for varFile in lst:
 
- inputVarName  = varFile.split('PRISM_monthly_')[1].split('_1981_2005.nc')[0].replace('_1981-2005.nc','')
+ inputVarName  = varFile.split('Livneh_Unsplit')[1].split('_')[2] 
 
  print('working on', inputVarName)
+
+#w = sys.stdin.readline()
 
  f = xc.open_mfdataset(varFile, mask_and_scale=True, decode_times=False, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
  f = f.bounds.add_missing_bounds() # create lat,lon, and time bounds
@@ -45,19 +46,22 @@ for varFile in lst:
  lat = f.lat.values
  lon = f.lon.values
 
+ w = sys.stdin.readline()
+
+
  lat_bounds = f.lat_bnds[0]
  lon_bounds = f.lon_bnds[0]
  time_bounds = f.time_bnds
 
- if inputVarName == 'PPT':
+ if inputVarName == 'PRCP':
    outputVarName = 'pr'
    outputUnits = 'kg m-2 s-1'
    
- if inputVarName == 'TMAX':
+ if inputVarName == 'Tmax':
    outputVarName = 'tasmax'
    outputUnits = 'K'
 
- if inputVarName == 'TMIN':
+ if inputVarName == 'Tmin':
    outputVarName = 'tasmin'
    outputUnits = 'K'
 
@@ -90,8 +94,8 @@ for varFile in lst:
     axisIds.append(axisId)
 
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
- d["units"] = outputUnits
- varid   = cmor.variable(outputVarName,str(d.units.values),axisIds,missing_value=-9999.)
+#f["PRCP"].units = outputUnits
+ varid   = cmor.variable(outputVarName,outputUnits,axisIds,missing_value=-9999.)
  values  = np.array(d[:],np.float32)
 
 # Since 'analysed_sst' is stored as a 'short' integer array in these data files,
