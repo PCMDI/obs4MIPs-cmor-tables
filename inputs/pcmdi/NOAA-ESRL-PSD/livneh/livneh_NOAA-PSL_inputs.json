@@ -27,7 +27,7 @@
     "tracking_prefix":"hdl:21.14102",
     "variant_info":"Best Estimate",
     "variant_label":"PCMDI",
-    "originData_URL": "https://www.prism.oregonstate.edu/",
+    "originData_URL": "https://psl.noaa.gov/data/gridded/data.livneh.html",
     "originData_retrieved": "20230524; PJG @ PCMDI",
     "originData_notes": "This space is for additional info relevant to how the retrieved data will be made obs4MIPs compliant."
 }

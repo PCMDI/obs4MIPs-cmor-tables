@@ -1,6 +1,7 @@
 import cmor
 import xcdat as xc
 import numpy as np
+import numpy.ma as ma 
 import json
 import sys
 import glob
@@ -87,12 +88,11 @@ for vr in vars_lst:
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   d["units"] = outputUnits
   varid   = cmor.variable(outputVarName,str(d.units.values),axisIds,missing_value=-9999.)
-  values  = np.array(d[:],np.float32)
 
-# Since 'analysed_sst' is stored as a 'short' integer array in these data files,
-# it is easiest to 'mask_and_scale' the data (as we do in 'xc.open_dataset' above)
-# and apply the conversion to degrees Celsius and set the missing data values here.
-#values[np.isnan(values)] = -9999.
+# w = sys.stdin.readline()
+  values = d.to_numpy()
+  values = np.where(np.isnan(values),ma.masked,values)
+  if vr == 'prec': values = np.divide(values,3600.*24.)
 
 # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_variable_attribute(varid,'valid_min','f',-1.8) # set manually for the time being

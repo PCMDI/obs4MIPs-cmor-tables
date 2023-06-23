@@ -16,16 +16,16 @@ def extract_date(ds):   # preprocessing function when opening files
     return ds
 
 #%% User provided input
-cmorTable = '../../../../Tables/obs4MIPs_Aday.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
-inputJson = 'livneh_NOAA-PSL_inputs.json' ; # Update contents of this file to set your global_attributes
+cmorTable = '../../../Tables/obs4MIPs_Aday.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+inputJson = 'livneh-unsplit_UCSD-SIO_inputs.json' ; # Update contents of this file to set your global_attributes
 
-vars_lst = ['prec', 'tmax','tmin'] 
+vars_lst = ['PRCP']   #, 'tmax','tmin'] 
 
 for vr in vars_lst:
 
- inputDatasets = '/p/user_pub/PCMDIobs/obs4MIPs_input/NOAA-ESRL-PSD/Livneh_daily/downloads.psl.noaa.gov/Datasets/livneh/metvars/' + vr + '.*.nc' # change to local path on user's machine where files are stored
+ inputDatasets = '/p/user_pub/PCMDIobs/obs4MIPs_input/UCSD-SIO/nonsplit_precip/precip/livneh_unsplit_precip.*.nc' # change to local path on user's machine where files are stored
 
- if vr == 'prec':
+ if vr == 'PRCP':
    outputVarName = 'pr'
    outputUnits = 'kg m-2 s-1'
 
@@ -48,17 +48,27 @@ for vr in vars_lst:
 
  for yearlyFile in lst:
 
-  f = xc.open_mfdataset(yearlyFile, mask_and_scale=True, decode_times=False, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
-  f = f.bounds.add_missing_bounds() # create lat,lon, and time bounds
+# f = xc.open_mfdataset(yearlyFile, mask_and_scale=True, decode_times=False, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
+  f = xc.open_dataset(yearlyFile)
+# f = f.drop_dims('time')
+# f = f.bounds.add_missing_bounds() # create lat,lon, and time bounds
   d = f[vr]
 
-  time = f.time
+  f.lon.attrs["axis"] = "X"
+  f.lat.attrs["axis"] = "Y"
+  f.Time.attrs["axis"] = "T"
+
+  time = f.Time
   lat = f.lat.values
   lon = f.lon.values
 
+  f = f.bounds.add_missing_bounds() # create lat,lon, and time bounds
+
+# w = sys.stdin.readline()
+
   lat_bounds = f.lat_bnds
   lon_bounds = f.lon_bnds
-  time_bounds = f.time_bnds
+  time_bounds = f.Time_bnds
 
 #%% Initialize and run CMOR
 # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
