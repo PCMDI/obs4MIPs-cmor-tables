@@ -13,7 +13,7 @@ targetgrid = 'orig'
 #targetgrid = '2deg'
 
 freq = 'Amon'  #'A3hr' #'Amon' #'Aday'  #'Amon'
-version = 'Past'  # MSWEP-v280-NRT   # MSWEP-v280-nogauge
+version = 'Past-nogauge'  #'Past'  # NRT   # Past-nogauge
 
 if freq == 'Amon': 
   cmorTable = '../../../../Tables/obs4MIPs_Amon.json' 
@@ -26,16 +26,16 @@ if freq == 'A3hr':
   avgp = '3hourly'
 
 if targetgrid == 'orig':
-  inputJson = 'MSWEP-v280-' + version + '_input.json' ; 
+  inputJson = 'MSWEP-V280-' + version + '_input.json' ; 
   subdir = version + '/' + avgp + '/'
 
 if targetgrid == '2deg':
-  inputJson = 'MSWEP-v280-input.json' ;
+  inputJson = 'MSWEP-V280-input.json' ;
 
 inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/' 
 inputFilePathend = version 
 
-lsttmp = glob.glob(inputFilePathbgn+inputFilePathend + '*.nc')  # TRAP ALL FILES
+lsttmp = glob.glob(inputFilePathbgn+inputFilePathend + '/*.nc')  # TRAP ALL FILES
 lsttmp.sort()
 
 lstyrs = []  # TRAP ALL YEARS
@@ -70,6 +70,9 @@ outputUnits = 'kg m-2 s-1'
 
 lstyrs = ['1979', '1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020']
 
+lstyrs = ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020']
+
+
 #lstyrs = ['1979']
 
 for yr in lstyrs:
@@ -78,7 +81,7 @@ for yr in lstyrs:
 #print(yr,'len of lstall', len(lstall))
 #w = sys.stdin.readline()
 
- pathin = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/Past/' + avgp + '/' + yr + '*.nc'
+ pathin = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/' + version + '/' + avgp + '/' + yr + '*.nc'
 
  if avgp == 'Daily': mos = ['01','02','03','04','05','06','07','08','09','10','11','12'] 
  if avgp == 'Monthly': mos = ['01']
