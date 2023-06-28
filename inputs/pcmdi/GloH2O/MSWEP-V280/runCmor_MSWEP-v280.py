@@ -12,8 +12,8 @@ import sys, glob
 targetgrid = 'orig'
 #targetgrid = '2deg'
 
-freq = 'Amon'  #'A3hr' #'Amon' #'Aday'  #'Amon'
-version = 'Past-nogauge'  #'Past'  # NRT   # Past-nogauge
+freq = 'Aday' #'Amon'  #'A3hr' #'Amon' #'Aday'  #'Amon'
+version = 'Past'  #'Past-nogauge'  #'Past'  # NRT   # Past-nogauge
 
 if freq == 'Amon': 
   cmorTable = '../../../../Tables/obs4MIPs_Amon.json' 
@@ -73,7 +73,7 @@ lstyrs = ['1979', '1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987'
 lstyrs = ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020']
 
 
-#lstyrs = ['1979']
+lstyrs = ['1979','1980']
 
 for yr in lstyrs:
 #lstall = glob.glob(inputFilePathbgn+inputFilePathend + '*' + yr + '*.nc')
@@ -93,9 +93,9 @@ for yr in lstyrs:
  print('below fc')
 
  for mo in mos:
-  endmo = dom(yr,mo)
+   endmo = dom(yr,mo)
 
-  for dy in range(1,int(endmo)+1):
+# for dy in range(1,int(endmo)+1):
   
    if avgp == 'Daily':
     datestart = yr + '-' + mo + '-01'
@@ -106,10 +106,10 @@ for yr in lstyrs:
     dateend =   yr + '-12'
 #  if yr == '1979': datestart = yr + '-02'
 
-   if avgp == '3hourly':
-    if str(dy) in ['1','2','3','4','5','6','7','8','9']: dy = '0' + str(dy)
-    datestart = yr + '-' + mo + '-' + str(dy) + ' 00'
-    dateend =   yr + '-' + mo + '-' + str(dy) + ' 21'
+#  if avgp == '3hourly':
+#   if str(dy) in ['1','2','3','4','5','6','7','8','9']: dy = '0' + str(dy)
+#   datestart = yr + '-' + mo + '-' + str(dy) + ' 00'
+#   dateend =   yr + '-' + mo + '-' + str(dy) + ' 21'
 #   if yr == '1979': datestart = yr + '-' + mo + '-01-00'
 
 #  print('above fc')
