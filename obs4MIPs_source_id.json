@@ -1239,6 +1239,24 @@
             ],
             "source_version_number":"CDRv1r1"
         },
+        "PRISM-M3":{
+            "institution_id":"OSU",
+            "region":[
+                "north_america"
+            ],
+            "release_year":"2022",
+            "source_description":"PRISM Spatial Climate Datasets for CONUS",
+            "source_label":"PRISM",
+            "source_name":"PRISM",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "pr",
+                "tas",
+                "tasmax",
+                "tasmin"
+            ],
+            "source_version_number":"M3"
+        },
         "QuikSCAT-v20110531":{
             "institution_id":"NASA-JPL",
             "region":[
