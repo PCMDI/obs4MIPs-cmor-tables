@@ -13,7 +13,7 @@ targetgrid = 'orig'
 #targetgrid = '2deg'
 
 freq = 'Amon' #'Amon' #'Aday'  #'Amon'
-version = 'Past'
+version = 'Past-nogauge'  # 'NRT'  'Past-nogauge'  'Past'
 
 if freq == 'Amon': 
   cmorTable = '../../../../Tables/obs4MIPs_Amon.json' 
@@ -27,13 +27,12 @@ if freq == 'A3hr':
 
 if targetgrid == 'orig':
   inputJson = 'MSWEP-v280-' + version + '_input.json' ; 
-  subdir = version + '/' + avgp + '/'
 
 if targetgrid == '2deg':
   inputJson = 'MSWEP-v280-input.json' ;
 
 inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/' 
-inputFilePathend = version 
+inputFilePathend = version.replace('-','_') 
 
 lsttmp = glob.glob(inputFilePathbgn+inputFilePathend + '*.nc')  # TRAP ALL FILES
 lsttmp.sort()
@@ -78,7 +77,7 @@ for yr in lstyrs:
 #print(yr,'len of lstall', len(lstall))
 #w = sys.stdin.readline()
 
- pathin = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/Past/' + avgp + '/' + yr + '*.nc'
+ pathin = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/' + version.replace('-','_') + '/' + avgp + '/' + yr + '*.nc'
 
  if avgp == 'Daily': mos = ['01','02','03','04','05','06','07','08','09','10','11','12'] 
  if avgp == 'Monthly': mos = ['01']
@@ -114,24 +113,24 @@ for yr in lstyrs:
 #  fc = fc.bounds.add_missing_bounds()   
 #  print('below fc')
 
-   tdc = fc.time.sel(time=slice(datestart, dateend))
-   tbds = fc.time_bnds.sel(time=slice(datestart, dateend))
-   ddc = fc[inputVarName].sel(time=slice(datestart, dateend))
-   tdc['axis'] = "T"
-   print('below tdc print')
+   tdc = fc.time.sel(time=slice(datestart, dateend)).values
+   tbds = fc.time_bnds.sel(time=slice(datestart, dateend)).values
+   ddc = fc[inputVarName].sel(time=slice(datestart, dateend)).values
+#  tdc['axis'] = "T"
+#  print('below tdc print')
 
    units = tdc.time.encoding['units']
    calendar = tdc.time.encoding['calendar']
-   tdc = encode_cf_datetime(tdc.time, units, calendar)
-   print('tdc ', tdc[0])
+#  tdc = encode_cf_datetime(tdc.time, units, calendar)
+#  print('tdc ', tdc[0])
 
-   ddc = ddc.to_numpy()    
-   print('ddc[0:4,100,100]', ddc[0:4,100,100])
+#  ddc = ddc.to_numpy()    
+#  print('ddc[0:4,100,100]', ddc[0:4,100,100])
 
-   units = tbds.time.encoding['units']
-   calendar = tbds.time.encoding['calendar']
-   tbds = encode_cf_datetime(tbds.values, units, calendar)
-   print('tbds ', tbds[0])
+#  units = tbds.time.encoding['units']
+#  calendar = tbds.time.encoding['calendar']
+#  tbds = encode_cf_datetime(tbds.values, units, calendar)
+#  print('tbds ', tbds[0])
 
 #  THE UNITS IN THE ORIGINAL FILES DEPEND ON FREQUENCY
    if avgp == 'Daily':  conv = 3600.*24.
