@@ -1655,6 +1655,23 @@
                 ],
                 "source_version_number":"v20110531"
             },
+            "RSS-MSU-TLT-4":{
+                "institution_id":"RSS",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2016",
+                "source":"RSS MSU Temperature Lower Troposphere v4.0",
+                "source_description":"RSS MSU Temperature Lower Troposphere v4.0",
+                "source_id":"RSS-MSU-TLT-4",
+                "source_label":"RSS-MSU-TLT",
+                "source_name":"RSS-MSU-TLT",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "tlt"
+                ],
+                "source_version_number":"4.0"
+            },
             "RSS-MWIR-SST-5-1":{
                 "institution_id":"RSS",
                 "region":[

@@ -526,6 +526,19 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['pr']
 source_id['source_id'][key]['source_version_number'] = '3B42.MW.v7.0'
 
+key = 'RSS-MSU-TLT-4'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'RSS MSU Temperature Lower Troposphere v4.0'
+source_id['source_id'][key]['institution_id'] = 'RSS'
+source_id['source_id'][key]['release_year'] = '2016'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'RSS-MSU-TLT'
+source_id['source_id'][key]['source_name'] = 'RSS-MSU-TLT'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['tlt']
+source_id['source_id'][key]['source_version_number'] = '4.0'
+
 key = 'RSS-MWIR-SST-5-1'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_description'] = 'RSS MWIR v5.1 Foundation OISST'
