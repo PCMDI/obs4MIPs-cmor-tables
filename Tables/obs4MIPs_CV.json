@@ -1672,6 +1672,23 @@
                 ],
                 "source_version_number":"4.0"
             },
+            "RSS-MSU-TMT-4":{
+                "institution_id":"RSS",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2016",
+                "source":"RSS MSU Temperature Middle Troposphere v4.0",
+                "source_description":"RSS MSU Temperature Middle Troposphere v4.0",
+                "source_id":"RSS-MSU-TMT-4",
+                "source_label":"RSS-MSU-TMT",
+                "source_name":"RSS-MSU-TMT",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "tmt"
+                ],
+                "source_version_number":"4.0"
+            },
             "RSS-MWIR-SST-5-1":{
                 "institution_id":"RSS",
                 "region":[
