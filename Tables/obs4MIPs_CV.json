@@ -1655,6 +1655,23 @@
                 ],
                 "source_version_number":"v20110531"
             },
+            "RSS-MSU-TLS-4":{
+                "institution_id":"RSS",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2016",
+                "source":"RSS MSU Temperature Lower Stratosphere v4.0",
+                "source_description":"RSS MSU Temperature Lower Stratosphere v4.0",
+                "source_id":"RSS-MSU-TLS-4",
+                "source_label":"RSS-MSU-TLS",
+                "source_name":"RSS-MSU-TLS",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "tls"
+                ],
+                "source_version_number":"4.0"
+            },
             "RSS-MSU-TLT-4":{
                 "institution_id":"RSS",
                 "region":[
