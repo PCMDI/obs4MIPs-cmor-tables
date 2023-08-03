@@ -1,41 +1,27 @@
 import cmor
 import cdms2 as cdm
 import numpy as np
-import sys, glob
-import MV2
 cdm.setAutoBounds('on') # Caution, this attempts to automatically set coordinate bounds - please check outputs using this option
 #import pdb ; # Debug statement - import if enabling below
 
 #%% User provided input
-cmorTable = '../../Tables/obs4MIPs_A3hr.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
-inputJson = 'CMORPH_V1.0_3hr-MAhn-input.json' ; # Update contents of this file to set your global_attributes
+cmorTable = '../../../../Tables/obs4MIPs_Aday.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+inputJson = 'CMORPH_V1.0_3hr-input-250km.json' ; # Update contents of this file to set your global_attributes
 inputFilePathbgn = '/p/user_pub/pmp/pmp_obs_preparation/orig/data/'
 inputFilePathend = '/GPCP_v1.3_da/'
-
-inputFilePathbgn = '/work/ahn6/obs/CMORPH/CMORPH_v1.0/'
-inputFilePathend = '/3hr.center_2deg/'
-
-inputFileName = ['CMORPH_v1.0_2deg_3hr_201504.nc']
-lstall = glob.glob(inputFilePathbgn+inputFilePathend + '*.nc')
-
-print(len(lstall),' ', lstall[0])
-#w = sys.stdin.readline()
-
+inputFileName = ['pr_GPCP-1DD_L3_v1.3_19961001-20161231.nc']
 inputVarName = ['pr']
-outputVarName = 'pr'
-outputUnits = 'kg m-2 s-1'
+outputVarName = ['pr']
+outputUnits = ['kg m-2 s-1']
 
 ### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE...
-#for fi in range(len(inputVarName)):
-for fi in lstall:
-  print(fi)
-# inputFilePath = inputFilePathbgn+inputFilePathend
+for fi in range(len(inputVarName)):
+  print(fi, inputVarName[fi])
+  inputFilePath = inputFilePathbgn+inputFilePathend
 #%% Process variable (with time axis)
 # Open and read input netcdf file
-# f = cdm.open(inputFilePath+inputFileName[fi])
-  f = cdm.open(fi)
-  d = f(inputVarName[0])
-  d = MV2.divide(d,3600.)
+  f = cdm.open(inputFilePath+inputFileName[fi])
+  d = f(inputVarName[fi])
   lat = d.getLatitude()
   lon = d.getLongitude()
   print(d.shape)
@@ -44,9 +30,9 @@ for fi in lstall:
 
 # Deal with problematic "months since" calendar/time axis
   time_bounds = time.getBounds()
-# time_bounds[:,0] = time[:]
-# time_bounds[:-1,1] = time[1:]
-# time_bounds[-1,1] = time_bounds[-1,0]+1
+  time_bounds[:,0] = time[:]
+  time_bounds[:-1,1] = time[1:]
+  time_bounds[-1,1] = time_bounds[-1,0]+1
 #####time.setBounds() #####time_bounds)
 #####del(time_bounds) ; # Cleanup
 
@@ -76,8 +62,8 @@ for fi in lstall:
 #pdb.set_trace() ; # Debug statement
 
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-  d.units = outputUnits
-  varid   = cmor.variable(outputVarName,d.units,axisIds,missing_value=d.missing)
+  d.units = outputUnits[fi]
+  varid   = cmor.variable(outputVarName[fi],d.units,axisIds,missing_value=d.missing)
   values  = np.array(d[:],np.float32)
 
 # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
