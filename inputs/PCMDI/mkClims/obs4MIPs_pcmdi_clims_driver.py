@@ -8,8 +8,6 @@ ver_out = datetime.datetime.now().strftime('v%Y%m%d')
 ver = 'v20230109'
 #ver = 'latest'
 
-pin = '/p/user_pub/PCMDIobs/obs4MIPs/*/ERA-5/mon/ta/*/' + ver 
-
 pin = '/p/user_pub/PCMDIobs/obs4MIPs/NASA-LaRC/CERES-EBAF-4-1/mon/rlut/gn/' + ver 
 
 lstt = glob.glob(pin + '/*.nc')
