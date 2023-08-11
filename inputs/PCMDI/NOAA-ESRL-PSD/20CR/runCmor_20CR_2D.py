@@ -5,9 +5,9 @@ import numpy as np
 import json
 
 #%% User provided input
-cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = '20CR-input.json' ; # Update contents of this file to set your global_attributes
-inputFilePathbgn = '/p/user_pub/pmp/pmp_obs_preparation/orig/data/'
+inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/'
 inputFilePathend = 'NOAA-ESRL-PSD/20CR/'
 inputFileName = ['slp_monthly/prmsl.mon.mean.nc','air_temperature_monthly/air.sfc.mon.mean.nc']
 inputVarName = ['prmsl','air']
