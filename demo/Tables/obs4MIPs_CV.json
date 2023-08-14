@@ -21,13 +21,13 @@
                 "yrPt":"sampled yearly, at specified time point within the time period"
             },
             "version_metadata":{
-                "CV_collection_modified":"Wed Jun 21 23:02:52 2023 -0700",
-                "CV_collection_version":"6.2.58.55",
+                "CV_collection_modified":"Wed Jul 26 09:52:24 2023 -0700",
+                "CV_collection_version":"6.2.58.56",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "frequency_CV_modified":"Mon May 24 13:48:15 2021 00100",
                 "frequency_CV_note":"Update description of 3hr and 6hr frequencies",
                 "institution_id":"PCMDI",
-                "previous_commit":"529e6714b7dd23254d73135cecb9dc1cca2fcced",
+                "previous_commit":"dc50b3750eeb7ecf5b942ce7c439137fc2b9e5d5",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -80,13 +80,13 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-                "CV_collection_modified":"Wed Jun 21 23:02:52 2023 -0700",
-                "CV_collection_version":"6.2.58.55",
+                "CV_collection_modified":"Wed Jul 26 09:52:24 2023 -0700",
+                "CV_collection_version":"6.2.58.56",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
-                "previous_commit":"529e6714b7dd23254d73135cecb9dc1cca2fcced",
+                "previous_commit":"dc50b3750eeb7ecf5b942ce7c439137fc2b9e5d5",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -138,13 +138,13 @@
                 "5000 km"
             ],
             "version_metadata":{
-                "CV_collection_modified":"Wed Jun 21 23:02:52 2023 -0700",
-                "CV_collection_version":"6.2.58.55",
+                "CV_collection_modified":"Wed Jul 26 09:52:24 2023 -0700",
+                "CV_collection_version":"6.2.58.56",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "institution_id":"PCMDI",
                 "nominal_resolution_CV_modified":"Tues Nov 15 16:04:00 2016 -0700",
                 "nominal_resolution_CV_note":"Issue141 durack1 update grid_resolution to nominal_resolution (#143)",
-                "previous_commit":"529e6714b7dd23254d73135cecb9dc1cca2fcced",
+                "previous_commit":"dc50b3750eeb7ecf5b942ce7c439137fc2b9e5d5",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -272,6 +272,24 @@
                     "ts"
                 ],
                 "source_version_number":"N/A"
+            },
+            "20CR-V2":{
+                "institution_id":"NOAA-ESRL-PSD",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2006",
+                "source":"Monthly NOAA-CIRES 20th Century Reanalysis V2",
+                "source_description":"Monthly NOAA-CIRES 20th Century Reanalysis V2",
+                "source_id":"20CR-V2",
+                "source_label":"20CR",
+                "source_name":"20CR",
+                "source_type":"reanalysis",
+                "source_variables":[
+                    "psl",
+                    "ts"
+                ],
+                "source_version_number":"V2"
             },
             "AIRS-1-0":{
                 "institution_id":"NASA-JPL",

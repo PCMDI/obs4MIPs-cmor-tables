@@ -14,7 +14,6 @@ inputVarName = ['prmsl','air']
 outputVarName = ['psl','ts']
 outputUnits = ['Pa','K']
 
-### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE...
 for fi in range(len(inputVarName)):
   print(fi, inputVarName[fi])
   inputFilePath = inputFilePathbgn+inputFilePathend
@@ -28,7 +27,7 @@ for fi in range(len(inputVarName)):
   time = f.time.values ; # Rather use a file dimension-based load statement
   f = f.bounds.add_bounds("X")
   f = f.bounds.add_bounds("Y")
-  f = f.bounds.add_bounds("T")
+# f = f.bounds.add_bounds("T")
   print(d.shape)
 
 #%% Initialize and run CMOR
