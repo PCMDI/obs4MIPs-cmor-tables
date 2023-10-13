@@ -7,16 +7,14 @@ cdm.setAutoBounds('on') # Caution, this attempts to automatically set coordinate
 #import pdb ; # Debug statement - import if enabling below
 
 #%% User provided input
-cmorTable = '../../Tables/obs4MIPs_A3hr.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
-inputJson = 'CMORPH_V1.0_3hr-MAhn-input.json' ; # Update contents of this file to set your global_attributes
-inputFilePathbgn = '/p/user_pub/pmp/pmp_obs_preparation/orig/data/'
-inputFilePathend = '/GPCP_v1.3_da/'
+cmorTable = '../../../../Tables/obs4MIPs_A3hr.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+inputJson = 'CMORPH_V1.0_3hr-input-250km.json' ; # Update contents of this file to set your global_attributes
 
-inputFilePathbgn = '/work/ahn6/obs/CMORPH/CMORPH_v1.0/'
-inputFilePathend = '/3hr.center_2deg/'
+inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/'
+inputFilePathend = '/NOAA-NCEI/CMOPRH_mahn_v20210719/CMORPH_v1.0/3hr.center_2deg/'
 
-inputFileName = ['CMORPH_v1.0_2deg_3hr_201504.nc']
-lstall = glob.glob(inputFilePathbgn+inputFilePathend + '*.nc')
+inputFileName = [inputFilePathbgn + inputFilePathend + 'CMORPH_v1.0_2deg_3hr_2001-2019.xml']
+lstall = inputFileName  #glob.glob(inputFilePathbgn+inputFilePathend + '*.nc')
 
 print(len(lstall),' ', lstall[0])
 #w = sys.stdin.readline()

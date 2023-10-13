@@ -7,6 +7,7 @@ import numpy as np
 cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'CERES4.1-input.json' ; # Update contents of this file to set your global_attributes
 inputFilePath = '/home/rss_user/files-obs4MIPs/NASA-LaRC/CERES-EBAF-TOA/'
+inputFilePath = '/p/user_pub/pmp/pmp_obs_preparation/orig/data/CERES_EBAF4.1/'
 
 inputFileName = 'CERES_EBAF-TOA_Ed4.1_Subset_200003-202203.nc'
 inputVarName = ['toa_lw_all_mon','toa_sw_all_mon','toa_sw_clr_c_mon','toa_lw_clr_c_mon','toa_net_all_mon','solar_mon','toa_cre_lw_mon','toa_cre_sw_mon']
@@ -18,7 +19,7 @@ outpos = ['up','up','up','up','','down','up','up']
 ### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE...
 for fi in range(len(inputVarName)):
 
-  inputFileName = 'CERES_EBAF-TOA_Ed4.1_Subset_200003-202203.nc' 
+  inputFileName = 'CERES_EBAF-TOA_Ed4.1_Subset_200003-201905.nc' 
   if inputVarName[fi] in ['toa_cre_lw_mon','toa_cre_sw_mon']: inputFileName = 'CERES_EBAF_Ed4.1_Subset_200003-202203-CRE.nc'
 
   print(fi, inputVarName[fi])
