@@ -436,7 +436,7 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['ta','ua','va','zg']
 source_id['source_id'][key]['source_version_number'] = 'N/A'
 
-key = '20CR'
+key = '20CR-V2'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_description'] = 'Monthly NOAA-CIRES 20th Century Reanalysis V2'
 source_id['source_id'][key]['institution_id'] = 'NOAA-ESRL-PSD'
@@ -447,7 +447,7 @@ source_id['source_id'][key]['source_name'] = '20CR'
 source_id['source_id'][key]['source_type'] = 'reanalysis'
 source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['ts','psl']
-source_id['source_id'][key]['source_version_number'] = 'N/A'
+source_id['source_id'][key]['source_version_number'] = 'V2'
 
 key = 'ERA-20C'
 source_id['source_id'][key] = {}
