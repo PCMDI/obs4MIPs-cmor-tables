@@ -2,7 +2,7 @@
 
 ## obs4MIPs-cmor-tables ##
 
-This repo is used to develop and maintain:
+Hello there. This repo is used to develop and maintain:
 
 - Version control of **obs4MIPs compliant [`source_ids`](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/obs4MIPs_source_id.json)** 
 - Maintenance of [obs4MIPs CMOR tables (json files)](https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/Tables)
