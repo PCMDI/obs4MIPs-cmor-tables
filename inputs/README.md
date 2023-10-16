@@ -63,4 +63,4 @@ ________________________________________________________________________________
 
 6) _*Execute script.*_  The processed data will be located in a directory defined in the input_table: outpath + output_path_template, the former being the base directory (where the user wants to output the data) and the later being a directory template explicitly defined for obs4MIPs (<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>). 
   
-7) Create an issue to include the processing code in this repository.
+7) Create an issue to include the processing code in this repository..
