@@ -16,4 +16,4 @@ This repo is used to develop and maintain:
 
 ## Implementation of new source_ids 
 
-The pathway for proposing a new source_id is via submission of an issue on this repo. When submitting an issue, a template is provided for contributors to modify for their proposed source_id.  Once the issue is submitted, one of the site maintainers will review it and when ready will execute its implementation into the [database of source_ids](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/obs4MIPs_source_id.json) maintained on this repo...
+The pathway for proposing a new source_id is via submission of an issue on this repo. When submitting an issue, a template is provided for contributors to modify for their proposed source_id.  Once the issue is submitted, one of the site maintainers will review it and when ready will execute its implementation into the [database of source_ids](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/obs4MIPs_source_id.json) maintained on this repo.
