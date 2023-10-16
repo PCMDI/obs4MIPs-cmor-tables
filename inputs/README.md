@@ -38,7 +38,7 @@ Input table (json) and script using CDAT and CMOR (python):  https://github.com/
 ________________________________________________________________________________________________________
 **Provided Template when submitting a new issue on the GH repository**
 
-If you are *registering content* (RC) for obs4MIPs, please fill out the requested information below.   If you want to create an issue about something else, please delete the text below and title your issue as appropriate.  
+If you are *registering content* (RC) for obs4MIPs, please fill out the requested information below.   If you want to create an issue about something else, please delete the text below and title your issue as appropriate  
 
 To register (or edit) some or all of the obs4MIPs RC, please title this github issue as follows:  
 "RC for " + your source_name (as you define below), and indicate if you are modifying your input from an earlier issue
