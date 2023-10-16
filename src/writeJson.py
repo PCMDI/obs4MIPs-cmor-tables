@@ -661,7 +661,7 @@ for s in source_id_orig['source_id'].keys():
 
 #print(source_id['source_id']['GERB-HR-ED01-1-1'])
 
-source_id['source_id']['20CR']['institution_id'] = 'NOAA-ESRL-PSD' 
+source_id['source_id']['20CR-V2']['institution_id'] = 'NOAA-ESRL-PSD' 
 source_id['source_id']['CERES-EBAF-4-0']['institution_id'] = 'NASA-LaRC'
 source_id['source_id']['CERES-EBAF-4-1']['institution_id'] = 'NASA-LaRC'
 #source_id['source_id']['CERES-EBAF-4-1']['institution_id'] = 'NASA-LaRC--PCMDI'
