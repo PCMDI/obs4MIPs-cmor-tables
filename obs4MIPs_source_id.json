@@ -1,13 +1,13 @@
 {
     "source_id":{
-        "20CR":{
+        "20CR-V2":{
             "institution_id":"NOAA-ESRL-PSD",
             "region":[
                 "global"
             ],
             "release_year":"2006",
             "source_description":"Monthly NOAA-CIRES 20th Century Reanalysis V2",
-            "source_id":"20CR",
+            "source_id":"20CR-V2",
             "source_label":"20CR",
             "source_name":"20CR",
             "source_type":"reanalysis",
@@ -15,7 +15,7 @@
                 "psl",
                 "ts"
             ],
-            "source_version_number":"N/A"
+            "source_version_number":"V2"
         },
         "AIRS-1-0":{
             "institution_id":"NASA-JPL",
@@ -542,6 +542,22 @@
             ],
             "source_version_number":"HR_ED01_1.0"
         },
+        "GERB-HR-ED01-1-1":{
+            "institution_id":"ImperialCollege",
+            "region":[
+                "global"
+            ],
+            "release_year":"2018",
+            "source_description":"Geostationary Earth Radiation Budget",
+            "source_label":"GERB",
+            "source_name":"GERB",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "rlut",
+                "rsut"
+            ],
+            "source_version_number":"HR_ED01_1.1"
+        },
         "GNSS-RO-1-3":{
             "institution_id":"NASA-JPL",
             "region":[
@@ -860,6 +876,66 @@
             ],
             "source_version_number":"V280"
         },
+        "MSWEP-V280-NRT":{
+            "institution_id":"GloH2O",
+            "region":[
+                "global"
+            ],
+            "release_year":"2021",
+            "source_description":"Multi-Source Weighted-Ensemble Precipitation",
+            "source_label":"MSWEP",
+            "source_name":"MSWEP",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"V280-Past-NRT"
+        },
+        "MSWEP-V280-Past":{
+            "institution_id":"GloH2O",
+            "region":[
+                "global"
+            ],
+            "release_year":"2021",
+            "source_description":"Multi-Source Weighted-Ensemble Precipitation",
+            "source_label":"MSWEP",
+            "source_name":"MSWEP",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"V280-Past"
+        },
+        "MSWEP-V280-Past-nogauge":{
+            "institution_id":"GloH2O",
+            "region":[
+                "global"
+            ],
+            "release_year":"2021",
+            "source_description":"Multi-Source Weighted-Ensemble Precipitation",
+            "source_label":"MSWEP",
+            "source_name":"MSWEP",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"V280-Past-nogauge"
+        },
+        "MUR25-4-2":{
+            "institution_id":"NASA-JPL",
+            "region":[
+                "global"
+            ],
+            "release_year":"2019",
+            "source_description":"Multiscale Ultrahigh Resolution L4 Sea-Surface Temperature",
+            "source_label":"MUR25",
+            "source_name":"MUR25",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "tos"
+            ],
+            "source_version_number":"v4.2"
+        },
         "NOAA-NCEI-AVHRR-NDVI-4-0":{
             "institution_id":"NOAA-NCEI",
             "region":[
@@ -1162,6 +1238,24 @@
                 "pr"
             ],
             "source_version_number":"CDRv1r1"
+        },
+        "PRISM-M3":{
+            "institution_id":"OSU",
+            "region":[
+                "north_america"
+            ],
+            "release_year":"2022",
+            "source_description":"PRISM Spatial Climate Datasets for CONUS",
+            "source_label":"PRISM",
+            "source_name":"PRISM",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "pr",
+                "tas",
+                "tasmax",
+                "tasmin"
+            ],
+            "source_version_number":"M3"
         },
         "QuikSCAT-v20110531":{
             "institution_id":"NASA-JPL",

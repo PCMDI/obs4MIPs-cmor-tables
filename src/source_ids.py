@@ -1,6 +1,30 @@
 source_id = {}
 source_id['source_id'] = {}
 
+key = 'PRISM-M3'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'PRISM'
+source_id['source_id'][key]['source_label'] = 'PRISM'
+source_id['source_id'][key]['release_year'] = '2022'
+source_id['source_id'][key]['source_description'] = 'PRISM Spatial Climate Datasets for CONUS'
+source_id['source_id'][key]['source_version_number'] = 'M3'
+source_id['source_id'][key]['institution_id'] = 'OSU'
+source_id['source_id'][key]['region'] = ['north_america']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['pr','tasmin', 'tasmax','tas']
+
+key = 'livneh-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'livneh'
+source_id['source_id'][key]['source_label'] = 'livneh'
+source_id['source_id'][key]['release_year'] = '2021'
+source_id['source_id'][key]['source_description'] = 'Livneh daily CONUS near-surface gridded meteorological and derived hydrometeorological data data provided by the NOAA PSL'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'NOAA-ESRL-PSD'
+source_id['source_id'][key]['region'] = ['north_america']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['pr','tasmin', 'tasmax','sfcWind']
+
 key = 'livneh-1-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'livneh'
@@ -25,9 +49,20 @@ source_id['source_id'][key]['institution_id'] = 'UCSD-SIO'
 source_id['source_id'][key]['region'] = ['north_america']
 source_id['source_id'][key]['source_type'] = 'gridded_insitu'
 source_id['source_id'][key]['source_variables'] = ['pr','tasmin', 'tasmax','sfcWind'] 
-source_id['source_id'][key]['source_version_number'] = '1.0'
 
-key = 'MSWEP-V280'
+key = 'GERB-HR-ED01-1-1'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'GERB'
+source_id['source_id'][key]['source_label'] = 'GERB'
+source_id['source_id'][key]['release_year'] = '2018'
+source_id['source_id'][key]['source_description'] = 'Geostationary Earth Radiation Budget'
+source_id['source_id'][key]['institution_id'] = 'ImperialCollege'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] = ['rlut','rsut']
+source_id['source_id'][key]['source_version_number'] = 'HR_ED01_1.1'
+
+key = 'MSWEP-V280-Past'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'MSWEP'
 source_id['source_id'][key]['source_label'] = 'MSWEP'
@@ -37,7 +72,44 @@ source_id['source_id'][key]['institution_id'] = 'GloH2O'
 source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_type'] = 'gridded_insitu'
 source_id['source_id'][key]['source_variables'] = ['pr']
-source_id['source_id'][key]['source_version_number'] = 'V280'
+source_id['source_id'][key]['source_version_number'] = 'V280-Past'
+
+key = 'MSWEP-V280-Past-nogauge'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'MSWEP'
+source_id['source_id'][key]['source_label'] = 'MSWEP'
+source_id['source_id'][key]['release_year'] = '2021'
+source_id['source_id'][key]['source_description'] = 'Multi-Source Weighted-Ensemble Precipitation'
+source_id['source_id'][key]['institution_id'] = 'GloH2O'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['pr']
+source_id['source_id'][key]['source_version_number'] = 'V280-Past-nogauge'
+
+key = 'MSWEP-V280-NRT'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'MSWEP'
+source_id['source_id'][key]['source_label'] = 'MSWEP'
+source_id['source_id'][key]['release_year'] = '2021'
+source_id['source_id'][key]['source_description'] = 'Multi-Source Weighted-Ensemble Precipitation'
+source_id['source_id'][key]['institution_id'] = 'GloH2O'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['pr']
+source_id['source_id'][key]['source_version_number'] = 'V280-Past-NRT'
+
+key = 'MUR25-4-2'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'MUR25'
+source_id['source_id'][key]['source_label'] = 'MUR25'
+source_id['source_id'][key]['release_year'] = '2019'
+source_id['source_id'][key]['source_description'] = 'Multiscale Ultrahigh Resolution L4 Sea-Surface Temperature'
+source_id['source_id'][key]['institution_id'] = 'NASA-JPL'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] = ['tos']
+source_id['source_id'][key]['source_version_number'] = 'v4.2'
+
 
 key = 'IMERG-V06-EU'
 source_id['source_id'][key] = {}
@@ -377,7 +449,7 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['ta','ua','va','zg']
 source_id['source_id'][key]['source_version_number'] = 'N/A'
 
-key = '20CR'
+key = '20CR-V2'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_description'] = 'Monthly NOAA-CIRES 20th Century Reanalysis V2'
 source_id['source_id'][key]['institution_id'] = 'NOAA-ESRL-PSD'
@@ -388,7 +460,7 @@ source_id['source_id'][key]['source_name'] = '20CR'
 source_id['source_id'][key]['source_type'] = 'reanalysis'
 source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['ts','psl']
-source_id['source_id'][key]['source_version_number'] = 'N/A'
+source_id['source_id'][key]['source_version_number'] = 'V2'
 
 key = 'ERA-20C'
 source_id['source_id'][key] = {}
