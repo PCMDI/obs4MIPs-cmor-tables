@@ -1279,7 +1279,7 @@
             "long_name":"MSU Temperature Lower Stratosphere",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
-            "out_name":"tls",
+            "out_name":"tmt",
             "positive":"",
             "standard_name":"MSU_Temperature_Lower_Stratosphere",
             "type":"real",

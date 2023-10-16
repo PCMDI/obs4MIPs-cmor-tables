@@ -828,6 +828,22 @@
             ],
             "source_version_number":"V06B"
         },
+        "IMERG-V07-Final":{
+            "institution_id":"NASA-GSFC",
+            "region":[
+                "global"
+            ],
+            "release_year":"2023",
+            "source_description":"NASA IMERG 30-min, 0.1x0.1 degrees",
+            "source_id":"IMERG-V07-Final",
+            "source_label":"IMERG-V07-Final",
+            "source_name":"IMERG-V07-Final",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"V07"
+        },
         "IMERG-v06B-FINAL":{
             "institution_id":"NASA-GFSC",
             "region":[

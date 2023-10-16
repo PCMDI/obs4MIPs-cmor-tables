@@ -149,6 +149,19 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['pr']
 source_id['source_id'][key]['source_version_number'] = 'V06B'
 
+key = 'IMERG-V07-Final'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'NASA IMERG 30-min, 0.1x0.1 degrees'
+source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
+source_id['source_id'][key]['release_year'] = '2023'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'IMERG-V07-Final'
+source_id['source_id'][key]['source_name'] = 'IMERG-V07-Final'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['pr']
+source_id['source_id'][key]['source_version_number'] = 'V07'
+
 key = 'IMERG-V06-FU'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_description'] = 'NASA IMERG prepared for FROGS'
