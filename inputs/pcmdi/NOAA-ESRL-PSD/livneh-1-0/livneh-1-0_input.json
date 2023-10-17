@@ -20,7 +20,7 @@
     "product":"observations",
     "references":"Livneh B, E.A. Rosenberg, C. Lin, B. Nijssen, V. Mishra, K. Andreadis, E.P. Maurer, and D.P. Lettenmaier, 2013: A Long-Term Hydrologically Based Dataset of Land Surface Fluxes and States for the Conterminous United States: Update and Extensions, Journal of Climate, doi:http://dx.doi.org/10.1175/JCLI-D-13-00697.1",
     "source_id":"livneh-1-0",
-    "title": 'Livneh daily CONUS near-surface gridded meteorological and derived hydrometeorological data data provided by the NOAA PSL',
+    "title": "Livneh daily CONUS near-surface gridded meteorological and derived hydrometeorological data data provided by the NOAA PSL",
     "tracking_prefix":"hdl:21.14102",
     "variant_info":"Best Estimate",
     "variant_label":"PCMDI"
