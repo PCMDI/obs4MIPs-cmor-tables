@@ -2,12 +2,14 @@ import cmor
 import xarray as xr
 import xcdat as xc
 import numpy as np
+import numpy.ma as ma
 import json
+import sys
 
 #%% User provided input
 cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'CMAP-V1902-input.json' ; # Update contents of this file to set your global_attributes
-inputFilePathbgn = '/p/user_pub/pmp/pmp_obs_preparation/orig/data/'
+inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/'
 inputFilePathend = 'NOAA-ESRL-PSD/CMAP/'
 inputFileName = 'precip.mon.mean.nc'
 inputFilePath = inputFilePathbgn + inputFilePathend + inputFileName
@@ -26,7 +28,10 @@ f = f.bounds.add_bounds("Y")
 f = f.bounds.add_bounds("T")
 # CONVERT UNITS FROM mm/day to kg/m2/s 
 d = np.divide(d,86400.)
-d = np.where(np.isnan(d),1.e20,d)
+d = np.where(np.isnan(d),ma.masked,d)
+
+#w = sys.stdin.readline()
+
 
 #%% Initialize and run CMOR
 # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/

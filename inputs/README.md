@@ -1,24 +1,24 @@
-## Recipie for preparation of obs4MIPs compliant data (work in progress)
+## Recipe for preparation of obs4MIPs compliant data (work in progress)
 
-The recipie and demos below describe the process of making a copy of an observational data product that is obs4MIPs compliant.  This is in support of, but independent of the process of "publishing" obs4MIPs compliant data to ESGF. A user does not need to clone this repository to prepare obs4MIPs compliant data.  Instead, common usage involves copying information from the provided demo and modifying it for use to prepare a new obs4MIPs compliant dataset.  
+The recipe and demos below describe the process of making a copy of an observational data product that is obs4MIPs compliant.  This is in support of, but independent of the process of "publishing" obs4MIPs compliant data to ESGF. A user does not need to clone this repository to prepare obs4MIPs compliant data.  Instead, common usage involves copying information from the provided demo and modifying it for use to prepare a new obs4MIPs compliant dataset.  
 
 ## Key resources (utilites, formats and conventions)
 
-Currently, all obs4MIPs compliant data products need to be prepared with [Climate Model Output Rewriter (CMOR)](https://cmor.llnl.gov).  **CMOR** is used by most CMIP modeling groups to prepare their model output in advance of publishing it to ESGF.  CMOR can be obtained [via conda-forge](https://cmor.llnl.gov/mydoc_cmor3_conda/), a community-led collection of recipes, build infrastructure and distributions for the [conda package manager](https://docs.conda.io/projects/conda/en/latest).  By preparing a simple [python](https://python.org) script (example discussed below), CMOR is used to prepare an obs4MIPs compliant dataset.      
+Currently, all obs4MIPs compliant data products need to be prepared with the [Climate Model Output Rewriter (CMOR)](https://cmor.llnl.gov).  **CMOR** is used by most CMIP modeling groups to prepare their model output in advance of publishing it to ESGF.  CMOR can be obtained [via conda-forge](https://cmor.llnl.gov/mydoc_cmor3_conda/), a community-led collection of recipes, build infrastructure and distributions for the [conda package manager](https://docs.conda.io/projects/conda/en/latest).  By preparing a simple [python](https://python.org) script (example discussed below), CMOR is used to prepare an obs4MIPs compliant dataset.      
 
-The [obs4MIPs data specificatons (**ODS**)](https://pcmdi.github.io/obs4MIPs/dataStandards.html) are technically aligned with the preparation of climate model output prepared for the Coupled Model Comparison Project). 
+The [obs4MIPs data specificatons (**ODS**)](https://pcmdi.github.io/obs4MIPs/dataStandards.html) are technically aligned with the preparation of climate model output prepared for the Coupled Model Intercomparison Project (CMIP). 
 
 Closely aligned with CMIP, all metadata for obs4MIPs is managed in [**JSON**](https://json.org) files.  
 
 ---
 
-**Recipie overview** (detailed below)
+**Recipe overview** (detailed below)
 
-1) Identify datset to prepare as obs4MIPs compliant.
+1) Identify dataset to prepare as obs4MIPs compliant.
 2) Retrieve data desired to be made obs4MIPs compliant.
 3) Register a new source_id on this repo (a template is provided when creating an issue)
 4) Prepare input table for running CMOR
-5) Prepare python script for reading in data an writing with CMOR.
+5) Prepare python script for reading in data and writing with CMOR.
 6) Execute script
 7) Create an issue to include the input JSONs and processing code in this repository. 
 
@@ -63,4 +63,4 @@ ________________________________________________________________________________
 
 6) _*Execute script.*_  The processed data will be located in a directory defined in the input_table: outpath + output_path_template, the former being the base directory (where the user wants to output the data) and the later being a directory template explicitly defined for obs4MIPs (<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>). 
   
-  7) Create an issue to include the processing code in this repository.
+7) Create an issue to include the processing code in this repository.
