@@ -14,7 +14,7 @@ Closely aligned with CMIP, all metadata for obs4MIPs is managed in [**JSON**](ht
 
 **Recipe overview** (detailed below)
 
-1) Identify dataset to prepare as obs4MIPs compliant.
+1) Identify dataset to prepare as obs4MIPs compliant
 2) Retrieve data desired to be made obs4MIPs compliant.
 3) Register a new source_id on this repo (a template is provided when creating an issue)
 4) Prepare input table for running CMOR
