@@ -377,6 +377,82 @@ Amon['variable_entry']['rltcre']['valid_max'] = ''
 Amon['variable_entry']['rltcre']['valid_min'] = ''
 
 # Add new variables
+
+# Variable sponsor - RSS; Andy Manaster 
+Amon['variable_entry'][u'tlt'] = {}
+Amon['variable_entry']['tlt']['cell_measures'] = ''
+Amon['variable_entry']['tlt']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['tlt']['comment'] = ''
+Amon['variable_entry']['tlt']['dimensions'] = 'longitude latitude time'
+Amon['variable_entry']['tlt']['frequency'] = 'mon'
+Amon['variable_entry']['tlt']['long_name'] = 'MSU Temperature Lower Troposphere'
+Amon['variable_entry']['tlt']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['tlt']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['tlt']['out_name'] = 'tlt'
+Amon['variable_entry']['tlt']['positive'] = ''
+Amon['variable_entry']['tlt']['standard_name'] = 'MSU_Temperature_Lower_Troposphere'
+Amon['variable_entry']['tlt']['type'] = 'real'
+Amon['variable_entry']['tlt']['units'] = 'K'
+Amon['variable_entry']['tlt']['valid_max'] = ''
+Amon['variable_entry']['tlt']['valid_min'] = ''
+
+# Variable sponsor - RSS; Andy Manaster 
+Amon['variable_entry'][u'tmt'] = {}
+Amon['variable_entry']['tmt']['cell_measures'] = ''
+Amon['variable_entry']['tmt']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['tmt']['comment'] = ''
+Amon['variable_entry']['tmt']['dimensions'] = 'longitude latitude time'
+Amon['variable_entry']['tmt']['frequency'] = 'mon'
+Amon['variable_entry']['tmt']['long_name'] = 'MSU Temperature Mid Troposphere'
+Amon['variable_entry']['tmt']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['tmt']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['tmt']['out_name'] = 'tmt'
+Amon['variable_entry']['tmt']['positive'] = ''
+Amon['variable_entry']['tmt']['standard_name'] = 'MSU_Temperature_Mid_Troposphere'
+Amon['variable_entry']['tmt']['type'] = 'real'
+Amon['variable_entry']['tmt']['units'] = 'K'
+Amon['variable_entry']['tmt']['valid_max'] = ''
+Amon['variable_entry']['tmt']['valid_min'] = ''
+
+# Variable sponsor - RSS; Andy Manaster 
+Amon['variable_entry'][u'tls'] = {}
+Amon['variable_entry']['tls']['cell_measures'] = ''
+Amon['variable_entry']['tls']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['tls']['comment'] = ''
+Amon['variable_entry']['tls']['dimensions'] = 'longitude latitude time'
+Amon['variable_entry']['tls']['frequency'] = 'mon'
+Amon['variable_entry']['tls']['long_name'] = 'MSU Temperature Lower Stratosphere'
+Amon['variable_entry']['tls']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['tls']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['tls']['out_name'] = 'tmt'
+Amon['variable_entry']['tls']['positive'] = ''
+Amon['variable_entry']['tls']['standard_name'] = 'MSU_Temperature_Lower_Stratosphere'
+Amon['variable_entry']['tls']['type'] = 'real'
+Amon['variable_entry']['tls']['units'] = 'K' 
+Amon['variable_entry']['tls']['valid_max'] = ''
+Amon['variable_entry']['tls']['valid_min'] = ''
+
+
+# Variable sponsor - RSS; Andy Manaster 
+Amon['variable_entry'][u'tlt'] = {}
+Amon['variable_entry']['tlt']['cell_measures'] = ''
+Amon['variable_entry']['tlt']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['tlt']['comment'] = ''
+Amon['variable_entry']['tlt']['dimensions'] = 'longitude latitude time'
+Amon['variable_entry']['tlt']['frequency'] = 'mon'
+Amon['variable_entry']['tlt']['long_name'] = 'MSU Temperature Lower Troposphere'
+Amon['variable_entry']['tlt']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['tlt']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['tlt']['out_name'] = 'tlt'
+Amon['variable_entry']['tlt']['positive'] = ''
+Amon['variable_entry']['tlt']['standard_name'] = 'MSU_Temperature_Lower_Troposphere'
+Amon['variable_entry']['tlt']['type'] = 'real'
+Amon['variable_entry']['tlt']['units'] = 'K'
+Amon['variable_entry']['tlt']['valid_max'] = ''
+Amon['variable_entry']['tlt']['valid_min'] = ''
+
+
+
 # Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics)
 Amon['variable_entry'][u'rstcre'] = {}
 Amon['variable_entry']['rstcre']['cell_measures'] = ''
@@ -585,7 +661,7 @@ for s in source_id_orig['source_id'].keys():
 
 #print(source_id['source_id']['GERB-HR-ED01-1-1'])
 
-source_id['source_id']['20CR']['institution_id'] = 'NOAA-ESRL-PSD' 
+source_id['source_id']['20CR-V2']['institution_id'] = 'NOAA-ESRL-PSD' 
 source_id['source_id']['CERES-EBAF-4-0']['institution_id'] = 'NASA-LaRC'
 source_id['source_id']['CERES-EBAF-4-1']['institution_id'] = 'NASA-LaRC'
 #source_id['source_id']['CERES-EBAF-4-1']['institution_id'] = 'NASA-LaRC--PCMDI'
