@@ -15,7 +15,6 @@ targetgrid = 'orig'
 freq = 'Aday' #'Amon' #'Aday'  #'Amon'
 version = 'Past'
 version = 'Past-nogauge'
->>>>>>> master
 freq = 'Amon' #'Amon' #'Aday'  #'Amon'
 version = 'Past-nogauge'  # 'NRT'  'Past-nogauge'  'Past'
 
@@ -42,7 +41,6 @@ inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_
 inputFilePathend = version.replace('-','_') 
 
 lsttmp = glob.glob(inputFilePathbgn+inputFilePathend + '/*.nc')  # TRAP ALL FILES
-=======
 lsttmp = glob.glob(inputFilePathbgn+inputFilePathend + '/' + '*.nc')  # TRAP ALL FILES
 lsttmp.sort()
 
@@ -83,7 +81,6 @@ lstyrs = ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018'
 
 lstyrs = ['1979','1980']
 #lstyrs = ['1981']
->>>>>>> master
 
 for yr in lstyrs:  # LOOP OVER YEARS
 #lstall = glob.glob(inputFilePathbgn+inputFilePathend + '*' + yr + '*.nc')
