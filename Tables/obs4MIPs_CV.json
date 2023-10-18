@@ -21,13 +21,13 @@
                 "yrPt":"sampled yearly, at specified time point within the time period"
             },
             "version_metadata":{
-                "CV_collection_modified":"Wed Jul 26 09:52:24 2023 -0700",
-                "CV_collection_version":"6.2.58.56",
+                "CV_collection_modified":"Fri Aug 25 08:58:32 2023 -0700",
+                "CV_collection_version":"6.2.58.57",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "frequency_CV_modified":"Mon May 24 13:48:15 2021 00100",
                 "frequency_CV_note":"Update description of 3hr and 6hr frequencies",
                 "institution_id":"PCMDI",
-                "previous_commit":"dc50b3750eeb7ecf5b942ce7c439137fc2b9e5d5",
+                "previous_commit":"8f001cef5a57bac3813d9126583f2b4f39d97287",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -80,13 +80,13 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-                "CV_collection_modified":"Wed Jul 26 09:52:24 2023 -0700",
-                "CV_collection_version":"6.2.58.56",
+                "CV_collection_modified":"Fri Aug 25 08:58:32 2023 -0700",
+                "CV_collection_version":"6.2.58.57",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
-                "previous_commit":"dc50b3750eeb7ecf5b942ce7c439137fc2b9e5d5",
+                "previous_commit":"8f001cef5a57bac3813d9126583f2b4f39d97287",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -138,13 +138,13 @@
                 "5000 km"
             ],
             "version_metadata":{
-                "CV_collection_modified":"Wed Jul 26 09:52:24 2023 -0700",
-                "CV_collection_version":"6.2.58.56",
+                "CV_collection_modified":"Fri Aug 25 08:58:32 2023 -0700",
+                "CV_collection_version":"6.2.58.57",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "institution_id":"PCMDI",
                 "nominal_resolution_CV_modified":"Tues Nov 15 16:04:00 2016 -0700",
                 "nominal_resolution_CV_note":"Issue141 durack1 update grid_resolution to nominal_resolution (#143)",
-                "previous_commit":"dc50b3750eeb7ecf5b942ce7c439137fc2b9e5d5",
+                "previous_commit":"8f001cef5a57bac3813d9126583f2b4f39d97287",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -1096,6 +1096,74 @@
                 ],
                 "source_version_number":"V06-LU"
             },
+            "IMERG-V06B-FINAL":{
+                "institution_id":"NOAA-NCEI",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2017",
+                "source":"IMERG blended rain rate product",
+                "source_description":"IMERG blended rain rate product",
+                "source_id":"IMERG-V06B-FINAL",
+                "source_label":"IMERG-V06B-FINAL",
+                "source_name":"IMERG-V06B-FINAL",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"V06B"
+            },
+            "IMERG-V06B-Final-3hr":{
+                "institution_id":"NASA-GSFC",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2019",
+                "source":"NASA IMERG averaged to 3-hourly maps",
+                "source_description":"NASA IMERG averaged to 3-hourly maps",
+                "source_id":"IMERG-V06B-Final-3hr",
+                "source_label":"IMERG-V06-Final-3hr",
+                "source_name":"IMERG-V06-Final-3hr",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"V06B"
+            },
+            "IMERG-V07-Final":{
+                "institution_id":"NASA-GSFC",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2023",
+                "source":"NASA IMERG 30-min, 0.1x0.1 degrees",
+                "source_description":"NASA IMERG 30-min, 0.1x0.1 degrees",
+                "source_id":"IMERG-V07-Final",
+                "source_label":"IMERG-V07-Final",
+                "source_name":"IMERG-V07-Final",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"V07"
+            },
+            "IMERG-v06B-FINAL":{
+                "institution_id":"NASA-GFSC",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2019",
+                "source":"IMERG blended rain rate product",
+                "source_description":"IMERG blended rain rate product",
+                "source_id":"IMERG-v06B-FINAL",
+                "source_label":"IMERG-v06B-FINAL",
+                "source_name":"IMERG-v06B-FINAL",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"v06B"
+            },
             "IMERG-v06B-Final":{
                 "institution_id":"NASA-GSFC",
                 "region":[
@@ -1603,6 +1671,74 @@
                     "vas"
                 ],
                 "source_version_number":"v20110531"
+            },
+            "RSS-MSU-TLS-4":{
+                "institution_id":"RSS",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2016",
+                "source":"RSS MSU Temperature Lower Stratosphere v4.0",
+                "source_description":"RSS MSU Temperature Lower Stratosphere v4.0",
+                "source_id":"RSS-MSU-TLS-4",
+                "source_label":"RSS-MSU-TLS",
+                "source_name":"RSS-MSU-TLS",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "tls"
+                ],
+                "source_version_number":"4.0"
+            },
+            "RSS-MSU-TLT-4":{
+                "institution_id":"RSS",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2016",
+                "source":"RSS MSU Temperature Lower Troposphere v4.0",
+                "source_description":"RSS MSU Temperature Lower Troposphere v4.0",
+                "source_id":"RSS-MSU-TLT-4",
+                "source_label":"RSS-MSU-TLT",
+                "source_name":"RSS-MSU-TLT",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "tlt"
+                ],
+                "source_version_number":"4.0"
+            },
+            "RSS-MSU-TMT-4":{
+                "institution_id":"RSS",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2016",
+                "source":"RSS MSU Temperature Middle Troposphere v4.0",
+                "source_description":"RSS MSU Temperature Middle Troposphere v4.0",
+                "source_id":"RSS-MSU-TMT-4",
+                "source_label":"RSS-MSU-TMT",
+                "source_name":"RSS-MSU-TMT",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "tmt"
+                ],
+                "source_version_number":"4.0"
+            },
+            "RSS-MWIR-SST-5-1":{
+                "institution_id":"RSS",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2022",
+                "source":"RSS MWIR v5.1 Foundation OISST",
+                "source_description":"RSS MWIR v5.1 Foundation OISST",
+                "source_id":"RSS-MWIR-SST-5-1",
+                "source_label":"RSS-MWIR-SST",
+                "source_name":"RSS-MWIR-SST",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "tos"
+                ],
+                "source_version_number":"5.1"
             },
             "RSS-PRW-6-6-0":{
                 "institution_id":"RSS",

@@ -110,7 +110,6 @@ source_id['source_id'][key]['source_type'] = 'satellite_blended'
 source_id['source_id'][key]['source_variables'] = ['tos']
 source_id['source_id'][key]['source_version_number'] = 'v4.2'
 
-
 key = 'IMERG-V06-EU'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_description'] = 'Livneh daily CONUS near-surface gridded meteorological and derived hydrometeorological data'
@@ -136,6 +135,32 @@ source_id['source_id'][key]['source_type'] = 'satellite_blended'
 source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['pr']
 source_id['source_id'][key]['source_version_number'] = 'V06-FC'
+
+key = 'IMERG-V06B-Final-3hr'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'NASA IMERG averaged to 3-hourly maps'
+source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
+source_id['source_id'][key]['release_year'] = '2019'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'IMERG-V06-Final-3hr'
+source_id['source_id'][key]['source_name'] = 'IMERG-V06-Final-3hr'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['pr']
+source_id['source_id'][key]['source_version_number'] = 'V06B'
+
+key = 'IMERG-V07-Final'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'NASA IMERG 30-min, 0.1x0.1 degrees'
+source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
+source_id['source_id'][key]['release_year'] = '2023'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'IMERG-V07-Final'
+source_id['source_id'][key]['source_name'] = 'IMERG-V07-Final'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['pr']
+source_id['source_id'][key]['source_version_number'] = 'V07'
 
 key = 'IMERG-V06-FU'
 source_id['source_id'][key] = {}
@@ -513,6 +538,58 @@ source_id['source_id'][key]['source_type'] = 'satellite_blended'
 source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['pr']
 source_id['source_id'][key]['source_version_number'] = '3B42.MW.v7.0'
+
+key = 'RSS-MSU-TLS-4'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'RSS MSU Temperature Lower Stratosphere v4.0'
+source_id['source_id'][key]['institution_id'] = 'RSS'
+source_id['source_id'][key]['release_year'] = '2016'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'RSS-MSU-TLS'
+source_id['source_id'][key]['source_name'] = 'RSS-MSU-TLS'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['tls']
+source_id['source_id'][key]['source_version_number'] = '4.0'
+
+key = 'RSS-MSU-TLT-4'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'RSS MSU Temperature Lower Troposphere v4.0'
+source_id['source_id'][key]['institution_id'] = 'RSS'
+source_id['source_id'][key]['release_year'] = '2016'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'RSS-MSU-TLT'
+source_id['source_id'][key]['source_name'] = 'RSS-MSU-TLT'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['tlt']
+source_id['source_id'][key]['source_version_number'] = '4.0'
+
+key = 'RSS-MSU-TMT-4'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'RSS MSU Temperature Middle Troposphere v4.0'
+source_id['source_id'][key]['institution_id'] = 'RSS'
+source_id['source_id'][key]['release_year'] = '2016'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'RSS-MSU-TMT'
+source_id['source_id'][key]['source_name'] = 'RSS-MSU-TMT'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['tmt']
+source_id['source_id'][key]['source_version_number'] = '4.0'
+
+key = 'RSS-MWIR-SST-5-1'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'RSS MWIR v5.1 Foundation OISST'
+source_id['source_id'][key]['institution_id'] = 'RSS'
+source_id['source_id'][key]['release_year'] = '2022'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'RSS-MWIR-SST'
+source_id['source_id'][key]['source_name'] = 'RSS-MWIR-SST'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['tos']
+source_id['source_id'][key]['source_version_number'] = '5.1'
 
 key = 'RSS-PRW-6-6-0'
 source_id['source_id'][key] = {}
