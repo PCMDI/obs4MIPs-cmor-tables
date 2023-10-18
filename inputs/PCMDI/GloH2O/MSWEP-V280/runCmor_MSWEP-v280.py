@@ -12,13 +12,10 @@ import sys, glob
 targetgrid = 'orig'
 #targetgrid = '2deg'
 
-<<<<<<< HEAD
-freq = 'Aday' #'Amon'  #'A3hr' #'Amon' #'Aday'  #'Amon'
-version = 'Past'  #'Past-nogauge'  #'Past'  # NRT   # Past-nogauge
-=======
+#freq = 'Aday' #'Amon'  #'A3hr' #'Amon' #'Aday'  #'Amon'
+#version = 'Past'  #'Past-nogauge'  #'Past'  # NRT   # Past-nogauge
 freq = 'Amon' #'Amon' #'Aday'  #'Amon'
 version = 'Past-nogauge'  # 'NRT'  'Past-nogauge'  'Past'
->>>>>>> master
 
 if freq == 'Amon': 
   cmorTable = '../../../../Tables/obs4MIPs_Amon.json' 
@@ -31,12 +28,8 @@ if freq == 'A3hr':
   avgp = '3hourly'
 
 if targetgrid == 'orig':
-<<<<<<< HEAD
   inputJson = 'MSWEP-V280-' + version + '_input.json' ; 
   subdir = version + '/' + avgp + '/'
-=======
-  inputJson = 'MSWEP-v280-' + version + '_input.json' ; 
->>>>>>> master
 
 if targetgrid == '2deg':
   inputJson = 'MSWEP-V280-input.json' ;
@@ -90,11 +83,8 @@ for yr in lstyrs:
 #print(yr,'len of lstall', len(lstall))
 #w = sys.stdin.readline()
 
-<<<<<<< HEAD
  pathin = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/' + version + '/' + avgp + '/' + yr + '*.nc'
-=======
  pathin = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/' + version.replace('-','_') + '/' + avgp + '/' + yr + '*.nc'
->>>>>>> master
 
  if avgp == 'Daily': mos = ['01','02','03','04','05','06','07','08','09','10','11','12'] 
  if avgp == 'Monthly': mos = ['01']
