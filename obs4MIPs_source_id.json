@@ -1,13 +1,13 @@
 {
     "source_id":{
-        "20CR":{
+        "20CR-V2":{
             "institution_id":"NOAA-ESRL-PSD",
             "region":[
                 "global"
             ],
             "release_year":"2006",
             "source_description":"Monthly NOAA-CIRES 20th Century Reanalysis V2",
-            "source_id":"20CR",
+            "source_id":"20CR-V2",
             "source_label":"20CR",
             "source_name":"20CR",
             "source_type":"reanalysis",
@@ -15,7 +15,7 @@
                 "psl",
                 "ts"
             ],
-            "source_version_number":"N/A"
+            "source_version_number":"V2"
         },
         "AIRS-1-0":{
             "institution_id":"NASA-JPL",
