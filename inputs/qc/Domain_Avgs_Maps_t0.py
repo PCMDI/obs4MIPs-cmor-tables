@@ -10,10 +10,10 @@ import matplotlib.pyplot as plt
 def main():
 
     vars_list = ['pr']
-    fqs_list = ['3hr'] #,'day']
+    fqs_list = ['day'] #,'day']
 
     cfopt = True 
-    plot_out_dir = './maps_cf' + str(cfopt)
+    plot_out_dir = './maps'   #_cf' + str(cfopt)
 
     os.makedirs(plot_out_dir, exist_ok=True)
 
@@ -64,7 +64,7 @@ def main():
        
             fig.suptitle(var + ', ' + fq)
             fig.tight_layout()
-            fig.savefig(os.path.join(plot_out_dir, var + '_' + fq + '.png'))
+            fig.savefig(os.path.join(plot_out_dir, var + '_' + fq + '_cf' + str(cfopt)+ '.png'))
             plt.close()
 
     print('\n')
