@@ -10,9 +10,9 @@ import matplotlib.pyplot as plt
 def main():
 
     vars_list = ['pr']
-    fqs_list = ['monthly','day']
+    fqs_list = ['3hr'] #,'day']
 
-    cfopt = False 
+    cfopt = True 
     plot_out_dir = './maps_cf' + str(cfopt)
 
     os.makedirs(plot_out_dir, exist_ok=True)
