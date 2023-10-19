@@ -6,15 +6,14 @@ import glob
 import math
 import matplotlib.pyplot as plt
 
-vars_list = ['pr']
-fqs_list = ['day']  #, 'day']
 
 def main():
 
     vars_list = ['pr']
-    fqs_list = ['day']
+    fqs_list = ['3hr'] #,'day']
 
-    plot_out_dir = './maps'
+    cfopt = True 
+    plot_out_dir = './maps_cf' + str(cfopt)
 
     os.makedirs(plot_out_dir, exist_ok=True)
 
@@ -37,24 +36,17 @@ def main():
             fig, axs = prepare_subplots(srcs)
             
             print('\nSource'.ljust(25), '\t', 'Mean @ t=0'.ljust(10), '\t', 'Min'.ljust(10), '\t', 'Max'.ljust(10),'\t', 
-                  'Units'.ljust(10))  #, '\t', 'missing_value'.ljust(10),'\t', 'FillValue'.ljust(10))
-            print('-' * 25, '\t', '-' * 10, '\t', '-' * 10, '\t', '-' * 10, '\t', '-' * 10)  #, '\t', '-' * 10, '\t', '-' * 10)
+                  'Units'.ljust(10))   #, '\t' , 'missing_value'.ljust(10),'\t', 'FillValue'.ljust(10))
+            print('-' * 25, '\t', '-' * 10, '\t', '-' * 10, '\t', '-' * 10, '\t', '-' * 10, '\t', '-' * 10, '\t', '-' * 10)
             
-    for i, src in enumerate(srcs):
-        ddic = json.load(open(pathin))
-        srcs = sorted(list(ddic[var].keys()))
-        
-        print('\nSource'.ljust(20), '\t', 'Mean @ t=0'.ljust(10), '\t','Min'.ljust(10),'\t','Max'.ljust(10),'\t', 'Units'.ljust(10))
-        print('----------------', '\t', '------------', '\t', '----------','\t', '------------', '\t', '----------')
-        
-        for src in srcs:
-            if 'default' not in src and 'alternate' not in src:  # exclude 'default' or 'alternate?' keys
+            for i, src in enumerate(srcs):
                 template = '/p/user_pub/PCMDIobs/' + ddic[var][src]['template']
                 # open file
                 ds = xc.open_mfdataset(
                     template,
                     mask_and_scale=True,
                     decode_times=False,
+                    decode_cf=cfopt,
                     combine='nested',
                     concat_dim='time',
                     data_vars='all')
@@ -65,11 +57,9 @@ def main():
                 # print on screen 
                 print(src.ljust(25), '\t', '{:.10f}'.format(ds_avg),'\t','{:.10f}'.format(ds_min),'\t','{:.10f}'.format(ds_max), '\t', ds[var].units.ljust(10)) #,'\t',ds[var].attrs['missing_value'],'\t','\t', ds[var].attrs['_FillValue'])
                 # plot
-                ds.isel(time=0)[var].plot(ax=axs[i])
+                ds.isel(time=0)[var].plot(ax=axs[i], vmax = 0.0003)
                 axs[i].set_title(src)
                 # close file
-                print(src.ljust(20), '\t', '{:.10f}'.format(ds_avg),'\t','{:.10f}'.format(ds_min),'\t','{:.10f}'.format(ds_max), '\t', ds[var].units.ljust(10))
-#               w = sys.stdin.readline()
                 ds.close()
        
             fig.suptitle(var + ', ' + fq)
