@@ -30,7 +30,7 @@ This work is sponsored by the Regional and Global Model Analysis ([RGMA](https:/
 
 <p>
     <img src="https://pcmdi.github.io/assets/PCMDI/100px-PCMDI-Logo-NoText-square-png8.png"
-         width="90"
+         width="80"
          style="margin-right: 30px"
          title="Program for Climate Model Diagnosis and Intercomparison"
          alt="Program for Climate Model Diagnosis and Intercomparison"
