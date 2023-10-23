@@ -54,7 +54,7 @@ This work is sponsored by the Regional and Global Model Analysis ([RGMA](https:/
          alt="NASA"
     >&nbsp;
             <img src="https://github.com/PCMDI/assets/blob/main/RSS/308x107px-RSS_Logo_Blank_Background.png"
-         width="85"
+         width="150"
          style="margin-right: 30px"
          title="RSS"
          alt="RSS"
