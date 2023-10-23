@@ -48,10 +48,16 @@ This work is sponsored by the Regional and Global Model Analysis ([RGMA](https:/
          alt="Lawrence Livermore National Laboratory"
     >&nbsp;
         <img src="https://github.com/PCMDI/assets/blob/main/NASA/577x480px-NASA_Logo.png"
-         width="75"
+         width="85"
          style="margin-right: 30px"
          title="NASA"
          alt="NASA"
+    >&nbsp;
+            <img src="https://github.com/PCMDI/assets/blob/main/RSS/308x107px-RSS_Logo_Blank_Background.png"
+         width="85"
+         style="margin-right: 30px"
+         title="RSS"
+         alt="RSS"
     >&nbsp;
     <img src="https://pcmdi.github.io/assets/MetOffice/100px-Met_Office_LogoBLACK.png"
          width="65"
