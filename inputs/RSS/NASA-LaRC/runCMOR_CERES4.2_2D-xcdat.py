@@ -1,7 +1,6 @@
 import cmor
 import xcdat as xc
 import numpy as np
-import sys
 
 
 #%% User provided input
