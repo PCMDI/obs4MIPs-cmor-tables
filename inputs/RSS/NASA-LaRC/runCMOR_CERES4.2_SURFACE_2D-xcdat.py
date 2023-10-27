@@ -1,14 +1,13 @@
 import cmor
-import cdms2 as cdm
 import xcdat as xc
 import numpy as np
 
 #%% User provided input
 cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'CERES4.2-input.json' ; # Update contents of this file to set your global_attributes
-inputFilePath = '/home/rss_user/files-obs4MIPs/NASA-LaRC/CERES-EBAF-SURFACE/'
+inputFilePath = '/p/user_pub/PCMDIobs/obs4MIPs_input/NASA-LaRC/CERES_EBAF4.2/'
 
-inputFileName = 'CERES_EBAF_Ed4.2_Subset_200003-202203.nc' 
+inputFileName = 'CERES_EBAF_Ed4.2_Subset_200003-202306.nc' 
 inputVarName = ['sfc_lw_up_all_mon','sfc_sw_up_all_mon','sfc_sw_up_clr_c_mon','sfc_lw_down_all_mon','sfc_lw_down_clr_c_mon','sfc_sw_down_all_mon','sfc_sw_down_clr_c_mon'] #,'sfc_cre_net_sw_mon','sfc_cre_net_lw_mon','sfc_cre_net_tot_mon']
 outputVarName = ['rlus','rsus','rsuscs','rlds','rldscs','rsds','rsdscs'] #,'rsscre','rlscre','rnscre']
 outputUnits = ['W m-2','W m-2','W m-2','W m-2','W m-2','W m-2','W m-2','W m-2','W m-2','W m-2']
@@ -22,6 +21,9 @@ for fi in range(len(inputVarName)):
 # Open and read input netcdf file
   f = xc.open_dataset(inputFilePath+inputFileName, decode_times=False, decode_cf=False) # both need to be set to get time units and missing value data
   d = f[inputVarName[fi]]
+
+  # Added for xCDAT 0.6.0 to include time bounds.
+  f = f.bounds.add_bounds("T")
 
   lat = f.lat
   lon = f.lon
