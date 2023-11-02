@@ -383,6 +383,32 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['pr']
 source_id['source_id'][key]['source_version_number'] = '1.0'
 
+key = 'GPCP-Daily-3-2'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'Merged Precipitation'
+source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
+source_id['source_id'][key]['release_year'] = '2022'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'GPCP'
+source_id['source_id'][key]['source_name'] = 'GPCP'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['pr']
+source_id['source_id'][key]['source_version_number'] = '3.2'
+
+key = 'GPCP-Monthly-3-2'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'Merged Precipitation'
+source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
+source_id['source_id'][key]['release_year'] = '2022'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'GPCP'
+source_id['source_id'][key]['source_name'] = 'GPCP'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['pr']
+source_id['source_id'][key]['source_version_number'] = '3.2'
+
 key = 'GPCP-2-3'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_description'] = 'Merged Precipitation'
