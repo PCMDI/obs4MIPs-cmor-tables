@@ -51,7 +51,7 @@ def main():
                     concat_dim='time',
                     data_vars='all')
                 # get spatial mean of the first time step
-                ds_avg = float(ds.isel(time=3).spatial.average(var)[var])
+                ds_avg = float(ds.isel(time=3).spatial.average(var)[var].compute())
                 ds_max = ds.isel(time=0)[var].max().values
                 ds_min = ds.isel(time=0)[var].min().values
                 # print on screen 
