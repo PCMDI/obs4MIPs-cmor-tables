@@ -7,11 +7,6 @@ sys.path.append("/home/manaster1/obs4MIPs-cmor-tables/inputs/") # Path to obs4MI
 
 import obs4MIPsLib
 
-# paths = os.getcwd().split('/inputs')
-# paths = os.getcwd().split('/inputs')
-# path_to_code = f"/inputs{paths[1]}"
-# print(path_to_code)
-# sys.exit()
 #%% User provided input
 cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'CERES4.2-input.json' ; # Update contents of this file to set your global_attributes
