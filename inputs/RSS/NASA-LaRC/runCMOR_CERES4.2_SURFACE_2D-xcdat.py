@@ -9,7 +9,7 @@ import obs4MIPsLib
 
 #%% User provided input
 cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
-inputJson = 'CERES4.2-input.json' ; # Update contents of this file to set your global_attributes
+inputJson = 'CERES4.2-SURFACE-2D-input.json' ; # Update contents of this file to set your global_attributes
 inputFilePath = '/p/user_pub/PCMDIobs/obs4MIPs_input/NASA-LaRC/CERES_EBAF4.2/'
 
 inputFileName = 'CERES_EBAF_Ed4.2_Subset_200003-202306.nc' 
