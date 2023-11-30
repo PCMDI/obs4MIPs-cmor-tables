@@ -13,7 +13,7 @@
     "license":"Data in this file produced by NASA-GSFC are licensed under a Creative Commons Attribution 4.0 International License (https://creativecommons.org/licenses/by/4.0/). Use of the data must be acknowledged following guidelines found at https://disc.gsfc.nasa.gov/. Further information about this data, including some limitations, can be found via https://disc.gsfc.nasa.gov/.",
     "institution_id":"NASA-GSFC",
     "nominal_resolution":"50 km",
-    "outpath":"/p/user_pub/PCMDIobs/obs4MIPs/NASA-GSFC/GPCP-3-2/monthly/",
+    "outpath":"/p/user_pub/PCMDIobs/",
     "output_file_template":"<variable_id><frequency><source_id><variant_label><grid_label>",
     "output_path_template":"<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>",
     "product":"observations",

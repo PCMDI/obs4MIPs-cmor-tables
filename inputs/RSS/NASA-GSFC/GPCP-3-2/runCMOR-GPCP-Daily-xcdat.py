@@ -3,6 +3,11 @@ import xcdat as xc
 import numpy as np
 import glob
 import json
+import os
+import sys
+sys.path.append("/home/manaster1/obs4MIPs-cmor-tables/inputs/") # Path to obs4MIPsLib
+
+import obs4MIPsLib
 
 def extract_date(ds):   # preprocessing function when opening files
     for var in ds.variables:
@@ -75,6 +80,16 @@ for year in range(2003, 2006):  # put the years you want to process here
     # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
     cmor.set_variable_attribute(varid,'valid_min','f',d.valid_range[0]/86400)   
     cmor.set_variable_attribute(varid,'valid_max','f',d.valid_range[-1]/86400)
+
+    # Add GitHub commit ID attribute to output CMOR file
+    gitinfo = obs4MIPsLib.getGitInfo("./")
+    commit_num = gitinfo[0].split(':')[1].strip()
+
+    paths = os.getcwd().split('/inputs')
+    path_to_code = f"/inputs{paths[1]}"
+    
+    full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{commit_num}{path_to_code}"
+    cmor.set_cur_dataset_attribute("obs4MIPs_GH_Commit_ID",f"{full_git_path}")
 
     print(f'CMOR begin for {year}')
     # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
