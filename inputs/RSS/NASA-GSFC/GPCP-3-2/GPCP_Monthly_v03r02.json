@@ -9,6 +9,7 @@
     "contact":"RSS (support@remss.com)",
     "grid":"0.5x0.5 degree latitude x longitude",
     "grid_label":"gn",
+    "region":"global",
     "history":"",
     "license":"Data in this file produced by NASA-GSFC are licensed under a Creative Commons Attribution 4.0 International License (https://creativecommons.org/licenses/by/4.0/). Use of the data must be acknowledged following guidelines found at https://disc.gsfc.nasa.gov/. Further information about this data, including some limitations, can be found via https://disc.gsfc.nasa.gov/.",
     "institution_id":"NASA-GSFC",
