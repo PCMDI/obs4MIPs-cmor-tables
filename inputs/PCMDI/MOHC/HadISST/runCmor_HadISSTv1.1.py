@@ -1,5 +1,4 @@
 import cmor
-import cdms2 as cdm
 import numpy as np
 import xcdat as xc
 import xarray as xr
