@@ -1,7 +1,7 @@
 import cmor
-import cdms2 as cdm
 import xcdat as xc
 import numpy as np
+
 
 #%% User provided input
 cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
@@ -15,26 +15,29 @@ outpos = ['up','up','up','up','','down','up','up']
 for fi in range(len(inputVarName)):
 
   print(fi, inputVarName[fi])
-
+  inputFilePath = '/p/user_pub/PCMDIobs/obs4MIPs_input/NASA-LaRC/CERES_EBAF4.2/' # change to user's path where file is stored
   if inputVarName[fi] in ['toa_cre_lw_mon','toa_cre_sw_mon']: 
-    inputFilePath =  '/home/rss_user/files-obs4MIPs/NASA-LaRC/TOA_separatefile/' # change to user's path where file is stored
-    inputFileName = 'CERES_EBAF_Ed4.2_Subset_200003-202203-CRE.nc'
+    inputFileName = 'CERES_EBAF_Ed4.2_Subset_200003-202306-CRE.nc'
   else:
-    inputFilePath = '/home/rss_user/files-obs4MIPs/NASA-LaRC/CERES-EBAF-TOA/' # change to user's path where file is stored
-    inputFileName = 'CERES_EBAF-TOA_Ed4.2_Subset_200003-202211.nc'
+    inputFileName = 'CERES_EBAF-TOA_Ed4.2_Subset_200003-202307.nc'
+
 ### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE...
 #%% Process variable (with time axis)
 # Open and read input netcdf file
   f = xc.open_dataset(inputFilePath+inputFileName, decode_times=False, decode_cf=False) # both need to be set to get time units and missing value data
   d = f[inputVarName[fi]]
 
+  # Added for xCDAT 0.6.0 to include time bounds.
+  f = f.bounds.add_bounds("T")
+
   lat = f.lat
   lon = f.lon
   time = f.time
+
   time_bounds = f.time_bnds
   lon_bounds = f.lon_bnds
   lat_bounds = f.lat_bnds
-
+  
 #%% Initialize and run CMOR
 # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
   cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4) #,logfile='cmorLog.txt')
