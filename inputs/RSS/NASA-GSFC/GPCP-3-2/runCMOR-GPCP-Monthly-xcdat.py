@@ -25,7 +25,7 @@ inputVarName = 'sat_gauge_precip'
 outputVarName = 'pr'
 outputUnits = 'kg m-2 s-1'
 
-for year in range(2022, 2024):  # put the years you want to process here
+for year in range(1983, 2024):  # put the years you want to process here
     inputDatasets = []
     for month in range(1,13):
         inputFile = f"{inputFilePath}/GPCPMON_L3_{year}{month:02}_V3.2.nc4"

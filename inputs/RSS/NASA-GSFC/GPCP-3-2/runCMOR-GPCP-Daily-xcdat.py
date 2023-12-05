@@ -27,7 +27,7 @@ outputVarName = 'pr'
 outputUnits = 'kg m-2 s-1'
 
 
-for year in range(2003, 2006):  # put the years you want to process here
+for year in range(2000, 2022):  # put the years you want to process here
     inputDatasets = []
     for month in range(1,13):
         inputFiles = glob.glob(f"{inputFilePath}/GPCPDAY_L3_{year}{month:02}*.nc4")
