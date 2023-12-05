@@ -1,11 +1,15 @@
 import cmor
 import xcdat as xc
 import numpy as np
+import os
+import sys
+sys.path.append("/home/manaster1/obs4MIPs-cmor-tables/inputs/") # Path to obs4MIPsLib
 
+import obs4MIPsLib
 
 #%% User provided input
 cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
-inputJson = 'CERES4.2-input.json' ; # Update contents of this file to set your global_attributes
+inputJson = 'CERES4.2-2D-input.json' ; # Update contents of this file to set your global_attributes
 
 inputVarName = ['toa_lw_all_mon','toa_sw_all_mon','toa_sw_clr_c_mon','toa_lw_clr_c_mon','toa_net_all_mon','solar_mon','toa_cre_lw_mon','toa_cre_sw_mon']
 outputVarName = ['rlut','rsut','rsutcs','rlutcs','rt','rsdt','rltcre','rstcre']
@@ -70,6 +74,16 @@ for fi in range(len(inputVarName)):
 # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_variable_attribute(varid,'valid_min','c',d.valid_min) # CERES defines this as a string in the EBAF netCDF4 files.  Must be saved as such
   cmor.set_variable_attribute(varid,'valid_max','c',d.valid_max)
+
+# Add GitHub commit ID attribute to output CMOR file
+  gitinfo = obs4MIPsLib.getGitInfo("./")
+  commit_num = gitinfo[0].split(':')[1].strip()
+
+  paths = os.getcwd().split('/inputs')
+  path_to_code = f"/inputs{paths[1]}"
+  
+  full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{commit_num}{path_to_code}"
+  cmor.set_cur_dataset_attribute("obs4MIPs_GH_Commit_ID",f"{full_git_path}")
 
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
