@@ -12,6 +12,7 @@
     "grid":"1x1 degree latitude x longitude",
     "grid_label":"gn",
     "history":"",
+    "further_info_url":".",
     "license":"Data in this file is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Use of the data must be acknowledged if guidelines are provide here.",
     "nominal_resolution":"100 km",
     "outpath":"/p/user_pub/PCMDIobs/",

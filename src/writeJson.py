@@ -1020,6 +1020,7 @@ for count,CV in enumerate(CVJsonList):
         obs4MIPs_CV['CV'].update(eval(CV))
 # Add static entries to obs4MIPs_CV.json
 obs4MIPs_CV['CV']['activity_id'] = 'obs4MIPs'
+obs4MIPs_CV['CV']['further_info_url'] = '.'
 
 # Dynamically update "data_specs_version": "2.0.0", in rssSsmiPrw-input.json
 #print os.getcwd()
