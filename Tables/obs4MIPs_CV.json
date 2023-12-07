@@ -279,6 +279,58 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"v7"
             },
+            "ARMBE-atm-c1-1-8":{
+                "institution_id":"DOE-ARM",
+                "region":"site_data",
+                "source":"DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties",
+                "source_description":"DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties",
+                "source_label":"ARMBE",
+                "source_name":"ARMBE",
+                "source_type":"insitu",
+                "source_variables":[
+                    "hfls",
+                    "hfls",
+                    "hfss",
+                    "hfss",
+                    "hur",
+                    "pr",
+                    "ps",
+                    "ta",
+                    "tas",
+                    "ua",
+                    "uas",
+                    "va",
+                    "vas",
+                    "wap"
+                ],
+                "source_version_number":"atm-c1-1-8"
+            },
+            "ARMBE-cldrad-c1-1-8":{
+                "institution_id":"DOE-ARM",
+                "region":"site_data",
+                "source":"DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties",
+                "source_description":"DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties",
+                "source_label":"ARMBE",
+                "source_name":"ARMBE",
+                "source_type":"insitu",
+                "source_variables":[
+                    "cl",
+                    "clivi",
+                    "clt",
+                    "clwvi",
+                    "prw",
+                    "rlds",
+                    "rlus",
+                    "rlut",
+                    "rsds",
+                    "rsdscs",
+                    "rsdt",
+                    "rsdt",
+                    "rsus",
+                    "rsut"
+                ],
+                "source_version_number":"cldrad-c1-1-8"
+            },
             "AVISO-1-0":{
                 "region":"global",
                 "source":"AVISO 1 0 1.0 (2011): Sea Surface Height Above Geoid",
@@ -876,6 +928,7 @@
         },
         "source_type":{
             "gridded_insitu":"gridded product based on measurements collected from in-situ instruments",
+            "insitu":"site data",
             "reanalysis":"gridded product generated from a model reanalysis based on in-situ instruments and possibly satellite measurements",
             "satellite_blended":"gridded product based on both in-situ instruments and satellite measurements",
             "satellite_retrieval":"gridded product based on satellite measurements"
