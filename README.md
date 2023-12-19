@@ -1,4 +1,4 @@
-## [Are you interested to prepare and provide a new obs4MIPs-compliant dataset? ](https://github.com/PCMDI/obs4MIPs-cmor-tables/inputs) ##
+## [Are you interested to prepare and provide a new obs4MIPs-compliant dataset? ](https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/inputs) ##
 
 
 <img src="assets/imgs/obs4MIPsRLogo.png" width="15%" height="15%" align="right" />
