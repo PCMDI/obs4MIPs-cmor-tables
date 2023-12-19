@@ -19,11 +19,6 @@ The [obs4MIPs data specifications (**ODS**)](https://pcmdi.github.io/obs4MIPs/da
 5) Execute script
 6) Create a GitHub issue or branch to include the input JSON and processing code in this repository. 
 
-
-**Example**
-
-Input table (json) and script using CDAT and CMOR (python):  https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/demo
-
 **Recipe**
 
 1) _*Identify datset to prepare as obs4MIPs compliant.*_ Before a particular version of a data product is prepared to be made obs4MIPs compliant, one should confirm if it is already available as an obs4MIPs product on [ESGF](https://aims2.llnl.gov/search) - just ask us if you are unsure. Typically the "original" version of a dataset is downloaded locally before beginning the process of preparing an obs4MIPs-compliant version.  The examples on this repo assume the data downloaded is in netCDF format, but it does not have to be.  In general, obs4MIPs data products are prepared from publically available data (that is not yet obs4MIPs-compliant) via the official curators of the data, or a recognized data center such as the [U.S. National Center for Environmental Information](https://www.nesdis.noaa.gov/data-research-services/data-collections).     
@@ -58,6 +53,11 @@ ________________________________________________________________________________
 4) _*Prepare input table for running CMOR*_.  [An example input table](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/demo/CMAP-V1902.json).  The simplest thing to do is to save this file, rename it, and replace the demo content with the relevant information for a new source_id or dataset.  Typically, this involves only making changes to the following attributes:  "contact", "grid", "grid_label", "institution_id", "nominal_resolution", "references", "outpath", "source_id", "title", "variant_info" and "variant_label". We strive for all obs4MIPs products to clearly identify the origins of the data (i.e., where and when did the person preparing the obs4MIPs compliant product obtain the original data).  This information can be documented in the last three attributes of the example input table identified above via the following attributes: "originData_URL" , "originData_retrieved", and "originData_notes".
 
 5)_*Prepare python script for reading in data an writing with CMOR._*  This is often the most time consuming aspect of preparing an obs4MIPs-compliant data set, but the examples provided on this repo are helping streamline the process.  It involves preparing a simple Python script to read the original data downloaded in advance.  As with the steps before, one can start by downloading a [demo python script](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/demo/runCMORdemo_CMAP-V1902.py), renaming it accordingly, and modifying as needed. The examples provided illustrate how data already in netCDF can be processed to be obs4MIPs compliant, but in principle, input data in other formats can be used if the user can process the data using CMOR. 
+
+**Example**
+
+Input table (json) and script using CDAT and CMOR (python):  https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/demo
+
 
 6) _*Execute script.*_  The processed data will be located in a directory defined in the input_table: outpath + output_path_template, the former being the base directory (where the user wants to output the data). The latter being a directory template explicitly defined for obs4MIPs (<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>). 
   
