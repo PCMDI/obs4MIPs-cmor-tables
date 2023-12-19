@@ -4,7 +4,7 @@ The recipe below describes the process of preparing an obs4MIPs-compliant datase
 
 ## Key resources (utilities, formats, and conventions)
 
-Currently, all obs4MIPs-compliant data products must be prepared with the [Climate Model Output Rewriter (CMOR)](https://cmor.llnl.gov).  **CMOR** is used by most CMIP modeling groups to prepare their model output before publishing it to ESGF.  CMOR can be obtained [via conda-forge](https://cmor.llnl.gov/mydoc_cmor3_conda/), a community-led collection of recipes, build infrastructure and distributions for the [conda package manager](https://docs.conda.io/projects/conda/en/latest).  By preparing a simple [python](https://python.org) script (example discussed below) and an input [**JSON**](https://json.org) file , CMOR is used to prepare an obs4MIPs-compliant dataset.      
+Currently, all obs4MIPs-compliant data products must be prepared with the [Climate Model Output Rewriter (CMOR)](https://cmor.llnl.gov).  **CMOR** is used by most CMIP modeling groups to prepare their model output before publishing it to ESGF.  CMOR can be obtained [via conda-forge](https://cmor.llnl.gov/mydoc_cmor3_conda/), a community-led collection of recipes, build infrastructure and distributions for the [conda package manager](https://docs.conda.io/projects/conda/en/latest).  By preparing a simple [python](https://python.org) script (example discussed in demo identified below) and an input [**JSON**](https://json.org) file, CMOR is used to prepare an obs4MIPs-compliant dataset.      
 
 The [obs4MIPs data specifications (**ODS**)](https://pcmdi.github.io/obs4MIPs/dataStandards.html) are technically aligned with the preparation of climate model output prepared for the Coupled Model Intercomparison Project (CMIP), with all metadata managed in JSON files.
 
@@ -61,5 +61,5 @@ ________________________________________________________________________________
 
 6) _*Execute script.*_  The processed data will be located in a directory defined in the input_table: outpath + output_path_template, the former being the base directory (where the user wants to output the data). The latter being a directory template explicitly defined for obs4MIPs (<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>). 
   
-7) _*Create an issue to include the processing code in this repository.*_  **Please not a dataset is not obs4MIPs-compliant unless the source_id is registered and the input json and python scripts used for processing are included in this repo.**  This ensures transparency in the obs4MIPs process. 
+7) _*Create an issue to include the processing code in this repository.*_  **Please note a dataset is not obs4MIPs-compliant unless the source_id is registered and the input json and python scripts used for processing are included in this repo.**  This ensures transparency in the obs4MIPs process. 
     
