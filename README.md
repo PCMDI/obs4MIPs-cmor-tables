@@ -1,9 +1,7 @@
-<img src="assets/imgs/obs4MIPsRLogo.png" width="15%" height="15%" align="right" />
-
-
 ## [Are you interested to prepare and provide a new obs4MIPs-compliant dataset? ](https://github.com/PCMDI/obs4MIPs-cmor-tables/inputs) ##
 
 
+<img src="assets/imgs/obs4MIPsRLogo.png" width="15%" height="15%" align="right" />
 
 ## obs4MIPs-cmor-tables ##
 
