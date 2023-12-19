@@ -19,7 +19,7 @@ The [obs4MIPs data specifications (**ODS**)](https://pcmdi.github.io/obs4MIPs/da
 5) Execute script
 6) Create a GitHub issue or branch to include the input JSON and processing code in this repository. 
 
-**Recipe**
+## Recipe
 
 1) _*Identify datset to prepare as obs4MIPs compliant.*_ Before a particular version of a data product is prepared to be made obs4MIPs compliant, one should confirm if it is already available as an obs4MIPs product on [ESGF](https://aims2.llnl.gov/search) - just ask us if you are unsure. Typically the "original" version of a dataset is downloaded locally before beginning the process of preparing an obs4MIPs-compliant version.  The examples on this repo assume the data downloaded is in netCDF format, but it does not have to be.  In general, obs4MIPs data products are prepared from publically available data (that is not yet obs4MIPs-compliant) via the official curators of the data, or a recognized data center such as the [U.S. National Center for Environmental Information](https://www.nesdis.noaa.gov/data-research-services/data-collections).     
 
