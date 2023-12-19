@@ -59,7 +59,7 @@ ________________________________________________________________________________
 Input table (json) and script using CDAT and CMOR (python):  https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/demo
 
 
-6) _*Execute script.*_  The processed data will be located in a directory defined in the input_table: outpath + output_path_template, the former being the base directory (where the user wants to output the data). The latter being a directory template explicitly defined for obs4MIPs (<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>). 
+5) _*Execute script.*_  The processed data will be located in a directory defined in the input_table: outpath + output_path_template, the former being the base directory (where the user wants to output the data). The latter being a directory template explicitly defined for obs4MIPs (<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>). 
   
-7) _*Create an issue to include the processing code in this repository.*_  **Please note a dataset is not obs4MIPs-compliant unless the source_id is registered and the input json and python scripts used for processing are included in this repo.**  This ensures transparency in the obs4MIPs process. 
+6) _*Create an issue to include the processing code in this repository.*_  **Please note a dataset is not obs4MIPs-compliant unless the source_id is registered and the input json and python scripts used for processing are included in this repo.**  This ensures transparency in the obs4MIPs process. 
     
