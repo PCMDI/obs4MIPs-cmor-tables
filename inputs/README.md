@@ -1,42 +1,34 @@
 ## Recipe for the preparation of obs4MIPs compliant data (work in progress)
 
-The recipe and demos below describe the process of making a copy of an observational data product that is obs4MIPs compliant.  This is in support of, but independent of the process of "publishing" obs4MIPs-compliant data to ESGF. A user does not need to clone this repository to prepare obs4MIPs-compliant data.  Instead, common usage involves copying information from the provided demo and modifying it to prepare a new obs4MIPs-compliant dataset.  
+The recipe below describes the process of preparing an obs4MIPs-compliant dataset. This typically involves copying information from the provided demo and modifying it as necessary to prepare a new obs4MIPs-compliant dataset.  **If you are interested to contribute an obs4MIPs-compliant dataset, please alert the obs4MIPs data preparation team (obs4MIPs-admin@llnl.gov) so that we can advise you on how to proceed.** Note the process of preparing obs4MIPs-compliant data is in support of, but independent of the process of "publishing" obs4MIPs-compliant data to ESGF.   
 
 ## Key resources (utilities, formats, and conventions)
 
-Currently, all obs4MIPs-compliant data products need to be prepared with the [Climate Model Output Rewriter (CMOR)](https://cmor.llnl.gov).  **CMOR** is used by most CMIP modeling groups to prepare their model output before publishing it to ESGF.  CMOR can be obtained [via conda-forge](https://cmor.llnl.gov/mydoc_cmor3_conda/), a community-led collection of recipes, build infrastructure and distributions for the [conda package manager](https://docs.conda.io/projects/conda/en/latest).  By preparing a simple [python](https://python.org) script (example discussed below), CMOR is used to prepare an obs4MIPs-compliant dataset.      
+Currently, all obs4MIPs-compliant data products must be prepared with the [Climate Model Output Rewriter (CMOR)](https://cmor.llnl.gov).  **CMOR** is used by most CMIP modeling groups to prepare their model output before publishing it to ESGF.  CMOR can be obtained [via conda-forge](https://cmor.llnl.gov/mydoc_cmor3_conda/), a community-led collection of recipes, build infrastructure and distributions for the [conda package manager](https://docs.conda.io/projects/conda/en/latest).  By preparing a simple [python](https://python.org) script (example discussed in demo identified below) and an input [**JSON**](https://json.org) file, CMOR is used to prepare an obs4MIPs-compliant dataset.      
 
-The [obs4MIPs data specifications (**ODS**)](https://pcmdi.github.io/obs4MIPs/dataStandards.html) are technically aligned with the preparation of climate model output prepared for the Coupled Model Intercomparison Project (CMIP). 
-
-Closely aligned with CMIP, all metadata for obs4MIPs is managed in [**JSON**](https://json.org) files.  
+The [obs4MIPs data specifications (**ODS**)](https://pcmdi.github.io/obs4MIPs/dataStandards.html) are technically aligned with the preparation of climate model output prepared for the Coupled Model Intercomparison Project (CMIP), with all metadata managed in JSON files.
 
 ---
 
 **Recipe overview** (detailed below)
 
-1) Identify dataset to prepare as obs4MIPs compliant
-2) Retrieve data desired to be made obs4MIPs compliant.
-3) Register a new source_id on this repo (a template is provided when creating an issue)
-4) Prepare input table for running CMOR
-5) Prepare Python script for reading data and writing with CMOR.
-6) Execute script
-7) Create an issue to include the input JSONs and processing code in this repository. 
+1) Identify public dataset to be made obs4MIPs-compliant and retrieve for processing locally.
+2) Fill out the dataset proposal form.
+3) Register a new source_id via this Github repo and fill out data submission form.
+4) Prepare input table and python script for reading data and writing with CMOR.
+5) Execute script
+6) Create a GitHub issue or branch to include the input JSON and processing code in this repository. 
 
+## Recipe
 
-**Example**
+1) _*Identify datset to prepare as obs4MIPs compliant.*_ Before a particular version of a data product is prepared to be made obs4MIPs compliant, one should confirm if it is already available as an obs4MIPs product on [ESGF](https://aims2.llnl.gov/search) - just ask us if you are unsure. Typically the "original" version of a dataset is downloaded locally before beginning the process of preparing an obs4MIPs-compliant version.  The examples on this repo assume the data downloaded is in netCDF format, but it does not have to be.  In general, obs4MIPs data products are prepared from publically available data (that is not yet obs4MIPs-compliant) via the official curators of the data, or a recognized data center such as the [U.S. National Center for Environmental Information](https://www.nesdis.noaa.gov/data-research-services/data-collections).     
 
-Input table (json) and script using CDAT and CMOR (python):  https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/demo
+2) [Fill out the data proposal form](https://bit.ly/obs4MIPs-submit).  Please ask us if you have any questions about the requested information.
 
-**Recipe**
-
-1) _*Identify datset to prepare as obs4MIPs compliant.*_ Before a particular version of a data product is prepared to be made obs4MIPs compliant, one should confirm if it is already available as an obs4MIPs product on [ESGF](https://esgf-node.llnl.gov/search/obs4mips/).  How the precise version of a dataset is identified is still being improved but ultimately it is hoped that this can be identified from the obs4MIPs source_id. The source_id is intended to identify the product/version and generally closely resembles an existing identifier but is slightly modified to be consistent with CMIP/obs4MIPs conventions.  For example:  A compliant source_id for "GPCP 2.4" is "GPCP-2-4".  More information on the guidelines for constructing a source_id is available in [Table 1 of the obs4MIPs data specifications](https://docs.google.com/document/d/1FXXBhUh71Hjus557ZTD3EKPi_2zxeLvi1aICXOjVYPc/edit#heading=h.7zmnv8xlfe08).  Not all obs4MIPs products currently meet these criteria but if the precise product/version is not evident from the source_id there may be sufficient information in the history attribute of the netCDF file to determine the original product/version.  Note, even if there is a particular data product/version available on ESGF via obs4MIPs there are reasons why somebody may wish to prepare another obs4MIPs compliant copy, e.g., to provide the data at a different horizontal resolution.  
-
-2) _*Retrieve data desired to be made obs4MIPs compliant*_.  To accomplish this, typically the "original" version of a dataset is downloaded from the internet before beginning the process.  The examples on this repo assume the data downloaded is in netCDF format, but it does not have to be.  In general, obs4MIPs data products are prepared from publically available data (but not obs4MIPs compliant) via the official curators of the data or a recognized data center such as the [U.S. National Center for Environmental Information](https://www.nesdis.noaa.gov/data-research-services/data-collections).     
-
-3) _*Register a new source_id*_, if it does not already exist. Once data has been downloaded, an issue can be submitted on this GitHub repo with a proposed "source_id".  Somebody from the obs4MIPs team will quickly review this information and enter it into the obs4MIPs database of source_id's or propose an alternative if it does not conform to the obs4MIPs data specifications for the source_id.  When opening an issue, the template below is included, so one needs to replace the information with the example (GPCP) with their own proposed source_id.
+3) _*Register a new source_id*_, if it does not already exist. Once the data has been obtained, an issue can be submitted on this GitHub repo with a proposed "source_id".  Somebody from the obs4MIPs team will quickly review this information and enter it into the obs4MIPs database of source_id's or propose an alternative if it does not conform to the obs4MIPs data specifications for the source_id.  When opening an issue, the template below is included, so one needs to replace the information with the example (GPCP) with their own proposed source_id.  The source_id is intended to identify the product/version and generally closely resembles an existing identifier but may be slightly modified to be consistent with CMIP/obs4MIPs conventions.  For example: A compliant source_id for "GPCP 2.4" is "GPCP-2-4".  More information on the guidelines for constructing a source_id is available in [Table 1 of the obs4MIPs data specifications](https://docs.google.com/document/d/1FXXBhUh71Hjus557ZTD3EKPi_2zxeLvi1aICXOjVYPc/edit#heading=h.7zmnv8xlfe08).  (Not all obs4MIPs products currently published on ESGF meet these criteria but if the precise product/version is not evident from the source_id there may be sufficient information in the history attribute of the netCDF file to determine the original product/version).  As of 1 January 2024 for a dataset to be obs4MIPs-compliant its source_id must adhere to the ODS specifications.  
 
 ________________________________________________________________________________________________________
-**Provided Template when submitting a new issue on the GH repository**
+**Template provided when submitting a new issue on the GH repository**
 
 If you are *registering content* (RC) for obs4MIPs, please fill out the requested information below.   If you want to create an issue about something else, please delete the text below and title your issue as appropriate.  
 
@@ -57,10 +49,17 @@ The following are required registered content (with example content for each ite
 See note 14 and Appendix II of the obs4MIPs data specifications (https://goo.gl/jVZsQl) for more information regarding registered content, and feel free to ask questions!
 ________________________________________________________________________________________________________
 
+
 4) _*Prepare input table for running CMOR*_.  [An example input table](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/demo/CMAP-V1902.json).  The simplest thing to do is to save this file, rename it, and replace the demo content with the relevant information for a new source_id or dataset.  Typically, this involves only making changes to the following attributes:  "contact", "grid", "grid_label", "institution_id", "nominal_resolution", "references", "outpath", "source_id", "title", "variant_info" and "variant_label". We strive for all obs4MIPs products to clearly identify the origins of the data (i.e., where and when did the person preparing the obs4MIPs compliant product obtain the original data).  This information can be documented in the last three attributes of the example input table identified above via the following attributes: "originData_URL" , "originData_retrieved", and "originData_notes".
 
-5)_*Prepare python script for reading in data an writing with CMOR._*  This is often the most time consuming aspect of preparing an obs4MIPs-compliant data set, but the examples provided on this repo are helping streamline this process.  It involves preparing a simple Python script to read the original data downloaded in advance.  As with the steps before, one can start by downloading a [demo python script](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/demo/runCMORdemo-RSS-cdms.py), renaming it accordingly, and modifying as needed. The examples provided illustrate how data already in netCDF can be processed to be obs4MIPs compliant, but in principle, data in other formats are not excluded if the user can process the data using CMOR. 
+5)_*Prepare python script for reading in data an writing with CMOR._*  This is often the most time consuming aspect of preparing an obs4MIPs-compliant data set, but the examples provided on this repo are helping streamline the process.  It involves preparing a simple Python script to read the original data downloaded in advance.  As with the steps before, one can start by downloading a [demo python script](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/demo/runCMORdemo_CMAP-V1902.py), renaming it accordingly, and modifying as needed. The examples provided illustrate how data already in netCDF can be processed to be obs4MIPs compliant, but in principle, input data in other formats can be used if the user can process the data using CMOR. 
 
-6) _*Execute script.*_  The processed data will be located in a directory defined in the input_table: outpath + output_path_template, the former being the base directory (where the user wants to output the data). The latter being a directory template explicitly defined for obs4MIPs (<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>). 
+**Example**
+
+Input table (json) and script using CDAT and CMOR (python):  https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/demo
+
+
+5) _*Execute script.*_  The processed data will be located in a directory defined in the input_table: outpath + output_path_template, the former being the base directory (where the user wants to output the data). The latter being a directory template explicitly defined for obs4MIPs (<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>). 
   
-7) Create an issue to include the processing code in this repository.
+6) _*Create an issue to include the processing code in this repository.*_  **Please note a dataset is not obs4MIPs-compliant unless the source_id is registered and the input json and python scripts used for processing are included in this repo.**  This ensures transparency in the obs4MIPs process. 
+    

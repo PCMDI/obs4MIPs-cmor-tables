@@ -1,8 +1,11 @@
+## [Are you interested to prepare and provide a new obs4MIPs-compliant dataset? ](https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/inputs/README.md) ##
+
+
 <img src="assets/imgs/obs4MIPsRLogo.png" width="15%" height="15%" align="right" />
 
 ## obs4MIPs-cmor-tables ##
 
-Hello. This repo is used to develop and maintain:
+This repo is used to develop and maintain:
 
 - Version control of **obs4MIPs compliant [`source_ids`](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/obs4MIPs_source_id.json)** 
 - Maintenance of [obs4MIPs CMOR tables (json files)](https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/Tables)
@@ -17,6 +20,7 @@ Hello. This repo is used to develop and maintain:
 ## Implementation of new source_ids 
 
 To propose a new `source_id`, [open an issue in this repo](https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/new/choose). When submitting an issue, a template is provided for contributors to modify for their proposed `source_id`. Once the issue is submitted, one of the site maintainers will review it and when ready will execute its implementation into the database of `source_ids` maintained within the [`obs4MIPs_source_id.json`](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/obs4MIPs_source_id.json) file in this repo.
+
 
 ## Contributors
 
