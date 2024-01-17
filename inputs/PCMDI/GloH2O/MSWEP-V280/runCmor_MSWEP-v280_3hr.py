@@ -5,7 +5,7 @@ from xarray.coding.times import encode_cf_datetime
 import cftime
 import glob
 import numpy as np
-import sys, glob
+import sys, os, glob
 
 targetgrid = 'orig'
 #targetgrid = '2deg'
@@ -36,6 +36,16 @@ if targetgrid == '2deg':
   inputJson = 'MSWEP-V280-input.json' ;
 
 print('inputJson ', inputJson)
+
+def extract_date(ds):   # preprocessing function when opening files
+    for var in ds.variables:
+        if var == 'time':
+            dataset_time = ds[var].values
+            dataset_units = ds[var].units
+            ds.assign(time=dataset_time)
+            ds["time"].attrs = {"units": dataset_units}
+    return ds
+
 
 inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/' 
 inputFilePathend = version.replace('-','_') 
@@ -95,16 +105,37 @@ for yr in lstyrs:  # LOOP OVER YEARS
  if avgp == 'Monthly': mos = ['01']
  if avgp == '3hourly': mos = ['01','02','03','04','05','06','07','08','09','10','11','12'] 
 
- print('above fc')
- fc = xc.open_mfdataset(pathin, mask_and_scale=False, decode_times=True, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
- fc = fc.bounds.add_missing_bounds(axes=['X', 'Y', 'T'])   
- print('below fc')
+ dayz = []
+ tmp = glob.glob(pathin)
+ for t in tmp:
+  tmp2 = t.split('/')[10]
+  tmp3 = tmp2.split('.')[0]
+  tmp4 = tmp3.split(yr)[1]
+  print(tmp4)
+  if tmp4 not in dayz: dayz.append(tmp4)
+ dayz.sort()
+ print(len(dayz))
+#w = sys.stdin.readline()
 
- for mo in mos:
-   endmo = dom(yr,mo)
+#print('above fc')
+#fc = xc.open_mfdataset(pathin, mask_and_scale=False, decode_times=True, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
+#fc = fc.bounds.add_missing_bounds(axes=['X', 'Y', 'T'])   
+#print('below fc')
 
-#  for dy in range(1,int(endmo)+1):
-  
+#for mo in mos:
+#  endmo = dom(yr,mo)
+
+ for dy in dayz:
+ 
+   print('above fc')
+   pathind = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/' + version + '/' + avgp + '/' + yr + dy + '*.nc'
+
+   fc = xc.open_mfdataset(pathind, mask_and_scale=False, decode_times=True, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
+   fc = fc.bounds.add_missing_bounds(axes=['X', 'Y', 'T'])
+   print('below fc')
+   fa = xc.open_mfdataset(pathind, mask_and_scale=False, decode_times=False, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
+   units = fa.time.units
+ 
    if avgp == 'Daily':
     datestart = yr + '-' + mo + '-01'
     dateend =   yr + '-' + mo + '-' + endmo 
@@ -114,7 +145,7 @@ for yr in lstyrs:  # LOOP OVER YEARS
     dateend =   yr + '-12'
 #  if yr == '1979': datestart = yr + '-02'
 
-   if avgp == '3hourly':
+   if avgp == '3hourlydfdd':
     if str(dy) in ['1','2','3','4','5','6','7','8','9']: dy = '0' + str(dy)
     datestart = yr + '-' + mo + '-' + str(dy) + ' 00'
     dateend =   yr + '-' + mo + '-' + str(dy) + ' 21'
@@ -125,14 +156,19 @@ for yr in lstyrs:  # LOOP OVER YEARS
 #  fc = fc.bounds.add_missing_bounds()   
 #  print('below fc')
 
-   tdc = fc.time.sel(time=slice(datestart, dateend)).values
-   tbds = fc.time_bnds.sel(time=slice(datestart, dateend)).values
-   ddc = fc[inputVarName].sel(time=slice(datestart, dateend)).values
+#  tdc = fc.time.sel(time=slice(datestart, dateend)).values
+#  tbds = fc.time_bnds.sel(time=slice(datestart, dateend)).values
+#  ddc = fc[inputVarName].sel(time=slice(datestart, dateend)).values
+
+   tdc = fc.time.values
+   tbds = fc.time_bnds.values
+   ddc = fc[inputVarName].values
+
 #  tdc['axis'] = "T"
 #  print('below tdc print')
 
-   units = tdc.time.encoding['units']
-   calendar = tdc.time.encoding['calendar']
+#  units = tdc.time.encoding['units']
+#  calendar = tdc.time.encoding['calendar']
 #  tdc = encode_cf_datetime(tdc.time, units, calendar)
 #  print('tdc ', tdc[0])
 
@@ -159,7 +195,7 @@ for yr in lstyrs:  # LOOP OVER YEARS
 
    tunits = "days since 1900-1-1 00:00:00"
 
-   print('above cmor ', yr,' ',mo)
+#  print('above cmor ', yr,' ',mo)
 
    cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4,logfile= 'cmorLog.txt')
    cmor.dataset_json(inputJson)
