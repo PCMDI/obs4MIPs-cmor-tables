@@ -21,6 +21,7 @@
     "product":"observations",
     "references":"https://docserver.gesdisc.eosdis.nasa.gov/public/project/MEaSUREs/GPCP/GPCP_ATBD_V3.2_Monthly.pdf",
     "source_id":"GPCP-Monthly-3-2",
+    "source_label":"GPCP-Monthly-3-2",
     "title":"NASA-GSFC Monthly GPCP v3.2 prepared for obs4MIPs (ODS-v2.1.0)",
     "tracking_prefix":"hdl:21.14102",
     "variant_info":"Best Estimate",
