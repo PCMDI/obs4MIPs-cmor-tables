@@ -57,13 +57,25 @@ This work is sponsored by the Regional and Global Model Analysis ([RGMA](https:/
          title="NASA"
          alt="NASA"
     >&nbsp;
-            <img src="https://github.com/PCMDI/assets/blob/main/RSS/308x107px-RSS_Logo_Blank_Background.png"
+         <img src="https://github.com/PCMDI/assets/blob/main/RSS/308x107px-RSS_Logo_Blank_Background.png"
          width="150"
          style="margin-right: 30px"
          title="RSS"
          alt="RSS"
     >&nbsp;
-    <img src="https://pcmdi.github.io/assets/MetOffice/100px-Met_Office_LogoBLACK.png"
+         <img src="https://github.com/PCMDI/assets/blob/main/ESA/ESA_logo_2020_Black.png"
+         width="175"
+         style="vertical-align:middle;margin:0px
+         title="ESA"
+         alt="ESA"
+    >&nbsp;
+         <img src="https://github.com/PCMDI/assets/blob/main/CEDA/CEDA_logo.jpg"
+         width="250"
+         style="margin-right: 30px"
+         title="CEDA"
+         alt="CEDA"
+    >&nbsp;
+         <img src="https://pcmdi.github.io/assets/MetOffice/100px-Met_Office_LogoBLACK.png"
          width="65"
          style="margin-right: 30px"
          title="UK Met Office"
