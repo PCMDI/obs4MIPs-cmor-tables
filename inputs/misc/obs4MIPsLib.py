@@ -37,7 +37,7 @@ from socket import gethostname
 def ProvenanceInfo(gitinfo):
     commit_run = gitinfo[0].split(':')[1].strip()
     paths = os.getcwd().split('/inputs/misc')
-    return commit_run, paths[0] 
+    return commit_run, paths
 
 def downloadStatus(done, timeStamp, urls):
     """
