@@ -5,8 +5,7 @@ import numpy as np
 import json
 import sys,os
 
-#sys.path.append("/home/gleckler1/git/obs4MIPs-cmor-tables/inputs/") # Path to obs4MIPsLib
-sys.path.append("../inputs/misc") # Path to obs4MIPsLib
+sys.path.append("../inputs/misc") # Path to obs4MIPsLib used to trap provenance
 
 import obs4MIPsLib
 
@@ -65,16 +64,14 @@ values  = np.array(d[:],np.float32)
 cmor.set_variable_attribute(varid,'valid_min','f',2.0)
 cmor.set_variable_attribute(varid,'valid_max','f',3.0)
 
-# Provenance info 
+# Provenance info - when preparing an obs4MIPs-compliant dataset with codes in obs4MIPs-cmor-tables/inputs, replace "demo" below with "inputs" 
 gitinfo = obs4MIPsLib.getGitInfo("./")
-#commit_run,path_to_code = obs4MIPsLib.ProvenanceInfo(gitinfo)
-#full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{commit_run}{path_to_code}"
 commit_num = gitinfo[0].split(':')[1].strip()
 paths = os.getcwd().split('/demo')
 path_to_code = f"/demo{paths[1]}"
 full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{commit_num}{path_to_code}"
-
 cmor.set_cur_dataset_attribute("obs4MIPs_GH_Commit_ID",f"{full_git_path}")
+# 
  
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
 cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
