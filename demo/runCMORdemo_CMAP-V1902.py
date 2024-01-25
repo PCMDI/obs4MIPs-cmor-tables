@@ -65,11 +65,9 @@ cmor.set_variable_attribute(varid,'valid_min','f',2.0)
 cmor.set_variable_attribute(varid,'valid_max','f',3.0)
 
 # Provenance info - when preparing an obs4MIPs-compliant dataset with codes in obs4MIPs-cmor-tables/inputs, replace "demo" below with "inputs" 
-gitinfo = obs4MIPsLib.getGitInfo("./")
-commit_num = gitinfo[0].split(':')[1].strip()
-paths = os.getcwd().split('/demo')
-path_to_code = f"/demo{paths[1]}"
-full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{commit_num}{path_to_code}"
+gitinfo = obs4MIPsLib.ProvenanceInfo(obs4MIPsLib.getGitInfo("./"))
+commit_num = gitinfo['commit_number']
+full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{commit_num}/demo"   #{path_to_code}"
 cmor.set_cur_dataset_attribute("obs4MIPs_GH_Commit_ID",f"{full_git_path}")
 # 
  
