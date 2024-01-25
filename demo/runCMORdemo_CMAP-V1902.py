@@ -3,6 +3,11 @@ import xarray as xr
 import xcdat as xc
 import numpy as np
 import json
+import sys,os
+
+sys.path.append("../inputs/misc") # Path to obs4MIPsLib used to trap provenance
+
+import obs4MIPsLib
 
 #%% User provided input
 cmorTable = '../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
@@ -59,6 +64,12 @@ values  = np.array(d[:],np.float32)
 cmor.set_variable_attribute(varid,'valid_min','f',2.0)
 cmor.set_variable_attribute(varid,'valid_max','f',3.0)
 
+# Provenance info 
+gitinfo = obs4MIPsLib.ProvenanceInfo(obs4MIPsLib.getGitInfo("./"))
+full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{gitinfo['commit_number']}/demo"  
+cmor.set_cur_dataset_attribute("obs4MIPs_GH_Commit_ID",f"{full_git_path}")
+# 
+ 
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
 cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
 cmor.write(varid,values,time_vals=time[:],time_bnds=f.time_bnds.values) ; # Write variable with time axis
