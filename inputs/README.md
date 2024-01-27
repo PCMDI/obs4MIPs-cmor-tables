@@ -1,3 +1,7 @@
+## Making the process of preparing obs4MIPs-compliant products transparent
+
+Obs4MIPs products are being prepared in open source environment. Here, the required metadata and codes to process data are made publically available. Subdirectories (under obs4MIPs-cmor-tables/inputs), corresponding to obs4MIPs institution_ids, identify at which institution specific obs4MIPs products are prepared. The next level of subdirectories (e.g., RSS/NASA-LaRC) indicate the origins of a pariticular product. In the example RSS/NASA-LaRC, RSS has prepared the the NASA-LaRC product as a "3rd party", whereas codes under RSS/RSS are representative of products curated by RSS.
+
 ## Recipe for the preparation of obs4MIPs compliant data (work in progress)
 
 The recipe below describes the process of preparing an obs4MIPs-compliant dataset. This typically involves copying information from the provided demo and modifying it as necessary to prepare a new obs4MIPs-compliant dataset.  **If you are interested to contribute an obs4MIPs-compliant dataset, please alert the obs4MIPs data preparation team (obs4MIPs-admin@llnl.gov) so that we can advise you on how to proceed.** Note the process of preparing obs4MIPs-compliant data is in support of, but independent of the process of "publishing" obs4MIPs-compliant data to ESGF.   
