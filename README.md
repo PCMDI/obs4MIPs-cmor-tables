@@ -1,8 +1,11 @@
+## [Are you interested to prepare and provide a new obs4MIPs-compliant dataset? ](https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/inputs/README.md) ##
+
+
 <img src="assets/imgs/obs4MIPsRLogo.png" width="15%" height="15%" align="right" />
 
 ## obs4MIPs-cmor-tables ##
 
-Hello. This repo is used to develop and maintain:
+This repo is used to develop and maintain:
 
 - Version control of **obs4MIPs compliant [`source_ids`](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/obs4MIPs_source_id.json)** 
 - Maintenance of [obs4MIPs CMOR tables (json files)](https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/Tables)
@@ -18,7 +21,8 @@ Hello. This repo is used to develop and maintain:
 
 To propose a new `source_id`, [open an issue in this repo](https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/new/choose). When submitting an issue, a template is provided for contributors to modify for their proposed `source_id`. Once the issue is submitted, one of the site maintainers will review it and when ready will execute its implementation into the database of `source_ids` maintained within the [`obs4MIPs_source_id.json`](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/obs4MIPs_source_id.json) file in this repo.
 
-## Contributors
+
+## Obs4MIPs Data Delivery Team (DDT)
 
 [![Contributors](https://contrib.rocks/image?repo=PCMDI/obs4MIPs-cmor-tables)](https://github.com/PCMDI/obs4MIPs-cmor-tables/graphs/contributors)
 
@@ -30,7 +34,7 @@ This work is sponsored by the Regional and Global Model Analysis ([RGMA](https:/
 
 <p>
     <img src="https://pcmdi.github.io/assets/PCMDI/100px-PCMDI-Logo-NoText-square-png8.png"
-         width="65"
+         width="80"
          style="margin-right: 30px"
          title="Program for Climate Model Diagnosis and Intercomparison"
          alt="Program for Climate Model Diagnosis and Intercomparison"
@@ -47,7 +51,31 @@ This work is sponsored by the Regional and Global Model Analysis ([RGMA](https:/
          title="Lawrence Livermore National Laboratory"
          alt="Lawrence Livermore National Laboratory"
     >&nbsp;
-    <img src="https://pcmdi.github.io/assets/MetOffice/100px-Met_Office_LogoBLACK.png"
+        <img src="https://github.com/PCMDI/assets/blob/main/NASA/577x480px-NASA_Logo.png"
+         width="85"
+         style="margin-right: 30px"
+         title="NASA"
+         alt="NASA"
+    >&nbsp;
+         <img src="https://github.com/PCMDI/assets/blob/main/RSS/308x107px-RSS_Logo_Blank_Background.png"
+         width="150"
+         style="margin-right: 30px"
+         title="RSS"
+         alt="RSS"
+    >&nbsp;
+         <img src="https://github.com/PCMDI/assets/blob/main/ESA/ESA_logo_2020_Black.png"
+         width="175"
+         style="vertical-align:middle;margin:0px
+         title="ESA"
+         alt="ESA"
+    >&nbsp;
+         <img src="https://github.com/PCMDI/assets/blob/main/CEDA/CEDA_logo.jpg"
+         width="250"
+         style="margin-right: 30px"
+         title="CEDA"
+         alt="CEDA"
+    >&nbsp;
+         <img src="https://pcmdi.github.io/assets/MetOffice/100px-Met_Office_LogoBLACK.png"
          width="65"
          style="margin-right: 30px"
          title="UK Met Office"
