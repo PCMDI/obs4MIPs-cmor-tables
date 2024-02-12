@@ -20,7 +20,7 @@
     "product":"observations",
     "references":"Xie, P., and P.A. Arkin, 1997: Global precipitation: A 17-year monthly analysis based on gauge observations, satellite estimates, and numerical model outputs. Bull. Amer. Meteor. Soc., 78, 2539 - 2558",
     "source_id":"CMAP-V1902",
-    "title":"CMAP prepared for obs4MIPs (ODS-v2.1.0)",
+    "title":"CMAP prepared for obs4MIPs (ODS-V2.5)",
     "variant_info":"Best Estimate",
     "variant_label":"PCMDI",
     "originData_URL": "https://www.esrl.noaa.gov/psd/data/gridded/data.cmap.html",
