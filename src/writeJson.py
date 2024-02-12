@@ -757,6 +757,7 @@ coordinate['plev37_ERA5']['requested'] = [ "100000.", "97500.", "95000.", "92500
 
 #%% Source type
 source_type = {}
+source_type['insitu'] = 'site data'
 source_type['gridded_insitu'] = 'gridded product based on measurements collected from in-situ instruments'
 source_type['reanalysis'] = 'gridded product generated from a model reanalysis based on in-situ instruments and possibly satellite measurements'
 source_type['satellite_blended'] = 'gridded product based on both in-situ instruments and satellite measurements'

@@ -21,13 +21,13 @@
                 "yrPt":"sampled yearly, at specified time point within the time period"
             },
             "version_metadata":{
-                "CV_collection_modified":"Wed Jul 26 09:52:24 2023 -0700",
-                "CV_collection_version":"6.2.58.56",
+                "CV_collection_modified":"Mon Nov 27 14:15:15 2023 -0800",
+                "CV_collection_version":"6.2.58.61",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "frequency_CV_modified":"Mon May 24 13:48:15 2021 00100",
                 "frequency_CV_note":"Update description of 3hr and 6hr frequencies",
                 "institution_id":"PCMDI",
-                "previous_commit":"dc50b3750eeb7ecf5b942ce7c439137fc2b9e5d5",
+                "previous_commit":"a4bd0d38e958aef3da5bdbe6212f2ca7afdf9a56",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -80,13 +80,13 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-                "CV_collection_modified":"Wed Jul 26 09:52:24 2023 -0700",
-                "CV_collection_version":"6.2.58.56",
+                "CV_collection_modified":"Mon Nov 27 14:15:15 2023 -0800",
+                "CV_collection_version":"6.2.58.61",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
-                "previous_commit":"dc50b3750eeb7ecf5b942ce7c439137fc2b9e5d5",
+                "previous_commit":"a4bd0d38e958aef3da5bdbe6212f2ca7afdf9a56",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -107,12 +107,12 @@
             "NASA-GSFC":"NASA Goddard Space Flight Center, Greenbelt MD, USA",
             "NASA-JPL":"NASA Jet Propulsion Laboratory, Pasadena, CA 91109, USA",
             "NASA-LaRC":"NASA-LaRC (Langley Research Center) Hampton, Va",
-            "NCAR":"National Center for Atmospheric Research, Boulder, CO 80307, USA",
+            "NCAR":"National Center for Atmospheric Research, Boulder, CO, USA",
             "NOAA-ESRL-PSD":"NOAA Earth System Research Laboratory, Physical Sciences Division, Boulder, CO 80305, USA",
             "NOAA-NCEI":"NOAA National Centers for Environmental Information, Asheville, NC 28801, USA",
-            "OSU":"Oregon State University",
+            "OSU":"Oregon State University, OR, USA",
             "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
-            "RSS":"Remote Sensing Systems, Santa Rosa, CA 95401, USA",
+            "RSS":"Remote Sensing Systems, Santa Rosa, CA USA",
             "UCI-CHRS":"Center for Hydrometeorology and Remote Sensing",
             "UCSD-SIO":"University of California, San Diego, Scripps Institution of Oceanography",
             "UReading":"University of Reading, Reading, UK",
@@ -138,13 +138,13 @@
                 "5000 km"
             ],
             "version_metadata":{
-                "CV_collection_modified":"Wed Jul 26 09:52:24 2023 -0700",
-                "CV_collection_version":"6.2.58.56",
+                "CV_collection_modified":"Mon Nov 27 14:15:15 2023 -0800",
+                "CV_collection_version":"6.2.58.61",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "institution_id":"PCMDI",
                 "nominal_resolution_CV_modified":"Tues Nov 15 16:04:00 2016 -0700",
                 "nominal_resolution_CV_note":"Issue141 durack1 update grid_resolution to nominal_resolution (#143)",
-                "previous_commit":"dc50b3750eeb7ecf5b942ce7c439137fc2b9e5d5",
+                "previous_commit":"a4bd0d38e958aef3da5bdbe6212f2ca7afdf9a56",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -323,6 +323,58 @@
                     "tos"
                 ],
                 "source_version_number":"v7"
+            },
+            "ARMBE-atm-c1-1-8":{
+                "institution_id":"DOE-ARM",
+                "region":"site_data",
+                "source":"DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties",
+                "source_description":"DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties",
+                "source_label":"ARMBE",
+                "source_name":"ARMBE",
+                "source_type":"insitu",
+                "source_variables":[
+                    "hfls",
+                    "hfls",
+                    "hfss",
+                    "hfss",
+                    "hur",
+                    "pr",
+                    "ps",
+                    "ta",
+                    "tas",
+                    "ua",
+                    "uas",
+                    "va",
+                    "vas",
+                    "wap"
+                ],
+                "source_version_number":"atm-c1-1-8"
+            },
+            "ARMBE-cldrad-c1-1-8":{
+                "institution_id":"DOE-ARM",
+                "region":"site_data",
+                "source":"DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties",
+                "source_description":"DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties",
+                "source_label":"ARMBE",
+                "source_name":"ARMBE",
+                "source_type":"insitu",
+                "source_variables":[
+                    "cl",
+                    "clivi",
+                    "clt",
+                    "clwvi",
+                    "prw",
+                    "rlds",
+                    "rlus",
+                    "rlut",
+                    "rsds",
+                    "rsdscs",
+                    "rsdt",
+                    "rsdt",
+                    "rsus",
+                    "rsut"
+                ],
+                "source_version_number":"cldrad-c1-1-8"
             },
             "AVISO-1-0":{
                 "institution_id":"CNES",
@@ -1096,6 +1148,74 @@
                 ],
                 "source_version_number":"V06-LU"
             },
+            "IMERG-V06B-FINAL":{
+                "institution_id":"NOAA-NCEI",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2017",
+                "source":"IMERG blended rain rate product",
+                "source_description":"IMERG blended rain rate product",
+                "source_id":"IMERG-V06B-FINAL",
+                "source_label":"IMERG-V06B-FINAL",
+                "source_name":"IMERG-V06B-FINAL",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"V06B"
+            },
+            "IMERG-V06B-Final-3hr":{
+                "institution_id":"NASA-GSFC",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2019",
+                "source":"NASA IMERG averaged to 3-hourly maps",
+                "source_description":"NASA IMERG averaged to 3-hourly maps",
+                "source_id":"IMERG-V06B-Final-3hr",
+                "source_label":"IMERG-V06-Final-3hr",
+                "source_name":"IMERG-V06-Final-3hr",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"V06B"
+            },
+            "IMERG-V07-Final":{
+                "institution_id":"NASA-GSFC",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2023",
+                "source":"NASA IMERG 30-min, 0.1x0.1 degrees",
+                "source_description":"NASA IMERG 30-min, 0.1x0.1 degrees",
+                "source_id":"IMERG-V07-Final",
+                "source_label":"IMERG-V07-Final",
+                "source_name":"IMERG-V07-Final",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"V07"
+            },
+            "IMERG-v06B-FINAL":{
+                "institution_id":"NASA-GFSC",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2019",
+                "source":"IMERG blended rain rate product",
+                "source_description":"IMERG blended rain rate product",
+                "source_id":"IMERG-v06B-FINAL",
+                "source_label":"IMERG-v06B-FINAL",
+                "source_name":"IMERG-v06B-FINAL",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "pr"
+                ],
+                "source_version_number":"v06B"
+            },
             "IMERG-v06B-Final":{
                 "institution_id":"NASA-GSFC",
                 "region":[
@@ -1604,6 +1724,74 @@
                 ],
                 "source_version_number":"v20110531"
             },
+            "RSS-MSU-TLS-4":{
+                "institution_id":"RSS",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2016",
+                "source":"RSS MSU Temperature Lower Stratosphere v4.0",
+                "source_description":"RSS MSU Temperature Lower Stratosphere v4.0",
+                "source_id":"RSS-MSU-TLS-4",
+                "source_label":"RSS-MSU-TLS",
+                "source_name":"RSS-MSU-TLS",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "tls"
+                ],
+                "source_version_number":"4.0"
+            },
+            "RSS-MSU-TLT-4":{
+                "institution_id":"RSS",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2016",
+                "source":"RSS MSU Temperature Lower Troposphere v4.0",
+                "source_description":"RSS MSU Temperature Lower Troposphere v4.0",
+                "source_id":"RSS-MSU-TLT-4",
+                "source_label":"RSS-MSU-TLT",
+                "source_name":"RSS-MSU-TLT",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "tlt"
+                ],
+                "source_version_number":"4.0"
+            },
+            "RSS-MSU-TMT-4":{
+                "institution_id":"RSS",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2016",
+                "source":"RSS MSU Temperature Middle Troposphere v4.0",
+                "source_description":"RSS MSU Temperature Middle Troposphere v4.0",
+                "source_id":"RSS-MSU-TMT-4",
+                "source_label":"RSS-MSU-TMT",
+                "source_name":"RSS-MSU-TMT",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "tmt"
+                ],
+                "source_version_number":"4.0"
+            },
+            "RSS-MWIR-SST-5-1":{
+                "institution_id":"RSS",
+                "region":[
+                    "global"
+                ],
+                "release_year":"2022",
+                "source":"RSS MWIR v5.1 Foundation OISST",
+                "source_description":"RSS MWIR v5.1 Foundation OISST",
+                "source_id":"RSS-MWIR-SST-5-1",
+                "source_label":"RSS-MWIR-SST",
+                "source_name":"RSS-MWIR-SST",
+                "source_type":"satellite_blended",
+                "source_variables":[
+                    "tos"
+                ],
+                "source_version_number":"5.1"
+            },
             "RSS-PRW-6-6-0":{
                 "institution_id":"RSS",
                 "region":[
@@ -1925,6 +2113,7 @@
         },
         "source_type":{
             "gridded_insitu":"gridded product based on measurements collected from in-situ instruments",
+            "insitu":"site data",
             "reanalysis":"gridded product generated from a model reanalysis based on in-situ instruments and possibly satellite measurements",
             "satellite_blended":"gridded product based on both in-situ instruments and satellite measurements",
             "satellite_retrieval":"gridded product based on satellite measurements"
