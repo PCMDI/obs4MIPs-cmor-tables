@@ -21,7 +21,12 @@
     "references":"Xie, P., R. Joyce, S. Wu, S.-H. Yoo, Y. Yarosh, F. Sun, and R. Lin, 2017: Reprocessed, bias-corrected CMORPH global high-resolution precipitation estimates. J.  Hydrometeor., 18, DOI: http://dx.doi.org/10.1175/JHM-D-16-0168.1",
     "source_id":"CMORPH-1-0",
     "title":"CMORPH V1.0 daily data NOAA Climate Data Record (CDR) of CPC Morphing Technique (CMORPH) High Resolution Global Precipitation Estimates, Version 1",
-    "tracking_prefix":"hdl:21.14102",
     "variant_info":"Best Estimate",
-    "variant_label":"PCMDI"
+    "variant_label":"PCMDI",
+    "originData_URL": "https://www.ncei.noaa.gov/data/cmorph-high-resolution-global-precipitation-estimates/access/30min/8km",
+    "originData_retrieved": "20210219; MAhn @ PCMDI",
+    "obs4MIPs_contrib_type":"3rd party",
+    "exploratory_product":"N",
+    "CMIP6_consistency_variable":"Y",
+    "CMIP6_consistency_time":"Y",
 }
