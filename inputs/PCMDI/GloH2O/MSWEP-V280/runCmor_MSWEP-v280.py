@@ -14,9 +14,9 @@ targetgrid = 'orig'
 #version = 'Past'  #'Past-nogauge'  #'Past'  # NRT   # Past-nogauge
 freq = 'Aday' #'Amon' #'Aday'  #'Amon'
 version = 'Past'
-version = 'Past-nogauge'
-freq = 'Amon' #'Amon' #'Aday'  #'Amon'
-version = 'Past-nogauge'  # 'NRT'  'Past-nogauge'  'Past'
+#version = 'Past-nogauge'
+#freq = 'Amon' #'Amon' #'Aday'  #'Amon'
+#version = 'Past-nogauge'  # 'NRT'  'Past-nogauge'  'Past'
 
 if freq == 'Amon': 
   cmorTable = '../../../../Tables/obs4MIPs_Amon.json' 
@@ -79,8 +79,8 @@ lstyrs = ['1979', '1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987'
 lstyrs = ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020']
 
 
-lstyrs = ['1979','1980']
-#lstyrs = ['1981']
+lstyrs = ['1979','1980','1981']
+lstyrs = ['1980']
 
 for yr in lstyrs:  # LOOP OVER YEARS
 #lstall = glob.glob(inputFilePathbgn+inputFilePathend + '*' + yr + '*.nc')
@@ -96,8 +96,10 @@ for yr in lstyrs:  # LOOP OVER YEARS
  if avgp == '3hourly': mos = ['01','02','03','04','05','06','07','08','09','10','11','12'] 
 
  print('above fc')
- fc = xc.open_mfdataset(pathin, mask_and_scale=False, decode_times=True, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
- fc = fc.bounds.add_missing_bounds()   
+#fc = xc.open_mfdataset(pathin, mask_and_scale=False, decode_times=True, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
+ fc = xc.open_mfdataset(pathin,  mask_and_scale=False, decode_times=False, combine='nested', concat_dim='time', preprocess=extract_date) #AM
+
+ fc = fc.bounds.add_missing_bounds(['X','Y','T'])   
  print('below fc')
 
  for mo in mos:
@@ -125,7 +127,7 @@ for yr in lstyrs:  # LOOP OVER YEARS
 #  fc = fc.bounds.add_missing_bounds()   
 #  print('below fc')
 
-   tdc = fc.time.sel(time=slice(datestart, dateend)).values
+   tdc = fc.time.sel(time=slice(datestart, dateend))
    tbds = fc.time_bnds.sel(time=slice(datestart, dateend)).values
    ddc = fc[inputVarName].sel(time=slice(datestart, dateend)).values
 #  tdc['axis'] = "T"
@@ -186,7 +188,7 @@ for yr in lstyrs:  # LOOP OVER YEARS
 # print('above varid')
 
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-   varid   = cmor.variable(outputVarName,outputUnits,axisIds,missing_value=1.e20)
+   varid   = cmor.variable(outputVarName,outputUnits,axisIds) #,missing_value=1.e20)
 # print('below varid')
 # w = sys.stdin.readline()
    values  = np.array(d[:],np.float32)
@@ -196,7 +198,7 @@ for yr in lstyrs:  # LOOP OVER YEARS
    print('above cmor.write')
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
    cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
-   cmor.write(varid,values,time_vals=tdc[0],time_bnds=tbds[0]) ; # Write variable with time axis
+   cmor.write(varid,values,time_vals=tdc[0].values,time_bnds=tbds[0]) ; # Write variable with time axis
    cmor.close()
    print('done cmorizing ', yr,' ',mo)
 
