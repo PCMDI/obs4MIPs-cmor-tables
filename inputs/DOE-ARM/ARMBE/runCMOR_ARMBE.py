@@ -6,7 +6,8 @@ import json
 
 #%% User provided input
 # TODO don't have a currently support obs4MIPs table for hourly site specific data
-cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+cmorTable = '../../../Tables/obs4MIPs_CFsubhr.json' #Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+#cmorTable = './obs4MIPs_A1hr.json'
 inputJson = 'ARMBE_ATM.json' ; # Update contents of this file to set your global_attributes
 #inputFilePath = '/Users/zhang40/Documents/ARM/armbe_sample/sgparmbeatmC1.c1.20200101.003000.nc'
 inputFilePath = '/p/user_pub/PCMDIobs/obs4MIPs_input/LLNL/ARMBE_Vxy/sgparmbeatmC1.c1.20180101.003000.nc'
@@ -22,9 +23,10 @@ d = f[inputVarName]
 lat = f.lat.values 
 lon = f.lon.values 
 time = f.time.values ; # Rather use a file dimension-based load statement
+tbds = f.time_bounds.values
 #f = f.bounds.add_bounds("X")  
 #f = f.bounds.add_bounds("Y")  
-f = f.bounds.add_bounds("T")
+#f = f.bounds.add_bounds("T")
 # CONVERT UNITS FROM mm/hour to kg/m2/s 
 d = np.divide(d,86400.*24.)
 d = np.where(np.isnan(d),1.e20,d)
@@ -36,11 +38,10 @@ cmor.dataset_json(inputJson)
 cmor.load_table(cmorTable)
 cmor.set_cur_dataset_attribute('history',f.history) 
 
-cmorLat = cmor.axis("latitude", coord_vals=np.array([lat]), units="degrees_north")
-cmorLon = cmor.axis("longitude", coord_vals=np.array([lon]), units="degrees_east")
+#cmorLat = cmor.axis("latitude1", coord_vals=np.array([lat]), units="degrees_north")
+#cmorLon = cmor.axis("longitude1", coord_vals=np.array([lon]), units="degrees_east")
 cmorTime = cmor.axis("time", coord_vals=time[:], cell_bounds=tbds, units= f.time.units)
-cmoraxes = [cmorTime,cmorLat, cmorLon]
-
+cmoraxes = [cmorTime]  #,cmorLat, cmorLon]
 
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
 varid   = cmor.variable(outputVarName,outputUnits,cmoraxes,missing_value=1.e20)

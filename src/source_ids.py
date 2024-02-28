@@ -11,6 +11,8 @@ source_id['source_id'][key]['institution_id'] = 'DOE-ARM'
 source_id['source_id'][key]['region'] = 'site_data'
 source_id['source_id'][key]['source_type'] = 'insitu'
 source_id['source_id'][key]['source_variables'] = ['uas','vas','ps','pr','hfss','hfls','tas','hfss','hfls','ta','ua','va','hur','wap']
+source_id['source_id'][key]['release_year'] = '2022'
+
 
 key = 'ARMBE-cldrad-c1-1-8'
 source_id['source_id'][key] = {}
