@@ -1,7 +1,6 @@
 import xcdat as xc
 import xarray as xr
 import numpy as np
-import MV2 as MV
 import glob
 import os
 import sys
@@ -27,14 +26,17 @@ def avg_3hr_imerg(basedir, yr1, yr2, mo1, mo2, ext='RT-H5'):
                 yyyymmdd = tmp.split('.')[4][:8]
                 year = yyyymmdd[:4]
                 mon = yyyymmdd[4:6]
+                minute = tmp.split('.')[5]
+
                 if (year==str(iyr) and mon==imon):
-                    print(iyr,imon,i,yyyymmdd)
+                    print(file)
+                    print(iyr,imon,i,yyyymmdd,minute)
                     if (ext == 'nc') or (ext == 'nc4'):
                         f = xc.open_dataset(file)
                     else:
-                        f = xc.open_dataset(file, group='Grid')
+                        f = xc.open_dataset(file, group='Grid').as_numpy()
                     d = f['precipitationCal']
-                    d = MV.transpose(d[0])  # axis (lon,lat) to (lat,lon)
+                    d = d[0].transpose() # axis (lon,lat) to (lat,lon)
                     output_array.append(d)
                     sidx.append(i)
                     f.close()
@@ -51,24 +53,23 @@ def avg_3hr_imerg(basedir, yr1, yr2, mo1, mo2, ext='RT-H5'):
                     if (ext == 'nc') or (ext == 'nc4'):
                         f = xc.open_dataset(file)
                     else:
-                        f = xc.open_dataset(file, group='Grid')
+                        f = xc.open_dataset(file, group='Grid').as_numpy()
                     d = f['precipitationCal']
-                    d = MV.transpose(d[0])  # axis (lon,lat) to (lat,lon)
+                    d = d[0].transpose() # axis (lon,lat) to (lat,lon)
                     output_array.insert(ist,d)
                     ist=ist+1
                     f.close()
-            output_array = MV.array(output_array)
-            print(output_array.shape)
+
+            output_array = np.array(output_array)
             nt30mn=output_array.shape[0]
             nt3hr=int(nt30mn/6)
             nt1dy=int(nt3hr/8)
 
+            d3hr=np.zeros((nt3hr, output_array.shape[1], output_array.shape[2]), float)
 
-            d3hr=MV.zeros((nt3hr, output_array.shape[1], output_array.shape[2]), MV.float)
             i3hr=0
             for it in range(0,nt30mn,6):
-                print(i3hr,it,it+6-1)
-                d3hr[i3hr]=MV.average(output_array[it:it+6],axis=0)
+                d3hr[i3hr]=np.ma.average(output_array[it:it+6],axis=0)
                 i3hr+=1
 
             t = xr.DataArray(np.arange(0,nt1dy,1/8), dims=("time"))
