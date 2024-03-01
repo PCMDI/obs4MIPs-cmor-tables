@@ -1,7 +1,7 @@
 {
     "Header":{
         "Conventions":"CF-1.7 ODS-2.1",
-        "approx_interval":"0.125000",
+        "approx_interval":"0.0416666666",
         "cmor_version":"3.5",
         "data_specs_version":"2.1.0",
         "generic_levels":"",
