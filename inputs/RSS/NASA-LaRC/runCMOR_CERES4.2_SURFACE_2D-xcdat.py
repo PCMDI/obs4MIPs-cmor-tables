@@ -77,7 +77,7 @@ for fi in range(len(inputVarName)):
   path_to_code = f"/inputs{paths[1]}"  # location of the code in the obs4MIPs GitHub directory
 
   full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{gitinfo['commit_number']}/{path_to_code}"
-  cmor.set_cur_dataset_attribute("obs4MIPs_GH_Commit_ID",f"{full_git_path}")
+  cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
 
 
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
