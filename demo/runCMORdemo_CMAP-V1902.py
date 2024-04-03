@@ -52,7 +52,7 @@ cmor.set_variable_attribute(varid,'valid_max','f',3.0)
 # Provenance info - produces global attribute <obs4MIPs_GH_Commit_ID> 
 gitinfo = obs4MIPsLib.ProvenanceInfo(obs4MIPsLib.getGitInfo("./"))
 full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{gitinfo['commit_number']}/demo"  
-cmor.set_cur_dataset_attribute("obs4MIPs_GH_Commit_ID",f"{full_git_path}")
+cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
 # 
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
 cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
