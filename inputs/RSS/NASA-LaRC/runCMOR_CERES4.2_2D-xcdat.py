@@ -3,7 +3,7 @@ import xcdat as xc
 import numpy as np
 import os
 import sys
-sys.path.append("/home/manaster1/obs4MIPs-cmor-tables/inputs/") # Path to obs4MIPsLib
+sys.path.append("/home/manaster1/obs4MIPs-cmor-tables/inputs/misc/") # Path to obs4MIPsLib
 
 import obs4MIPsLib
 
@@ -21,9 +21,9 @@ for fi in range(len(inputVarName)):
   print(fi, inputVarName[fi])
   inputFilePath = '/p/user_pub/PCMDIobs/obs4MIPs_input/NASA-LaRC/CERES_EBAF4.2/' # change to user's path where file is stored
   if inputVarName[fi] in ['toa_cre_lw_mon','toa_cre_sw_mon']: 
-    inputFileName = 'CERES_EBAF_Ed4.2_Subset_200003-202306-CRE.nc'
+    inputFileName = 'CERES_EBAF_Ed4.2_Subset_200003-202309-CRE.nc'
   else:
-    inputFileName = 'CERES_EBAF-TOA_Ed4.2_Subset_200003-202307.nc'
+    inputFileName = 'CERES_EBAF-TOA_Ed4.2_Subset_200003-202310.nc'
 
 ### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE...
 #%% Process variable (with time axis)
@@ -75,15 +75,14 @@ for fi in range(len(inputVarName)):
   cmor.set_variable_attribute(varid,'valid_min','c',d.valid_min) # CERES defines this as a string in the EBAF netCDF4 files.  Must be saved as such
   cmor.set_variable_attribute(varid,'valid_max','c',d.valid_max)
 
-# Add GitHub commit ID attribute to output CMOR file
-  gitinfo = obs4MIPsLib.getGitInfo("./")
-  commit_num = gitinfo[0].split(':')[1].strip()
+# Provenance info 
+  gitinfo = obs4MIPsLib.ProvenanceInfo(obs4MIPsLib.getGitInfo("./"))
 
   paths = os.getcwd().split('/inputs')
-  path_to_code = f"/inputs{paths[1]}"
-  
-  full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{commit_num}{path_to_code}"
-  cmor.set_cur_dataset_attribute("obs4MIPs_GH_Commit_ID",f"{full_git_path}")
+  path_to_code = f"/inputs{paths[1]}"  # location of the code in the obs4MIPs GitHub directory
+
+  full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{gitinfo['commit_number']}/{path_to_code}"
+  cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
 
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
