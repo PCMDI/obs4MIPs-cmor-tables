@@ -15,19 +15,20 @@ inputJson = 'ERA5-MARS-input.json' ; # Update contents of this file to set your 
 inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/ECMWF/'
 inputFilePathend = 'ERA5/fromMARS/'
 
+'''
 inputFileName = ['adaptor.mars.internal-1580171536.0444872-8315-37-02e9201d-5e7b-41b5-98ff-3b9b3a83d82d.nc','adaptor.mars.internal-1580171536.0444872-8315-37-02e9201d-5e7b-41b5-98ff-3b9b3a83d82d.nc','adaptor.mars.internal-1580171536.0444872-8315-37-02e9201d-5e7b-41b5-98ff-3b9b3a83d82d.nc','adaptor.mars.internal-1580190896.023251-25621-38-f188c480-a5cd-4284-84a7-5757315ca044.nc']
-inputVarName = ['t2m_0001'] #,'u10_0001','v10_0001','msl_0001'] 
+inputVarName = ['t2m_0001','u10_0001','v10_0001','msl_0001'] 
 outputVarName = ['tas','uas','vas','psl']  
 outputUnits = ['K','m s-1','m s-1','Pa'] 
 outpos = ['','','',''] 
-
 '''
+
 inputFileName = ['adaptor.mars.internal-1582240823.3820484-23715-16-fe2f1d48-67a6-479f-9d83-6356ce7cbecb.nc','adaptor.mars.internal-1582240823.3820484-23715-16-fe2f1d48-67a6-479f-9d83-6356ce7cbecb.nc']
 inputVarName = ['ewss', 'nsss']
 outputVarName = ['tauu','tauv']
 outputUnits = ['Pa','Pa']
 outpos = ['down','down']
-'''
+
 
 ### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE..
 for fi in range(len(inputVarName)):
@@ -55,7 +56,7 @@ for fi in range(len(inputVarName)):
   cmorTime = cmor.axis("time", coord_vals=time, cell_bounds=f.time_bnds.values, units= f.time.units)
   axes = [cmorTime, cmorLat, cmorLon]
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-  varid   = cmor.variable(outputVarName[fi],outputUnits[fi],axes,missing_value=1.e20)
+  varid   = cmor.variable(outputVarName[fi],outputUnits[fi],axes,missing_value=1.e20,positive=outpos[fi])
   values  = np.array(d[:],np.float32)
 
 # Provenance info - produces global attribute <obs4MIPs_GH_Commit_ID> 
