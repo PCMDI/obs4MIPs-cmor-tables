@@ -12,7 +12,6 @@ def avg_3hr_imerg(basedir, yr1, yr2, mo1, mo2, ext='RT-H5'):
     """
     
     files_list = sorted(glob.glob(os.path.join(basedir,f'*.{ext}')))
-
     print(f'Averaging from {yr1}-{mo1} to {yr2}-{mo2}')
     for iyr in range(yr1,yr2+1):
         for imo in range(mo1,mo2+1):

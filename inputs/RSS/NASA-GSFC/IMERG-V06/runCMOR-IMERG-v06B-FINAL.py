@@ -20,7 +20,7 @@ def extract_date(ds):   # preprocessing function when opening files
     return ds
 
 #%% User provided input
-cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'IMERG-v06B-FINAL.json' ; # Update contents of this file to set your global_attributes
 inputFilePath = '/p/user_pub/PCMDIobs/obs4MIPs_input/NASA-GSFC/IMERG6/half-hourly/'
 inputVarName = 'precipitationCal'
@@ -94,7 +94,7 @@ for year in range(2001, 2002):  # put the years you want to process here
         path_to_code = f"/inputs{paths[1]}"  # location of the code in the obs4MIPs GitHub directory
 
         full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{gitinfo['commit_number']}/{path_to_code}"
-        cmor.set_cur_dataset_attribute("obs4MIPs_GH_Commit_ID",f"{full_git_path}")
+        cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
 
         # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
         cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data

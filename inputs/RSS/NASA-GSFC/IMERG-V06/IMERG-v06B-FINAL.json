@@ -8,9 +8,11 @@
     "calendar":"gregorian",
     "comment":"",
     "contact":"RSS (support@remss.com)",
+    "dataset_contributor":"Andrew I. Manaster",
     "grid":"0.1x0.1 degree latitude x longitude",
     "grid_label":"gn",
     "history":"",
+    "_history_template":"%s; CMOR rewrote data to be consistent with <activity_id> and <Conventions> standards",
     "license":"Data in this file produced by NASA-GSFC are licensed under a Creative Commons Attribution 4.0 International License (https://creativecommons.org/licenses/by/4.0/). Use of the data must be acknowledged following guidelines found at https://disc.gsfc.nasa.gov/. Further information about this data, including some limitations, can be found via https://disc.gsfc.nasa.gov/.",
     "institution_id":"NASA-GSFC",
     "nominal_resolution":"10 km",
@@ -21,10 +23,10 @@
     "references":"gpm.nasa.gov/data/imerg",
     "source_id":"IMERG-v06B-Final",
     "source_label": "IMERG-v06B-Final",
-    "title":"IMERG V06B prepared for obs4MIPs (ODS-v2.1.0)",
+    "source_data_retrieval_date":"20230612",
+    "source_data_url": "gpm1.gesdisc.eosdis.nasa.gov/data/GPM_L3/GPM_3IMERGHH.06/",
+    "title":"IMERG V06B (ODS-v2.5.0)",
     "tracking_prefix":"hdl:21.14102",
-    "variant_info":"Best Estimate",
-    "variant_label":"RSS",
-    "originData_URL": "gpm1.gesdisc.eosdis.nasa.gov/data/GPM_L3/GPM_3IMERGHH.06/",
-    "originData_retrieved": "20230612; Andrew I. Manaster @ RSS"
+    "variant_info":"obs4MIPs-compliant product prepared by RSS",
+    "variant_label":"RSS"
 }
