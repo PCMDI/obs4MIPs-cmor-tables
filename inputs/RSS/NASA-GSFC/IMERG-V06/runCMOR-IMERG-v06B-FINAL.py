@@ -11,6 +11,7 @@ sys.path.append("/home/manaster1/obs4MIPs-cmor-tables/inputs/misc/") # Path to o
 import obs4MIPsLib
 
 def extract_date(ds):   # preprocessing function when opening files
+    print(f"Extracting time for: {ds.encoding['source']}")
     for var in ds.variables:
         if var == 'time':
             dataset_time = ds[var].values
@@ -30,7 +31,7 @@ outputUnits = 'kg m-2 s-1'
 for year in range(2001, 2002):  # put the years you want to process here
     inputDatasets = []
     for month in range(1,2):
-        inputFiles = glob.glob(f"{inputFilePath}/3B-HHR.MS.MRG.3IMERG.{year}{month:02}01*.HDF5")
+        inputFiles = glob.glob(f"{inputFilePath}/3B-HHR.MS.MRG.3IMERG.{year}{month:02}*.HDF5")
         inputFiles.sort() # to ensure data files are in chronological order. Code will break otherwise
         for inputFile in inputFiles:
             inputDatasets.append(inputFile)
