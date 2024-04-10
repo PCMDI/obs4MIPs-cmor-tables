@@ -148,7 +148,7 @@ for yr in lstyrs:  # LOOP OVER YEARS
 
 #  THE UNITS IN THE ORIGINAL FILES DEPEND ON FREQUENCY
    if avgp == 'Daily':  conv = 3600.*24.
-   if avgp == '3hourly':  conv = 3600.*24.*3.
+   if avgp == '3hourly':  conv = 3600.*24./8.
    if avgp == 'Monthly': conv = 1000*3600.*24.*float(endmo) 
    d = np.divide(ddc,conv)
    print('d read',d.shape)

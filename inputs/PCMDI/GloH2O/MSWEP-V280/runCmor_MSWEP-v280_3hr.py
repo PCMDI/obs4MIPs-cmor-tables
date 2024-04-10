@@ -37,6 +37,7 @@ for i in lsttmp:
 lstyrs.sort()
 
 inputVarName = 'precipitation'
+inputUnits = 'mm/3hr'
 outputVarName = 'pr'
 outputUnits = 'kg m-2 s-1'
 
@@ -53,7 +54,7 @@ for yr in lstyrs:  # LOOP OVER YEARS
    tdc = np.multiply(fc.time.values[:],24)  # days-since to hours-since
    tbds =np.multiply(fc.time_bnds.values[:],24)
    ddc = fc[inputVarName].values
-   conv = 3600.*24.*3.
+   conv = 3600.*24./8.
    d = np.divide(ddc,conv)
    lat = fc.lat
    lon = fc.lon   #.values
