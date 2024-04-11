@@ -876,6 +876,22 @@
             ],
             "source_version_number":"V07"
         },
+        "IMERG-V07-Final-3hr":{
+            "institution_id":"NASA-GSFC",
+            "region":[
+                "global"
+            ],
+            "release_year":"2023",
+            "source_description":"NASA IMERG averaged to 3-hourly maps",
+            "source_id":"IMERG-V07-Final-3hr",
+            "source_label":"IMERG-V07-Final-3hr",
+            "source_name":"IMERG-V07-Final-3hr",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"V07"
+        },
         "IMERG-v06B-FINAL":{
             "institution_id":"NASA-GFSC",
             "region":[
