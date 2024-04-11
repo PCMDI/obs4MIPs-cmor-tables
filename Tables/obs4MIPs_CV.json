@@ -561,6 +561,18 @@
                 "source_type":"satellite_blended",
                 "source_version_number":"V07"
             },
+            "IMERG-V07-Final-Daily":{
+                "region":"global",
+                "source":"IMERG-V07-Final-Daily V07 (2023): NASA IMERG Daily Averages",
+                "source_type":"satellite_blended",
+                "source_version_number":"V07"
+            },
+            "IMERG-V07-Final-Monthly":{
+                "region":"global",
+                "source":"IMERG-V07-Final-Monthly V07 (2023): NASA IMERG Monthly Maps",
+                "source_type":"satellite_blended",
+                "source_version_number":"V07"
+            },
             "IMERG-v06B-FINAL":{
                 "region":"global",
                 "source":"IMERG-v06B-FINAL v06B (2019): IMERG blended rain rate product",

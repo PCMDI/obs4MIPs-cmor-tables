@@ -149,6 +149,32 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['pr']
 source_id['source_id'][key]['source_version_number'] = 'V06B'
 
+key = 'IMERG-V07-Final-Monthly'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'NASA IMERG Monthly Maps'
+source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
+source_id['source_id'][key]['release_year'] = '2023'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'IMERG-V07-Final-Monthly'
+source_id['source_id'][key]['source_name'] = 'IMERG-V07-Final-Monthly'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['pr']
+source_id['source_id'][key]['source_version_number'] = 'V07'
+
+key = 'IMERG-V07-Final-Daily'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'NASA IMERG Daily Averages'
+source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
+source_id['source_id'][key]['release_year'] = '2023'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'IMERG-V07-Final-Daily'
+source_id['source_id'][key]['source_name'] = 'IMERG-V07-Final-Daily'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['pr']
+source_id['source_id'][key]['source_version_number'] = 'V07'
+
 key = 'IMERG-V07-Final-3hr'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_description'] = 'NASA IMERG averaged to 3-hourly maps'
