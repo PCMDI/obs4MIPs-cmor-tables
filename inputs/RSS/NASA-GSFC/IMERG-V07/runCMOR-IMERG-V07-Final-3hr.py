@@ -12,7 +12,7 @@ sys.path.append("/home/manaster1/obs4MIPs-cmor-tables/inputs/misc/") # Path to o
 import obs4MIPsLib
 
 #%% User provided input
-cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+cmorTable = '../../../../Tables/obs4MIPs_A3hr.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'IMERG-V07-Final-3hr.json' ; # Update contents of this file to set your global_attributes
 # inputDir = '/mnt/sagan/g/ACCESS/output_files/_temp/imerg/12/' # change to local path on user's machine where files are stored.
 inputFilePath = '/p/user_pub/PCMDIobs/obs4MIPs_input/NASA-GSFC/IMERGV07/half-hourly/'
