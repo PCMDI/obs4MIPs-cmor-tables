@@ -19,7 +19,7 @@ def extract_date(ds):   # preprocessing function when opening files
     return ds
 
 #%% User provided input
-cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+cmorTable = '../../../../Tables/obs4MIPs_Aday.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'GPCP_Daily_v03r02.json' ; # Update contents of this file to set your global_attributes
 inputFilePath = '/p/user_pub/PCMDIobs/obs4MIPs_input/NASA-GSFC/GPCP-3-2/daily/' # change to location on user's machine
 inputVarName = 'precip'
