@@ -108,4 +108,3 @@ for year in range(2000, 2024):  # put the years you want to process here
         f.close()
         cmor.close()
         print(f"File written for {year}-{month:02}")
-        sys.exit()
