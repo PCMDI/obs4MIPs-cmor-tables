@@ -29,8 +29,8 @@ outputVarName = 'pr'
 outputUnits = 'kg m-2 s-1'
 
 for year in range(2000, 2024):  # put the years you want to process here
-    inputDatasets = []
     for month in range(1,13):
+        inputDatasets = []
         inputFiles = glob.glob(f"{inputFilePath}/3B-DAY.MS.MRG.3IMERG.{year}{month:02}*.nc4")
         inputFiles.sort() # to ensure data files are in chronological order. Code will break otherwise
         for inputFile in inputFiles:
