@@ -28,7 +28,7 @@ inputVarName = 'precipitation'
 outputVarName = 'pr'
 outputUnits = 'kg m-2 s-1'
 
-for year in range(2001, 2002):  # put the years you want to process here
+for year in range(2000, 2024):  # put the years you want to process here
     inputDatasets = []
     for month in range(1,13):
         inputFiles = glob.glob(f"{inputFilePath}/3B-MO.MS.MRG.3IMERG.{year}{month:02}*.HDF5")
@@ -105,4 +105,3 @@ for year in range(2001, 2002):  # put the years you want to process here
     f.close()
     cmor.close()
     print(f"File written for {year}")
-    sys.exit()
