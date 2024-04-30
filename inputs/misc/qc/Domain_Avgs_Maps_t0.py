@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 def main():
 
     vars_list = ['pr']
-    fqs_list = ['3hr'] #,'day']
+    fqs_list = ['monthly'] #,'day']
 
     cfopt = True 
     plot_out_dir = './maps_cf' + str(cfopt)
@@ -21,6 +21,7 @@ def main():
         for fq in fqs_list:
             
             pathin_template = '/p/user_pub/PCMDIobs/catalogue/obs4MIPs_PCMDI_' + fq + '_byVar_catalogue_v????????.json'
+            print(pathin_template)
             pathin = sorted(glob.glob(pathin_template))[-1]  # select the latest catalogue file
 
             print('\nvar, fq, catalogue:', var, fq, pathin.split('/')[-1], '\n')
