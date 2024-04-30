@@ -1,9 +1,9 @@
 {
     "Header":{
-        "Conventions":"CF-1.11; ODS-2.5",
-        "approx_interval":"0.125000",
+        "Conventions":"CF-1.7 ODS-2.1",
+        "approx_interval":"0.0416666666",
         "cmor_version":"3.5",
-        "data_specs_version":"ODS-2.5",
+        "data_specs_version":"2.1.0",
         "generic_levels":"",
         "int_missing_value":"-999",
         "mip_era":"CMIP6",
@@ -11,7 +11,7 @@
         "product":"model-output",
         "realm":"atmos",
         "table_date":"18 November 2020",
-        "table_id":"Table obs4MIPs_A3hr"
+        "table_id":"Table obs4MIPs_A1hr"
     },
     "variable_entry":{
         "clt":{
@@ -126,8 +126,8 @@
             "cell_measures":"area: areacella",
             "cell_methods":"area: time: mean",
             "comment":"includes both liquid and solid phases",
-            "dimensions":"longitude latitude time",
-            "frequency":"3hr",
+            "dimensions":"time",
+            "frequency":"1hr",
             "long_name":"Precipitation",
             "modeling_realm":"atmos",
             "ok_max_mean_abs":"",

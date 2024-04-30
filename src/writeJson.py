@@ -253,8 +253,8 @@ SIday['Header']['realm']    = 'seaIce'
 # Clean out modeling_realm
 for jsonName in [Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx]:
   try:
-   jsonName['Header']["Conventions"] = "CF-1.7 ODS-2.1"
-   jsonName['Header']["data_specs_version"] = "2.1.0"
+   jsonName['Header']["Conventions"] = "CF-1.11; ODS-2.5"
+   jsonName['Header']["data_specs_version"] = "ODS-2.5"
   except:
    pass
 
@@ -987,13 +987,13 @@ for count,CV in enumerate(CVJsonList):
 #      obs4MIPs_CV['CV']['institution'] = source_id['institude_id']
 
     # Create source entry from source_id
-    if CV == 'source_id': 
+    if CV == 'source_idd': 
       obs4MIPs_CV['CV']['source_id'] = source_id['source_id'] 
 
       for s in obs4MIPs_CV['CV']['source_id'].keys():
         obs4MIPs_CV['CV']['source_id'][s]['source'] = obs4MIPs_CV['CV']['source_id'][s]['source_description'] 
 
-    if CV == 'source_idd':
+    if CV == 'source_id':
         source_id_ = source_id['source_id']
         obs4MIPs_CV['CV']['source_id'] = {}
         for key,values in source_id_.items():
@@ -1007,6 +1007,7 @@ for count,CV in enumerate(CVJsonList):
             obs4MIPs_CV['CV']['source_id'][key]['source_version_number'] = values['source_version_number']
             obs4MIPs_CV['CV']['source_id'][key]['region'] = ', '.join(str(a) for a in values['region'])
             obs4MIPs_CV['CV']['source_id'][key]['source'] = string
+            obs4MIPs_CV['CV']['source_id'][key].pop('source_label', None)
     # Rewrite table names
     elif CV == 'table_id':
         obs4MIPs_CV['CV']['table_id'] = []

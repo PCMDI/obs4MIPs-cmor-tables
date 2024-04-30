@@ -34,6 +34,15 @@ from socket import gethostname
 
 # %% function defs
 
+def ProvenanceInfo(gitinfo):
+    provenance = {}
+    commit = gitinfo[0].split(':')[1].strip()
+    input_path = os.getcwd().split('/inputs/misc')
+    demo_path = os.getcwd().split('/demo') 
+    provenance['commit_number'] = commit 
+    provenance['demo_path'] = demo_path
+    provenance['input_path'] = input_path
+    return provenance 
 
 def downloadStatus(done, timeStamp, urls):
     """

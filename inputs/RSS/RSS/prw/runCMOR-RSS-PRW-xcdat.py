@@ -3,12 +3,17 @@ import xcdat as xc
 import xarray as xr
 import numpy as np
 import json
+import os
+import sys
+sys.path.append("/home/manaster1/obs4MIPs-cmor-tables/inputs/") # Path to obs4MIPsLib
+
+import obs4MIPsLib
 
 
 #%% User provided input
 cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'RSS_PRW_v07r02.json' ; # Update contents of this file to set your global_attributes
-inputFilePath = 'tpw_v07r02_198801_202212.nc4.nc'    # change to location on user's machine
+inputFilePath = '/p/user_pub/PCMDIobs/obs4MIPs_input/RSS/RSS-PRW-v07r02/tpw_v07r02_198801_202212.nc4.nc'    # change to location on user's machine
 inputVarName = 'precipitable_water'
 outputVarName = 'prw'
 outputUnits = 'kg m-2'
@@ -57,6 +62,16 @@ values  = np.array(d.values,np.float32)
 # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
 cmor.set_variable_attribute(varid,'valid_min','f',float(d.valid_min))   # d.valid_min is np.float32, which cmor does not like. Must convert to 'float'
 cmor.set_variable_attribute(varid,'valid_max','f',float(d.valid_max))   # d.valid_max is np.float32, which cmor does not like. Must convert to 'float'
+
+# Add GitHub commit ID attribute to output CMOR file
+gitinfo = obs4MIPsLib.getGitInfo("./")
+commit_num = gitinfo[0].split(':')[1].strip()
+
+paths = os.getcwd().split('/inputs')
+path_to_code = f"/inputs{paths[1]}"
+
+full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{commit_num}{path_to_code}"
+cmor.set_cur_dataset_attribute("obs4MIPs_GH_Commit_ID",f"{full_git_path}")
 
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
 cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data

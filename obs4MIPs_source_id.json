@@ -654,6 +654,22 @@
             ],
             "source_version_number":"2.3"
         },
+        "GPCP-Daily-3-2":{
+            "institution_id":"NASA-GSFC",
+            "region":[
+                "global"
+            ],
+            "release_year":"2022",
+            "source_description":"Merged Precipitation",
+            "source_id":"GPCP-Daily-3-2",
+            "source_label":"GPCP",
+            "source_name":"GPCP",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"3.2"
+        },
         "GPCP-IP":{
             "institution_id":"NASA-GSFC",
             "region":[
@@ -669,6 +685,22 @@
                 "pr"
             ],
             "source_version_number":"1.3"
+        },
+        "GPCP-Monthly-3-2":{
+            "institution_id":"NASA-GSFC",
+            "region":[
+                "global"
+            ],
+            "release_year":"2022",
+            "source_description":"Merged Precipitation",
+            "source_id":"GPCP-Monthly-3-2",
+            "source_label":"GPCP",
+            "source_name":"GPCP",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"3.2"
         },
         "GPCP-SG":{
             "institution_id":"NASA-GSFC",
