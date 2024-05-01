@@ -1180,11 +1180,11 @@
             "valid_max":"",
             "valid_min":""
         },
-        "ta-plev37":{
+       "ta-plev37":{
             "cell_measures":"area: areacella",
             "cell_methods":"time: mean",
             "comment":"Air Temperature",
-            "dimensions":"longitude latitude plev37-ERA5 time",
+            "dimensions":"longitude latitude plev37 time",
             "frequency":"mon",
             "long_name":"Air Temperature",
             "modeling_realm":"atmos",

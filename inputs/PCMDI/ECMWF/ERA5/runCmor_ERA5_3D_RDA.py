@@ -16,8 +16,10 @@ inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/ECMWF/'
 inputFilePathend = 'ERA5/RDA/'
 
 #inputFileName = ['adaptor.mars.internal-1580171536.0444872-8315-37-02e9201d-5e7b-41b5-98ff-3b9b3a83d82d.nc','adaptor.mars.internal-1580171536.0444872-8315-37-02e9201d-5e7b-41b5-98ff-3b9b3a83d82d.nc','adaptor.mars.internal-1580171536.0444872-8315-37-02e9201d-5e7b-41b5-98ff-3b9b3a83d82d.nc','adaptor.mars.internal-1580190896.023251-25621-38-f188c480-a5cd-4284-84a7-5757315ca044.nc']
-inputVarName = ['T','U','V','Z'] 
-outputVarName = ['ta','ua','va','zg']  
+
+inputVarName = ['T']
+#inputVarName = ['T','U','V','Z'] 
+outputVarName = ['ta-plev37','ua','va','zg']  
 outputUnits = ['K','m s-1','m s-1','Pa'] 
 
 '''
@@ -38,14 +40,16 @@ for vn,fi in enumerate(inputVarName):
 
  for fi in files_yearly:
   f = xc.open_dataset(fi,decode_times=False, decode_cf=False)
-  f = f.bounds.add_missing_bounds(axes=['X', 'Y'])
+  f = f.bounds.add_missing_bounds(axes=['X', 'Y','Z'])
   f = f.bounds.add_bounds('T')
   d = f[inputVarName[vn]].values
   lat = f.latitude
   lon = f.longitude
+  lev = f.level
   print(d.shape)
   time = f.time.values[:]
 # d.positive = outpos[fi]
+# w = sys.stdin.readline()
 
 #%% Initialize and run CMOR
   cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4) #,logfile='cmorLog.txt')
@@ -55,8 +59,9 @@ for vn,fi in enumerate(inputVarName):
 
   cmorLat = cmor.axis("latitude", coord_vals=lat[:].values, cell_bounds=f.latitude_bnds.values, units="degrees_north")
   cmorLon = cmor.axis("longitude", coord_vals=lon[:].values, cell_bounds=f.longitude_bnds.values, units="degrees_east")
+  cmorLev = cmor.axis("plev37-ERA5", coord_vals=lev[:].values*100., units="Pa")
   cmorTime = cmor.axis("time", coord_vals=time, cell_bounds=f.time_bnds.values, units= f.time.units)
-  axes = [cmorTime, cmorLat, cmorLon]
+  axes = [cmorTime, cmorLat, cmorLon,cmorLev]
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   varid   = cmor.variable(outputVarName[vn],outputUnits[vn],axes,missing_value=1.e20)
   values  = np.array(d[:],np.float32)
