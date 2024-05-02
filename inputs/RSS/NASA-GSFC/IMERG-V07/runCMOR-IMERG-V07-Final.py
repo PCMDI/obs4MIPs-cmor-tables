@@ -84,7 +84,9 @@ for year in range(2001, 2002):  # put the years you want to process here
         # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
         d["units"] = outputUnits
         varid   = cmor.variable(outputVarName,str(d.units.values),axisIds,missing_value=d._FillValue)
-        values  = np.array(d[:],np.float32)/3600. # IMERG data are in units of mm/hr. Converting to kg m-2 s-1 assuming density of water=1000 kg/m^3
+        pr_array = np.array(d[:],np.float32)
+        pr_array[pr_array != d._FillValue] /= 3600. #  IMERG data are in units of mm/hr. Converting to kg m-2 s-1 (assuming density of water=1000 kg/m^3) and keeping missing values
+        values = pr_array
 
         # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
         cmor.set_variable_attribute(varid,'valid_min','f',0.0)
