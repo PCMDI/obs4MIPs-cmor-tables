@@ -48,14 +48,21 @@ for year in range(2000, 2024):  # put the years you want to process here
     d = d.transpose('time','lat','lon') # need to transpose the IMEG latitudes and longitudes
 
     time = f.time
-    lat = f.lat.values
-    lon = f.lon.values
+    time_bounds = f.time_bnds
 
-    # Due to CMOR warnings related to the way latitudes and longitudes are read in/rounded
-    # need to round lat and lon bounds to 3 places after the decimal
-    lat_bounds = np.around(f.lat_bnds, 3)
-    lon_bounds = np.around(f.lon_bnds, 3)
-    time_bounds = np.around(f.time_bnds,3)
+    # The following lines are written to address floating point representation errors within the IMERG lat/lon data
+    lat = ['{:g}'.format(float('{:.4g}'.format(i))) for i in f.lat.values]
+    lon = ['{:g}'.format(float('{:.5g}'.format(i))) for i in f.lon.values]
+    lat_bounds = ['{:g}'.format(float('{:.4g}'.format(i))) for i in np.ravel(f.lat_bnds.values)]
+    lon_bounds = ['{:g}'.format(float('{:.5g}'.format(i))) for i in np.ravel(f.lon_bnds.values)]
+    
+    lat = np.asarray(lat,dtype=float)
+    lon = np.asarray(lon,dtype=float)
+    lat_bounds = np.reshape(np.asarray(lat_bounds,dtype=float), (1800,2))
+    lon_bounds = np.reshape(np.asarray(lon_bounds,dtype=float), (3600,2))
+
+    lat_bounds[(lat_bounds > -0.1) & (lat_bounds < 0.1)] = 0.0
+    lon_bounds[(lon_bounds > -0.1) & (lon_bounds < 0.1)] = 0.0
 
     #%% Initialize and run CMOR
     # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
