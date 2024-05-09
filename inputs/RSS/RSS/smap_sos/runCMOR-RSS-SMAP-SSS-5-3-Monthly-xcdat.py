@@ -45,10 +45,11 @@ for year in range(2015, 2024):  # put the years you want to process here
 
     lat = f.lat
     lon = f.lon
-    time = f.time
-    time_bounds = f.time_bnds
+    time = np.round(f.time) # need to round up to get an accurate time
+    
     lon_bounds = f.lon_bnds
     lat_bounds = f.lat_bnds
+    time_bounds = np.round(f.time_bnds) # need to round up to get accurate time bounds
 
     #%% Initialize and run CMOR
     # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
