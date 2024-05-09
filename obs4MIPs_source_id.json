@@ -1546,6 +1546,22 @@
             ],
             "source_version_number":"5.0"
         },
+        "RSS-SMAP-SSS-v05r03":{
+            "institution_id":"RSS",
+            "region":[
+                "global ocean"
+            ],
+            "release_year":"2023",
+            "source_description":"Satellite derived SSS produced by RSS",
+            "source_id":"RSS-SMAP-SSS-v05r03",
+            "source_label":"RSS-SMAP-SSS",
+            "source_name":"RSS-SMAP-SSS",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "sos"
+            ],
+            "source_version_number":"5.3"
+        },
         "RSS-sfcWind-v07r01":{
             "institution_id":"RSS",
             "region":[
