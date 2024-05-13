@@ -52,8 +52,9 @@ for fi in range(len(inputVarName)):
 
   # CERES time data is represented as int32s.  As such CMOR does not quite get the time bounds correct.
   # The following two lines help to get the correct time bounds.
-  datumyr = time.units.split('since')[1][0:5] # getting the start year
-  time_new, time_bounds_new = monthly_times(datumyr,years,start_month=start_month,end_month=end_month)
+  datumyr = time.units.split('since')[1][0:5] # getting the reference year
+  datummnth = int(time.units.split('since')[1][6:8]) # getting reference month
+  time_new, time_bounds_new = monthly_times(datumyr, years, datum_start_month=datummnth, start_month=start_month, end_month=end_month)
   
 
 #%% Initialize and run CMOR
