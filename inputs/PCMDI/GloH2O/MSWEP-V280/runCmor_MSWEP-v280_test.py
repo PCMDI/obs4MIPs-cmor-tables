@@ -7,10 +7,16 @@ import glob
 import numpy as np
 import sys, os, glob
 
-freq = 'A3hr' #'Amon' #'Aday'  #'Amon'
-version = 'Past-nogauge'  # 'Past'  #'Past-nogauge'  #'Past'  # NRT   # Past-nogauge 
-cmorTable = '../../../../Tables/obs4MIPs_A3hr.json'
-avgp = '3hourly'
+freq = 'A3hr' #'Amon' #'Aday'  #'A3hr'
+version = 'Past'  #-nogauge'  # 'Past'  #'Past-nogauge'  #'Past'  # NRT   # Past-nogauge 
+
+if freq == 'Amon': avgp = 'Monthly'
+if freq == 'A3hr': avgp = '3hourly'
+if freq == 'Aday': avgp = 'Daily'
+
+cmorTable = '../../../../Tables/obs4MIPs_ATABLE.json'  #A3hr
+cmorTable = cmorTable.replace('ATABLE',freq) 
+
 inputJson = 'MSWEP-V280-' + version + '_input.json' ; 
 
 print('inputJson ', inputJson)
@@ -42,19 +48,22 @@ outputVarName = 'pr'
 outputUnits = 'kg m-2 s-1'
 
 lstyrs = ['1979', '1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020']
-#lstyrs = ['1981']
+lstyrs = ['1981']
 
 for yr in lstyrs:  # LOOP OVER YEARS
    print('starting ', yr)
+   yr = yr + '001'
    pathind = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/' + version + '/' + avgp + '/' + yr + '*.nc'
    fc = xc.open_mfdataset(pathind, mask_and_scale=False, decode_times=False, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
    fc = fc.bounds.add_missing_bounds(axes=['X', 'Y'])
    fc = fc.bounds.add_bounds('T')
-   tunits = "hours since 1900-1-1 00:00:00"  #fc.time.units
-   tdc = np.multiply(fc.time.values[:],24)  # days-since to hours-since
-   tbds =np.multiply(fc.time_bnds.values[:],24)
+#  tunits = "hours since 1900-1-1 00:00:00"  #fc.time.units
+   tunits = "days since 1900-1-1"
+   tunits = fc.time.units
+   tdc = np.multiply(fc.time.values[:],1) #,24)  # days-since to hours-since
+   tbds =np.multiply(fc.time_bnds.values[:],1) #,24)  #added last 2 for monthly
    ddc = fc[inputVarName].values
-   conv = 3600.*24./8.  # 3hrly
+   conv = 3600.*24./8.
    d = np.divide(ddc,conv)
    lat = fc.lat
    lon = fc.lon   #.values
