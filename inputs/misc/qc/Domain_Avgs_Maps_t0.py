@@ -12,7 +12,7 @@ ver = datetime.datetime.now().strftime('v%Y%m%d')
 def main():
 
     vars_list = ['pr']
-    fqs_list = ['3hr']  #monthly','day','3hr'] #,'day']
+    fqs_list = ['day']  #monthly','day','3hr'] #,'day']
 
     cfopt = True 
     plot_out_dir = './maps_cf' + str(cfopt)
