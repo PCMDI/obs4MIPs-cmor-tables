@@ -7,8 +7,8 @@ import glob
 import numpy as np
 import sys, os, glob
 
-freq = 'A3hr' #'Amon' #'Aday'  #'A3hr'
-version = 'Past'  #-nogauge'  # 'Past'  #'Past-nogauge'  #'Past'  # NRT   # Past-nogauge 
+freq = 'Aday' #'Amon' #'Aday'  #'A3hr'
+version = 'Past-nogauge'  #-nogauge'  # 'Past'  #'Past-nogauge'  #'Past'  # NRT   # Past-nogauge 
 
 if freq == 'Amon': avgp = 'Monthly'
 if freq == 'A3hr': avgp = '3hourly'
@@ -43,7 +43,7 @@ for i in lsttmp:
 lstyrs.sort()
 
 inputVarName = 'precipitation'
-inputUnits = 'mm/3hr'
+##inputUnits = 'mm/3hr'
 outputVarName = 'pr'
 outputUnits = 'kg m-2 s-1'
 
@@ -52,18 +52,20 @@ lstyrs = ['1981']
 
 for yr in lstyrs:  # LOOP OVER YEARS
    print('starting ', yr)
-   yr = yr + '001'
+   yr = yr + '00' #day    # '001 for 3hr'
    pathind = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/' + version + '/' + avgp + '/' + yr + '*.nc'
    fc = xc.open_mfdataset(pathind, mask_and_scale=False, decode_times=False, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
    fc = fc.bounds.add_missing_bounds(axes=['X', 'Y'])
    fc = fc.bounds.add_bounds('T')
 #  tunits = "hours since 1900-1-1 00:00:00"  #fc.time.units
-   tunits = "days since 1900-1-1"
+#  tunits = "days since 1900-1-1"
    tunits = fc.time.units
    tdc = np.multiply(fc.time.values[:],1) #,24)  # days-since to hours-since
    tbds =np.multiply(fc.time_bnds.values[:],1) #,24)  #added last 2 for monthly
    ddc = fc[inputVarName].values
-   conv = 3600.*24./8.
+   if freq == 'Amon': conv = 3600.*24.*30.4  OK?
+   if freq == 'Aday': conv = 3600.*24.   #OK?
+   if freq == 'A3hr': conv = 3600.*24./8. #OK
    d = np.divide(ddc,conv)
    lat = fc.lat
    lon = fc.lon   #.values
