@@ -7,6 +7,7 @@ import sys
 sys.path.append("/home/manaster1/obs4MIPs-cmor-tables/inputs/misc/") # Path to obs4MIPsLib
 
 import obs4MIPsLib
+from fix_dataset_time import monthly_times
 
 def extract_date(ds):   # preprocessing function when opening files
     for var in ds.variables:
@@ -51,13 +52,22 @@ for year in range(2015, 2024):  # put the years you want to process here
     lat_bounds = f.lat_bnds
     time_bounds = np.round(f.time_bnds) # need to round up to get accurate time bounds
 
+    if year == 2015:
+        start_month = 4
+    else:
+        start_month = 1
+    end_month = 12
+    datumyr = time.units.split('since')[1][0:5] # getting the reference year
+    datummnth = int(time.units.split('since')[1][6:8]) # getting reference month
+    time_new, time_bounds_new, time_units = monthly_times(datumyr, year, datum_start_month=datummnth, start_month=start_month, end_month=end_month)
+
     #%% Initialize and run CMOR
     # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
     cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4)
     cmor.dataset_json(inputJson)
     cmor.load_table(cmorTable)
     axes    = [ {'table_entry': 'time',
-                'units': time.units,
+                'units': time_units,
                 },
                 {'table_entry': 'latitude',
                 'units': 'degrees_north',
@@ -95,7 +105,7 @@ for year in range(2015, 2024):  # put the years you want to process here
     print(f'CMOR begin for {year}')
     # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
     cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
-    cmor.write(varid,values,time_vals=time.values,time_bnds=time_bounds.values) ; # Write variable with time axis
+    cmor.write(varid,values,time_vals=time_new,time_bnds=time_bounds_new) ; # Write variable with time axis
     f.close()
     cmor.close()
     print(f'File created for {year}')
