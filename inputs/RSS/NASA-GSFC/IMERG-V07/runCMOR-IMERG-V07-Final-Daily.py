@@ -50,9 +50,9 @@ for year in range(2000, 2024):  # put the years you want to process here
         d = f[inputVarName]
         d = d.transpose('time','lat','lon') # need to transpose the IMEG latitudes and longitudes
 
-        time = f.time
-        time_bounds = f.time_bnds
-
+        time = np.round(f.time)
+        time_bounds = np.round(f.time_bnds)
+  
         # The following lines are written to address floating point representation errors within the IMERG lat/lon data
         lat = ['{:g}'.format(float('{:.4g}'.format(i))) for i in f.lat.values]
         lon = ['{:g}'.format(float('{:.5g}'.format(i))) for i in f.lon.values]
