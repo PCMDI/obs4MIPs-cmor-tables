@@ -95,12 +95,12 @@ for year in range(2000, 2024):  # put the years you want to process here
         d["units"] = outputUnits
         varid   = cmor.variable(outputVarName,str(d.units.values),axisIds,missing_value=d._FillValue)
         pr_array = np.array(d[:],np.float32)
-        pr_array[pr_array != d._FillValue] /= 3600. #  IMERG data are in units of mm/hr. Converting to kg m-2 s-1 (assuming density of water=1000 kg/m^3) and keeping missing values
+        pr_array[pr_array != d._FillValue] /= (24.*3600.) #  IMERG data are in units of mm/day. Converting to kg m-2 s-1 (assuming density of water=1000 kg/m^3) and keeping missing values
         values = pr_array
         
         # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
         cmor.set_variable_attribute(varid,'valid_min','f',0.0)
-        cmor.set_variable_attribute(varid,'valid_max','f',100.0/3600.) # setting these manually for the time being.
+        cmor.set_variable_attribute(varid,'valid_max','f',100.0/(24.*3600.)) # setting these manually for the time being.
 
         # Provenance info 
         gitinfo = obs4MIPsLib.ProvenanceInfo(obs4MIPsLib.getGitInfo("./"))
