@@ -13,6 +13,7 @@ def main():
 
     vars_list = ['pr']
     fqs_list = ['day']  #monthly','day','3hr'] #,'day']
+    time_slice = 23
 
     cfopt = True 
     plot_out_dir = './maps_cf' + str(cfopt)
@@ -38,8 +39,9 @@ def main():
             print(srcs)
 
             fig, axs = prepare_subplots(srcs)
-            
-            print('\nSource'.ljust(25), '\t', 'Mean @ t=0'.ljust(10), '\t', 'Min'.ljust(10), '\t', 'Max'.ljust(10),'\t', 
+
+            ts = 'Mean @ t=' + str(23)            
+            print('\nSource'.ljust(25), '\t', ts.ljust(10), '\t', 'Min'.ljust(10), '\t', 'Max'.ljust(10),'\t', 
                   'Units'.ljust(10),'\t','Region')   #, '\t' , 'missing_value'.ljust(10),'\t', 'FillValue'.ljust(10))
             print('-' * 25, '\t', '-' * 10, '\t', '-' * 10, '\t', '-' * 10, '\t', '-' * 10, '\t', '-' * 10, '\t', '-' * 10)
             
@@ -55,9 +57,9 @@ def main():
                     concat_dim='time',
                     data_vars='all')
                 # get spatial mean of the first time step
-                ds_avg = float(ds.isel(time=3).spatial.average(var)[var])
-                ds_max = ds.isel(time=0)[var].max().values
-                ds_min = ds.isel(time=0)[var].min().values
+                ds_avg = float(ds.isel(time=time_slice).spatial.average(var)[var])
+                ds_max = ds.isel(time=time_slice)[var].max().values
+                ds_min = ds.isel(time=time_slice)[var].min().values
 
                 try:
                  reg = ds.attrs['region']
@@ -67,7 +69,7 @@ def main():
                 # print on screen 
                 print(src.ljust(25), '\t', '{:.10f}'.format(ds_avg),'\t','{:.10f}'.format(ds_min),'\t','{:.10f}'.format(ds_max), '\t', ds[var].units.ljust(10),'\t',reg.ljust(10)) #,'\t',ds[var].attrs['missing_value'],'\t','\t', ds[var].attrs['_FillValue'])
                 # plot
-                ds.isel(time=0)[var].plot(ax=axs[i], vmax = 0.0003)
+                ds.isel(time=time_slice)[var].plot(ax=axs[i], vmax = 0.0003)
                 axs[i].set_title(src)
                 # close file
                 ds.close()
