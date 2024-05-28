@@ -55,7 +55,7 @@ lstyrs = ['1979', '1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987'
 
 for yr in lstyrs:  # LOOP OVER YEARS
    print('starting ', yr)
-   yr = yr    #+ '00' #day    # '001 for 3hr'
+#  yr = yr  # + '00*' #day    # '001 for 3hr'
    pathind = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/' + version + '/' + avgp + '/' + yr + '*.nc'
    fc = xc.open_mfdataset(pathind, mask_and_scale=False, decode_times=False, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
    fc = fc.bounds.add_missing_bounds(axes=['X', 'Y'])
@@ -63,12 +63,16 @@ for yr in lstyrs:  # LOOP OVER YEARS
 #  tunits = "hours since 1900-1-1 00:00:00"  #fc.time.units
 #  tunits = "days since 1900-1-1"
    tunits = fc.time.units
-   tdc = np.multiply(fc.time.values[:],1) #,24)  # days-since to hours-since
-   tbds =np.multiply(fc.time_bnds.values[:],1) #,24)  #added last 2 for monthly
-   ddc = fc[inputVarName].values
    if freq == 'Amon': conv = 3600.*24.*30.4  #OK?
    if freq == 'Aday': conv = 3600.*24.   #OK
    if freq == 'A3hr': conv = 3600.*24./8. #OK
+   tdc = fc.time.values[:]
+   tdc = tdc.astype(float) 
+   tbds =fc.time_bnds.values[:]
+
+#  tdc = np.multiply(fc.time.values[:],1) #,24)  # days-since to hours-since
+#  tbds =np.multiply(fc.time_bnds.values[:],1) #,24)  #added last 2 for monthly
+   ddc = fc[inputVarName].values
    d = np.divide(ddc,conv)
    lat = fc.lat
    lon = fc.lon   
@@ -101,4 +105,4 @@ for yr in lstyrs:  # LOOP OVER YEARS
    cmor.close()
    print('done cmorizing ', yr)
    fc.close()
-
+#  w = sys.stdin.readline()
