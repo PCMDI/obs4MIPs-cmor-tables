@@ -303,6 +303,12 @@
                 "source_type":"satellite_blended",
                 "source_version_number":"3.1"
             },
+            "CCMP-Monthly-3-1":{
+                "region":"global",
+                "source":"CCMP-Monthly-3-1 3.1 (2022): Cross-Calibrated Multi-Platform V3.1",
+                "source_type":"satellite_blended",
+                "source_version_number":"3.1"
+            },
             "CERES-EBAF-4-0":{
                 "region":"global",
                 "source":"CERES-EBAF-4-0 4.0 (2018): CERES EBAF (Energy Balanced and Filled) TOA Fluxes. Monthly Averages",
