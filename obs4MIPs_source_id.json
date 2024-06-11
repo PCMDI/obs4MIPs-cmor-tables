@@ -114,6 +114,22 @@
             ],
             "source_version_number":"9.0"
         },
+        "CCMP-3-1":{
+            "institution_id":"RSS",
+            "region":[
+                "global"
+            ],
+            "release_year":"2022",
+            "source_description":"Cross-Calibrated Multi-Platform V3.1",
+            "source_id":"CCMP-3-1",
+            "source_label":"CCMP-3-1",
+            "source_name":"CCMP-3-1",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "sfcWind"
+            ],
+            "source_version_number":"3.1"
+        },
         "CERES-EBAF-4-0":{
             "institution_id":"NASA-LaRC",
             "region":[
