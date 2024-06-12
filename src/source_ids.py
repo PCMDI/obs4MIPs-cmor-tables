@@ -318,19 +318,6 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['rlut','rsut','rsutcs','rlutcs']
 source_id['source_id'][key]['source_version_number'] = '4.2'
 
-key = 'CCMP-Monthly-3-1'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_description'] = 'Cross-Calibrated Multi-Platform V3.1'
-source_id['source_id'][key]['institution_id'] = 'RSS'
-source_id['source_id'][key]['release_year'] = '2022'
-source_id['source_id'][key]['source_id'] = key
-source_id['source_id'][key]['source_label'] = 'CCMP-Monthly-3-1'
-source_id['source_id'][key]['source_name'] = 'CCMP-Monthly-3-1'
-source_id['source_id'][key]['source_type'] = 'satellite_blended'
-source_id['source_id'][key]['region'] = ['global']
-source_id['source_id'][key]['source_variables'] = ['sfcWind']
-source_id['source_id'][key]['source_version_number'] = '3.1'
-
 key = 'ERA-40'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_description'] = 'ECMWF - ERA-40 (European ReAnalysis 1957-2002)'
