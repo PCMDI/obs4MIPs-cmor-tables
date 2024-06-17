@@ -1,4 +1,4 @@
-<img src="../../assets/imgs/obs4MIPsRLogo.png" width="15%" height="15%" align="right" />
+<img src="../../../assets/imgs/obs4MIPsRLogo.png" width="15%" height="15%" align="right" />
 
 ## Simple QC tests for potential obs4MIPs-compliant data
 
