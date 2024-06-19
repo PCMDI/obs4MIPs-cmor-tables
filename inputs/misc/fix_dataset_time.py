@@ -12,6 +12,7 @@ def monthly_times(datumyr,yrs,datum_start_month=1,start_month=1,end_month=12):
     mos = [1,2,3,4,5,6,7,8,9,10,11,12]
     t = []
     tbds = []
+    tunits = f'days since {datumyr}-{str(datum_start_month).zfill(2)}-01 00:00:00'
     if isinstance(yrs, int):
           yr = yrs
           for mn, mo in enumerate(mos):
@@ -44,4 +45,4 @@ def monthly_times(datumyr,yrs,datum_start_month=1,start_month=1,end_month=12):
                 mp = lbn + (ubn - lbn)/2.
                 t.append(mp)
                 tbds.append((lbn,ubn))
-    return(t,tbds)
+    return(t,tbds,tunits)
