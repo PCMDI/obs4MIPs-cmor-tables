@@ -46,8 +46,6 @@ for year in range(1993, 2024):  # put the years you want to process here
 
     lat = f.latitude
     lon = f.longitude
-    # time = f.time
-    # time_bounds = f.time_bnds
     lon_bounds = f.longitude_bnds
     lat_bounds = f.latitude_bnds
 
@@ -82,8 +80,7 @@ for year in range(1993, 2024):  # put the years you want to process here
     # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
     varid   = cmor.variable(outputVarName,outputUnits,axisIds,missing_value=d._FillValue)
     values  = np.array(d.values,np.float32)
-    # print(d)
-    # sys.exit()
+
     # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
     cmor.set_variable_attribute(varid,'valid_min','f',float(d.valid_min))   # 'float' needs to be added for CMOR to register the 'valid_min' and 'valid_max'   
     cmor.set_variable_attribute(varid,'valid_max','f',float(d.valid_max))
@@ -106,4 +103,3 @@ for year in range(1993, 2024):  # put the years you want to process here
     cmor.close()
     print(f'File created for {year}')
     print()
-    sys.exit()
