@@ -25,8 +25,6 @@ lat = f.lat.values
 lon = f.lon.values 
 time = f.time.values ; # Rather use a file dimension-based load statement
 tbds = f.time_bounds.values
-#f = f.bounds.add_bounds("X")  
-#f = f.bounds.add_bounds("Y")  
 #f = f.bounds.add_bounds("T")
 # CONVERT UNITS FROM mm/hour to kg/m2/s 
 d = np.divide(d,86400.*24.)
