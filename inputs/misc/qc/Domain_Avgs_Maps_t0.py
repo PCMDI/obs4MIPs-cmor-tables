@@ -11,9 +11,9 @@ ver = datetime.datetime.now().strftime('v%Y%m%d')
 
 def main():
 
-    vars_list = ['pr']
-    fqs_list = ['3hr']  #monthly','day','3hr'] #,'day']
-    time_slice = 23 
+    vars_list = ['psl']
+    fqs_list = ['monthly']  #monthly','day','3hr'] #,'day']
+    time_slice = 1 
 
     cfopt = True 
     plot_out_dir = './maps_cf' + str(cfopt)
@@ -40,7 +40,7 @@ def main():
 
             fig, axs = prepare_subplots(srcs)
 
-            ts = 'Mean @ t=' + str(23)            
+            ts = 'Mean @ t=' + str(time_slice)            
             print('\nSource'.ljust(25), '\t', ts.ljust(10), '\t', 'Min'.ljust(10), '\t', 'Max'.ljust(10),'\t', 
                   'Units'.ljust(10),'\t','Region')   #, '\t' , 'missing_value'.ljust(10),'\t', 'FillValue'.ljust(10))
             print('-' * 25, '\t', '-' * 10, '\t', '-' * 10, '\t', '-' * 10, '\t', '-' * 10, '\t', '-' * 10, '\t', '-' * 10)
@@ -69,7 +69,7 @@ def main():
                 # print on screen 
                 print(src.ljust(25), '\t', '{:.10f}'.format(ds_avg),'\t','{:.10f}'.format(ds_min),'\t','{:.10f}'.format(ds_max), '\t', ds[var].units.ljust(10),'\t',reg.ljust(10)) #,'\t',ds[var].attrs['missing_value'],'\t','\t', ds[var].attrs['_FillValue'])
                 # plot
-                ds.isel(time=time_slice)[var].plot(ax=axs[i], vmax = 0.0003)
+                ds.isel(time=time_slice)[var].plot(ax=axs[i])  #, vmax = 0.0003)
                 axs[i].set_title(src)
                 # close file
                 ds.close()
