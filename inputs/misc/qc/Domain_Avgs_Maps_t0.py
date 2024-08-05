@@ -11,8 +11,8 @@ ver = datetime.datetime.now().strftime('v%Y%m%d')
 
 def main():
 
-    vars_list = ['psl']
-    fqs_list = ['monthly']  #monthly','day','3hr'] #,'day']
+    vars_list = ['pr']
+    fqs_list = ['day']  #monthly','day','3hr'] #,'day']
     time_slice = 1 
 
     cfopt = True 
@@ -48,6 +48,7 @@ def main():
             for i, src in enumerate(srcs):
                 template = '/p/user_pub/PCMDIobs/' + ddic[var][src]['template']
                 # open file
+#               print(template)
                 ds = xc.open_mfdataset(
                     template,
                     mask_and_scale=True,
