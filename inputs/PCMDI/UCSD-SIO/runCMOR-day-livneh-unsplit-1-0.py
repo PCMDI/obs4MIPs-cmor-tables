@@ -5,7 +5,6 @@ import json
 import sys
 import glob
 
-
 def extract_date(ds):   # preprocessing function when opening files
     for var in ds.variables:
         if var == 'time':
@@ -22,36 +21,15 @@ inputJson = 'livneh-unsplit_UCSD-SIO_inputs.json' ; # Update contents of this fi
 vars_lst = ['PRCP']   #, 'tmax','tmin'] 
 
 for vr in vars_lst:
-
  inputDatasets = '/p/user_pub/PCMDIobs/obs4MIPs_input/UCSD-SIO/nonsplit_precip/precip/livneh_unsplit_precip.*.nc' # change to local path on user's machine where files are stored
-
- if vr == 'PRCP':
-   outputVarName = 'pr'
-   outputUnits = 'kg m-2 s-1'
-
- if vr == 'tmax':
-   outputVarName = 'tasmax'
-   outputUnits = 'K'
-
- if vr == 'tmin':
-   outputVarName = 'tasmin'
-   outputUnits = 'K'
-
  lst = glob.glob(inputDatasets)
  lst.sort()
 
  print('Number of files ', len(lst))
-#w = sys.stdin.readline()
-
-# Opening and concatenating files from the dataset
-# Due to the way the data are stored + how CMOR outputs data, it is helpful to set 'mask_and_scale' to 'True' here
 
  for yearlyFile in lst:
 
-# f = xc.open_mfdataset(yearlyFile, mask_and_scale=True, decode_times=False, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
   f = xc.open_dataset(yearlyFile)
-# f = f.drop_dims('time')
-# f = f.bounds.add_missing_bounds() # create lat,lon, and time bounds
   d = f[vr]
 
   f.lon.attrs["axis"] = "X"
@@ -59,12 +37,31 @@ for vr in vars_lst:
   f.Time.attrs["axis"] = "T"
 
   time = f.Time
+  tunits = time.units
   lat = f.lat.values
   lon = f.lon.values
 
-  f = f.bounds.add_missing_bounds() # create lat,lon, and time bounds
+# f = f.bounds.add_missing_bounds() # create lat,lon, and time bounds
 
-# w = sys.stdin.readline()
+  f = f.bounds.add_missing_bounds(axes=['X', 'Y'])
+  f = f.bounds.add_bounds('T')
+
+  if vr == 'PRCP':
+   outputVarName = 'pr'
+   outputUnits = 'kg m-2 s-1'
+   units_conv = 1/86400. 
+  if vr == 'tmax':
+   outputVarName = 'tasmax'
+   outputUnits = 'K'
+   units_conv = 273.15
+  if vr == 'tmin':
+   outputVarName = 'tasmin'
+   outputUnits = 'K'
+   units_conv = 273.15
+  if vr == 'tas':
+   outputVarName = 'tas'
+   outputUnits = 'K'
+   units_conv = 273.15
 
   lat_bounds = f.lat_bnds
   lon_bounds = f.lon_bnds
@@ -76,42 +73,27 @@ for vr in vars_lst:
   cmor.dataset_json(inputJson)
   cmor.load_table(cmorTable)
 #cmor.set_cur_dataset_attribute('history',f.history)
-  axes    = [ {'table_entry': 'time',
-             'units': time.units,
-             },
-             {'table_entry': 'latitude',
-              'units': 'degrees_north',
-              'coord_vals': lat[:],
-              'cell_bounds': lat_bounds},
-             {'table_entry': 'longitude',
-              'units': 'degrees_east',
-              'coord_vals': lon[:],
-              'cell_bounds': lon_bounds},
-          ]
 
-  axisIds = list() ; # Create list of axes
-  for axis in axes:
-    axisId = cmor.axis(**axis)
-    axisIds.append(axisId)
+  cmorLat = cmor.axis("latitude", coord_vals=lat, cell_bounds=f.lat_bnds.values, units="degrees_north")
+  cmorLon = cmor.axis("longitude", coord_vals=lon, cell_bounds=f.lon_bnds.values, units="degrees_east")
+  cmorTime = cmor.axis("time", coord_vals= np.double(time.values), cell_bounds= np.double(time_bounds.values), units= tunits)
+  axes = [cmorTime, cmorLat, cmorLon]
 
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   d["units"] = outputUnits
-  varid   = cmor.variable(outputVarName,str(d.units.values),axisIds,missing_value=-9999.)
+  varid   = cmor.variable(outputVarName,str(d.units.values),axes,missing_value=1.e20)
   values  = np.array(d[:],np.float32)
 
-# Since 'analysed_sst' is stored as a 'short' integer array in these data files,
-# it is easiest to 'mask_and_scale' the data (as we do in 'xc.open_dataset' above)
-# and apply the conversion to degrees Celsius and set the missing data values here.
-#values[np.isnan(values)] = -9999.
+  if vr == 'PRCP': values = np.multiply(values,units_conv)
+  values[np.isnan(values)] = 1.e20
 
 # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_variable_attribute(varid,'valid_min','f',-1.8) # set manually for the time being
   cmor.set_variable_attribute(varid,'valid_max','f',45.)
 
-
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
-  cmor.write(varid,values,time_vals=time.values[:],time_bnds=time_bounds.values[:]) ; # Write variable with time axis
+  cmor.write(varid,values) ; # Write variable with time axis
   f.close()
   cmor.close()
 #sys.exit()

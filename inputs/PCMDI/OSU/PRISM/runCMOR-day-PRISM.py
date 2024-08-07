@@ -18,7 +18,7 @@ def extract_date(ds):   # preprocessing function when opening files
 cmorTable = '../../../../Tables/obs4MIPs_Aday.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'PRISM_OSU_inputs.json' ; # Update contents of this file to set your global_attributes
 
-vars_lst = ['TMAX','TMEAN', 'TMIN'] 
+vars_lst = ['PPT','TMAX','TMEAN', 'TMIN'] 
 #vars_lst = ['PPT']
 
 for vr in vars_lst:
@@ -81,10 +81,11 @@ for vr in vars_lst:
 
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   d["units"] = outputUnits
-  varid   = cmor.variable(outputVarName,str(d.units.values),axes,missing_value=-9999.)
-  values  = np.array(d[:],np.float32)
+  varid   = cmor.variable(outputVarName,str(d.units.values),axes,missing_value=1.e20)
+# values  = np.array(d[:],np.float32)
+  values = np.where(np.isnan(d),1.e20,d)
 
-# Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
+# Appene valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_variable_attribute(varid,'valid_min','f',-1.8) # set manually for the time being
   cmor.set_variable_attribute(varid,'valid_max','f',45.)
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
