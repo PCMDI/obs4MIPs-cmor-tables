@@ -3,9 +3,11 @@ import xcdat as xc
 import numpy as np
 import os
 import sys
-sys.path.append("/home/manaster1/obs4MIPs-cmor-tables/inputs/misc/") # Path to obs4MIPsLib
+
+sys.path.append("/home/manaster1/obs4MIPs-cmor-tables/inputs/misc/") # Path to obs4MIPsLib and code to fix times
 
 import obs4MIPsLib
+from fix_dataset_time import monthly_times
 
 #%% User provided input
 cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
@@ -17,6 +19,11 @@ inputVarName = ['sfc_lw_up_all_mon','sfc_sw_up_all_mon','sfc_sw_up_clr_c_mon','s
 outputVarName = ['rlus','rsus','rsuscs','rlds','rldscs','rsds','rsdscs'] #,'rsscre','rlscre','rnscre']
 outputUnits = ['W m-2','W m-2','W m-2','W m-2','W m-2','W m-2','W m-2','W m-2','W m-2','W m-2']
 outpos = ['up','up','up','down','down','down','down','down','down','down']
+
+# For adjusting CERES time
+years = np.arange(2000,2024,1)
+start_month = 3
+end_month = 9
 
 ### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE...
 for fi in range(len(inputVarName)):
@@ -36,6 +43,12 @@ for fi in range(len(inputVarName)):
   time_bounds = f.time_bnds
   lon_bounds = f.lon_bnds
   lat_bounds = f.lat_bnds
+
+  # CERES time data is represented as int32s.  As such CMOR does not quite get the time bounds correct.
+  # The following two lines help to get the correct time bounds.
+  datumyr = time.units.split('since')[1][0:5] # getting the reference year
+  datummnth = int(time.units.split('since')[1][6:8]) # getting reference month
+  time_new, time_bounds_new = monthly_times(datumyr, years, datum_start_month=datummnth, start_month=start_month, end_month=end_month)
 
 #%% Initialize and run CMOR
 # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
@@ -82,7 +95,7 @@ for fi in range(len(inputVarName)):
 
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
-  cmor.write(varid,values,time_vals=time.values,time_bnds=time_bounds.values) ; # Write variable with time axis
+  cmor.write(varid,values,time_vals=time_new,time_bnds=time_bounds_new) ; # Write variable with time axis
   f.close()
 
   cmor.close()

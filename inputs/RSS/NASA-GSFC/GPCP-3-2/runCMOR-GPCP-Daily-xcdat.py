@@ -5,7 +5,7 @@ import glob
 import json
 import os
 import sys
-sys.path.append("/home/manaster1/obs4MIPs-cmor-tables/inputs/") # Path to obs4MIPsLib
+sys.path.append("/home/manaster1/obs4MIPs-cmor-tables/inputs/misc/") # Path to obs4MIPsLib
 
 import obs4MIPsLib
 
@@ -19,7 +19,7 @@ def extract_date(ds):   # preprocessing function when opening files
     return ds
 
 #%% User provided input
-cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+cmorTable = '../../../../Tables/obs4MIPs_Aday.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'GPCP_Daily_v03r02.json' ; # Update contents of this file to set your global_attributes
 inputFilePath = '/p/user_pub/PCMDIobs/obs4MIPs_input/NASA-GSFC/GPCP-3-2/daily/' # change to location on user's machine
 inputVarName = 'precip'
@@ -89,7 +89,7 @@ for year in range(2000, 2022):  # put the years you want to process here
     path_to_code = f"/inputs{paths[1]}"
     
     full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{commit_num}{path_to_code}"
-    cmor.set_cur_dataset_attribute("obs4MIPs_GH_Commit_ID",f"{full_git_path}")
+    cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
 
     print(f'CMOR begin for {year}')
     # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute

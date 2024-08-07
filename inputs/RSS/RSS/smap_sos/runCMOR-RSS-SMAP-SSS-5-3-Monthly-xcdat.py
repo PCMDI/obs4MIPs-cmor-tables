@@ -7,6 +7,7 @@ import sys
 sys.path.append("/home/manaster1/obs4MIPs-cmor-tables/inputs/misc/") # Path to obs4MIPsLib
 
 import obs4MIPsLib
+from fix_dataset_time import monthly_times
 
 def extract_date(ds):   # preprocessing function when opening files
     for var in ds.variables:
@@ -18,17 +19,17 @@ def extract_date(ds):   # preprocessing function when opening files
     return ds
 
 #%% User provided input
-cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
-inputJson = 'GPCP_Monthly_v03r02.json' ; # Update contents of this file to set your global_attributes
-inputFilePath = '/p/user_pub/PCMDIobs/obs4MIPs_input/NASA-GSFC/GPCP-3-2/monthly/' # change to location on user's machine
-inputVarName = 'sat_gauge_precip'
-outputVarName = 'pr'
-outputUnits = 'kg m-2 s-1'
+cmorTable = '../../../../Tables/obs4MIPs_Omon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+inputJson = 'RSS_smap_sss_monthly_v05r03.json' ; # Update contents of this file to set your global_attributes
+inputFilePath = '/p/user_pub/PCMDIobs/obs4MIPs_input/RSS/smap/SSS/V05.3/mon' # change to location on user's machine
+inputVarName = 'sss_smap'
+outputVarName = 'sos'
+outputUnits = '0.001'
 
-for year in range(1983, 2024):  # put the years you want to process here
+for year in range(2015, 2024):  # put the years you want to process here
     inputDatasets = []
     for month in range(1,13):
-        inputFile = f"{inputFilePath}/GPCPMON_L3_{year}{month:02}_V3.2.nc4"
+        inputFile = f"{inputFilePath}/RSS_smap_SSS_L3_monthly_{year}_{month:02}_FNL_v05.3.nc"
         if not os.path.isfile(inputFile): continue
         inputDatasets.append(inputFile)
 
@@ -37,14 +38,28 @@ for year in range(1983, 2024):  # put the years you want to process here
     #%% Process variable (with time axis)
     # Open and read input netcdf files
     f = xc.open_mfdataset(inputDatasets, mask_and_scale=False, decode_times=False, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
+
+     # Added for xCDAT 0.6.0 to include time bounds.
+    f = f.bounds.add_bounds("T")
+
     d = f[inputVarName]
-   
+
     lat = f.lat
     lon = f.lon
-    time = f.time
-    time_bounds = f.time_bnds
+    time = np.round(f.time) # need to round up to get an accurate time
+    
     lon_bounds = f.lon_bnds
     lat_bounds = f.lat_bnds
+    time_bounds = np.round(f.time_bnds) # need to round up to get accurate time bounds
+
+    if year == 2015:
+        start_month = 4
+    else:
+        start_month = 1
+    end_month = 12
+    datumyr = time.units.split('since')[1][0:5] # getting the reference year
+    datummnth = int(time.units.split('since')[1][6:8]) # getting reference month
+    time_new, time_bounds_new, time_units = monthly_times(datumyr, year, datum_start_month=datummnth, start_month=start_month, end_month=end_month)
 
     #%% Initialize and run CMOR
     # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
@@ -52,7 +67,7 @@ for year in range(1983, 2024):  # put the years you want to process here
     cmor.dataset_json(inputJson)
     cmor.load_table(cmorTable)
     axes    = [ {'table_entry': 'time',
-                'units': time.units,
+                'units': time_units,
                 },
                 {'table_entry': 'latitude',
                 'units': 'degrees_north',
@@ -72,12 +87,10 @@ for year in range(1983, 2024):  # put the years you want to process here
     # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
     varid   = cmor.variable(outputVarName,outputUnits,axisIds,missing_value=d._FillValue)
     values  = np.array(d.values,np.float32)
-    values  = values/86400. # NASA-GSFC GPCP array is in units of mm/day. Must be converted to kg m-2 s-1
-
 
     # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-    cmor.set_variable_attribute(varid,'valid_min','f',d.valid_range[0]/86400)   
-    cmor.set_variable_attribute(varid,'valid_max','f',d.valid_range[-1]/86400)
+    cmor.set_variable_attribute(varid,'valid_min','f',float(d.valid_min))   # 'float' needs to be added for CMOR to register the 'valid_min' and 'valid_max'   
+    cmor.set_variable_attribute(varid,'valid_max','f',float(d.valid_max))
 
     # Add GitHub commit ID attribute to output CMOR file
     gitinfo = obs4MIPsLib.getGitInfo("./")
@@ -92,7 +105,7 @@ for year in range(1983, 2024):  # put the years you want to process here
     print(f'CMOR begin for {year}')
     # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
     cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
-    cmor.write(varid,values,time_vals=time.values,time_bnds=time_bounds.values) ; # Write variable with time axis
+    cmor.write(varid,values,time_vals=time_new,time_bnds=time_bounds_new) ; # Write variable with time axis
     f.close()
     cmor.close()
     print(f'File created for {year}')
