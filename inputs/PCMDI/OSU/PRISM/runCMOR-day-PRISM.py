@@ -45,6 +45,7 @@ for vr in vars_lst:
 
  lst = glob.glob(inputDatasets)
  lst.sort()
+ lst = lst[0:len(lst)-1]
 
  print('Number of files ', len(lst))
 
