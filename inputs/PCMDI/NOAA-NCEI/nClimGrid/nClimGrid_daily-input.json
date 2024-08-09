@@ -20,10 +20,11 @@
     "product":"observations",
     "references":"Durre, I., M. F. Squires, R. S. Vose, A. Arguez, W. S. Gross, J. R. Rennie, and C. J. Schreck, 2022b: NOAA's nClimGrid-Daily Version 1 – Daily gridded temperature and precipitation for the Contiguous United States since 1951. NOAA National Centers for Environmental Information, since 6 May 2022, DOI: https://doi.org/10.25921/c4gt-r169",
     "source_id":"nClimGrid-Daily-1-0",
+    "region":"north_america",
     "title":"NCEI’s nClimGrid-Daily product contains gridded fields and area averages of daily maximum, minimum, and average temperatures",
     "variant_info":"obs4MIPs-compliant product prepared by PCMDI",
     "variant_label":"PCMDI",
-    "originData_URL": "https://www.ncei.noaa.gov/products/land-based-station/nclimgrid-daily",
-    "originData_retrieved": "20210219; MAhn @ PCMDI",
+    "source_data_url": "https://www.ncei.noaa.gov/products/land-based-station/nclimgrid-daily",
+    "source_data_retrieval_date": "20210219; MAhn @ PCMDI",
     "obs4MIPs_GH_Commit_ID":""
 }
