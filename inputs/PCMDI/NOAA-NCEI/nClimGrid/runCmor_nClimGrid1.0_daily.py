@@ -21,7 +21,6 @@ print(yrs)
 #w = sys.stdin.readline()
 
 vrs = ['tmax','tmin','tavg','prcp']
-vrs = ['tmax']
 
 for vr in vrs:
  if vr == 'prcp':
