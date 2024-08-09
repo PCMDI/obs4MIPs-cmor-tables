@@ -16,10 +16,12 @@ inputFilePath = '/p/user_pub/PCMDIobs/obs4MIPs_input/NOAA-NCEI/nClimGrid-Daily/g
 
 yrs = os.listdir(inputFilePath)
 yrs.sort()
+yrs = yrs[0:len(yrs)-1]
 print(yrs)
 #w = sys.stdin.readline()
 
 vrs = ['tmax','tmin','tavg','prcp']
+vrs = ['tmax']
 
 for vr in vrs:
  if vr == 'prcp':
@@ -55,10 +57,6 @@ for vr in vrs:
   f = f.bounds.add_missing_bounds(axes=['X', 'Y'])
   f = f.bounds.add_bounds('T')
 
-# f = f.bounds.add_bounds("X")  #, width=0.5)
-# f = f.bounds.add_bounds("Y")  
-# f = f.bounds.add_bounds("T")
-
 #####time.setBounds() #####time_bounds)
 #####del(time_bounds) ; # Cleanup
 
@@ -84,14 +82,14 @@ for vr in vrs:
   cmor.set_variable_attribute(varid,'valid_max','f',3.0)
 
 # Add GitHub commit ID attribute to output CMOR file
-# gitinfo = obs4MIPsLib.getGitInfo("./")
+  gitinfo = obs4MIPsLib.getGitInfo("./")
 
 # gitinfo = obs4MIPsLib.ProvenanceInfo(obs4MIPsLib.getGitInfo("./"))
-# commit_num = gitinfo[0].split(':')[1].strip()
-# paths = os.getcwd().split('/inputs')
-# path_to_code = f"/inputs{paths[1]}"
-# full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{commit_num}{path_to_code}"
-# cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
+  commit_num = gitinfo[0].split(':')[1].strip()
+  paths = os.getcwd().split('/inputs')
+  path_to_code = f"/inputs{paths[1]}"
+  full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{commit_num}{path_to_code}"
+  cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
 
   cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
   cmor.write(varid,values,len(time)) ; # Write variable with time axis
