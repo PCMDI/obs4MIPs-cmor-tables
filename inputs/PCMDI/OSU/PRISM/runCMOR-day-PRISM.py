@@ -5,6 +5,9 @@ import json
 import sys
 import glob
 
+sys.path.append("../../../misc") # Path to obs4MIPsLib used to trap provenance
+import obs4MIPsLib
+
 def extract_date(ds):   # preprocessing function when opening files
     for var in ds.variables:
         if var == 'time':
@@ -89,6 +92,16 @@ for vr in vars_lst:
 # Appene valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_variable_attribute(varid,'valid_min','f',-1.8) # set manually for the time being
   cmor.set_variable_attribute(varid,'valid_max','f',45.)
+
+# Add GitHub commit ID attribute to output CMOR file
+  gitinfo = obs4MIPsLib.getGitInfo("./")
+# gitinfo = obs4MIPsLib.ProvenanceInfo(obs4MIPsLib.getGitInfo("./"))
+  commit_num = gitinfo[0].split(':')[1].strip()
+  paths = os.getcwd().split('/inputs')
+  path_to_code = f"/inputs{paths[1]}"
+  full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{commit_num}{path_to_code}"
+  cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
+
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
   cmor.write(varid,values) ; # Write variable with time axis
