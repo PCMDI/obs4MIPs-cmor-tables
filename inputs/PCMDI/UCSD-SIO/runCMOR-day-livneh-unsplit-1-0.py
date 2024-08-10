@@ -5,7 +5,7 @@ import json
 import sys
 import glob
 
-sys.path.append("../../../misc") # Path to obs3MIPsLib used to trap provenance
+sys.path.append("../../misc") # Path to obs3MIPsLib used to trap provenance
 import obs4MIPsLib
 
 def extract_date(ds):   # preprocessing function when opening files
