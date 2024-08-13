@@ -13,7 +13,7 @@ source_id['source_id'][key]['source_type'] = 'insitu'
 source_id['source_id'][key]['source_variables'] = ['uas','vas','ps','pr','hfss','hfls','tas','hfss','hfls','ta','ua','va','hur','wap']
 source_id['source_id'][key]['release_year'] = '2022'
 
-key = 'SGP_ARMBE-atm-c1-1-8'
+key = 'SGP--ARMBE-atm-c1-1-8'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'ARMBE'
 source_id['source_id'][key]['source_label'] = 'ARMBE'
