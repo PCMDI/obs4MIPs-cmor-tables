@@ -2,7 +2,7 @@ import cmor
 import xcdat as xc
 import numpy as np
 import json
-import sys
+import sys, os
 import glob
 
 sys.path.append("../../../misc") # Path to obs4MIPsLib used to trap provenance
