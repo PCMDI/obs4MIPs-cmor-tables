@@ -1,0 +1,11 @@
+
+[2;34;47mC Traceback:
+In function: [0m
+
+[1;34;47m!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! Warning: Logfile cmorLog.txt already exist.
+! Renamed to: cmorLog.txt_2024-10-07T17:29:31
+!
+!!!!!!!!!!!!!!!!!!!!!!!!![0m
+
