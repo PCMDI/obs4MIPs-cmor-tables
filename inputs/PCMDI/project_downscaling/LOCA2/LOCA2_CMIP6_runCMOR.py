@@ -4,7 +4,7 @@ import xarray as xr
 import cftime
 import numpy as np
 import sys, os, glob
-import time
+from datetime import datetime
 
 # TEST CASE OF USING CMOR WITH MODIFIED CORDEX SPECIFICATIONS WITH LOCA2 DATA @NERSC PERLMUTTER
 # PJG  10092024
@@ -39,8 +39,6 @@ inputVarName = 'pr'
 outputVarName = 'pr'
 outputUnits = 'kg m-2 s-1'
 
-start_time = time.time()
-
 yrs = list(range(1950,2014))  #end is 2014  ###
 yrs = [('1950','1954'),('1955','1959'),('1960','1964'),('1965','1969'),('1970','1974'),('1975','1979'),('1980','1984'),('1985','1989'),('1990','1994'),('1995','1999'),('2000','2004'),('2005','2009'),('2010','2014')]
 #yrs = [yrs[0]]     ###
@@ -54,6 +52,7 @@ for mod in mods:
   infile = inputFilePath.replace('*',mod)
   infile = infile.replace('r1i1p1f1',ri)
   for yr in yrs:
+   start_time = datetime.now()
    fc = xc.open_dataset(infile,decode_times=True,use_cftime=True)   #,preprocess=extract_date)
    f = fc
    f = fc.sel(time=slice(yr[0],yr[1]))
@@ -96,5 +95,6 @@ for mod in mods:
    cmor.close()
    f.close()
    fc.close()
-   print('done cmorizing ',mod,' ', ri,' ', yr[0],'-',yr[1],'  ', "--- %s seconds ---" % (time.time() - start_time))
+   end_time = datetime.now()
+   print('done cmorizing ',mod,' ', ri,' ', yr[0],'-',yr[1],' time: {}'.format(end_time-start_time))
                                                           
