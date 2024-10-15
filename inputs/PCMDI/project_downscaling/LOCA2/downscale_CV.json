@@ -1,6 +1,6 @@
 {
     "CV":{
-        "activity_id":"project_downscaling",
+        "activity_id":"project_downscale",
         "frequency":{
             "frequency":{
                 "1hr":"sampled hourly",
@@ -151,7 +151,8 @@
         "product":[
             "derived",
             "observations",
-            "reanalysis"
+            "reanalysis",
+	    "downscaled"
         ],
         "realm":[
             "aerosol",
