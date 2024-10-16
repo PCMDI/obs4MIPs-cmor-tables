@@ -16,7 +16,9 @@ for v in vars:
 #  print(v,' ',src,' ',dic[v][src]['template'])
    pth = pin + dic[v][src]['template']
 
-   fc = xc.open_dataset(pth)
+   if pth.find('*') != -1: fc = xc.open_mfdataset(pth)
+   if pth.find('*') == -1: fc = xc.open_dataset(pth)
+
    try:
     print('problem with ',v,' ', src,' ', dic[v][src]['template'])
     check_monthly_time_axis(fc)
