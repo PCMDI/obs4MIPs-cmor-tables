@@ -47,7 +47,7 @@ yrs = [('1950','1954'),('1955','1959'),('1960','1964'),('1965','1969'),('1970','
 mods = [mods[0]]   ###
 for mod in mods:
  rns = mod_runs[mod]
- rns = [rns[0]]    ###
+#rns = [rns[0]]    ###
  for ri in rns: 
   infile = inputFilePath.replace('*',mod)
   infile = infile.replace('r1i1p1f1',ri)
@@ -76,6 +76,7 @@ for mod in mods:
 # SET CMIP MODEL SPECIFIC ATTRIBUTES 
    cmor.set_cur_dataset_attribute("source_id","LOCA2--" + mod)
    cmor.set_cur_dataset_attribute("driving_source_id",mod)
+   cmor.set_cur_dataset_attribute("driving_variant_label",ri)
 
 # Create CMOR axes
    cmorLat = cmor.axis("latitude", coord_vals=lat[:], cell_bounds=f.lat_bnds.values, units="degrees_north")
