@@ -1,8 +1,8 @@
 {
     "#comment":"The following are CMOR internal settings and should not be edited by the user",
-    "_AXIS_ENTRY_FILE":"obs4MIPs_coordinate.json",
-    "_FORMULA_VAR_FILE":"obs4MIPs_formula_terms.json",
-    "_controlled_vocabulary_file":"downscale_CV.json",
+    "_AXIS_ENTRY_FILE":"../Tables/obs4MIPs_coordinate.json",
+    "_FORMULA_VAR_FILE":"../Tables/obs4MIPs_formula_terms.json",
+    "_controlled_vocabulary_file":"../Tables/downscale_CV.json",
     "_history_template":"%s; CMOR rewrote data to be consistent with <activity_id>, and <Conventions> standards",
     "activity_id":"DD",
     "project_id":"project_downscale",

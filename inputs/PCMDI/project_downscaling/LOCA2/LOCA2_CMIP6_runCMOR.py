@@ -47,7 +47,7 @@ yrs = [('1950','1954'),('1955','1959'),('1960','1964'),('1965','1969'),('1970','
 mods = [mods[0]]   ###
 for mod in mods:
  rns = mod_runs[mod]
-#rns = [rns[0]]    ###
+ rns = [rns[0]]    ###
  for ri in rns: 
   infile = inputFilePath.replace('*',mod)
   infile = infile.replace('r1i1p1f1',ri)
