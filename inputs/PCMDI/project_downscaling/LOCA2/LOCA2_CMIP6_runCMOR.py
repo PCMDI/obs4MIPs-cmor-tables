@@ -10,7 +10,7 @@ from datetime import datetime
 # PJG  10092024
 # PJG  10142024 Generalized to all CMIP mods
 
-cmorTable = 'Downscaling_Aday.json'
+cmorTable = '../Tables/Downscaling_Aday.json'
 inputJson = 'LOCA2_CMIP6_input.json'
 inputFilePath = '/global/cfs/projectdirs/m3522/cmip6/LOCA2/*/0p0625deg/r1i1p1f1/historical/pr/pr.*.historical.r1i1p1f1.1950-2014.LOCA_16thdeg_v20220519.nc'
 
@@ -44,7 +44,7 @@ yrs = [('1950','1954'),('1955','1959'),('1960','1964'),('1965','1969'),('1970','
 #yrs = [yrs[0]]     ###
 
 
-mods = [mods[0]]   ###
+#mods = [mods[0]]   ###
 for mod in mods:
  rns = mod_runs[mod]
  rns = [rns[0]]    ###
