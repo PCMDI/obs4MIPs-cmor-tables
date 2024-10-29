@@ -39,15 +39,13 @@ inputVarName = 'pr'
 outputVarName = 'pr'
 outputUnits = 'kg m-2 s-1'
 
-yrs = list(range(1950,2014))  #end is 2014  ###
 yrs = [('1950','1954'),('1955','1959'),('1960','1964'),('1965','1969'),('1970','1974'),('1975','1979'),('1980','1984'),('1985','1989'),('1990','1994'),('1995','1999'),('2000','2004'),('2005','2009'),('2010','2014')]
 #yrs = [yrs[0]]     ###
-
 
 #mods = [mods[0]]   ###
 for mod in mods:
  rns = mod_runs[mod]
- rns = [rns[0]]    ###
+#rns = [rns[0]]    ###
  for ri in rns: 
   infile = inputFilePath.replace('*',mod)
   infile = infile.replace('r1i1p1f1',ri)

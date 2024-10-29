@@ -1,6 +1,6 @@
 {
     "Header":{
-        "Conventions":"CF-1.11; ODS-2.5",
+        "Conventions":"CF-1.11; DDSv1.0",
         "approx_interval":"1.00000",
         "cmor_version":"3.5",
         "data_specs_version":"ODS-2.5",
