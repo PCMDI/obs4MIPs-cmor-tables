@@ -25,7 +25,7 @@
     "license":"TBD",
     "nominal_resolution":"5 km",
     "outpath":"/global/cfs/projectdirs/m3522/project_downscale",
-    "output_file_template":"<variable_id><region_id><driving_source_id><driving_experiment_id><driving_variant_label><institution_id><source_id><version_realization><frequency>",
+    "output_file_template":"<variable_id><region_id><driving_source_id><driving_experiment_id><driving_variant_label><institution_id><source_id><frequency>",
     "output_path_template":"<mip_era><activity_id><region_id><downscaling_source_id><institution_id><driving_source_id><driving_experiment_id><driving_variant_label><source_id><frequency><variable_id><version>",
     "product":"downscaled",
     "references": "https://doi.org/10.1175/JHM-D-14-0082.1",
