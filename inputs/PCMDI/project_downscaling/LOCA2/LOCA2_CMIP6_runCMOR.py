@@ -14,12 +14,25 @@ from datetime import datetime
 multi  = True 
 if multi == True:
  expi = sys.argv[1]
- modi = sys.argv[2]
+ modi = sys.argv[3]
+ vari = sys.argv[2]
+ inputVarName = vari
+ outputVarName = vari
+ if vari == 'pr': outputUnits = 'kg m-2 s-1'
+ if vari == 'tasmax': outputUnits = 'K'
+ if vari == 'tasmin': outputUnits = 'K'
 
 cmorTable = '../Tables/Downscaling_Aday.json'
 inputJson = 'LOCA2_CMIP6_input.json'
-inputFilePath = '/global/cfs/projectdirs/m3522/cmip6/LOCA2/*/0p0625deg/r1i1p1f1/historical/pr/pr.*.historical.r1i1p1f1.1950-2014.LOCA_16thdeg_v20220519.nc'
-inputFilePath = '/global/cfs/projectdirs/m3522/cmip6/LOCA2/*/0p0625deg/r1i1p1f1/historical/pr/pr.*v20220519.nc'
+inputFilePath = '/global/cfs/projectdirs/m3522/cmip6/LOCA2/*/0p0625deg/r1i1p1f1/historical/pr/*.nc'  #v20220519.nc'
+
+#if multi == True and vari == 'tasmax': inputFilePath.replace('/pr/','/'+vari+'/')
+#if multi == True and vari == 'tasmin': inputFilePath.replace('/pr/','/'+vari+'/')
+
+inputFilePath = inputFilePath.replace('/pr/','/'+vari+'/')
+if vari == 'tasmax':  inputFilePath = inputFilePath.replace('v20220519','v20220413*')
+
+
 
 def extract_date(ds):   # preprocessing function when opening multiple files
     for var in ds.variables:
@@ -33,7 +46,7 @@ def extract_date(ds):   # preprocessing function when opening multiple files
 # EXPs, TRAP CMIP6 MODS AND RUNS
 mod_runs = {}
 exps = ['historical','ssp245', 'ssp585']
-#exps = ['ssp245'] 
+exps = [expi] 
 for exp in exps:
  infile = inputFilePath.replace('historical',exp)
  lst = glob.glob(infile)
@@ -54,10 +67,6 @@ for exp in exps:
     rn.sort()
     mod_runs[exp][mod] = rn
 
-inputVarName = 'pr'
-outputVarName = 'pr'
-outputUnits = 'kg m-2 s-1'
-
 yrs_hist = [('1950','1954'),('1955','1959'),('1960','1964'),('1965','1969'),('1970','1974'),('1975','1979'),('1980','1984'),('1985','1989'),('1990','1994'),('1995','1999'),('2000','2004'),('2005','2009'),('2010','2014')]
 #yrs = [yrs[0]]     ###
 
@@ -68,14 +77,13 @@ yrs_scen = [('2015', '2019'), ('2020', '2024'), ('2025', '2029'), ('2030', '2034
 if multi == True: exps = [expi]
 if multi == True: mods = [modi]
 
-
 print('exps and mods are: ', exps,mods)
 
 
 for mod in mods:
  for exp in exps:
   rns = mod_runs[exp][mod]
-#rns = [rns[0]]    ###
+  rns = [rns[0]]    ###
   for ri in rns: 
    infile = inputFilePath.replace('/*/','/'+mod+'/')
    infile = infile.replace('/pr.*','/pr.' + mod + '*')
@@ -86,8 +94,9 @@ for mod in mods:
 
    for yr in yrs:
     start_time = datetime.now()
-    if exp == 'historical': fc = xc.open_dataset(infile,decode_times=True,use_cftime=True)   #,preprocess=extract_date)
-    if exp in ['ssp245','ssp585']: fc = xc.open_mfdataset(infile,decode_times=True,use_cftime=True, preprocess=extract_date)
+#   if exp == 'historical': fc = xc.open_dataset(infile,decode_times=True,use_cftime=True)   #,preprocess=extract_date)
+#   if exp in ['ssp245','ssp585']: fc = xc.open_mfdataset(infile,decode_times=True,use_cftime=True, preprocess=extract_date)
+    fc = xc.open_mfdataset(infile,decode_times=True,use_cftime=True, preprocess=extract_date)
 
     f = fc
     f = fc.sel(time=slice(yr[0],yr[1]))
