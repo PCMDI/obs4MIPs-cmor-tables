@@ -10,6 +10,7 @@ from datetime import datetime
 # PJG  10092024 First test
 # PJG  10142024 Generalized to all CMIP mods
 # PJG  10302024 Modifying global atts 
+# PJG  11052024 added inputs to run via GNU parallel
 
 multi  = True 
 if multi == True:
@@ -25,14 +26,6 @@ if multi == True:
 cmorTable = '../Tables/Downscaling_Aday.json'
 inputJson = 'LOCA2_CMIP6_input.json'
 inputFilePath = '/global/cfs/projectdirs/m3522/cmip6/LOCA2/*/0p0625deg/r1i1p1f1/historical/pr/*.nc'  #v20220519.nc'
-
-#if multi == True and vari == 'tasmax': inputFilePath.replace('/pr/','/'+vari+'/')
-#if multi == True and vari == 'tasmin': inputFilePath.replace('/pr/','/'+vari+'/')
-
-inputFilePath = inputFilePath.replace('/pr/','/'+vari+'/')
-if vari == 'tasmax':  inputFilePath = inputFilePath.replace('v20220519','v20220413*')
-
-
 
 def extract_date(ds):   # preprocessing function when opening multiple files
     for var in ds.variables:
@@ -73,12 +66,10 @@ yrs_hist = [('1950','1954'),('1955','1959'),('1960','1964'),('1965','1969'),('19
 yrs_scen = [('2015', '2019'), ('2020', '2024'), ('2025', '2029'), ('2030', '2034'), ('2035', '2039'), ('2040', '2044'), ('2045', '2049'), ('2050', '2054'), ('2055', '2059'), ('2060', '2064'), ('2065', '2069'), ('2070', '2074'), ('2075', '2079'), ('2080', '2084'), ('2085', '2089'), ('2090', '2094'), ('2095', '2099')]
 
 #mods = [mods[0]]   ###
-
 if multi == True: exps = [expi]
 if multi == True: mods = [modi]
 
 print('exps and mods are: ', exps,mods)
-
 
 for mod in mods:
  for exp in exps:
@@ -94,10 +85,7 @@ for mod in mods:
 
    for yr in yrs:
     start_time = datetime.now()
-#   if exp == 'historical': fc = xc.open_dataset(infile,decode_times=True,use_cftime=True)   #,preprocess=extract_date)
-#   if exp in ['ssp245','ssp585']: fc = xc.open_mfdataset(infile,decode_times=True,use_cftime=True, preprocess=extract_date)
     fc = xc.open_mfdataset(infile,decode_times=True,use_cftime=True, preprocess=extract_date)
-
     f = fc
     f = fc.sel(time=slice(yr[0],yr[1]))
     d = f[inputVarName]

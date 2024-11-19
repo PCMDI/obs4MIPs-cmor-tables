@@ -1,17 +1,17 @@
-python STAR-ESDM_CMIP6_runCMOR.py ssp245 tasmax ACCESS-CM2 
-python STAR-ESDM_CMIP6_runCMOR.py ssp245 tasmax MPI-ESM1-2-LR 
-python STAR-ESDM_CMIP6_runCMOR.py ssp245 tasmax NorESM2-LM 
-python STAR-ESDM_CMIP6_runCMOR.py ssp245 tasmax CanESM5 
-python STAR-ESDM_CMIP6_runCMOR.py ssp245 tasmax ACCESS-ESM1-5 
-python STAR-ESDM_CMIP6_runCMOR.py ssp245 tasmax BCC-CSM2-MR 
-python STAR-ESDM_CMIP6_runCMOR.py ssp245 tasmax MPI-ESM1-2-HR 
-python STAR-ESDM_CMIP6_runCMOR.py ssp245 tasmax TaiESM1 
-python STAR-ESDM_CMIP6_runCMOR.py ssp245 tasmax FGOALS-g3 
-python STAR-ESDM_CMIP6_runCMOR.py ssp245 tasmax MIROC6 
-python STAR-ESDM_CMIP6_runCMOR.py ssp245 tasmax NorESM2-MM 
-python STAR-ESDM_CMIP6_runCMOR.py ssp245 tasmax MRI-ESM2-0 
-python STAR-ESDM_CMIP6_runCMOR.py ssp245 tasmax NESM3 
-python STAR-ESDM_CMIP6_runCMOR.py ssp245 tasmax CMCC-ESM2 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmin ACCESS-CM2 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmin MPI-ESM1-2-LR 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmin NorESM2-LM 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmin CanESM5 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmin ACCESS-ESM1-5 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmin BCC-CSM2-MR 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmin MPI-ESM1-2-HR 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmin TaiESM1 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmin FGOALS-g3 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmin MIROC6 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmin NorESM2-MM 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmin MRI-ESM2-0 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmin NESM3 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmin CMCC-ESM2 
 
 
 
