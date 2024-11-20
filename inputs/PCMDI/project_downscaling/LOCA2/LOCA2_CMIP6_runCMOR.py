@@ -25,7 +25,7 @@ if multi == True:
 
 cmorTable = '../Tables/Downscaling_Aday.json'
 inputJson = 'LOCA2_CMIP6_input.json'
-inputFilePath = '/global/cfs/projectdirs/m3522/cmip6/LOCA2/*/0p0625deg/r1i1p1f1/historical/pr/*.nc'  #v20220519.nc'
+inputFilePath = '/global/cfs/projectdirs/m3522/cmip6/LOCA2/*/0p0625deg/r1i1p1f1/historical/' + vari + '/*v2022*.nc'  #v20220519.nc'
 
 def extract_date(ds):   # preprocessing function when opening multiple files
     for var in ds.variables:
