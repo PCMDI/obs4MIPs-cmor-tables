@@ -54,8 +54,10 @@ for v in vars:
                logger.info(f"Successfully checked monthly time axis for {v} {src}")
          except Exception as e:
                # Log and print any errors encountered
-               logger.error(f"Problem with {v} {src} {dic[v][src]['template']}: {str(e)}")
-               print(f"Problem with {v} {src} {dic[v][src]['template']}")
+#              logger.error(f"Problem with {v} {src} {dic[v][src]['template']}: {str(e)}")
+               logger.error(f"Problem with {v} {src} {dic[v][src]['template']}: {str(e)}", pth)
+#              print(f"Problem with {v} {src} {dic[v][src]['template']}")
+               print(f"Problem with {v} {src} " + pth)
 
          # Close the dataset if it was opened
          if 'fc' in locals():
