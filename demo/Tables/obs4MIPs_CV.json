@@ -21,13 +21,13 @@
                 "yrPt":"sampled yearly, at specified time point within the time period"
             },
             "version_metadata":{
-                "CV_collection_modified":"Fri Aug  2 13:17:27 2024 -0700",
-                "CV_collection_version":"6.2.58.70",
+                "CV_collection_modified":"Fri Aug 16 09:09:30 2024 -0700",
+                "CV_collection_version":"6.2.58.73",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "frequency_CV_modified":"Mon May 24 13:48:15 2021 00100",
                 "frequency_CV_note":"Update description of 3hr and 6hr frequencies",
                 "institution_id":"PCMDI",
-                "previous_commit":"025c791e0339878e1b13e5c3ffd41bff46eaa1b9",
+                "previous_commit":"a37575e8ebe368e511a4c26f9a36472159bb5140",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -80,13 +80,13 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-                "CV_collection_modified":"Fri Aug  2 13:17:27 2024 -0700",
-                "CV_collection_version":"6.2.58.70",
+                "CV_collection_modified":"Fri Aug 16 09:09:30 2024 -0700",
+                "CV_collection_version":"6.2.58.73",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
-                "previous_commit":"025c791e0339878e1b13e5c3ffd41bff46eaa1b9",
+                "previous_commit":"a37575e8ebe368e511a4c26f9a36472159bb5140",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -139,13 +139,13 @@
                 "5000 km"
             ],
             "version_metadata":{
-                "CV_collection_modified":"Fri Aug  2 13:17:27 2024 -0700",
-                "CV_collection_version":"6.2.58.70",
+                "CV_collection_modified":"Fri Aug 16 09:09:30 2024 -0700",
+                "CV_collection_version":"6.2.58.73",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "institution_id":"PCMDI",
                 "nominal_resolution_CV_modified":"Tues Nov 15 16:04:00 2016 -0700",
                 "nominal_resolution_CV_note":"Issue141 durack1 update grid_resolution to nominal_resolution (#143)",
-                "previous_commit":"025c791e0339878e1b13e5c3ffd41bff46eaa1b9",
+                "previous_commit":"a37575e8ebe368e511a4c26f9a36472159bb5140",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -815,6 +815,12 @@
                 "source_version_number":"v7"
             },
             "SGP--ARMBE-atm-c1-1-8":{
+                "region":"site_data",
+                "source":"ARMBE atm-c1-1-8 (DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties",
+                "source_type":"insitu",
+                "source_version_number":"atm-c1-1-8"
+            },
+            "SITE-ARMBE-atm-c1-1-8":{
                 "region":"site_data",
                 "source":"ARMBE atm-c1-1-8 (DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties",
                 "source_type":"insitu",

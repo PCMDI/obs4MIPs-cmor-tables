@@ -38,8 +38,8 @@ cmor.dataset_json(inputJson)
 cmor.load_table(cmorTable)
 cmor.set_cur_dataset_attribute('history',f.history) 
 
-cmorLat = cmor.axis("latitude", coord_vals=np.array([lat]), units="degrees_north")
-cmorLon = cmor.axis("longitude", coord_vals=np.array([lon]), units="degrees_east")
+cmorLat = cmor.axis("latitude1", coord_vals=np.array([lat]), units="degrees_north")
+cmorLon = cmor.axis("longitude1", coord_vals=np.array([lon]), units="degrees_east")
 cmorTime = cmor.axis("time", coord_vals=time[:], cell_bounds=tbds, units= f.time.units)
 cmoraxes = [cmorTime, cmorLat, cmorLon]
 

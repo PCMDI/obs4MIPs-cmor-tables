@@ -1610,6 +1610,34 @@
             ],
             "source_version_number":"atm-c1-1-8"
         },
+        "SITE-ARMBE-atm-c1-1-8":{
+            "institution_id":"DOE-ARM",
+            "region":[
+                "site_data"
+            ],
+            "release_year":"2022",
+            "source_description":"DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties",
+            "source_label":"ARMBE",
+            "source_name":"SITE-ARMBE",
+            "source_type":"insitu",
+            "source_variables":[
+                "hfls",
+                "hfls",
+                "hfss",
+                "hfss",
+                "hur",
+                "pr",
+                "ps",
+                "ta",
+                "tas",
+                "ua",
+                "uas",
+                "va",
+                "vas",
+                "wap"
+            ],
+            "source_version_number":"atm-c1-1-8"
+        },
         "TES-1-0":{
             "institution_id":"NASA-JPL",
             "region":[
