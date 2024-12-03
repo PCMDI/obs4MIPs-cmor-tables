@@ -80,22 +80,13 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-<<<<<<< HEAD
                 "CV_collection_modified":"Fri Aug 16 09:09:30 2024 -0700",
                 "CV_collection_version":"6.2.58.73",
-=======
-                "CV_collection_modified":"Wed May  1 16:23:31 2024 -0700",
-                "CV_collection_version":"6.2.58.68",
->>>>>>> master
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
-<<<<<<< HEAD
                 "previous_commit":"a37575e8ebe368e511a4c26f9a36472159bb5140",
-=======
-                "previous_commit":"2c9cf667546f31a495cb2e3b8d9d5892bc7abaa2",
->>>>>>> master
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -148,22 +139,13 @@
                 "5000 km"
             ],
             "version_metadata":{
-<<<<<<< HEAD
                 "CV_collection_modified":"Fri Aug 16 09:09:30 2024 -0700",
                 "CV_collection_version":"6.2.58.73",
-=======
-                "CV_collection_modified":"Wed May  1 16:23:31 2024 -0700",
-                "CV_collection_version":"6.2.58.68",
->>>>>>> master
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "institution_id":"PCMDI",
                 "nominal_resolution_CV_modified":"Tues Nov 15 16:04:00 2016 -0700",
                 "nominal_resolution_CV_note":"Issue141 durack1 update grid_resolution to nominal_resolution (#143)",
-<<<<<<< HEAD
                 "previous_commit":"a37575e8ebe368e511a4c26f9a36472159bb5140",
-=======
-                "previous_commit":"2c9cf667546f31a495cb2e3b8d9d5892bc7abaa2",
->>>>>>> master
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
