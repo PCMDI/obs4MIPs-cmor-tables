@@ -728,6 +728,19 @@ source_id['source_id'][key]['region'] = ['global ocean']
 source_id['source_id'][key]['source_variables'] = ['sos']
 source_id['source_id'][key]['source_version_number'] = '5.0'
 
+key = 'RSS-SMAP-SSS-Monthly-5-3'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'Satellite derived SSS produced by RSS'
+source_id['source_id'][key]['institution_id'] = 'RSS'
+source_id['source_id'][key]['release_year'] = '2023'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'RSS-SMAP-SSS-Monthly-5-3'
+source_id['source_id'][key]['source_name'] = 'RSS-SMAP-SSS-Monthly-5-3'
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['region'] = ['global ocean']
+source_id['source_id'][key]['source_variables'] = ['sos']
+source_id['source_id'][key]['source_version_number'] = '5.3'
+
 key = 'RSS-sfcWind-v07r01'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_description'] = 'RSS-sfcWind 7.0 (2021): 10m Surface Wind'
