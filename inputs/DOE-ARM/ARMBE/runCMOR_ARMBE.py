@@ -15,7 +15,6 @@ vrs = ['precip_rate_sfc','temperature_sfc','u_wind_sfc','v_wind_sfc','relative_h
 vrs = ['sensible_heat_flux_baebbr','latent_heat_flux_baebbr']
 vrs = ['precip_rate_sfc']
 
-
 for vr in vrs:
   if vr =='precip_rate_sfc':
      inputVarName = vr  # Unit is mm/hour
