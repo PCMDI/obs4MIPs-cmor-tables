@@ -3,16 +3,17 @@ import xcdat as xc
 import xarray as xr
 from xarray.coding.times import encode_cf_datetime
 import cftime
-import glob
 import numpy as np
-import sys, glob
+import sys, os, glob
+sys.path.append("../../../misc/") # Path to obs4MIPsLib and code to fix times
+import obs4MIPsLib
 
 targetgrid = 'orig'
 #targetgrid = '2deg'
 
 #freq = 'Aday' #'Amon'  #'A3hr' #'Amon' #'Aday'  #'Amon'
 #version = 'Past'  #'Past-nogauge'  #'Past'  # NRT   # Past-nogauge
-freq = 'Aday' #'Amon' #'Aday'  #'Amon'
+freq = 'Amon' #'Amon' #'Aday'  #'Amon'
 version = 'Past'
 #version = 'Past-nogauge'
 #freq = 'Amon' #'Amon' #'Aday'  #'Amon'
@@ -99,13 +100,11 @@ for yr in lstyrs:  # LOOP OVER YEARS
 #fc = xc.open_mfdataset(pathin, mask_and_scale=False, decode_times=True, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
  fc = xc.open_mfdataset(pathin,  mask_and_scale=False, decode_times=False, combine='nested', concat_dim='time', preprocess=extract_date) #AM
 
- fc = fc.bounds.add_missing_bounds(['X','Y','T'])   
+ fc = fc.bounds.add_missing_bounds(['X','Y'])   
  print('below fc')
 
  for mo in mos:
    endmo = dom(yr,mo)
-
-# for dy in range(1,int(endmo)+1):
   
    if avgp == 'Daily':
     datestart = yr + '-' + mo + '-01'
@@ -114,37 +113,14 @@ for yr in lstyrs:  # LOOP OVER YEARS
    if avgp == 'Monthly':
     datestart = yr + '-01'  
     dateend =   yr + '-12'
-#  if yr == '1979': datestart = yr + '-02'
 
-#  if avgp == '3hourly':
-#   if str(dy) in ['1','2','3','4','5','6','7','8','9']: dy = '0' + str(dy)
-#   datestart = yr + '-' + mo + '-' + str(dy) + ' 00'
-#   dateend =   yr + '-' + mo + '-' + str(dy) + ' 21'
-#   if yr == '1979': datestart = yr + '-' + mo + '-01-00'
-
-#  print('above fc')
-#  fc = xc.open_mfdataset(pathin, mask_and_scale=False, decode_times=True, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
-#  fc = fc.bounds.add_missing_bounds()   
-#  print('below fc')
-
-   tdc = fc.time.sel(time=slice(datestart, dateend))
-   tbds = fc.time_bnds.sel(time=slice(datestart, dateend)).values
+   tdc = fc.time.values     #sel(time=slice(datestart, dateend))
+#  tbds = fc.time_bnds.sel(time=slice(datestart, dateend)).values
+   fc = fc.bounds.add_bounds('T')
    ddc = fc[inputVarName].sel(time=slice(datestart, dateend)).values
-#  tdc['axis'] = "T"
-#  print('below tdc print')
+   tbds = fc.time_bnds.values       #.sel(time=slice(datestart, dateend)).values
 
-   units = tdc.time.encoding['units']
-   calendar = tdc.time.encoding['calendar']
-#  tdc = encode_cf_datetime(tdc.time, units, calendar)
-#  print('tdc ', tdc[0])
-
-#  ddc = ddc.to_numpy()    
-#  print('ddc[0:4,100,100]', ddc[0:4,100,100])
-
-#  units = tbds.time.encoding['units']
-#  calendar = tbds.time.encoding['calendar']
-#  tbds = encode_cf_datetime(tbds.values, units, calendar)
-#  print('tbds ', tbds[0])
+   tunits = fc.time.units
 
 #  THE UNITS IN THE ORIGINAL FILES DEPEND ON FREQUENCY
    if avgp == 'Daily':  conv = 3600.*24.
@@ -159,7 +135,7 @@ for yr in lstyrs:  # LOOP OVER YEARS
    lat['axis'] = "Y"
    lon['axis'] = "X"
 
-   tunits = "days since 1900-1-1 00:00:00"
+#   tunits = "days since 1900-1-1 00:00:00"
 
    print('above cmor ', yr,' ',mo)
 
@@ -167,38 +143,31 @@ for yr in lstyrs:  # LOOP OVER YEARS
    cmor.dataset_json(inputJson)
    cmor.load_table(cmorTable)
 #cmor.set_cur_dataset_attribute('history',f.history) ; # Force input file attribute as history
-   axes    = [ {'table_entry': 'time',
-             'units': tunits, # 'days since 1870-01-01',
-             },
-             {'table_entry': 'latitude',
-              'units': 'degrees_north',
-              'coord_vals': lat.values,
-              'cell_bounds': fc.lat_bnds.values},
-             {'table_entry': 'longitude',
-              'units': 'degrees_east',
-              'coord_vals': lon.values,
-              'cell_bounds': fc.lon_bnds.values},
-          ]
-   axisIds = list() ; # Create list of axes
-   for axis in axes:
-    axisId = cmor.axis(**axis)
-    axisIds.append(axisId)
 
-
-# print('above varid')
+   cmorLat = cmor.axis("latitude", coord_vals=lat.values, cell_bounds=fc.lat_bnds.values, units="degrees_north")
+   cmorLon = cmor.axis("longitude", coord_vals=lon.values, cell_bounds=fc.lon_bnds.values, units="degrees_east")
+   cmorTime = cmor.axis("time", coord_vals=tdc, cell_bounds=tbds, units= tunits)
+   axes = [cmorTime, cmorLat, cmorLon]
 
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-   varid   = cmor.variable(outputVarName,outputUnits,axisIds) #,missing_value=1.e20)
+   varid   = cmor.variable(outputVarName,outputUnits,axes) #,missing_value=1.e20)
 # print('below varid')
 # w = sys.stdin.readline()
    values  = np.array(d[:],np.float32)
 # print('below values')
 # w = sys.stdin.readline()
 
+# Provenance info 
+   gitinfo = obs4MIPsLib.ProvenanceInfo(obs4MIPsLib.getGitInfo("./"))
+   paths = os.getcwd().split('/inputs')
+   path_to_code = f"/inputs{paths[1]}"  # location of the code in the obs4MIPs GitHub directory
+   full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{gitinfo['commit_number']}/{path_to_code}"
+   cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
+
    print('above cmor.write')
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
    cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
-   cmor.write(varid,values,time_vals=tdc[0].values,time_bnds=tbds[0]) ; # Write variable with time axis
+   cmor.write(varid,values) ; # Write variable with time axis
    cmor.close()
    print('done cmorizing ', yr,' ',mo)
 

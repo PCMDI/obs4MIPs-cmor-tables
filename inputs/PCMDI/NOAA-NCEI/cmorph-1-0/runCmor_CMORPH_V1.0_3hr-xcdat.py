@@ -8,7 +8,7 @@ import sys, glob
 #%% User provided input
 
 targetgrid = 'orig'
-targetgrid = '2deg'
+#targetgrid = '2deg'
 
 cmorTable = '../../../../Tables/obs4MIPs_A3hr.json' 
 

@@ -8,12 +8,12 @@
     "calendar":"gregorian",
     "comment":"",
     "contact":"obs4MIPs-admin@llnl.gov, pingping.xie@noaa.gov",
-    "grid":"10 x 10 km latitude x longitude",
-    "grid_label":"10km",
+    "grid":"2.5x2.5 degree latitude x longitude",
+    "grid_label":"250km",
     "history":"",
     "institution_id":"NOAA-NCEI",
     "license":"https://www.ncei.noaa.gov/pub/data/sds/cdr/CDRs/Precipitation-CMORPH/UseAgreement_01B-23.pdf",
-    "nominal_resolution":"10 km",
+    "nominal_resolution":"250 km",
     "outpath":"/p/user_pub/PCMDIobs/",
     "output_file_template":"<variable_id><frequency><source_id><variant_label><grid_label>",
     "output_path_template":"<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>",
@@ -29,5 +29,4 @@
     "exploratory_product":"N",
     "CMIP6_consistency_variable":"Y",
     "CMIP6_consistency_time":"Y",
-    "obs4MIPs_GH_Commit_ID":""
 }

@@ -1,0 +1,148 @@
+{
+    "pr": {
+        "CMORPH-1-0": {
+            "MD5sum": "N/A",
+            "period": "199801-202304",
+            "shape": "(9251, 480, 1440)",
+            "template": "obs4MIPs/NOAA-NCEI/CMORPH-1-0/day/pr/25km/v20240416/pr_day_CMORPH-1-0_PCMDI_25km_*.nc"
+        },
+        "CMORPH-1-0-CRT": {
+            "MD5sum": "438c5bead4b114b3a1c99f0ffdfea11e",
+            "period": "199801-201212",
+            "shape": "(5479, 180, 360)",
+            "template": "obs4MIPs/NOAA/CMORPH-1-0-CRT/day/pr/1x1/v20210824/pr_day_CMORPH-1-0-CRT_PCMDIFROGS_1x1_19980101-20121231.nc"
+        },
+        "ERA-5": {
+            "MD5sum": "cd0fe94bd1b09a26cefd1cecc8e9c482",
+            "period": "197901-201812",
+            "shape": "(14610, 180, 360)",
+            "template": "obs4MIPs/ECMWF/ERA-5/day/pr/1x1/v20210824/pr_day_ERA-5_PCMDIFROGS_1x1_19790101-20181231.nc"
+        },
+        "GPCP-1-3": {
+            "MD5sum": "10496775dae2b5f65fe95b064c1efd42",
+            "period": "199610-201701",
+            "shape": "(7397, 180, 360)",
+            "template": "obs4MIPs/NASA-JPL/GPCP-1-3/day/pr/gn/v20210727/pr_day_GPCP-1-3_PCMDI_gn_19961002-20170101.nc"
+        },
+        "GPCP-1DD-CDR-v1-3": {
+            "MD5sum": "97ac05457ef9abd45f41ffa406024401",
+            "period": "199610-202012",
+            "shape": "(8858, 180, 360)",
+            "template": "obs4MIPs/NASA-GSFC/GPCP-1DD-CDR-v1-3/day/pr/1x1/v20210826/pr_day_GPCP-1DD-CDR-v1-3_PCMDIFROGS_1x1_19961001-20201231.nc"
+        },
+        "GPCP-Daily-3-2": {
+            "MD5sum": "834034276ce1d947b3c92d7ef146fe83",
+            "period": "200006-200012",
+            "shape": "(214, 360, 720)",
+            "template": "obs4MIPs/NASA-GSFC/GPCP-Daily-3-2/day/pr/gn/v20240412/pr_day_GPCP-Daily-3-2_RSS_gn_20000601-20001231.nc"
+        },
+        "IMERG-V07-Final": {
+            "MD5sum": "N/A",
+            "period": "200006-202307",
+            "shape": "(8461, 1800, 3600)",
+            "template": "obs4MIPs/NASA-GSFC/IMERG-V07-Final/day/pr/gn/v20240515/pr_day_IMERG-V07-Final_RSS_gn_*.nc"
+        },
+        "MSWEP-V280-Past": {
+            "MD5sum": "N/A",
+            "period": "197901-202012",
+            "shape": "(15339, 1800, 3600)",
+            "template": "obs4MIPs/GloH2O/MSWEP-V280-Past/day/pr/10km/v20240518/pr_day_MSWEP-V280-Past_PCMDI_10km_*.nc"
+        },
+        "MSWEP-V280-Past-nogauge": {
+            "MD5sum": "N/A",
+            "period": "197901-202012",
+            "shape": "(15341, 1800, 3600)",
+            "template": "obs4MIPs/GloH2O/MSWEP-V280-Past-nogauge/day/pr/10km/v20240514/pr_day_MSWEP-V280-Past-nogauge_PCMDI_10km_*.nc"
+        },
+        "PERSIANN-CDRv1r1": {
+            "MD5sum": "0afe9d51145db4db0d60ad94455fa91f",
+            "period": "198301-201901",
+            "shape": "(13149, 180, 360)",
+            "template": "obs4MIPs/NOAA/PERSIANN-CDRv1r1/day/pr/1x1/v20210826/pr_day_PERSIANN-CDRv1r1_PCMDIFROGS_1x1_19830102-20190101.nc"
+        },
+        "PRISM-M3": {
+            "MD5sum": "N/A",
+            "period": "198101-200612",
+            "shape": "(9496, 621, 1405)",
+            "template": "obs4MIPs/OSU/PRISM-M3/day/pr/gn/v20240807/pr_day_PRISM-M3_PCMDI_gn_*.nc"
+        },
+        "TRMM-3B42v-7": {
+            "MD5sum": "d43e23bd191d348d0ce9c8ec551470ad",
+            "period": "199801-201912",
+            "shape": "(8034, 180, 360)",
+            "template": "obs4MIPs/NASA-GSFC/TRMM-3B42v-7/day/pr/1x1/v20210824/pr_day_TRMM-3B42v-7_PCMDIFROGS_1x1_19980101-20191230.nc"
+        },
+        "livneh-1-0": {
+            "MD5sum": "N/A",
+            "period": "191501-201112",
+            "shape": "(35429, 444, 922)",
+            "template": "obs4MIPs/NOAA-ESRL-PSD/livneh-1-0/day/pr/gn/v20230613/pr_day_livneh-1-0_PCMDI_gn_*.nc"
+        },
+        "livneh-unsplit-1-0": {
+            "MD5sum": "N/A",
+            "period": "191501-201812",
+            "shape": "(37986, 444, 922)",
+            "template": "obs4MIPs/UCSD-SIO/livneh-unsplit-1-0/day/pr/gn/v20240807/pr_day_livneh-unsplit-1-0_PCMDI_gn_*.nc"
+        },
+        "nClimGrid-Daily-1-0": {
+            "MD5sum": "N/A",
+            "period": "195012-202212",
+            "shape": "(26298, 596, 1385)",
+            "template": "obs4MIPs/NOAA-NCEI/nClimGrid-Daily-1-0/day/pr/25km/v20240808/pr_day_nClimGrid-Daily-1-0_PCMDI_25km_*.nc"
+        }
+    },
+    "tas": {
+        "PRISM-M3": {
+            "MD5sum": "145d15a857317ebdb697233499e30b0b",
+            "period": "198101-198112",
+            "shape": "(365, 621, 1405)",
+            "template": "obs4MIPs/OSU/PRISM-M3/day/tas/gn/v20240807/tas_day_PRISM-M3_PCMDI_gn_19810101-19811231.nc"
+        },
+        "nClimGrid-Daily-1-0": {
+            "MD5sum": "N/A",
+            "period": "195012-202212",
+            "shape": "(26298, 596, 1385)",
+            "template": "obs4MIPs/NOAA-NCEI/nClimGrid-Daily-1-0/day/tas/25km/v20240808/tas_day_nClimGrid-Daily-1-0_PCMDI_25km_*.nc"
+        }
+    },
+    "tasmax": {
+        "PRISM-M3": {
+            "MD5sum": "N/A",
+            "period": "198101-198312",
+            "shape": "(1095, 621, 1405)",
+            "template": "obs4MIPs/OSU/PRISM-M3/day/tasmax/gn/v20240807/tasmax_day_PRISM-M3_PCMDI_*.nc"
+        },
+        "livneh-1-0": {
+            "MD5sum": "N/A",
+            "period": "191501-201812",
+            "shape": "(37986, 444, 922)",
+            "template": "obs4MIPs/NOAA-ESRL-PSD/livneh-1-0/day/tasmax/gn/v20230613/tasmax_day_livneh-1-0_PCMDI_gn_*.nc"
+        },
+        "nClimGrid-Daily-1-0": {
+            "MD5sum": "N/A",
+            "period": "195012-202212",
+            "shape": "(26298, 596, 1385)",
+            "template": "obs4MIPs/NOAA-NCEI/nClimGrid-Daily-1-0/day/tasmax/25km/v20240809/tasmax_day_nClimGrid-Daily-1-0_PCMDI_25km_*.nc"
+        }
+    },
+    "tasmin": {
+        "PRISM-M3": {
+            "MD5sum": "45ca5f4087d8311dc93ade329f02553d",
+            "period": "198101-198112",
+            "shape": "(365, 621, 1405)",
+            "template": "obs4MIPs/OSU/PRISM-M3/day/tasmin/gn/v20240807/tasmin_day_PRISM-M3_PCMDI_gn_19810101-19811231.nc"
+        },
+        "livneh-1-0": {
+            "MD5sum": "N/A",
+            "period": "191501-201812",
+            "shape": "(37986, 444, 922)",
+            "template": "obs4MIPs/NOAA-ESRL-PSD/livneh-1-0/day/tasmin/gn/v20230613/tasmin_day_livneh-1-0_PCMDI_gn_*.nc"
+        },
+        "nClimGrid-Daily-1-0": {
+            "MD5sum": "N/A",
+            "period": "195012-202212",
+            "shape": "(26298, 596, 1385)",
+            "template": "obs4MIPs/NOAA-NCEI/nClimGrid-Daily-1-0/day/tasmin/25km/v20240808/tasmin_day_nClimGrid-Daily-1-0_PCMDI_25km_*.nc"
+        }
+    }
+}
