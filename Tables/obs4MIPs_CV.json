@@ -862,13 +862,7 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"v7"
             },
-            "SGP--ARMBE-atm-c1-1-8":{
-                "region":"site_data",
-                "source":"ARMBE atm-c1-1-8 (DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties",
-                "source_type":"insitu",
-                "source_version_number":"atm-c1-1-8"
-            },
-            "SITE-ARMBE-atm-c1-1-8":{
+            "SITE-SGP-ARMBE-atm-c1-1-8":{
                 "region":"site_data",
                 "source":"ARMBE atm-c1-1-8 (DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties",
                 "source_type":"insitu",

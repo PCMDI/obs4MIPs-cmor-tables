@@ -11,37 +11,57 @@ inputJson = 'ARMBE_ATM.json' ; # Update contents of this file to set your global
 #inputFilePath = '/Users/zhang40/Documents/ARM/armbe_sample/sgparmbeatmC1.c1.20200101.003000.nc'
 inputFilePath = '/p/user_pub/PCMDIobs/obs4MIPs_input/LLNL/ARMBE_Vxy/sgparmbeatmC1.c1.20180101.003000.nc'
 
+
+# 2D vars
 vrs = ['precip_rate_sfc','temperature_sfc','u_wind_sfc','v_wind_sfc','relative_humidity_sfc','sensible_heat_flux_baebbr','latent_heat_flux_baebbr']
-vrs = ['sensible_heat_flux_baebbr','latent_heat_flux_baebbr']
-vrs = ['precip_rate_sfc']
+# 3D vars
+#vrs = ['u_wind_p','v_wind_p', 'temperature_p', 'relative_humidity_p']
+
 
 for vr in vrs:
+  print(vr)
   if vr =='precip_rate_sfc':
      inputVarName = vr  # Unit is mm/hour
      outputVarName = 'pr'
      outputUnits = 'kg m-2 s-1'
   if vr =='temperature_sfc':
-     inputVarName = vr  # Unit is mm/hour
+     inputVarName = vr  
      outputVarName = 'tas'
      outputUnits = 'K'
+  if vr =='temperature_p':
+     inputVarName = vr 
+     outputVarName = 'ta'
+     outputUnits = 'K'
   if vr =='u_wind_sfc':
-     inputVarName = vr # Unit is mm/hour
+     inputVarName = vr 
      outputVarName = 'uas'
      outputUnits = 'm s-1'
+  if vr =='u_wind_p':
+     inputVarName = vr 
+     outputVarName = 'ua'
+     outputUnits = 'm s-1'
   if vr =='v_wind_sfc':
-     inputVarName = vr # Unit is mm/hour
+     inputVarName = vr 
      outputVarName = 'vas'
      outputUnits = 'm s-1'
+  if vr =='v_wind_p':
+     inputVarName = vr 
+     outputVarName = 'va'
+     outputUnits = 'm s-1'
   if vr =='relative_humidity_sfc':
-     inputVarName = vr # Unit is mm/hour
+     inputVarName = vr 
      outputVarName = 'hurs'
      outputUnits = '%'
+  if vr =='relative_humidity_p':
+     inputVarName = vr 
+     outputVarName = 'hur'
+     outputUnits = '%'
   if vr =='sensible_heat_flux_baebbr':
-     inputVarName = vr # Unit is mm/hour
+     inputVarName = vr 
      outputVarName = 'hfss'
      outputUnits = 'W m-2'
   if vr =='latent_heat_flux_baebbr':
-     inputVarName = vr # Unit is mm/hour
+     inputVarName = vr 
      outputVarName = 'hfls'
      outputUnits = 'W m-2'
 
@@ -65,15 +85,29 @@ for vr in vrs:
   cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4,logfile='cmorLog.txt')
   cmor.dataset_json(inputJson)
   cmor.load_table(cmorTable)
-  cmor.set_cur_dataset_attribute('history',f.history) 
+  cmor.set_cur_dataset_attribute('original_history',f.attrs) 
 
   cmorLat = cmor.axis("latitude1", coord_vals=np.array([lat]), units="degrees_north")
   cmorLon = cmor.axis("longitude1", coord_vals=np.array([lon]), units="degrees_east")
   cmorTime = cmor.axis("time", coord_vals=time[:], cell_bounds=tbds, units= f.time.units)
-  cmoraxes = [cmorTime, cmorLat, cmorLon]
+  if vr == 'temperature_sfc':
+      cmorHeight = cmor.axis("height2m", coord_vals=np.array([2.0]), units="m")
+      cmoraxes = [cmorTime, cmorLat, cmorLon, cmorHeight]
+  if vr in ['u_wind_sfc', 'v_wind_sfc']:
+      cmorHeight = cmor.axis("height10m", coord_vals=np.array([10.0]), units="m")
+      cmoraxes = [cmorTime, cmorLat, cmorLon, cmorHeight]
+  elif vr in ["u_wind_p", "v_wind_p", "temperature_p", "relative_humidity_p"]:
+      cmorHeight = cmor.axis("plev37", coord_vals=np.array(f.pressure.values),units='hPa') 
+      cmoraxes = [cmorTime, cmorLat, cmorLon, cmorHeight]
+  else:
+      cmoraxes = [cmorTime, cmorLat, cmorLon]
 
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-  varid   = cmor.variable(outputVarName,outputUnits,cmoraxes,missing_value=1.e20)
+  if outputVarName in ['hfss', 'hfls']:
+      varid   = cmor.variable(outputVarName,outputUnits,cmoraxes,positive="up",missing_value=1.e20)
+  else:
+      varid   = cmor.variable(outputVarName,outputUnits,cmoraxes,missing_value=1.e20)
+
   values  = np.array(d[:],np.float32)
 
 # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
