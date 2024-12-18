@@ -107,6 +107,8 @@ masterTargets = [
  'Lmon',
  'Omon',
  'SImon',
+ 'CFsubhr',
+ 'A1hr',
  'fx',
 # 'monNobs',
 # 'monStderr',
@@ -148,6 +150,8 @@ tableSource = [
  ['A3hr','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_3hr.json'], 
  ['Oday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Oday.json'],
  ['SIday','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_SIday.json'],
+ ['CFsubhr','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_CFsubhr.json'],
+ ['A1hr','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/Tables/obs4MIPs_A1hr.json'],
 #['monNobs','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monNobs.json'],
 #['monStderr','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/Tables/obs4MIPs_monStderr.json'],
  ['region','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_region.json'],
@@ -222,6 +226,8 @@ A3hr = eval(A3hr)
 A6hr = eval(A6hr)
 Oday = eval(Oday)
 SIday = eval(SIday)
+CFsubhr = eval(CFsubhr)
+A1hr = eval(A1hr)
 #coordinate = eval(coordinate)
 
 Amon['Header']['realm']     = 'atmos'
@@ -235,7 +241,8 @@ A3hr['Header']['realm']     = 'atmos'
 A6hr['Header']['realm']     = 'atmos'
 Oday['Header']['realm']     = 'ocean'
 SIday['Header']['realm']    = 'seaIce'
-
+CFsubhr['Header']['realm']    = 'atmos'
+A1hr['Header']['realm']    = 'atmos'
 Amon['Header']['table_id']  = 'Table obs4MIPs_Amon'
 Lmon['Header']['table_id']  = 'Table obs4MIPs_Lmon'
 Omon['Header']['table_id']  = 'Table obs4MIPs_Omon'
@@ -246,12 +253,14 @@ A3hr['Header']['table_id']  = 'Table obs4MIPs_A3hr'
 A6hr['Header']['table_id']  = 'Table obs4MIPs_A6hr'
 Oday['Header']['table_id']  = 'Table obs4MIPs_Oday'
 SIday['Header']['table_id'] = 'Table obs4MIPs_SIday'
+CFsubhr['Header']['table_id']    = 'Table obs4MIPs_CFsubhr'
+A1hr['Header']['table_id']    = 'Table obs4MIPs_A1hr'
 SIday['Header']['realm']    = 'seaIce'
 
 #realm = eval(realm)
 
 # Clean out modeling_realm
-for jsonName in [Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx]:
+for jsonName in [Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,CFsubhr,A1hr,fx]:
   try:
    jsonName['Header']["Conventions"] = "CF-1.11; ODS-2.5"
    jsonName['Header']["data_specs_version"] = "ODS-2.5"
@@ -757,6 +766,7 @@ coordinate['plev37_ERA5']['requested'] = [ "100000.", "97500.", "95000.", "92500
 
 #%% Source type
 source_type = {}
+source_type['insitu'] = 'site data'
 source_type['gridded_insitu'] = 'gridded product based on measurements collected from in-situ instruments'
 source_type['reanalysis'] = 'gridded product generated from a model reanalysis based on in-situ instruments and possibly satellite measurements'
 source_type['satellite_blended'] = 'gridded product based on both in-situ instruments and satellite measurements'
@@ -770,6 +780,8 @@ table_id = [
   'obs4MIPs_Lmon',
   'obs4MIPs_Omon',
   'obs4MIPs_SImon',
+  'obs4MIPs_CFsubhr',
+  'obs4MIPs_A1hr',
   'obs4MIPs_fx'
 ] ;
 
@@ -815,7 +827,7 @@ for key in source_id['source_id'].keys():
 #           print('Invalid product for entry:',key,'- aborting')
 #           sys.exit()
 
-
+print('above master loop')
 #%% Write variables to files
 for jsonName in masterTargets:
     # Clean experiment formats
@@ -836,7 +848,7 @@ for jsonName in masterTargets:
                 dictToClean[key][value2[0]] = string
         vars()[jsonName] = dictToClean
     # Write file
-    if jsonName in ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon',
+    if jsonName in ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','CFsubhr','A1hr','SImon',
                     'coordinate','formula_terms','fx','grids','monNobs',
                     'monStderr']:
         outFile = ''.join(['../Tables/obs4MIPs_',jsonName,'.json'])
@@ -857,7 +869,7 @@ for jsonName in masterTargets:
 
     elif jsonName not in ['coordinate','formula_terms','fx','grids',
                           'institution_id','source_id','Aday','Amon','A3hr','Lmon',
-                          'Omon','SImon']: #,'product','realm','region']:
+                          'Omon','CFsubhr','A1hr','SImon']: #,'product','realm','region']:
         jsonDict = {}
         jsonDict[jsonName] = eval(jsonName)
 
@@ -951,10 +963,9 @@ inputJson = ['frequency','grid_label','institution_id','license',
              'nominal_resolution','product','realm','region',
              'required_global_attributes','source_id','source_type','table_id', # These are controlled vocabs
              'coordinate','grids','formula_terms', # These are not controlled vocabs - rather lookup tables for CMOR
-             'Aday','Amon','Lmon','Omon','SImon','fx' # Update/add if new tables are generated
+             'Aday','Amon','Lmon','Omon','CFsubhr','A1hr','SImon','fx' # Update/add if new tables are generated
             ]
-tableList = ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon','coordinate',
-             'formula_terms','fx','grids','monNobs','monStderr']
+tableList = ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon','CFsubhr','A1hr','coordinate','formula_terms','fx','grids','monNobs','monStderr']
 
 # Load dictionaries from local files
 CVJsonList = copy.deepcopy(inputJson)
@@ -966,6 +977,8 @@ CVJsonList.remove('Amon')
 CVJsonList.remove('Lmon')
 CVJsonList.remove('Omon')
 CVJsonList.remove('SImon')
+CVJsonList.remove('CFsubhr')
+CVJsonList.remove('A1hr')
 CVJsonList.remove('fx')
 for count,CV in enumerate(inputJson):
     if CV in tableList:
@@ -978,8 +991,7 @@ for count,CV in enumerate(inputJson):
 
 
 # Build CV master dictionary
-
-
+print('ABOVE CV')
 obs4MIPs_CV = {}
 obs4MIPs_CV['CV'] = {}
 for count,CV in enumerate(CVJsonList):
@@ -1000,7 +1012,7 @@ for count,CV in enumerate(CVJsonList):
             obs4MIPs_CV['CV']['source_id'][key] = {}
             string = ''.join([source_id_[key]['source_label'],' ',
                               source_id_[key]['source_version_number'],' (',
-                              source_id_[key]['release_year'],'): ',
+#                             source_id_[key]['release_year'],'): ',
                               source_id_[key]['source_description']])
             obs4MIPs_CV['CV']['source_id'][key]['source_label'] = values['source_label']
             obs4MIPs_CV['CV']['source_id'][key]['source_type'] = values['source_type']
