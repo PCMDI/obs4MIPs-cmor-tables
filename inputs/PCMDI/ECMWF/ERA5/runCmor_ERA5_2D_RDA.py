@@ -16,10 +16,10 @@ inputJson = 'ERA5-MARS-input.json' ; # Update contents of this file to set your 
 inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/ECMWF/'
 inputFilePathend = 'ERA5/RDA/'
 
-inputVarName = ['VAR_2T'] # ['MSL']
-#inputVarName = ['T','U','V','Z'] 
-outputVarName = ['tas']  #['psl']  
-outputUnits = ['K']  #['Pa'] 
+inputVarName = ['VAR_2T', 'MSL','VAR_10SI','VAR_10U','VAR_10V']
+outputVarName = ['tas','psl','sfcWind','uas','vas']  #['psl']  
+outputUnits = ['K','Pa','m s-1','m s-1','m s-1'] 
+
 
 ### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE..
 for vn,fi in enumerate(inputVarName):
@@ -52,7 +52,7 @@ for vn,fi in enumerate(inputVarName):
   t, tbds, tunits = fix_dataset_time.monthly_times(datumyr, yrs, datum_start_month, start_month,end_month)
 
 #%% Initialize and run CMOR
-  cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4) #,logfile='cmorLog.txt')
+  cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4 ,logfile='cmorLog.' + outputVarName[vn] + '.' + str(yrs[0]) +'.txt')
   for origatt in attsin.keys():
      cmor.set_cur_dataset_attribute(origatt,attsin[origatt])
   cmor.dataset_json(inputJson)
