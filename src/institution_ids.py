@@ -25,6 +25,7 @@ institution_id['institution_id']['JAXA'] = 'The Japan Aerospace Exploration Agen
 institution_id['institution_id']['UCI-CHRS'] = 'Center for Hydrometeorology and Remote Sensing'
 institution_id['institution_id']['DLR-BIRA'] = 'Deutsches Zentrum fur Luft- und Raumfahrt, Royal Belgian Institute for Space Aeronomy'
 institution_id['institution_id']['UCSD-SIO'] = 'University of California, San Diego, Scripps Institution of Oceanography'
+institution_id['institution_id']['UAH'] = 'University of Alcala, Spain' 
 institution_id['institution_id']['GloH2O'] = 'gloh2o.org'
 institution_id['institution_id']['OSU'] = 'Oregon State University, OR, USA'
 

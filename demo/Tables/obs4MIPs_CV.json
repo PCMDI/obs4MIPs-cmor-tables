@@ -21,13 +21,13 @@
                 "yrPt":"sampled yearly, at specified time point within the time period"
             },
             "version_metadata":{
-                "CV_collection_modified":"Tue Jan 30 11:31:11 2024 -0800",
-                "CV_collection_version":"6.2.58.63",
+                "CV_collection_modified":"Tue Dec 17 14:37:34 2024 -0800",
+                "CV_collection_version":"6.2.58.74",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "frequency_CV_modified":"Mon May 24 13:48:15 2021 00100",
                 "frequency_CV_note":"Update description of 3hr and 6hr frequencies",
                 "institution_id":"PCMDI",
-                "previous_commit":"f70febdb3a61b24b2c6c685a698c5dda6e5ee594",
+                "previous_commit":"85044bb37a411f509ab9e27eafaa6b0b89736a39",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -80,13 +80,13 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-                "CV_collection_modified":"Tue Jan 30 11:31:11 2024 -0800",
-                "CV_collection_version":"6.2.58.63",
+                "CV_collection_modified":"Tue Dec 17 14:37:34 2024 -0800",
+                "CV_collection_version":"6.2.58.74",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
-                "previous_commit":"f70febdb3a61b24b2c6c685a698c5dda6e5ee594",
+                "previous_commit":"85044bb37a411f509ab9e27eafaa6b0b89736a39",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -113,6 +113,7 @@
             "OSU":"Oregon State University, OR, USA",
             "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
             "RSS":"Remote Sensing Systems, Santa Rosa, CA USA",
+            "UAH":"University of Alcala, Spain",
             "UCI-CHRS":"Center for Hydrometeorology and Remote Sensing",
             "UCSD-SIO":"University of California, San Diego, Scripps Institution of Oceanography",
             "UReading":"University of Reading, Reading, UK",
@@ -138,13 +139,13 @@
                 "5000 km"
             ],
             "version_metadata":{
-                "CV_collection_modified":"Tue Jan 30 11:31:11 2024 -0800",
-                "CV_collection_version":"6.2.58.63",
+                "CV_collection_modified":"Tue Dec 17 14:37:34 2024 -0800",
+                "CV_collection_version":"6.2.58.74",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "institution_id":"PCMDI",
                 "nominal_resolution_CV_modified":"Tues Nov 15 16:04:00 2016 -0700",
                 "nominal_resolution_CV_note":"Issue141 durack1 update grid_resolution to nominal_resolution (#143)",
-                "previous_commit":"f70febdb3a61b24b2c6c685a698c5dda6e5ee594",
+                "previous_commit":"85044bb37a411f509ab9e27eafaa6b0b89736a39",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -297,6 +298,18 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"9.0"
             },
+            "CCMP-3-1":{
+                "region":"global",
+                "source":"CCMP-3-1 3.1 (2022): Cross-Calibrated Multi-Platform V3.1",
+                "source_type":"satellite_blended",
+                "source_version_number":"3.1"
+            },
+            "CCMP-Monthly-3-1":{
+                "region":"global",
+                "source":"CCMP-Monthly-3-1 3.1 (2022): Cross-Calibrated Multi-Platform V3.1",
+                "source_type":"satellite_blended",
+                "source_version_number":"3.1"
+            },
             "CERES-EBAF-4-0":{
                 "region":"global",
                 "source":"CERES-EBAF-4-0 4.0 (2018): CERES EBAF (Energy Balanced and Filled) TOA Fluxes. Monthly Averages",
@@ -422,6 +435,12 @@
                 "source":"ESACCI-CLOUD-MERIS-AATSR 2.0 (2017): Cloud properties derived from MERIS and AATSR (aboard ENVISAT) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
+            },
+            "FireCCI-v5-1":{
+                "region":"global_land",
+                "source":"FireCCI 5.1 (2024): MODIS FireCCI Burned Area product",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"5.1"
             },
             "GERB-HR-ED01-1-0":{
                 "region":"global",
@@ -552,6 +571,24 @@
             "IMERG-V07-Final":{
                 "region":"global",
                 "source":"IMERG-V07-Final V07 (2023): NASA IMERG 30-min, 0.1x0.1 degrees",
+                "source_type":"satellite_blended",
+                "source_version_number":"V07"
+            },
+            "IMERG-V07-Final-3hr":{
+                "region":"global",
+                "source":"IMERG-V07-Final-3hr V07 (2023): NASA IMERG averaged to 3-hourly maps",
+                "source_type":"satellite_blended",
+                "source_version_number":"V07"
+            },
+            "IMERG-V07-Final-Daily":{
+                "region":"global",
+                "source":"IMERG-V07-Final-Daily V07 (2023): NASA IMERG Daily Averages",
+                "source_type":"satellite_blended",
+                "source_version_number":"V07"
+            },
+            "IMERG-V07-Final-Monthly":{
+                "region":"global",
+                "source":"IMERG-V07-Final-Monthly V07 (2023): NASA IMERG Monthly Maps",
                 "source_type":"satellite_blended",
                 "source_version_number":"V07"
             },
@@ -783,11 +820,29 @@
                 "source_type":"satellite_blended",
                 "source_version_number":"7.2"
             },
+            "RSS-SMAP-SSS-Monthly-5-3":{
+                "region":"global ocean",
+                "source":"RSS-SMAP-SSS-Monthly-5-3 5.3 (2023): Satellite derived SSS produced by RSS",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"5.3"
+            },
+            "RSS-SMAP-SSS-Monthly-v05r03":{
+                "region":"global ocean",
+                "source":"RSS-SMAP-SSS-5-3 5.3 (2023): Satellite derived SSS produced by RSS",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"5.3"
+            },
             "RSS-SMAP-SSS-v05r01":{
                 "region":"global ocean",
                 "source":"RSS-SMAP-SSS 5.0 (2021): Satellite derived SSS produced by RSS",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"5.0"
+            },
+            "RSS-SMAP-SSS-v05r03":{
+                "region":"global ocean",
+                "source":"RSS-SMAP-SSS 5.3 (2023): Satellite derived SSS produced by RSS",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"5.3"
             },
             "RSS-sfcWind-v07r01":{
                 "region":"global",

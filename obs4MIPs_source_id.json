@@ -558,6 +558,21 @@
             ],
             "source_version_number":"2.0"
         },
+        "FireCCI-v5-1":{
+            "institution_id":"UAH",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2024",
+            "source_description":"MODIS FireCCI Burned Area product",
+            "source_label":"FireCCI",
+            "source_name":"FireCCI",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "burntFractionAll"
+            ],
+            "source_version_number":"5.1"
+        },
         "GERB-HR-ED01-1-0":{
             "institution_id":"ImperialCollege",
             "region":[

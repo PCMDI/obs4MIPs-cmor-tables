@@ -13,6 +13,18 @@ source_id['source_id'][key]['region'] = ['north_america']
 source_id['source_id'][key]['source_type'] = 'gridded_insitu'
 source_id['source_id'][key]['source_variables'] = ['pr','tasmin', 'tasmax','tas']
 
+key = 'FireCCI-v5-1'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'FireCCI'
+source_id['source_id'][key]['source_label'] = 'FireCCI'
+source_id['source_id'][key]['release_year'] = '2024'
+source_id['source_id'][key]['source_description'] = 'MODIS FireCCI Burned Area product'
+source_id['source_id'][key]['source_version_number'] = '5.1'
+source_id['source_id'][key]['institution_id'] = 'UAH'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['burntFractionAll']
+
 key = 'livneh-1-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'livneh'
