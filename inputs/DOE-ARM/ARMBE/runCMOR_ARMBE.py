@@ -11,7 +11,6 @@ inputJson = 'ARMBE_ATM.json' ; # Update contents of this file to set your global
 #inputFilePath = '/Users/zhang40/Documents/ARM/armbe_sample/sgparmbeatmC1.c1.20200101.003000.nc'
 inputFilePath = '/p/user_pub/PCMDIobs/obs4MIPs_input/LLNL/ARMBE_Vxy/sgparmbeatmC1.c1.20180101.003000.nc'
 
-
 # 2D vars
 vrs = ['precip_rate_sfc','temperature_sfc','u_wind_sfc','v_wind_sfc','relative_humidity_sfc','sensible_heat_flux_baebbr','latent_heat_flux_baebbr']
 # 3D vars
