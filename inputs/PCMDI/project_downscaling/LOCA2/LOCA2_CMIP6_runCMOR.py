@@ -25,6 +25,8 @@ if multi == True:
 
 cmorTable = '../Tables/Downscaling_Aday.json'
 inputJson = 'LOCA2_CMIP6_input.json'
+if vari == 'pr': inputJson = 'LOCA2-1_CMIP6_input.json'  
+
 inputFilePath = '/global/cfs/projectdirs/m3522/cmip6/LOCA2/*/0p0625deg/r1i1p1f1/historical/' + vari + '/*v2022*.nc'  #v20220519.nc'
 
 def extract_date(ds):   # preprocessing function when opening multiple files
@@ -38,7 +40,7 @@ def extract_date(ds):   # preprocessing function when opening multiple files
 
 # EXPs, TRAP CMIP6 MODS AND RUNS
 mod_runs = {}
-exps = ['historical','ssp245', 'ssp585']
+exps = ['historical','ssp245', 'ssp585','ssp370']
 exps = [expi] 
 for exp in exps:
  infile = inputFilePath.replace('historical',exp)
@@ -81,7 +83,7 @@ for mod in mods:
    infile = infile.replace('historical',exp)
    infile = infile.replace('r1i1p1f1',ri)
    if exp == 'historical': yrs = yrs_hist
-   if exp in ['ssp245', 'ssp585']: yrs = yrs_scen
+   if exp in ['ssp245', 'ssp585','ssp370']: yrs = yrs_scen
 
    for yr in yrs:
     start_time = datetime.now()

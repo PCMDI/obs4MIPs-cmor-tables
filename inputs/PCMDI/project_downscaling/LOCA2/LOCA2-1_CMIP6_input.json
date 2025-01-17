@@ -11,7 +11,7 @@
     "region_id": "NAM",
     "mip_era": "CMIP6",
     "driving_source_id":"ACCESS-CM2",
-    "downscaling_source_id":"LOCA2-0",
+    "downscaling_source_id":"LOCA2-1",
     "driving_experiment_id":"historical",
     "driving_experiment":"CMIP6 experiment",
     "driving_variant_label":"r1i1p1f1",
@@ -30,7 +30,7 @@
     "output_path_template":"<mip_era><region_id><institution_id><downscaling_source_id><driving_source_id><driving_activity_id><driving_experiment_id><driving_variant_label><frequency><variable_id><version>",
     "product":"downscaled",
     "references": "https://doi.org/10.1175/JHM-D-14-0082.1",
-    "source_id":"LOCA2-0--ACCESS-CM2",
+    "source_id":"LOCA2-1--ACCESS-CM2",
     "variant_info":"Project Downscale compliant product prepared by PCMDI",
     "variant_label":"PCMDI"
 }

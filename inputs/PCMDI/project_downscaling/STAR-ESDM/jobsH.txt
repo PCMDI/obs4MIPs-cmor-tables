@@ -1,0 +1,14 @@
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmax ACCESS-CM2 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmax MPI-ESM1-2-LR 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmax NorESM2-LM 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmax CanESM5 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmax ACCESS-ESM1-5 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmax BCC-CSM2-MR 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmax MPI-ESM1-2-HR 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmax TaiESM1 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmax FGOALS-g3 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmax MIROC6 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmax NorESM2-MM 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmax MRI-ESM2-0 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmax NESM3 
+python STAR-ESDM_CMIP6_runCMOR.py historical tasmax CMCC-ESM2 
