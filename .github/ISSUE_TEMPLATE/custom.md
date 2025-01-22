@@ -1,5 +1,5 @@
 ---
-name: Custom issue template
+name: Registration
 about: Register new obs4MIPs contribution
 title: ''
 labels: ''
