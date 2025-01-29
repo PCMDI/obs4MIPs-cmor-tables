@@ -13,6 +13,18 @@ source_id['source_id'][key]['region'] = ['north_america']
 source_id['source_id'][key]['source_type'] = 'gridded_insitu'
 source_id['source_id'][key]['source_variables'] = ['pr','tasmin', 'tasmax','tas']
 
+key = 'OSISAF-V3'  
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'OSISAF/CCI SIC'
+source_id['source_id'][key]['source_label'] = 'OSISAF/CCI SIC'
+source_id['source_id'][key]['release_year'] = '2022'
+source_id['source_id'][key]['source_description'] = 'Sea Ice Concentration (SIC) CDR v3 from EUMETSAT OSI SAF / ESA CCI'
+source_id['source_id'][key]['source_version_number'] = '3'
+source_id['source_id'][key]['institution_id'] = 'MET-Norway'
+source_id['source_id'][key]['region'] = ['global_ocean']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ["siconc"]
+
 key = 'FireCCI-v5-1'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'FireCCI'

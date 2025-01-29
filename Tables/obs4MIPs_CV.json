@@ -21,13 +21,13 @@
                 "yrPt":"sampled yearly, at specified time point within the time period"
             },
             "version_metadata":{
-                "CV_collection_modified":"Tue Dec 17 14:37:34 2024 -0800",
-                "CV_collection_version":"6.2.58.74",
+                "CV_collection_modified":"Wed Jan 15 10:38:19 2025 -0800",
+                "CV_collection_version":"6.2.58.76",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "frequency_CV_modified":"Mon May 24 13:48:15 2021 00100",
                 "frequency_CV_note":"Update description of 3hr and 6hr frequencies",
                 "institution_id":"PCMDI",
-                "previous_commit":"85044bb37a411f509ab9e27eafaa6b0b89736a39",
+                "previous_commit":"a812c5c82d04252b8bd948320a1bde6d0de790d5",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -80,13 +80,13 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-                "CV_collection_modified":"Tue Dec 17 14:37:34 2024 -0800",
-                "CV_collection_version":"6.2.58.74",
+                "CV_collection_modified":"Wed Jan 15 10:38:19 2025 -0800",
+                "CV_collection_version":"6.2.58.76",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
-                "previous_commit":"85044bb37a411f509ab9e27eafaa6b0b89736a39",
+                "previous_commit":"a812c5c82d04252b8bd948320a1bde6d0de790d5",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -102,6 +102,7 @@
             "INCOIS-NIO-IPSL":"Joint research colloboration between INCOIS(India), NIO(India) and IPSL(France)",
             "ImperialCollege":"Imperial College, London, UK",
             "JAXA":"The Japan Aerospace Exploration Agency",
+            "MET-Norway":"Norwegian Meteorological Institute",
             "MOHC":"Met Office Hadley Centre",
             "MRI":"Meteorological Research Institute, Tsukuba, Ibaraki 305-0052, Japan",
             "NASA-GSFC":"NASA Goddard Space Flight Center, Greenbelt MD, USA",
@@ -139,13 +140,13 @@
                 "5000 km"
             ],
             "version_metadata":{
-                "CV_collection_modified":"Tue Dec 17 14:37:34 2024 -0800",
-                "CV_collection_version":"6.2.58.74",
+                "CV_collection_modified":"Wed Jan 15 10:38:19 2025 -0800",
+                "CV_collection_version":"6.2.58.76",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "institution_id":"PCMDI",
                 "nominal_resolution_CV_modified":"Tues Nov 15 16:04:00 2016 -0700",
                 "nominal_resolution_CV_note":"Issue141 durack1 update grid_resolution to nominal_resolution (#143)",
-                "previous_commit":"85044bb37a411f509ab9e27eafaa6b0b89736a39",
+                "previous_commit":"a812c5c82d04252b8bd948320a1bde6d0de790d5",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -759,6 +760,12 @@
                 "source":"OISST_L4_AVHRR-only-v2 v2 (2016): SST-AVHRR_only.v2 2008 NOAA 1/4 Degree Daily Optimum Interpolation Sea Surface Temperature Analysis using AVHRR, Version 2",
                 "source_type":"satellite_blended",
                 "source_version_number":"v2"
+            },
+            "OSISAF-V3":{
+                "region":"global_ocean",
+                "source":"OSISAF/CCI SIC 3 (2022): Sea Ice Concentration (SIC) CDR v3 from EUMETSAT OSI SAF / ESA CCI",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"3"
             },
             "PERSIANN-CDRv1r1":{
                 "region":"global",
