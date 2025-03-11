@@ -19,16 +19,31 @@ inputJson = 'ERA5-MARS-input.json' ; # Update contents of this file to set your 
 inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/ECMWF/'
 inputFilePathend = 'ERA5/RDA/'
 
-inputVarName = ['T'] #,'U','V','Z']
+inputVarName = ['T','U','V','Z']
 outputVarName = ['ta','ua','va','zg']  
 outputUnits = ['K','m s-1','m s-1','m'] 
 
-inputVarName = ['U','V','Z']
-outputVarName = ['ua','va','zg']
-outputUnits = ['m s-1','m s-1','m']
+multi  = True
+if multi == True:
+ vari = sys.argv[1]
+ outputVarName = [vari]
 
+ if vari == 'ta':
+    inputVarName = ['T'] 
+    outputUnits = ['K']
+ if vari == 'ua':
+    inputVarName = ['U'] 
+    outputUnits = ['m s-1']
+ if vari == 'va':
+    inputVarName = ['V']
+    outputUnits = ['m s-1']
+ if vari == 'zg':
+    inputVarName = ['Z']
+    outputUnits = ['m']
+    divconv = 9.81
 
 ### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE..
+
 for vn,fi in enumerate(inputVarName):
  print(fi, outputVarName[vn])
 #w = sys.stdin.readline()
@@ -38,7 +53,8 @@ for vn,fi in enumerate(inputVarName):
 
  for fi in files_yearly:
   f = xc.open_dataset(fi,decode_times=True, decode_cf=True)
-  f = f.bounds.add_missing_bounds(axes=['X', 'Y','Z'])
+# f.level.attrs['axis'] = 'Z'
+  f = f.bounds.add_missing_bounds(axes=['X', 'Y'])
   f = f.bounds.add_bounds('T')
   d = f[inputVarName[vn]].values
   lat = f.latitude
@@ -47,6 +63,11 @@ for vn,fi in enumerate(inputVarName):
   print(d.shape)
   time = f.time.values[:]
   attsin = f.attrs
+
+  if outputVarName[vn] == 'zg': d = np.divide(d,divconv)
+
+# print(f)
+# w = sys.stdin.readline()
 
   datumyr = 1979
   datum_start_month = 1
@@ -67,20 +88,21 @@ for vn,fi in enumerate(inputVarName):
   cmorLat = cmor.axis("latitude", coord_vals=lat[:].values, cell_bounds=f.latitude_bnds.values, units="degrees_north")
   cmorLon = cmor.axis("longitude", coord_vals=lon[:].values, cell_bounds=f.longitude_bnds.values, units="degrees_east")
   cmorLev = cmor.axis("plev37-ERA5", coord_vals=lev[:].values*100., units="Pa")
+# cmorLev = cmor.axis("plev37-ERA5", coord_vals=lev[:].values*100., cell_bounds=f.level_bnds.values*100., units="Pa") # INCL linear plev_bnds 
+
   cmorTime = cmor.axis("time", coord_vals=t, cell_bounds=tbds, units= tunits)
-  axes = [cmorTime, cmorLat, cmorLon,cmorLev]
+  axes = [cmorTime,cmorLev,cmorLat,cmorLon]
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   varid   = cmor.variable(outputVarName[vn] + '-plev37',outputUnits[vn],axes,missing_value=1.e20)
   values  = np.array(d[:],np.float32)
 
 # Provenance info - produces global attribute <obs4MIPs_GH_Commit_ID> 
-  gitinfo = obs4MIPsLib.ProvenanceInfo(obs4MIPsLib.getGitInfo("./"))
-  paths = os.getcwd().split('/inputs')
-  path_to_code = f"/inputs{paths[1]}"  # location of the code in the obs4MIPs GitHub directory
-  full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{gitinfo['commit_number']}/{path_to_code}"
-  cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
-  cmor.set_cur_dataset_attribute("version",ver)
-
+# gitinfo = obs4MIPsLib.ProvenanceInfo(obs4MIPsLib.getGitInfo("./"))
+# paths = os.getcwd().split('/inputs')
+# path_to_code = f"/inputs{paths[1]}"  # location of the code in the obs4MIPs GitHub directory
+# full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{gitinfo['commit_number']}/{path_to_code}"
+# cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
+# cmor.set_cur_dataset_attribute("version",ver)
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
   cmor.write(varid,values) ; # Write variable with time axis
