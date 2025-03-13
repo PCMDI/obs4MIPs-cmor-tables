@@ -126,7 +126,7 @@
             "cell_measures":"area: areacella",
             "cell_methods":"area: time: mean",
             "comment":"includes both liquid and solid phases",
-            "dimensions":"longitude1 latitude1 time",
+            "dimensions":"time",
             "frequency":"1hr",
             "long_name":"Precipitation",
             "modeling_realm":"atmos",

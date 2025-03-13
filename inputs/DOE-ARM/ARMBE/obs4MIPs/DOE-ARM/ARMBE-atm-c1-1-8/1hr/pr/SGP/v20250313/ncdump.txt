@@ -1,0 +1,139 @@
+netcdf pr_1hr_ARMBE-atm-c1-1-8_DOE-ARM_SGP_201801010030-201801012330 {
+dimensions:
+	time = UNLIMITED ; // (24 currently)
+	lat = 1 ;
+	lon = 1 ;
+	bnds = 2 ;
+variables:
+	double time(time) ;
+		time:bounds = "time_bnds" ;
+		time:units = "days since 2018-01-01 00:00:00 0:00" ;
+		time:calendar = "gregorian" ;
+		time:axis = "T" ;
+		time:long_name = "time" ;
+		time:standard_name = "time" ;
+	double time_bnds(time, bnds) ;
+	double lat(lat) ;
+		lat:units = "degrees_north" ;
+		lat:axis = "Y" ;
+		lat:long_name = "Latitude" ;
+		lat:standard_name = "latitude" ;
+	double lon(lon) ;
+		lon:units = "degrees_east" ;
+		lon:axis = "X" ;
+		lon:long_name = "Longitude" ;
+		lon:standard_name = "longitude" ;
+	float pr(time, lat, lon) ;
+		pr:standard_name = "precipitation_flux" ;
+		pr:long_name = "Precipitation" ;
+		pr:comment = "includes both liquid and solid phases" ;
+		pr:units = "kg m-2 s-1" ;
+		pr:cell_methods = "area: time: mean" ;
+		pr:cell_measures = "area: areacella" ;
+		pr:missing_value = 1.e+20f ;
+		pr:_FillValue = 1.e+20f ;
+
+// global attributes:
+		:Conventions = "CF-1.7 ODS-2.1" ;
+		:activity_id = "obs4MIPs" ;
+		:contact = "zhang40@llnl.gov, obs4MIPs-admin@llnl.gov" ;
+		:creation_date = "2025-03-13T20:39:05Z" ;
+		:data_specs_version = "2.1.0" ;
+		:external_variables = "areacella" ;
+		:frequency = "1hr" ;
+		:further_info_url = "https://furtherinfo.es-doc.org/obs4MIPs.DOE-ARM.source_labelARMBE-atm-c1-1-8.pr" ;
+		:grid = "site" ;
+		:grid_label = "SGP" ;
+		:history = "2025-03-13T20:39:05Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 ODS-2.1 and CF standards." ;
+		:institution = "U.S. Department of Energy, Atmospheric Radiation Measurment Program" ;
+		:institution_id = "DOE-ARM" ;
+		:mip_era = "CMIP6" ;
+		:nominal_resolution = "site" ;
+		:originData_URL = "?" ;
+		:originData_retrieved = "Chengzhu Zhang 2023" ;
+		:original_history = "{\'Conventions\': \'ARM-1.2\', \'command_line\': \'idl -R -n armbeatm -s sgp -f C1 -b 20180101 -e 20190101 -D 0\', \'title\': \'ARM Best Estimate (ARMBE) Product, atmospheric profiles: armbeatm, formerly known as cmbe_atm\', \'description\': \'ARM Best Estimate hourly averaged qc controlled product, derived from ARM observational Value Added Product data. see input_datastreams for the specific input data. Some input VAPs (e.g., RUC/RAP) are only available for certain sites.\', \'location_description\': \'Southern Great Plains (SGP), Lamont, Oklahoma\', \'platform_id\': \'armbeatm\', \'averaging_interval\': \'60 min\', \'references\': \'http://dx.doi.org/10.5439/1333748\', \'datastream\': \'sgparmbeatmC1.c1\', \'site_id\': \'sgp\', \'facility_id\': \'C1\', \'data_level\': \'c1\', \'dod_version\': \'armbeatm-c1-1.8\', \'process_version\': \'vap-armbeatm-1.0-0.dev6.dirty.el6\', \'input_datastreams\': \'sgp30baebbrE13.s1 : 0.12 : 20180101.000000-20190102.000000\\nsgp30qcecorE14.s1 : 1.15 : 20180101.000000-20181214.000000\\nsgplssondeC1.c1 : 1.4 : 20171231.053000-20190101.2outpath-tmp" ;
+		:outpath-tmp = "/p/user_pub/PCMDIobs/" ;
+		:product = "site-observations" ;
+		:realm = "atmos" ;
+		:references = "Xie, Shaocheng., and 16-coauthors, 2010: ARM climate modeling best estimate data, Bull. Amer. Meteor. Soc, 91, 13–20 , doi:10.1175/2009BAMS2891.1." ;
+		:region = "north_america" ;
+		:site_id = "SGP" ;
+		:site_location = "Southern Great Plains" ;
+		:source = "ARMBE atm-c1-1-8 (DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties" ;
+		:source_id = "ARMBE-atm-c1-1-8" ;
+		:source_type = "insitu" ;
+		:source_version_number = "atm-c1-1-8" ;
+		:table_id = "obs4MIPs_A1hr" ;
+		:table_info = "Creation Date:(18 November 2020) MD5:85aa8109550a87ec55187fb940486e3e" ;
+		:title = "ARM Best Estimate (ARMBE) Product, atmospheric profiles: armbeatm" ;
+		:tracking_id = "90a5731a-a7fd-4378-b01a-dda0d46f9315" ;
+		:variable_id = "pr" ;
+		:variant_info = "Best Estimate" ;
+		:variant_label = "DOE-ARM" ;
+		:license = "Data in this file is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses)." ;
+		:cmor_version = "3.9.0" ;
+data:
+
+ time = 0.0208333333333333, 0.0625, 0.104166666666667, 0.145833333333333, 
+    0.1875, 0.229166666666667, 0.270833333333333, 0.3125, 0.354166666666667, 
+    0.395833333333333, 0.4375, 0.479166666666667, 0.520833333333333, 0.5625, 
+    0.604166666666667, 0.645833333333333, 0.6875, 0.729166666666667, 
+    0.770833333333333, 0.8125, 0.854166666666667, 0.895833333333333, 0.9375, 
+    0.979166666666667 ;
+
+ time_bnds =
+  0, 0.0416666666666667,
+  0.0416666666666667, 0.0833333333333333,
+  0.0833333333333333, 0.125,
+  0.125, 0.166666666666667,
+  0.166666666666667, 0.208333333333333,
+  0.208333333333333, 0.25,
+  0.25, 0.291666666666667,
+  0.291666666666667, 0.333333333333333,
+  0.333333333333333, 0.375,
+  0.375, 0.416666666666667,
+  0.416666666666667, 0.458333333333333,
+  0.458333333333333, 0.5,
+  0.5, 0.541666666666667,
+  0.541666666666667, 0.583333333333333,
+  0.583333333333333, 0.625,
+  0.625, 0.666666666666667,
+  0.666666666666667, 0.708333333333333,
+  0.708333333333333, 0.75,
+  0.75, 0.791666666666667,
+  0.791666666666667, 0.833333333333333,
+  0.833333333333333, 0.875,
+  0.875, 0.916666666666667,
+  0.916666666666667, 0.958333333333333,
+  0.958333333333333, 1 ;
+
+ lat = 36.6049995422363 ;
+
+ lon = 262.514999389648 ;
+
+ pr =
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0 ;
+}

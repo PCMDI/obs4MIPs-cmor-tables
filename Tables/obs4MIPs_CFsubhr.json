@@ -1,11 +1,11 @@
 {
     "Header":{
-        "Conventions":"CF-1.7 ODS-2.1",
+        "Conventions":"CF-1.7 CMIP-6.2",
         "approx_interval":"0.017361",
         "approx_interval_error":"0.90",
         "approx_interval_warning":"0.5",
         "cmor_version":"3.5",
-        "data_specs_version":"2.1.0",
+        "data_specs_version":"01.00.33",
         "generic_levels":"alevel alevhalf",
         "int_missing_value":"-999",
         "mip_era":"CMIP6",

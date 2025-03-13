@@ -16,6 +16,7 @@ vrs = ['precip_rate_sfc','temperature_sfc','u_wind_sfc','v_wind_sfc','relative_h
 # 3D vars
 #vrs = ['u_wind_p','v_wind_p', 'temperature_p', 'relative_humidity_p']
 
+vrs = ['precip_rate_sfc']
 
 for vr in vrs:
   print(vr)
@@ -69,7 +70,7 @@ for vr in vrs:
 # Open and read input netcdf file
   f = xr.open_dataset(inputFilePath,decode_times=False)
 
-  f = f.sel(time=slice(0,24)) # TEST 2 DAYS ONLY
+  f = f.isel(time=slice(0,24)) # TEST 2 DAYS ONLY
 
   d = f[inputVarName]
   lat = f.lat.values 
@@ -114,10 +115,6 @@ for vr in vrs:
       varid   = cmor.variable(outputVarName,outputUnits,cmoraxes,missing_value=1.e20)
 
   values  = np.array(d[:],np.float32)
-
-# Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-  cmor.set_variable_attribute(varid,'valid_min','f',2.0)
-  cmor.set_variable_attribute(varid,'valid_max','f',3.0)
 
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data

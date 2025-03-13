@@ -264,11 +264,7 @@ SIday['Header']['realm']    = 'seaIce'
 #realm = eval(realm)
 
 # Clean out modeling_realm
-<<<<<<< HEAD
-for jsonName in [Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,CFsubhr,A1hr,fx]:
-=======
 for jsonName in [Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx,Ofx]:
->>>>>>> master
   try:
    jsonName['Header']["Conventions"] = "CF-1.11; ODS-2.5"
    jsonName['Header']["data_specs_version"] = "ODS-2.5"
@@ -788,14 +784,10 @@ table_id = [
   'obs4MIPs_Lmon',
   'obs4MIPs_Omon',
   'obs4MIPs_SImon',
-<<<<<<< HEAD
   'obs4MIPs_CFsubhr',
   'obs4MIPs_A1hr',
-  'obs4MIPs_fx'
-=======
   'obs4MIPs_fx',
   'obs4MIPs_Ofx'
->>>>>>> master
 ] ;
 
 #%% Validate entries
@@ -861,13 +853,8 @@ for jsonName in masterTargets:
                 dictToClean[key][value2[0]] = string
         vars()[jsonName] = dictToClean
     # Write file
-<<<<<<< HEAD
     if jsonName in ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','CFsubhr','A1hr','SImon',
                     'coordinate','formula_terms','fx','grids','monNobs',
-=======
-    if jsonName in ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon',
-                    'coordinate','formula_terms','fx','Ofx','grids','monNobs',
->>>>>>> master
                     'monStderr']:
         outFile = ''.join(['../Tables/obs4MIPs_',jsonName,'.json'])
     elif jsonName == 'license_':
@@ -981,16 +968,10 @@ inputJson = ['frequency','grid_label','institution_id','license',
              'nominal_resolution','product','realm','region',
              'required_global_attributes','source_id','source_type','table_id', # These are controlled vocabs
              'coordinate','grids','formula_terms', # These are not controlled vocabs - rather lookup tables for CMOR
-<<<<<<< HEAD
-             'Aday','Amon','Lmon','Omon','CFsubhr','A1hr','SImon','fx' # Update/add if new tables are generated
-            ]
-tableList = ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon','CFsubhr','A1hr','coordinate','formula_terms','fx','grids','monNobs','monStderr']
-=======
              'Aday','Amon','Lmon','Omon','SImon','fx','Ofx' # Update/add if new tables are generated
             ]
 tableList = ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon','coordinate',
              'formula_terms','fx','Ofx','grids','monNobs','monStderr']
->>>>>>> master
 
 # Load dictionaries from local files
 CVJsonList = copy.deepcopy(inputJson)
