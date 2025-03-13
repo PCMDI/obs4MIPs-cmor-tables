@@ -608,6 +608,21 @@
             ],
             "source_version_number":"2.0"
         },
+        "FireCCI-v5-1":{
+            "institution_id":"UAH",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2024",
+            "source_description":"MODIS FireCCI Burned Area product",
+            "source_label":"FireCCI",
+            "source_name":"FireCCI",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "burntFractionAll"
+            ],
+            "source_version_number":"5.1"
+        },
         "GERB-HR-ED01-1-0":{
             "institution_id":"ImperialCollege",
             "region":[
@@ -1448,6 +1463,21 @@
                 "ts"
             ],
             "source_version_number":"v2"
+        },
+        "OSISAF-V3":{
+            "institution_id":"MET-Norway",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2022",
+            "source_description":"Sea Ice Concentration (SIC) CDR v3 from EUMETSAT OSI SAF / ESA CCI",
+            "source_label":"OSISAF/CCI SIC",
+            "source_name":"OSISAF/CCI SIC",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "siconc"
+            ],
+            "source_version_number":"3"
         },
         "PERSIANN-CDRv1r1":{
             "institution_id":"NOAA",

@@ -110,6 +110,7 @@ masterTargets = [
  'CFsubhr',
  'A1hr',
  'fx',
+ 'Ofx',
 # 'monNobs',
 # 'monStderr',
  'coordinate',
@@ -129,18 +130,18 @@ masterTargets = [
  'table_id'
  ] ;
 
-#%% Tables
-sha = '87218055a04f6e01c36039a75652d3824d1649ad'
+
 tableSource = [
  ['coordinate','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_coordinate.json'],
  ['formula_terms','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_formula_terms.json'],
  ['frequency','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_frequency.json'],
  ['fx','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_fx.json'],
+ ['Ofx','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Ofx.json'],
  ['grid_label','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_grid_label.json'],
  ['grids','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_grids.json'],
  ['nominal_resolution','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_nominal_resolution.json'],
-#['product','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_product.json'],
- ['product','https://raw.githubusercontent.com/PCMDI/input4MIPs-cmor-tables/master/input4MIPs_product.json'],
+ ['product','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_product.json'],
+#['product','https://raw.githubusercontent.com/PCMDI/input4MIPs-cmor-tables/master/input4MIPs_product.json'],
  ['Amon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Amon.json'],
  ['Lmon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Lmon.json'],
  ['Omon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Omon.json'],
@@ -221,6 +222,7 @@ Lmon = eval(Lmon)
 Omon = eval(Omon)
 SImon = eval(SImon)
 fx = eval(fx)
+Ofx = eval(Ofx)
 Aday = eval(Aday)
 A3hr = eval(A3hr)
 A6hr = eval(A6hr)
@@ -237,6 +239,7 @@ Lmon['Header']['realm']     = 'land'
 Omon['Header']['realm']     = 'ocean'
 SImon['Header']['realm']    = 'seaIce'
 fx['Header']['realm']       = 'fx'
+Ofx['Header']['realm']       = 'Ofx'
 A3hr['Header']['realm']     = 'atmos'
 A6hr['Header']['realm']     = 'atmos'
 Oday['Header']['realm']     = 'ocean'
@@ -248,6 +251,7 @@ Lmon['Header']['table_id']  = 'Table obs4MIPs_Lmon'
 Omon['Header']['table_id']  = 'Table obs4MIPs_Omon'
 SImon['Header']['table_id']  = 'Table obs4MIPs_SImon'
 fx['Header']['table_id']  = 'Table obs4MIPs_fx'
+Ofx['Header']['table_id']  = 'Table obs4MIPs_Ofx'
 Aday['Header']['table_id']  = 'Table obs4MIPs_Aday'
 A3hr['Header']['table_id']  = 'Table obs4MIPs_A3hr'
 A6hr['Header']['table_id']  = 'Table obs4MIPs_A6hr'
@@ -260,7 +264,11 @@ SIday['Header']['realm']    = 'seaIce'
 #realm = eval(realm)
 
 # Clean out modeling_realm
+<<<<<<< HEAD
 for jsonName in [Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,CFsubhr,A1hr,fx]:
+=======
+for jsonName in [Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx,Ofx]:
+>>>>>>> master
   try:
    jsonName['Header']["Conventions"] = "CF-1.11; ODS-2.5"
    jsonName['Header']["data_specs_version"] = "ODS-2.5"
@@ -281,7 +289,7 @@ for jsonName in masterTargets:
 
 '''
 # Set missing value for integer variables
-for tab in (Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr):
+for tab in (Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx,Ofx,monNobs,monStderr):
     tab['Header']['int_missing_value'] = str(-2**31)
 '''
 
@@ -780,9 +788,14 @@ table_id = [
   'obs4MIPs_Lmon',
   'obs4MIPs_Omon',
   'obs4MIPs_SImon',
+<<<<<<< HEAD
   'obs4MIPs_CFsubhr',
   'obs4MIPs_A1hr',
   'obs4MIPs_fx'
+=======
+  'obs4MIPs_fx',
+  'obs4MIPs_Ofx'
+>>>>>>> master
 ] ;
 
 #%% Validate entries
@@ -848,8 +861,13 @@ for jsonName in masterTargets:
                 dictToClean[key][value2[0]] = string
         vars()[jsonName] = dictToClean
     # Write file
+<<<<<<< HEAD
     if jsonName in ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','CFsubhr','A1hr','SImon',
                     'coordinate','formula_terms','fx','grids','monNobs',
+=======
+    if jsonName in ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon',
+                    'coordinate','formula_terms','fx','Ofx','grids','monNobs',
+>>>>>>> master
                     'monStderr']:
         outFile = ''.join(['../Tables/obs4MIPs_',jsonName,'.json'])
     elif jsonName == 'license_':
@@ -867,7 +885,7 @@ for jsonName in masterTargets:
         jsonDict = {}
         jsonDict[jsonName.replace('_','')] = eval(jsonName)
 
-    elif jsonName not in ['coordinate','formula_terms','fx','grids',
+    elif jsonName not in ['coordinate','formula_terms','fx','Ofx','grids',
                           'institution_id','source_id','Aday','Amon','A3hr','Lmon',
                           'Omon','CFsubhr','A1hr','SImon']: #,'product','realm','region']:
         jsonDict = {}
@@ -963,9 +981,16 @@ inputJson = ['frequency','grid_label','institution_id','license',
              'nominal_resolution','product','realm','region',
              'required_global_attributes','source_id','source_type','table_id', # These are controlled vocabs
              'coordinate','grids','formula_terms', # These are not controlled vocabs - rather lookup tables for CMOR
+<<<<<<< HEAD
              'Aday','Amon','Lmon','Omon','CFsubhr','A1hr','SImon','fx' # Update/add if new tables are generated
             ]
 tableList = ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon','CFsubhr','A1hr','coordinate','formula_terms','fx','grids','monNobs','monStderr']
+=======
+             'Aday','Amon','Lmon','Omon','SImon','fx','Ofx' # Update/add if new tables are generated
+            ]
+tableList = ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon','coordinate',
+             'formula_terms','fx','Ofx','grids','monNobs','monStderr']
+>>>>>>> master
 
 # Load dictionaries from local files
 CVJsonList = copy.deepcopy(inputJson)
@@ -980,6 +1005,9 @@ CVJsonList.remove('SImon')
 CVJsonList.remove('CFsubhr')
 CVJsonList.remove('A1hr')
 CVJsonList.remove('fx')
+CVJsonList.remove('Ofx')
+
+
 for count,CV in enumerate(inputJson):
     if CV in tableList:
         path = '../Tables/'

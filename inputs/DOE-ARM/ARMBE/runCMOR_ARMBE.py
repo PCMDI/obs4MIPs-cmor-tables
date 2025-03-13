@@ -68,6 +68,9 @@ for vr in vrs:
 
 # Open and read input netcdf file
   f = xr.open_dataset(inputFilePath,decode_times=False)
+
+  f = f.sel(time=slice(0,24)) # TEST 2 DAYS ONLY
+
   d = f[inputVarName]
   lat = f.lat.values 
   lon = f.lon.values 
@@ -85,6 +88,9 @@ for vr in vrs:
   cmor.dataset_json(inputJson)
   cmor.load_table(cmorTable)
   cmor.set_cur_dataset_attribute('original_history',f.attrs) 
+
+  cmor.set_cur_dataset_attribute("product","site-observations")
+
 
   cmorLat = cmor.axis("latitude1", coord_vals=np.array([lat]), units="degrees_north")
   cmorLon = cmor.axis("longitude1", coord_vals=np.array([lon]), units="degrees_east")

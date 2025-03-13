@@ -16,6 +16,7 @@ institution_id['institution_id']['DWD'] = 'Deutscher Wetterdienst, Offenbach 630
 institution_id['institution_id']['NCAR'] = 'National Center for Atmospheric Research, Boulder, CO, USA'
 institution_id['institution_id']['ESSO'] = 'Indian National Centre for Ocean Information Services'
 institution_id['institution_id']['MOHC'] = 'Met Office Hadley Centre'
+institution_id['institution_id']['MET-Norway'] = 'Norwegian Meteorological Institute'
 institution_id['institution_id']['INCOIS-NIO-IPSL'] =  'Joint research colloboration between INCOIS(India), NIO(India) and IPSL(France)'
 institution_id['institution_id']['ESPRI-IPSL'] =  'Ensemble de Services Pour la Recherche, Institut Pierre Simon Laplace (France)'
 institution_id['institution_id']['CNES'] = "Centre national d'etudes spatiales"
@@ -26,8 +27,6 @@ institution_id['institution_id']['JAXA'] = 'The Japan Aerospace Exploration Agen
 institution_id['institution_id']['UCI-CHRS'] = 'Center for Hydrometeorology and Remote Sensing'
 institution_id['institution_id']['DLR-BIRA'] = 'Deutsches Zentrum fur Luft- und Raumfahrt, Royal Belgian Institute for Space Aeronomy'
 institution_id['institution_id']['UCSD-SIO'] = 'University of California, San Diego, Scripps Institution of Oceanography'
+institution_id['institution_id']['UAH'] = 'University of Alcala, Spain' 
 institution_id['institution_id']['GloH2O'] = 'gloh2o.org'
 institution_id['institution_id']['OSU'] = 'Oregon State University, OR, USA'
-
-
-

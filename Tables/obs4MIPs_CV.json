@@ -21,13 +21,22 @@
                 "yrPt":"sampled yearly, at specified time point within the time period"
             },
             "version_metadata":{
+<<<<<<< HEAD
                 "CV_collection_modified":"Fri Aug 16 09:09:30 2024 -0700",
                 "CV_collection_version":"6.2.58.73",
+=======
+                "CV_collection_modified":"Fri Feb 28 14:15:44 2025 -0800",
+                "CV_collection_version":"6.2.58.77",
+>>>>>>> master
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "frequency_CV_modified":"Mon May 24 13:48:15 2021 00100",
                 "frequency_CV_note":"Update description of 3hr and 6hr frequencies",
                 "institution_id":"PCMDI",
+<<<<<<< HEAD
                 "previous_commit":"a37575e8ebe368e511a4c26f9a36472159bb5140",
+=======
+                "previous_commit":"6e872533fd1ac9980d000aba0ba16334bc9a88dd",
+>>>>>>> master
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -80,13 +89,22 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
+<<<<<<< HEAD
                 "CV_collection_modified":"Fri Aug 16 09:09:30 2024 -0700",
                 "CV_collection_version":"6.2.58.73",
+=======
+                "CV_collection_modified":"Fri Feb 28 14:15:44 2025 -0800",
+                "CV_collection_version":"6.2.58.77",
+>>>>>>> master
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
+<<<<<<< HEAD
                 "previous_commit":"a37575e8ebe368e511a4c26f9a36472159bb5140",
+=======
+                "previous_commit":"6e872533fd1ac9980d000aba0ba16334bc9a88dd",
+>>>>>>> master
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -103,6 +121,7 @@
             "INCOIS-NIO-IPSL":"Joint research colloboration between INCOIS(India), NIO(India) and IPSL(France)",
             "ImperialCollege":"Imperial College, London, UK",
             "JAXA":"The Japan Aerospace Exploration Agency",
+            "MET-Norway":"Norwegian Meteorological Institute",
             "MOHC":"Met Office Hadley Centre",
             "MRI":"Meteorological Research Institute, Tsukuba, Ibaraki 305-0052, Japan",
             "NASA-GSFC":"NASA Goddard Space Flight Center, Greenbelt MD, USA",
@@ -114,6 +133,7 @@
             "OSU":"Oregon State University, OR, USA",
             "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
             "RSS":"Remote Sensing Systems, Santa Rosa, CA USA",
+            "UAH":"University of Alcala, Spain",
             "UCI-CHRS":"Center for Hydrometeorology and Remote Sensing",
             "UCSD-SIO":"University of California, San Diego, Scripps Institution of Oceanography",
             "UReading":"University of Reading, Reading, UK",
@@ -139,13 +159,22 @@
                 "5000 km"
             ],
             "version_metadata":{
+<<<<<<< HEAD
                 "CV_collection_modified":"Fri Aug 16 09:09:30 2024 -0700",
                 "CV_collection_version":"6.2.58.73",
+=======
+                "CV_collection_modified":"Fri Feb 28 14:15:44 2025 -0800",
+                "CV_collection_version":"6.2.58.77",
+>>>>>>> master
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "institution_id":"PCMDI",
                 "nominal_resolution_CV_modified":"Tues Nov 15 16:04:00 2016 -0700",
                 "nominal_resolution_CV_note":"Issue141 durack1 update grid_resolution to nominal_resolution (#143)",
+<<<<<<< HEAD
                 "previous_commit":"a37575e8ebe368e511a4c26f9a36472159bb5140",
+=======
+                "previous_commit":"6e872533fd1ac9980d000aba0ba16334bc9a88dd",
+>>>>>>> master
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -447,6 +476,12 @@
                 "source":"ESACCI-CLOUD-MERIS-AATSR 2.0 (Cloud properties derived from MERIS and AATSR (aboard ENVISAT) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
+            },
+            "FireCCI-v5-1":{
+                "region":"global_land",
+                "source":"FireCCI 5.1 (2024): MODIS FireCCI Burned Area product",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"5.1"
             },
             "GERB-HR-ED01-1-0":{
                 "region":"global",
@@ -766,6 +801,12 @@
                 "source_type":"satellite_blended",
                 "source_version_number":"v2"
             },
+            "OSISAF-V3":{
+                "region":"global_ocean",
+                "source":"OSISAF/CCI SIC 3 (2022): Sea Ice Concentration (SIC) CDR v3 from EUMETSAT OSI SAF / ESA CCI",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"3"
+            },
             "PERSIANN-CDRv1r1":{
                 "region":"global",
                 "source":"PERSIANN CDRv1r1 (PERSIANN-CDRv1r1 (2019): Precipitation",
@@ -955,9 +996,14 @@
             "obs4MIPs_Lmon",
             "obs4MIPs_Omon",
             "obs4MIPs_SImon",
+<<<<<<< HEAD
             "obs4MIPs_CFsubhr",
             "obs4MIPs_A1hr",
             "obs4MIPs_fx"
+=======
+            "obs4MIPs_fx",
+            "obs4MIPs_Ofx"
+>>>>>>> master
         ]
     }
 }
