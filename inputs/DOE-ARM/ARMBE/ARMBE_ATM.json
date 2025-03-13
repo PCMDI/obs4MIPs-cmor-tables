@@ -20,7 +20,7 @@
     "product":"observations",
     "references":"Xie, Shaocheng., and 16-coauthors, 2010: ARM climate modeling best estimate data, Bull. Amer. Meteor. Soc, 91, 13–20 , doi:10.1175/2009BAMS2891.1.",
     "region":"north_america",
-    "source_id":"SITE-SGP-ARMBE-atm-c1-1-8",
+    "source_id":"ARMBE-atm-c1-1-8",
     "site_id":"SGP",
     "site_location":"Southern Great Plains",
     "title":"ARM Best Estimate (ARMBE) Product, atmospheric profiles: armbeatm",
