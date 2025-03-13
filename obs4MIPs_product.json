@@ -2,6 +2,7 @@
     "product":[
         "derived",
         "observations",
+	"site-observations",
         "reanalysis"
     ]
 }
