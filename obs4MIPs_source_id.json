@@ -1901,7 +1901,7 @@
             "source_version_number":"1.0"
         },
         "WECANN-1-0":{
-            "institution_id":"Columbia University",
+            "institution_id":"ColumbiaU",
             "region":"global_land",
             "release_year":"2018",
             "source_description":"Water, Energy, and Carbon with Artificial Neural Networks",
