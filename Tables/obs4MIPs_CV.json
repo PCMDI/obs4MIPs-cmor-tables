@@ -91,6 +91,7 @@
             }
         },
         "institution_id":{
+            "ARCCSS":"ARC Centre of Excellence for Climate System Science, NSW, Australia,",
             "CEDA":"Centre for Environmental Data Analysis, RAL Space, STFC Rutherford Appleton Laboratory, Chilton, Didcot; National Centre for Earth Observation, UK",
             "CNES":"Centre national d'etudes spatiales",
             "ColumbiaU":"Columbia University, NY, USA",
@@ -153,8 +154,7 @@
         },
         "product":[
             "derived",
-	    "site-observations",
-	    "observations",
+            "observations",
             "reanalysis"
         ],
         "realm":[
@@ -367,6 +367,12 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
             },
+            "DAI-1-0":{
+                "region":"global",
+                "source":"DAI 1.0 (2017): Dai and Trenberth Global River Flow and Continental Discharge Dataset",
+                "source_type":"gridded_insitu",
+                "source_version_number":"1.0"
+            },
             "ERA-20C":{
                 "region":"global",
                 "source":"ECMWF-ERA-20C 1.0 (2014): ECMWF - ERA-20C (European ReAnalysis 1900-2010)",
@@ -438,6 +444,12 @@
                 "source":"ESACCI-CLOUD-MERIS-AATSR 2.0 (2017): Cloud properties derived from MERIS and AATSR (aboard ENVISAT) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
+            },
+            "FLUXNET2015-1-0":{
+                "region":"global_land",
+                "source":"FLUXNET2015 1.0 (2020): FLUXNET Community Product",
+                "source_type":"gridded_insitu",
+                "source_version_number":"1.0"
             },
             "FireCCI-v5-1":{
                 "region":"global_land",
@@ -535,6 +547,12 @@
                 "source_type":"satellite_blended",
                 "source_version_number":"6.0"
             },
+            "HWSD-2-0":{
+                "region":"global_land",
+                "source":"HWSD 2.0 (2023): Harmonized World Soil Database version 2",
+                "source_type":"gridded_insitu",
+                "source_version_number":"2.0"
+            },
             "HadISST-1-1":{
                 "region":"global_ocean",
                 "source":"HadISST-1-1 1-1 (2016): HadISST 1.1 monthly average sea surface temperature",
@@ -618,6 +636,12 @@
                 "source":"MRI-JRA25 N/A (2002): JRA25 1.0 (2002): JRA25 (Japanese ReAnalysis 1957-2002)",
                 "source_type":"reanalysis",
                 "source_version_number":"N/A"
+            },
+            "LORA-1-1":{
+                "region":"global_land",
+                "source":"LORA 1.1 (2018): Linear Optimal Runoff Aggregate",
+                "source_type":"gridded_insitu",
+                "source_version_number":"1.1"
             },
             "MODIS-1-0":{
                 "region":"global",

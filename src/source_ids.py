@@ -27,6 +27,54 @@ source_id['source_id'][key]['region'] = 'global_land'
 source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] = ['gpp', 'hfls', 'hfss']
 
+key = 'DAI-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'DAI'
+source_id['source_id'][key]['source_label'] = 'DAI'
+source_id['source_id'][key]['release_year'] = '2017'
+source_id['source_id'][key]['source_description'] = 'Dai and Trenberth Global River Flow and Continental Discharge Dataset'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'UCAR/NCAR - RDA'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['mrro']
+
+key = 'LORA-1-1'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'LORA'
+source_id['source_id'][key]['source_label'] = 'LORA'
+source_id['source_id'][key]['release_year'] = '2018'
+source_id['source_id'][key]['source_description'] = 'Linear Optimal Runoff Aggregate'
+source_id['source_id'][key]['source_version_number'] = '1.1'
+source_id['source_id'][key]['institution_id'] = 'ARCCSS'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['mrro']
+
+key = 'HWSD-2-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'HWSD'
+source_id['source_id'][key]['source_label'] = 'HWSD'
+source_id['source_id'][key]['release_year'] = '2023'
+source_id['source_id'][key]['source_description'] = 'Harmonized World Soil Database version 2'
+source_id['source_id'][key]['source_version_number'] = '2.0'
+source_id['source_id'][key]['institution_id'] = 'FAO'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['cSoil']
+
+key = 'FLUXNET2015-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'FLUXNET2015'
+source_id['source_id'][key]['source_label'] = 'FLUXNET2015'
+source_id['source_id'][key]['release_year'] = '2020'
+source_id['source_id'][key]['source_description'] = 'FLUXNET Community Product'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'FLUXNET'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['gpp']
+
 key = 'PRISM-M3'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'PRISM'

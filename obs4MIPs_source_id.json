@@ -316,6 +316,21 @@
             ],
             "source_version_number":"2.0"
         },
+        "DAI-1-0":{
+            "institution_id":"UCAR/NCAR - RDA",
+            "region":[
+                "global"
+            ],
+            "release_year":"2017",
+            "source_description":"Dai and Trenberth Global River Flow and Continental Discharge Dataset",
+            "source_label":"DAI",
+            "source_name":"DAI",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "mrro"
+            ],
+            "source_version_number":"1.0"
+        },
         "ERA-20C":{
             "institution_id":"ECMWF",
             "region":[
@@ -557,6 +572,21 @@
                 "pctCCI"
             ],
             "source_version_number":"2.0"
+        },
+        "FLUXNET2015-1-0":{
+            "institution_id":"FLUXNET",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2020",
+            "source_description":"FLUXNET Community Product",
+            "source_label":"FLUXNET2015",
+            "source_name":"FLUXNET2015",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "gpp"
+            ],
+            "source_version_number":"1.0"
         },
         "FireCCI-v5-1":{
             "institution_id":"UAH",
@@ -811,6 +841,21 @@
             ],
             "source_version_number":"6.0"
         },
+        "HWSD-2-0":{
+            "institution_id":"FAO",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2023",
+            "source_description":"Harmonized World Soil Database version 2",
+            "source_label":"HWSD",
+            "source_name":"HWSD",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "cSoil"
+            ],
+            "source_version_number":"2.0"
+        },
         "HadISST-1-1":{
             "institution_id":"MOHC",
             "region":[
@@ -1037,6 +1082,21 @@
                 "zg"
             ],
             "source_version_number":"N/A"
+        },
+        "LORA-1-1":{
+            "institution_id":"ARCCSS",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2018",
+            "source_description":"Linear Optimal Runoff Aggregate",
+            "source_label":"LORA",
+            "source_name":"LORA",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "mrro"
+            ],
+            "source_version_number":"1.1"
         },
         "MODIS-1-0":{
             "institution_id":"NASA-GSFC",
