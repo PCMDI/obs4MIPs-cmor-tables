@@ -154,6 +154,7 @@
         },
         "product":[
             "derived",
+            "site-observations",
             "observations",
             "reanalysis"
         ],
@@ -948,6 +949,12 @@
                 "source":"WECANN 1.0 (2018): Water, Energy, and Carbon with Artificial Neural Networks",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.0"
+            },
+            "WOA2023":{
+                "region":"global_ocean",
+                "source":"WOA 2023 (2024): World Ocean Atlas",
+                "source_type":"gridded_insitu",
+                "source_version_number":"2023"
             },
             "livneh-1-0":{
                 "region":"north_america",

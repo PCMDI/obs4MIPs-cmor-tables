@@ -111,6 +111,18 @@ source_id['source_id'][key]['region'] = ['global_land']
 source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] = ['burntFractionAll']
 
+key = 'WOA2023'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'WOA'
+source_id['source_id'][key]['source_label'] = 'WOA'
+source_id['source_id'][key]['release_year'] = '2024'
+source_id['source_id'][key]['source_description'] = 'World Ocean Atlas'
+source_id['source_id'][key]['source_version_number'] = '2023'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['global_ocean']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['so','thetao']
+
 key = 'livneh-1-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'livneh'
