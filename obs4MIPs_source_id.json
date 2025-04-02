@@ -605,6 +605,22 @@
             ],
             "source_version_number":"HR_ED01_1.1"
         },
+        "GLODAP-2-2016b":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2016",
+            "source_description":"Global Ocean Data Analysis Project Version 2",
+            "source_label":"GLODAP",
+            "source_name":"GLODAP",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "so",
+                "thetao"
+            ],
+            "source_version_number":"2.2016b"
+        },
         "GNSS-RO-1-3":{
             "institution_id":"NASA-JPL",
             "region":[
@@ -1821,6 +1837,21 @@
                 "tauu",
                 "tauv",
                 "ts"
+            ],
+            "source_version_number":"1.0"
+        },
+        "WECANN-1-0":{
+            "institution_id":"Columbia University",
+            "region":"global_land",
+            "release_year":"2018",
+            "source_description":"Water, Energy, and Carbon with Artificial Neural Networks",
+            "source_label":"WECANN",
+            "source_name":"WECANN",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "gpp",
+                "hfls",
+                "hfss"
             ],
             "source_version_number":"1.0"
         },
