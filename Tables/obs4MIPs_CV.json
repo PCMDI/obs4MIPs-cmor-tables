@@ -153,8 +153,7 @@
         },
         "product":[
             "derived",
-	    "site-observations",
-	    "observations",
+            "observations",
             "reanalysis"
         ],
         "realm":[
