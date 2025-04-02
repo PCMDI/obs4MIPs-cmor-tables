@@ -1915,6 +1915,22 @@
             ],
             "source_version_number":"1.0"
         },
+        "WOA2023":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2024",
+            "source_description":"World Ocean Atlas",
+            "source_label":"WOA",
+            "source_name":"WOA",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "so",
+                "thetao"
+            ],
+            "source_version_number":"2023"
+        },
         "livneh-1-0":{
             "institution_id":"NOAA-ESRL-PSD",
             "region":[
