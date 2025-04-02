@@ -1,5 +1,31 @@
 source_id = {}
+
 source_id['source_id'] = {}
+
+
+key = 'GLODAP-2-2016b'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'GLODAP'
+source_id['source_id'][key]['source_label'] = 'GLODAP'
+source_id['source_id'][key]['release_year'] = '2016'
+source_id['source_id'][key]['source_description'] = 'Global Ocean Data Analysis Project Version 2'
+source_id['source_id'][key]['source_version_number'] = '2.2016b'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['global_ocean']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['so', 'thetao']
+
+key = 'WECANN-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'WECANN'
+source_id['source_id'][key]['source_label'] = 'WECANN'
+source_id['source_id'][key]['release_year'] = '2018'
+source_id['source_id'][key]['source_description'] = 'Water, Energy, and Carbon with Artificial Neural Networks'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'Columbia University'
+source_id['source_id'][key]['region'] = 'global_land'
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['gpp', 'hfls', 'hfss']
 
 key = 'PRISM-M3'
 source_id['source_id'][key] = {}
