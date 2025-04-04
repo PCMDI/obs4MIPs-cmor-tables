@@ -23,6 +23,7 @@ f = xr.open_dataset(inputFilePathbgn,decode_times=False, decode_cf=False)
 f = f.bounds.add_missing_bounds(axes=['X', 'Y']) # ONLY IF BOUNDS NOT IN INPUT FILE
 # f = f.bounds.add_bounds('T') # ONLY IF BOUNDS NOT IN INPUT FILE
 d = f[inputVarName].values
+d = np.where(np.greater(d,1.e20),1.e20,d)
 vunits = f[inputVarName].units
 
 ### Initialize and run CMOR

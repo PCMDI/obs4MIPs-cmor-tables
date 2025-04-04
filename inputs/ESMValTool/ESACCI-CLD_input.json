@@ -7,6 +7,7 @@
         "data_specs_version":"ODS-2.5",
 
     	"contact":"contact.cloudcci@dwd.de",
+	"calendar":"standard",
 	"dataset_contributor":"ESMValTool (Axel Lauer and Lisa Bock), Min Xu and Dora Hegedus acknowledged for the preparation of this dataset for obs4MIPs.",
     	"doi":"",
 	"frequency":"mon",
@@ -19,6 +20,7 @@
     	"product":"observations",
 	"realm":"atmos",
 	"region":"global",
+
    	"references":"",
 	"source_id":"ESACCI-CLOUD-AVHRR-AMPM-3-0",
  	"source_label":"ESACCI-CLOUD-AVHRR-AMPM",
@@ -26,13 +28,12 @@
 	"source_type":"satellite_merged",
 	"source_version_number":"3.0",
 	"source_data_url": "https://public.satproj.klima.dwd.de/data/ESA_Cloud_CCI/CLD_PRODUCTS/v3.0/",
-	"variable_id":"clt",
-	"variant_info":"CMOR-ized product prepared by DLR",
-	"variant_label":"DLR",
-	"calendar":"gregorian",
-        "mip_era":"REF",
+	"variant_info":"Data prepared for use with ESMValTool made obs4MIPs-compliant (ODS2.5)",
+	"variant_label":"ESMValTool-REF",
 	
 	"outpath":"/p/user_pub/PCMDIobs/",
 	"output_file_template":"<variable_id><frequency><source_id><variant_label><grid_label>",
 	"output_path_template":"<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>",
+	"mip_era":"CMIP6"
+
 }
