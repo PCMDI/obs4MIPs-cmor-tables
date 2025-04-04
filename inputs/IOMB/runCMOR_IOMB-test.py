@@ -7,11 +7,10 @@ import cftime
 import sys,os,glob
 
 #%% User provided input 
-cmorTable = '../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx
+cmorTable = '../../Tables/obs4MIPs_Omon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx
 
 #EXAMPLES with command line input
-# python -i runCMOR_ILAMB-test.py hfls WECANN_input.json /p/user_pub/PCMDIobs/obs4MIPs_input/ILAMB/ILAMBREF/hfls/WECANN/hfls.nc
-# python -i runCMOR_IOMB-test.py thetao /p/user_pub/PCMDIobs/obs4MIPs_input/IOMB/IOMBREF/WOA2018/thetao.nc
+# python -i runCMOR_IOMB-test.py thetao WOA2018_input.json /p/user_pub/PCMDIobs/obs4MIPs_input/IOMB/IOMBREF/WOA2018/thetao.nc
 
 command_line  = True
 if command_line == True:
@@ -35,12 +34,12 @@ cmor.load_table(cmorTable)
 cmorLat = cmor.axis("latitude", coord_vals=f.lat[:].values, cell_bounds=f.lat_bnds.values, units="degrees_north")
 cmorLon = cmor.axis("longitude", coord_vals=f.lon[:].values, cell_bounds=f.lon_bnds.values, units="degrees_east")
 
-cmorTime = cmor.axis("time", coord_vals=f.time.values, cell_bounds=f.time_bounds.values, units= f.time.units)
+cmorTime = cmor.axis("time", coord_vals=f.time.values, cell_bounds=f.time_bnds.values, units= f.time.units)
 axes = [cmorTime, cmorLat, cmorLon]
 
 ############ DATASET SPECIFIC
 if inputVarName in ['thetao']:
-    cmorLev = cmor.axis('plev27',coord_vals=f.plev.values,units = 'm')
+    cmorLev = cmor.axis('depth-WOA2018',coord_vals=f.depth.values,cell_bounds=f.depth_bnds.values, units = 'm')
     axes = [cmorTime, cmorLev, cmorLat, cmorLon]
 ############
 

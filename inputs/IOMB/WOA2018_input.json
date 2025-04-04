@@ -27,8 +27,8 @@
 	"source_version_number":"2018",
 	"source_data_url": "https://www.ncei.noaa.gov/access/world-ocean-atlas-2018/",
 	"title": "nergy, and Carbon with Artificial Neural Networks (WECANN)",
-	"variant_info":"ILAMB-ready data made obs4MIPs-compliant (ODS2.5)",
-	"variant_label":"ILAMB-REF",
+	"variant_info":"IOMB-ready data made obs4MIPs-compliant (ODS2.5)",
+	"variant_label":"IOMB-REF",
 	"calendar":"standard",
         "mip_era":"CMIP6",
 	
