@@ -950,6 +950,12 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.0"
             },
+            "WOA2018":{
+                "region":"global_ocean",
+                "source":"WOA 2018 (2018): World Ocean Atlas",
+                "source_type":"gridded_insitu",
+                "source_version_number":"2018"
+            },
             "WOA2023":{
                 "region":"global_ocean",
                 "source":"WOA 2023 (2024): World Ocean Atlas",
