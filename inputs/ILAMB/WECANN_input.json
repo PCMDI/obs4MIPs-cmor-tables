@@ -14,7 +14,7 @@
 	"frequency":"mon",
 	"grid":"1.0 x 1.0 degree latitude x longitude",
 	"grid_label":"gn",
-	"license":"Data in this file produced by DWD is licensed under a Creative Commons Attribution- 4.0 International (CC BY 4.0) License (https://creativecommons.org/licenses/).",
+	"license":"Data in this file produced by ILAMB is licensed under a Creative Commons Attribution- 4.0 International (CC BY 4.0) License (https://creativecommons.org/licenses/).",
 	"institution_id":"Columbia University",
 	"institution":"Columbia University",
 	"nominal_resolution":"1x1 degree",
