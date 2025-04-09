@@ -23,7 +23,7 @@ source_id['source_id'][key]['release_year'] = '2018'
 source_id['source_id'][key]['source_description'] = 'Water, Energy, and Carbon with Artificial Neural Networks'
 source_id['source_id'][key]['source_version_number'] = '1.0'
 source_id['source_id'][key]['institution_id'] = 'ColumbiaU'
-source_id['source_id'][key]['region'] = 'global_land'
+source_id['source_id'][key]['region'] = ['global_land']
 source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] = ['gpp', 'hfls', 'hfss']
 
