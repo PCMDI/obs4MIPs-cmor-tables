@@ -945,7 +945,7 @@
                 "source_version_number":"1.0"
             },
             "WECANN-1-0":{
-                "region":"g, l, o, b, a, l, _, l, a, n, d",
+                "region":"global_land",
                 "source":"WECANN 1.0 (2018): Water, Energy, and Carbon with Artificial Neural Networks",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.0"
@@ -963,19 +963,19 @@
                 "source_version_number":"1.0"
             },
             "livneh-unsplit-1-0":{
-                "region":"n, o, r, t, h, _, a, m, e, r, i, c, a",
+                "region":"north_america",
                 "source":"livneh_unsplit 1.0 (2021): Livneh daily CONUS unsplit",
                 "source_type":"gridded_insitu",
                 "source_version_number":"1.0"
             },
             "nClimGrid-Daily-1-0":{
-                "region":"n, o, r, t, h, _, a, m, e, r, i, c, a",
+                "region":"north_america",
                 "source":"nClimGrid-Daily-1-0 1.0 (2014): NOAA nClimGrid-Daily",
                 "source_type":"gridded_insitu",
                 "source_version_number":"1.0"
             },
             "nClimGrid-Monthly-1-0":{
-                "region":"n, o, r, t, h, _, a, m, e, r, i, c, a",
+                "region":"north_america",
                 "source":"nClimGrid-Monthly-1-0 1.0 (2014): NOAA nClimGrid-Monthly",
                 "source_type":"gridded_insitu",
                 "source_version_number":"1.0"
