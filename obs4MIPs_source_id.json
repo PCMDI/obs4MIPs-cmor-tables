@@ -1902,7 +1902,9 @@
         },
         "WECANN-1-0":{
             "institution_id":"ColumbiaU",
-            "region":"global_land",
+            "region":[
+                "global_land"
+            ],
             "release_year":"2018",
             "source_description":"Water, Energy, and Carbon with Artificial Neural Networks",
             "source_label":"WECANN",
@@ -1951,7 +1953,9 @@
         },
         "livneh-unsplit-1-0":{
             "institution_id":"UCSD-SIO",
-            "region":"north_america",
+            "region":[
+                "north_america"
+            ],
             "release_year":"2021",
             "source_description":"Livneh daily CONUS unsplit",
             "source_label":"livneh_unsplit",
@@ -1967,7 +1971,9 @@
         },
         "nClimGrid-Daily-1-0":{
             "institution_id":"NOAA-NCEI",
-            "region":"north_america",
+            "region":[
+                "north_america"
+            ],
             "release_year":"2014",
             "source_description":"NOAA nClimGrid-Daily",
             "source_id":"nClimGrid-Daily-1-0",
@@ -1984,7 +1990,9 @@
         },
         "nClimGrid-Monthly-1-0":{
             "institution_id":"NOAA-NCEI",
-            "region":"north_america",
+            "region":[
+                "north_america"
+            ],
             "release_year":"2014",
             "source_description":"NOAA nClimGrid-Monthly",
             "source_id":"nClimGrid-Monthly-1-0",

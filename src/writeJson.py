@@ -1017,6 +1017,10 @@ for count,CV in enumerate(CVJsonList):
             obs4MIPs_CV['CV']['source_id'][key]['source_version_number'] = values['source_version_number']
             if len(values['region']) == 1: obs4MIPs_CV['CV']['source_id'][key]['region'] = values['region'][0]
             if len(values['region']) > 1: obs4MIPs_CV['CV']['source_id'][key]['region'] = ", ".join(values['region'])
+            
+            print(values['source_name'],obs4MIPs_CV['CV']['source_id'][key]['region'])
+
+
 #           obs4MIPs_CV['CV']['source_id'][key]['region'] = ', '.join(str(a) for a in values['region'])
 #           obs4MIPs_CV['CV']['source_id'][key]['region'] = values['region']
             obs4MIPs_CV['CV']['source_id'][key]['source'] = string
