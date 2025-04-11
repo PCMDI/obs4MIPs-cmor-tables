@@ -492,7 +492,7 @@
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
             "out_name":"hfns",
-            "positive":"",
+            "positive":"up",
             "standard_name":"Net_Surface_Energy",
             "type":"real",
             "units":"W m-2",
