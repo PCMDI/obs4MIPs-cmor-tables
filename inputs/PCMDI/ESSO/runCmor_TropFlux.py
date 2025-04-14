@@ -23,7 +23,7 @@ inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/INCOIS-NIO-IPSL/TropFlux
 inputVarName = ['swr','lwr','q2m','ws','t2m','sst','netflux','lhf','shf','taux','tauy']
 outputVarName = ['rss','rls','huss','sfcWind','tas','ts','hfns','hfls','hfns','tauu','tauv']
 outputUnits = ['W m-2','W m-2','1','m s-1','K','K','W m-2','W m-2','W m-2','Pa','Pa']
-outpos = ['','','','','up','up','up','down','down']     #,'','up','down','down','up','','','','down','down','']
+outpos = ['up','up','','','','','up','up','up','down','down']     #,'','up','down','down','up','','','','down','down','']
 ####['W m-2',"W m-2","Pa",'kg m-2 s-1','W m-2','W m-2','W m-2','W m-2',"m s-1",'m s-1','m s-1','Pa','Pa','K]]
 
 for fi in range(len(inputVarName)):
@@ -34,7 +34,7 @@ for fi in range(len(inputVarName)):
 
   d = f[inputVarName[fi]]
   if outputVarName[fi] in ['tas','ts']: d = np.add(d,273.15)
-  if outputVarName[fi] in ['hfss','hfls','hfns']: 
+  if outputVarName[fi] in ['hfss','hfls','hfns','rss','rls']: 
       d = np.multiply(d,-1.)
       pos = outpos[fi]
 
@@ -72,7 +72,7 @@ for fi in range(len(inputVarName)):
 
   if outputVarName[fi] in ['tas','ts','sfcWind','huss']:
     varid = cmor.variable(outputVarName[fi],outputUnits[fi],cmoraxes,missing_value=1.e20)
-  if outputVarName[fi] in ['hfls','hfss','hfns','tauu','tauv']:
+  if outputVarName[fi] in ['hfls','hfss','hfns','tauu','tauv','rss','rls']:
     varid = cmor.variable(outputVarName[fi],outputUnits[fi],cmoraxes,missing_value=1.e20,positive = pos)
 
   values  = np.array(d[:],np.float32)
