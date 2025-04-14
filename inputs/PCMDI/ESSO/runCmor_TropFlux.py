@@ -20,9 +20,9 @@ def extract_date(ds):   # preprocessing function when opening multiple files
 cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'TropFlux-input.json' ; # Update contents of this file to set your global_attributes
 inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/INCOIS-NIO-IPSL/TropFlux/monthly/data/'
-inputVarName = ['q2m','ws','t2m','sst','netflux','lhf','shf','taux','tauy']
-outputVarName = ['huss','sfcWind','tas','ts','hfns','hfls','hfns','tauu','tauv']
-outputUnits = ['1','m s-1','K','K','W m-2','W m-2','W m-2','Pa','Pa']
+inputVarName = ['swr','lwr','q2m','ws','t2m','sst','netflux','lhf','shf','taux','tauy']
+outputVarName = ['rss','rls','huss','sfcWind','tas','ts','hfns','hfls','hfns','tauu','tauv']
+outputUnits = ['W m-2','W m-2','1','m s-1','K','K','W m-2','W m-2','W m-2','Pa','Pa']
 outpos = ['','','','','up','up','up','down','down']     #,'','up','down','down','up','','','','down','down','']
 ####['W m-2',"W m-2","Pa",'kg m-2 s-1','W m-2','W m-2','W m-2','W m-2',"m s-1",'m s-1','m s-1','Pa','Pa','K]]
 
