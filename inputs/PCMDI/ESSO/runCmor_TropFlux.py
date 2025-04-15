@@ -23,8 +23,7 @@ inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/INCOIS-NIO-IPSL/TropFlux
 inputVarName = ['swr','lwr','q2m','ws','t2m','sst','netflux','lhf','shf','taux','tauy']
 outputVarName = ['rss','rls','huss','sfcWind','tas','ts','hfns','hfls','hfns','tauu','tauv']
 outputUnits = ['W m-2','W m-2','1','m s-1','K','K','W m-2','W m-2','W m-2','Pa','Pa']
-outpos = ['up','up','','','','','up','up','up','down','down']     #,'','up','down','down','up','','','','down','down','']
-####['W m-2',"W m-2","Pa",'kg m-2 s-1','W m-2','W m-2','W m-2','W m-2',"m s-1",'m s-1','m s-1','Pa','Pa','K]]
+outpos = ['down','up','','','','','up','up','up','down','down']   
 
 for fi in range(len(inputVarName)):
 # print(fi, inputVarName[fi])
@@ -34,8 +33,8 @@ for fi in range(len(inputVarName)):
 
   d = f[inputVarName[fi]]
   if outputVarName[fi] in ['tas','ts']: d = np.add(d,273.15)
-  if outputVarName[fi] in ['hfss','hfls','hfns','rss','rls']: 
-      d = np.multiply(d,-1.)
+  if outputVarName[fi] in ['hfss','hfls','hfns','rss','rls','tauv','tauu']: 
+      if outputVarName[fi] in ['hfss','hfls','hfns','rls','rss']:d = np.multiply(d,-1.)
       pos = outpos[fi]
 
   lat = f.latitude.values
@@ -53,17 +52,13 @@ for fi in range(len(inputVarName)):
 
   time_adj,time_bounds_adj,tunits = monthly_times(datum, yrs, datum_start_month=datummnth, start_month=start_month, end_month=end_month)
 
-# w = sys.stdin.readline()
-
   f = f.bounds.add_missing_bounds(axes=['X', 'Y']) # ONLY IF BOUNDS NOT IN INPUT FILE
   f = f.bounds.add_bounds('T')
-# tunits = "days since 1950-01-01 00:00:00"
 
 #%% Initialize and run CMOR - more information see https://cmor.llnl.gov/mydoc_cmor3_api/
   cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4,logfile= inputVarName[fi] + '_cmorLog.txt')
   cmor.dataset_json(inputJson)
   cmor.load_table(cmorTable)
-#cmor.set_cur_dataset_attribute('history',f.history) ; # Force input file attribute as history
 
   cmorLat = cmor.axis("latitude", coord_vals=lat[:], cell_bounds=f.latitude_bnds.values, units="degrees_north")
   cmorLon = cmor.axis("longitude", coord_vals=lon[:], cell_bounds=f.longitude_bnds.values, units="degrees_east")
