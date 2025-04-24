@@ -1083,6 +1083,21 @@
             ],
             "source_version_number":"N/A"
         },
+        "LAI4g-1-2":{
+            "institution_id":"PKU",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2023",
+            "source_description":"The Fourth Generation Global Inventory Modeling and Mapping Studies Leaf Area Index",
+            "source_label":"LAI4g",
+            "source_name":"LAI4g",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "lai"
+            ],
+            "source_version_number":"1.2"
+        },
         "LORA-1-1":{
             "institution_id":"ARCCSS",
             "region":[
