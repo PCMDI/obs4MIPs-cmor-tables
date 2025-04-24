@@ -31,4 +31,5 @@ institution_id['institution_id']['UAH'] = 'University of Alcala, Spain'
 institution_id['institution_id']['GloH2O'] = 'gloh2o.org'
 institution_id['institution_id']['OSU'] = 'Oregon State University, OR, USA'
 institution_id['institution_id']['ColumbiaU'] = 'Columbia University, NY, USA'
+institution_id['institution_id']['PKU'] = 'Peking University, Beijing, China'
 

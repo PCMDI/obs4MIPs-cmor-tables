@@ -2,6 +2,17 @@ source_id = {}
 
 source_id['source_id'] = {}
 
+key = 'LAI4g-1-2'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'LAI4g'
+source_id['source_id'][key]['source_label'] = 'LAI4g'
+source_id['source_id'][key]['release_year'] = '2023'
+source_id['source_id'][key]['source_description'] = 'The Fourth Generation Global Inventory Modeling and Mapping Studies Leaf Area Index'
+source_id['source_id'][key]['source_version_number'] = '1.2'
+source_id['source_id'][key]['institution_id'] = 'PKU'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['lai']
 
 key = 'GLODAP-2-2016b'
 source_id['source_id'][key] = {}

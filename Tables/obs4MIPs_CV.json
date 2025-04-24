@@ -21,13 +21,13 @@
                 "yrPt":"sampled yearly, at specified time point within the time period"
             },
             "version_metadata":{
-                "CV_collection_modified":"Fri Apr 11 10:41:49 2025 -0700",
-                "CV_collection_version":"6.2.58.78",
+                "CV_collection_modified":"Fri Apr 18 16:28:35 2025 -0700",
+                "CV_collection_version":"6.2.58.79",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "frequency_CV_modified":"Mon May 24 13:48:15 2021 00100",
                 "frequency_CV_note":"Update description of 3hr and 6hr frequencies",
                 "institution_id":"PCMDI",
-                "previous_commit":"b24a277540237638751a2e89cd57cbd1d42a57f6",
+                "previous_commit":"1e8961cb140d3246c70cdc24d2cc8404570de5dc",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -80,13 +80,13 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-                "CV_collection_modified":"Fri Apr 11 10:41:49 2025 -0700",
-                "CV_collection_version":"6.2.58.78",
+                "CV_collection_modified":"Fri Apr 18 16:28:35 2025 -0700",
+                "CV_collection_version":"6.2.58.79",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
-                "previous_commit":"b24a277540237638751a2e89cd57cbd1d42a57f6",
+                "previous_commit":"1e8961cb140d3246c70cdc24d2cc8404570de5dc",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -115,6 +115,7 @@
             "NOAA-NCEI":"NOAA National Centers for Environmental Information, Asheville, NC 28801, USA",
             "OSU":"Oregon State University, OR, USA",
             "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
+            "PKU":"Peking University, Beijing, China",
             "RSS":"Remote Sensing Systems, Santa Rosa, CA USA",
             "UAH":"University of Alcala, Spain",
             "UCI-CHRS":"Center for Hydrometeorology and Remote Sensing",
@@ -142,13 +143,13 @@
                 "5000 km"
             ],
             "version_metadata":{
-                "CV_collection_modified":"Fri Apr 11 10:41:49 2025 -0700",
-                "CV_collection_version":"6.2.58.78",
+                "CV_collection_modified":"Fri Apr 18 16:28:35 2025 -0700",
+                "CV_collection_version":"6.2.58.79",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "institution_id":"PCMDI",
                 "nominal_resolution_CV_modified":"Tues Nov 15 16:04:00 2016 -0700",
                 "nominal_resolution_CV_note":"Issue141 durack1 update grid_resolution to nominal_resolution (#143)",
-                "previous_commit":"b24a277540237638751a2e89cd57cbd1d42a57f6",
+                "previous_commit":"1e8961cb140d3246c70cdc24d2cc8404570de5dc",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -637,6 +638,12 @@
                 "source":"MRI-JRA25 N/A (2002): JRA25 1.0 (2002): JRA25 (Japanese ReAnalysis 1957-2002)",
                 "source_type":"reanalysis",
                 "source_version_number":"N/A"
+            },
+            "LAI4g-1-2":{
+                "region":"global_land",
+                "source":"LAI4g 1.2 (2023): The Fourth Generation Global Inventory Modeling and Mapping Studies Leaf Area Index",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"1.2"
             },
             "LORA-1-1":{
                 "region":"global_land",
