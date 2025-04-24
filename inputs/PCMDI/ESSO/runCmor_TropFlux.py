@@ -21,9 +21,9 @@ cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,f
 inputJson = 'TropFlux-input.json' ; # Update contents of this file to set your global_attributes
 inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/INCOIS-NIO-IPSL/TropFlux/monthly/data/'
 inputVarName = ['swr','lwr','q2m','ws','t2m','sst','netflux','lhf','shf','taux','tauy']
-outputVarName = ['rss','rls','huss','sfcWind','tas','ts','hfns','hfls','hfns','tauu','tauv']
+outputVarName = ['rss','rls','huss','sfcWind','tas','ts','hfns','hfls','hfss','tauu','tauv']
 outputUnits = ['W m-2','W m-2','1','m s-1','K','K','W m-2','W m-2','W m-2','Pa','Pa']
-outpos = ['down','up','','','','','up','up','up','down','down']   
+outpos = ['down','up','','','','','down','up','up','down','down']   
 
 for fi in range(len(inputVarName)):
 # print(fi, inputVarName[fi])
@@ -34,7 +34,7 @@ for fi in range(len(inputVarName)):
   d = f[inputVarName[fi]]
   if outputVarName[fi] in ['tas','ts']: d = np.add(d,273.15)
   if outputVarName[fi] in ['hfss','hfls','hfns','rss','rls','tauv','tauu']: 
-      if outputVarName[fi] in ['hfss','hfls','hfns','rls','rss']:d = np.multiply(d,-1.)
+      if outputVarName[fi] in ['hfns','hfss','hfls','rls','rss']:d = np.multiply(d,-1.)
       pos = outpos[fi]
 
   lat = f.latitude.values
