@@ -108,6 +108,7 @@ masterTargets = [
  'Omon',
  'SImon',
  'fx',
+ 'Ofx',
 # 'monNobs',
 # 'monStderr',
  'coordinate',
@@ -130,15 +131,17 @@ masterTargets = [
 #%% Tables
 sha = '87218055a04f6e01c36039a75652d3824d1649ad'
 tableSource = [
- ['coordinate','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_coordinate.json'],
+#['coordinate','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_coordinate.json'],
+ ['coordinate','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/Tables/obs4MIPs_coordinate.json'],
  ['formula_terms','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_formula_terms.json'],
  ['frequency','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_frequency.json'],
  ['fx','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_fx.json'],
+ ['Ofx','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Ofx.json'],
  ['grid_label','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_grid_label.json'],
  ['grids','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_grids.json'],
  ['nominal_resolution','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/master/CMIP6_nominal_resolution.json'],
-#['product','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_product.json'],
- ['product','https://raw.githubusercontent.com/PCMDI/input4MIPs-cmor-tables/master/input4MIPs_product.json'],
+ ['product','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_product.json'],
+#['product','https://raw.githubusercontent.com/PCMDI/input4MIPs-cmor-tables/master/input4MIPs_product.json'],
  ['Amon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Amon.json'],
  ['Lmon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Lmon.json'],
  ['Omon','https://raw.githubusercontent.com/PCMDI/cmip6-cmor-tables/master/Tables/CMIP6_Omon.json'],
@@ -217,6 +220,7 @@ Lmon = eval(Lmon)
 Omon = eval(Omon)
 SImon = eval(SImon)
 fx = eval(fx)
+Ofx = eval(Ofx)
 Aday = eval(Aday)
 A3hr = eval(A3hr)
 A6hr = eval(A6hr)
@@ -231,6 +235,7 @@ Lmon['Header']['realm']     = 'land'
 Omon['Header']['realm']     = 'ocean'
 SImon['Header']['realm']    = 'seaIce'
 fx['Header']['realm']       = 'fx'
+Ofx['Header']['realm']       = 'Ofx'
 A3hr['Header']['realm']     = 'atmos'
 A6hr['Header']['realm']     = 'atmos'
 Oday['Header']['realm']     = 'ocean'
@@ -241,6 +246,7 @@ Lmon['Header']['table_id']  = 'Table obs4MIPs_Lmon'
 Omon['Header']['table_id']  = 'Table obs4MIPs_Omon'
 SImon['Header']['table_id']  = 'Table obs4MIPs_SImon'
 fx['Header']['table_id']  = 'Table obs4MIPs_fx'
+Ofx['Header']['table_id']  = 'Table obs4MIPs_Ofx'
 Aday['Header']['table_id']  = 'Table obs4MIPs_Aday'
 A3hr['Header']['table_id']  = 'Table obs4MIPs_A3hr'
 A6hr['Header']['table_id']  = 'Table obs4MIPs_A6hr'
@@ -251,7 +257,7 @@ SIday['Header']['realm']    = 'seaIce'
 #realm = eval(realm)
 
 # Clean out modeling_realm
-for jsonName in [Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx]:
+for jsonName in [Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx,Ofx]:
   try:
    jsonName['Header']["Conventions"] = "CF-1.11; ODS-2.5"
    jsonName['Header']["data_specs_version"] = "ODS-2.5"
@@ -272,7 +278,7 @@ for jsonName in masterTargets:
 
 '''
 # Set missing value for integer variables
-for tab in (Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr):
+for tab in (Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx,Ofx,monNobs,monStderr):
     tab['Header']['int_missing_value'] = str(-2**31)
 '''
 
@@ -451,8 +457,6 @@ Amon['variable_entry']['tlt']['units'] = 'K'
 Amon['variable_entry']['tlt']['valid_max'] = ''
 Amon['variable_entry']['tlt']['valid_min'] = ''
 
-
-
 # Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics)
 Amon['variable_entry'][u'rstcre'] = {}
 Amon['variable_entry']['rstcre']['cell_measures'] = ''
@@ -519,12 +523,51 @@ Amon['variable_entry']['hfns']['long_name'] = 'Net Surface Energy'
 Amon['variable_entry']['hfns']['ok_max_mean_abs'] = ''
 Amon['variable_entry']['hfns']['ok_min_mean_abs'] = ''
 Amon['variable_entry']['hfns']['out_name'] = 'hfns'
-Amon['variable_entry']['hfns']['positive'] = ''
-Amon['variable_entry']['hfns']['standard_name'] = 'Net_Surface_Energy'
+Amon['variable_entry']['hfns']['positive'] = 'up'
+Amon['variable_entry']['hfns']['standard_name'] = 'surface_upward_heat_flux_in_air'
 Amon['variable_entry']['hfns']['type'] = 'real'
 Amon['variable_entry']['hfns']['units'] = 'W m-2'
 Amon['variable_entry']['hfns']['valid_max'] = ''
 Amon['variable_entry']['hfns']['valid_min'] = ''
+
+# Add new variables
+# Variable sponsor - PCMDI; PjG 
+Amon['variable_entry'][u'rls'] = {}
+Amon['variable_entry']['rls']['cell_measures'] = ''
+Amon['variable_entry']['rls']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['rls']['comment'] = ''
+Amon['variable_entry']['rls']['dimensions'] = 'longitude latitude time'
+Amon['variable_entry']['rls']['frequency'] = 'mon'
+Amon['variable_entry']['rls']['long_name'] = 'Net Surface Lognwave Flux'
+Amon['variable_entry']['rls']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['rls']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['rls']['out_name'] = 'rls'
+Amon['variable_entry']['rls']['positive'] = 'up'
+Amon['variable_entry']['rls']['standard_name'] = 'surface_net_upward_longwave_flux'
+Amon['variable_entry']['rls']['type'] = 'real'
+Amon['variable_entry']['rls']['units'] = 'W m-2'
+Amon['variable_entry']['rls']['valid_max'] = ''
+Amon['variable_entry']['rls']['valid_min'] = ''
+
+# Add new variables
+# Variable sponsor - PCMDI; PjG 
+Amon['variable_entry'][u'rss'] = {}
+Amon['variable_entry']['rss']['cell_measures'] = ''
+Amon['variable_entry']['rss']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['rss']['comment'] = ''
+Amon['variable_entry']['rss']['dimensions'] = 'longitude latitude time'
+Amon['variable_entry']['rss']['frequency'] = 'mon'
+Amon['variable_entry']['rss']['long_name'] = 'Net Surface Shortwave Flux'
+Amon['variable_entry']['rss']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['rss']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['rss']['out_name'] = 'rss'
+Amon['variable_entry']['rss']['positive'] = 'up'
+Amon['variable_entry']['rss']['standard_name'] = 'surface_net_upward_shortwave_flux'
+Amon['variable_entry']['rss']['type'] = 'real'
+Amon['variable_entry']['rss']['units'] = 'W m-2'
+Amon['variable_entry']['rss']['valid_max'] = ''
+Amon['variable_entry']['rss']['valid_min'] = ''
+
 
 # Add new variables
 # Variable sponsor - PCMDI; PjG 
@@ -770,7 +813,8 @@ table_id = [
   'obs4MIPs_Lmon',
   'obs4MIPs_Omon',
   'obs4MIPs_SImon',
-  'obs4MIPs_fx'
+  'obs4MIPs_fx',
+  'obs4MIPs_Ofx'
 ] ;
 
 #%% Validate entries
@@ -837,7 +881,7 @@ for jsonName in masterTargets:
         vars()[jsonName] = dictToClean
     # Write file
     if jsonName in ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon',
-                    'coordinate','formula_terms','fx','grids','monNobs',
+                    'coordinate','formula_terms','fx','Ofx','grids','monNobs',
                     'monStderr']:
         outFile = ''.join(['../Tables/obs4MIPs_',jsonName,'.json'])
     elif jsonName == 'license_':
@@ -855,7 +899,7 @@ for jsonName in masterTargets:
         jsonDict = {}
         jsonDict[jsonName.replace('_','')] = eval(jsonName)
 
-    elif jsonName not in ['coordinate','formula_terms','fx','grids',
+    elif jsonName not in ['coordinate','formula_terms','fx','Ofx','grids',
                           'institution_id','source_id','Aday','Amon','A3hr','Lmon',
                           'Omon','SImon']: #,'product','realm','region']:
         jsonDict = {}
@@ -951,10 +995,10 @@ inputJson = ['frequency','grid_label','institution_id','license',
              'nominal_resolution','product','realm','region',
              'required_global_attributes','source_id','source_type','table_id', # These are controlled vocabs
              'coordinate','grids','formula_terms', # These are not controlled vocabs - rather lookup tables for CMOR
-             'Aday','Amon','Lmon','Omon','SImon','fx' # Update/add if new tables are generated
+             'Aday','Amon','Lmon','Omon','SImon','fx','Ofx' # Update/add if new tables are generated
             ]
 tableList = ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon','coordinate',
-             'formula_terms','fx','grids','monNobs','monStderr']
+             'formula_terms','fx','Ofx','grids','monNobs','monStderr']
 
 # Load dictionaries from local files
 CVJsonList = copy.deepcopy(inputJson)
@@ -967,6 +1011,9 @@ CVJsonList.remove('Lmon')
 CVJsonList.remove('Omon')
 CVJsonList.remove('SImon')
 CVJsonList.remove('fx')
+CVJsonList.remove('Ofx')
+
+
 for count,CV in enumerate(inputJson):
     if CV in tableList:
         path = '../Tables/'
@@ -1005,7 +1052,14 @@ for count,CV in enumerate(CVJsonList):
             obs4MIPs_CV['CV']['source_id'][key]['source_label'] = values['source_label']
             obs4MIPs_CV['CV']['source_id'][key]['source_type'] = values['source_type']
             obs4MIPs_CV['CV']['source_id'][key]['source_version_number'] = values['source_version_number']
-            obs4MIPs_CV['CV']['source_id'][key]['region'] = ', '.join(str(a) for a in values['region'])
+            if len(values['region']) == 1: obs4MIPs_CV['CV']['source_id'][key]['region'] = values['region'][0]
+            if len(values['region']) > 1: obs4MIPs_CV['CV']['source_id'][key]['region'] = ", ".join(values['region'])
+            
+            print(values['source_name'],obs4MIPs_CV['CV']['source_id'][key]['region'])
+
+
+#           obs4MIPs_CV['CV']['source_id'][key]['region'] = ', '.join(str(a) for a in values['region'])
+#           obs4MIPs_CV['CV']['source_id'][key]['region'] = values['region']
             obs4MIPs_CV['CV']['source_id'][key]['source'] = string
             obs4MIPs_CV['CV']['source_id'][key].pop('source_label', None)
     # Rewrite table names

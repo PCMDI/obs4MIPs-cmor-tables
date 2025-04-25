@@ -21,13 +21,13 @@
                 "yrPt":"sampled yearly, at specified time point within the time period"
             },
             "version_metadata":{
-                "CV_collection_modified":"Wed May  1 16:23:31 2024 -0700",
-                "CV_collection_version":"6.2.58.68",
+                "CV_collection_modified":"Fri Apr 18 16:28:35 2025 -0700",
+                "CV_collection_version":"6.2.58.79",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "frequency_CV_modified":"Mon May 24 13:48:15 2021 00100",
                 "frequency_CV_note":"Update description of 3hr and 6hr frequencies",
                 "institution_id":"PCMDI",
-                "previous_commit":"2c9cf667546f31a495cb2e3b8d9d5892bc7abaa2",
+                "previous_commit":"1e8961cb140d3246c70cdc24d2cc8404570de5dc",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
@@ -80,19 +80,21 @@
                 "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
             },
             "version_metadata":{
-                "CV_collection_modified":"Wed May  1 16:23:31 2024 -0700",
-                "CV_collection_version":"6.2.58.68",
+                "CV_collection_modified":"Fri Apr 18 16:28:35 2025 -0700",
+                "CV_collection_version":"6.2.58.79",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "grid_label_CV_modified":"Fri Sep 8 18:12:00 2017 -0700",
                 "grid_label_CV_note":"Issue395 durack1 augment grid_label with description (#401)",
                 "institution_id":"PCMDI",
-                "previous_commit":"2c9cf667546f31a495cb2e3b8d9d5892bc7abaa2",
+                "previous_commit":"1e8961cb140d3246c70cdc24d2cc8404570de5dc",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
         "institution_id":{
+            "ARCCSS":"ARC Centre of Excellence for Climate System Science, NSW, Australia,",
             "CEDA":"Centre for Environmental Data Analysis, RAL Space, STFC Rutherford Appleton Laboratory, Chilton, Didcot; National Centre for Earth Observation, UK",
             "CNES":"Centre national d'etudes spatiales",
+            "ColumbiaU":"Columbia University, NY, USA",
             "DLR-BIRA":"Deutsches Zentrum fur Luft- und Raumfahrt, Royal Belgian Institute for Space Aeronomy",
             "DWD":"Deutscher Wetterdienst, Offenbach 63067, Germany",
             "ECMWF":"The European Centre for Medium-Range Weather Forecasts, Shinfield Park, Reading RG2 9AX, UK",
@@ -102,6 +104,7 @@
             "INCOIS-NIO-IPSL":"Joint research colloboration between INCOIS(India), NIO(India) and IPSL(France)",
             "ImperialCollege":"Imperial College, London, UK",
             "JAXA":"The Japan Aerospace Exploration Agency",
+            "MET-Norway":"Norwegian Meteorological Institute",
             "MOHC":"Met Office Hadley Centre",
             "MRI":"Meteorological Research Institute, Tsukuba, Ibaraki 305-0052, Japan",
             "NASA-GSFC":"NASA Goddard Space Flight Center, Greenbelt MD, USA",
@@ -112,7 +115,9 @@
             "NOAA-NCEI":"NOAA National Centers for Environmental Information, Asheville, NC 28801, USA",
             "OSU":"Oregon State University, OR, USA",
             "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
+            "PKU":"Peking University, Beijing, China",
             "RSS":"Remote Sensing Systems, Santa Rosa, CA USA",
+            "UAH":"University of Alcala, Spain",
             "UCI-CHRS":"Center for Hydrometeorology and Remote Sensing",
             "UCSD-SIO":"University of California, San Diego, Scripps Institution of Oceanography",
             "UReading":"University of Reading, Reading, UK",
@@ -138,18 +143,19 @@
                 "5000 km"
             ],
             "version_metadata":{
-                "CV_collection_modified":"Wed May  1 16:23:31 2024 -0700",
-                "CV_collection_version":"6.2.58.68",
+                "CV_collection_modified":"Fri Apr 18 16:28:35 2025 -0700",
+                "CV_collection_version":"6.2.58.79",
                 "author":"Paul J. Durack <durack1@llnl.gov>",
                 "institution_id":"PCMDI",
                 "nominal_resolution_CV_modified":"Tues Nov 15 16:04:00 2016 -0700",
                 "nominal_resolution_CV_note":"Issue141 durack1 update grid_resolution to nominal_resolution (#143)",
-                "previous_commit":"2c9cf667546f31a495cb2e3b8d9d5892bc7abaa2",
+                "previous_commit":"1e8961cb140d3246c70cdc24d2cc8404570de5dc",
                 "specs_doc":"v6.2.7 (10th September 2018; https://goo.gl/v1drZl)"
             }
         },
         "product":[
             "derived",
+            "site-observations",
             "observations",
             "reanalysis"
         ],
@@ -363,6 +369,12 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
             },
+            "DAI-1-0":{
+                "region":"global",
+                "source":"DAI 1.0 (2017): Dai and Trenberth Global River Flow and Continental Discharge Dataset",
+                "source_type":"gridded_insitu",
+                "source_version_number":"1.0"
+            },
             "ERA-20C":{
                 "region":"global",
                 "source":"ECMWF-ERA-20C 1.0 (2014): ECMWF - ERA-20C (European ReAnalysis 1900-2010)",
@@ -435,6 +447,18 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
             },
+            "FLUXNET2015-1-0":{
+                "region":"global_land",
+                "source":"FLUXNET2015 1.0 (2020): FLUXNET Community Product",
+                "source_type":"gridded_insitu",
+                "source_version_number":"1.0"
+            },
+            "FireCCI-v5-1":{
+                "region":"global_land",
+                "source":"FireCCI 5.1 (2024): MODIS FireCCI Burned Area product",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"5.1"
+            },
             "GERB-HR-ED01-1-0":{
                 "region":"global",
                 "source":"GERB HR_ED01_1.0 (2018): Geostationary Earth Radiation Budget",
@@ -446,6 +470,12 @@
                 "source":"GERB HR_ED01_1.1 (2018): Geostationary Earth Radiation Budget",
                 "source_type":"satellite_blended",
                 "source_version_number":"HR_ED01_1.1"
+            },
+            "GLODAP-2-2016b":{
+                "region":"global_ocean",
+                "source":"GLODAP 2.2016b (2016): Global Ocean Data Analysis Project Version 2",
+                "source_type":"gridded_insitu",
+                "source_version_number":"2.2016b"
             },
             "GNSS-RO-1-3":{
                 "region":"global",
@@ -518,6 +548,12 @@
                 "source":"GSMAP 6.0 (2017): JAXA GSMAP prepared for FROGS",
                 "source_type":"satellite_blended",
                 "source_version_number":"6.0"
+            },
+            "HWSD-2-0":{
+                "region":"global_land",
+                "source":"HWSD 2.0 (2023): Harmonized World Soil Database version 2",
+                "source_type":"gridded_insitu",
+                "source_version_number":"2.0"
             },
             "HadISST-1-1":{
                 "region":"global_ocean",
@@ -602,6 +638,18 @@
                 "source":"MRI-JRA25 N/A (2002): JRA25 1.0 (2002): JRA25 (Japanese ReAnalysis 1957-2002)",
                 "source_type":"reanalysis",
                 "source_version_number":"N/A"
+            },
+            "LAI4g-1-2":{
+                "region":"global_land",
+                "source":"LAI4g 1.2 (2023): The Fourth Generation Global Inventory Modeling and Mapping Studies Leaf Area Index",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"1.2"
+            },
+            "LORA-1-1":{
+                "region":"global_land",
+                "source":"LORA 1.1 (2018): Linear Optimal Runoff Aggregate",
+                "source_type":"gridded_insitu",
+                "source_version_number":"1.1"
             },
             "MODIS-1-0":{
                 "region":"global",
@@ -753,6 +801,12 @@
                 "source_type":"satellite_blended",
                 "source_version_number":"v2"
             },
+            "OSISAF-V3":{
+                "region":"global_ocean",
+                "source":"OSISAF/CCI SIC 3 (2022): Sea Ice Concentration (SIC) CDR v3 from EUMETSAT OSI SAF / ESA CCI",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"3"
+            },
             "PERSIANN-CDRv1r1":{
                 "region":"global",
                 "source":"PERSIANN CDRv1r1 (2019): PERSIANN-CDRv1r1 (2019): Precipitation",
@@ -897,6 +951,18 @@
                 "source_type":"satellite_blended",
                 "source_version_number":"1.0"
             },
+            "WECANN-1-0":{
+                "region":"global_land",
+                "source":"WECANN 1.0 (2018): Water, Energy, and Carbon with Artificial Neural Networks",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"1.0"
+            },
+            "WOA2023":{
+                "region":"global_ocean",
+                "source":"WOA 2023 (2024): World Ocean Atlas",
+                "source_type":"gridded_insitu",
+                "source_version_number":"2023"
+            },
             "livneh-1-0":{
                 "region":"north_america",
                 "source":"livneh 1.0 (2021): Livneh daily CONUS near-surface gridded meteorological and derived hydrometeorological data data provided by the NOAA PSL",
@@ -904,19 +970,19 @@
                 "source_version_number":"1.0"
             },
             "livneh-unsplit-1-0":{
-                "region":"n, o, r, t, h, _, a, m, e, r, i, c, a",
+                "region":"north_america",
                 "source":"livneh_unsplit 1.0 (2021): Livneh daily CONUS unsplit",
                 "source_type":"gridded_insitu",
                 "source_version_number":"1.0"
             },
             "nClimGrid-Daily-1-0":{
-                "region":"n, o, r, t, h, _, a, m, e, r, i, c, a",
+                "region":"north_america",
                 "source":"nClimGrid-Daily-1-0 1.0 (2014): NOAA nClimGrid-Daily",
                 "source_type":"gridded_insitu",
                 "source_version_number":"1.0"
             },
             "nClimGrid-Monthly-1-0":{
-                "region":"n, o, r, t, h, _, a, m, e, r, i, c, a",
+                "region":"north_america",
                 "source":"nClimGrid-Monthly-1-0 1.0 (2014): NOAA nClimGrid-Monthly",
                 "source_type":"gridded_insitu",
                 "source_version_number":"1.0"
@@ -935,7 +1001,8 @@
             "obs4MIPs_Lmon",
             "obs4MIPs_Omon",
             "obs4MIPs_SImon",
-            "obs4MIPs_fx"
+            "obs4MIPs_fx",
+            "obs4MIPs_Ofx"
         ]
     }
 }

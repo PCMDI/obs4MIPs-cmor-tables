@@ -316,6 +316,21 @@
             ],
             "source_version_number":"2.0"
         },
+        "DAI-1-0":{
+            "institution_id":"UCAR/NCAR - RDA",
+            "region":[
+                "global"
+            ],
+            "release_year":"2017",
+            "source_description":"Dai and Trenberth Global River Flow and Continental Discharge Dataset",
+            "source_label":"DAI",
+            "source_name":"DAI",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "mrro"
+            ],
+            "source_version_number":"1.0"
+        },
         "ERA-20C":{
             "institution_id":"ECMWF",
             "region":[
@@ -558,6 +573,36 @@
             ],
             "source_version_number":"2.0"
         },
+        "FLUXNET2015-1-0":{
+            "institution_id":"FLUXNET",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2020",
+            "source_description":"FLUXNET Community Product",
+            "source_label":"FLUXNET2015",
+            "source_name":"FLUXNET2015",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "gpp"
+            ],
+            "source_version_number":"1.0"
+        },
+        "FireCCI-v5-1":{
+            "institution_id":"UAH",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2024",
+            "source_description":"MODIS FireCCI Burned Area product",
+            "source_label":"FireCCI",
+            "source_name":"FireCCI",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "burntFractionAll"
+            ],
+            "source_version_number":"5.1"
+        },
         "GERB-HR-ED01-1-0":{
             "institution_id":"ImperialCollege",
             "region":[
@@ -589,6 +634,22 @@
                 "rsut"
             ],
             "source_version_number":"HR_ED01_1.1"
+        },
+        "GLODAP-2-2016b":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2016",
+            "source_description":"Global Ocean Data Analysis Project Version 2",
+            "source_label":"GLODAP",
+            "source_name":"GLODAP",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "so",
+                "thetao"
+            ],
+            "source_version_number":"2.2016b"
         },
         "GNSS-RO-1-3":{
             "institution_id":"NASA-JPL",
@@ -779,6 +840,21 @@
                 "pr"
             ],
             "source_version_number":"6.0"
+        },
+        "HWSD-2-0":{
+            "institution_id":"FAO",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2023",
+            "source_description":"Harmonized World Soil Database version 2",
+            "source_label":"HWSD",
+            "source_name":"HWSD",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "cSoil"
+            ],
+            "source_version_number":"2.0"
         },
         "HadISST-1-1":{
             "institution_id":"MOHC",
@@ -1006,6 +1082,36 @@
                 "zg"
             ],
             "source_version_number":"N/A"
+        },
+        "LAI4g-1-2":{
+            "institution_id":"PKU",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2023",
+            "source_description":"The Fourth Generation Global Inventory Modeling and Mapping Studies Leaf Area Index",
+            "source_label":"LAI4g",
+            "source_name":"LAI4g",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "lai"
+            ],
+            "source_version_number":"1.2"
+        },
+        "LORA-1-1":{
+            "institution_id":"ARCCSS",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2018",
+            "source_description":"Linear Optimal Runoff Aggregate",
+            "source_label":"LORA",
+            "source_name":"LORA",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "mrro"
+            ],
+            "source_version_number":"1.1"
         },
         "MODIS-1-0":{
             "institution_id":"NASA-GSFC",
@@ -1398,6 +1504,21 @@
                 "ts"
             ],
             "source_version_number":"v2"
+        },
+        "OSISAF-V3":{
+            "institution_id":"MET-Norway",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2022",
+            "source_description":"Sea Ice Concentration (SIC) CDR v3 from EUMETSAT OSI SAF / ESA CCI",
+            "source_label":"OSISAF/CCI SIC",
+            "source_name":"OSISAF/CCI SIC",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "siconc"
+            ],
+            "source_version_number":"3"
         },
         "PERSIANN-CDRv1r1":{
             "institution_id":"NOAA",
@@ -1794,6 +1915,39 @@
             ],
             "source_version_number":"1.0"
         },
+        "WECANN-1-0":{
+            "institution_id":"ColumbiaU",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2018",
+            "source_description":"Water, Energy, and Carbon with Artificial Neural Networks",
+            "source_label":"WECANN",
+            "source_name":"WECANN",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "gpp",
+                "hfls",
+                "hfss"
+            ],
+            "source_version_number":"1.0"
+        },
+        "WOA2023":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2024",
+            "source_description":"World Ocean Atlas",
+            "source_label":"WOA",
+            "source_name":"WOA",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "so",
+                "thetao"
+            ],
+            "source_version_number":"2023"
+        },
         "livneh-1-0":{
             "institution_id":"NOAA-ESRL-PSD",
             "region":[
@@ -1814,7 +1968,9 @@
         },
         "livneh-unsplit-1-0":{
             "institution_id":"UCSD-SIO",
-            "region":"north_america",
+            "region":[
+                "north_america"
+            ],
             "release_year":"2021",
             "source_description":"Livneh daily CONUS unsplit",
             "source_label":"livneh_unsplit",
@@ -1830,7 +1986,9 @@
         },
         "nClimGrid-Daily-1-0":{
             "institution_id":"NOAA-NCEI",
-            "region":"north_america",
+            "region":[
+                "north_america"
+            ],
             "release_year":"2014",
             "source_description":"NOAA nClimGrid-Daily",
             "source_id":"nClimGrid-Daily-1-0",
@@ -1847,7 +2005,9 @@
         },
         "nClimGrid-Monthly-1-0":{
             "institution_id":"NOAA-NCEI",
-            "region":"north_america",
+            "region":[
+                "north_america"
+            ],
             "release_year":"2014",
             "source_description":"NOAA nClimGrid-Monthly",
             "source_id":"nClimGrid-Monthly-1-0",

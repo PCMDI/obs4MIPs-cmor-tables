@@ -1,7 +1,9 @@
 {
     "institution_id":{
+        "ARCCSS":"ARC Centre of Excellence for Climate System Science, NSW, Australia,",
         "CEDA":"Centre for Environmental Data Analysis, RAL Space, STFC Rutherford Appleton Laboratory, Chilton, Didcot; National Centre for Earth Observation, UK",
         "CNES":"Centre national d'etudes spatiales",
+        "ColumbiaU":"Columbia University, NY, USA",
         "DLR-BIRA":"Deutsches Zentrum fur Luft- und Raumfahrt, Royal Belgian Institute for Space Aeronomy",
         "DWD":"Deutscher Wetterdienst, Offenbach 63067, Germany",
         "ECMWF":"The European Centre for Medium-Range Weather Forecasts, Shinfield Park, Reading RG2 9AX, UK",
@@ -11,6 +13,7 @@
         "INCOIS-NIO-IPSL":"Joint research colloboration between INCOIS(India), NIO(India) and IPSL(France)",
         "ImperialCollege":"Imperial College, London, UK",
         "JAXA":"The Japan Aerospace Exploration Agency",
+        "MET-Norway":"Norwegian Meteorological Institute",
         "MOHC":"Met Office Hadley Centre",
         "MRI":"Meteorological Research Institute, Tsukuba, Ibaraki 305-0052, Japan",
         "NASA-GSFC":"NASA Goddard Space Flight Center, Greenbelt MD, USA",
@@ -21,7 +24,9 @@
         "NOAA-NCEI":"NOAA National Centers for Environmental Information, Asheville, NC 28801, USA",
         "OSU":"Oregon State University, OR, USA",
         "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
+        "PKU":"Peking University, Beijing, China",
         "RSS":"Remote Sensing Systems, Santa Rosa, CA USA",
+        "UAH":"University of Alcala, Spain",
         "UCI-CHRS":"Center for Hydrometeorology and Remote Sensing",
         "UCSD-SIO":"University of California, San Diego, Scripps Institution of Oceanography",
         "UReading":"University of Reading, Reading, UK",
