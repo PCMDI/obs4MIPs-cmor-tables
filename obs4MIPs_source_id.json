@@ -1266,22 +1266,6 @@
             ],
             "source_version_number":"5.0"
         },
-        "NOAA-NCEI-FAPAR":{
-            "institution_id":"NOAA-NCEI",
-            "region":[
-                "global_ocean"
-            ],
-            "release_year":"2017",
-            "source_description":"Extended Reconstructed Sea Surface Temperatures",
-            "source_id":"NOAA-NCEI-FAPAR",
-            "source_label":"NOAA NCEI ERSST",
-            "source_name":"NOAA NCEI ERSST",
-            "source_type":"gridded_insitu",
-            "source_variables":[
-                "tos"
-            ],
-            "source_version_number":"5.0"
-        },
         "NOAA-NCEI-FAPAR-4-0":{
             "institution_id":"NOAA-NCEI",
             "region":[
