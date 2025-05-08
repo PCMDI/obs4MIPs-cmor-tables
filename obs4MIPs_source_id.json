@@ -119,27 +119,11 @@
             "region":[
                 "global"
             ],
-            "release_year":"2022",
-            "source_description":"Cross-Calibrated Multi-Platform V3.1",
+            "release_year":"2023",
+            "source_description":"Cross-Calibrated Multiplatform v3.1 (2023): 10m Surface Wind",
             "source_id":"CCMP-3-1",
             "source_label":"CCMP-3-1",
             "source_name":"CCMP-3-1",
-            "source_type":"satellite_blended",
-            "source_variables":[
-                "sfcWind"
-            ],
-            "source_version_number":"3.1"
-        },
-        "CCMP-Monthly-3-1":{
-            "institution_id":"RSS",
-            "region":[
-                "global"
-            ],
-            "release_year":"2022",
-            "source_description":"Cross-Calibrated Multi-Platform V3.1",
-            "source_id":"CCMP-Monthly-3-1",
-            "source_label":"CCMP-Monthly-3-1",
-            "source_name":"CCMP-Monthly-3-1",
             "source_type":"satellite_blended",
             "source_variables":[
                 "sfcWind"

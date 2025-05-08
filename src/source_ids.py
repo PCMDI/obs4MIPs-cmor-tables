@@ -686,6 +686,19 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['pr']
 source_id['source_id'][key]['source_version_number'] = '3B42.MW.v7.0'
 
+key = 'CCMP-3-1'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'Cross-Calibrated Multiplatform v3.1 (2023): 10m Surface Wind'
+source_id['source_id'][key]['institution_id'] = 'RSS'
+source_id['source_id'][key]['release_year'] = '2023'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'CCMP-3-1'
+source_id['source_id'][key]['source_name'] = 'CCMP-3-1'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['sfcWind']
+source_id['source_id'][key]['source_version_number'] = '3.1'
+
 key = 'RSS-MSU-TLS-4'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_description'] = 'RSS MSU Temperature Lower Stratosphere v4.0'
