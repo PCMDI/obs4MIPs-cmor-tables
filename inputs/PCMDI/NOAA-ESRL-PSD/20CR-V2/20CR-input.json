@@ -5,14 +5,14 @@
     "_controlled_vocabulary_file":"obs4MIPs_CV.json",
     "_history_template":"%s; CMOR rewrote data to be consistent with <activity_id>, and <Conventions> standards",
     "activity_id":"obs4MIPs",
-    "calendar":"gregorian",
-    "comment":"",
-    "contact":"PCMDI (pcmdi-metrics@llnl.gov)",
-    "grid":"2.0x2.0 degree latitude x longitude",
+    "calendar":"standard",
+    "comment":"Requested citation: Support for the Twentieth Century Reanalysis Project dataset is provided by the U.S. Department of Energy, Office of Science Innovative and Novel Computational Impact on Theory and Experiment (DOE INCITE) program, and Office of Biological and Environmental Research (BER), and by the National Oceanic and Atmospheric Administration Climate Program Office. 20CR-V2 is provided by the NOAA PSL, Boulder, CO, USA at https://psl.noaa.gov",
+    "contact":"submissions-obs4mips@wcrp-cmip.org",
+    "grid":"2x2 degree latitude x longitude",
     "grid_label":"gn",
     "history":"",
     "institution_id":"NOAA-ESRL-PSD",
-    "license":"Support for the Twentieth Century Reanalysis Project dataset is provided by the U.S. Department of Energy, Office of Science Innovative and Novel Computational Impact on Theory and Experiment (DOE INCITE) program, and Office of Biological and Environmental Research (BER), and by the National Oceanic and Atmospheric Administration Climate Program Office.",
+    "license":"https://creativecommons.org/licenses/by/4.0/",
     "nominal_resolution":"250 km",
     "outpath":"/p/user_pub/PCMDIobs/",
     "output_file_template":"<variable_id><frequency><source_id><variant_label><grid_label>",
@@ -25,3 +25,4 @@
     "variant_info":"Best Estimate",
     "variant_label":"PCMDI"
 }
+

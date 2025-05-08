@@ -1,0 +1,5 @@
+python runCmor_ERA5_3D_RDA.py ta  
+python runCmor_ERA5_3D_RDA.py ua  
+python runCmor_ERA5_3D_RDA.py va  
+python runCmor_ERA5_3D_RDA.py zg 
+

@@ -1,5 +1,90 @@
 source_id = {}
+
 source_id['source_id'] = {}
+
+key = 'LAI4g-1-2'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'LAI4g'
+source_id['source_id'][key]['source_label'] = 'LAI4g'
+source_id['source_id'][key]['release_year'] = '2023'
+source_id['source_id'][key]['source_description'] = 'The Fourth Generation Global Inventory Modeling and Mapping Studies Leaf Area Index'
+source_id['source_id'][key]['source_version_number'] = '1.2'
+source_id['source_id'][key]['institution_id'] = 'PKU'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['lai']
+
+key = 'GLODAP-2-2016b'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'GLODAP'
+source_id['source_id'][key]['source_label'] = 'GLODAP'
+source_id['source_id'][key]['release_year'] = '2016'
+source_id['source_id'][key]['source_description'] = 'Global Ocean Data Analysis Project Version 2'
+source_id['source_id'][key]['source_version_number'] = '2.2016b'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['global_ocean']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['so', 'thetao']
+
+key = 'WECANN-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'WECANN'
+source_id['source_id'][key]['source_label'] = 'WECANN'
+source_id['source_id'][key]['release_year'] = '2018'
+source_id['source_id'][key]['source_description'] = 'Water, Energy, and Carbon with Artificial Neural Networks'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'ColumbiaU'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['gpp', 'hfls', 'hfss']
+
+key = 'DAI-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'DAI'
+source_id['source_id'][key]['source_label'] = 'DAI'
+source_id['source_id'][key]['release_year'] = '2017'
+source_id['source_id'][key]['source_description'] = 'Dai and Trenberth Global River Flow and Continental Discharge Dataset'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'UCAR/NCAR - RDA'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['mrro']
+
+key = 'LORA-1-1'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'LORA'
+source_id['source_id'][key]['source_label'] = 'LORA'
+source_id['source_id'][key]['release_year'] = '2018'
+source_id['source_id'][key]['source_description'] = 'Linear Optimal Runoff Aggregate'
+source_id['source_id'][key]['source_version_number'] = '1.1'
+source_id['source_id'][key]['institution_id'] = 'ARCCSS'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['mrro']
+
+key = 'HWSD-2-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'HWSD'
+source_id['source_id'][key]['source_label'] = 'HWSD'
+source_id['source_id'][key]['release_year'] = '2023'
+source_id['source_id'][key]['source_description'] = 'Harmonized World Soil Database version 2'
+source_id['source_id'][key]['source_version_number'] = '2.0'
+source_id['source_id'][key]['institution_id'] = 'FAO'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['cSoil']
+
+key = 'FLUXNET2015-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'FLUXNET2015'
+source_id['source_id'][key]['source_label'] = 'FLUXNET2015'
+source_id['source_id'][key]['release_year'] = '2020'
+source_id['source_id'][key]['source_description'] = 'FLUXNET Community Product'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'FLUXNET'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['gpp']
 
 key = 'PRISM-M3'
 source_id['source_id'][key] = {}
@@ -12,6 +97,42 @@ source_id['source_id'][key]['institution_id'] = 'OSU'
 source_id['source_id'][key]['region'] = ['north_america']
 source_id['source_id'][key]['source_type'] = 'gridded_insitu'
 source_id['source_id'][key]['source_variables'] = ['pr','tasmin', 'tasmax','tas']
+
+key = 'OSISAF-V3'  
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'OSISAF/CCI SIC'
+source_id['source_id'][key]['source_label'] = 'OSISAF/CCI SIC'
+source_id['source_id'][key]['release_year'] = '2022'
+source_id['source_id'][key]['source_description'] = 'Sea Ice Concentration (SIC) CDR v3 from EUMETSAT OSI SAF / ESA CCI'
+source_id['source_id'][key]['source_version_number'] = '3'
+source_id['source_id'][key]['institution_id'] = 'MET-Norway'
+source_id['source_id'][key]['region'] = ['global_ocean']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ["siconc"]
+
+key = 'FireCCI-v5-1'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'FireCCI'
+source_id['source_id'][key]['source_label'] = 'FireCCI'
+source_id['source_id'][key]['release_year'] = '2024'
+source_id['source_id'][key]['source_description'] = 'MODIS FireCCI Burned Area product'
+source_id['source_id'][key]['source_version_number'] = '5.1'
+source_id['source_id'][key]['institution_id'] = 'UAH'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['burntFractionAll']
+
+key = 'WOA2023'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'WOA'
+source_id['source_id'][key]['source_label'] = 'WOA'
+source_id['source_id'][key]['release_year'] = '2024'
+source_id['source_id'][key]['source_description'] = 'World Ocean Atlas'
+source_id['source_id'][key]['source_version_number'] = '2023'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['global_ocean']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['so','thetao']
 
 key = 'livneh-1-0'
 source_id['source_id'][key] = {}
@@ -383,6 +504,32 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['pr']
 source_id['source_id'][key]['source_version_number'] = '1.0'
 
+key = 'GPCP-Daily-3-2'
+source_id['source_id'][key] = {}
+# source_id['source_id'][key]['source_description'] = 'Merged Precipitation'
+source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
+source_id['source_id'][key]['release_year'] = '2022'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'GPCP'
+# source_id['source_id'][key]['source_name'] = 'GPCP'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['pr']
+source_id['source_id'][key]['source_version_number'] = '3.2'
+
+key = 'GPCP-Monthly-3-2'
+source_id['source_id'][key] = {}
+# source_id['source_id'][key]['source_description'] = 'Merged Precipitation'
+source_id['source_id'][key]['institution_id'] = 'NASA-GSFC'
+source_id['source_id'][key]['release_year'] = '2022'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'GPCP'
+# source_id['source_id'][key]['source_name'] = 'GPCP'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['pr']
+source_id['source_id'][key]['source_version_number'] = '3.2'
+
 key = 'GPCP-2-3'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_description'] = 'Merged Precipitation'
@@ -539,6 +686,19 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['pr']
 source_id['source_id'][key]['source_version_number'] = '3B42.MW.v7.0'
 
+key = 'CCMP-3-1'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'Cross-Calibrated Multiplatform v3.1 (2023): 10m Surface Wind'
+source_id['source_id'][key]['institution_id'] = 'RSS'
+source_id['source_id'][key]['release_year'] = '2023'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'CCMP-3-1'
+source_id['source_id'][key]['source_name'] = 'CCMP-3-1'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['sfcWind']
+source_id['source_id'][key]['source_version_number'] = '3.1'
+
 key = 'RSS-MSU-TLS-4'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_description'] = 'RSS MSU Temperature Lower Stratosphere v4.0'
@@ -642,6 +802,19 @@ source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['region'] = ['global ocean']
 source_id['source_id'][key]['source_variables'] = ['sos']
 source_id['source_id'][key]['source_version_number'] = '5.0'
+
+key = 'RSS-SMAP-SSS-Monthly-5-3'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'Satellite derived SSS produced by RSS'
+source_id['source_id'][key]['institution_id'] = 'RSS'
+source_id['source_id'][key]['release_year'] = '2023'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'RSS-SMAP-SSS-Monthly-5-3'
+source_id['source_id'][key]['source_name'] = 'RSS-SMAP-SSS-Monthly-5-3'
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['region'] = ['global ocean']
+source_id['source_id'][key]['source_variables'] = ['sos']
+source_id['source_id'][key]['source_version_number'] = '5.3'
 
 key = 'RSS-sfcWind-v07r01'
 source_id['source_id'][key] = {}
