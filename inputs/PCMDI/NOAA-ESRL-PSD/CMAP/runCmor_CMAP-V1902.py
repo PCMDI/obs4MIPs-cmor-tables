@@ -7,7 +7,7 @@ import json
 import sys
 
 #%% User provided input
-cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'CMAP-V1902-input.json' ; # Update contents of this file to set your global_attributes
 inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/'
 inputFilePathend = 'NOAA-ESRL-PSD/CMAP/'
@@ -35,7 +35,7 @@ d = np.where(np.isnan(d),ma.masked,d)
 
 #%% Initialize and run CMOR
 # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
-cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4) #,logfile='cmorLog.txt')
+cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4,logfile='cmorLog.txt')
 cmor.dataset_json(inputJson)
 cmor.load_table(cmorTable)
 cmor.set_cur_dataset_attribute('history',f.history)

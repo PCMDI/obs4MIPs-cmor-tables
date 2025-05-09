@@ -26,6 +26,18 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] = ['clivi', 'clt', 'clwvi', 'lwp', 'rlus', 'rlut', 'rlutcs', 'rsdt', 'rsus', 'rsuscs', 'rsut', 'rsutcs']
 
+key = 'LAI4g-1-2'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'LAI4g'
+source_id['source_id'][key]['source_label'] = 'LAI4g'
+source_id['source_id'][key]['release_year'] = '2023'
+source_id['source_id'][key]['source_description'] = 'The Fourth Generation Global Inventory Modeling and Mapping Studies Leaf Area Index'
+source_id['source_id'][key]['source_version_number'] = '1.2'
+source_id['source_id'][key]['institution_id'] = 'PKU'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['lai']
+
 key = 'GLODAP-2-2016b'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'GLODAP'
@@ -46,7 +58,7 @@ source_id['source_id'][key]['release_year'] = '2018'
 source_id['source_id'][key]['source_description'] = 'Water, Energy, and Carbon with Artificial Neural Networks'
 source_id['source_id'][key]['source_version_number'] = '1.0'
 source_id['source_id'][key]['institution_id'] = 'ColumbiaU'
-source_id['source_id'][key]['region'] = 'global_land'
+source_id['source_id'][key]['region'] = ['global_land']
 source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
 source_id['source_id'][key]['source_variables'] = ['gpp', 'hfls', 'hfss']
 
@@ -710,6 +722,19 @@ source_id['source_id'][key]['source_type'] = 'satellite_blended'
 source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_variables'] = ['pr']
 source_id['source_id'][key]['source_version_number'] = '3B42.MW.v7.0'
+
+key = 'CCMP-3-1'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_description'] = 'Cross-Calibrated Multiplatform v3.1 (2023): 10m Surface Wind'
+source_id['source_id'][key]['institution_id'] = 'RSS'
+source_id['source_id'][key]['release_year'] = '2023'
+source_id['source_id'][key]['source_id'] = key
+source_id['source_id'][key]['source_label'] = 'CCMP-3-1'
+source_id['source_id'][key]['source_name'] = 'CCMP-3-1'
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_variables'] = ['sfcWind']
+source_id['source_id'][key]['source_version_number'] = '3.1'
 
 key = 'RSS-MSU-TLS-4'
 source_id['source_id'][key] = {}

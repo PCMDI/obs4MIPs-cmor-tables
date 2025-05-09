@@ -457,8 +457,6 @@ Amon['variable_entry']['tlt']['units'] = 'K'
 Amon['variable_entry']['tlt']['valid_max'] = ''
 Amon['variable_entry']['tlt']['valid_min'] = ''
 
-
-
 # Variable sponsor - NOAA-NCEI; Jim Baird (JimBiardCics)
 Amon['variable_entry'][u'rstcre'] = {}
 Amon['variable_entry']['rstcre']['cell_measures'] = ''
@@ -525,12 +523,51 @@ Amon['variable_entry']['hfns']['long_name'] = 'Net Surface Energy'
 Amon['variable_entry']['hfns']['ok_max_mean_abs'] = ''
 Amon['variable_entry']['hfns']['ok_min_mean_abs'] = ''
 Amon['variable_entry']['hfns']['out_name'] = 'hfns'
-Amon['variable_entry']['hfns']['positive'] = ''
-Amon['variable_entry']['hfns']['standard_name'] = 'Net_Surface_Energy'
+Amon['variable_entry']['hfns']['positive'] = 'up'
+Amon['variable_entry']['hfns']['standard_name'] = 'surface_upward_heat_flux_in_air'
 Amon['variable_entry']['hfns']['type'] = 'real'
 Amon['variable_entry']['hfns']['units'] = 'W m-2'
 Amon['variable_entry']['hfns']['valid_max'] = ''
 Amon['variable_entry']['hfns']['valid_min'] = ''
+
+# Add new variables
+# Variable sponsor - PCMDI; PjG 
+Amon['variable_entry'][u'rls'] = {}
+Amon['variable_entry']['rls']['cell_measures'] = ''
+Amon['variable_entry']['rls']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['rls']['comment'] = ''
+Amon['variable_entry']['rls']['dimensions'] = 'longitude latitude time'
+Amon['variable_entry']['rls']['frequency'] = 'mon'
+Amon['variable_entry']['rls']['long_name'] = 'Net Surface Lognwave Flux'
+Amon['variable_entry']['rls']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['rls']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['rls']['out_name'] = 'rls'
+Amon['variable_entry']['rls']['positive'] = 'up'
+Amon['variable_entry']['rls']['standard_name'] = 'surface_net_upward_longwave_flux'
+Amon['variable_entry']['rls']['type'] = 'real'
+Amon['variable_entry']['rls']['units'] = 'W m-2'
+Amon['variable_entry']['rls']['valid_max'] = ''
+Amon['variable_entry']['rls']['valid_min'] = ''
+
+# Add new variables
+# Variable sponsor - PCMDI; PjG 
+Amon['variable_entry'][u'rss'] = {}
+Amon['variable_entry']['rss']['cell_measures'] = ''
+Amon['variable_entry']['rss']['cell_methods'] = 'time: mean'
+Amon['variable_entry']['rss']['comment'] = ''
+Amon['variable_entry']['rss']['dimensions'] = 'longitude latitude time'
+Amon['variable_entry']['rss']['frequency'] = 'mon'
+Amon['variable_entry']['rss']['long_name'] = 'Net Surface Shortwave Flux'
+Amon['variable_entry']['rss']['ok_max_mean_abs'] = ''
+Amon['variable_entry']['rss']['ok_min_mean_abs'] = ''
+Amon['variable_entry']['rss']['out_name'] = 'rss'
+Amon['variable_entry']['rss']['positive'] = 'up'
+Amon['variable_entry']['rss']['standard_name'] = 'surface_net_upward_shortwave_flux'
+Amon['variable_entry']['rss']['type'] = 'real'
+Amon['variable_entry']['rss']['units'] = 'W m-2'
+Amon['variable_entry']['rss']['valid_max'] = ''
+Amon['variable_entry']['rss']['valid_min'] = ''
+
 
 # Add new variables
 # Variable sponsor - PCMDI; PjG 
@@ -1015,7 +1052,14 @@ for count,CV in enumerate(CVJsonList):
             obs4MIPs_CV['CV']['source_id'][key]['source_label'] = values['source_label']
             obs4MIPs_CV['CV']['source_id'][key]['source_type'] = values['source_type']
             obs4MIPs_CV['CV']['source_id'][key]['source_version_number'] = values['source_version_number']
-            obs4MIPs_CV['CV']['source_id'][key]['region'] = ', '.join(str(a) for a in values['region'])
+            if len(values['region']) == 1: obs4MIPs_CV['CV']['source_id'][key]['region'] = values['region'][0]
+            if len(values['region']) > 1: obs4MIPs_CV['CV']['source_id'][key]['region'] = ", ".join(values['region'])
+            
+            print(values['source_name'],obs4MIPs_CV['CV']['source_id'][key]['region'])
+
+
+#           obs4MIPs_CV['CV']['source_id'][key]['region'] = ', '.join(str(a) for a in values['region'])
+#           obs4MIPs_CV['CV']['source_id'][key]['region'] = values['region']
             obs4MIPs_CV['CV']['source_id'][key]['source'] = string
             obs4MIPs_CV['CV']['source_id'][key].pop('source_label', None)
     # Rewrite table names

@@ -115,6 +115,7 @@
             "NOAA-NCEI":"NOAA National Centers for Environmental Information, Asheville, NC 28801, USA",
             "OSU":"Oregon State University, OR, USA",
             "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
+            "PKU":"Peking University, Beijing, China",
             "RSS":"Remote Sensing Systems, Santa Rosa, CA USA",
             "UAH":"University of Alcala, Spain",
             "UCI-CHRS":"Center for Hydrometeorology and Remote Sensing",
@@ -650,6 +651,12 @@
                 "source_type":"reanalysis",
                 "source_version_number":"N/A"
             },
+            "LAI4g-1-2":{
+                "region":"global_land",
+                "source":"LAI4g 1.2 (2023): The Fourth Generation Global Inventory Modeling and Mapping Studies Leaf Area Index",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"1.2"
+            },
             "LORA-1-1":{
                 "region":"global_land",
                 "source":"LORA 1.1 (2018): Linear Optimal Runoff Aggregate",
@@ -957,7 +964,7 @@
                 "source_version_number":"1.0"
             },
             "WECANN-1-0":{
-                "region":"g, l, o, b, a, l, _, l, a, n, d",
+                "region":"global_land",
                 "source":"WECANN 1.0 (2018): Water, Energy, and Carbon with Artificial Neural Networks",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.0"
@@ -981,19 +988,19 @@
                 "source_version_number":"1.0"
             },
             "livneh-unsplit-1-0":{
-                "region":"n, o, r, t, h, _, a, m, e, r, i, c, a",
+                "region":"north_america",
                 "source":"livneh_unsplit 1.0 (2021): Livneh daily CONUS unsplit",
                 "source_type":"gridded_insitu",
                 "source_version_number":"1.0"
             },
             "nClimGrid-Daily-1-0":{
-                "region":"n, o, r, t, h, _, a, m, e, r, i, c, a",
+                "region":"north_america",
                 "source":"nClimGrid-Daily-1-0 1.0 (2014): NOAA nClimGrid-Daily",
                 "source_type":"gridded_insitu",
                 "source_version_number":"1.0"
             },
             "nClimGrid-Monthly-1-0":{
-                "region":"n, o, r, t, h, _, a, m, e, r, i, c, a",
+                "region":"north_america",
                 "source":"nClimGrid-Monthly-1-0 1.0 (2014): NOAA nClimGrid-Monthly",
                 "source_type":"gridded_insitu",
                 "source_version_number":"1.0"

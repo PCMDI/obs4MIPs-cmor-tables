@@ -135,27 +135,11 @@
             "region":[
                 "global"
             ],
-            "release_year":"2022",
-            "source_description":"Cross-Calibrated Multi-Platform V3.1",
+            "release_year":"2023",
+            "source_description":"Cross-Calibrated Multiplatform v3.1 (2023): 10m Surface Wind",
             "source_id":"CCMP-3-1",
             "source_label":"CCMP-3-1",
             "source_name":"CCMP-3-1",
-            "source_type":"satellite_blended",
-            "source_variables":[
-                "sfcWind"
-            ],
-            "source_version_number":"3.1"
-        },
-        "CCMP-Monthly-3-1":{
-            "institution_id":"RSS",
-            "region":[
-                "global"
-            ],
-            "release_year":"2022",
-            "source_description":"Cross-Calibrated Multi-Platform V3.1",
-            "source_id":"CCMP-Monthly-3-1",
-            "source_label":"CCMP-Monthly-3-1",
-            "source_name":"CCMP-Monthly-3-1",
             "source_type":"satellite_blended",
             "source_variables":[
                 "sfcWind"
@@ -1125,6 +1109,21 @@
             ],
             "source_version_number":"N/A"
         },
+        "LAI4g-1-2":{
+            "institution_id":"PKU",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2023",
+            "source_description":"The Fourth Generation Global Inventory Modeling and Mapping Studies Leaf Area Index",
+            "source_label":"LAI4g",
+            "source_name":"LAI4g",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "lai"
+            ],
+            "source_version_number":"1.2"
+        },
         "LORA-1-1":{
             "institution_id":"ARCCSS",
             "region":[
@@ -1285,22 +1284,6 @@
             "release_year":"2017",
             "source_description":"Extended Reconstructed Sea Surface Temperatures",
             "source_id":"NOAA-NCEI-ERSST-5-0",
-            "source_label":"NOAA NCEI ERSST",
-            "source_name":"NOAA NCEI ERSST",
-            "source_type":"gridded_insitu",
-            "source_variables":[
-                "tos"
-            ],
-            "source_version_number":"5.0"
-        },
-        "NOAA-NCEI-FAPAR":{
-            "institution_id":"NOAA-NCEI",
-            "region":[
-                "global_ocean"
-            ],
-            "release_year":"2017",
-            "source_description":"Extended Reconstructed Sea Surface Temperatures",
-            "source_id":"NOAA-NCEI-FAPAR",
             "source_label":"NOAA NCEI ERSST",
             "source_name":"NOAA NCEI ERSST",
             "source_type":"gridded_insitu",
@@ -1944,7 +1927,9 @@
         },
         "WECANN-1-0":{
             "institution_id":"ColumbiaU",
-            "region":"global_land",
+            "region":[
+                "global_land"
+            ],
             "release_year":"2018",
             "source_description":"Water, Energy, and Carbon with Artificial Neural Networks",
             "source_label":"WECANN",
@@ -2009,7 +1994,9 @@
         },
         "livneh-unsplit-1-0":{
             "institution_id":"UCSD-SIO",
-            "region":"north_america",
+            "region":[
+                "north_america"
+            ],
             "release_year":"2021",
             "source_description":"Livneh daily CONUS unsplit",
             "source_label":"livneh_unsplit",
@@ -2025,7 +2012,9 @@
         },
         "nClimGrid-Daily-1-0":{
             "institution_id":"NOAA-NCEI",
-            "region":"north_america",
+            "region":[
+                "north_america"
+            ],
             "release_year":"2014",
             "source_description":"NOAA nClimGrid-Daily",
             "source_id":"nClimGrid-Daily-1-0",
@@ -2042,7 +2031,9 @@
         },
         "nClimGrid-Monthly-1-0":{
             "institution_id":"NOAA-NCEI",
-            "region":"north_america",
+            "region":[
+                "north_america"
+            ],
             "release_year":"2014",
             "source_description":"NOAA nClimGrid-Monthly",
             "source_id":"nClimGrid-Monthly-1-0",

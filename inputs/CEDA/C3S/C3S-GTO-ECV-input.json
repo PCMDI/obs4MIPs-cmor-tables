@@ -6,7 +6,7 @@
     "grid_label":                   "gn",
     "history":                      "",
     "institution_id":               "DLR-BIRA", 
-    "license":                      "to be added....",
+    "license":                      "Data in this file produced by DLR is licensed under a DLR CC BY-NC-ND 3.0 licence (https://www.dlr.de/en/service/imprint).  Use of the data must be acknowledged. Further information about this data, including some limitations, can be found via https://atmos.eoc.dlr.de/app/products/gto-ecv.",
     "nominal_resolution":           "1x1 degree",
     "outpath":                      "./",
     "product":                      "observations",
