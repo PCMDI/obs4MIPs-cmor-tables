@@ -13,19 +13,11 @@ targetgrid = 'orig'
 
 #freq = 'Aday' #'Amon'  #'A3hr' #'Amon' #'Aday'  #'Amon'
 #version = 'Past'  #'Past-nogauge'  #'Past'  # NRT   # Past-nogauge
-<<<<<<< HEAD:inputs/PCMDI/GloH2O/MSWEP-V280/runCmor_MSWEP-v280.py
-freq = 'Aday' #'Amon' #'Aday'  #'Amon'
-version = 'Past'
-version = 'Past-nogauge'
-freq = 'A3hr' #'Amon' #'Aday'  #'Amon'
-version = 'Past-nogauge'  # 'NRT'  'Past-nogauge'  'Past'
-=======
 freq = 'Amon' #'Amon' #'Aday'  #'Amon'
 version = 'Past'
 #version = 'Past-nogauge'
 #freq = 'Amon' #'Amon' #'Aday'  #'Amon'
 #version = 'Past-nogauge'  # 'NRT'  'Past-nogauge'  'Past'
->>>>>>> master:inputs/PCMDI/GloH2O/MSWEP-V280/older/runCmor_MSWEP-v280.py
 
 if freq == 'Amon': 
   cmorTable = '../../../../Tables/obs4MIPs_Amon.json' 
@@ -88,13 +80,8 @@ lstyrs = ['1979', '1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987'
 lstyrs = ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020']
 
 
-<<<<<<< HEAD:inputs/PCMDI/GloH2O/MSWEP-V280/runCmor_MSWEP-v280.py
-#lstyrs = ['1979','1980']
-#lstyrs = ['1981']
-=======
 lstyrs = ['1979','1980','1981']
 lstyrs = ['1980']
->>>>>>> master:inputs/PCMDI/GloH2O/MSWEP-V280/older/runCmor_MSWEP-v280.py
 
 for yr in lstyrs:  # LOOP OVER YEARS
 #lstall = glob.glob(inputFilePathbgn+inputFilePathend + '*' + yr + '*.nc')
@@ -110,10 +97,6 @@ for yr in lstyrs:  # LOOP OVER YEARS
  if avgp == '3hourly': mos = ['01','02','03','04','05','06','07','08','09','10','11','12'] 
 
  print('above fc')
-<<<<<<< HEAD:inputs/PCMDI/GloH2O/MSWEP-V280/runCmor_MSWEP-v280.py
- fc = xc.open_mfdataset(pathin, mask_and_scale=False, decode_times=True, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
- fc = fc.bounds.add_missing_bounds(axes=['X', 'Y', 'T'])   
-=======
 #fc = xc.open_mfdataset(pathin, mask_and_scale=False, decode_times=True, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
  fc = xc.open_mfdataset(pathin,  mask_and_scale=False, decode_times=False, combine='nested', concat_dim='time', preprocess=extract_date) #AM
 
