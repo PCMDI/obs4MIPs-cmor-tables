@@ -23,7 +23,7 @@
 
    	"references":"",
 	"source_id":"ESACCI-CLOUD-AVHRR-AMPM-3-0",
- 	"source_label":"ESACCI-CLOUD-AVHRR-AMPM",
+	"source_label":"ESACCI-CLOUD-AVHRR-AMPM",
 	"source":"Cloud properties derived from AVHRR (aboard NOAA and MetOp AM+PM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.",
 	"source_type":"satellite_merged",
 	"source_version_number":"3.0",

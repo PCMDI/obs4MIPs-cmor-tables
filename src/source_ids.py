@@ -2,6 +2,29 @@ source_id = {}
 
 source_id['source_id'] = {}
 
+key = 'CALIPSO-ICECLOUD-1-00'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'CALIPSO-ICECLOUD'
+source_id['source_id'][key]['source_label'] = 'CALIPSO-ICECLOUD'
+source_id['source_id'][key]['release_year'] = '2018'
+source_id['source_id'][key]['source_description'] = 'Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO) Ice cloud'
+source_id['source_id'][key]['source_version_number'] = '1.00'
+source_id['source_id'][key]['institution_id'] = 'NASA-LaRC'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['cli','rlus']
+
+key = 'ESACCI-CLOUD-AVHRR-AMPM-3-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'ESACCI-CLOUD-AVHRR-AMPM'
+source_id['source_id'][key]['source_label'] = 'ESACCI-CLOUD-AVHRR-AMPM'
+source_id['source_id'][key]['release_year'] = '2019'
+source_id['source_id'][key]['source_description'] = 'Cloud properties derived from AVHRR (aboard NOAA and MetOp AM+PM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets'
+source_id['source_id'][key]['source_version_number'] = '3.0'
+source_id['source_id'][key]['institution_id'] = 'DWD'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['clivi', 'clt', 'clwvi', 'lwp', 'rlus', 'rlut', 'rlutcs', 'rsdt', 'rsus', 'rsuscs', 'rsut', 'rsutcs']
 
 key = 'GLODAP-2-2016b'
 source_id['source_id'][key] = {}
