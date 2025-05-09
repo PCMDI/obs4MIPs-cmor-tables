@@ -2,6 +2,30 @@ source_id = {}
 
 source_id['source_id'] = {}
 
+key = 'CALIPSO-ICECLOUD-1-00'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'CALIPSO-ICECLOUD'
+source_id['source_id'][key]['source_label'] = 'CALIPSO-ICECLOUD'
+source_id['source_id'][key]['release_year'] = '2018'
+source_id['source_id'][key]['source_description'] = 'Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO) Ice cloud'
+source_id['source_id'][key]['source_version_number'] = '1.00'
+source_id['source_id'][key]['institution_id'] = 'NASA-LaRC'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['cli','rlus']
+
+key = 'ESACCI-CLOUD-AVHRR-AMPM-3-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'ESACCI-CLOUD-AVHRR-AMPM'
+source_id['source_id'][key]['source_label'] = 'ESACCI-CLOUD-AVHRR-AMPM'
+source_id['source_id'][key]['release_year'] = '2019'
+source_id['source_id'][key]['source_description'] = 'Cloud properties derived from AVHRR (aboard NOAA and MetOp AM+PM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets'
+source_id['source_id'][key]['source_version_number'] = '3.0'
+source_id['source_id'][key]['institution_id'] = 'DWD'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['clivi', 'clt', 'clwvi', 'lwp', 'rlus', 'rlut', 'rlutcs', 'rsdt', 'rsus', 'rsuscs', 'rsut', 'rsutcs']
+
 key = 'LAI4g-1-2'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'LAI4g'
@@ -133,6 +157,19 @@ source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
 source_id['source_id'][key]['region'] = ['global_ocean']
 source_id['source_id'][key]['source_type'] = 'gridded_insitu'
 source_id['source_id'][key]['source_variables'] = ['so','thetao']
+
+key = 'WOA2018'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'WOA'
+source_id['source_id'][key]['source_label'] = 'WOA'
+source_id['source_id'][key]['release_year'] = '2018'
+source_id['source_id'][key]['source_description'] = 'World Ocean Atlas'
+source_id['source_id'][key]['source_version_number'] = '2018'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['global_ocean']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['so','thetao']
+
 
 key = 'livneh-1-0'
 source_id['source_id'][key] = {}
