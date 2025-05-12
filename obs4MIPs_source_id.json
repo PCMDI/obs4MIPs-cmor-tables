@@ -67,7 +67,10 @@
         },
         "ARMBE-atm-c1-1-8":{
             "institution_id":"DOE-ARM",
-            "region":"site_data",
+            "region":[
+                "north_america"
+            ],
+            "release_year":"2023",
             "source_description":"DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties",
             "source_label":"ARMBE",
             "source_name":"ARMBE",
@@ -92,7 +95,10 @@
         },
         "ARMBE-cldrad-c1-1-8":{
             "institution_id":"DOE-ARM",
-            "region":"site_data",
+            "region":[
+                "north_america"
+            ],
+            "release_year":"2023",
             "source_description":"DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties",
             "source_label":"ARMBE",
             "source_name":"ARMBE",
