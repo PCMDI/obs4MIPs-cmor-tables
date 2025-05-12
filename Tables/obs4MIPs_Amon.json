@@ -1444,7 +1444,6 @@
             "valid_max":"",
             "valid_min":""
         },
-
         "uas":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: time: mean",
@@ -1571,6 +1570,5 @@
             "valid_max":"",
             "valid_min":""
         }
-
     }
 }
