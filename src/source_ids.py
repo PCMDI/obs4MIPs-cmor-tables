@@ -1,30 +1,6 @@
 source_id = {}
 source_id['source_id'] = {}
 
-key = 'ARMBE-atm-c1-1-8'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'ARMBE'
-source_id['source_id'][key]['source_label'] = 'ARMBE'
-source_id['source_id'][key]['source_description'] = 'DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties'
-source_id['source_id'][key]['source_version_number'] = 'atm-c1-1-8'
-source_id['source_id'][key]['institution_id'] = 'DOE-ARM'
-source_id['source_id'][key]['region'] = ['site_data']
-source_id['source_id'][key]['source_type'] = 'insitu'
-source_id['source_id'][key]['source_variables'] = ['uas','vas','ps','pr','hfss','hfls','tas','hfss','hfls','ta','ua','va','hur','wap']
-source_id['source_id'][key]['release_year'] = '2022'
-
-key = 'SITE-ARMBE-atm-c1-1-8'
-source_id['source_id'][key] = {}
-source_id['source_id'][key]['source_name'] = 'SITE-ARMBE'
-source_id['source_id'][key]['source_label'] = 'ARMBE'
-source_id['source_id'][key]['source_description'] = 'DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties'
-source_id['source_id'][key]['source_version_number'] = 'atm-c1-1-8'
-source_id['source_id'][key]['institution_id'] = 'DOE-ARM'
-source_id['source_id'][key]['region'] = ['site_data']
-source_id['source_id'][key]['source_type'] = 'insitu'
-source_id['source_id'][key]['source_variables'] = ['uas','vas','ps','pr','hfss','hfls','tas','hfss','hfls','ta','ua','va','hur','wap']
-source_id['source_id'][key]['release_year'] = '2022'
-
 key = 'SGP--ARMBE-atm-c1-1-8'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'ARMBE'

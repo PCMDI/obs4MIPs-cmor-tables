@@ -1,8 +1,8 @@
 {
     "product":[
         "derived",
-        "observations",
         "site-observations",
+        "observations",
         "reanalysis"
     ]
 }
