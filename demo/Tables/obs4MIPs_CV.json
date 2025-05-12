@@ -305,13 +305,7 @@
             },
             "CCMP-3-1":{
                 "region":"global",
-                "source":"CCMP-3-1 3.1 (2022): Cross-Calibrated Multi-Platform V3.1",
-                "source_type":"satellite_blended",
-                "source_version_number":"3.1"
-            },
-            "CCMP-Monthly-3-1":{
-                "region":"global",
-                "source":"CCMP-Monthly-3-1 3.1 (2022): Cross-Calibrated Multi-Platform V3.1",
+                "source":"CCMP-3-1 3.1 (2023): Cross-Calibrated Multiplatform v3.1 (2023): 10m Surface Wind",
                 "source_type":"satellite_blended",
                 "source_version_number":"3.1"
             },
@@ -706,12 +700,6 @@
                 "source_version_number":"4.0"
             },
             "NOAA-NCEI-ERSST-5-0":{
-                "region":"global_ocean",
-                "source":"NOAA NCEI ERSST 5.0 (2017): Extended Reconstructed Sea Surface Temperatures",
-                "source_type":"gridded_insitu",
-                "source_version_number":"5.0"
-            },
-            "NOAA-NCEI-FAPAR":{
                 "region":"global_ocean",
                 "source":"NOAA NCEI ERSST 5.0 (2017): Extended Reconstructed Sea Surface Temperatures",
                 "source_type":"gridded_insitu",

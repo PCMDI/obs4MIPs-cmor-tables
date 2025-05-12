@@ -705,12 +705,6 @@
                 "source_type":"gridded_insitu",
                 "source_version_number":"5.0"
             },
-            "NOAA-NCEI-FAPAR":{
-                "region":"global_ocean",
-                "source":"NOAA NCEI ERSST 5.0 (2017): Extended Reconstructed Sea Surface Temperatures",
-                "source_type":"gridded_insitu",
-                "source_version_number":"5.0"
-            },
             "NOAA-NCEI-FAPAR-4-0":{
                 "region":"global_land",
                 "source":"NOAA-NCEI-FAPAR 4.0 (2014): AVHRR Fraction of Absorbed Photosynthetically Active Radiation",
