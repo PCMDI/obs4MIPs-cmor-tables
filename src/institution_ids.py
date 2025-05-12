@@ -1,6 +1,7 @@
 institution_id ={}
 institution_id['institution_id'] = {}
 
+institution_id['institution_id']['ARCCSS'] = 'ARC Centre of Excellence for Climate System Science, NSW, Australia,'
 institution_id['institution_id']['CEDA'] = 'Centre for Environmental Data Analysis, RAL Space, STFC Rutherford Appleton Laboratory, Chilton, Didcot; National Centre for Earth Observation, UK'
 institution_id['institution_id']['DOE-ARM'] = 'U.S. Department of Energy, Atmospheric Radiation Measurment Program'
 institution_id['institution_id']['ECMWF'] = 'The European Centre for Medium-Range Weather Forecasts, Shinfield Park, Reading RG2 9AX, UK'
@@ -30,3 +31,6 @@ institution_id['institution_id']['UCSD-SIO'] = 'University of California, San Di
 institution_id['institution_id']['UAH'] = 'University of Alcala, Spain' 
 institution_id['institution_id']['GloH2O'] = 'gloh2o.org'
 institution_id['institution_id']['OSU'] = 'Oregon State University, OR, USA'
+institution_id['institution_id']['ColumbiaU'] = 'Columbia University, NY, USA'
+institution_id['institution_id']['PKU'] = 'Peking University, Beijing, China'
+

@@ -90,7 +90,7 @@ for yr in lstyrs:  # LOOP OVER YEARS
 #w = sys.stdin.readline()
 
  pathin = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/' + version + '/' + avgp + '/' + yr + '*.nc'
- pathin = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/' + version.replace('-','_') + '/' + avgp + '/' + yr + '*.nc'
+#pathin = '/p/user_pub/PCMDIobs/obs4MIPs_input/GloH2O/MSWEP-V280/MSWEP_V280/' + version.replace('-','_') + '/' + avgp + '/' + yr + '*.nc'
 
  if avgp == 'Daily': mos = ['01','02','03','04','05','06','07','08','09','10','11','12'] 
  if avgp == 'Monthly': mos = ['01']
@@ -101,10 +101,16 @@ for yr in lstyrs:  # LOOP OVER YEARS
  fc = xc.open_mfdataset(pathin,  mask_and_scale=False, decode_times=False, combine='nested', concat_dim='time', preprocess=extract_date) #AM
 
  fc = fc.bounds.add_missing_bounds(['X','Y'])   
+>>>>>>> master:inputs/PCMDI/GloH2O/MSWEP-V280/older/runCmor_MSWEP-v280.py
  print('below fc')
 
  for mo in mos:
    endmo = dom(yr,mo)
+<<<<<<< HEAD:inputs/PCMDI/GloH2O/MSWEP-V280/runCmor_MSWEP-v280.py
+
+#  for dy in range(1,int(endmo)+1):
+=======
+>>>>>>> master:inputs/PCMDI/GloH2O/MSWEP-V280/older/runCmor_MSWEP-v280.py
   
    if avgp == 'Daily':
     datestart = yr + '-' + mo + '-01'
@@ -114,9 +120,25 @@ for yr in lstyrs:  # LOOP OVER YEARS
     datestart = yr + '-01'  
     dateend =   yr + '-12'
 
+<<<<<<< HEAD:inputs/PCMDI/GloH2O/MSWEP-V280/runCmor_MSWEP-v280.py
+   if avgp == '3hourly':
+    if str(dy) in ['1','2','3','4','5','6','7','8','9']: dy = '0' + str(dy)
+    datestart = yr + '-' + mo + '-' + str(dy) + ' 00'
+    dateend =   yr + '-' + mo + '-' + str(dy) + ' 21'
+    if yr == '1979': datestart = yr + '-' + mo + '-01-00'
+
+#  print('above fc')
+#  fc = xc.open_mfdataset(pathin, mask_and_scale=False, decode_times=True, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
+#  fc = fc.bounds.add_missing_bounds()   
+#  print('below fc')
+
+   tdc = fc.time.sel(time=slice(datestart, dateend)).values
+   tbds = fc.time_bnds.sel(time=slice(datestart, dateend)).values
+=======
    tdc = fc.time.values     #sel(time=slice(datestart, dateend))
 #  tbds = fc.time_bnds.sel(time=slice(datestart, dateend)).values
    fc = fc.bounds.add_bounds('T')
+>>>>>>> master:inputs/PCMDI/GloH2O/MSWEP-V280/older/runCmor_MSWEP-v280.py
    ddc = fc[inputVarName].sel(time=slice(datestart, dateend)).values
    tbds = fc.time_bnds.values       #.sel(time=slice(datestart, dateend)).values
 

@@ -103,7 +103,7 @@ for vr in vrs:
       cmorHeight = cmor.axis("height10m", coord_vals=np.array([10.0]), units="m")
       cmoraxes = [cmorTime, cmorLat, cmorLon, cmorHeight]
   elif vr in ["u_wind_p", "v_wind_p", "temperature_p", "relative_humidity_p"]:
-      cmorHeight = cmor.axis("plev37", coord_vals=np.array(f.pressure.values),units='hPa') 
+      cmorHeight = cmor.axis("plev37-ERA5", coord_vals=np.array(f.pressure.values),units='hPa') 
       cmoraxes = [cmorTime, cmorLat, cmorLon, cmorHeight]
   else:
       cmoraxes = [cmorTime, cmorLat, cmorLon]

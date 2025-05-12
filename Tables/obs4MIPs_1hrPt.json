@@ -11,7 +11,7 @@
         "product":"model-output",
         "realm":"atmos",
         "table_date":"18 November 2020",
-        "table_id":"Table obs4MIPs_A1hr"
+        "table_id":"Table obs4MIPs_1hrPt"
     },
     "variable_entry":{
         "clt":{
@@ -451,7 +451,7 @@
             "cell_measures":"area: areacella",
             "cell_methods":"time: mean",
             "comment":"Zonal wind (positive in a eastward direction).",
-            "dimensions":"longitude1 latitude1 plev37 time",
+            "dimensions":"longitude1 latitude1 plev37-ERA5 time",
             "frequency":"1hr",
             "long_name":"Eastward Wind",
             "modeling_realm":"atmos",
@@ -469,7 +469,7 @@
             "cell_measures":"area: areacella",
             "cell_methods":"time: mean",
             "comment":"Meridional wind (positive in a northward direction).",
-            "dimensions":"longitude1 latitude1 plev37 time",
+            "dimensions":"longitude1 latitude1 plev37-ERA5 time",
             "frequency":"1hr",
             "long_name":"Northward Wind",
             "modeling_realm":"atmos",
@@ -487,7 +487,7 @@
             "cell_measures":"area: areacella",
             "cell_methods":"time: mean",
             "comment":"Air Temperature",
-            "dimensions":"longitude1 latitude1 plev37 time",
+            "dimensions":"longitude1 latitude1 plev37-ERA5 time",
             "frequency":"1hr",
             "long_name":"Air Temperature",
             "modeling_realm":"atmos",
@@ -505,7 +505,7 @@
             "cell_measures":"area: areacella",
             "cell_methods":"time: mean",
             "comment":"The relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C.",
-            "dimensions":"longitude1 latitude1 plev37 time",
+            "dimensions":"longitude1 latitude1 plev37-ERA5 time",
             "frequency":"1hr",
             "long_name":"Relative Humidity",
             "modeling_realm":"atmos",
