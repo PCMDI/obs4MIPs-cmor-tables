@@ -65,6 +65,62 @@
             ],
             "source_version_number":"v7"
         },
+        "ARMBE-atm-c1-1-8":{
+            "institution_id":"DOE-ARM",
+            "region":[
+                "north_america"
+            ],
+            "release_year":"2023",
+            "source_description":"DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties",
+            "source_label":"ARMBE",
+            "source_name":"ARMBE",
+            "source_type":"insitu",
+            "source_variables":[
+                "hfls",
+                "hfls",
+                "hfss",
+                "hfss",
+                "hur",
+                "pr",
+                "ps",
+                "ta",
+                "tas",
+                "ua",
+                "uas",
+                "va",
+                "vas",
+                "wap"
+            ],
+            "source_version_number":"atm-c1-1-8"
+        },
+        "ARMBE-cldrad-c1-1-8":{
+            "institution_id":"DOE-ARM",
+            "region":[
+                "north_america"
+            ],
+            "release_year":"2023",
+            "source_description":"DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties",
+            "source_label":"ARMBE",
+            "source_name":"ARMBE",
+            "source_type":"insitu",
+            "source_variables":[
+                "cl",
+                "clivi",
+                "clt",
+                "clwvi",
+                "prw",
+                "rlds",
+                "rlus",
+                "rlut",
+                "rsds",
+                "rsdscs",
+                "rsdt",
+                "rsdt",
+                "rsus",
+                "rsut"
+            ],
+            "source_version_number":"cldrad-c1-1-8"
+        },
         "AVISO-1-0":{
             "institution_id":"CNES",
             "region":[
@@ -1748,6 +1804,62 @@
                 "tos"
             ],
             "source_version_number":"v7"
+        },
+        "SGP--ARMBE-atm-c1-1-8":{
+            "institution_id":"DOE-ARM",
+            "region":[
+                "site_data"
+            ],
+            "release_year":"2022",
+            "source_description":"DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties",
+            "source_label":"ARMBE",
+            "source_name":"ARMBE",
+            "source_type":"insitu",
+            "source_variables":[
+                "hfls",
+                "hfls",
+                "hfss",
+                "hfss",
+                "hur",
+                "pr",
+                "ps",
+                "ta",
+                "tas",
+                "ua",
+                "uas",
+                "va",
+                "vas",
+                "wap"
+            ],
+            "source_version_number":"atm-c1-1-8"
+        },
+        "SITE-ARMBE-atm-c1-1-8":{
+            "institution_id":"DOE-ARM",
+            "region":[
+                "site_data"
+            ],
+            "release_year":"2022",
+            "source_description":"DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties",
+            "source_label":"ARMBE",
+            "source_name":"SITE-ARMBE",
+            "source_type":"insitu",
+            "source_variables":[
+                "hfls",
+                "hfls",
+                "hfss",
+                "hfss",
+                "hur",
+                "pr",
+                "ps",
+                "ta",
+                "tas",
+                "ua",
+                "uas",
+                "va",
+                "vas",
+                "wap"
+            ],
+            "source_version_number":"atm-c1-1-8"
         },
         "TES-1-0":{
             "institution_id":"NASA-JPL",

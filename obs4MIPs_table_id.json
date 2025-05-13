@@ -6,6 +6,9 @@
         "obs4MIPs_Lmon",
         "obs4MIPs_Omon",
         "obs4MIPs_SImon",
+        "obs4MIPs_CFsubhr",
+        "obs4MIPs_A1hr",
+        "obs4MIPs_A1hrPt",
         "obs4MIPs_fx",
         "obs4MIPs_Ofx"
     ]
