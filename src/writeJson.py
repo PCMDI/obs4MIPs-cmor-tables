@@ -910,9 +910,9 @@ for jsonName in masterTargets:
 
     fH = open(outFile,'w')
     if jsonName in ['formula_terms','grids','coordinate']: jsonDict = eval(jsonDict)
-    if jsonName in ['frequency']: jsonDict['frequency']  = eval(jsonDict['frequency'])
-    if jsonName in ['grid_label']: jsonDict['grid_label']  = eval(jsonDict['grid_label'])
-    if jsonName in ['nominal_resolution']: jsonDict['nominal_resolution']  = eval(jsonDict['nominal_resolution'])
+    if jsonName in ['frequency']: jsonDict['frequency']  = eval(jsonDict['frequency'])['frequency']
+    if jsonName in ['grid_label']: jsonDict['grid_label']  = eval(jsonDict['grid_label'])['grid_label']
+    if jsonName in ['nominal_resolution']: jsonDict['nominal_resolution']  = eval(jsonDict['nominal_resolution'])['nominal_resolution']
     if jsonName in ['product']: jsonDict['product']  = eval(jsonDict['product'])
 
     if jsonName in ['product']: 
