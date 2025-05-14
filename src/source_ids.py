@@ -2,6 +2,19 @@ source_id = {}
 
 source_id['source_id'] = {}
 
+
+key = 'IAP-1-2'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'IAP'
+source_id['source_id'][key]['source_label'] = 'IAP'
+source_id['source_id'][key]['release_year'] = '2024'
+source_id['source_id'][key]['source_description'] = 'Sea Water Potential Temperature-In-situ (gridded) Chinese Academy of Sciences'
+source_id['source_id'][key]['source_version_number'] = '4.2'
+source_id['source_id'][key]['institution_id'] = 'CAS'
+source_id['source_id'][key]['region'] = ['global_ocean']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['thetao']
+
 key = 'LAI4g-1-2'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'LAI4g'
