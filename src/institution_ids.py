@@ -33,4 +33,5 @@ institution_id['institution_id']['OSU'] = 'Oregon State University, OR, USA'
 institution_id['institution_id']['ColumbiaU'] = 'Columbia University, NY, USA'
 institution_id['institution_id']['PKU'] = 'Peking University, Beijing, China'
 institution_id['institution_id']['CAS'] = 'Chinese Academy of Sciences, Beijing, China'
+institution_id['institution_id']['CRU-UEA'] = 'Climatic Research Unit, University of East Anglia, Norwich, UK'
 

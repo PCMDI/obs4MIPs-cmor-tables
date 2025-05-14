@@ -92,8 +92,10 @@
         },
         "institution_id":{
             "ARCCSS":"ARC Centre of Excellence for Climate System Science, NSW, Australia,",
+            "CAS":"Chinese Academy of Sciences, Beijing, China",
             "CEDA":"Centre for Environmental Data Analysis, RAL Space, STFC Rutherford Appleton Laboratory, Chilton, Didcot; National Centre for Earth Observation, UK",
             "CNES":"Centre national d'etudes spatiales",
+            "CRU-UEA":"Climatic Research Unit, University of East Anglia, Norwich, UK",
             "ColumbiaU":"Columbia University, NY, USA",
             "DLR-BIRA":"Deutsches Zentrum fur Luft- und Raumfahrt, Royal Belgian Institute for Space Aeronomy",
             "DWD":"Deutscher Wetterdienst, Offenbach 63067, Germany",
@@ -549,11 +551,23 @@
                 "source_type":"gridded_insitu",
                 "source_version_number":"2.0"
             },
+            "HadCRUT5-0-2-0":{
+                "region":"global",
+                "source":"HadCRUT5 5.0.2.0 (2025): HadCRUT5 blended air temperature and sea surface temperature anomalies",
+                "source_type":"gridded_insitu",
+                "source_version_number":"5.0.2.0"
+            },
             "HadISST-1-1":{
                 "region":"global_ocean",
                 "source":"HadISST-1-1 1-1 (2016): HadISST 1.1 monthly average sea surface temperature",
                 "source_type":"satellite_blended",
                 "source_version_number":"1-1"
+            },
+            "IAP-1-2":{
+                "region":"global_ocean",
+                "source":"IAP 4.2 (2024): Sea Water Potential Temperature-In-situ (gridded) Chinese Academy of Sciences",
+                "source_type":"gridded_insitu",
+                "source_version_number":"4.2"
             },
             "IMERG-V06-EU":{
                 "region":"global",
@@ -700,12 +714,6 @@
                 "source_version_number":"4.0"
             },
             "NOAA-NCEI-ERSST-5-0":{
-                "region":"global_ocean",
-                "source":"NOAA NCEI ERSST 5.0 (2017): Extended Reconstructed Sea Surface Temperatures",
-                "source_type":"gridded_insitu",
-                "source_version_number":"5.0"
-            },
-            "NOAA-NCEI-FAPAR":{
                 "region":"global_ocean",
                 "source":"NOAA NCEI ERSST 5.0 (2017): Extended Reconstructed Sea Surface Temperatures",
                 "source_type":"gridded_insitu",

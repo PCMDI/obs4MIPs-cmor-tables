@@ -840,6 +840,22 @@
             ],
             "source_version_number":"2.0"
         },
+        "HadCRUT5-0-2-0":{
+            "institution_id":"CRU-UEA",
+            "region":[
+                "global"
+            ],
+            "release_year":"2025",
+            "source_description":"HadCRUT5 blended air temperature and sea surface temperature anomalies",
+            "source_label":"HadCRUT5",
+            "source_name":"HadCRUT5",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "tas",
+                "tos"
+            ],
+            "source_version_number":"5.0.2.0"
+        },
         "HadISST-1-1":{
             "institution_id":"MOHC",
             "region":[
@@ -855,6 +871,21 @@
                 "ts"
             ],
             "source_version_number":"1-1"
+        },
+        "IAP-1-2":{
+            "institution_id":"CAS",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2024",
+            "source_description":"Sea Water Potential Temperature-In-situ (gridded) Chinese Academy of Sciences",
+            "source_label":"IAP",
+            "source_name":"IAP",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "thetao"
+            ],
+            "source_version_number":"4.2"
         },
         "IMERG-V06-EU":{
             "institution_id":"NASA-GSFC",
