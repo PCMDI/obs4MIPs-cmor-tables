@@ -37,7 +37,7 @@ source_id['source_id'][key]['institution_id'] = 'CAS'
 source_id['source_id'][key]['region'] = ['global_ocean']
 source_id['source_id'][key]['source_type'] = 'gridded_insitu'
 source_id['source_id'][key]['source_variables'] = ['thetao']
-=======
+
 key = 'SGP--ARMBE-atm-c1-1-8'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'ARMBE'
