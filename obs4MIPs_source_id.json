@@ -170,6 +170,21 @@
             ],
             "source_version_number":"9.0"
         },
+        "CCI-CryoClim-FSC-1":{
+            "institution_id":"NR",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2023",
+            "source_description":"Fractional Snow Cover CDR v1 from ESA CCI / CryoClim",
+            "source_label":"CCI/CryoClim FSC",
+            "source_name":"CCI/CryoClim FSC",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "snc"
+            ],
+            "source_version_number":"1"
+        },
         "CCMP-3-1":{
             "institution_id":"RSS",
             "region":[

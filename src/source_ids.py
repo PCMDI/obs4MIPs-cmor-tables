@@ -2,6 +2,18 @@ source_id = {}
 
 source_id['source_id'] = {}
 
+key = 'CCI-CryoClim-FSC-1'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'CCI/CryoClim FSC'
+source_id['source_id'][key]['source_label'] = 'CCI/CryoClim FSC'
+source_id['source_id'][key]['release_year'] = '2023'
+source_id['source_id'][key]['source_description'] = 'Fractional Snow Cover CDR v1 from ESA CCI / CryoClim'
+source_id['source_id'][key]['source_version_number'] = '1'
+source_id['source_id'][key]['institution_id'] = 'NR'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ["snc"]
+
 key = 'HadCRUT5-0-2-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'HadCRUT5'
