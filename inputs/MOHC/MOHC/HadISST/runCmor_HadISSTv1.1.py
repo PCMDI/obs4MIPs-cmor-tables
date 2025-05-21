@@ -5,11 +5,11 @@ import xarray as xr
 import json
 import sys
 
-sys.path.append("../../misc/")
+sys.path.append("../../../misc/")
 from fix_dataset_time import monthly_times
 
 #%% User provided input
-cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'HadISSTv1.1.json' ; # Update contents of this file to set your global_attributes
 inputFilePathbgn = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/MOHC/HadISST1-1-PJG/'
 inputFileName = ['HadISST_sst.nc']  
@@ -29,6 +29,7 @@ for fi in range(len(inputVarName)):
  lon = f.longitude.values  
  time = f.time.values   
 
+# BOUNDS GENERATED WITH XCDAT/XARRAY
  f = f.bounds.add_bounds("X") 
  f = f.bounds.add_bounds("Y") 
  f = f.bounds.add_bounds("T")
