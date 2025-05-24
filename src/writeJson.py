@@ -13,55 +13,6 @@ Several functions adopted from durolib now included and updated to PY3
 import os, json, ssl,shutil,sys, gc, re, copy
 
 #######################################################################
-def readJsonCreateDict_dep(buildList):
-    """
-    Documentation for readJsonCreateDict(buildList):
-    -------
-    The readJsonCreateDict() function reads web-based json files and writes
-    their contents to a dictionary in memory
-    Author: Paul J. Durack : pauldurack@llnl.gov
-    The function takes a list argument with two entries. The first is the
-    variable name for the assigned dictionary, and the second is the URL
-    of the json file to be read and loaded into memory. Multiple entries
-    can be included by generating additional embedded lists
-    Usage:
-    ------
-    Adopted from Durolib to be used in obs4MIPS.  CONVERTED TO PY3 by PJG in 2021
-
-    """
-
-    import os, json, ssl  #, urllib2   # urllib.request this is for PY3
-    import urllib.request  # CONVERTED TO PY3 by PJG in 2021 
-    from urllib.request import urlopen #PY3
-
-    # Test for list input of length == 2
-    if len(buildList[0]) != 2:
-        print('Invalid inputs, exiting..')
-        sys.exit()
-    # Create urllib2 context to deal with lab/LLNL web certificates
-    ctx                 = ssl.create_default_context()
-    ctx.check_hostname  = False
-    ctx.verify_mode     = ssl.CERT_NONE
-    # Iterate through buildList and write results to jsonDict
-    jsonDict = {}
-    for count,table in enumerate(buildList):
-        #print 'Processing:',table[0]
-        # Read web file
-#       jsonOutput = urllib2.urlopen(table[1], context=ctx) # Py2
-        jsonOutput = urlopen(table[1], context=ctx) # Py3
-        tmp = jsonOutput.read()
-        vars()[table[0]] = tmp
-        jsonOutput.close()
-        # Write local json
-        tmpFile = open('tmp.json','w')
-        tmpFile.write(eval(table[0]))
-        tmpFile.close()
-        # Read local json
-        vars()[table[0]] = json.load(open('tmp.json','r'))
-        os.remove('tmp.json')
-        jsonDict[table[0]] = eval(table[0]) ; # Write to dictionary
-
-    return jsonDict
 
 def readJsonCreateDict(buildList):
 
@@ -161,7 +112,8 @@ tableSource = [
  ['realm','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_realm.json'],
  ['source_type','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_source_type.json'],
  ['table_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_table_id.json'],
- ['institution_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_institution_id.json']
+ ['institution_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_institution_id.json'],
+ ['site_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_site_id.json']
  ] ;
 
 #%% Loop through tables and create in-memory objects
@@ -178,44 +130,6 @@ del(tmp,count,table) ; gc.collect()
 print('product dic is ', vars()['product'])
 
 #w = sys.stdin.readline()
-
-#########
-'''
-# Cleanup by extracting only variable lists
-for count2,table in enumerate(tableSource):
-    tableName = table[0]
-    print('tableName:',tableName)
-    #print eval(tableName)
-    if tableName in ['coordinate','formula_terms','frequency','grid_label','nominal_resolution']:
-        continue
-    else:
-        if tableName in ['monNobs', 'monStderr']:
-            eval(tableName)['Header'] = copy.deepcopy(Amon['Header']) ; # Copy header info from upstream file
-            del(eval(tableName)['Header']['#dataRequest_specs_version']) ; # Purge upstream identifier
-            eval(tableName)['Header']['realm'] = 'aerosol atmos atmosChem land landIce ocean ocnBgchem seaIce' ; # Append all realms
-        eval(tableName)['Header']['Conventions'] = 'CF-1.7 ODS-2.1' ; # Update "Conventions": "CF-1.7 CMIP-6.0"
-        if tableName not in ['monNobs', 'monStderr']:
-            eval(tableName)['Header']['#dataRequest_specs_version'] = eval(tableName)['Header']['data_specs_version']
-        eval(tableName)['Header']['data_specs_version'] = '2.1.0'
-        if 'mip_era' in eval(tableName)['Header'].keys():
-            eval(tableName)['Header']['#mip_era'] = eval(tableName)['Header']['mip_era']
-            del(eval(tableName)['Header']['mip_era']) ; # Remove after rewriting
-        eval(tableName)['Header']['product'] = 'observations' ; # Cannot be 'observations reanalysis'
-        eval(tableName)['Header']['table_date'] = time.strftime('%d %B %Y')
-        eval(tableName)['Header']['table_id'] = ''.join(['Table obs4MIPs_',tableName])
-        # Attempt to move information from input.json to table files - #84 - CMOR-limited
-        #eval(tableName)['Header']['activity_id'] = 'obs4MIPs'
-        #eval(tableName)['Header']['_further_info_url_tmpl'] = 'http://furtherinfo.es-doc.org/<activity_id><institution_id><source_label><source_id><variable_id>'
-        #eval(tableName)['Header']['output_file_template'] = '<variable_id><table_id><source_id><variant_label><grid_label>'
-        #eval(tableName)['Header']['output_path_template'] = '<activity_id><institution_id><source_id><table_id><variable_id><grid_label><version>'
-        #eval(tableName)['Header']['tracking_prefix'] = 'hdl:21.14102'
-        #eval(tableName)['Header']['_control_vocabulary_file'] = 'obs4MIPs_CV.json'
-        #eval(tableName)['Header']['_AXIS_ENTRY_FILE'] = 'obs4MIPs_coordinate.json'
-        #eval(tableName)['Header']['_FORMULA_VAR_FILE'] = 'obs4MIPs_formula_terms.json'
-        if 'baseURL' in eval(tableName)['Header'].keys():
-            del(eval(tableName)['Header']['baseURL']) ; # Remove spurious entry
-'''
-########
 
 # Cleanup realms
 
@@ -297,20 +211,6 @@ for tab in (Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx,Ofx,monNobs,monStd
 
 # Add new variables
 # 
-
-'''
-# Test for variable lists
-for var in SIday['variable_entry'].keys():
-    print var
-sys.exit()
-'''
-
-# Add new variables
-
-
-# Add new variables
-
-# Add new variables
 #%% Coordinate
 #%% Frequency
 #%% Grid
@@ -331,16 +231,6 @@ tmp = [['grid_label','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/mast
 
 # Fix issues
 #==============================================================================
-# Example new institution_id entry
-#institution_id['institution_id']['NOAA-NCEI'] = 'NOAA\'s National Centers for Environmental Information, Asheville, NC 28801, USA'
-#institution_id['institution_id']['RSS'] = 'Remote Sensing Systems, Santa Rosa, CA 95401, USA'
-#institution_id['institution_id']['CNES'] = "Centre national d'etudes spatiales"
-#institution_id['institution_id']['NASA-GSFC'] = "National Aeronautics and Space Administration, Goddard Space Flight Center"
-'''
-#institution_id['institution_id']['ImperialCollege'] = "Imperial College, London, U.K."
-#institution_id['institution_id']['UReading'] = "University of Reading, Reading, U.K."
-#institution_id['institution_id']['UW'] = "University of Washington, USA"
-'''
 #%% License
 license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
             ' a Creative Commons Attribution-ShareAlike 4.0 International License'
@@ -348,9 +238,6 @@ license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
             ' acknowledged following guidelines found at <a URL maintained by you>.'
             ' Further information about this data, including some limitations,'
             ' can be found via <some URL maintained by you>.')
-
-#%% Nominal resolution
-#%% Product
 
 #%% Required global attributes - # indicates source
 required_global_attributes = [
@@ -376,13 +263,6 @@ required_global_attributes = [
 ] ;
 
 #%% Source ID
-'''
-tmp = [['source_id','https://raw.githubusercontent.com/PCMDI/obs4mips-cmor-tables/master/obs4MIPs_source_id.json']
-      ] ;
-source_ida = readJsonCreateDict(tmp)
-source_ida = source_ida.get('source_id')
-print(type(source_ida))
-'''
 ## LOAD EXISTING SOURCE_ID
 source_id_orig = json.load(open('../obs4MIPs_source_id.json','r'))
 print(source_id_orig.keys())
@@ -390,26 +270,8 @@ print(source_id_orig.keys())
 exec(open("./source_ids.py").read())
 print('below exec')
 
-#print(source_id['source_id']['GERB-HR-ED01-1-1'])
-#w = sys.stdin.readline()
-
 for s in source_id_orig['source_id'].keys():
   source_id['source_id'][s] = source_id_orig['source_id'][s] 
-
-#print(source_id['source_id']['GERB-HR-ED01-1-1'])
-
-source_id['source_id']['20CR-V2']['institution_id'] = 'NOAA-ESRL-PSD' 
-source_id['source_id']['CERES-EBAF-4-0']['institution_id'] = 'NASA-LaRC'
-source_id['source_id']['CERES-EBAF-4-1']['institution_id'] = 'NASA-LaRC'
-#source_id['source_id']['CERES-EBAF-4-1']['institution_id'] = 'NASA-LaRC--PCMDI'
-source_id['source_id']['TropFlux-1-0']['institution_id'] = 'ESSO'
-#source_id['source_id']['REMSS-PRW-v07r01']['institution_id'] = 'RSS'
-#source_id['source_id']['REMSS-PRW-v07r01']['institution'] = 'RSS data prepared by PCMDI for obs4MIPs'
-source_id['source_id']['CMAP-V1902']['institution_id'] = 'NOAA-NCEI'
-source_id['source_id']['GPCP-2-3']['institution_id'] = 'NOAA-NCEI'
-
-#print(source_id['source_id']['GERB-HR-ED01-1-1'])
-#w = sys.stdin.readline()
 
 # Enter fixes or additions below
 '''
@@ -419,29 +281,13 @@ source_id['source_id'] = {}
 
 #####
 
-#pdb.set_trace()
 # Fix region non-list
 for keyVal in source_id['source_id'].keys():
     print(source_id['source_id'][key]['region'])
     if type(source_id['source_id'][key]['region']) != list:
         source_id['source_id'][key]['region'] = list(source_id['source_id'][key]['region'])
 
-#pdb.set_trace()
 #==============================================================================
-# Example new source_id entry
-#key = 'CMSAF-SARAH-2-0'
-#source_id['source_id'][key] = {}
-#source_id['source_id'][key]['source_description'] = 'Surface solAr RAdiation data set - Heliosat, based on MVIRI/SEVIRI aboard METEOSAT'
-#source_id['source_id'][key]['institution_id'] = 'DWD'
-#source_id['source_id'][key]['release_year'] = '2017'
-#source_id['source_id'][key]['source_id'] = key
-#source_id['source_id'][key]['source_label'] = 'CMSAF-SARAH'
-#source_id['source_id'][key]['source_name'] = 'CMSAF SARAH'
-#source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-#source_id['source_id'][key]['region'] = list('africa','atlantic_ocean','europe')
-#source_id['source_id'][key]['source_variables'] = list('rsds')
-#source_id['source_id'][key]['source_version_number'] = '2.0'
-
 # Example rename source_id entry
 #key = 'CMSAF-SARAH-2-0'
 #source_id['source_id'][key] = {}
@@ -450,12 +296,6 @@ for keyVal in source_id['source_id'].keys():
 # Example remove source_id entry
 #key = 'CMSAF-SARAH-2.0'
 #source_id['source_id'].pop(key)
-
-#key = 'REMSS-PRW-v07r01'
-#source_id['source_id'].pop(key)
-#key = 'REMSS-PRW-6-6-0'
-#source_id['source_id'].pop(key)
-
 
 # Test invalid chars
 #key = 'CMSAF-SARAH-2 0' ; # Tested ".", “_”, “(“, “)”, “/”, and " "
@@ -516,13 +356,11 @@ for key in source_id['source_id'].keys():
         sys.exit()
     # Validate region
     vals = source_id['source_id'][key]['region']
+
 #   for val in vals:
 #       if val not in eval(region)['region']['region']:  # region:
 #           print('Invalid region for entry:',key,'- aborting')
 #           sys.exit()
-
-
-
     # Validate product   
 #   vals = source_id['source_id'][key]['product']
 #   for val in vals:
@@ -716,13 +554,6 @@ for count,CV in enumerate(CVJsonList):
         obs4MIPs_CV['CV'].update(eval(CV))
 # Add static entries to obs4MIPs_CV.json
 obs4MIPs_CV['CV']['activity_id'] = 'obs4MIPs'
-
-# Dynamically update "data_specs_version": "2.0.0", in rssSsmiPrw-input.json
-#print os.getcwd()
-#versionInfo = getGitInfo('../demo/rssSsmiPrw-input.json')
-#tagTxt = versionInfo[2]
-#tagInd = tagTxt.find('(')
-#tagTxt = tagTxt[0:tagInd].replace('latest_tagPoint: ','').strip()
 
 # Write demo obs4MIPs_CV.json
 if os.path.exists('Tables/obs4MIPs_CV.json'):
