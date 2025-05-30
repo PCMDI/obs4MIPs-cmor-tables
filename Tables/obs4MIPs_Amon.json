@@ -589,6 +589,24 @@
             "valid_max":"",
             "valid_min":""
         },
+        "hussanom":{
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: time: mean",
+            "comment":"Near-surface (usually, 2 meter) specific humidity anomaly.",
+            "dimensions":"longitude latitude time height2m",
+            "frequency":"mon",
+            "long_name":"Near-Surface Specific Humidity Anomaly",
+            "modeling_realm":"atmos",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"huss",
+            "positive":"",
+            "standard_name":"specific_humidity_anomaly",
+            "type":"real",
+            "units":"1",
+            "valid_max":"",
+            "valid_min":""
+        },
         "mc":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: time: mean",
