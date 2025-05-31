@@ -170,6 +170,21 @@
             ],
             "source_version_number":"9.0"
         },
+        "CALIPSO-ICECLOUD-1-0":{
+            "institution_id":"NASA-LaRC",
+            "region":[
+                "global"
+            ],
+            "release_year":"2018",
+            "source_description":"Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO) Ice cloud",
+            "source_label":"CALIPSO-ICECLOUD",
+            "source_name":"CALIPSO-ICECLOUD",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "cli"
+            ],
+            "source_version_number":"1.00"
+        },
         "CCI-CryoClim-FSC-1":{
             "institution_id":"NR",
             "region":[
@@ -562,6 +577,33 @@
                 "pctCCI"
             ],
             "source_version_number":"2.0"
+        },
+        "ESACCI-CLOUD-AVHRR-AMPM-3-0":{
+            "institution_id":"DWD",
+            "region":[
+                "global"
+            ],
+            "release_year":"2019",
+            "source_description":"Cloud properties derived from AVHRR (aboard NOAA and MetOp AM+PM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets",
+            "source_label":"ESACCI-CLOUD-AVHRR-AMPM",
+            "source_name":"ESACCI-CLOUD-AVHRR-AMPM",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "clivi",
+                "clt",
+                "clt_stderr",
+                "clwvi",
+                "lwp",
+                "rlus",
+                "rlut",
+                "rlutcs",
+                "rsdt",
+                "rsus",
+                "rsuscs",
+                "rsut",
+                "rsutcs"
+            ],
+            "source_version_number":"3.0"
         },
         "ESACCI-CLOUD-AVHRR-PM":{
             "institution_id":"DWD",
@@ -1686,6 +1728,19 @@
                 "vas"
             ],
             "source_version_number":"v20110531"
+        },
+        "RAPID-v2023-1":{
+            "institution_id":"NERC-NSF-NOAA",
+            "region":"atlantic_ocean",
+            "release_year":"2024",
+            "source_description":"Atlantic Meridional Overturning Transport -In-situ",
+            "source_label":"RAPID",
+            "source_name":"RAPID",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "amoc"
+            ],
+            "source_version_number":"v2023.1"
         },
         "RSS-MSU-TLS-4":{
             "institution_id":"RSS",
