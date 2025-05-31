@@ -896,6 +896,22 @@
             ],
             "source_version_number":"6.0"
         },
+        "HOFFMAN-1-0":{
+            "institution_id":"UCI-ORNL",
+            "region":[
+                "global"
+            ],
+            "release_year":"2014",
+            "source_description":"Carbon Mass Flux Out Of Atmosphere Due To Net Biospheric Production On Land, Surface Downward Mass Flux of Carbon As CO2",
+            "source_label":"HOFFMAN",
+            "source_name":"HOFFMAN",
+            "source_type":"reanalysis",
+            "source_variables":[
+                "fgc02",
+                "nbp"
+            ],
+            "source_version_number":"1.0"
+        },
         "HWSD-2-0":{
             "institution_id":"FAO",
             "region":[
@@ -1304,6 +1320,21 @@
             ],
             "source_version_number":"v4.2"
         },
+        "NCSCD-2-2":{
+            "institution_id":"BCCR",
+            "region":[
+                "north_polar"
+            ],
+            "release_year":"2013",
+            "source_description":"Northern Circumpolar Soil Carbon Database",
+            "source_label":"NCSCD",
+            "source_name":"NCSCD",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "cSoil"
+            ],
+            "source_version_number":"2.2"
+        },
         "NOAA-NCEI-AVHRR-NDVI-4-0":{
             "institution_id":"NOAA-NCEI",
             "region":[
@@ -1574,6 +1605,21 @@
                 "ts"
             ],
             "source_version_number":"v2"
+        },
+        "OLC-ORS-V0":{
+            "institution_id":"ORNL",
+            "region":[
+                "global"
+            ],
+            "release_year":"2021",
+            "source_description":"Optimal Linear Combination of Offline land surface models, Reanalysis, and Satellite soil moisture data constrained by in situ observations",
+            "source_label":"OLC-ORS",
+            "source_name":"OLC-ORS",
+            "source_type":"reanalysis",
+            "source_variables":[
+                "mrso"
+            ],
+            "source_version_number":"V0"
         },
         "OSISAF-V3":{
             "institution_id":"MET-Norway",

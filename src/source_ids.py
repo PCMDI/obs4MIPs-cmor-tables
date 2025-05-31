@@ -2,6 +2,43 @@ source_id = {}
 
 source_id['source_id'] = {}
 
+
+key = 'HOFFMAN-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'HOFFMAN'
+source_id['source_id'][key]['source_label'] = 'HOFFMAN'
+source_id['source_id'][key]['release_year'] = '2014'
+source_id['source_id'][key]['source_description'] = 'Carbon Mass Flux Out Of Atmosphere Due To Net Biospheric Production On Land, Surface Downward Mass Flux of Carbon As CO2'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'UCI-ORNL'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'reanalysis'
+source_id['source_id'][key]['source_variables'] = ['nbp','fgc02']
+
+key = 'NCSCD-2-2'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'NCSCD'
+source_id['source_id'][key]['source_label'] = 'NCSCD'
+source_id['source_id'][key]['release_year'] = '2013'
+source_id['source_id'][key]['source_description'] = 'Northern Circumpolar Soil Carbon Database'
+source_id['source_id'][key]['source_version_number'] = '2.2'
+source_id['source_id'][key]['institution_id'] = 'BCCR'
+source_id['source_id'][key]['region'] = ['north_polar']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['cSoil']
+
+key = 'OLC-ORS-V0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'OLC-ORS'
+source_id['source_id'][key]['source_label'] = 'OLC-ORS'
+source_id['source_id'][key]['release_year'] = '2021'
+source_id['source_id'][key]['source_description'] = 'Optimal Linear Combination of Offline land surface models, Reanalysis, and Satellite soil moisture data constrained by in situ observations'
+source_id['source_id'][key]['source_version_number'] = 'V0'
+source_id['source_id'][key]['institution_id'] = 'ORNL'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'reanalysis'
+source_id['source_id'][key]['source_variables'] = ['mrso']
+
 key = 'CCI-CryoClim-FSC-1'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'CCI/CryoClim FSC'

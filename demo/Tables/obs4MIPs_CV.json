@@ -68,6 +68,7 @@
         },
         "institution_id":{
             "ARCCSS":"ARC Centre of Excellence for Climate System Science, NSW, Australia,",
+            "BCCR":"Bolin Centre for Climate Research - Stockholm University, SE",
             "CAS":"Chinese Academy of Sciences, Beijing, China",
             "CEDA":"Centre for Environmental Data Analysis, RAL Space, STFC Rutherford Appleton Laboratory, Chilton, Didcot; National Centre for Earth Observation, UK",
             "CNES":"Centre national d'etudes spatiales",
@@ -93,6 +94,7 @@
             "NOAA-ESRL-PSD":"NOAA Earth System Research Laboratory, Physical Sciences Division, Boulder, CO 80305, USA",
             "NOAA-NCEI":"NOAA National Centers for Environmental Information, Asheville, NC 28801, USA",
             "NR":"Norwegian Computing Center, Oslo, NO",
+            "ORNL":"Oakridge National Laboratory, TN, USA",
             "OSU":"Oregon State University, OR, USA",
             "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
             "PKU":"Peking University, Beijing, China",
@@ -529,6 +531,12 @@
                 "source_type":"satellite_blended",
                 "source_version_number":"6.0"
             },
+            "HOFFMAN-1-0":{
+                "region":"global",
+                "source":"HOFFMAN 1.0 (2014): Carbon Mass Flux Out Of Atmosphere Due To Net Biospheric Production On Land, Surface Downward Mass Flux of Carbon As CO2",
+                "source_type":"reanalysis",
+                "source_version_number":"1.0"
+            },
             "HWSD-2-0":{
                 "region":"global_land",
                 "source":"HWSD 2.0 (2023): Harmonized World Soil Database version 2",
@@ -685,6 +693,12 @@
                 "source_type":"satellite_blended",
                 "source_version_number":"v4.2"
             },
+            "NCSCD-2-2":{
+                "region":"north_polar",
+                "source":"NCSCD 2.2 (2013): Northern Circumpolar Soil Carbon Database",
+                "source_type":"gridded_insitu",
+                "source_version_number":"2.2"
+            },
             "NOAA-NCEI-AVHRR-NDVI-4-0":{
                 "region":"global_land",
                 "source":"NOAA-NCEI-AVHRR-NDVI 4.0 (2013): Normalized Difference Vegetation Index",
@@ -786,6 +800,12 @@
                 "source":"OISST_L4_AVHRR-only-v2 v2 (2016): SST-AVHRR_only.v2 2008 NOAA 1/4 Degree Daily Optimum Interpolation Sea Surface Temperature Analysis using AVHRR, Version 2",
                 "source_type":"satellite_blended",
                 "source_version_number":"v2"
+            },
+            "OLC-ORS-V0":{
+                "region":"global",
+                "source":"OLC-ORS V0 (2021): Optimal Linear Combination of Offline land surface models, Reanalysis, and Satellite soil moisture data constrained by in situ observations",
+                "source_type":"reanalysis",
+                "source_version_number":"V0"
             },
             "OSISAF-V3":{
                 "region":"global_ocean",
