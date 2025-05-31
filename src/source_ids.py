@@ -71,7 +71,7 @@ source_id['source_id'][key]['release_year'] = '2024'
 source_id['source_id'][key]['source_description'] = 'Atlantic Meridional Overturning Transport -In-situ'
 source_id['source_id'][key]['source_version_number'] = 'v2023.1'
 source_id['source_id'][key]['institution_id'] = 'NERC-NSF-NOAA'
-source_id['source_id'][key]['region'] = 'atlantic_ocean'
+source_id['source_id'][key]['region'] = ['atlantic_ocean']
 source_id['source_id'][key]['source_type'] = 'gridded_insitu'
 source_id['source_id'][key]['source_variables'] = ['amoc']
 
