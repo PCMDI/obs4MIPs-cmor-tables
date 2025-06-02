@@ -2,6 +2,79 @@ source_id = {}
 
 source_id['source_id'] = {}
 
+
+key = 'HOFFMAN-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'HOFFMAN'
+source_id['source_id'][key]['source_label'] = 'HOFFMAN'
+source_id['source_id'][key]['release_year'] = '2014'
+source_id['source_id'][key]['source_description'] = 'Carbon Mass Flux Out Of Atmosphere Due To Net Biospheric Production On Land, Surface Downward Mass Flux of Carbon As CO2'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'UCI-ORNL'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'reanalysis'
+source_id['source_id'][key]['source_variables'] = ['nbp','fgc02']
+
+key = 'NCSCD-2-2'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'NCSCD'
+source_id['source_id'][key]['source_label'] = 'NCSCD'
+source_id['source_id'][key]['release_year'] = '2013'
+source_id['source_id'][key]['source_description'] = 'Northern Circumpolar Soil Carbon Database'
+source_id['source_id'][key]['source_version_number'] = '2.2'
+source_id['source_id'][key]['institution_id'] = 'BCCR'
+source_id['source_id'][key]['region'] = ['north_polar']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['cSoil']
+
+key = 'OLC-ORS-V0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'OLC-ORS'
+source_id['source_id'][key]['source_label'] = 'OLC-ORS'
+source_id['source_id'][key]['release_year'] = '2021'
+source_id['source_id'][key]['source_description'] = 'Optimal Linear Combination of Offline land surface models, Reanalysis, and Satellite soil moisture data constrained by in situ observations'
+source_id['source_id'][key]['source_version_number'] = 'V0'
+source_id['source_id'][key]['institution_id'] = 'ORNL'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'reanalysis'
+source_id['source_id'][key]['source_variables'] = ['mrso']
+
+key = 'ESACCI-CLOUD-AVHRR-AMPM-3-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_label'] = 'ESACCI-CLOUD-AVHRR-AMPM'
+source_id['source_id'][key]['source_name'] = 'ESACCI-CLOUD-AVHRR-AMPM'
+source_id['source_id'][key]['release_year'] = '2019'
+source_id['source_id'][key]['source_description'] = 'Cloud properties derived from AVHRR (aboard NOAA and MetOp AM+PM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets'
+source_id['source_id'][key]['source_version_number'] = '3.0'
+source_id['source_id'][key]['institution_id'] = 'DWD'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['clivi', 'clt', 'clt_stderr', 'clwvi', 'lwp', 'rlus', 'rlut', 'rlutcs', 'rsdt', 'rsus', 'rsuscs', 'rsut', 'rsutcs']
+
+key = 'CALIPSO-ICECLOUD-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_label'] = 'CALIPSO-ICECLOUD'
+source_id['source_id'][key]['source_name'] = 'CALIPSO-ICECLOUD'
+source_id['source_id'][key]['release_year'] = '2018'
+source_id['source_id'][key]['source_description'] = 'Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO) Ice cloud'
+source_id['source_id'][key]['source_version_number'] = '1.00'
+source_id['source_id'][key]['institution_id'] = 'NASA-LaRC'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['cli']
+
+key = 'RAPID-v2023-1'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_label'] = 'RAPID'
+source_id['source_id'][key]['source_name'] = 'RAPID'
+source_id['source_id'][key]['release_year'] = '2024'
+source_id['source_id'][key]['source_description'] = 'Atlantic Meridional Overturning Transport -In-situ'
+source_id['source_id'][key]['source_version_number'] = 'v2023.1'
+source_id['source_id'][key]['institution_id'] = 'NERC-NSF-NOAA'
+source_id['source_id'][key]['region'] = ['atlantic_ocean']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['amoc']
+
 key = 'CCI-CryoClim-FSC-1'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'CCI/CryoClim FSC'

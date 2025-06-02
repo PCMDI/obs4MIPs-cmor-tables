@@ -170,6 +170,21 @@
             ],
             "source_version_number":"9.0"
         },
+        "CALIPSO-ICECLOUD-1-0":{
+            "institution_id":"NASA-LaRC",
+            "region":[
+                "global"
+            ],
+            "release_year":"2018",
+            "source_description":"Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO) Ice cloud",
+            "source_label":"CALIPSO-ICECLOUD",
+            "source_name":"CALIPSO-ICECLOUD",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "cli"
+            ],
+            "source_version_number":"1.00"
+        },
         "CCI-CryoClim-FSC-1":{
             "institution_id":"NR",
             "region":[
@@ -563,6 +578,33 @@
             ],
             "source_version_number":"2.0"
         },
+        "ESACCI-CLOUD-AVHRR-AMPM-3-0":{
+            "institution_id":"DWD",
+            "region":[
+                "global"
+            ],
+            "release_year":"2019",
+            "source_description":"Cloud properties derived from AVHRR (aboard NOAA and MetOp AM+PM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets",
+            "source_label":"ESACCI-CLOUD-AVHRR-AMPM",
+            "source_name":"ESACCI-CLOUD-AVHRR-AMPM",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "clivi",
+                "clt",
+                "clt_stderr",
+                "clwvi",
+                "lwp",
+                "rlus",
+                "rlut",
+                "rlutcs",
+                "rsdt",
+                "rsus",
+                "rsuscs",
+                "rsut",
+                "rsutcs"
+            ],
+            "source_version_number":"3.0"
+        },
         "ESACCI-CLOUD-AVHRR-PM":{
             "institution_id":"DWD",
             "region":[
@@ -895,6 +937,22 @@
                 "pr"
             ],
             "source_version_number":"6.0"
+        },
+        "HOFFMAN-1-0":{
+            "institution_id":"UCI-ORNL",
+            "region":[
+                "global"
+            ],
+            "release_year":"2014",
+            "source_description":"Carbon Mass Flux Out Of Atmosphere Due To Net Biospheric Production On Land, Surface Downward Mass Flux of Carbon As CO2",
+            "source_label":"HOFFMAN",
+            "source_name":"HOFFMAN",
+            "source_type":"reanalysis",
+            "source_variables":[
+                "fgc02",
+                "nbp"
+            ],
+            "source_version_number":"1.0"
         },
         "HWSD-2-0":{
             "institution_id":"FAO",
@@ -1304,6 +1362,21 @@
             ],
             "source_version_number":"v4.2"
         },
+        "NCSCD-2-2":{
+            "institution_id":"BCCR",
+            "region":[
+                "north_polar"
+            ],
+            "release_year":"2013",
+            "source_description":"Northern Circumpolar Soil Carbon Database",
+            "source_label":"NCSCD",
+            "source_name":"NCSCD",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "cSoil"
+            ],
+            "source_version_number":"2.2"
+        },
         "NOAA-NCEI-AVHRR-NDVI-4-0":{
             "institution_id":"NOAA-NCEI",
             "region":[
@@ -1575,6 +1648,21 @@
             ],
             "source_version_number":"v2"
         },
+        "OLC-ORS-V0":{
+            "institution_id":"ORNL",
+            "region":[
+                "global"
+            ],
+            "release_year":"2021",
+            "source_description":"Optimal Linear Combination of Offline land surface models, Reanalysis, and Satellite soil moisture data constrained by in situ observations",
+            "source_label":"OLC-ORS",
+            "source_name":"OLC-ORS",
+            "source_type":"reanalysis",
+            "source_variables":[
+                "mrso"
+            ],
+            "source_version_number":"V0"
+        },
         "OSISAF-V3":{
             "institution_id":"MET-Norway",
             "region":[
@@ -1640,6 +1728,19 @@
                 "vas"
             ],
             "source_version_number":"v20110531"
+        },
+        "RAPID-v2023-1":{
+            "institution_id":"NERC-NSF-NOAA",
+            "region":"atlantic_ocean",
+            "release_year":"2024",
+            "source_description":"Atlantic Meridional Overturning Transport -In-situ",
+            "source_label":"RAPID",
+            "source_name":"RAPID",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "amoc"
+            ],
+            "source_version_number":"v2023.1"
         },
         "RSS-MSU-TLS-4":{
             "institution_id":"RSS",

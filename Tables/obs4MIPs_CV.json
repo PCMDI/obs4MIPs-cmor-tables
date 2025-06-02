@@ -68,6 +68,7 @@
         },
         "institution_id":{
             "ARCCSS":"ARC Centre of Excellence for Climate System Science, NSW, Australia,",
+            "BCCR":"Bolin Centre for Climate Research - Stockholm University, SE",
             "CAS":"Chinese Academy of Sciences, Beijing, China",
             "CEDA":"Centre for Environmental Data Analysis, RAL Space, STFC Rutherford Appleton Laboratory, Chilton, Didcot; National Centre for Earth Observation, UK",
             "CNES":"Centre national d'etudes spatiales",
@@ -90,9 +91,11 @@
             "NASA-JPL":"NASA Jet Propulsion Laboratory, Pasadena, CA 91109, USA",
             "NASA-LaRC":"NASA-LaRC (Langley Research Center) Hampton, Va",
             "NCAR":"National Center for Atmospheric Research, Boulder, CO, USA",
+            "NERC-NSF-NOAA":"Multi-institute/agency collaboration",
             "NOAA-ESRL-PSD":"NOAA Earth System Research Laboratory, Physical Sciences Division, Boulder, CO 80305, USA",
             "NOAA-NCEI":"NOAA National Centers for Environmental Information, Asheville, NC 28801, USA",
             "NR":"Norwegian Computing Center, Oslo, NO",
+            "ORNL":"Oakridge National Laboratory, TN, USA",
             "OSU":"Oregon State University, OR, USA",
             "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
             "PKU":"Peking University, Beijing, China",
@@ -283,6 +286,12 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"9.0"
             },
+            "CALIPSO-ICECLOUD-1-0":{
+                "region":"global",
+                "source":"CALIPSO-ICECLOUD 1.00 (2018): Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO) Ice cloud",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"1.00"
+            },
             "CCI-CryoClim-FSC-1":{
                 "region":"global_land",
                 "source":"CCI/CryoClim FSC 1 (2023): Fractional Snow Cover CDR v1 from ESA CCI / CryoClim",
@@ -409,6 +418,12 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
             },
+            "ESACCI-CLOUD-AVHRR-AMPM-3-0":{
+                "region":"global",
+                "source":"ESACCI-CLOUD-AVHRR-AMPM 3.0 (2019): Cloud properties derived from AVHRR (aboard NOAA and MetOp AM+PM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"3.0"
+            },
             "ESACCI-CLOUD-AVHRR-PM":{
                 "region":"global",
                 "source":"ESACCI-CLOUD-AVHRR-PM 3.0 (2020): Cloud properties derived from AVHRR (aboard NOAA and MetOp PM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.",
@@ -528,6 +543,12 @@
                 "source":"GSMAP 6.0 (2017): JAXA GSMAP prepared for FROGS",
                 "source_type":"satellite_blended",
                 "source_version_number":"6.0"
+            },
+            "HOFFMAN-1-0":{
+                "region":"global",
+                "source":"HOFFMAN 1.0 (2014): Carbon Mass Flux Out Of Atmosphere Due To Net Biospheric Production On Land, Surface Downward Mass Flux of Carbon As CO2",
+                "source_type":"reanalysis",
+                "source_version_number":"1.0"
             },
             "HWSD-2-0":{
                 "region":"global_land",
@@ -685,6 +706,12 @@
                 "source_type":"satellite_blended",
                 "source_version_number":"v4.2"
             },
+            "NCSCD-2-2":{
+                "region":"north_polar",
+                "source":"NCSCD 2.2 (2013): Northern Circumpolar Soil Carbon Database",
+                "source_type":"gridded_insitu",
+                "source_version_number":"2.2"
+            },
             "NOAA-NCEI-AVHRR-NDVI-4-0":{
                 "region":"global_land",
                 "source":"NOAA-NCEI-AVHRR-NDVI 4.0 (2013): Normalized Difference Vegetation Index",
@@ -787,6 +814,12 @@
                 "source_type":"satellite_blended",
                 "source_version_number":"v2"
             },
+            "OLC-ORS-V0":{
+                "region":"global",
+                "source":"OLC-ORS V0 (2021): Optimal Linear Combination of Offline land surface models, Reanalysis, and Satellite soil moisture data constrained by in situ observations",
+                "source_type":"reanalysis",
+                "source_version_number":"V0"
+            },
             "OSISAF-V3":{
                 "region":"global_ocean",
                 "source":"OSISAF/CCI SIC 3 (2022): Sea Ice Concentration (SIC) CDR v3 from EUMETSAT OSI SAF / ESA CCI",
@@ -810,6 +843,12 @@
                 "source":"QuikSCAT v20110531 (2011): QuikSCAT winds monthly climatology derived from QuikSCAT L2B using the 2006 model function and processing algorithms.",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"v20110531"
+            },
+            "RAPID-v2023-1":{
+                "region":"a, t, l, a, n, t, i, c, _, o, c, e, a, n",
+                "source":"RAPID v2023.1 (2024): Atlantic Meridional Overturning Transport -In-situ",
+                "source_type":"gridded_insitu",
+                "source_version_number":"v2023.1"
             },
             "RSS-MSU-TLS-4":{
                 "region":"global",
