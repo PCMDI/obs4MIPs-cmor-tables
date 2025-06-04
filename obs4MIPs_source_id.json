@@ -1731,7 +1731,7 @@
         },
         "RAPID-v2023-1":{
             "institution_id":"NERC-NSF-NOAA",
-            "region":"atlantic_ocean",
+            "region":["atlantic_ocean"],
             "release_year":"2024",
             "source_description":"Atlantic Meridional Overturning Transport -In-situ",
             "source_label":"RAPID",
