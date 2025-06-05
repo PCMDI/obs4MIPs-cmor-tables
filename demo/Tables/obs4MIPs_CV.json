@@ -122,7 +122,8 @@
             "5 km",
             "50 km",
             "500 km",
-            "5000 km"
+            "5000 km",
+            "site"
         ],
         "product":[
             "derived",
@@ -845,7 +846,7 @@
                 "source_version_number":"v20110531"
             },
             "RAPID-v2023-1":{
-                "region":"a, t, l, a, n, t, i, c, _, o, c, e, a, n",
+                "region":"atlantic_ocean",
                 "source":"RAPID v2023.1 (2024): Atlantic Meridional Overturning Transport -In-situ",
                 "source_type":"gridded_insitu",
                 "source_version_number":"v2023.1"
