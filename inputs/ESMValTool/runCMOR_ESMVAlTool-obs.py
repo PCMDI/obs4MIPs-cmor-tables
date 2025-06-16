@@ -9,8 +9,8 @@ import sys,os,glob
 cmorTable = '../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx
 
 #EXAMPLES with command line input
-# python -i runCMOR_ESMVAlTool-obs.py clt ESACCI-CLD_input.json /p/user_pub/PCMDIobs/obs4MIPs_input/ESMValTool/ESACCI-CLOUD/clt_mon_ESACCI-CLOUD-AVHRR-AMPM-3-0_DLR_gn_198201-201612.nc
-# python -i runCMOR_ESMVAlTool-obs.py rlut CALIPSO-ICECLOUD_input.json /p/user_pub/PCMDIobs/obs4MIPs_input/ESMValTool/ESACCI-CLOUD/cli_mon_CALIPSO-ICECLOUD-1-00_DLR_200701-201512.nc
+# python -i runCMOR_ESMVAlTool-obs.py clt ESACCI-CLD_input.json /global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/ESMValTool/ESACCI-CLOUD/clt_mon_ESACCI-CLOUD-AVHRR-AMPM-3-0_DLR_gn_198201-201612.nc
+# python -i runCMOR_ESMVAlTool-obs.py rlut CALIPSO-ICECLOUD_input.json /global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/ESMValTool/ESACCI-CLOUD/cli_mon_CALIPSO-ICECLOUD-1-00_DLR_200701-201512.nc
 
 command_line  = True
 if command_line == True:

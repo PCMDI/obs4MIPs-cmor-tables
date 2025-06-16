@@ -33,6 +33,6 @@
 	"variant_label":"DLR",
         "calendar":"gregorian",
 	"mip_era":"REF",
-        "outpath":"/p/user_pub/PCMDIobs/"
+        "outpath":"./"
 }
 
