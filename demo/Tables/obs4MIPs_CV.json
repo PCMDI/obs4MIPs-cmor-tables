@@ -122,7 +122,8 @@
             "5 km",
             "50 km",
             "500 km",
-            "5000 km"
+            "5000 km",
+            "site"
         ],
         "product":[
             "derived",
@@ -393,6 +394,12 @@
                 "source":"ESA CCI SST v2.1 (2019): Sea Surface Temperature (SST) from the European Space Agency Climate Change Initiative (ESA CCI)",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"v2.1"
+            },
+            "ESA-CCI-SST-v3-0-1":{
+                "region":"global_ocean",
+                "source":"ESA CCI SST 3.0.1 (2024): Sea Surface Temperature (SST) from the ESA SST CCI Climate Data Record version 3.0",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"3.0.1"
             },
             "ESACCI-CLOUD-ATSR2-AATSR":{
                 "region":"global",
@@ -845,7 +852,7 @@
                 "source_version_number":"v20110531"
             },
             "RAPID-v2023-1":{
-                "region":"a, t, l, a, n, t, i, c, _, o, c, e, a, n",
+                "region":"atlantic_ocean",
                 "source":"RAPID v2023.1 (2024): Atlantic Meridional Overturning Transport -In-situ",
                 "source_type":"gridded_insitu",
                 "source_version_number":"v2023.1"
