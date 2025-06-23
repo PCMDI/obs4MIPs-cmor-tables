@@ -39,3 +39,5 @@ institution_id['institution_id']['NR'] = 'Norwegian Computing Center, Oslo, NO'
 institution_id['institution_id']['BCCR'] = 'Bolin Centre for Climate Research - Stockholm University, SE'
 institution_id['institution_id']['ORNL'] = 'Oakridge National Laboratory, TN, USA'
 institution_id['institution_id']['NERC-NSF-NOAA'] = 'Multi-institute/agency collaboration'
+institution_id['institution_id']['FMI'] = 'Finnish Meteorological Institute, Helsinki, Finland'
+

@@ -2,6 +2,18 @@ source_id = {}
 
 source_id['source_id'] = {}
 
+key = 'SAGE-CCI-OMPS-v0008'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'SAGE CCI OMPS'
+source_id['source_id'][key]['source_label'] = 'SAGE CCI OMPS'
+source_id['source_id'][key]['release_year'] = '2023'
+source_id['source_id'][key]['source_description'] = 'Mole concentration of ozone in air'
+source_id['source_id'][key]['source_version_number'] = 'v0008'
+source_id['source_id'][key]['institution_id'] = 'FMI'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['o3']
+
 key = 'ESA-CCI-SST-v3-0-1'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'ESA CCI SST'
