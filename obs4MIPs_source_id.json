@@ -1969,6 +1969,21 @@
             ],
             "source_version_number":"v7"
         },
+        "SAGE-CCI-OMPS-v0008":{
+            "institution_id":"FMI",
+            "region":[
+                "global"
+            ],
+            "release_year":"2023",
+            "source_description":"Mole concentration of ozone in air",
+            "source_label":"SAGE CCI OMPS",
+            "source_name":"SAGE CCI OMPS",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "o3"
+            ],
+            "source_version_number":"v0008"
+        },
         "SGP--ARMBE-atm-c1-1-8":{
             "institution_id":"DOE-ARM",
             "region":[
