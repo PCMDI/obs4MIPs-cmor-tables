@@ -2,6 +2,17 @@ source_id = {}
 
 source_id['source_id'] = {}
 
+key = 'ESA-CCI-SST-v3-0-1'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'ESA CCI SST'
+source_id['source_id'][key]['source_label'] = 'ESA CCI SST'
+source_id['source_id'][key]['release_year'] = '2024'
+source_id['source_id'][key]['source_description'] = 'Sea Surface Temperature (SST) from the ESA SST CCI Climate Data Record version 3.0'
+source_id['source_id'][key]['source_version_number'] = '3.0.1'
+source_id['source_id'][key]['institution_id'] = 'UReading'
+source_id['source_id'][key]['region'] = ['global_ocean']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['tos']
 
 key = 'HOFFMAN-1-0'
 source_id['source_id'][key] = {}

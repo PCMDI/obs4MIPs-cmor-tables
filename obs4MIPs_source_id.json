@@ -492,6 +492,21 @@
             ],
             "source_version_number":"v2.1"
         },
+        "ESA-CCI-SST-v3-0-1":{
+            "institution_id":"UReading",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2024",
+            "source_description":"Sea Surface Temperature (SST) from the ESA SST CCI Climate Data Record version 3.0",
+            "source_label":"ESA CCI SST",
+            "source_name":"ESA CCI SST",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "tos"
+            ],
+            "source_version_number":"3.0.1"
+        },
         "ESACCI-CLOUD-ATSR2-AATSR":{
             "institution_id":"DWD",
             "region":[
@@ -1731,7 +1746,9 @@
         },
         "RAPID-v2023-1":{
             "institution_id":"NERC-NSF-NOAA",
-            "region":["atlantic_ocean"],
+            "region":[
+                "atlantic_ocean"
+            ],
             "release_year":"2024",
             "source_description":"Atlantic Meridional Overturning Transport -In-situ",
             "source_label":"RAPID",
