@@ -37,14 +37,14 @@ variables:
 		:Conventions = "CF-1.7 ODS-2.1" ;
 		:activity_id = "obs4MIPs" ;
 		:contact = "zhang40@llnl.gov, obs4MIPs-admin@llnl.gov" ;
-		:creation_date = "2025-05-12T23:51:02Z" ;
+		:creation_date = "2025-06-25T23:00:05Z" ;
 		:data_specs_version = "2.1.0" ;
 		:external_variables = "areacella" ;
 		:frequency = "1hr" ;
 		:further_info_url = "https://furtherinfo.es-doc.org/obs4MIPs.DOE-ARM.source_labelARMBE-atm-c1-1-8.pr" ;
 		:grid = "site" ;
 		:grid_label = "SGP" ;
-		:history = "2025-05-12T23:51:02Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 ODS-2.1 and CF standards." ;
+		:history = "2025-06-25T23:00:05Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 ODS-2.1 and CF standards." ;
 		:institution = "U.S. Department of Energy, Atmospheric Radiation Measurment Program" ;
 		:institution_id = "DOE-ARM" ;
 		:mip_era = "CMIP6" ;
@@ -64,12 +64,76 @@ variables:
 		:source_type = "insitu" ;
 		:source_version_number = "atm-c1-1-8" ;
 		:table_id = "obs4MIPs_A1hrPt" ;
-		:table_info = "Creation Date:(18 November 2020) MD5:3bf3b7aa4ae5c5bfa671567650066d8a" ;
+		:table_info = "Creation Date:(18 November 2020) MD5:fb8982abb2693a43144ef3ffc5aed742" ;
 		:title = "ARM Best Estimate (ARMBE) Product, atmospheric profiles: armbeatm" ;
-		:tracking_id = "c833cdba-0385-4266-bf5c-95779c692375" ;
+		:tracking_id = "0f6bdf30-1ad2-4358-b3da-d1813166abf0" ;
 		:variable_id = "pr" ;
 		:variant_info = "Best Estimate" ;
 		:variant_label = "DOE-ARM" ;
 		:license = "Data in this file is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses)." ;
 		:cmor_version = "3.9.0" ;
+data:
+
+ time = 0.0208333333333333, 0.0625, 0.104166666666667, 0.145833333333333, 
+    0.1875, 0.229166666666667, 0.270833333333333, 0.3125, 0.354166666666667, 
+    0.395833333333333, 0.4375, 0.479166666666667, 0.520833333333333, 0.5625, 
+    0.604166666666667, 0.645833333333333, 0.6875, 0.729166666666667, 
+    0.770833333333333, 0.8125, 0.854166666666667, 0.895833333333333, 0.9375, 
+    0.979166666666667 ;
+
+ time_bnds =
+  0, 0.0416666666666667,
+  0.0416666666666667, 0.0833333333333333,
+  0.0833333333333333, 0.125,
+  0.125, 0.166666666666667,
+  0.166666666666667, 0.208333333333333,
+  0.208333333333333, 0.25,
+  0.25, 0.291666666666667,
+  0.291666666666667, 0.333333333333333,
+  0.333333333333333, 0.375,
+  0.375, 0.416666666666667,
+  0.416666666666667, 0.458333333333333,
+  0.458333333333333, 0.5,
+  0.5, 0.541666666666667,
+  0.541666666666667, 0.583333333333333,
+  0.583333333333333, 0.625,
+  0.625, 0.666666666666667,
+  0.666666666666667, 0.708333333333333,
+  0.708333333333333, 0.75,
+  0.75, 0.791666666666667,
+  0.791666666666667, 0.833333333333333,
+  0.833333333333333, 0.875,
+  0.875, 0.916666666666667,
+  0.916666666666667, 0.958333333333333,
+  0.958333333333333, 1 ;
+
+ lat = 36.6049995422363 ;
+
+ lon = 262.514999389648 ;
+
+ pr =
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0 ;
 }
