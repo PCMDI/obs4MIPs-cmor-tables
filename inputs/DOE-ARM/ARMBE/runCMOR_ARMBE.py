@@ -91,10 +91,10 @@ for vr in vrs:
 
   cmor.set_cur_dataset_attribute("product","site-observations")
 
-
   cmorLat = cmor.axis("latitude1", coord_vals=np.array([lat]), units="degrees_north")
   cmorLon = cmor.axis("longitude1", coord_vals=np.array([lon]), units="degrees_east")
   cmorTime = cmor.axis("time", coord_vals=time[:], cell_bounds=tbds, units= f.time.units)
+
   if vr == 'temperature_sfc':
       cmorHeight = cmor.axis("height2m", coord_vals=np.array([2.0]), units="m")
       cmoraxes = [cmorTime, cmorLat, cmorLon, cmorHeight]
