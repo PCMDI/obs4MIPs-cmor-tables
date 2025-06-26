@@ -492,6 +492,21 @@
             ],
             "source_version_number":"v2.1"
         },
+        "ESA-CCI-SST-v3-0-1":{
+            "institution_id":"UReading",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2024",
+            "source_description":"Sea Surface Temperature (SST) from the ESA SST CCI Climate Data Record version 3.0",
+            "source_label":"ESA CCI SST",
+            "source_name":"ESA CCI SST",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "tos"
+            ],
+            "source_version_number":"3.0.1"
+        },
         "ESACCI-CLOUD-ATSR2-AATSR":{
             "institution_id":"DWD",
             "region":[
@@ -1953,6 +1968,21 @@
                 "tos"
             ],
             "source_version_number":"v7"
+        },
+        "SAGE-CCI-OMPS-v0008":{
+            "institution_id":"FMI",
+            "region":[
+                "global"
+            ],
+            "release_year":"2023",
+            "source_description":"Mole concentration of ozone in air",
+            "source_label":"SAGE CCI OMPS",
+            "source_name":"SAGE CCI OMPS",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "o3"
+            ],
+            "source_version_number":"v0008"
         },
         "SGP--ARMBE-atm-c1-1-8":{
             "institution_id":"DOE-ARM",
