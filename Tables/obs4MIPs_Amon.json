@@ -697,6 +697,24 @@
             "valid_max":"",
             "valid_min":""
         },
+        "o3zm":{
+            "cell_measures":"area: areacella",
+            "cell_methods":"time: mean",
+            "comment":"Mole fraction is used in the construction mole_fraction_of_X_in_Y, where X is a material constituent of Y.",
+            "dimensions":"latitude height time",
+            "frequency":"mon",
+            "long_name":"Mole Fraction of O3",
+            "modeling_realm":"atmos atmosChem",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"o3",
+            "positive":"",
+            "standard_name":"mole_fraction_of_ozone_in_air",
+            "type":"real",
+            "units":"mol mol-1",
+            "valid_max":"",
+            "valid_min":""
+        },
         "o3Clim":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: mean time: mean within years time: mean over years",
