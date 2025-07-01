@@ -15,8 +15,9 @@ import pdb
 #                "source_type":"gridded_insitu",
 #                "source_version_number":"5.0.2.0"
 #   
-# I'd rather provide anomalies - that is how HadCRUT5 is listed. But where would the climatology bounds be stored? This is crucial???
-# For now I have added hussa to the code and into teh Tables/obs4MIPs_Amon.json file. This doesn't include climatological bounds though.
+# I'd rather provide anomalies - that is how HadCRUT5 is listed. But where would the climatology bounds be stored? This is crucial??? Are
+# we happy with hussanom as inputvar and outputvar and specifc_humidity_anomaly as a new standard name?
+# For now hussanom is added to the obs4MIPs_Amon.json but this doesn't include climatological bounds though.
 # How to store additional info - uncertainty, actual values etc...
           
 
@@ -32,8 +33,8 @@ inputJson = 'HadISDH.land.4.6.1.2024f.json' ; # Update contents of this file to 
 # EDITABLE - where is the input file?
 inputFilePathbgn = os.environ['SCRATCH']+'/RANDOM/'
 inputFileName = ['huss-land_HadISDH_HadOBS_v4-6-1-2024f_19730101-20241231.nc', 'huss-land_HadISDH_HadOBS_v4-6-1-2024f_19730101-20241231.nc']  
-inputVarName = ['huss', 'hussa']    # I actually want to provide the anomaly field (hussa) rather than actual values.
-outputVarName = ['huss', 'hussa']
+inputVarName = ['huss', 'hussanom']    # I actually want to provide the anomaly field (hussa) rather than actual values.
+outputVarName = ['huss', 'hussanom']
 outputUnits = ['1', '1']    # its g/kg and I convert here to kg/kg
 
 for fi in range(len(inputVarName)):
@@ -80,11 +81,11 @@ for fi in range(len(inputVarName)):
 
 
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
- varid   = cmor.variable(outputVarName[fi],outputUnits[fi],cmoraxes,missing_value=1.e20)
- values  = np.array(d[:],np.float32)
+ varid   = cmor.variable(outputVarName[fi], outputUnits[fi], cmoraxes, missing_value=CMOR_MDI)
+ values  = np.array(d[:], np.float32)
 
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
  cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
- cmor.write(varid,values) ; # Write variable with time axis
+ cmor.write(varid, values) ; # Write variable with time axis
  f.close() 
  cmor.close()
