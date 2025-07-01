@@ -7,7 +7,7 @@
     "activity_id":"obs4MIPs",
     "calendar":"standard",
     "comment":"",
-    "contact":"nick.rayner@METOFFICE.GOV",
+    "contact":"nick.rayner@METOFFICE.GOV.UK",
     "grid":"1x1 degree latitude x longitude",
     "grid_label":"gn",
     "history":"",
@@ -24,5 +24,5 @@
     "tracking_prefix":"hdl:21.14102",
     "variant_info":"obs4MIPs-compliant product prepared by PCMDI (ODS2.5)",
     "variant_label":"PCMDI",
-    "originData_URL": "https://www.metoffice.gov.uk/hadobs/hadisst/",
+    "originData_URL": "https://www.metoffice.gov.uk/hadobs/hadisst/"
 }
