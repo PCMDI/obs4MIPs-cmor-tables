@@ -2,6 +2,30 @@ source_id = {}
 
 source_id['source_id'] = {}
 
+key = 'HadCRUT5-0-2-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'HadCRUT5'
+source_id['source_id'][key]['source_label'] = 'HadCRUT5'
+source_id['source_id'][key]['release_year'] = '2025'
+source_id['source_id'][key]['source_description'] = 'HadCRUT5 blended air temperature and sea surface temperature anomalies'
+source_id['source_id'][key]['source_version_number'] = '5.0.2.0'
+source_id['source_id'][key]['institution_id'] = 'CRU-UEA' 
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['tas','tos']
+
+key = 'HadISDH-land-4-6-1-2024f'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_label'] = 'HadISDH'
+source_id['source_id'][key]['source_name'] = 'HadISDH.land.4.6.1.2024f'
+source_id['source_id'][key]['release_year'] = '2024'
+source_id['source_id'][key]['source_description'] = 'HadISDH land near-surface humidity anomalies'
+source_id['source_id'][key]['source_version_number'] = '4.6.1.2024f'
+source_id['source_id'][key]['institution_id'] = 'MOHC'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['huss','hussanom','hurs','hursanom']
+
 key = 'BSVertOzone-v1-0' 
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'BSVertOzone'
