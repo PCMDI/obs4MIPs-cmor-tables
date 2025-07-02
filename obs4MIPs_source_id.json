@@ -154,6 +154,21 @@
             ],
             "source_version_number":"v04.2"
         },
+        "BSVertOzone-v1-0":{
+            "institution_id":"DLR-BIRA",
+            "region":[
+                "global"
+            ],
+            "release_year":"2018",
+            "source_description":"Mole concentration of ozone in air",
+            "source_label":"BSVertOzone",
+            "source_name":"BSVertOzone",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "o3zm"
+            ],
+            "source_version_number":"v1-0"
+        },
         "C3S-GTO-ECV-9-0":{
             "institution_id":"DLR-BIRA",
             "region":[
