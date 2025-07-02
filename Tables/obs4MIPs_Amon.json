@@ -553,6 +553,24 @@
             "valid_max":"",
             "valid_min":""
         },
+        "hursanom":{
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: time: mean",
+            "comment":"Near-surface (usually, 2 meter) relative humidity anomaly.",
+            "dimensions":"longitude latitude time height2m",
+            "frequency":"mon",
+            "long_name":"Near-Surface Relative Humidity Anomaly",
+            "modeling_realm":"atmos",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"hurs",
+            "positive":"",
+            "standard_name":"relative_humidity_anomaly",
+            "type":"real",
+            "units":"1",
+            "valid_max":"",
+            "valid_min":""
+        },
         "hus":{
             "cell_measures":"area: areacella",
             "cell_methods":"time: mean",
@@ -589,7 +607,7 @@
             "valid_max":"",
             "valid_min":""
         },
-         "hussanom":{
+        "hussanom":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: time: mean",
             "comment":"Near-surface (usually, 2 meter) specific humidity anomaly.",
@@ -720,24 +738,6 @@
             "cell_methods":"time: mean",
             "comment":"Mole fraction is used in the construction mole_fraction_of_X_in_Y, where X is a material constituent of Y.",
             "dimensions":"longitude latitude plev19 time",
-            "frequency":"mon",
-            "long_name":"Mole Fraction of O3",
-            "modeling_realm":"atmos atmosChem",
-            "ok_max_mean_abs":"",
-            "ok_min_mean_abs":"",
-            "out_name":"o3",
-            "positive":"",
-            "standard_name":"mole_fraction_of_ozone_in_air",
-            "type":"real",
-            "units":"mol mol-1",
-            "valid_max":"",
-            "valid_min":""
-        },
-        "o3zm":{
-            "cell_measures":"area: areacella",
-            "cell_methods":"time: mean",
-            "comment":"Mole fraction is used in the construction mole_fraction_of_X_in_Y, where X is a material constituent of Y.",
-            "dimensions":"latitude height time",
             "frequency":"mon",
             "long_name":"Mole Fraction of O3",
             "modeling_realm":"atmos atmosChem",

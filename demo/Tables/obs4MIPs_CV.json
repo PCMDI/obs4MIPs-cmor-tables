@@ -576,6 +576,12 @@
                 "source_type":"gridded_insitu",
                 "source_version_number":"5.0.2.0"
             },
+            "HadISDH-land-4-6-1-2024f":{
+                "region":"global_land",
+                "source":"HadISDH 4.6.1.2024f (2024): HadISDH land near-surface humidity anomalies",
+                "source_type":"gridded_insitu",
+                "source_version_number":"4.6.1.2024f"
+            },
             "HadISST-1-1":{
                 "region":"global_ocean",
                 "source":"HadISST-1-1 1-1 (2016): HadISST 1.1 monthly average sea surface temperature",

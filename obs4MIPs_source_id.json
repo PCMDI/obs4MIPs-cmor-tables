@@ -1015,6 +1015,24 @@
             ],
             "source_version_number":"5.0.2.0"
         },
+        "HadISDH-land-4-6-1-2024f":{
+            "institution_id":"MOHC",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2024",
+            "source_description":"HadISDH land near-surface humidity anomalies",
+            "source_label":"HadISDH",
+            "source_name":"HadISDH.land.4.6.1.2024f",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "hurs",
+                "hursanom",
+                "huss",
+                "hussanom"
+            ],
+            "source_version_number":"4.6.1.2024f"
+        },
         "HadISST-1-1":{
             "institution_id":"MOHC",
             "region":[
