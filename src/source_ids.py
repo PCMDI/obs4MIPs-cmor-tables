@@ -2,6 +2,18 @@ source_id = {}
 
 source_id['source_id'] = {}
 
+key = 'BSVertOzone-v1-0' 
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'BSVertOzone'
+source_id['source_id'][key]['source_label'] = 'BSVertOzone'
+source_id['source_id'][key]['release_year'] = '2018'
+source_id['source_id'][key]['source_description'] = 'Mole concentration of ozone in air'
+source_id['source_id'][key]['source_version_number'] = 'v1-0'
+source_id['source_id'][key]['institution_id'] = 'DLR-BIRA'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['o3zm']
+
 key = 'SAGE-CCI-OMPS-v0008'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'SAGE CCI OMPS'
