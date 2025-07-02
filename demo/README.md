@@ -27,6 +27,10 @@ python runCMORdemo_CMAP-V1902.py
 
 python insitu_CMOR_demo.py
 
+**demo-zonalmeans**
+
+python runCMORdemo_zonalmean.py
+
 If you have any difficulties, please contact the obs4MIPs team at obs4MIPs-admin@llnl.gov
 
 [More details on the process of preparing obs4MIPs compliant data are available in /inputs of this repo.](https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/inputs/README.md)
