@@ -565,7 +565,7 @@
             "ok_min_mean_abs":"",
             "out_name":"hurs",
             "positive":"",
-            "standard_name":"specific_humidity_anomaly",
+            "standard_name":"relative_humidity_anomaly",
             "type":"real",
             "units":"1",
             "valid_max":"",
