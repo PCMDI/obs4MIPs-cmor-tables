@@ -23,6 +23,8 @@ tbds = f.time_bnds.values
 
 sector = f.sector.values
 
+sector = np.array(['atlantic_arctic_ocean', 'global_ocean', 'indian_pacific_ocean'])
+
 # Initialize and run CMOR. For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
 cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4,logfile='cmorLog.txt')
 cmor.dataset_json(inputJson)
@@ -30,7 +32,7 @@ cmor.load_table(cmorTable)
 
 # Create CMOR axes
 cmorLat = cmor.axis("latitude", coord_vals=lat[:], cell_bounds=f.lat_bnds.values, units="degrees_north")
-cmorBasin = cmor.axis("basin", coord_vals=sector[:],units="")
+cmorBasin = cmor.axis("basin", coord_vals=sector,units="")
 cmorTime = cmor.axis("time", coord_vals=time[:], cell_bounds=tbds, units= f.time.units)
 cmoraxes = [cmorTime,cmorLat, cmorBasin]
 
