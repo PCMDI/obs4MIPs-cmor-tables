@@ -34,13 +34,13 @@ cmor.load_table(cmorTable)
 cmorLat = cmor.axis("latitude", coord_vals=lat[:], cell_bounds=f.lat_bnds.values, units="degrees_north")
 cmorBasin = cmor.axis("basin", coord_vals=sector,units="")
 cmorTime = cmor.axis("time", coord_vals=time[:], cell_bounds=tbds, units= f.time.units)
-cmoraxes = [cmorTime,cmorLat, cmorBasin]
+cmoraxes = [cmorTime,cmorBasin, cmorLat]
 
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
 varid   = cmor.variable(outputVarName,outputUnits,cmoraxes,missing_value=1.e20)
 values  = np.array(d,np.float32)[:]
 
 cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
-cmor.write(varid,d,len(time)) 
+cmor.write(varid,values)  #,len(time)) 
 cmor.close()
 f.close()
