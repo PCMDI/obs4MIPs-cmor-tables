@@ -6,7 +6,7 @@ import json
 
 cmorTable = '../../Tables/obs4MIPs_A1hrPt.json'
 inputJson = 'ARMBE_ATM.json' ; # Update contents of this file to set your global_attributes
-inputFilePath = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/LLNL/ARMBE_Vxy/sample_in-situ1.nc'
+inputFilePath = './sample_in-situ1.nc'
 
 inputVarName = 'precip_rate_sfc' # Unit is mm/hour
 outputVarName = 'pr'
