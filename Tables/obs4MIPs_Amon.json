@@ -482,6 +482,24 @@
             "valid_max":"",
             "valid_min":""
         },
+       "hfls-site-collection":{
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: time: mean",
+            "comment":"The surface called 'surface' means the lower boundary of the atmosphere. 'Upward' indicates a vector component which is positive when directed upward (negative downward). The surface latent heat flux is the exchange of heat between the surface and the air on account of evaporation (including sublimation). In accordance with common usage in geophysical disciplines, 'flux' implies per unit area, called 'flux density' in physics.",
+            "dimensions":"longitude latitude site time",
+            "frequency":"mon",
+            "long_name":"Surface Upward Latent Heat Flux",
+            "modeling_realm":"atmos",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"hfls",
+            "positive":"up",
+            "standard_name":"surface_upward_latent_heat_flux",
+            "type":"real",
+            "units":"W m-2",
+            "valid_max":"",
+            "valid_min":""
+        },
         "hfns":{
             "cell_measures":"",
             "cell_methods":"time: mean",
