@@ -9,7 +9,7 @@
     "output_path_template":"<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>",
 	"contact":"i.harris@uea.ac.uk",
 	"data_specs_version":"ODS-2.5",
-	"dataset_contributor":".",
+	"dataset_contributor":"Climate Research Unit, University of East Anglia.",
 	"doi":"to be added",
 	"frequency":"mon",
 	"grid":"0.5 x 0.5 degree latitude x longitude",
