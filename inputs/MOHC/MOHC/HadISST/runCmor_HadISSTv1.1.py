@@ -4,6 +4,7 @@ import xcdat as xc
 import xarray as xr
 import json
 import sys
+import cftime
 
 sys.path.append("../../../misc/")
 from fix_dataset_time import monthly_times
@@ -54,6 +55,7 @@ for fi in range(len(inputVarName)):
  cmorLat = cmor.axis("latitude", coord_vals=lat[:], cell_bounds=f.latitude_bnds.values, units="degrees_north")
  cmorLon = cmor.axis("longitude", coord_vals=lon[:], cell_bounds=f.longitude_bnds.values, units="degrees_east")
  cmorTime = cmor.axis("time", coord_vals=time_adj[:], cell_bounds=time_bounds_adj, units=tunits)
+#cmorTime = cmor.axis("time", coord_vals=time_adj[:], cell_bounds=cftime.date2num(time,tunits), units=tunits)
  cmoraxes = [cmorTime,cmorLat, cmorLon]
 
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
