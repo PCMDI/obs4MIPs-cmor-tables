@@ -27,9 +27,11 @@
       	"source_type":"satellite_retrieval",
       	"source_version_number":"v0008",
       	"source_data_url":"https://syncandshare.desy.de/index.php/s/CRckneZxzaEW2w7",
-      	"variant_info":"CMORized product prepared by ESMValTool and CMIP IPO",
-      	"variant_label":"SAGE-CCI-OMPS_REF",
+      	"variant_info":"CMORized product prepared CMIP IPO",
+      	"variant_label":"CMIP-IPO",
         "calendar":"gregorian",
       	"mip_era":"REF",
-        "outpath":"/Users/paul.smith/obs4MIPS-cmor-tables/demo/demo-zonalmeans/out"
+        "outpath":"/Users/paul.smith/obs4MIPS-cmor-tables/demo/demo-zonalmeans/out",
+        "outpath":"./demo/",
+
 }
