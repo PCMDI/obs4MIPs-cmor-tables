@@ -32,6 +32,6 @@
         "calendar":"gregorian",
       	"mip_era":"REF",
         "outpath":"/Users/paul.smith/obs4MIPS-cmor-tables/demo/demo-zonalmeans/out",
-        "outpath":"./demo/",
+        "outpath":"./test-run/",
 
 }
