@@ -16,6 +16,7 @@ cmorTable = '/root/Obs4MIPs_demo/obs4MIPs-cmor-tables/Tables/obs4MIPs_Amon.json'
 inputVarName = 'clt'
 inputJson = '/root/Obs4MIPs_demo/obs4MIPs-cmor-tables/inputs/ESMValTool/ESACCI-CLD_input.json'
 inputFilePathbgn = '/root/Obs4MIPs_demo/data/OBS_ESACCI-CLOUD_sat_AVHRR-AMPM-fv3.0_Amon_clt_198201-201612.nc'
+positive = 'up' # where this is stated in the source_ids table for ESACCI-CLOUD-AVHRR-AMPM-3-0 add to varid below
 
 # Open input dataset, read in variable & units
 f = xr.open_dataset(inputFilePathbgn,decode_times=False, decode_cf=False)
@@ -35,7 +36,7 @@ axes = [cmorTime, cmorLat, cmorLon]
 print(axes)
 
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-varid   = cmor.variable(inputVarName,vunits,axes,missing_value=1.e20)
+varid   = cmor.variable(inputVarName,vunits,axes,missing_value=1.e20,positive='up')
 values  = np.array(d[:],np.float32)
 
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
