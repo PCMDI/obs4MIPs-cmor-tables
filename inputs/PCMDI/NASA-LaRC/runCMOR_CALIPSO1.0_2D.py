@@ -1,61 +1,44 @@
+# CMORising script for the CALIPSO ICECLOUD1.0 monthly means dataset prepared with ESMValTool for the REF
+# This script is for the 'cli' variable 
+# Importing necessary libraries
 import cmor
 import xarray as xr
 import xcdat as xc
 import numpy as np
-import json
-import sys,os
+import sys
 
-sys.path.append("../inputs/misc") # Path to obs4MIPsLib used to trap provenance
-import obs4MIPsLib
-
-cmorTable = '.../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
-inputJson = '.../inputs/PCMDI/NASA-LaRC/CALIPSO1.0-input.json' ; # Update contents of this file to set your global_attributes
-inputFilePath = 'xx'
+# User provided input (CMOR table, input file, variable_id and input_json file)
+cmorTable = '.../obs4MIPs-cmor-tables/Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx
 inputVarName = 'cli'
-outputVarName = 'pr'
+inputJson = '.../obs4MIPs-cmor-tables/inputs/PCMDI/NASA-LaRC/CALIPSO1.0-input.json'
+inputFilePathbgn = '.../obs4MIPs-cmor-tables/inputs/PCMDI/NASA-LaRC/OBS_CALIPSO-ICECLOUD_sat_1-00_Amon_cli_200701-201512.nc'
+positive = 'down'
 outputUnits = 'kg kg-1'
 
-# Open and read input netcdf file, get coordinates and add bounds
-f = xc.open_dataset(inputFilePath,decode_times=False)
-d = f[inputVarName]
-lat = f.lat.values 
-lon = f.lon.values 
-time = f.time.values  
-f = f.bounds.add_missing_bounds(axes=['X', 'Y'])
-f = f.bounds.add_bounds("T")
-tbds = f.time_bnds.values
+# Open input dataset, read in variable & units
+f = xr.open_dataset(inputFilePathbgn,decode_times=False, decode_cf=False)
+d = f[inputVarName].values
+vunits = f[inputVarName].units
 
-# CONVERT UNITS FROM mm/day to kg/m2/s 
-d = np.divide(d,86400.)
-d = np.where(np.isnan(d),1.e20,d)
-
-# Initialize and run CMOR. For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
-cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4) #,logfile='cmorLog.txt')
+# Initialize and run CMOR
+cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4 ,logfile='cmorLog.' + inputVarName + '.txt')
 cmor.dataset_json(inputJson)
 cmor.load_table(cmorTable)
-cmor.set_cur_dataset_attribute('history',f.history) 
 
-# Create CMOR axes
-cmorLat = cmor.axis("latitude", coord_vals=lat[:], cell_bounds=f.lat_bnds.values, units="degrees_north")
-cmorLon = cmor.axis("longitude", coord_vals=lon[:], cell_bounds=f.lon_bnds.values, units="degrees_east")
-cmorTime = cmor.axis("time", coord_vals=time[:], cell_bounds=tbds, units= f.time.units)
-cmoraxes = [cmorTime,cmorLat, cmorLon]
+# Create CMOR axes and define coordinates for CMOR
+cmorLat = cmor.axis("latitude", coord_vals=f.lat[:].values, cell_bounds=f.lat_bnds.values, units="degrees_north")
+cmorLon = cmor.axis("longitude", coord_vals=f.lon[:].values, cell_bounds=f.lon_bnds.values, units="degrees_east")
+cmorTime = cmor.axis("time", coord_vals=f.time.values, cell_bounds=f.time_bnds.values, units= f.time.units)
+axes = [cmorTime, cmorLat, cmorLon]
+print(axes)
 
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-varid   = cmor.variable(outputVarName,outputUnits,cmoraxes,missing_value=1.e20)
-values  = np.array(d,np.float32)[:]
+varid   = cmor.variable(inputVarName,vunits,axes,missing_value=1.e20, positive = 'down')
+values  = np.array(d[:],np.float32)
 
-# Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-cmor.set_variable_attribute(varid,'valid_min','f',2.0)
-cmor.set_variable_attribute(varid,'valid_max','f',3.0)
-
-# Provenance info - produces global attribute <obs4MIPs_GH_Commit_ID> 
-gitinfo = obs4MIPsLib.ProvenanceInfo(obs4MIPsLib.getGitInfo("./"))
-full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{gitinfo['commit_number']}/demo"  
-cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
-# 
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
 cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
-cmor.write(varid,d,len(time)) 
-cmor.close()
+cmor.write(varid,values) ; # Write variable with time axis
 f.close()
+cmor.close()
+print('done with',inputVarName)
