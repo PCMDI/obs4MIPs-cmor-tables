@@ -1,6 +1,4 @@
 {
-    "SIday":{
-        "SIday":{
             "Header":{
                 "Conventions":"CF-1.11; ODS-2.5",
                 "approx_interval":"1.00000",
@@ -179,6 +177,4 @@
                     "valid_min":""
                 }
             }
-        }
-    }
 }
