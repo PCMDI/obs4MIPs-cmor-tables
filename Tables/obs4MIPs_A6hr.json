@@ -1,5 +1,4 @@
 {
-    "A6hr":{
             "Header":{
                 "Conventions":"CF-1.11; ODS-2.5",
                 "approx_interval":"0.250000",
@@ -322,5 +321,4 @@
                     "valid_min":""
                 }
             }
-        }
 }
