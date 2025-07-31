@@ -684,6 +684,12 @@
                 "source_type":"gridded_insitu",
                 "source_version_number":"1.1"
             },
+            "MGOHCTA-WOA09":{
+                "region":"global_ocean",
+                "source":"MGOHCTA WOA09 (2024): Monthly Global Ocean Heat Content and Temperature Anomalies in-situ (basin averages)",
+                "source_type":"gridded_insitu",
+                "source_version_number":"WOA09"
+            },
             "MODIS-1-0":{
                 "region":"global",
                 "source":"MODIS 1.0 (2011): Atmospheric Infrared Sounder",

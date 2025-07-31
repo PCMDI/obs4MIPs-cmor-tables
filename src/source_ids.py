@@ -1,6 +1,18 @@
 source_id = {}
 source_id['source_id'] = {}
 
+key = 'MGOHCTA-WOA09'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'MGOHCTA'
+source_id['source_id'][key]['source_label'] = 'MGOHCTA'
+source_id['source_id'][key]['release_year'] = '2024'
+source_id['source_id'][key]['source_description'] = 'Monthly Global Ocean Heat Content and Temperature Anomalies in-situ (basin averages)'
+source_id['source_id'][key]['source_version_number'] = 'WOA09'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['global_ocean']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['ohcanom']
+
 key = 'HadCRUT5-0-2-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'HadCRUT5'
