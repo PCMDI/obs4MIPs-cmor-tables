@@ -3398,6 +3398,24 @@
             "valid_max":"",
             "valid_min":""
         },
+        "ohcanom":{
+            "cell_measures":"",
+            "cell_methods":"",
+            "comment":"",
+            "dimensions":"basin olevel time",
+            "frequency":"mon",
+            "long_name":"Basin scale ocean heat content",
+            "modeling_realm":"ocean",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"ohcanom",
+            "positive":"",
+            "standard_name":"northward_ocean_heat_transport",
+            "type":"real",
+            "units":"J",
+            "valid_max":"",
+            "valid_min":""
+        },
         "ph":{
             "cell_measures":"area: areacello volume: volcello",
             "cell_methods":"area: mean where sea time: mean",
