@@ -1,0 +1,11 @@
+{
+    "uncertainty":{
+        "lbnd":"lower bounds",
+        "nobs":"number of observations",
+        "sd":"standard deviation",
+        "stderr":"standard error",
+        "ubnd":"upper bounds",
+        "ustr":"structured uncertainty",
+        "utot":"total uncertainty",
+    }
+}
