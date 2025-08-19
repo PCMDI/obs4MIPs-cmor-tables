@@ -1,5 +1,5 @@
 {
-    "uncertainty":{
+    "aux_uncertainty_id":{
         "lbnd":"lower bounds",
         "nobs":"number of observations",
         "sd":"standard deviation",
