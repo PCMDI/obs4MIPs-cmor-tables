@@ -3,10 +3,9 @@
         "_FORMULA_VAR_FILE":"obs4MIPs_formula_terms.json",
         "_controlled_vocabulary_file":"obs4MIPs_CV.json",
         "_history_template":"%s; CMOR rewrote data to be consistent with <activity_id>, and <Conventions> standards",
-
 	"activity_id":"obs4MIPs",
-        "output_file_template":"<variable_id><frequency><source_id><variant_label><grid_label>",
-        "output_path_template":"<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>",
+    "output_file_template":"<variable_id><frequency><source_id><variant_label><grid_label>",
+    "output_path_template":"<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>",
 	"contact":"sydney.levitus@noaa.gov",
 	"data_specs_version":"ODS-2.5",
 	"dataset_contributor":"Ocean Heat Content, Salt Content, and Sea Level Anomalies is a joint project between NCEI and NOAA Global Ocean Monitoring and Observing (GOMO).",
@@ -30,7 +29,7 @@
 	"source_data_url":"https://www.nodc.noaa.gov/OC5/indprod.html",
 	"variant_info":"",
 	"variant_label":"",
-        "calendar":"gregorian",
+    "calendar":"gregorian",
 	"mip_era":"",
-        "outpath":"/home/users/PCMDI/NOAA-NCEI/OHC/MGOHCTA/out/" 
+    "outpath":"/home/users/PCMDI/NOAA-NCEI/OHC/MGOHCTA/out/" 
 }
