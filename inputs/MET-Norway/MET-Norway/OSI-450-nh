@@ -1,0 +1,33 @@
+{
+    "#comment":"The following are CMOR internal settings and should not be edited by the user",
+    "_AXIS_ENTRY_FILE":"obs4MIPs_coordinate.json",
+    "_FORMULA_VAR_FILE":"obs4MIPs_formula_terms.json",
+    "_controlled_vocabulary_file":"obs4MIPs_CV.json",
+    "_further_info_url_tmpl":".",
+    "activity_id":"obs4MIPs",
+    "calendar":"gregorian",
+    "comment":"",
+    "conventions":"CF-1.7"
+    "contact":"Axel.Lauer@dlr.de, thomas.lavergne@met.no",
+    "data_specs_version":"ODS-2.5",
+    "doi":"10.15770/EUM_SAF_OSI_0023"
+    "grid":"0.25x0.25 degree latitude x longitude",
+    "grid_label":"gr1g",
+    "history":"",
+    "license":"Licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0) by EUMETSAT.",
+    "institution_id":"MET-Norway",
+    "nominal_resolution":"25 km",
+    "outpath":"./outdata",
+    "output_file_template":"<variable_id><frequency><source_id><variant_label><grid_label>",
+    "output_path_template":"<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>",
+    "product":"reanalysis",
+    "references":"https://doi.org/10.5281/zenodo.10014535",
+    "source_id":"OSI-450-nh",
+    "title":"Monthly Sea Ice Concentration Climate Data Record Version 3 OSI-450-nh data reformatted for ESMValTool v2.12.0",
+    "variant_info":"obs4MIPs-compliant product prepared with ESMValTool at DLR and processed by CMIP IPO using CMOR",
+    "variant_label":"DLR-BIRA",
+    "source_data_url": "https://osi-saf.eumetsat.int/products/osi-450-a1",
+    "source_data_retrieval_date": "250318",
+    "dataset_contributor": "250318; AL @ DLR",
+    "processing_code_location":"https://github.com/PCMDI/obs4MIPs-cmor-tables/edit/PS_MET_Norway_OSI-450-sh/inputs/MET-Norway/MET-Norway/"
+}
