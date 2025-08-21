@@ -1583,6 +1583,22 @@
             ],
             "source_version_number":"5.0"
         },
+        "NOAA-NCEI-LAI-VIIRS-1-0":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2023",
+            "source_description":"Monthly Average of Daily Leaf Area Index from VIIRS",
+            "source_id":"NOAA-NCEI-LAI-VIIRS-1-0",
+            "source_label":"NOAA NCEI LAI",
+            "source_name":"NOAA NCEI LAI",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "lai"
+            ],
+            "source_version_number":"1.0"
+        },
         "NOAA-NCEI-NDVI":{
             "institution_id":"NOAA-NCEI",
             "region":[
