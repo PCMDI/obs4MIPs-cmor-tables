@@ -1583,6 +1583,21 @@
             ],
             "source_version_number":"5.0"
         },
+        "NOAA-NCEI-LAI-AVHRR-5-0":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2019",
+            "source_description":"Monthly Average of Daily Leaf Area Index from AVHRR",
+            "source_label":"NOAA-NCEI-LAI-AVHRR",
+            "source_name":"NOAA NCEI LAI v5.0 (2019): AVHRR Leaf Area Index",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "lai"
+            ],
+            "source_version_number":"5.0"
+        },
         "NOAA-NCEI-LAI-VIIRS-1-0":{
             "institution_id":"NOAA-NCEI",
             "region":[

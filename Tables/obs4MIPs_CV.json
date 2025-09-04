@@ -792,6 +792,18 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"5.0"
             },
+            "NOAA-NCEI-LAI-AVHRR-5-0":{
+                "region":"global_land",
+                "source":"NOAA-NCEI-LAI-AVHRR 5.0 (2019): Monthly Average of Daily Leaf Area Index from AVHRR",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"5.0"
+            },
+            "NOAA-NCEI-LAI-VIIRS-1-0":{
+                "region":"global_land",
+                "source":"NOAA-NCEI-LAI-VIIRS 1.0 (2023): Monthly Average of Daily Leaf Area Index from VIIRS",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"1.0"
+            },
             "NOAA-NCEI-NDVI":{
                 "region":"global_land",
                 "source":"NOAA NCEI NDVI 5.0 (2019): Normalized Difference Vegetation Index",
@@ -1070,6 +1082,7 @@
             "obs4MIPs_A3hr",
             "obs4MIPs_Lmon",
             "obs4MIPs_Omon",
+            "obs4MIPs_Oday",
             "obs4MIPs_SImon",
             "obs4MIPs_CFsubhr",
             "obs4MIPs_A1hr",
