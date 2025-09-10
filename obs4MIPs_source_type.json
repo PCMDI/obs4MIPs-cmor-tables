@@ -5,6 +5,6 @@
         "reanalysis":"gridded product generated from a model reanalysis based on in-situ instruments and possibly satellite measurements",
         "satellite_blended":"gridded product based on both in-situ instruments and satellite measurements",
         "satellite_retrieval":"gridded product based on satellite measurements",
-        "AI_upscaling_multiple_sources"
+        "AI_upscaling": "gridded product exploiting multiple_sources via machine learning"
     }
 }
