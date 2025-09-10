@@ -80,6 +80,7 @@
             "ECMWF":"The European Centre for Medium-Range Weather Forecasts, Shinfield Park, Reading RG2 9AX, UK",
             "ESPRI-IPSL":"Ensemble de Services Pour la Recherche, Institut Pierre Simon Laplace (France)",
             "ESSO":"Indian National Centre for Ocean Information Services",
+            "EmoryU":"Emory University, GA, USA",
             "FMI":"Finnish Meteorological Institute, Helsinki, Finland",
             "GloH2O":"gloh2o.org",
             "INCOIS-NIO-IPSL":"Joint research colloboration between INCOIS(India), NIO(India) and IPSL(France)",
@@ -800,7 +801,7 @@
             },
             "NOAA-NCEI-LAI-VIIRS-1-0":{
                 "region":"global_land",
-                "source":"NOAA-NCEI-LAI-VIIRS 1.0 (2023): Monthly Average of Daily Leaf Area Index from VIIRS",
+                "source":"NOAA NCEI LAI 1.0 (2023): Monthly Average of Daily Leaf Area Index from VIIRS",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.0"
             },
@@ -1067,6 +1068,12 @@
                 "source":"nClimGrid-Monthly-1-0 1.0 (2014): NOAA nClimGrid-Monthly",
                 "source_type":"gridded_insitu",
                 "source_version_number":"1.0"
+            },
+            "wang2024-cSoil-v2":{
+                "region":"north_america",
+                "source":"wang2024-cSoil 2 (2024): Upscaling soil organic carbon measurements at the continental scale using multivariate clustering analysis and machine learning",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"2"
             }
         },
         "source_type":{
@@ -1082,7 +1089,6 @@
             "obs4MIPs_A3hr",
             "obs4MIPs_Lmon",
             "obs4MIPs_Omon",
-            "obs4MIPs_Oday",
             "obs4MIPs_SImon",
             "obs4MIPs_CFsubhr",
             "obs4MIPs_A1hr",
