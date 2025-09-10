@@ -1,5 +1,4 @@
 {
-    "Oday":{
         "Header":{
             "Conventions":"CF-1.11; ODS-2.5",
             "approx_interval":"1.00000",
@@ -140,7 +139,6 @@
                 "units":"degC2",
                 "valid_max":"",
                 "valid_min":""
-            }
         }
     }
 }
