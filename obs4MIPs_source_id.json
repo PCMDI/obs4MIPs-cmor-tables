@@ -17,6 +17,21 @@
             ],
             "source_version_number":"V2"
         },
+        "AI-upscaling-cSoil-1-0":{
+            "institution_id":"EmoryU",
+            "region":[
+                "contiguous_united_states"
+            ],
+            "release_year":"2024",
+            "source_description":"Upscaling soil organic carbon measurements at the continental scale using multivariate clustering analysis and machine learning",
+            "source_label":"AI-upscaling-cSoil",
+            "source_name":"AI upscaling cSoil",
+            "source_type":"AI_upscaling",
+            "source_variables":[
+                "cSoil"
+            ],
+            "source_version_number":"1"
+        },
         "AIRS-1-0":{
             "institution_id":"NASA-JPL",
             "region":[
@@ -2360,5 +2375,20 @@
             ],
             "source_version_number":"1.0"
         },
+        "wang2024-cSoil-v2":{
+            "institution_id":"EmoryU",
+            "region":[
+                "contiguous_united_states"
+            ],
+            "release_year":"2024",
+            "source_description":"Upscaling soil organic carbon measurements at the continental scale using multivariate clustering analysis and machine learning",
+            "source_label":"wang2024-cSoil",
+            "source_name":"wang2024 cSoil",
+            "source_type":"AI_upscaling",
+            "source_variables":[
+                "cSoil"
+            ],
+            "source_version_number":"2"
+        }
     }
 }
