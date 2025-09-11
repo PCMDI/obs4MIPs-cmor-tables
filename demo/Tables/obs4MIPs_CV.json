@@ -241,6 +241,12 @@
                 "source_type":"reanalysis",
                 "source_version_number":"V2"
             },
+            "AI-upscaling-cSoil-1-0":{
+                "region":"contiguous_united_states",
+                "source":"AI-upscaling-cSoil 1 (2024): Upscaling soil organic carbon measurements at the continental scale using multivariate clustering analysis and machine learning",
+                "source_type":"AI_upscaling",
+                "source_version_number":"1"
+            },
             "AIRS-1-0":{
                 "region":"global",
                 "source":"AIRS 1.0 (2011): Atmospheric Infrared Sounder",
@@ -1070,13 +1076,14 @@
                 "source_version_number":"1.0"
             },
             "wang2024-cSoil-v2":{
-                "region":"north_america",
+                "region":"contiguous_united_states",
                 "source":"wang2024-cSoil 2 (2024): Upscaling soil organic carbon measurements at the continental scale using multivariate clustering analysis and machine learning",
-                "source_type":"satellite_retrieval",
+                "source_type":"AI_upscaling",
                 "source_version_number":"2"
             }
         },
         "source_type":{
+            "AI_upscaling":"gridded product exploiting multiple_sources via machine learning",
             "gridded_insitu":"gridded product based on measurements collected from in-situ instruments",
             "insitu":"site data",
             "reanalysis":"gridded product generated from a model reanalysis based on in-situ instruments and possibly satellite measurements",
