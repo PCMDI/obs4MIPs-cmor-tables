@@ -2360,20 +2360,5 @@
             ],
             "source_version_number":"1.0"
         },
-        "wang2024-cSoil-v2":{
-            "institution_id":"EmoryU",
-            "region":[
-                "north_america"
-            ],
-            "release_year":"2024",
-            "source_description":"Upscaling soil organic carbon measurements at the continental scale using multivariate clustering analysis and machine learning",
-            "source_label":"wang2024-cSoil",
-            "source_name":"wang2024 cSoil",
-            "source_type":"satellite_retrieval",
-            "source_variables":[
-                "cSoil"
-            ],
-            "source_version_number":"2"
-        }
     }
 }
