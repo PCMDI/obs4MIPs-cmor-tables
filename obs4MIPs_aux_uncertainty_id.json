@@ -1,17 +1,13 @@
 {
     "aux_uncertainty_id":{
-        "ecovstr":"structure of correlation associated with ustr",
-        "lbnd":"lower bounds",
+        "lbnd":"lower bound",
         "nobs":"number of observations",
         "sd":"standard deviation",
         "stderr":"standard error",
-        "ubnd":"upper bound of asymetrical uncertainty information",
-        "ucom":"uncertainty due to common effects",
-        "uind":"uncertainty due to independent effects",
-        "urnd":"random uncertainty",
+        "ubnd":"upper bound",
+        "ucom":"common uncertainty",
+        "uind":"independent uncertainty",
         "ustd":"standard uncertainty",
         "ustr":"structured uncertainty",
-        "usys":"systematic uncertainty",
-        "utot":"total uncertainty",
     }
 }
