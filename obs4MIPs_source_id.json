@@ -2285,7 +2285,7 @@
             ],
             "source_version_number":"1.0"
         },
-        "WOA2023":{
+        "WOA-23":{
             "institution_id":"NOAA-NCEI",
             "region":[
                 "global_ocean"
@@ -2299,7 +2299,7 @@
                 "so",
                 "thetao"
             ],
-            "source_version_number":"2023"
+            "source_version_number":"1.0"
         },
         "livneh-1-0":{
             "institution_id":"NOAA-ESRL-PSD",
