@@ -1305,7 +1305,7 @@
             ],
             "source_version_number":"1.2"
         },
-        "LORA-1-1":{
+        "LORA-1-0":{
             "institution_id":"ARCCSS",
             "region":[
                 "global_land"
@@ -1318,7 +1318,7 @@
             "source_variables":[
                 "mrro"
             ],
-            "source_version_number":"1.1"
+            "source_version_number":"1.0"
         },
         "MGOHCTA-WOA09":{
             "institution_id":"NOAA-NCEI",
