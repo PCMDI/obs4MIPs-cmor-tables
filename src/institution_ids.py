@@ -41,5 +41,6 @@ institution_id['institution_id']['ORNL'] = 'Oakridge National Laboratory, TN, US
 institution_id['institution_id']['NERC-NSF-NOAA'] = 'Multi-institute/agency collaboration'
 institution_id['institution_id']['FMI'] = 'Finnish Meteorological Institute, Helsinki, Finland'
 institution_id['institution_id']['EmoryU'] = 'Emory University, GA, USA'
+institution_id['institution_id']['CMIP-IPO'] = 'CMIP International Project Office, UK'
 
 
