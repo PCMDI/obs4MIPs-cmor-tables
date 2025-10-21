@@ -1,6 +1,54 @@
 source_id = {}
-
 source_id['source_id'] = {}
+
+key = 'AI-upscaling-cSoil-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'AI upscaling cSoil'
+source_id['source_id'][key]['source_label'] = 'AI-upscaling-cSoil'
+source_id['source_id'][key]['release_year'] = '2024'
+source_id['source_id'][key]['source_description'] = 'Upscaling soil organic carbon measurements at the continental scale using multivariate clustering analysis and machine learning'
+source_id['source_id'][key]['source_version_number'] = '1'
+source_id['source_id'][key]['institution_id'] = 'EmoryU'
+source_id['source_id'][key]['region'] = ['contiguous_united_states']
+source_id['source_id'][key]['source_type'] = 'AI_upscaling'
+source_id['source_id'][key]['source_variables'] = ['cSoil']
+
+key = 'NOAA-NCEI-LAI-VIIRS-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'NOAA NCEI LAI v1.0 (2023): VIIRS Leaf Area Index'
+source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-LAI-VIIRS'
+source_id['source_id'][key]['release_year'] = '2023'
+source_id['source_id'][key]['source_description'] = 'Monthly Average of Daily Leaf Area Index from VIIRS'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['lai']
+
+key = 'NOAA-NCEI-LAI-AVHRR-5-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'NOAA NCEI LAI v5.0 (2019): AVHRR Leaf Area Index'
+source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-LAI-AVHRR'
+source_id['source_id'][key]['release_year'] = '2019'
+source_id['source_id'][key]['source_description'] = 'Monthly Average of Daily Leaf Area Index from AVHRR'
+source_id['source_id'][key]['source_version_number'] = '5.0'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['lai']
+
+
+key = 'MGOHCTA-WOA09'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'MGOHCTA'
+source_id['source_id'][key]['source_label'] = 'MGOHCTA'
+source_id['source_id'][key]['release_year'] = '2024'
+source_id['source_id'][key]['source_description'] = 'Monthly Global Ocean Heat Content and Temperature Anomalies in-situ (basin averages)'
+source_id['source_id'][key]['source_version_number'] = 'WOA09'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['global_ocean']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['ohcanom']
 
 key = 'HadCRUT5-0-2-0'
 source_id['source_id'][key] = {}
