@@ -17,6 +17,21 @@
             ],
             "source_version_number":"V2"
         },
+        "AI-upscaling-cSoil-1-0":{
+            "institution_id":"EmoryU",
+            "region":[
+                "contiguous_united_states"
+            ],
+            "release_year":"2024",
+            "source_description":"Upscaling soil organic carbon measurements at the continental scale using multivariate clustering analysis and machine learning",
+            "source_label":"AI-upscaling-cSoil",
+            "source_name":"AI upscaling cSoil",
+            "source_type":"AI_upscaling",
+            "source_variables":[
+                "cSoil"
+            ],
+            "source_version_number":"1"
+        },
         "AIRS-1-0":{
             "institution_id":"NASA-JPL",
             "region":[
@@ -1290,7 +1305,7 @@
             ],
             "source_version_number":"1.2"
         },
-        "LORA-1-1":{
+        "LORA-1-0":{
             "institution_id":"ARCCSS",
             "region":[
                 "global_land"
@@ -1303,7 +1318,22 @@
             "source_variables":[
                 "mrro"
             ],
-            "source_version_number":"1.1"
+            "source_version_number":"1.0"
+        },
+        "MGOHCTA-WOA09":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2024",
+            "source_description":"Monthly Global Ocean Heat Content and Temperature Anomalies in-situ (basin averages)",
+            "source_label":"MGOHCTA",
+            "source_name":"MGOHCTA",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "ohcanom"
+            ],
+            "source_version_number":"WOA09"
         },
         "MODIS-1-0":{
             "institution_id":"NASA-GSFC",
@@ -1567,6 +1597,37 @@
                 "lai"
             ],
             "source_version_number":"5.0"
+        },
+        "NOAA-NCEI-LAI-AVHRR-5-0":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2019",
+            "source_description":"Monthly Average of Daily Leaf Area Index from AVHRR",
+            "source_label":"NOAA-NCEI-LAI-AVHRR",
+            "source_name":"NOAA NCEI LAI v5.0 (2019): AVHRR Leaf Area Index",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "lai"
+            ],
+            "source_version_number":"5.0"
+        },
+        "NOAA-NCEI-LAI-VIIRS-1-0":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2023",
+            "source_description":"Monthly Average of Daily Leaf Area Index from VIIRS",
+            "source_id":"NOAA-NCEI-LAI-VIIRS-1-0",
+            "source_label":"NOAA NCEI LAI",
+            "source_name":"NOAA NCEI LAI",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "lai"
+            ],
+            "source_version_number":"1.0"
         },
         "NOAA-NCEI-NDVI":{
             "institution_id":"NOAA-NCEI",
@@ -2313,6 +2374,21 @@
                 "tasmin"
             ],
             "source_version_number":"1.0"
+        },
+        "wang2024-cSoil-v2":{
+            "institution_id":"EmoryU",
+            "region":[
+                "contiguous_united_states"
+            ],
+            "release_year":"2024",
+            "source_description":"Upscaling soil organic carbon measurements at the continental scale using multivariate clustering analysis and machine learning",
+            "source_label":"wang2024-cSoil",
+            "source_name":"wang2024 cSoil",
+            "source_type":"AI_upscaling",
+            "source_variables":[
+                "cSoil"
+            ],
+            "source_version_number":"2"
         }
     }
 }

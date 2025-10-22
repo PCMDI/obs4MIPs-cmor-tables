@@ -44,6 +44,7 @@
         "gr9z":"regridded zonal mean data reported on a grid other than the native latitude grid and other than the preferred latitude target grid",
         "gra":"regridded data in the region of Antarctica reported on the data provider's preferred target grid",
         "grg":"regridded data in the region of Greenland reported on the data provider's preferred target grid",
-        "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
+        "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid",
+        "site":"where the data reported is from in-situ observations" 
     }
 }
