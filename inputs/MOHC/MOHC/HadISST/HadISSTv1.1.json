@@ -14,7 +14,7 @@
     "institution_id":"MOHC",
     "license":"Data in this file is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses)",
     "nominal_resolution":"250 km",
-    "outpath":"/p/user_pub/PCMDIobs/",
+    "outpath":"./",
     "output_file_template":"<variable_id><frequency><source_id><variant_label><grid_label>",
     "output_path_template":"<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>",
     "product":"observations",
@@ -24,5 +24,5 @@
     "tracking_prefix":"hdl:21.14102",
     "variant_info":"obs4MIPs-compliant product prepared by PCMDI (ODS2.5)",
     "variant_label":"PCMDI",
-    "originData_URL": "https://www.metoffice.gov.uk/hadobs/hadisst/",
+    "originData_URL": "https://www.metoffice.gov.uk/hadobs/hadisst/"
 }

@@ -655,7 +655,7 @@
             "ok_min_mean_abs":"",
             "out_name":"lwp",
             "positive":"",
-            "standard_name":"specific_humidity_anomaly",
+            "standard_name":"liquid_water_path",
             "type":"real",
             "units":"kg m-2",
             "valid_max":"",
