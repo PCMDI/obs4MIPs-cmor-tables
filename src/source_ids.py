@@ -1,6 +1,198 @@
 source_id = {}
-
 source_id['source_id'] = {}
+
+key = 'AI-upscaling-cSoil-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'AI upscaling cSoil'
+source_id['source_id'][key]['source_label'] = 'AI-upscaling-cSoil'
+source_id['source_id'][key]['release_year'] = '2024'
+source_id['source_id'][key]['source_description'] = 'Upscaling soil organic carbon measurements at the continental scale using multivariate clustering analysis and machine learning'
+source_id['source_id'][key]['source_version_number'] = '1'
+source_id['source_id'][key]['institution_id'] = 'EmoryU'
+source_id['source_id'][key]['region'] = ['contiguous_united_states']
+source_id['source_id'][key]['source_type'] = 'AI_upscaling'
+source_id['source_id'][key]['source_variables'] = ['cSoil']
+
+key = 'NOAA-NCEI-LAI-VIIRS-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'NOAA NCEI LAI v1.0 (2023): VIIRS Leaf Area Index'
+source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-LAI-VIIRS'
+source_id['source_id'][key]['release_year'] = '2023'
+source_id['source_id'][key]['source_description'] = 'Monthly Average of Daily Leaf Area Index from VIIRS'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['lai']
+
+key = 'NOAA-NCEI-LAI-AVHRR-5-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'NOAA NCEI LAI v5.0 (2019): AVHRR Leaf Area Index'
+source_id['source_id'][key]['source_label'] = 'NOAA-NCEI-LAI-AVHRR'
+source_id['source_id'][key]['release_year'] = '2019'
+source_id['source_id'][key]['source_description'] = 'Monthly Average of Daily Leaf Area Index from AVHRR'
+source_id['source_id'][key]['source_version_number'] = '5.0'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['lai']
+
+
+key = 'MGOHCTA-WOA09'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'MGOHCTA'
+source_id['source_id'][key]['source_label'] = 'MGOHCTA'
+source_id['source_id'][key]['release_year'] = '2024'
+source_id['source_id'][key]['source_description'] = 'Monthly Global Ocean Heat Content and Temperature Anomalies in-situ (basin averages)'
+source_id['source_id'][key]['source_version_number'] = 'WOA09'
+source_id['source_id'][key]['institution_id'] = 'NOAA-NCEI'
+source_id['source_id'][key]['region'] = ['global_ocean']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['ohcanom']
+
+key = 'HadCRUT5-0-2-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'HadCRUT5'
+source_id['source_id'][key]['source_label'] = 'HadCRUT5'
+source_id['source_id'][key]['release_year'] = '2025'
+source_id['source_id'][key]['source_description'] = 'HadCRUT5 blended air temperature and sea surface temperature anomalies'
+source_id['source_id'][key]['source_version_number'] = '5.0.2.0'
+source_id['source_id'][key]['institution_id'] = 'CRU-UEA' 
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['tas','tos']
+
+key = 'HadISDH-land-4-6-1-2024f'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_label'] = 'HadISDH'
+source_id['source_id'][key]['source_name'] = 'HadISDH.land.4.6.1.2024f'
+source_id['source_id'][key]['release_year'] = '2024'
+source_id['source_id'][key]['source_description'] = 'HadISDH land near-surface humidity anomalies'
+source_id['source_id'][key]['source_version_number'] = '4.6.1.2024f'
+source_id['source_id'][key]['institution_id'] = 'MOHC'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['huss','hussanom','hurs','hursanom']
+
+key = 'BSVertOzone-v1-0' 
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'BSVertOzone'
+source_id['source_id'][key]['source_label'] = 'BSVertOzone'
+source_id['source_id'][key]['release_year'] = '2018'
+source_id['source_id'][key]['source_description'] = 'Mole concentration of ozone in air'
+source_id['source_id'][key]['source_version_number'] = 'v1-0'
+source_id['source_id'][key]['institution_id'] = 'DLR-BIRA'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['o3zm']
+
+key = 'SAGE-CCI-OMPS-v0008'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'SAGE CCI OMPS'
+source_id['source_id'][key]['source_label'] = 'SAGE CCI OMPS'
+source_id['source_id'][key]['release_year'] = '2023'
+source_id['source_id'][key]['source_description'] = 'Mole concentration of ozone in air'
+source_id['source_id'][key]['source_version_number'] = 'v0008'
+source_id['source_id'][key]['institution_id'] = 'FMI'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['o3']
+
+key = 'ESA-CCI-SST-v3-0-1'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'ESA CCI SST'
+source_id['source_id'][key]['source_label'] = 'ESA CCI SST'
+source_id['source_id'][key]['release_year'] = '2024'
+source_id['source_id'][key]['source_description'] = 'Sea Surface Temperature (SST) from the ESA SST CCI Climate Data Record version 3.0'
+source_id['source_id'][key]['source_version_number'] = '3.0.1'
+source_id['source_id'][key]['institution_id'] = 'UReading'
+source_id['source_id'][key]['region'] = ['global_ocean']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['tos']
+
+key = 'HOFFMAN-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'HOFFMAN'
+source_id['source_id'][key]['source_label'] = 'HOFFMAN'
+source_id['source_id'][key]['release_year'] = '2014'
+source_id['source_id'][key]['source_description'] = 'Carbon Mass Flux Out Of Atmosphere Due To Net Biospheric Production On Land, Surface Downward Mass Flux of Carbon As CO2'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'UCI-ORNL'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'reanalysis'
+source_id['source_id'][key]['source_variables'] = ['nbp','fgc02']
+
+key = 'NCSCD-2-2'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'NCSCD'
+source_id['source_id'][key]['source_label'] = 'NCSCD'
+source_id['source_id'][key]['release_year'] = '2013'
+source_id['source_id'][key]['source_description'] = 'Northern Circumpolar Soil Carbon Database'
+source_id['source_id'][key]['source_version_number'] = '2.2'
+source_id['source_id'][key]['institution_id'] = 'BCCR'
+source_id['source_id'][key]['region'] = ['north_polar']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['cSoil']
+
+key = 'OLC-ORS-V0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'OLC-ORS'
+source_id['source_id'][key]['source_label'] = 'OLC-ORS'
+source_id['source_id'][key]['release_year'] = '2021'
+source_id['source_id'][key]['source_description'] = 'Optimal Linear Combination of Offline land surface models, Reanalysis, and Satellite soil moisture data constrained by in situ observations'
+source_id['source_id'][key]['source_version_number'] = 'V0'
+source_id['source_id'][key]['institution_id'] = 'ORNL'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'reanalysis'
+source_id['source_id'][key]['source_variables'] = ['mrso']
+
+key = 'ESACCI-CLOUD-AVHRR-AMPM-3-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_label'] = 'ESACCI-CLOUD-AVHRR-AMPM'
+source_id['source_id'][key]['source_name'] = 'ESACCI-CLOUD-AVHRR-AMPM'
+source_id['source_id'][key]['release_year'] = '2019'
+source_id['source_id'][key]['source_description'] = 'Cloud properties derived from AVHRR (aboard NOAA and MetOp AM+PM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets'
+source_id['source_id'][key]['source_version_number'] = '3.0'
+source_id['source_id'][key]['institution_id'] = 'DWD'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['clivi', 'clt', 'clt_stderr', 'clwvi', 'lwp', 'rlus', 'rlut', 'rlutcs', 'rsdt', 'rsus', 'rsuscs', 'rsut', 'rsutcs']
+
+key = 'CALIPSO-ICECLOUD-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_label'] = 'CALIPSO-ICECLOUD'
+source_id['source_id'][key]['source_name'] = 'CALIPSO-ICECLOUD'
+source_id['source_id'][key]['release_year'] = '2018'
+source_id['source_id'][key]['source_description'] = 'Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO) Ice cloud'
+source_id['source_id'][key]['source_version_number'] = '1.00'
+source_id['source_id'][key]['institution_id'] = 'NASA-LaRC'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['cli']
+
+key = 'RAPID-v2023-1'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_label'] = 'RAPID'
+source_id['source_id'][key]['source_name'] = 'RAPID'
+source_id['source_id'][key]['release_year'] = '2024'
+source_id['source_id'][key]['source_description'] = 'Atlantic Meridional Overturning Transport -In-situ'
+source_id['source_id'][key]['source_version_number'] = 'v2023.1'
+source_id['source_id'][key]['institution_id'] = 'NERC-NSF-NOAA'
+source_id['source_id'][key]['region'] = ['atlantic_ocean']
+source_id['source_id'][key]['source_type'] = 'gridded_insitu'
+source_id['source_id'][key]['source_variables'] = ['amoc']
+
+key = 'CCI-CryoClim-FSC-1'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'CCI/CryoClim FSC'
+source_id['source_id'][key]['source_label'] = 'CCI/CryoClim FSC'
+source_id['source_id'][key]['release_year'] = '2023'
+source_id['source_id'][key]['source_description'] = 'Fractional Snow Cover CDR v1 from ESA CCI / CryoClim'
+source_id['source_id'][key]['source_version_number'] = '1'
+source_id['source_id'][key]['institution_id'] = 'NR'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ["snc"]
 
 key = 'HadCRUT5-0-2-0'
 source_id['source_id'][key] = {}
