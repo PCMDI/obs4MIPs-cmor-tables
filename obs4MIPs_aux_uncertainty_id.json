@@ -1,0 +1,13 @@
+{
+    "aux_uncertainty_id":{
+        "lbnd":"lower bound",
+        "nobs":"number of observations",
+        "sd":"standard deviation",
+        "stderr":"standard error",
+        "ubnd":"upper bound",
+        "ucom":"common uncertainty",
+        "uind":"independent uncertainty",
+        "ustd":"standard uncertainty",
+        "ustr":"structured uncertainty",
+    }
+}

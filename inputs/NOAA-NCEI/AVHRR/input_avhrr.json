@@ -1,0 +1,42 @@
+{
+  "#comment": "The following are CMOR internal settings and should not be edited by the user",
+  "_AXIS_ENTRY_FILE": "obs4MIPs_coordinate.json",
+  "_FORMULA_VAR_FILE": "obs4MIPs_formula_terms.json",
+  "_controlled_vocabulary_file": "obs4MIPs_CV.json",
+
+  
+  "activity_id": "obs4MIPs",
+  "calendar": "gregorian",
+
+  "comment": "Includes only data having associated quality of OK as defined in Section 5.3 of the CDR Program Document No.CDRP-ATBD-0564.",
+  "contact": "jessica.matthews@noaa.gov, obs4MIPs-admin@llnl.gov",
+
+  "data_specs_version": "ODS-2.5",
+  
+  "grid": "0.05x0.05 degree latitude x longitude",
+  "grid_label": "gn",
+  "license": "Users must cite this dataset when used as a source. No other constraints on data access or use.",
+  "nominal_resolution": "5 km",
+
+  "institution_id": "NOAA-NCEI",
+  
+  "outpath": ".",
+
+  "output_file_template": "<variable_id><frequency><source_id><variant_label><grid_label>",
+  "output_path_template": "<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>",
+
+  "product": "observations",
+  
+  "references": "Vermote, Eric; NOAA CDR Program. (2019): NOAA Climate Data Record (CDR) of AVHRR and VIIRS Leaf Area Index (LAI) and Fraction of Absorbed Photosynthetically Active Radiation (FAPAR), Version 5. NOAA National Centers for Environmental Information. doi:10.7289/V5TT4P69. Accessed 2019-09-11.",
+  
+  "source_id": "NOAA-NCEI-LAI-AVHRR-5-0",
+  "title": "0.05 Degree Monthly Average of Daily Leaf Area Index prepared for obs4MIPs by NOAA National Centers for Environmental Information and NC State University",
+
+  "variant_label": "BE",
+  
+  "source_data_url": "https://www.ncei.noaa.gov/products/climate-data-records/leaf-area-index-and-fapar",
+  
+  "dataset_contriubtor": "Jessica Matthews",
+  
+  "processing_code_location": "https://gitlab.cicsnc.org/obs4mips/obs4mips"
+}
