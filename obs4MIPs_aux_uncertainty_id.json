@@ -8,6 +8,6 @@
         "ucom":"common uncertainty",
         "uind":"independent uncertainty",
         "ustd":"standard uncertainty",
-        "ustr":"structured uncertainty",
+        "ustr":"structured uncertainty"
     }
 }
