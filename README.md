@@ -3,7 +3,7 @@
 
 <img src="assets/imgs/obs4MIPsRLogo.png" width="15%" height="15%" align="right" />
 
-## Management of Controlled Vocabulary (CV) and Registered Content (RC) ##
+## Management of Controlled Vocabulary (CV) and Registered Content (RC) adhering to the [obs4MIPs Data Specifications (ODS2.6)](https://zenodo.org/records/17235676)##
 
 This repo is used to develop and maintain:
 
