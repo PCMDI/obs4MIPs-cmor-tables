@@ -354,26 +354,38 @@ license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
 
 #%% Required global attributes - # indicates source
 required_global_attributes = [
- 'Conventions',
- 'activity_id',
- 'contact',
- 'creation_date',
- 'data_specs_version',
- 'frequency',
- 'grid',
- 'grid_label',
- 'institution',
- 'institution_id',
- 'license',
- 'nominal_resolution',
- 'product',
- 'realm',
- 'source_id',
- 'table_id',
- 'tracking_id',
- 'variable_id',
- 'variant_label'
-] ;
+        "Conventions",
+        "aux_uncertainty_id",
+        "activity_id",
+        "contact",
+        "creation_date",
+        "data_specs_version",
+        "frequency",
+        "grid",
+        "grid_label",
+        "has_aux_unc",
+        "institution",
+        "institution_id",
+        "license",
+        "nominal_resolution",
+        "processing_code_location",
+        "product",
+        "realm",
+        "references",
+        "region",
+        "site_id",
+        "site_location",
+        "source",
+        "source_data_url",
+        "source_id",
+        "source_label",
+        "source_type",
+        "source_version_number",
+        "table_id",
+        "tracking_id",
+        "variable_id",
+        "variant_label"
+        ] ;
 
 #%% Source ID
 '''

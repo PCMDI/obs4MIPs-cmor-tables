@@ -5,7 +5,6 @@
         "insitu":"site data",
         "reanalysis":"gridded product generated from a model reanalysis based on in-situ instruments and possibly satellite measurements",
         "satellite_blended":"gridded product based on both in-situ instruments and satellite measurements",
-        "satellite_retrieval":"gridded product based on satellite measurements",
-        "ungridded_insitu":"ungridded product based on measurements collected from in-situ instruments"
+        "satellite_retrieval":"gridded product based on satellite measurements"
     }
 }
