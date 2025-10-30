@@ -1,4 +1,4 @@
-## [Are you interested to prepare and provide a new obs4MIPs-compliant dataset? ](https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/inputs/README.md) ##
+## [Controlled Vocabulary (CV) management of obs4MIPs-compliant data products](https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/inputs/README.md) ##
 
 
 <img src="assets/imgs/obs4MIPsRLogo.png" width="15%" height="15%" align="right" />
