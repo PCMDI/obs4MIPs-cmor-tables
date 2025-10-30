@@ -1,4 +1,4 @@
-## [Obs4MIPs-compliant data products: Management of Controlled Vocabulary (CV) and Registered Content (RC)](https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/inputs/README.md) ##
+## [Obs4MIPs-compliant data products:\ Management of Controlled Vocabulary (CV) and Registered Content (RC)](https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/inputs/README.md) ##
 
 
 <img src="assets/imgs/obs4MIPsRLogo.png" width="15%" height="15%" align="right" />
