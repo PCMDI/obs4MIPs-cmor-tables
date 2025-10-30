@@ -1320,6 +1320,21 @@
             ],
             "source_version_number":"1.0"
         },
+        "LORA-1-1":{
+            "institution_id":"ARCCSS",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2018",
+            "source_description":"Linear Optimal Runoff Aggregate",
+            "source_label":"LORA",
+            "source_name":"LORA",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "mrro"
+            ],
+            "source_version_number":"1.1"
+        },
         "MGOHCTA-WOA09":{
             "institution_id":"NOAA-NCEI",
             "region":[
@@ -2282,6 +2297,22 @@
                 "gpp",
                 "hfls",
                 "hfss"
+            ],
+            "source_version_number":"1.0"
+        },
+        "WOA-23":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2024",
+            "source_description":"World Ocean Atlas",
+            "source_label":"WOA",
+            "source_name":"WOA",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "so",
+                "thetao"
             ],
             "source_version_number":"1.0"
         },

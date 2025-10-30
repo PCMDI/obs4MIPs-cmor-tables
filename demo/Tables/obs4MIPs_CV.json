@@ -64,13 +64,15 @@
             "gr9z":"regridded zonal mean data reported on a grid other than the native latitude grid and other than the preferred latitude target grid",
             "gra":"regridded data in the region of Antarctica reported on the data provider's preferred target grid",
             "grg":"regridded data in the region of Greenland reported on the data provider's preferred target grid",
-            "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
+            "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid",
+            "site":"where the data reported is from in-situ observations"
         },
         "institution_id":{
             "ARCCSS":"ARC Centre of Excellence for Climate System Science, NSW, Australia,",
             "BCCR":"Bolin Centre for Climate Research - Stockholm University, SE",
             "CAS":"Chinese Academy of Sciences, Beijing, China",
             "CEDA":"Centre for Environmental Data Analysis, RAL Space, STFC Rutherford Appleton Laboratory, Chilton, Didcot; National Centre for Earth Observation, UK",
+            "CMIP-IPO":"CMIP International Project Office, UK",
             "CNES":"Centre national d'etudes spatiales",
             "CRU-UEA":"Climatic Research Unit, University of East Anglia, Norwich, UK",
             "ColumbiaU":"Columbia University, NY, USA",
@@ -685,6 +687,12 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.2"
             },
+            "LORA-1-0":{
+                "region":"global_land",
+                "source":"LORA 1.0 (2018): Linear Optimal Runoff Aggregate",
+                "source_type":"gridded_insitu",
+                "source_version_number":"1.0"
+            },
             "LORA-1-1":{
                 "region":"global_land",
                 "source":"LORA 1.1 (2018): Linear Optimal Runoff Aggregate",
@@ -1043,6 +1051,12 @@
                 "region":"global_land",
                 "source":"WECANN 1.0 (2018): Water, Energy, and Carbon with Artificial Neural Networks",
                 "source_type":"satellite_retrieval",
+                "source_version_number":"1.0"
+            },
+            "WOA-23":{
+                "region":"global_ocean",
+                "source":"WOA 1.0 (2024): World Ocean Atlas",
+                "source_type":"gridded_insitu",
                 "source_version_number":"1.0"
             },
             "WOA2023":{
