@@ -1,6 +1,3 @@
-## [Obs4MIPs-compliant data products](https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/inputs/README.md) ##
-
-
 <img src="assets/imgs/obs4MIPsRLogo.png" width="15%" height="15%" align="right" />
 
 ## Management of Controlled Vocabulary (CV) and Registered Content (RC) adhering to the [obs4MIPs Data Specifications (ODS2.6)](https://zenodo.org/records/17235676) ##
@@ -17,7 +14,7 @@ This repo is used to develop and maintain:
     - `frequency`
     - many other `required_global_attributes` 
 
-## Preparing a new obs4MIPs-compliant dataset 
+## [Preparing a new obs4MIPs-compliant dataset](https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/inputs/README.md)
 
 The first step is to propose a new `source_id`, [open an issue in this repo](https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/new/choose). When submitting an issue, a template is provided for contributors to modify for their proposed `source_id`. Once the issue is submitted, one of the site maintainers will review it and when ready will execute its implementation into the database of `source_ids` maintained within the [`obs4MIPs_source_id.json`](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/obs4MIPs_source_id.json) file in this repo.  Once a source_id is registered, data contributors can [follow the recipe for preparing obs4MIPs-compliant data](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/inputs/README.md).
 
