@@ -27,10 +27,10 @@
 	"source":"Climate Research Unit Gridded Time Series version 4.09 1901-2024",
 	"source_type":"gridded_insitu",
 	"source_version_number":"4.09",
-	"source_data_url":https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+	"source_data_url":"https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
 	"variant_info":"",
 	"variant_label":"",
     "calendar":"gregorian",
 	"mip_era":"",
-    "outpath":"/home/users/inputs/CRU-UEA/out/"
+    "outpath":"../out/"
 }
