@@ -280,11 +280,26 @@ def getGitInfo(filePath):
         return ""
 
     # Order list
-    # print('gitLog:',gitLog)
+    print('gitLog:',gitLog)
+    print(gitLog[0])
+    print(gitLog[1])
+    print(gitLog[2])
+    print(gitLog[3])
+    import sys
+    w = sys.stdin.readline()
     gitLog = [gitLog[0], gitLog[3], gitLog[4], gitLog[2], gitLog[1]]
 
     return gitLog
 
+def get_git_revision_hash():
+    full_hash = subprocess.check_output(['git', 'rev-parse', 'HEAD'])
+    full_hash = str(full_hash, "utf-8").strip()
+    return full_hash
+
+def get_git_revision_short_hash():
+    short_hash = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD'])
+    short_hash = str(short_hash, "utf-8").strip()
+    return short_hash
 
 def getTime():
     """
