@@ -1305,6 +1305,42 @@
             ],
             "source_version_number":"1.2"
         },
+        "LIVNEH-1-0":{
+            "institution_id":"NOAA-ESRL-PSD",
+            "region":[
+                "north_america"
+            ],
+            "release_year":"2021",
+            "source_description":"Livneh daily CONUS near-surface gridded meteorological and derived hydrometeorological data data provided by the NOAA PSL",
+            "source_label":"LIVNEH",
+            "source_name":"LIVNEH",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "pr",
+                "sfcWind",
+                "tasmax",
+                "tasmin"
+            ],
+            "source_version_number":"1.0"
+        },
+        "LIVNEH-unsplit-1-0":{
+            "institution_id":"UCSD-SIO",
+            "region":[
+                "north_america"
+            ],
+            "release_year":"2021",
+            "source_description":"Livneh daily CONUS unsplit",
+            "source_label":"LIVNEH_unsplit",
+            "source_name":"LIVNEH_unsplit",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "pr",
+                "sfcWind",
+                "tasmax",
+                "tasmin"
+            ],
+            "source_version_number":"1.0"
+        },
         "LORA-1-0":{
             "institution_id":"ARCCSS",
             "region":[

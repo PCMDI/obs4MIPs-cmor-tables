@@ -217,7 +217,6 @@
         ],
         "required_global_attributes":[
             "Conventions",
-            "aux_uncertainty_id",
             "activity_id",
             "contact",
             "creation_date",
@@ -235,12 +234,9 @@
             "realm",
             "references",
             "region",
-            "site_id",
-            "site_location",
             "source",
             "source_data_url",
             "source_id",
-            "source_label",
             "source_type",
             "source_version_number",
             "table_id",
@@ -698,6 +694,18 @@
                 "source":"LAI4g 1.2 (2023): The Fourth Generation Global Inventory Modeling and Mapping Studies Leaf Area Index",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.2"
+            },
+            "LIVNEH-1-0":{
+                "region":"north_america",
+                "source":"LIVNEH 1.0 (2021): Livneh daily CONUS near-surface gridded meteorological and derived hydrometeorological data data provided by the NOAA PSL",
+                "source_type":"gridded_insitu",
+                "source_version_number":"1.0"
+            },
+            "LIVNEH-unsplit-1-0":{
+                "region":"north_america",
+                "source":"LIVNEH_unsplit 1.0 (2021): Livneh daily CONUS unsplit",
+                "source_type":"gridded_insitu",
+                "source_version_number":"1.0"
             },
             "LORA-1-0":{
                 "region":"global_land",

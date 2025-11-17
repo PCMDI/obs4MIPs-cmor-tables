@@ -3,9 +3,12 @@ import xcdat as xc
 import numpy as np
 import numpy.ma as ma 
 import json
-import sys
+import sys, os
 import glob
+import subprocess
 
+sys.path.append("../../../../inputs/misc") # Path to obs4MIPsLib used to trap provenance
+import obs4MIPsLib
 
 def extract_date(ds):   # preprocessing function when opening files
     for var in ds.variables:
@@ -18,10 +21,10 @@ def extract_date(ds):   # preprocessing function when opening files
 
 #%% User provided input
 cmorTable = '../../../../Tables/obs4MIPs_Aday.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
-inputJson = 'livneh_NOAA-PSL_inputs.json' ; # Update contents of this file to set your global_attributes
+inputJson = 'LIVNEH_NOAA-PSL_inputs.json' ; # Update contents of this file to set your global_attributes
 
 vars_lst = ['prec', 'tmax','tmin'] 
-vars_lst = ['tmax']
+#vars_lst = ['tmax']
 
 for vr in vars_lst:
 
@@ -101,7 +104,15 @@ for vr in vars_lst:
 # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_variable_attribute(varid,'valid_min','f',-1.8) # set manually for the time being
   cmor.set_variable_attribute(varid,'valid_max','f',45.)
-
+#
+# Provenance info 
+# gitinfo = obs4MIPsLib.ProvenanceInfo(obs4MIPsLib.getGitInfo("./"))
+# paths = os.getcwd().split('/inputs')
+# path_to_code = f"/inputs{paths[1]}"  # location of the code in the obs4MIPs GitHub directory
+  git_commit_number = obs4MIPsLib.get_git_revision_hash()
+  path_to_code = os.getcwd().split('obs4MIPs-cmor-tables')[1]
+  full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{git_commit_number}/{path_to_code}"
+  cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
 
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
