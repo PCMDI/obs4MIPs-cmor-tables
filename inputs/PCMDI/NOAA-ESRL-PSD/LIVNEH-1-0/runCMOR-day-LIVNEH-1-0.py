@@ -24,7 +24,7 @@ cmorTable = '../../../../Tables/obs4MIPs_Aday.json' ; # Aday,Amon,Lmon,Omon,SImo
 inputJson = 'LIVNEH_NOAA-PSL_inputs.json' ; # Update contents of this file to set your global_attributes
 
 vars_lst = ['prec', 'tmax','tmin'] 
-vars_lst = ['tmax']
+#vars_lst = ['tmax']
 
 for vr in vars_lst:
 
