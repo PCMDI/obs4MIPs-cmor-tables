@@ -280,13 +280,13 @@ def getGitInfo(filePath):
         return ""
 
     # Order list
-    print('gitLog:',gitLog)
-    print(gitLog[0])
-    print(gitLog[1])
-    print(gitLog[2])
-    print(gitLog[3])
-    import sys
-    w = sys.stdin.readline()
+#   print('gitLog:',gitLog)
+#   print(gitLog[0])
+#   print(gitLog[1])
+#   print(gitLog[2])
+#   print(gitLog[3])
+#   import sys
+#   w = sys.stdin.readline()
     gitLog = [gitLog[0], gitLog[3], gitLog[4], gitLog[2], gitLog[1]]
 
     return gitLog
