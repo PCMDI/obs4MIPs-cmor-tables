@@ -32,5 +32,5 @@
     "source_data_url": "https://psl.noaa.gov/data/gridded/data.livneh.html",
     "originData_retrieved": "20230524; PJG @ PCMDI",
     "originData_notes": "Livneh daily CONUS near-surface gridded meteorological and derived hydrometeorological data data provided by the NOAA PSL, Boulder, Colorado, USA, from their website at https://psl.noaa.gov",
-    "has_aux_unc":FALSE
+    "has_aux_unc":false
 }
