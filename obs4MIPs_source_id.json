@@ -416,6 +416,26 @@
             ],
             "source_version_number":"2.0"
         },
+           "CRUTS-4-0-9":{
+            "institution_id":"CRU-UEA",
+            "region":[
+                "global"
+            ],
+            "release_year":"2024",
+            "source_description":"Climate Research Unit temperature, volume of hydrological precipitation, vapour pressure, wet days, cloud cover-In-situ (gridded)",
+            "source_id":"CRUTS-4-0-9",
+            "source_label":"CRU TS",
+            "source_name":"CRU TS",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "tas",
+                "tasmin",
+                "tasmax",
+                "clt",
+                "evspsblpot"
+            ],
+            "source_version_number":"4.09"
+        },
         "DAI-1-0":{
             "institution_id":"UCAR/NCAR - RDA",
             "region":[
