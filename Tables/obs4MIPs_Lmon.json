@@ -842,6 +842,24 @@
             "valid_max":"",
             "valid_min":""
         },
+        "sweLut":{
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: time: mean where sector",
+            "comment":"The surface called 'surface' means the lower boundary of the atmosphere. 'lwe' means liquid water equivalent. 'Amount' means mass per unit area. The construction lwe_thickness_of_X_amount or _content means the vertical extent of a layer of liquid water having the same mass per unit area. Surface amount refers to the amount on the ground, excluding that on the plant or vegetation canopy.",
+            "dimensions":"longitude latitude landUse time",
+            "frequency":"mon",
+            "long_name":"Snow Water Equivalent on Land-Use Tile",
+            "modeling_realm":"land",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"sweLut",
+            "positive":"",
+            "standard_name":"lwe_thickness_of_surface_snow_amount",
+            "type":"real",
+            "units":"m",
+            "valid_max":"",
+            "valid_min":""
+        },
         "tran":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: mean where land time: mean",

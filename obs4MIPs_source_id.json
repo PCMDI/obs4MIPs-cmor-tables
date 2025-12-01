@@ -230,6 +230,21 @@
             ],
             "source_version_number":"1"
         },
+        "CCI-SWE-v4-0":{
+            "institution_id":"FMI",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2025",
+            "source_description":"Snow Water Equivalent (SWE) from the ESA SNOW CCI Climate Data Record version 4.0",
+            "source_label":"CCI SWE",
+            "source_name":"CCI SWE",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "sweLut"
+            ],
+            "source_version_number":"v4.0"
+        },
         "CCMP-3-1":{
             "institution_id":"RSS",
             "region":[
@@ -416,7 +431,7 @@
             ],
             "source_version_number":"2.0"
         },
-           "CRUTS-4-0-9":{
+        "CRUTS-4-0-9":{
             "institution_id":"CRU-UEA",
             "region":[
                 "global"
@@ -428,11 +443,11 @@
             "source_name":"CRU TS",
             "source_type":"gridded_insitu",
             "source_variables":[
-                "tas",
-                "tasmin",
-                "tasmax",
                 "clt",
-                "evspsblpot"
+                "evspsblpot",
+                "tas",
+                "tasmax",
+                "tasmin"
             ],
             "source_version_number":"4.09"
         },
