@@ -323,6 +323,12 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1"
             },
+            "CCI-SWE-v4-0":{
+                "region":"global_land",
+                "source":"CCI SWE v4.0 (2025): Snow Water Equivalent (SWE) from the ESA SNOW CCI Climate Data Record version 4.0",
+                "source_type":"satellite_blended",
+                "source_version_number":"v4.0"
+            },
             "CCMP-3-1":{
                 "region":"global",
                 "source":"CCMP-3-1 3.1 (2023): Cross-Calibrated Multiplatform v3.1 (2023): 10m Surface Wind",
@@ -382,6 +388,12 @@
                 "source":"CMSAF-SARAH 2.0 (2017): Surface solAr RAdiation data set - Heliosat, based on MVIRI/SEVIRI aboard METEOSAT",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
+            },
+            "CRUTS-4-0-9":{
+                "region":"global",
+                "source":"CRU TS 4.09 (2024): Climate Research Unit temperature, volume of hydrological precipitation, vapour pressure, wet days, cloud cover-In-situ (gridded)",
+                "source_type":"gridded_insitu",
+                "source_version_number":"4.09"
             },
             "DAI-1-0":{
                 "region":"global",

@@ -1,6 +1,18 @@
 source_id = {}
 source_id['source_id'] = {}
 
+key = 'CCI-SWE-v4-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'CCI SWE' 
+source_id['source_id'][key]['source_label'] = 'CCI SWE'
+source_id['source_id'][key]['release_year'] = '2025'
+source_id['source_id'][key]['source_description'] = 'Snow Water Equivalent (SWE) from the ESA SNOW CCI Climate Data Record version 4.0'
+source_id['source_id'][key]['source_version_number'] = 'v4.0'
+source_id['source_id'][key]['institution_id'] = 'FMI'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] = ['sweLut']
+
 key = 'LIVNEH-1-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'LIVNEH'
