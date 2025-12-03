@@ -5,7 +5,7 @@
     "_controlled_vocabulary_file":"obs4MIPs_CV.json",
     "_further_info_url_tmpl":"https://furtherinfo.es-doc.org/<activity_id><institution_id><source_label><source_id><variable_id>",
     "aux_uncertainty_id":"thetao_se",
-    "activity_id":"obs4REF",
+    "activity_id":"obs4MIPs",
     "contact":"ncei.info@noaa.gov",
     "creation_date":"2025-09-03T02:42:05Z",
     "dataset_contributor":"Morgan Steckler",
