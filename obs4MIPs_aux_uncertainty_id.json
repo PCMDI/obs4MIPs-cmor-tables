@@ -1,13 +1,13 @@
 {
     "aux_uncertainty_id":{
-        "lbnd":"lower bound",
+        "lbnd":"lower bound of asymmetrical uncertainty information",
         "nobs":"number of observations",
         "sd":"standard deviation",
         "stderr":"standard error",
-        "ubnd":"upper bound",
-        "ucom":"common uncertainty",
-        "uind":"independent uncertainty",
+        "ubnd":"upper bound of asymmetrical uncertainty information",
+        "ucom":"uncertainty due to common effects",
+        "uind":"uncertainty due to independent effects",
         "ustd":"standard uncertainty",
-        "ustr":"structured uncertainty"
+        "ustr":"uncertainty due to structured effects"
     }
 }
