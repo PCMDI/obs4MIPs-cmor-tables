@@ -42,5 +42,7 @@ institution_id['institution_id']['NERC-NSF-NOAA'] = 'Multi-institute/agency coll
 institution_id['institution_id']['FMI'] = 'Finnish Meteorological Institute, Helsinki, Finland'
 institution_id['institution_id']['EmoryU'] = 'Emory University, GA, USA'
 institution_id['institution_id']['CMIP-IPO'] = 'CMIP International Project Office, UK'
-
+institution_id['institution_id']['DoESS-UCI'] = 'Department of Earth System Science, University of California Irvine'
+institution_id['institution_id']['NCAS'] = 'National Centre for Atmospheric Science'
+institution_id['institution_id']['MOHC-CRU-NCAS'] = 'Joint research collaboration between MOHC(UK), CRU-UEA (UK) and NCAS (UK)'  
 
