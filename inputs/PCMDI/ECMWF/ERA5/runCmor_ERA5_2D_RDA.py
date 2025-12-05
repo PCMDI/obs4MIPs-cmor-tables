@@ -4,8 +4,9 @@ import xarray as xr
 from xarray.coding.times import encode_cf_datetime
 import numpy as np
 import cftime
-import sys,os,glob
+import sys,os,glob,datetime
 
+ver = datetime.datetime.now().strftime('v%Y%m%d')
 sys.path.append("../../../misc/") # Path to obs4MIPsLib
 import obs4MIPsLib
 import fix_dataset_time
@@ -13,13 +14,14 @@ import fix_dataset_time
 #%% User provided input
 cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx
 inputJson = 'ERA5-MARS-input.json' ; # Update contents of this file to set your global_attributes
-inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/ECMWF/'
+inputFilePathbgn = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/ECMWF/'
 inputFilePathend = 'ERA5/RDA/'
 
 inputVarName = ['VAR_2T', 'MSL','VAR_10SI','VAR_10U','VAR_10V']
 outputVarName = ['tas','psl','sfcWind','uas','vas']  #['psl']  
 outputUnits = ['K','Pa','m s-1','m s-1','m s-1'] 
 
+#inputVarName = ['VAR_2T']
 
 ### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE..
 for vn,fi in enumerate(inputVarName):
@@ -69,11 +71,11 @@ for vn,fi in enumerate(inputVarName):
   values  = np.array(d[:],np.float32)
 
 # Provenance info - produces global attribute <obs4MIPs_GH_Commit_ID> 
-# gitinfo = obs4MIPsLib.ProvenanceInfo(obs4MIPsLib.getGitInfo("./"))
-# paths = os.getcwd().split('/inputs')
-# path_to_code = f"/inputs{paths[1]}"  # location of the code in the obs4MIPs GitHub directory
-# full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{gitinfo['commit_number']}/{path_to_code}"
-# cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
+  git_commit_number = obs4MIPsLib.get_git_revision_hash()
+  path_to_code = os.getcwd().split('obs4MIPs-cmor-tables')[1]
+  full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{git_commit_number}/{path_to_code}"
+  cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
+  cmor.set_cur_dataset_attribute("version",ver)
 
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data

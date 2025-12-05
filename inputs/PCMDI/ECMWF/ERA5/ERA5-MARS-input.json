@@ -23,8 +23,10 @@
     "source_id":"ERA-5",
     "title":"ERA5 monthly mean data",
     "tracking_prefix":"hdl:21.14102",
-    "variant_info":"obs4MIPs-compliant product prepared by PCMDI (ODS2.5)",
+    "variant_info":"obs4MIPs-compliant product prepared by PCMDI (ODS2.6)",
     "variant_label":"PCMDI",
     "source_data_retrieval_date": "20240404",
-    "dataset_contributor": "PjG",
+    "dataset_contributor": "PjG @ PCMDI",
+    "source_data_url":"https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-monthly-means?tab=overview",
+    "has_aux_unc":false
 }
