@@ -16,7 +16,7 @@ ver = datetime.datetime.now().strftime('v%Y%m%d')
 #%% User provided input
 cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx
 inputJson = 'ERA5-MARS-input.json' ; # Update contents of this file to set your global_attributes
-inputFilePathbgn = '/p/user_pub/PCMDIobs/obs4MIPs_input/ECMWF/'
+inputFilePathbgn = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/ECMWF/'
 inputFilePathend = 'ERA5/RDA/'
 
 inputVarName = ['T','U','V','Z']
@@ -77,8 +77,6 @@ for vn,fi in enumerate(inputVarName):
   yrs = [time[1].year]
   t, tbds, tunits = fix_dataset_time.monthly_times(datumyr, yrs, datum_start_month, start_month,end_month)
 
-# w = sys.stdin.readline()
-
 #%% Initialize and run CMOR
   cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4,logfile='cmorLog.' + outputVarName[vn] + '.' + str(yrs[0]) +'.txt')
   cmor.dataset_json(inputJson)
@@ -97,13 +95,12 @@ for vn,fi in enumerate(inputVarName):
   values  = np.array(d[:],np.float32)
 
 # Provenance info - produces global attribute <obs4MIPs_GH_Commit_ID> 
-# gitinfo = obs4MIPsLib.ProvenanceInfo(obs4MIPsLib.getGitInfo("./"))
-# paths = os.getcwd().split('/inputs')
-# path_to_code = f"/inputs{paths[1]}"  # location of the code in the obs4MIPs GitHub directory
-# full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{gitinfo['commit_number']}/{path_to_code}"
-# cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
-# cmor.set_cur_dataset_attribute("version",ver)
-# Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
+  git_commit_number = obs4MIPsLib.get_git_revision_hash()
+  path_to_code = os.getcwd().split('obs4MIPs-cmor-tables')[1]
+  full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{git_commit_number}/{path_to_code}"
+  cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
+  cmor.set_cur_dataset_attribute("version",ver)
+
   cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
   cmor.write(varid,values) ; # Write variable with time axis
   f.close()

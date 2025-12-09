@@ -21,7 +21,7 @@ inputVarName = ['VAR_2T', 'MSL','VAR_10SI','VAR_10U','VAR_10V']
 outputVarName = ['tas','psl','sfcWind','uas','vas']  #['psl']  
 outputUnits = ['K','Pa','m s-1','m s-1','m s-1'] 
 
-#inputVarName = ['VAR_2T']
+inputVarName = ['VAR_2T']
 
 ### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE..
 for vn,fi in enumerate(inputVarName):
