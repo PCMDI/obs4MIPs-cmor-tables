@@ -3,7 +3,10 @@ import xarray as xr
 import xcdat as xc
 import numpy as np
 import json
-import sys
+import sys, os
+
+sys.path.append("../../inputs/misc") # Path to obs4MIPsLib used to trap provenance
+import obs4MIPsLib
 
 cmorTable = '../../Tables/obs4MIPs_A1hrPt.json'
 inputJson = 'ARMBE_ATM.json' ; # Update contents of this file to set your global_attributes
@@ -48,9 +51,14 @@ cmoraxes = [cmorTime, cmorLat, cmorLon]
 varid   = cmor.variable(outputVarName,outputUnits,cmoraxes,missing_value=1.e20)
 values  = np.array(d[:],np.float32)
 
+# Provenance info - produces global attribute <obs4MIPs_GH_Commit_ID> 
+git_commit_number = obs4MIPsLib.get_git_revision_hash()
+path_to_code = os.getcwd().split('obs4MIPs-cmor-tables')[1]
+full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{git_commit_number}/{path_to_code}"
+cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
+
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
 cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
-#cmor.write(varid,values,time_vals=time[:],time_bnds=f.time_bounds.values) ; # Write variable with time axis
 cmor.write(varid,values) ; # Write variable with time axis
 f.close()
 cmor.close()
