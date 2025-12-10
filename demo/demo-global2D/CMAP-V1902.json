@@ -27,5 +27,5 @@
     "source_data_url": "https://www.esrl.noaa.gov/psd/data/gridded/data.cmap.html",
     "source_data_retrieval_date": "20190219",
     "dataset_contriubtor": "20190219; PJG @ PCMDI",
-    "processing_code_location":""
+    "has_aux_unc":false
 }
