@@ -272,8 +272,8 @@ A1hrPt['Header']['table_id']    = 'Table obs4MIPs_A1hrPt'
 # Clean out modeling_realm
 for jsonName in [Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx,Ofx]:
   try:
-   jsonName['Header']["Conventions"] = "CF-1.11; ODS-2.5"
-   jsonName['Header']["data_specs_version"] = "ODS-2.5"
+   jsonName['Header']["Conventions"] = "CF-1.12; ODS-2.6"
+   jsonName['Header']["data_specs_version"] = "ODS-2.6"
   except:
    pass
 
