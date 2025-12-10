@@ -5,10 +5,10 @@ import numpy as np
 import json
 import sys,os
 
-sys.path.append("../inputs/misc") # Path to obs4MIPsLib used to trap provenance
+sys.path.append("../../inputs/misc") # Path to obs4MIPsLib used to trap provenance
 import obs4MIPsLib
 
-cmorTable = '../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+cmorTable = '../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'CMAP-V1902.json' ; # Update contents of this file to set your global_attributes
 inputFilePath = 'precip.mon.mean.nc'
 inputVarName = 'precip'
@@ -50,9 +50,11 @@ cmor.set_variable_attribute(varid,'valid_min','f',2.0)
 cmor.set_variable_attribute(varid,'valid_max','f',3.0)
 
 # Provenance info - produces global attribute <obs4MIPs_GH_Commit_ID> 
-gitinfo = obs4MIPsLib.ProvenanceInfo(obs4MIPsLib.getGitInfo("./"))
-full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{gitinfo['commit_number']}/demo"  
+git_commit_number = obs4MIPsLib.get_git_revision_hash()
+path_to_code = os.getcwd().split('obs4MIPs-cmor-tables')[1]
+full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{git_commit_number}/{path_to_code}"
 cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
+
 # 
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
 cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
