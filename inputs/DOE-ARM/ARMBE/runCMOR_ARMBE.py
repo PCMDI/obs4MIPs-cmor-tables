@@ -3,6 +3,10 @@ import xarray as xr
 import xcdat as xc
 import numpy as np
 import json
+import sys, os
+sys.path.append("../../../inputs/misc") # Path to obs4MIPsLib used to trap provenance
+import obs4MIPsLib
+
 
 #%% User provided input
 # TODO don't have a currently support obs4MIPs table for hourly site specific data
@@ -15,7 +19,7 @@ vrs = ['precip_rate_sfc','temperature_sfc','u_wind_sfc','v_wind_sfc','relative_h
 # 3D vars
 #vrs = ['u_wind_p','v_wind_p', 'temperature_p', 'relative_humidity_p']
 
-vrs = ['precip_rate_sfc']
+#vrs = ['precip_rate_sfc']
 
 for vr in vrs:
   print(vr)
@@ -69,7 +73,7 @@ for vr in vrs:
 # Open and read input netcdf file
   f = xr.open_dataset(inputFilePath,decode_times=False)
 
-  f = f.isel(time=slice(0,24)) # TEST 2 DAYS ONLY
+# f = f.isel(time=slice(0,24)) # TEST 2 DAYS ONLY
 
   d = f[inputVarName]
   lat = f.lat.values 
@@ -112,8 +116,13 @@ for vr in vrs:
       varid   = cmor.variable(outputVarName,outputUnits,cmoraxes,positive="up",missing_value=1.e20)
   else:
       varid   = cmor.variable(outputVarName,outputUnits,cmoraxes,missing_value=1.e20)
-
   values  = np.array(d[:],np.float32)
+
+# Provenance info - produces global attribute <obs4MIPs_GH_Commit_ID> 
+  git_commit_number = obs4MIPsLib.get_git_revision_hash()
+  path_to_code = os.getcwd().split('obs4MIPs-cmor-tables')[1]
+  full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{git_commit_number}/{path_to_code}"
+  cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
 
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
