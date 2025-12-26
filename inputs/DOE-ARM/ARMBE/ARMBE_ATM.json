@@ -25,7 +25,7 @@
     "site_location":"Southern Great Plains",
     "title":"ARM Best Estimate (ARMBE) Product, atmospheric profiles: armbeatm",
     "variant_info":"Best Estimate",
-    "variant_label":"DOE-ARM",
+    "variant_label":"BE",
     "source_data_url":"https://armgov.svcs.arm.gov/data/science-data-products/vaps/armbe",
     "originData_retrieved": "Chengzhu Zhang 2023",
     "has_aux_unc":false
