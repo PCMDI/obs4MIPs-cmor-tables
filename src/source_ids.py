@@ -13,6 +13,19 @@ source_id['source_id'][key]['region'] = ['global_land']
 source_id['source_id'][key]['source_type'] = 'satellite_blended'
 source_id['source_id'][key]['source_variables'] = ['sweLut']
 
+
+key = 'JASMES-SNOWCOVER-1-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'JASMES Snow Cover'
+source_id['source_id'][key]['source_label'] = 'JASMES Snow Cover'
+source_id['source_id'][key]['release_year'] = '2024'
+source_id['source_id'][key]['source_description'] = 'Global daily surface snow area fraction derived from merged satellite observations using a consistent objective snow cover mapping algorithm applied to multiple generations of optical sensors since 1978.'
+source_id['source_id'][key]['source_version_number'] = '1-0'
+source_id['source_id'][key]['institution_id'] = 'JAXA'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] = ['snc']
+
 key = 'LIVNEH-1-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'LIVNEH'
