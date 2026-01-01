@@ -2050,6 +2050,12 @@
                 "source_type":"satellite_blended",
                 "source_version_number":"v06B_Final"
             },
+            "JASMES-SNOWCOVER-1-0":{
+                "region":"global",
+                "source":"JASMES Snow Cover 1-0 (2024): Global daily surface snow area fraction derived from merged satellite observations using a consistent objective snow cover mapping algorithm applied to multiple generations of optical sensors since 1978.",
+                "source_type":"satellite_blended",
+                "source_version_number":"1-0"
+            },
             "JRA25":{
                 "region":"global",
                 "source":"MRI-JRA25 N/A (2002): JRA25 1.0 (2002): JRA25 (Japanese ReAnalysis 1957-2002)",
