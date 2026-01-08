@@ -536,9 +536,9 @@
             },
             "HadISDH-land-4-6-1-2024f":{
                 "region":"global_land",
-                "source":"HadISDH-land-4-6 1-2024f (2024): HadISDH land near-surface humidity anomalies",
+                "source":"HadISDH.land.4.6.1.2024f (2024): HadISDH land near-surface humidity anomalies",
                 "source_type":"gridded_insitu",
-                "source_version_number":"4-6-1-2024f"
+                "source_version_number":"4.6.1.2024f"
             },
             "HadISST-1-1":{
                 "region":"global_ocean",
