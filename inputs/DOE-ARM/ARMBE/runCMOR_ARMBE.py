@@ -8,8 +8,7 @@ import json
 # TODO don't have a currently support obs4MIPs table for hourly site specific data
 cmorTable = '../../../Tables/obs4MIPs_A1hrPt.json'
 inputJson = 'ARMBE_ATM.json' ; # Update contents of this file to set your global_attributes
-#inputFilePath = '/Users/zhang40/Documents/ARM/armbe_sample/sgparmbeatmC1.c1.20200101.003000.nc'
-inputFilePath = '/p/user_pub/PCMDIobs/obs4MIPs_input/LLNL/ARMBE_Vxy/sgparmbeatmC1.c1.20180101.003000.nc'
+inputFilePath = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/LLNL/ARMBE_Vxy/sgparmbeatmC1.c1.20180101.003000.nc'
 
 # 2D vars
 vrs = ['precip_rate_sfc','temperature_sfc','u_wind_sfc','v_wind_sfc','relative_humidity_sfc','sensible_heat_flux_baebbr','latent_heat_flux_baebbr']
@@ -92,10 +91,10 @@ for vr in vrs:
 
   cmor.set_cur_dataset_attribute("product","site-observations")
 
-
   cmorLat = cmor.axis("latitude1", coord_vals=np.array([lat]), units="degrees_north")
   cmorLon = cmor.axis("longitude1", coord_vals=np.array([lon]), units="degrees_east")
   cmorTime = cmor.axis("time", coord_vals=time[:], cell_bounds=tbds, units= f.time.units)
+
   if vr == 'temperature_sfc':
       cmorHeight = cmor.axis("height2m", coord_vals=np.array([2.0]), units="m")
       cmoraxes = [cmorTime, cmorLat, cmorLon, cmorHeight]

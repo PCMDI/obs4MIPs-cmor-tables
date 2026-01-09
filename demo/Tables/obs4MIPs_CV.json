@@ -1,6 +1,17 @@
 {
     "CV":{
         "activity_id":"obs4MIPs",
+        "aux_uncertainty_id":{
+            "lbnd":"lower bound of asymmetrical uncertainty information",
+            "nobs":"number of observations",
+            "sd":"standard deviation",
+            "stderr":"standard error",
+            "ubnd":"upper bound of asymmetrical uncertainty information",
+            "ucom":"uncertainty due to common effects",
+            "uind":"uncertainty due to independent effects",
+            "ustd":"standard uncertainty",
+            "ustr":"uncertainty due to structured effects"
+        },
         "frequency":{
             "1hr":"sampled hourly",
             "1hrCM":"monthly-mean diurnal cycle resolving each day into 1-hour means",
@@ -64,34 +75,49 @@
             "gr9z":"regridded zonal mean data reported on a grid other than the native latitude grid and other than the preferred latitude target grid",
             "gra":"regridded data in the region of Antarctica reported on the data provider's preferred target grid",
             "grg":"regridded data in the region of Greenland reported on the data provider's preferred target grid",
-            "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid"
+            "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid",
+            "site":"where the data reported is from in-situ observations"
+        },
+        "has_aux_unc":{
+            "FALSE":"when no uncertainty information is provided",
+            "TRUE":"when additional files containing uncertainty information are provided"
         },
         "institution_id":{
             "ARCCSS":"ARC Centre of Excellence for Climate System Science, NSW, Australia,",
+            "BCCR":"Bolin Centre for Climate Research - Stockholm University, SE",
             "CAS":"Chinese Academy of Sciences, Beijing, China",
             "CEDA":"Centre for Environmental Data Analysis, RAL Space, STFC Rutherford Appleton Laboratory, Chilton, Didcot; National Centre for Earth Observation, UK",
+            "CMIP-IPO":"CMIP International Project Office, UK",
             "CNES":"Centre national d'etudes spatiales",
             "CRU-UEA":"Climatic Research Unit, University of East Anglia, Norwich, UK",
             "ColumbiaU":"Columbia University, NY, USA",
             "DLR-BIRA":"Deutsches Zentrum fur Luft- und Raumfahrt, Royal Belgian Institute for Space Aeronomy",
             "DOE-ARM":"U.S. Department of Energy, Atmospheric Radiation Measurment Program",
             "DWD":"Deutscher Wetterdienst, Offenbach 63067, Germany",
+            "DoESS-UCI":"Department of Earth System Science, University of California Irvine",
             "ECMWF":"The European Centre for Medium-Range Weather Forecasts, Shinfield Park, Reading RG2 9AX, UK",
             "ESPRI-IPSL":"Ensemble de Services Pour la Recherche, Institut Pierre Simon Laplace (France)",
             "ESSO":"Indian National Centre for Ocean Information Services",
+            "EmoryU":"Emory University, GA, USA",
+            "FMI":"Finnish Meteorological Institute, Helsinki, Finland",
             "GloH2O":"gloh2o.org",
             "INCOIS-NIO-IPSL":"Joint research colloboration between INCOIS(India), NIO(India) and IPSL(France)",
             "ImperialCollege":"Imperial College, London, UK",
             "JAXA":"The Japan Aerospace Exploration Agency",
             "MET-Norway":"Norwegian Meteorological Institute",
             "MOHC":"Met Office Hadley Centre",
+            "MOHC-CRU-NCAS":"Joint research collaboration between MOHC(UK), CRU-UEA (UK) and NCAS (UK)",
             "MRI":"Meteorological Research Institute, Tsukuba, Ibaraki 305-0052, Japan",
             "NASA-GSFC":"NASA Goddard Space Flight Center, Greenbelt MD, USA",
             "NASA-JPL":"NASA Jet Propulsion Laboratory, Pasadena, CA 91109, USA",
             "NASA-LaRC":"NASA-LaRC (Langley Research Center) Hampton, Va",
             "NCAR":"National Center for Atmospheric Research, Boulder, CO, USA",
+            "NCAS":"National Centre for Atmospheric Science",
+            "NERC-NSF-NOAA":"Multi-institute/agency collaboration",
             "NOAA-ESRL-PSD":"NOAA Earth System Research Laboratory, Physical Sciences Division, Boulder, CO 80305, USA",
             "NOAA-NCEI":"NOAA National Centers for Environmental Information, Asheville, NC 28801, USA",
+            "NR":"Norwegian Computing Center, Oslo, NO",
+            "ORNL":"Oakridge National Laboratory, TN, USA",
             "OSU":"Oregon State University, OR, USA",
             "PCMDI":"Program for Climate Model Diagnosis and Intercomparison, Lawrence Livermore National Laboratory, Livermore, CA 94550, USA",
             "PKU":"Peking University, Beijing, China",
@@ -118,7 +144,8 @@
             "5 km",
             "50 km",
             "500 km",
-            "5000 km"
+            "5000 km",
+            "site"
         ],
         "product":[
             "derived",
@@ -215,24 +242,1375 @@
             "frequency",
             "grid",
             "grid_label",
+            "has_aux_unc",
             "institution",
             "institution_id",
             "license",
             "nominal_resolution",
+            "processing_code_location",
             "product",
             "realm",
+            "references",
+            "region",
+            "source",
+            "source_data_url",
             "source_id",
+            "source_type",
+            "source_version_number",
             "table_id",
             "tracking_id",
             "variable_id",
             "variant_label"
         ],
+        "site_id":{
+            "AR-SLu":{
+                "latitude":"-33.4648",
+                "location":"San Luis",
+                "longitude":"-66.4598"
+            },
+            "AR-Vir":{
+                "latitude":"-28.2395",
+                "location":"Virasoro",
+                "longitude":"-56.1886"
+            },
+            "AT-Neu":{
+                "latitude":"47.1167",
+                "location":"Neustift",
+                "longitude":"11.3175"
+            },
+            "AU-ASM":{
+                "latitude":"-22.2830",
+                "location":"Alice Springs",
+                "longitude":"133.2490"
+            },
+            "AU-Ade":{
+                "latitude":"-13.0769",
+                "location":"Adelaide River",
+                "longitude":"131.1178"
+            },
+            "AU-Cpr":{
+                "latitude":"-34.0021",
+                "location":"Calperum",
+                "longitude":"140.5891"
+            },
+            "AU-Cum":{
+                "latitude":"-33.6152",
+                "location":"Cumberland Plain",
+                "longitude":"150.7236"
+            },
+            "AU-DaP":{
+                "latitude":"-14.0633",
+                "location":"Daly River Pasture",
+                "longitude":"131.3181"
+            },
+            "AU-DaS":{
+                "latitude":"-14.1593",
+                "location":"Daly River Savanna",
+                "longitude":"131.3881"
+            },
+            "AU-Dry":{
+                "latitude":"-15.2588",
+                "location":"Dry River",
+                "longitude":"132.3706"
+            },
+            "AU-Emr":{
+                "latitude":"-23.8587",
+                "location":"Emerald",
+                "longitude":"148.4746"
+            },
+            "AU-Fog":{
+                "latitude":"-12.5452",
+                "location":"Fogg Dam",
+                "longitude":"131.3072"
+            },
+            "AU-GWW":{
+                "latitude":"-30.1913",
+                "location":"Great Western Woodlands, Western Australia, Australia",
+                "longitude":"120.6541"
+            },
+            "AU-Gin":{
+                "latitude":"-31.3764",
+                "location":"Gingin",
+                "longitude":"115.7138"
+            },
+            "AU-How":{
+                "latitude":"-12.4943",
+                "location":"Howard Springs",
+                "longitude":"131.1523"
+            },
+            "AU-Lox":{
+                "latitude":"-34.4704",
+                "location":"Loxton",
+                "longitude":"140.6551"
+            },
+            "AU-RDF":{
+                "latitude":"-14.5636",
+                "location":"Red Dirt Melon Farm, Northern Territory",
+                "longitude":"132.4776"
+            },
+            "AU-Rig":{
+                "latitude":"-36.6499",
+                "location":"Riggs Creek",
+                "longitude":"145.5759"
+            },
+            "AU-Rob":{
+                "latitude":"-17.1175",
+                "location":"Robson Creek, Queensland, Australia",
+                "longitude":"145.6301"
+            },
+            "AU-Stp":{
+                "latitude":"-17.1507",
+                "location":"Sturt Plains",
+                "longitude":"133.3502"
+            },
+            "AU-TTE":{
+                "latitude":"-22.2870",
+                "location":"Ti Tree East",
+                "longitude":"133.6400"
+            },
+            "AU-Tum":{
+                "latitude":"-35.6566",
+                "location":"Tumbarumba",
+                "longitude":"148.1517"
+            },
+            "AU-Wac":{
+                "latitude":"-37.4259",
+                "location":"Wallaby Creek",
+                "longitude":"145.1878"
+            },
+            "AU-Whr":{
+                "latitude":"-36.6732",
+                "location":"Whroo",
+                "longitude":"145.0294"
+            },
+            "AU-Wom":{
+                "latitude":"-37.4222",
+                "location":"Wombat",
+                "longitude":"144.0944"
+            },
+            "AU-Ync":{
+                "latitude":"-34.9893",
+                "location":"Jaxa",
+                "longitude":"146.2907"
+            },
+            "BE-Bra":{
+                "latitude":"51.3076",
+                "location":"Brasschaat",
+                "longitude":"4.5198"
+            },
+            "BE-Lon":{
+                "latitude":"50.5516",
+                "location":"Lonzee",
+                "longitude":"4.7462"
+            },
+            "BE-Vie":{
+                "latitude":"50.3049",
+                "location":"Vielsalm",
+                "longitude":"5.9981"
+            },
+            "BR-Npw":{
+                "latitude":"-16.4980",
+                "location":"Northern Pantanal Wetland",
+                "longitude":"-56.4120"
+            },
+            "BR-Sa1":{
+                "latitude":"-2.8567",
+                "location":"Santarem-Km67-Primary Forest",
+                "longitude":"-54.9589"
+            },
+            "BR-Sa3":{
+                "latitude":"-3.0180",
+                "location":"Santarem-Km83-Logged Forest",
+                "longitude":"-54.9714"
+            },
+            "BW-Gum":{
+                "latitude":"-18.9647",
+                "location":"Guma",
+                "longitude":"22.3711"
+            },
+            "BW-Nxr":{
+                "latitude":"-19.5481",
+                "location":"Nxaraga",
+                "longitude":"23.1792"
+            },
+            "CA-Gro":{
+                "latitude":"48.2167",
+                "location":"Ontario - Groundhog River, Boreal Mixedwood Forest",
+                "longitude":"-82.1556"
+            },
+            "CA-Man":{
+                "latitude":"55.8796",
+                "location":"Manitoba - Northern Old Black Spruce (former BOREAS Northern Study Area)",
+                "longitude":"-98.4808"
+            },
+            "CA-NS1":{
+                "latitude":"55.8792",
+                "location":"UCI-1850 burn site",
+                "longitude":"-98.4839"
+            },
+            "CA-NS2":{
+                "latitude":"55.9058",
+                "location":"UCI-1930 burn site",
+                "longitude":"-98.5247"
+            },
+            "CA-NS3":{
+                "latitude":"55.9117",
+                "location":"UCI-1964 burn site",
+                "longitude":"-98.3822"
+            },
+            "CA-NS4":{
+                "latitude":"55.9144",
+                "location":"UCI-1964 burn site wet",
+                "longitude":"-98.3806"
+            },
+            "CA-NS5":{
+                "latitude":"55.8631",
+                "location":"UCI-1981 burn site",
+                "longitude":"-98.4850"
+            },
+            "CA-NS6":{
+                "latitude":"55.9167",
+                "location":"UCI-1989 burn site",
+                "longitude":"-98.9644"
+            },
+            "CA-NS7":{
+                "latitude":"56.6358",
+                "location":"UCI-1998 burn site",
+                "longitude":"-99.9483"
+            },
+            "CA-Oas":{
+                "latitude":"53.6289",
+                "location":"Saskatchewan - Western Boreal, Mature Aspen",
+                "longitude":"-106.1978"
+            },
+            "CA-Obs":{
+                "latitude":"53.9872",
+                "location":"Saskatchewan - Western Boreal, Mature Black Spruce",
+                "longitude":"-105.1178"
+            },
+            "CA-Qfo":{
+                "latitude":"49.6925",
+                "location":"Quebec - Eastern Boreal, Mature Black Spruce",
+                "longitude":"-74.3421"
+            },
+            "CA-SCB":{
+                "latitude":"61.3089",
+                "location":"Scotty Creek Bog",
+                "longitude":"-121.2984"
+            },
+            "CA-SCC":{
+                "latitude":"61.3079",
+                "location":"Scotty Creek Landscape",
+                "longitude":"-121.2992"
+            },
+            "CA-SF1":{
+                "latitude":"54.4850",
+                "location":"Saskatchewan - Western Boreal, forest burned in 1977",
+                "longitude":"-105.8176"
+            },
+            "CA-SF2":{
+                "latitude":"54.2539",
+                "location":"Saskatchewan - Western Boreal, forest burned in 1989",
+                "longitude":"-105.8775"
+            },
+            "CA-SF3":{
+                "latitude":"54.0916",
+                "location":"Saskatchewan - Western Boreal, forest burned in 1998",
+                "longitude":"-106.0053"
+            },
+            "CA-TP1":{
+                "latitude":"42.6609",
+                "location":"Ontario - Turkey Point 2002 Plantation White Pine",
+                "longitude":"-80.5595"
+            },
+            "CA-TP2":{
+                "latitude":"42.7744",
+                "location":"Ontario - Turkey Point 1989 Plantation White Pine",
+                "longitude":"-80.4588"
+            },
+            "CA-TP3":{
+                "latitude":"42.7068",
+                "location":"Ontario - Turkey Point 1974 Plantation White Pine",
+                "longitude":"-80.3483"
+            },
+            "CA-TP4":{
+                "latitude":"42.7102",
+                "location":"Ontario - Turkey Point 1939 Plantation White Pine",
+                "longitude":"-80.3574"
+            },
+            "CA-TPD":{
+                "latitude":"42.6353",
+                "location":"Ontario - Turkey Point Mature Deciduous",
+                "longitude":"-80.5577"
+            },
+            "CG-Tch":{
+                "latitude":"-4.2892",
+                "location":"Tchizalamou",
+                "longitude":"11.6564"
+            },
+            "CH-Cha":{
+                "latitude":"47.2102",
+                "location":"Chamau",
+                "longitude":"8.4104"
+            },
+            "CH-Dav":{
+                "latitude":"46.8153",
+                "location":"Davos",
+                "longitude":"9.8559"
+            },
+            "CH-Fru":{
+                "latitude":"47.1158",
+                "location":"Fr\u00fceb\u00fcel ",
+                "longitude":"8.5378"
+            },
+            "CH-Lae":{
+                "latitude":"47.4783",
+                "location":"Laegern",
+                "longitude":"8.3644"
+            },
+            "CH-Oe1":{
+                "latitude":"47.2858",
+                "location":"Oensingen grassland",
+                "longitude":"7.7319"
+            },
+            "CH-Oe2":{
+                "latitude":"47.2864",
+                "location":"Oensingen crop",
+                "longitude":"7.7337"
+            },
+            "CN-Cha":{
+                "latitude":"42.4025",
+                "location":"Changbaishan",
+                "longitude":"128.0958"
+            },
+            "CN-Cng":{
+                "latitude":"44.5934",
+                "location":"Changling",
+                "longitude":"123.5092"
+            },
+            "CN-Dan":{
+                "latitude":"30.4978",
+                "location":"Dangxiong",
+                "longitude":"91.0664"
+            },
+            "CN-Din":{
+                "latitude":"23.1733",
+                "location":"Dinghushan",
+                "longitude":"112.5361"
+            },
+            "CN-Du2":{
+                "latitude":"42.0467",
+                "location":"Duolun_grassland (D01)",
+                "longitude":"116.2836"
+            },
+            "CN-Du3":{
+                "latitude":"42.0551",
+                "location":"Duolun Degraded Meadow",
+                "longitude":"116.2809"
+            },
+            "CN-Ha2":{
+                "latitude":"37.6086",
+                "location":"Haibei Shrubland",
+                "longitude":"101.3269"
+            },
+            "CN-HaM":{
+                "latitude":"37.3700",
+                "location":"Haibei Alpine Tibet site",
+                "longitude":"101.1800"
+            },
+            "CN-Hgu":{
+                "latitude":"32.8453",
+                "location":"Hongyuan",
+                "longitude":"102.5900"
+            },
+            "CN-Qia":{
+                "latitude":"26.7414",
+                "location":"Qianyanzhou",
+                "longitude":"115.0581"
+            },
+            "CN-Sw2":{
+                "latitude":"41.7902",
+                "location":"Siziwang Grazed (SZWG)",
+                "longitude":"111.8971"
+            },
+            "CZ-BK1":{
+                "latitude":"49.5021",
+                "location":"Bily Kriz forest",
+                "longitude":"18.5369"
+            },
+            "CZ-BK2":{
+                "latitude":"49.4944",
+                "location":"Bily Kriz grassland",
+                "longitude":"18.5429"
+            },
+            "CZ-wet":{
+                "latitude":"49.0247",
+                "location":"Trebon (CZECHWET)",
+                "longitude":"14.7704"
+            },
+            "DE-Akm":{
+                "latitude":"53.8662",
+                "location":"Anklam",
+                "longitude":"13.6834"
+            },
+            "DE-Dgw":{
+                "latitude":"53.1514",
+                "location":"Dagowsee",
+                "longitude":"13.0543"
+            },
+            "DE-Geb":{
+                "latitude":"51.0997",
+                "location":"Gebesee",
+                "longitude":"10.9146"
+            },
+            "DE-Gri":{
+                "latitude":"50.9500",
+                "location":"Grillenburg",
+                "longitude":"13.5126"
+            },
+            "DE-Hai":{
+                "latitude":"51.0792",
+                "location":"Hainich",
+                "longitude":"10.4522"
+            },
+            "DE-Hte":{
+                "latitude":"54.2103",
+                "location":"Huetelmoor",
+                "longitude":"12.1761"
+            },
+            "DE-Kli":{
+                "latitude":"50.8931",
+                "location":"Klingenberg",
+                "longitude":"13.5224"
+            },
+            "DE-Lkb":{
+                "latitude":"49.0996",
+                "location":"Lackenberg",
+                "longitude":"13.3047"
+            },
+            "DE-Lnf":{
+                "latitude":"51.3282",
+                "location":"Leinefelde",
+                "longitude":"10.3678"
+            },
+            "DE-Obe":{
+                "latitude":"50.7867",
+                "location":"Oberb\u00e4renburg",
+                "longitude":"13.7213"
+            },
+            "DE-RuR":{
+                "latitude":"50.6219",
+                "location":"Rollesbroich",
+                "longitude":"6.3041"
+            },
+            "DE-RuS":{
+                "latitude":"50.8659",
+                "location":"Selhausen Juelich",
+                "longitude":"6.4471"
+            },
+            "DE-Seh":{
+                "latitude":"50.8706",
+                "location":"Selhausen",
+                "longitude":"6.4497"
+            },
+            "DE-SfN":{
+                "latitude":"47.8064",
+                "location":"Schechenfilz Nord",
+                "longitude":"11.3275"
+            },
+            "DE-Spw":{
+                "latitude":"51.8922",
+                "location":"Spreewald",
+                "longitude":"14.0337"
+            },
+            "DE-Tha":{
+                "latitude":"50.9626",
+                "location":"Tharandt",
+                "longitude":"13.5651"
+            },
+            "DE-Zrk":{
+                "latitude":"53.8759",
+                "location":"Zarnekow",
+                "longitude":"12.8890"
+            },
+            "DK-Eng":{
+                "latitude":"55.6905",
+                "location":"Enghave",
+                "longitude":"12.1918"
+            },
+            "DK-Fou":{
+                "latitude":"56.4842",
+                "location":"Foulum",
+                "longitude":"9.5872"
+            },
+            "DK-Sor":{
+                "latitude":"55.4859",
+                "location":"Soroe",
+                "longitude":"11.6446"
+            },
+            "ES-Amo":{
+                "latitude":"36.8336",
+                "location":"Amoladeras",
+                "longitude":"-2.2523"
+            },
+            "ES-LJu":{
+                "latitude":"36.9266",
+                "location":"Llano de los Juanes",
+                "longitude":"-2.7521"
+            },
+            "ES-LgS":{
+                "latitude":"37.0979",
+                "location":"Laguna Seca",
+                "longitude":"-2.9658"
+            },
+            "ES-Ln2":{
+                "latitude":"36.9695",
+                "location":"Lanjaron-Salvage logging",
+                "longitude":"-3.4758"
+            },
+            "FI-Hyy":{
+                "latitude":"61.8474",
+                "location":"Hyytiala",
+                "longitude":"24.2948"
+            },
+            "FI-Jok":{
+                "latitude":"60.8986",
+                "location":"Jokioinen",
+                "longitude":"23.5134"
+            },
+            "FI-Let":{
+                "latitude":"60.6418",
+                "location":"Lettosuo",
+                "longitude":"23.9595"
+            },
+            "FI-Lom":{
+                "latitude":"67.9972",
+                "location":"Lompolojankka",
+                "longitude":"24.2092"
+            },
+            "FI-Si2":{
+                "latitude":"61.8372",
+                "location":"Siikaneva-2 Bog",
+                "longitude":"24.1967"
+            },
+            "FI-Sii":{
+                "latitude":"61.8327",
+                "location":"Siikaneva",
+                "longitude":"24.1928"
+            },
+            "FI-Sod":{
+                "latitude":"67.3624",
+                "location":"Sodankyla",
+                "longitude":"26.6386"
+            },
+            "FR-Fon":{
+                "latitude":"48.4764",
+                "location":"Fontainebleau-Barbeau",
+                "longitude":"2.7801"
+            },
+            "FR-Gri":{
+                "latitude":"48.8442",
+                "location":"Grignon",
+                "longitude":"1.9519"
+            },
+            "FR-LBr":{
+                "latitude":"44.7171",
+                "location":"Le Bray",
+                "longitude":"-0.7693"
+            },
+            "FR-LGt":{
+                "latitude":"47.3229",
+                "location":"La Guette",
+                "longitude":"2.2841"
+            },
+            "FR-Pue":{
+                "latitude":"43.7413",
+                "location":"Puechabon",
+                "longitude":"3.5957"
+            },
+            "GF-Guy":{
+                "latitude":"5.2788",
+                "location":"Guyaflux (French Guiana)",
+                "longitude":"-52.9249"
+            },
+            "GH-Ank":{
+                "latitude":"5.2685",
+                "location":"Ankasa",
+                "longitude":"-2.6942"
+            },
+            "GL-NuF":{
+                "latitude":"64.1308",
+                "location":"Nuuk Fen",
+                "longitude":"-51.3861"
+            },
+            "GL-ZaF":{
+                "latitude":"74.4814",
+                "location":"Zackenberg Fen",
+                "longitude":"-20.5545"
+            },
+            "GL-ZaH":{
+                "latitude":"74.4733",
+                "location":"Zackenberg Heath",
+                "longitude":"-20.5503"
+            },
+            "HK-MPM":{
+                "latitude":"22.4982",
+                "location":"Mai Po Mangrove",
+                "longitude":"114.0292"
+            },
+            "ID-Pag":{
+                "latitude":"-2.3200",
+                "location":"Palangkaraya undrained forest",
+                "longitude":"113.9000"
+            },
+            "IT-BCi":{
+                "latitude":"40.5237",
+                "location":"Borgo Cioffi",
+                "longitude":"14.9574"
+            },
+            "IT-CA1":{
+                "latitude":"42.3804",
+                "location":"Castel d'Asso1",
+                "longitude":"12.0266"
+            },
+            "IT-CA2":{
+                "latitude":"42.3772",
+                "location":"Castel d'Asso2",
+                "longitude":"12.0260"
+            },
+            "IT-CA3":{
+                "latitude":"42.3800",
+                "location":"Castel d'Asso3",
+                "longitude":"12.0222"
+            },
+            "IT-Cas":{
+                "latitude":"45.0700",
+                "location":"Castellaro",
+                "longitude":"8.7175"
+            },
+            "IT-Col":{
+                "latitude":"41.8494",
+                "location":"Collelongo",
+                "longitude":"13.5881"
+            },
+            "IT-Cp2":{
+                "latitude":"41.7043",
+                "location":"Castelporziano2",
+                "longitude":"12.3573"
+            },
+            "IT-Cpz":{
+                "latitude":"41.7052",
+                "location":"Castelporziano",
+                "longitude":"12.3761"
+            },
+            "IT-Isp":{
+                "latitude":"45.8126",
+                "location":"Ispra ABC-IS",
+                "longitude":"8.6336"
+            },
+            "IT-La2":{
+                "latitude":"45.9542",
+                "location":"Lavarone2",
+                "longitude":"11.2853"
+            },
+            "IT-Lav":{
+                "latitude":"45.9562",
+                "location":"Lavarone",
+                "longitude":"11.2813"
+            },
+            "IT-MBo":{
+                "latitude":"46.0147",
+                "location":"Monte Bondone",
+                "longitude":"11.0458"
+            },
+            "IT-Noe":{
+                "latitude":"40.6062",
+                "location":"Arca di Noe - Le Prigionette",
+                "longitude":"8.1517"
+            },
+            "IT-PT1":{
+                "latitude":"45.2009",
+                "location":"Parco Ticino forest",
+                "longitude":"9.0610"
+            },
+            "IT-Ren":{
+                "latitude":"46.5869",
+                "location":"Renon",
+                "longitude":"11.4337"
+            },
+            "IT-Ro1":{
+                "latitude":"42.4081",
+                "location":"Roccarespampani 1",
+                "longitude":"11.9300"
+            },
+            "IT-Ro2":{
+                "latitude":"42.3903",
+                "location":"Roccarespampani 2",
+                "longitude":"11.9209"
+            },
+            "IT-SR2":{
+                "latitude":"43.7320",
+                "location":"San Rossore 2",
+                "longitude":"10.2909"
+            },
+            "IT-SRo":{
+                "latitude":"43.7279",
+                "location":"San Rossore",
+                "longitude":"10.2844"
+            },
+            "IT-Tor":{
+                "latitude":"45.8444",
+                "location":"Torgnon",
+                "longitude":"7.5781"
+            },
+            "JP-BBY":{
+                "latitude":"43.3230",
+                "location":"Bibai bog",
+                "longitude":"141.8107"
+            },
+            "JP-MBF":{
+                "latitude":"44.3869",
+                "location":"Moshiri Birch Forest Site",
+                "longitude":"142.3186"
+            },
+            "JP-Mse":{
+                "latitude":"36.0539",
+                "location":"Mase rice paddy field",
+                "longitude":"140.0269"
+            },
+            "JP-SMF":{
+                "latitude":"35.2617",
+                "location":"Seto Mixed Forest Site",
+                "longitude":"137.0788"
+            },
+            "JP-SwL":{
+                "latitude":"36.0466",
+                "location":"Suwa Lake",
+                "longitude":"138.1084"
+            },
+            "KR-CRK":{
+                "latitude":"38.2013",
+                "location":"Cheorwon Rice paddy",
+                "longitude":"127.2506"
+            },
+            "MY-MLM":{
+                "latitude":"1.4536",
+                "location":"Maludam National Park",
+                "longitude":"111.1495"
+            },
+            "MY-PSO":{
+                "latitude":"2.9730",
+                "location":"Pasoh Forest Reserve (PSO)",
+                "longitude":"102.3062"
+            },
+            "NL-Hor":{
+                "latitude":"52.2403",
+                "location":"Horstermeer",
+                "longitude":"5.0713"
+            },
+            "NL-Loo":{
+                "latitude":"52.1666",
+                "location":"Loobos",
+                "longitude":"5.7436"
+            },
+            "NZ-Kop":{
+                "latitude":"-37.3879",
+                "location":"Kopuatai",
+                "longitude":"175.5539"
+            },
+            "PA-SPn":{
+                "latitude":"9.3181",
+                "location":"Sardinilla Plantation",
+                "longitude":"-79.6346"
+            },
+            "PA-SPs":{
+                "latitude":"9.3138",
+                "location":"Sardinilla-Pasture",
+                "longitude":"-79.6314"
+            },
+            "PH-RiF":{
+                "latitude":"14.1412",
+                "location":"Philippines Rice Institute flooded",
+                "longitude":"121.2653"
+            },
+            "RU-Ch2":{
+                "latitude":"68.6169",
+                "location":"Chersky reference",
+                "longitude":"161.3509"
+            },
+            "RU-Che":{
+                "latitude":"68.6130",
+                "location":"Cherski",
+                "longitude":"161.3414"
+            },
+            "RU-Cok":{
+                "latitude":"70.8291",
+                "location":"Chokurdakh",
+                "longitude":"147.4943"
+            },
+            "RU-Fy2":{
+                "latitude":"56.4476",
+                "location":"Fyodorovskoye dry spruce",
+                "longitude":"32.9019"
+            },
+            "RU-Fyo":{
+                "latitude":"56.4615",
+                "location":"Fyodorovskoye",
+                "longitude":"32.9221"
+            },
+            "RU-Ha1":{
+                "latitude":"54.7252",
+                "location":"Hakasia steppe",
+                "longitude":"90.0022"
+            },
+            "RU-Sam":{
+                "latitude":"72.3738",
+                "location":"Samoylov",
+                "longitude":"126.4958"
+            },
+            "RU-SkP":{
+                "latitude":"62.2550",
+                "location":"Yakutsk Spasskaya Pad larch",
+                "longitude":"129.1680"
+            },
+            "RU-Tks":{
+                "latitude":"71.5943",
+                "location":"Tiksi",
+                "longitude":"128.8878"
+            },
+            "RU-Vrk":{
+                "latitude":"67.0547",
+                "location":"Seida/Vorkuta",
+                "longitude":"62.9405"
+            },
+            "SD-Dem":{
+                "latitude":"13.2829",
+                "location":"Demokeya",
+                "longitude":"30.4783"
+            },
+            "SE-Deg":{
+                "latitude":"64.1820",
+                "location":"Degero",
+                "longitude":"19.5565"
+            },
+            "SE-St1":{
+                "latitude":"68.3541",
+                "location":"Stordalen grassland",
+                "longitude":"19.0503"
+            },
+            "SJ-Adv":{
+                "latitude":"78.1860",
+                "location":"Adventdalen",
+                "longitude":"15.9230"
+            },
+            "SJ-Blv":{
+                "latitude":"78.9216",
+                "location":"Bayelva, Spitsbergen",
+                "longitude":"11.8311"
+            },
+            "SN-Dhr":{
+                "latitude":"15.4028",
+                "location":"Dahra",
+                "longitude":"-15.4322"
+            },
+            "UK-LBT":{
+                "latitude":"51.5215",
+                "location":"London_BT",
+                "longitude":"-0.1389"
+            },
+            "US-A03":{
+                "latitude":"70.4953",
+                "location":"ARM-AMF3-Oliktok",
+                "longitude":"-149.8823"
+            },
+            "US-A10":{
+                "latitude":"71.3242",
+                "location":"ARM-NSA-Barrow",
+                "longitude":"-156.6149"
+            },
+            "US-AR1":{
+                "latitude":"36.4267",
+                "location":"ARM USDA UNL OSU Woodward Switchgrass 1",
+                "longitude":"-99.4200"
+            },
+            "US-AR2":{
+                "latitude":"36.6358",
+                "location":"ARM USDA UNL OSU Woodward Switchgrass 2",
+                "longitude":"-99.5975"
+            },
+            "US-ARM-SGP":{
+                "latitude":"36.6058",
+                "location":"ARM Southern Great Plains site- Lamont",
+                "longitude":"-97.4888"
+            },
+            "US-ARb":{
+                "latitude":"35.5497",
+                "location":"ARM Southern Great Plains burn site- Lamont",
+                "longitude":"-98.0402"
+            },
+            "US-ARc":{
+                "latitude":"35.5465",
+                "location":"ARM Southern Great Plains control site- Lamont",
+                "longitude":"-98.0400"
+            },
+            "US-Atq":{
+                "latitude":"70.4696",
+                "location":"Atqasuk",
+                "longitude":"-157.4089"
+            },
+            "US-BZB":{
+                "latitude":"64.6955",
+                "location":"Bonanza Creek Thermokarst Bog",
+                "longitude":"-148.3208"
+            },
+            "US-BZF":{
+                "latitude":"64.7013",
+                "location":"Bonanza Creek Rich Fen",
+                "longitude":"-148.3121"
+            },
+            "US-BZS":{
+                "latitude":"64.6963",
+                "location":"Bonanza Creek Black Spruce",
+                "longitude":"-148.3235"
+            },
+            "US-Beo":{
+                "latitude":"71.2810",
+                "location":"Barrow Environmental Observatory (BEO) tower",
+                "longitude":"-156.6123"
+            },
+            "US-Bes":{
+                "latitude":"71.2809",
+                "location":"Barrow-Bes (Biocomplexity Experiment South tower)",
+                "longitude":"-156.5965"
+            },
+            "US-Bi1":{
+                "latitude":"38.0992",
+                "location":"Bouldin Island Alfalfa",
+                "longitude":"-121.4993"
+            },
+            "US-Bi2":{
+                "latitude":"38.1091",
+                "location":"Bouldin Island corn",
+                "longitude":"-121.5351"
+            },
+            "US-Blo":{
+                "latitude":"38.8953",
+                "location":"Blodgett Forest",
+                "longitude":"-120.6328"
+            },
+            "US-CRT":{
+                "latitude":"41.6285",
+                "location":"Curtice Walter-Berger cropland",
+                "longitude":"-83.3471"
+            },
+            "US-Cop":{
+                "latitude":"38.0900",
+                "location":"Corral Pocket",
+                "longitude":"-109.3900"
+            },
+            "US-DPW":{
+                "latitude":"28.0521",
+                "location":"Disney Wilderness Preserve Wetland",
+                "longitude":"-81.4361"
+            },
+            "US-EDN":{
+                "latitude":"37.6156",
+                "location":"Eden Landing Ecological Reserve",
+                "longitude":"-122.1140"
+            },
+            "US-EML":{
+                "latitude":"63.8784",
+                "location":"Eight Mile Lake Permafrost thaw gradient, Healy Alaska.",
+                "longitude":"-149.2536"
+            },
+            "US-GBT":{
+                "latitude":"41.3658",
+                "location":"GLEES Brooklyn Tower",
+                "longitude":"-106.2397"
+            },
+            "US-GLE":{
+                "latitude":"41.3665",
+                "location":"GLEES",
+                "longitude":"-106.2399"
+            },
+            "US-Goo":{
+                "latitude":"34.2547",
+                "location":"Goodwin Creek",
+                "longitude":"-89.8735"
+            },
+            "US-HRA":{
+                "latitude":"34.5852",
+                "location":"Humnoke Farm Rice Field \u2013 Field A",
+                "longitude":"-91.7517"
+            },
+            "US-HRC":{
+                "latitude":"34.5888",
+                "location":"Humnoke Farm Rice Field \u2013 Field C",
+                "longitude":"-91.7517"
+            },
+            "US-Ha1":{
+                "latitude":"42.5378",
+                "location":"Harvard Forest EMS Tower (HFR1)",
+                "longitude":"-72.1715"
+            },
+            "US-Ho1":{
+                "latitude":"45.2041",
+                "location":"Howland Forest (main tower)",
+                "longitude":"-68.7402"
+            },
+            "US-IB2":{
+                "latitude":"41.8406",
+                "location":"Fermi National Accelerator Laboratory- Batavia (Prairie site)",
+                "longitude":"-88.2410"
+            },
+            "US-ICs":{
+                "latitude":"68.6058",
+                "location":"Imnavait Creek Watershed Wet Sedge Tundra",
+                "longitude":"-149.3110"
+            },
+            "US-Ivo":{
+                "latitude":"68.4865",
+                "location":"Ivotuk",
+                "longitude":"-155.7503"
+            },
+            "US-KS1":{
+                "latitude":"28.4583",
+                "location":"Kennedy Space Center (slash pine)",
+                "longitude":"-80.6709"
+            },
+            "US-KS2":{
+                "latitude":"28.6086",
+                "location":"Kennedy Space Center (scrub oak)",
+                "longitude":"-80.6715"
+            },
+            "US-LA1":{
+                "latitude":"29.5013",
+                "location":"Pointe-aux-Chenes Brackish Marsh",
+                "longitude":"-90.4449"
+            },
+            "US-LA2":{
+                "latitude":"29.8587",
+                "location":"Salvador WMA Freshwater Marsh",
+                "longitude":"-90.2869"
+            },
+            "US-LWW":{
+                "latitude":"34.9604",
+                "location":"Little Washita Watershed",
+                "longitude":"-97.9789"
+            },
+            "US-Lin":{
+                "latitude":"36.3566",
+                "location":"Lindcove Orange Orchard",
+                "longitude":"-119.0922"
+            },
+            "US-Los":{
+                "latitude":"46.0827",
+                "location":"Lost Creek",
+                "longitude":"-89.9792"
+            },
+            "US-MAC":{
+                "latitude":"27.1632",
+                "location":"MacArthur Agro-Ecology",
+                "longitude":"-81.1873"
+            },
+            "US-MMS":{
+                "latitude":"39.3232",
+                "location":"Morgan Monroe State Forest",
+                "longitude":"-86.4131"
+            },
+            "US-MRM":{
+                "latitude":"40.8164",
+                "location":"Marsh Resource Meadowlands Mitigation Bank",
+                "longitude":"-74.0435"
+            },
+            "US-Me1":{
+                "latitude":"44.5794",
+                "location":"Metolius - Eyerly burn",
+                "longitude":"-121.5000"
+            },
+            "US-Me2":{
+                "latitude":"44.4526",
+                "location":"Metolius mature ponderosa pine",
+                "longitude":"-121.5589"
+            },
+            "US-Me3":{
+                "latitude":"44.3154",
+                "location":"Metolius-second young aged pine",
+                "longitude":"-121.6078"
+            },
+            "US-Me4":{
+                "latitude":"44.4992",
+                "location":"Metolius-old aged ponderosa pine",
+                "longitude":"-121.6224"
+            },
+            "US-Me5":{
+                "latitude":"44.4372",
+                "location":"Metolius-first young aged pine",
+                "longitude":"-121.5668"
+            },
+            "US-Me6":{
+                "latitude":"44.3233",
+                "location":"Metolius Young Pine Burn",
+                "longitude":"-121.6078"
+            },
+            "US-Myb":{
+                "latitude":"38.0499",
+                "location":"Mayberry Wetland",
+                "longitude":"-121.7650"
+            },
+            "US-NC4":{
+                "latitude":"35.7879",
+                "location":"NC_AlligatorRiver",
+                "longitude":"-75.9038"
+            },
+            "US-NGB":{
+                "latitude":"71.2800",
+                "location":"NGEE Arctic Barrow",
+                "longitude":"-156.6092"
+            },
+            "US-NGC":{
+                "latitude":"64.8618",
+                "location":"NGEE Arctic Council",
+                "longitude":"-163.7002"
+            },
+            "US-NR1":{
+                "latitude":"40.0329",
+                "location":"Niwot Ridge Forest (LTER NWT1)",
+                "longitude":"-105.5464"
+            },
+            "US-Ne1":{
+                "latitude":"41.1651",
+                "location":"Mead - irrigated continuous maize site",
+                "longitude":"-96.4766"
+            },
+            "US-Ne2":{
+                "latitude":"41.1649",
+                "location":"Mead - irrigated maize-soybean rotation site",
+                "longitude":"-96.4701"
+            },
+            "US-Ne3":{
+                "latitude":"41.1797",
+                "location":"Mead - rainfed maize-soybean rotation site",
+                "longitude":"-96.4397"
+            },
+            "US-ORv":{
+                "latitude":"40.0201",
+                "location":"Olentangy River Wetland Research Park",
+                "longitude":"-83.0183"
+            },
+            "US-OWC":{
+                "latitude":"41.3795",
+                "location":"Old Woman Creek",
+                "longitude":"-82.5125"
+            },
+            "US-Oho":{
+                "latitude":"41.5545",
+                "location":"Oak Openings",
+                "longitude":"-83.8438"
+            },
+            "US-PFa":{
+                "latitude":"45.9459",
+                "location":"Park Falls/WLEF",
+                "longitude":"-90.2723"
+            },
+            "US-Prr":{
+                "latitude":"65.1237",
+                "location":"Poker Flat Research Range Black Spruce Forest",
+                "longitude":"-147.4876"
+            },
+            "US-SRC":{
+                "latitude":"31.9083",
+                "location":"Santa Rita Creosote",
+                "longitude":"-110.8395"
+            },
+            "US-SRG":{
+                "latitude":"31.7894",
+                "location":"Santa Rita Grassland",
+                "longitude":"-110.8277"
+            },
+            "US-SRM":{
+                "latitude":"31.8214",
+                "location":"Santa Rita Mesquite",
+                "longitude":"-110.8661"
+            },
+            "US-Snd":{
+                "latitude":"38.0366",
+                "location":"Sherman Island",
+                "longitude":"-121.7540"
+            },
+            "US-Sne":{
+                "latitude":"38.0369",
+                "location":"Sherman Island Restored Wetland",
+                "longitude":"-121.7547"
+            },
+            "US-Srr":{
+                "latitude":"38.2006",
+                "location":"Suisun marsh - Rush Ranch",
+                "longitude":"-122.0264"
+            },
+            "US-StJ":{
+                "latitude":"39.0882",
+                "location":"St Jones Reserve",
+                "longitude":"-75.4372"
+            },
+            "US-Sta":{
+                "latitude":"41.3966",
+                "location":"Saratoga",
+                "longitude":"-106.8024"
+            },
+            "US-Syv":{
+                "latitude":"46.2420",
+                "location":"Sylvania Wilderness Area",
+                "longitude":"-89.3477"
+            },
+            "US-Ton":{
+                "latitude":"38.4309",
+                "location":"Tonzi Ranch",
+                "longitude":"-120.9660"
+            },
+            "US-Tw1":{
+                "latitude":"38.1074",
+                "location":"Twitchell Wetland West Pond",
+                "longitude":"-121.6469"
+            },
+            "US-Tw2":{
+                "latitude":"38.0969",
+                "location":"Twitchell Corn",
+                "longitude":"-121.6365"
+            },
+            "US-Tw3":{
+                "latitude":"38.1152",
+                "location":"Twitchell Alfalfa",
+                "longitude":"-121.6469"
+            },
+            "US-Tw4":{
+                "latitude":"38.1027",
+                "location":"Twitchell East End Wetland",
+                "longitude":"-121.6413"
+            },
+            "US-Tw5":{
+                "latitude":"38.1072",
+                "location":"East Pond Wetland",
+                "longitude":"-121.6426"
+            },
+            "US-Twt":{
+                "latitude":"38.1087",
+                "location":"Twitchell Island",
+                "longitude":"-121.6531"
+            },
+            "US-UMB":{
+                "latitude":"45.5598",
+                "location":"Univ. of Mich. Biological Station",
+                "longitude":"-84.7138"
+            },
+            "US-UMd":{
+                "latitude":"45.5625",
+                "location":"UMBS Disturbance",
+                "longitude":"-84.6975"
+            },
+            "US-Uaf":{
+                "latitude":"64.8663",
+                "location":"University of Alaska, Fairbanks",
+                "longitude":"-147.8555"
+            },
+            "US-Var":{
+                "latitude":"38.4133",
+                "location":"Vaira Ranch- Ione",
+                "longitude":"-120.9508"
+            },
+            "US-WCr":{
+                "latitude":"45.8059",
+                "location":"Willow Creek",
+                "longitude":"-90.0799"
+            },
+            "US-WPT":{
+                "latitude":"41.4646",
+                "location":"Winous Point North Marsh",
+                "longitude":"-82.9962"
+            },
+            "US-Whs":{
+                "latitude":"31.7438",
+                "location":"Walnut Gulch Lucky Hills Shrub",
+                "longitude":"-110.0522"
+            },
+            "US-Wi0":{
+                "latitude":"46.6188",
+                "location":"Young red pine (YRP)",
+                "longitude":"-91.0814"
+            },
+            "US-Wi1":{
+                "latitude":"46.7305",
+                "location":"Intermediate hardwood (IHW)",
+                "longitude":"-91.2329"
+            },
+            "US-Wi2":{
+                "latitude":"46.6869",
+                "location":"Intermediate red pine (IRP)",
+                "longitude":"-91.1528"
+            },
+            "US-Wi3":{
+                "latitude":"46.6347",
+                "location":"Mature hardwood (MHW)",
+                "longitude":"-91.0987"
+            },
+            "US-Wi4":{
+                "latitude":"46.7393",
+                "location":"Mature red pine (MRP)",
+                "longitude":"-91.1663"
+            },
+            "US-Wi5":{
+                "latitude":"46.6531",
+                "location":"Mixed young jack pine (MYJP)",
+                "longitude":"-91.0858"
+            },
+            "US-Wi6":{
+                "latitude":"46.6249",
+                "location":"Pine barrens #1 (PB1)",
+                "longitude":"-91.2982"
+            },
+            "US-Wi7":{
+                "latitude":"46.6491",
+                "location":"Red pine clearcut (RPCC)",
+                "longitude":"-91.0693"
+            },
+            "US-Wi8":{
+                "latitude":"46.7223",
+                "location":"Young hardwood clearcut (YHW)",
+                "longitude":"-91.2524"
+            },
+            "US-Wi9":{
+                "latitude":"46.7385",
+                "location":"Young Jack pine (YJP)",
+                "longitude":"-91.0746"
+            },
+            "US-Wkg":{
+                "latitude":"31.7365",
+                "location":"Walnut Gulch Kendall Grasslands",
+                "longitude":"-109.9419"
+            },
+            "ZA-Kru":{
+                "latitude":"-25.0197",
+                "location":"Skukuza",
+                "longitude":"31.4969"
+            },
+            "ZM-Mon":{
+                "latitude":"-15.4391",
+                "location":"Mongu",
+                "longitude":"23.2525"
+            }
+        },
         "source_id":{
             "20CR-V2":{
                 "region":"global",
                 "source":"20CR V2 (2006): Monthly NOAA-CIRES 20th Century Reanalysis V2",
                 "source_type":"reanalysis",
                 "source_version_number":"V2"
+            },
+            "AI-upscaling-cSoil-1-0":{
+                "region":"contiguous_united_states",
+                "source":"AI-upscaling-cSoil 1 (2024): Upscaling soil organic carbon measurements at the continental scale using multivariate clustering analysis and machine learning",
+                "source_type":"AI_upscaling",
+                "source_version_number":"1"
             },
             "AIRS-1-0":{
                 "region":"global",
@@ -276,11 +1654,35 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"v04.2"
             },
+            "BSVertOzone-v1-0":{
+                "region":"global",
+                "source":"BSVertOzone v1-0 (2018): Mole concentration of ozone in air",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"v1-0"
+            },
             "C3S-GTO-ECV-9-0":{
                 "region":"global",
                 "source":"C3S-GTO-ECV 9.0 (2023): GOME-type Total Ozone Essential Climate Variable (GTO-ECV), generated by combining measurements from several nadir-viewing satellite sensors (GOME/ERS-2, SCIAMACHY/Envisat, OMI/Aura, GOME-2/MetOp-A, GOME-2/MetOp-B, GOME-2/MetOp-C, and TROPOMI/Sentinel-5p",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"9.0"
+            },
+            "CALIPSO-ICECLOUD-1-0":{
+                "region":"global",
+                "source":"CALIPSO-ICECLOUD 1.00 (2018): Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO) Ice cloud",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"1.00"
+            },
+            "CCI-CryoClim-FSC-1":{
+                "region":"global_land",
+                "source":"CCI/CryoClim FSC 1 (2023): Fractional Snow Cover CDR v1 from ESA CCI / CryoClim",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"1"
+            },
+            "CCI-SWE-v4-0":{
+                "region":"global_land",
+                "source":"CCI SWE v4.0 (2025): Snow Water Equivalent (SWE) from the ESA SNOW CCI Climate Data Record version 4.0",
+                "source_type":"satellite_blended",
+                "source_version_number":"v4.0"
             },
             "CCMP-3-1":{
                 "region":"global",
@@ -342,6 +1744,12 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
             },
+            "CRUTS-4-0-9":{
+                "region":"global",
+                "source":"CRU TS 4.09 (2024): Climate Research Unit temperature, volume of hydrological precipitation, vapour pressure, wet days, cloud cover-In-situ (gridded)",
+                "source_type":"gridded_insitu",
+                "source_version_number":"4.09"
+            },
             "DAI-1-0":{
                 "region":"global",
                 "source":"DAI 1.0 (2017): Dai and Trenberth Global River Flow and Continental Discharge Dataset",
@@ -378,6 +1786,12 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"v2.1"
             },
+            "ESA-CCI-SST-v3-0-1":{
+                "region":"global_ocean",
+                "source":"ESA CCI SST 3.0.1 (2024): Sea Surface Temperature (SST) from the ESA SST CCI Climate Data Record version 3.0",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"3.0.1"
+            },
             "ESACCI-CLOUD-ATSR2-AATSR":{
                 "region":"global",
                 "source":"ESACCI-CLOUD-ATSR2-AATSR 3.0 (2020): Cloud properties derived from ATSR2 and AATSR (aboard ERS2 and ENVISAT) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.",
@@ -401,6 +1815,12 @@
                 "source":"ESACCI-CLOUD-AVHRR-AM 2.0 (2017): Cloud properties derived from AVHRR (aboard NOAA and MetOp AM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
+            },
+            "ESACCI-CLOUD-AVHRR-AMPM-3-0":{
+                "region":"global",
+                "source":"ESACCI-CLOUD-AVHRR-AMPM 3.0 (2019): Cloud properties derived from AVHRR (aboard NOAA and MetOp AM+PM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"3.0"
             },
             "ESACCI-CLOUD-AVHRR-PM":{
                 "region":"global",
@@ -522,6 +1942,12 @@
                 "source_type":"satellite_blended",
                 "source_version_number":"6.0"
             },
+            "HOFFMAN-1-0":{
+                "region":"global",
+                "source":"HOFFMAN 1.0 (2014): Carbon Mass Flux Out Of Atmosphere Due To Net Biospheric Production On Land, Surface Downward Mass Flux of Carbon As CO2",
+                "source_type":"reanalysis",
+                "source_version_number":"1.0"
+            },
             "HWSD-2-0":{
                 "region":"global_land",
                 "source":"HWSD 2.0 (2023): Harmonized World Soil Database version 2",
@@ -533,6 +1959,12 @@
                 "source":"HadCRUT5 5.0.2.0 (2025): HadCRUT5 blended air temperature and sea surface temperature anomalies",
                 "source_type":"gridded_insitu",
                 "source_version_number":"5.0.2.0"
+            },
+            "HadISDH-land-4-6-1-2024f":{
+                "region":"global_land",
+                "source":"HadISDH 4.6.1.2024f (2024): HadISDH land near-surface humidity anomalies",
+                "source_type":"gridded_insitu",
+                "source_version_number":"4.6.1.2024f"
             },
             "HadISST-1-1":{
                 "region":"global_ocean",
@@ -618,6 +2050,12 @@
                 "source_type":"satellite_blended",
                 "source_version_number":"v06B_Final"
             },
+            "JASMES-SNOWCOVER-1-0":{
+                "region":"global",
+                "source":"JASMES Snow Cover 1-0 (2024): Global daily surface snow area fraction derived from merged satellite observations using a consistent objective snow cover mapping algorithm applied to multiple generations of optical sensors since 1978.",
+                "source_type":"satellite_blended",
+                "source_version_number":"1-0"
+            },
             "JRA25":{
                 "region":"global",
                 "source":"MRI-JRA25 N/A (2002): JRA25 1.0 (2002): JRA25 (Japanese ReAnalysis 1957-2002)",
@@ -630,11 +2068,35 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.2"
             },
+            "LIVNEH-1-0":{
+                "region":"north_america",
+                "source":"LIVNEH 1.0 (2021): Livneh daily CONUS near-surface gridded meteorological and derived hydrometeorological data data provided by the NOAA PSL",
+                "source_type":"gridded_insitu",
+                "source_version_number":"1.0"
+            },
+            "LIVNEH-unsplit-1-0":{
+                "region":"north_america",
+                "source":"LIVNEH_unsplit 1.0 (2021): Livneh daily CONUS unsplit",
+                "source_type":"gridded_insitu",
+                "source_version_number":"1.0"
+            },
+            "LORA-1-0":{
+                "region":"global_land",
+                "source":"LORA 1.0 (2018): Linear Optimal Runoff Aggregate",
+                "source_type":"gridded_insitu",
+                "source_version_number":"1.0"
+            },
             "LORA-1-1":{
                 "region":"global_land",
                 "source":"LORA 1.1 (2018): Linear Optimal Runoff Aggregate",
                 "source_type":"gridded_insitu",
                 "source_version_number":"1.1"
+            },
+            "MGOHCTA-WOA09":{
+                "region":"global_ocean",
+                "source":"MGOHCTA WOA09 (2024): Monthly Global Ocean Heat Content and Temperature Anomalies in-situ (basin averages)",
+                "source_type":"gridded_insitu",
+                "source_version_number":"WOA09"
             },
             "MODIS-1-0":{
                 "region":"global",
@@ -677,6 +2139,12 @@
                 "source":"MUR25 v4.2 (2019): Multiscale Ultrahigh Resolution L4 Sea-Surface Temperature",
                 "source_type":"satellite_blended",
                 "source_version_number":"v4.2"
+            },
+            "NCSCD-2-2":{
+                "region":"north_polar",
+                "source":"NCSCD 2.2 (2013): Northern Circumpolar Soil Carbon Database",
+                "source_type":"gridded_insitu",
+                "source_version_number":"2.2"
             },
             "NOAA-NCEI-AVHRR-NDVI-4-0":{
                 "region":"global_land",
@@ -732,6 +2200,18 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"5.0"
             },
+            "NOAA-NCEI-LAI-AVHRR-5-0":{
+                "region":"global_land",
+                "source":"NOAA-NCEI-LAI-AVHRR 5.0 (2019): Monthly Average of Daily Leaf Area Index from AVHRR",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"5.0"
+            },
+            "NOAA-NCEI-LAI-VIIRS-1-0":{
+                "region":"global_land",
+                "source":"NOAA NCEI LAI 1.0 (2023): Monthly Average of Daily Leaf Area Index from VIIRS",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"1.0"
+            },
             "NOAA-NCEI-NDVI":{
                 "region":"global_land",
                 "source":"NOAA NCEI NDVI 5.0 (2019): Normalized Difference Vegetation Index",
@@ -780,6 +2260,12 @@
                 "source_type":"satellite_blended",
                 "source_version_number":"v2"
             },
+            "OLC-ORS-V0":{
+                "region":"global",
+                "source":"OLC-ORS V0 (2021): Optimal Linear Combination of Offline land surface models, Reanalysis, and Satellite soil moisture data constrained by in situ observations",
+                "source_type":"reanalysis",
+                "source_version_number":"V0"
+            },
             "OSISAF-V3":{
                 "region":"global_ocean",
                 "source":"OSISAF/CCI SIC 3 (2022): Sea Ice Concentration (SIC) CDR v3 from EUMETSAT OSI SAF / ESA CCI",
@@ -803,6 +2289,12 @@
                 "source":"QuikSCAT v20110531 (2011): QuikSCAT winds monthly climatology derived from QuikSCAT L2B using the 2006 model function and processing algorithms.",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"v20110531"
+            },
+            "RAPID-v2023-1":{
+                "region":"atlantic_ocean",
+                "source":"RAPID v2023.1 (2024): Atlantic Meridional Overturning Transport -In-situ",
+                "source_type":"gridded_insitu",
+                "source_version_number":"v2023.1"
             },
             "RSS-MSU-TLS-4":{
                 "region":"global",
@@ -882,6 +2374,12 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"v7"
             },
+            "SAGE-CCI-OMPS-v0008":{
+                "region":"global",
+                "source":"SAGE CCI OMPS v0008 (2023): Mole concentration of ozone in air",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"v0008"
+            },
             "SGP--ARMBE-atm-c1-1-8":{
                 "region":"site_data",
                 "source":"ARMBE atm-c1-1-8 (2022): DOE ARM Best Estimate Data Products for Atmosphere and Cloud properties",
@@ -948,6 +2446,12 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.0"
             },
+            "WOA-23":{
+                "region":"global_ocean",
+                "source":"WOA 1.0 (2024): World Ocean Atlas",
+                "source_type":"gridded_insitu",
+                "source_version_number":"1.0"
+            },
             "WOA2023":{
                 "region":"global_ocean",
                 "source":"WOA 2023 (2024): World Ocean Atlas",
@@ -977,9 +2481,16 @@
                 "source":"nClimGrid-Monthly-1-0 1.0 (2014): NOAA nClimGrid-Monthly",
                 "source_type":"gridded_insitu",
                 "source_version_number":"1.0"
+            },
+            "wang2024-cSoil-v2":{
+                "region":"contiguous_united_states",
+                "source":"wang2024-cSoil 2 (2024): Upscaling soil organic carbon measurements at the continental scale using multivariate clustering analysis and machine learning",
+                "source_type":"AI_upscaling",
+                "source_version_number":"2"
             }
         },
         "source_type":{
+            "AI_upscaling":"gridded product exploiting multiple_sources via machine learning",
             "gridded_insitu":"gridded product based on measurements collected from in-situ instruments",
             "insitu":"site data",
             "reanalysis":"gridded product generated from a model reanalysis based on in-situ instruments and possibly satellite measurements",

@@ -1,0 +1,123 @@
+import cmor
+import xcdat as xc
+import numpy as np
+import numpy.ma as ma 
+import json
+import sys, os
+import glob
+import subprocess
+
+sys.path.append("../../../../inputs/misc") # Path to obs4MIPsLib used to trap provenance
+import obs4MIPsLib
+
+def extract_date(ds):   # preprocessing function when opening files
+    for var in ds.variables:
+        if var == 'time':
+            dataset_time = ds[var].values
+            dataset_units = ds[var].units
+            ds.assign(time=dataset_time)
+            ds["time"].attrs = {"units": dataset_units}
+    return ds
+
+#%% User provided input
+cmorTable = '../../../../Tables/obs4MIPs_Aday.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+inputJson = 'LIVNEH_NOAA-PSL_inputs.json' ; # Update contents of this file to set your global_attributes
+
+vars_lst = ['prec', 'tmax','tmin'] 
+#vars_lst = ['tmax']
+
+for vr in vars_lst:
+
+ inputDatasets = '/p/user_pub/PCMDIobs/obs4MIPs_input/NOAA-ESRL-PSD/Livneh_daily/downloads.psl.noaa.gov/Datasets/livneh/metvars/' + vr + '.*.nc' # change to local path on user's machine where files are stored
+ inputDatasets = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/NOAA-ESRL-PSD/Livneh_daily/downloads.psl.noaa.gov/Datasets/livneh/metvars/' + vr + '*.nc'
+
+ if vr == 'prec':
+   outputVarName = 'pr'
+   outputUnits = 'kg m-2 s-1'
+
+ if vr == 'tmax':
+   outputVarName = 'tasmax'
+   outputUnits = 'K'
+
+ if vr == 'tmin':
+   outputVarName = 'tasmin'
+   outputUnits = 'K'
+
+ lst = glob.glob(inputDatasets)
+ lst.sort()
+
+ print('Number of files ', len(lst))
+#w = sys.stdin.readline()
+
+# Opening and concatenating files from the dataset
+# Due to the way the data are stored + how CMOR outputs data, it is helpful to set 'mask_and_scale' to 'True' here
+
+ for yearlyFile in lst:
+
+  f = xc.open_mfdataset(yearlyFile, mask_and_scale=True, decode_times=False, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
+# f = f.bounds.add_missing_bounds() # create lat,lon, and time bounds
+  f = f.bounds.add_bounds("T")
+  d = f[vr]
+
+  time = f.time
+  lat = f.lat.values
+  lon = f.lon.values
+
+  lat_bounds = f.lat_bnds
+  lon_bounds = f.lon_bnds
+  time_bounds = f.time_bnds
+
+#%% Initialize and run CMOR
+# For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
+  cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4) #,logfile='cmorLog.txt')
+  cmor.dataset_json(inputJson)
+  cmor.load_table(cmorTable)
+#cmor.set_cur_dataset_attribute('history',f.history)
+  axes    = [ {'table_entry': 'time',
+             'units': time.units,
+             },
+             {'table_entry': 'latitude',
+              'units': 'degrees_north',
+              'coord_vals': lat[:],
+              'cell_bounds': lat_bounds},
+             {'table_entry': 'longitude',
+              'units': 'degrees_east',
+              'coord_vals': lon[:],
+              'cell_bounds': lon_bounds},
+          ]
+
+  axisIds = list() ; # Create list of axes
+  for axis in axes:
+    axisId = cmor.axis(**axis)
+    axisIds.append(axisId)
+
+# Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
+  d["units"] = outputUnits
+  varid   = cmor.variable(outputVarName,str(d.units.values),axisIds,missing_value=-9999.)
+
+# w = sys.stdin.readline()
+  values = d.to_numpy()
+  values = np.where(np.isnan(values),ma.masked,values)
+  if vr == 'prec': values = np.divide(values,3600.*24.)
+  if vr in ['tmax','tmin']: values = np.add(values,273.15)
+
+# Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
+  cmor.set_variable_attribute(varid,'valid_min','f',-1.8) # set manually for the time being
+  cmor.set_variable_attribute(varid,'valid_max','f',45.)
+#
+# Provenance info 
+# gitinfo = obs4MIPsLib.ProvenanceInfo(obs4MIPsLib.getGitInfo("./"))
+# paths = os.getcwd().split('/inputs')
+# path_to_code = f"/inputs{paths[1]}"  # location of the code in the obs4MIPs GitHub directory
+  git_commit_number = obs4MIPsLib.get_git_revision_hash()
+  path_to_code = os.getcwd().split('obs4MIPs-cmor-tables')[1]
+  full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{git_commit_number}/{path_to_code}"
+  cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
+
+# Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
+  cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
+  cmor.write(varid,values,time_vals=time.values[:],time_bnds=time_bounds.values[:]) ; # Write variable with time axis
+  f.close()
+  cmor.close()
+#sys.exit()
+  print('done processing ', yearlyFile)

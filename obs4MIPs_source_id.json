@@ -17,6 +17,21 @@
             ],
             "source_version_number":"V2"
         },
+        "AI-upscaling-cSoil-1-0":{
+            "institution_id":"EmoryU",
+            "region":[
+                "contiguous_united_states"
+            ],
+            "release_year":"2024",
+            "source_description":"Upscaling soil organic carbon measurements at the continental scale using multivariate clustering analysis and machine learning",
+            "source_label":"AI-upscaling-cSoil",
+            "source_name":"AI upscaling cSoil",
+            "source_type":"AI_upscaling",
+            "source_variables":[
+                "cSoil"
+            ],
+            "source_version_number":"1"
+        },
         "AIRS-1-0":{
             "institution_id":"NASA-JPL",
             "region":[
@@ -154,6 +169,21 @@
             ],
             "source_version_number":"v04.2"
         },
+        "BSVertOzone-v1-0":{
+            "institution_id":"DLR-BIRA",
+            "region":[
+                "global"
+            ],
+            "release_year":"2018",
+            "source_description":"Mole concentration of ozone in air",
+            "source_label":"BSVertOzone",
+            "source_name":"BSVertOzone",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "o3zm"
+            ],
+            "source_version_number":"v1-0"
+        },
         "C3S-GTO-ECV-9-0":{
             "institution_id":"DLR-BIRA",
             "region":[
@@ -169,6 +199,51 @@
                 "o3"
             ],
             "source_version_number":"9.0"
+        },
+        "CALIPSO-ICECLOUD-1-0":{
+            "institution_id":"NASA-LaRC",
+            "region":[
+                "global"
+            ],
+            "release_year":"2018",
+            "source_description":"Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO) Ice cloud",
+            "source_label":"CALIPSO-ICECLOUD",
+            "source_name":"CALIPSO-ICECLOUD",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "cli"
+            ],
+            "source_version_number":"1.00"
+        },
+        "CCI-CryoClim-FSC-1":{
+            "institution_id":"NR",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2023",
+            "source_description":"Fractional Snow Cover CDR v1 from ESA CCI / CryoClim",
+            "source_label":"CCI/CryoClim FSC",
+            "source_name":"CCI/CryoClim FSC",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "snc"
+            ],
+            "source_version_number":"1"
+        },
+        "CCI-SWE-v4-0":{
+            "institution_id":"FMI",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2025",
+            "source_description":"Snow Water Equivalent (SWE) from the ESA SNOW CCI Climate Data Record version 4.0",
+            "source_label":"CCI SWE",
+            "source_name":"CCI SWE",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "sweLut"
+            ],
+            "source_version_number":"v4.0"
         },
         "CCMP-3-1":{
             "institution_id":"RSS",
@@ -356,6 +431,26 @@
             ],
             "source_version_number":"2.0"
         },
+        "CRUTS-4-0-9":{
+            "institution_id":"CRU-UEA",
+            "region":[
+                "global"
+            ],
+            "release_year":"2024",
+            "source_description":"Climate Research Unit temperature, volume of hydrological precipitation, vapour pressure, wet days, cloud cover-In-situ (gridded)",
+            "source_id":"CRUTS-4-0-9",
+            "source_label":"CRU TS",
+            "source_name":"CRU TS",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "clt",
+                "evspsblpot",
+                "tas",
+                "tasmax",
+                "tasmin"
+            ],
+            "source_version_number":"4.09"
+        },
         "DAI-1-0":{
             "institution_id":"UCAR/NCAR - RDA",
             "region":[
@@ -462,6 +557,21 @@
             ],
             "source_version_number":"v2.1"
         },
+        "ESA-CCI-SST-v3-0-1":{
+            "institution_id":"UReading",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2024",
+            "source_description":"Sea Surface Temperature (SST) from the ESA SST CCI Climate Data Record version 3.0",
+            "source_label":"ESA CCI SST",
+            "source_name":"ESA CCI SST",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "tos"
+            ],
+            "source_version_number":"3.0.1"
+        },
         "ESACCI-CLOUD-ATSR2-AATSR":{
             "institution_id":"DWD",
             "region":[
@@ -547,6 +657,33 @@
                 "pctCCI"
             ],
             "source_version_number":"2.0"
+        },
+        "ESACCI-CLOUD-AVHRR-AMPM-3-0":{
+            "institution_id":"DWD",
+            "region":[
+                "global"
+            ],
+            "release_year":"2019",
+            "source_description":"Cloud properties derived from AVHRR (aboard NOAA and MetOp AM+PM) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets",
+            "source_label":"ESACCI-CLOUD-AVHRR-AMPM",
+            "source_name":"ESACCI-CLOUD-AVHRR-AMPM",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "clivi",
+                "clt",
+                "clt_stderr",
+                "clwvi",
+                "lwp",
+                "rlus",
+                "rlut",
+                "rlutcs",
+                "rsdt",
+                "rsus",
+                "rsuscs",
+                "rsut",
+                "rsutcs"
+            ],
+            "source_version_number":"3.0"
         },
         "ESACCI-CLOUD-AVHRR-PM":{
             "institution_id":"DWD",
@@ -881,6 +1018,22 @@
             ],
             "source_version_number":"6.0"
         },
+        "HOFFMAN-1-0":{
+            "institution_id":"UCI-ORNL",
+            "region":[
+                "global"
+            ],
+            "release_year":"2014",
+            "source_description":"Carbon Mass Flux Out Of Atmosphere Due To Net Biospheric Production On Land, Surface Downward Mass Flux of Carbon As CO2",
+            "source_label":"HOFFMAN",
+            "source_name":"HOFFMAN",
+            "source_type":"reanalysis",
+            "source_variables":[
+                "fgc02",
+                "nbp"
+            ],
+            "source_version_number":"1.0"
+        },
         "HWSD-2-0":{
             "institution_id":"FAO",
             "region":[
@@ -911,6 +1064,24 @@
                 "tos"
             ],
             "source_version_number":"5.0.2.0"
+        },
+        "HadISDH-land-4-6-1-2024f":{
+            "institution_id":"MOHC",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2024",
+            "source_description":"HadISDH land near-surface humidity anomalies",
+            "source_label":"HadISDH",
+            "source_name":"HadISDH.land.4.6.1.2024f",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "hurs",
+                "hursanom",
+                "huss",
+                "hussanom"
+            ],
+            "source_version_number":"4.6.1.2024f"
         },
         "HadISST-1-1":{
             "institution_id":"MOHC",
@@ -1135,6 +1306,21 @@
             ],
             "source_version_number":"v06B_Final"
         },
+        "JASMES-SNOWCOVER-1-0":{
+            "institution_id":"JAXA",
+            "region":[
+                "global"
+            ],
+            "release_year":"2024",
+            "source_description":"Global daily surface snow area fraction derived from merged satellite observations using a consistent objective snow cover mapping algorithm applied to multiple generations of optical sensors since 1978.",
+            "source_label":"JASMES Snow Cover",
+            "source_name":"JASMES Snow Cover",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "snc"
+            ],
+            "source_version_number":"1-0"
+        },
         "JRA25":{
             "institution_id":"MRI",
             "region":[
@@ -1169,6 +1355,57 @@
             ],
             "source_version_number":"1.2"
         },
+        "LIVNEH-1-0":{
+            "institution_id":"NOAA-ESRL-PSD",
+            "region":[
+                "north_america"
+            ],
+            "release_year":"2021",
+            "source_description":"Livneh daily CONUS near-surface gridded meteorological and derived hydrometeorological data data provided by the NOAA PSL",
+            "source_label":"LIVNEH",
+            "source_name":"LIVNEH",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "pr",
+                "sfcWind",
+                "tasmax",
+                "tasmin"
+            ],
+            "source_version_number":"1.0"
+        },
+        "LIVNEH-unsplit-1-0":{
+            "institution_id":"UCSD-SIO",
+            "region":[
+                "north_america"
+            ],
+            "release_year":"2021",
+            "source_description":"Livneh daily CONUS unsplit",
+            "source_label":"LIVNEH_unsplit",
+            "source_name":"LIVNEH_unsplit",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "pr",
+                "sfcWind",
+                "tasmax",
+                "tasmin"
+            ],
+            "source_version_number":"1.0"
+        },
+        "LORA-1-0":{
+            "institution_id":"ARCCSS",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2018",
+            "source_description":"Linear Optimal Runoff Aggregate",
+            "source_label":"LORA",
+            "source_name":"LORA",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "mrro"
+            ],
+            "source_version_number":"1.0"
+        },
         "LORA-1-1":{
             "institution_id":"ARCCSS",
             "region":[
@@ -1183,6 +1420,21 @@
                 "mrro"
             ],
             "source_version_number":"1.1"
+        },
+        "MGOHCTA-WOA09":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2024",
+            "source_description":"Monthly Global Ocean Heat Content and Temperature Anomalies in-situ (basin averages)",
+            "source_label":"MGOHCTA",
+            "source_name":"MGOHCTA",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "ohcanom"
+            ],
+            "source_version_number":"WOA09"
         },
         "MODIS-1-0":{
             "institution_id":"NASA-GSFC",
@@ -1288,6 +1540,21 @@
                 "tos"
             ],
             "source_version_number":"v4.2"
+        },
+        "NCSCD-2-2":{
+            "institution_id":"BCCR",
+            "region":[
+                "north_polar"
+            ],
+            "release_year":"2013",
+            "source_description":"Northern Circumpolar Soil Carbon Database",
+            "source_label":"NCSCD",
+            "source_name":"NCSCD",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "cSoil"
+            ],
+            "source_version_number":"2.2"
         },
         "NOAA-NCEI-AVHRR-NDVI-4-0":{
             "institution_id":"NOAA-NCEI",
@@ -1432,6 +1699,37 @@
             ],
             "source_version_number":"5.0"
         },
+        "NOAA-NCEI-LAI-AVHRR-5-0":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2019",
+            "source_description":"Monthly Average of Daily Leaf Area Index from AVHRR",
+            "source_label":"NOAA-NCEI-LAI-AVHRR",
+            "source_name":"NOAA NCEI LAI v5.0 (2019): AVHRR Leaf Area Index",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "lai"
+            ],
+            "source_version_number":"5.0"
+        },
+        "NOAA-NCEI-LAI-VIIRS-1-0":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2023",
+            "source_description":"Monthly Average of Daily Leaf Area Index from VIIRS",
+            "source_id":"NOAA-NCEI-LAI-VIIRS-1-0",
+            "source_label":"NOAA NCEI LAI",
+            "source_name":"NOAA NCEI LAI",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "lai"
+            ],
+            "source_version_number":"1.0"
+        },
         "NOAA-NCEI-NDVI":{
             "institution_id":"NOAA-NCEI",
             "region":[
@@ -1560,6 +1858,21 @@
             ],
             "source_version_number":"v2"
         },
+        "OLC-ORS-V0":{
+            "institution_id":"ORNL",
+            "region":[
+                "global"
+            ],
+            "release_year":"2021",
+            "source_description":"Optimal Linear Combination of Offline land surface models, Reanalysis, and Satellite soil moisture data constrained by in situ observations",
+            "source_label":"OLC-ORS",
+            "source_name":"OLC-ORS",
+            "source_type":"reanalysis",
+            "source_variables":[
+                "mrso"
+            ],
+            "source_version_number":"V0"
+        },
         "OSISAF-V3":{
             "institution_id":"MET-Norway",
             "region":[
@@ -1625,6 +1938,21 @@
                 "vas"
             ],
             "source_version_number":"v20110531"
+        },
+        "RAPID-v2023-1":{
+            "institution_id":"NERC-NSF-NOAA",
+            "region":[
+                "atlantic_ocean"
+            ],
+            "release_year":"2024",
+            "source_description":"Atlantic Meridional Overturning Transport -In-situ",
+            "source_label":"RAPID",
+            "source_name":"RAPID",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "amoc"
+            ],
+            "source_version_number":"v2023.1"
         },
         "RSS-MSU-TLS-4":{
             "institution_id":"RSS",
@@ -1836,6 +2164,21 @@
             ],
             "source_version_number":"v7"
         },
+        "SAGE-CCI-OMPS-v0008":{
+            "institution_id":"FMI",
+            "region":[
+                "global"
+            ],
+            "release_year":"2023",
+            "source_description":"Mole concentration of ozone in air",
+            "source_label":"SAGE CCI OMPS",
+            "source_name":"SAGE CCI OMPS",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "o3"
+            ],
+            "source_version_number":"v0008"
+        },
         "SGP--ARMBE-atm-c1-1-8":{
             "institution_id":"DOE-ARM",
             "region":[
@@ -2043,6 +2386,22 @@
             ],
             "source_version_number":"1.0"
         },
+        "WOA-23":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2024",
+            "source_description":"World Ocean Atlas",
+            "source_label":"WOA",
+            "source_name":"WOA",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "so",
+                "thetao"
+            ],
+            "source_version_number":"1.0"
+        },
         "WOA2023":{
             "institution_id":"NOAA-NCEI",
             "region":[
@@ -2132,6 +2491,21 @@
                 "tasmin"
             ],
             "source_version_number":"1.0"
+        },
+        "wang2024-cSoil-v2":{
+            "institution_id":"EmoryU",
+            "region":[
+                "contiguous_united_states"
+            ],
+            "release_year":"2024",
+            "source_description":"Upscaling soil organic carbon measurements at the continental scale using multivariate clustering analysis and machine learning",
+            "source_label":"wang2024-cSoil",
+            "source_name":"wang2024 cSoil",
+            "source_type":"AI_upscaling",
+            "source_variables":[
+                "cSoil"
+            ],
+            "source_version_number":"2"
         }
     }
 }

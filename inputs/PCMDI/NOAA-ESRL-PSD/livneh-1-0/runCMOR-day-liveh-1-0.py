@@ -21,10 +21,12 @@ cmorTable = '../../../../Tables/obs4MIPs_Aday.json' ; # Aday,Amon,Lmon,Omon,SImo
 inputJson = 'livneh_NOAA-PSL_inputs.json' ; # Update contents of this file to set your global_attributes
 
 vars_lst = ['prec', 'tmax','tmin'] 
+vars_lst = ['tmax']
 
 for vr in vars_lst:
 
  inputDatasets = '/p/user_pub/PCMDIobs/obs4MIPs_input/NOAA-ESRL-PSD/Livneh_daily/downloads.psl.noaa.gov/Datasets/livneh/metvars/' + vr + '.*.nc' # change to local path on user's machine where files are stored
+ inputDatasets = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/NOAA-ESRL-PSD/Livneh_daily/downloads.psl.noaa.gov/Datasets/livneh/metvars/' + vr + '*.nc'
 
  if vr == 'prec':
    outputVarName = 'pr'
@@ -50,7 +52,8 @@ for vr in vars_lst:
  for yearlyFile in lst:
 
   f = xc.open_mfdataset(yearlyFile, mask_and_scale=True, decode_times=False, combine='nested', concat_dim='time', preprocess=extract_date, data_vars='all')
-  f = f.bounds.add_missing_bounds() # create lat,lon, and time bounds
+# f = f.bounds.add_missing_bounds() # create lat,lon, and time bounds
+  f = f.bounds.add_bounds("T")
   d = f[vr]
 
   time = f.time
@@ -93,6 +96,7 @@ for vr in vars_lst:
   values = d.to_numpy()
   values = np.where(np.isnan(values),ma.masked,values)
   if vr == 'prec': values = np.divide(values,3600.*24.)
+  if vr in ['tmax','tmin']: values = np.add(values,273.15)
 
 # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_variable_attribute(varid,'valid_min','f',-1.8) # set manually for the time being

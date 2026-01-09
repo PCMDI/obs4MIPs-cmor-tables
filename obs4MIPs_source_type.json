@@ -1,5 +1,6 @@
 {
     "source_type":{
+        "AI_upscaling":"gridded product exploiting multiple_sources via machine learning",
         "gridded_insitu":"gridded product based on measurements collected from in-situ instruments",
         "insitu":"site data",
         "reanalysis":"gridded product generated from a model reanalysis based on in-situ instruments and possibly satellite measurements",

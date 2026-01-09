@@ -1,9 +1,9 @@
 {
     "Header":{
-        "Conventions":"CF-1.11; ODS-2.5",
+        "Conventions":"CF-1.12; ODS-2.6",
         "approx_interval":"30.00000",
         "cmor_version":"3.5",
-        "data_specs_version":"ODS-2.5",
+        "data_specs_version":"ODS-2.6",
         "generic_levels":"olevel olevhalf",
         "int_missing_value":"-999",
         "mip_era":"CMIP6",
@@ -3377,6 +3377,24 @@
             "standard_name":"tendency_of_ocean_mole_content_of_organic_carbon_due_to_runoff_and_sediment_dissolution",
             "type":"real",
             "units":"mol m-2 s-1",
+            "valid_max":"",
+            "valid_min":""
+        },
+        "ohcanom":{
+            "cell_measures":"",
+            "cell_methods":"",
+            "comment":"",
+            "dimensions":"basin olevel time",
+            "frequency":"mon",
+            "long_name":"Basin scale ocean heat content",
+            "modeling_realm":"ocean",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"ohcanom",
+            "positive":"",
+            "standard_name":"northward_ocean_heat_transport",
+            "type":"real",
+            "units":"J",
             "valid_max":"",
             "valid_min":""
         },

@@ -161,7 +161,10 @@ tableSource = [
  ['realm','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_realm.json'],
  ['source_type','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_source_type.json'],
  ['table_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_table_id.json'],
- ['institution_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_institution_id.json']
+ ['institution_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_institution_id.json'],
+ ['aux_uncertainty_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_aux_uncertainty_id.json'],
+ ['has_aux_unc','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_has_aux_unc.json'],
+ ['site_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_site_id.json']
  ] ;
 
 #%% Loop through tables and create in-memory objects
@@ -244,8 +247,8 @@ fx['Header']['realm']       = 'fx'
 Ofx['Header']['realm']       = 'Ofx'
 A3hr['Header']['realm']     = 'atmos'
 A6hr['Header']['realm']     = 'atmos'
-Oday['Header']['realm']     = 'ocean'
-SIday['Header']['realm']    = 'seaIce'
+#Oday['Header']['realm']     = 'ocean'
+#SIday['Header']['realm']    = 'seaIce'
 CFsubhr['Header']['realm']    = 'atmos'
 A1hr['Header']['realm']    = 'atmos'
 A1hrPt['Header']['realm']    = 'atmos'
@@ -260,20 +263,20 @@ Ofx['Header']['table_id']  = 'Table obs4MIPs_Ofx'
 Aday['Header']['table_id']  = 'Table obs4MIPs_Aday'
 A3hr['Header']['table_id']  = 'Table obs4MIPs_A3hr'
 A6hr['Header']['table_id']  = 'Table obs4MIPs_A6hr'
-Oday['Header']['table_id']  = 'Table obs4MIPs_Oday'
-SIday['Header']['table_id'] = 'Table obs4MIPs_SIday'
+#Oday['Header']['table_id']  = 'Table obs4MIPs_Oday'
+#SIday['Header']['table_id'] = 'Table obs4MIPs_SIday'
 CFsubhr['Header']['table_id']    = 'Table obs4MIPs_CFsubhr'
 A1hr['Header']['table_id']    = 'Table obs4MIPs_A1hr'
 A1hrPt['Header']['table_id']    = 'Table obs4MIPs_A1hrPt'
-SIday['Header']['realm']    = 'seaIce'
+#SIday['Header']['realm']    = 'seaIce'
 
 #realm = eval(realm)
 
 # Clean out modeling_realm
 for jsonName in [Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx,Ofx]:
   try:
-   jsonName['Header']["Conventions"] = "CF-1.11; ODS-2.5"
-   jsonName['Header']["data_specs_version"] = "ODS-2.5"
+   jsonName['Header']["Conventions"] = "CF-1.12; ODS-2.6"
+   jsonName['Header']["data_specs_version"] = "ODS-2.6"
   except:
    pass
 
@@ -298,19 +301,6 @@ for tab in (Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx,Ofx,monNobs,monStd
 # Add new variables
 # 
 
-'''
-# Test for variable lists
-for var in SIday['variable_entry'].keys():
-    print var
-sys.exit()
-'''
-
-# Add new variables
-
-
-# Add new variables
-
-# Add new variables
 #%% Coordinate
 #%% Frequency
 #%% Grid
@@ -331,16 +321,7 @@ tmp = [['grid_label','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/mast
 
 # Fix issues
 #==============================================================================
-# Example new institution_id entry
-#institution_id['institution_id']['NOAA-NCEI'] = 'NOAA\'s National Centers for Environmental Information, Asheville, NC 28801, USA'
-#institution_id['institution_id']['RSS'] = 'Remote Sensing Systems, Santa Rosa, CA 95401, USA'
-#institution_id['institution_id']['CNES'] = "Centre national d'etudes spatiales"
-#institution_id['institution_id']['NASA-GSFC'] = "National Aeronautics and Space Administration, Goddard Space Flight Center"
-'''
-#institution_id['institution_id']['ImperialCollege'] = "Imperial College, London, U.K."
-#institution_id['institution_id']['UReading'] = "University of Reading, Reading, U.K."
-#institution_id['institution_id']['UW'] = "University of Washington, USA"
-'''
+
 #%% License
 license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
             ' a Creative Commons Attribution-ShareAlike 4.0 International License'
@@ -354,26 +335,34 @@ license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
 
 #%% Required global attributes - # indicates source
 required_global_attributes = [
- 'Conventions',
- 'activity_id',
- 'contact',
- 'creation_date',
- 'data_specs_version',
- 'frequency',
- 'grid',
- 'grid_label',
- 'institution',
- 'institution_id',
- 'license',
- 'nominal_resolution',
- 'product',
- 'realm',
- 'source_id',
- 'table_id',
- 'tracking_id',
- 'variable_id',
- 'variant_label'
-] ;
+        "Conventions",
+        "activity_id",
+        "contact",
+        "creation_date",
+        "data_specs_version",
+        "frequency",
+        "grid",
+        "grid_label",
+        "has_aux_unc",
+        "institution",
+        "institution_id",
+        "license",
+        "nominal_resolution",
+        "processing_code_location",
+        "product",
+        "realm",
+        "references",
+        "region",
+        "source",
+        "source_data_url",
+        "source_id",
+        "source_type",
+        "source_version_number",
+        "table_id",
+        "tracking_id",
+        "variable_id",
+        "variant_label"
+        ] ;
 
 #%% Source ID
 '''
@@ -399,23 +388,6 @@ for s in source_id_orig['source_id'].keys():
 #print(source_id['source_id']['GERB-HR-ED01-1-1'])
 
 source_id['source_id']['20CR-V2']['institution_id'] = 'NOAA-ESRL-PSD' 
-source_id['source_id']['CERES-EBAF-4-0']['institution_id'] = 'NASA-LaRC'
-source_id['source_id']['CERES-EBAF-4-1']['institution_id'] = 'NASA-LaRC'
-#source_id['source_id']['CERES-EBAF-4-1']['institution_id'] = 'NASA-LaRC--PCMDI'
-source_id['source_id']['TropFlux-1-0']['institution_id'] = 'ESSO'
-#source_id['source_id']['REMSS-PRW-v07r01']['institution_id'] = 'RSS'
-#source_id['source_id']['REMSS-PRW-v07r01']['institution'] = 'RSS data prepared by PCMDI for obs4MIPs'
-source_id['source_id']['CMAP-V1902']['institution_id'] = 'NOAA-NCEI'
-source_id['source_id']['GPCP-2-3']['institution_id'] = 'NOAA-NCEI'
-
-#print(source_id['source_id']['GERB-HR-ED01-1-1'])
-#w = sys.stdin.readline()
-
-# Enter fixes or additions below
-'''
-source_id = {}
-source_id['source_id'] = {}
-'''
 
 #####
 
@@ -472,6 +444,8 @@ source_type['gridded_insitu'] = 'gridded product based on measurements collected
 source_type['reanalysis'] = 'gridded product generated from a model reanalysis based on in-situ instruments and possibly satellite measurements'
 source_type['satellite_blended'] = 'gridded product based on both in-situ instruments and satellite measurements'
 source_type['satellite_retrieval'] = 'gridded product based on satellite measurements'
+source_type['AI_upscaling'] = "gridded product exploiting multiple_sources via machine learning"
+
 
 #%% Table ID
 table_id = [
@@ -516,19 +490,6 @@ for key in source_id['source_id'].keys():
         sys.exit()
     # Validate region
     vals = source_id['source_id'][key]['region']
-#   for val in vals:
-#       if val not in eval(region)['region']['region']:  # region:
-#           print('Invalid region for entry:',key,'- aborting')
-#           sys.exit()
-
-
-
-    # Validate product   
-#   vals = source_id['source_id'][key]['product']
-#   for val in vals:
-#       if val not in product:
-#           print('Invalid product for entry:',key,'- aborting')
-#           sys.exit()
 
 print('above master loop')
 #%% Write variables to files
@@ -551,7 +512,7 @@ for jsonName in masterTargets:
                 dictToClean[key][value2[0]] = string
         vars()[jsonName] = dictToClean
     # Write file
-    if jsonName in ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','CFsubhr','A1hr','SImon',
+    if jsonName in ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','CFsubhr','A1hr','SImon','A1hrPt','Ofx',
                     'coordinate','formula_terms','fx','grids','monNobs',
                     'monStderr']:
         outFile = ''.join(['../Tables/obs4MIPs_',jsonName,'.json'])
@@ -571,8 +532,9 @@ for jsonName in masterTargets:
         jsonDict[jsonName.replace('_','')] = eval(jsonName)
 
     elif jsonName not in ['coordinate','formula_terms','fx','Ofx','grids',
-                          'institution_id','source_id','Aday','Amon','A3hr','Lmon',
-                          'Omon','CFsubhr','A1hr','A1hPt','SImon']: #,'product','realm','region']:
+                          'institution_id','source_id','Aday','Amon','A3hr','Lmon','Oday','SIday','A1hrPt',
+                          'Omon','CFsubhr','A6hr','A1hr','A1hPt','SImon', #]: #,'product','realm','region']:
+                          'aux_uncertainty_id','has_aux_unc','site_id']:
         jsonDict = {}
         jsonDict[jsonName] = eval(jsonName)
 
@@ -637,9 +599,10 @@ inputJson = ['frequency','grid_label','institution_id','license',
              'nominal_resolution','product','realm','region',
              'required_global_attributes','source_id','source_type','table_id', # These are controlled vocabs
              'coordinate','grids','formula_terms', # These are not controlled vocabs - rather lookup tables for CMOR
-             'Aday','Amon','Lmon','Omon','SImon','fx','Ofx' # Update/add if new tables are generated
+             'aux_uncertainty_id','has_aux_unc','site_id'
+#            'Aday','Amon','Lmon','Omon','SImon','fx','Ofx' # Update/add if new tables are generated
             ]
-tableList = ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon','1hrPt','coordinate',
+tableList = ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon','1hrPt','A1hrPt','coordinate',
              'formula_terms','fx','Ofx','grids','monNobs','monStderr']
 
 # Load dictionaries from local files
@@ -647,15 +610,15 @@ CVJsonList = copy.deepcopy(inputJson)
 #CVJsonList.remove('coordinate')
 CVJsonList.remove('grids')
 CVJsonList.remove('formula_terms')
-CVJsonList.remove('Aday')
-CVJsonList.remove('Amon')
-CVJsonList.remove('Lmon')
-CVJsonList.remove('Omon')
-CVJsonList.remove('SImon')
+#CVJsonList.remove('Aday')
+#CVJsonList.remove('Amon')
+#CVJsonList.remove('Lmon')
+#CVJsonList.remove('Omon')
+#CVJsonList.remove('SImon')
 #CVJsonList.remove('CFsubhr')
 #CVJsonList.remove('A1hr')
-CVJsonList.remove('fx')
-CVJsonList.remove('Ofx')
+#CVJsonList.remove('fx')
+#CVJsonList.remove('Ofx')
 
 
 for count,CV in enumerate(inputJson):
@@ -663,7 +626,8 @@ for count,CV in enumerate(inputJson):
         path = '../Tables/'
     else:
         path = '../'
-    vars()[CV] = json.load(open(''.join([path,'obs4MIPs_',CV,'.json'])))
+        print(CV, 'ABOVE TABLE!!!')
+    vars()[CV] = json.load(open(''.join([path,'obs4MIPs_',CV,'.json'])))  
 
 #       vars()[table[0]] = json.load(open('tmp.json','r'))
 
@@ -717,12 +681,6 @@ for count,CV in enumerate(CVJsonList):
 # Add static entries to obs4MIPs_CV.json
 obs4MIPs_CV['CV']['activity_id'] = 'obs4MIPs'
 
-# Dynamically update "data_specs_version": "2.0.0", in rssSsmiPrw-input.json
-#print os.getcwd()
-#versionInfo = getGitInfo('../demo/rssSsmiPrw-input.json')
-#tagTxt = versionInfo[2]
-#tagInd = tagTxt.find('(')
-#tagTxt = tagTxt[0:tagInd].replace('latest_tagPoint: ','').strip()
 
 # Write demo obs4MIPs_CV.json
 if os.path.exists('Tables/obs4MIPs_CV.json'):
