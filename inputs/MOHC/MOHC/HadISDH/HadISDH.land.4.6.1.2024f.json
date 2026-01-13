@@ -25,5 +25,9 @@
     "variant_info":"obs4MIPs-compliant product prepared by MOHC (ODS2.6)",
     "variant_label":"MOHC",
     "source_data_url": "https://www.metoffice.gov.uk/hadobs/hadisdh/",
-    "has_aux_unc": "FALSE"
+    "has_aux_unc": "TRUE",
+    "aux_uncertainty_id": [
+        "nobs",
+        "ustd"
+    ]
 }

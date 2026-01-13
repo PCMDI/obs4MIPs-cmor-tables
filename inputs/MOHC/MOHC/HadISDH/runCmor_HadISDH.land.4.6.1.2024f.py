@@ -25,10 +25,17 @@ cmorTable = "../../../../Tables/obs4MIPs_Amon.json" ; # Aday,Amon,Lmon,Omon,SImo
 inputJson = 'HadISDH.land.4.6.1.2024f.json' ; # Update contents of this file to set your global_attributes
 # EDITABLE - where is the input file?
 inputFilePathbgn = os.environ['SCRATCH']+'/RANDOM/'
-inputFileName = ['huss-land_HadISDH_HadOBS_v4-6-1-2024f_19730101-20241231.nc', 'huss-land_HadISDH_HadOBS_v4-6-1-2024f_19730101-20241231.nc']  
-inputVarName = ['huss', 'hussa']    # I actually want to provide the anomaly field (hussa) rather than actual values.
-outputVarName = ['huss', 'hussanom']
-outputUnits = ['1', '1']    # its g/kg and I convert here to kg/kg
+inputFileName = ['huss-land_HadISDH_HadOBS_v4-6-1-2024f_19730101-20241231.nc', 
+                 'huss-land_HadISDH_HadOBS_v4-6-1-2024f_19730101-20241231.nc',
+                 'huss-land_HadISDH_HadOBS_v4-6-1-2024f_19730101-20241231.nc',
+                 'huss-land_HadISDH_HadOBS_v4-6-1-2024f_19730101-20241231.nc',
+                 'hurs-land_HadISDH_HadOBS_v4-6-1-2024f_19730101-20241231.nc',
+                 'hurs-land_HadISDH_HadOBS_v4-6-1-2024f_19730101-20241231.nc',
+                 'hurs-land_HadISDH_HadOBS_v4-6-1-2024f_19730101-20241231.nc',
+                 'hurs-land_HadISDH_HadOBS_v4-6-1-2024f_19730101-20241231.nc']  
+inputVarName = ['huss', 'hussa', 'stncount', 'stdunc', 'hurs', 'hursa', 'stncount', 'stdunc']    # I actually want to provide the anomaly field (hussa) rather than actual values.
+outputVarName = ['huss', 'hussanom', 'hussnobs', 'hussustd', 'hurs', 'hursanom', 'hursnobs', 'hursustd']
+outputUnits = ['1', '1', '1', '1', '1', '1', '1', '1']    # its g/kg and I convert here to kg/kg, or for RH its %rh.
 
 for fi in range(len(inputVarName)):
  inputFilePath = inputFilePathbgn
@@ -42,7 +49,19 @@ for fi in range(len(inputVarName)):
  d = f[inputVarName[fi]].values
  d = np.where(np.isnan(d), CMOR_MDI, d)
  d = np.where(np.less(d,-100), CMOR_MDI, d) # this shouldn't catch anything but might if using RH anomalies althuogh still really shouldn't
- d = np.where(d < CMOR_MDI, d / 1000., CMOR_MDI) 
+ # convert data depening on what variable it is
+ if (outputVarName[fi] == 'huss') or (outputVarName[fi] == 'hussanom'): # original units are g/kg
+  d = np.where(d < CMOR_MDI, d / 1000., CMOR_MDI) 
+ elif (outputVarName[fi] == 'hussustd'): # original standard uncertainty is k=2 but obs4MIPS wants k=1
+  d = np.where(d < CMOR_MDI, (d / 2.) / 1000., CMOR_MDI) 
+ elif (outputVarName[fi] == 'hussnobs'): # number of observations - change -1s to CMOR_MDI
+  d = np.where(d < 0, CMOR_MDI, d)
+ elif (outputVarName[fi] == 'hurs') or (outputVarName[fi] == 'hursanom'): # original units are g/kg
+  d = np.where(d < CMOR_MDI, d, CMOR_MDI) 
+ elif (outputVarName[fi] == 'hursustd'): # original standard uncertainty is k=2 but obs4MIPS wants k=1
+  d = np.where(d < CMOR_MDI, d / 2., CMOR_MDI) 
+ elif (outputVarName[fi] == 'hursnobs'): # number of observations - change -1s to CMOR_MDI
+  d = np.where(d < 0, CMOR_MDI, d)
  #pdb.set_trace()
 
  lat = f.latitude.values  
@@ -77,13 +96,34 @@ for fi in range(len(inputVarName)):
  values  = np.array(d[:], np.float32)
  #pdb.set_trace()
 
- # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
- cmor.set_variable_attribute(varid,'valid_min','f',np.min(values[values < CMOR_MDI]))
- cmor.set_variable_attribute(varid,'valid_max','f',np.max(values[values < CMOR_MDI]))
+ ## Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
+ #cmor.set_variable_attribute(varid,'valid_min','f',np.min(values[values < CMOR_MDI]))
+ #cmor.set_variable_attribute(varid,'valid_max','f',np.max(values[values < CMOR_MDI]))
 
 # Set bespoke attributes associated with anomalies
- cmor.set_variable_attribute(varid, 'long_name', 'c', 'near-surface (~2m) specific humidity monthly mean anomalies from the 1991-2020 climatological reference period')
- cmor.set_variable_attribute(varid, 'units_metadata', 'c', 'specific humidity: difference')
+ if outputVarName[fi] == 'hussanom':
+  cmor.set_variable_attribute(varid, 'long_name', 'c', 'near-surface (~2m) specific humidity monthly mean anomalies from the 1991-2020 climatological reference period')
+  cmor.set_variable_attribute(varid, 'units_metadata', 'c', 'specific humidity: difference')
+
+# set bespoke attributes associated with number of observations
+ elif outputVarName[fi] == 'hussnobs':
+  cmor.set_variable_attribute(varid, 'long_name', 'c', 'number of stations used in the calculation of gridbox monthly mean near-surface (~2m) specific humidity')
+
+# set bespoke attributes associated with standard uncertainty
+ elif outputVarName[fi] == 'hussustd': 
+  cmor.set_variable_attribute(varid, 'long_name', 'c', 'standard uncertainty (k=1) in the monthly mean near-surface (~2m) specific humidity from uncertainty in measurement, homogeneity adjustment, climatology and gridbox sampling')
+
+ elif outputVarName[fi] == 'hursanom':
+  cmor.set_variable_attribute(varid, 'long_name', 'c', 'near-surface (~2m) relative humidity monthly mean anomalies from the 1991-2020 climatological reference period')
+  cmor.set_variable_attribute(varid, 'units_metadata', 'c', 'relative humidity: difference')
+
+# set bespoke attributes associated with number of observations
+ elif outputVarName[fi] == 'hursnobs':
+  cmor.set_variable_attribute(varid, 'long_name', 'c', 'number of stations used in the calculation of gridbox monthly mean near-surface (~2m) relative humidity')
+
+# set bespoke attributes associated with standard uncertainty
+ elif outputVarName[fi] == 'hursustd': 
+  cmor.set_variable_attribute(varid, 'long_name', 'c', 'standard uncertainty (k=1) in the monthly mean near-surface (~2m) relative humidity from uncertainty in measurement, homogeneity adjustment, climatology and gridbox sampling')
 
 # Set bespoke variable attributes for HadISDH 
  #cmor.set_variable_attribute(varid, 'cell_methods', 'c', 'time: mean over station month, area: mean over gridbox')
