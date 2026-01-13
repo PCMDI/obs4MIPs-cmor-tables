@@ -1,0 +1,41 @@
+{
+  "#comment": "The following are CMOR internal settings and should not be edited by the user",
+  "_AXIS_ENTRY_FILE": "obs4MIPs_coordinate.json",
+  "_FORMULA_VAR_FILE": "obs4MIPs_formula_terms.json",
+  "_controlled_vocabulary_file": "obs4MIPs_CV.json",
+  "_further_info_url_tmpl": ".",
+
+  "activity_id": "obs4MIPs",
+  "calendar": "standard",
+  "comment": "",
+  "contact": "JASMES Team (Z-GCOM_QA@ml.jaxa.jp)",
+  "data_specs_version": "1n9",
+
+  "grid": "0.05x0.05 degree latitude x longitude",
+  "grid_label": "gn",
+  "history": "",
+
+  "license": "Data in this file is licensed under a Creative Commons Attribution 4.0 International License (https://creativecommons.org/licenses/by/4.0/).",
+  "institution_id": "JAXA",
+  "nominal_resolution": "5 km",
+
+  "outpath": "./output",
+  "output_file_template": "<variable_id><frequency><source_id><variant_label><grid_label>",
+  "output_path_template": "<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>",
+
+  "product": "observations",
+  "frequency": "day",
+
+  "references": "DOI: 10.57746/EO.01jcyddbzqjvsrh2anaqebrpjv",
+  "source_id": "JASMES-SNOWCOVER-1-0",
+  "title": "JASMES Snow Cover",
+
+  "variant_info": "obs4MIPs-compliant product prepared by data provider",
+  "variant_label": "JASMES",
+
+  "source_data_url": "https://www.eorc.jaxa.jp/JASMES/",
+  "source_data_retrieval_date": "20260107",
+  "dataset_contriubtor": "20260107; JASMES Team @ JAXA",
+
+  "has_aux_unc": "FALSE"
+}
