@@ -1,3 +1,4 @@
+''' *KW added comment marks to comment all text out as it was showing errors in vscode.*
 Amon['variable_entry']['taplev37_ERA5'] = {}
 Amon['variable_entry']['taplev37_ERA5']['cell_measures'] = ''
 Amon['variable_entry']['taplev37_ERA5']['cell_methods'] = 'time: mean'
@@ -15,7 +16,7 @@ Amon['variable_entry']['taplev37_ERA5']['units'] = 'K'
 Amon['variable_entry']['taplev37_ERA5']['valid_max'] = ''
 Amon['variable_entry']['taplev37_ERA5']['valid_min'] = ''
 '''
-
+'''
 Amon['variable_entry'][u'rltcre'] = {}
 Amon['variable_entry']['rltcre']['cell_measures'] = ''
 Amon['variable_entry']['rltcre']['cell_methods'] = 'time: mean'
@@ -226,4 +227,4 @@ Amon['variable_entry']['toz']['valid_min'] = ''
 #monStderr['variable_entry'][u'ndviStderr']['standard_name'] = 'normalized_difference_vegetation_index standard_error'
 #monStderr['variable_entry'][u'ndviStderr']['type'] = 'real'
 #monStderr['variable_entry'][u'ndviStderr']['units'] = ''
-
+'''
