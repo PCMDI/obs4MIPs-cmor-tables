@@ -7,23 +7,16 @@ import sys, os
 import pdb
 
 # ISSUES:
-# license in _CV.joson only gives Creative Commons license option. What can we not use other licenses? - OGL
-# Need HadISDH source_id added into _CV.json file
-# "HadISDH-land-4-6-1-2024f":{
-#                "region":"global_land",
-#                "source":"HadISDH.land.4.6.1.2024f (2025): HadISDH near surface humidity anomalies over land",
-#                "source_type":"gridded_insitu",
-#                "source_version_number":"5.0.2.0"
+# license in _CV.joson only gives Creative Commons license option. Why can we not use other licenses? - OGL add within the HadISDH.land.4.6.1.2024f.json file?
 #   
 # I'd rather provide anomalies - that is how HadCRUT5 is listed. But where would the climatology bounds be stored? This is crucial??? Are
 # we happy with hussanom as inputvar and outputvar and specifc_humidity_anomaly as a new standard name?
 # For now hussanom is added to the obs4MIPs_Amon.json but this doesn't include climatological bounds though.
 # How to store additional info - uncertainty, actual values etc...
           
-
-
 sys.path.append("../../../misc/")
-from fix_dataset_time import make_continuous_bounds
+from fix_dataset_time import make_continuous_bounds # this is in misc/
+import obs4MIPsLib # this is in misc/
 
 CMOR_MDI = 1.e20 # I've set this as global variable
 
@@ -33,7 +26,7 @@ inputJson = 'HadISDH.land.4.6.1.2024f.json' ; # Update contents of this file to 
 # EDITABLE - where is the input file?
 inputFilePathbgn = os.environ['SCRATCH']+'/RANDOM/'
 inputFileName = ['huss-land_HadISDH_HadOBS_v4-6-1-2024f_19730101-20241231.nc', 'huss-land_HadISDH_HadOBS_v4-6-1-2024f_19730101-20241231.nc']  
-inputVarName = ['huss', 'hussanom']    # I actually want to provide the anomaly field (hussa) rather than actual values.
+inputVarName = ['huss', 'hussa']    # I actually want to provide the anomaly field (hussa) rather than actual values.
 outputVarName = ['huss', 'hussanom']
 outputUnits = ['1', '1']    # its g/kg and I convert here to kg/kg
 
@@ -50,8 +43,7 @@ for fi in range(len(inputVarName)):
  d = np.where(np.isnan(d), CMOR_MDI, d)
  d = np.where(np.less(d,-100), CMOR_MDI, d) # this shouldn't catch anything but might if using RH anomalies althuogh still really shouldn't
  d = np.where(d < CMOR_MDI, d / 1000., CMOR_MDI) 
-
-# pdb.set_trace()
+ #pdb.set_trace()
 
  lat = f.latitude.values  
  lon = f.longitude.values  
@@ -83,6 +75,23 @@ for fi in range(len(inputVarName)):
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
  varid   = cmor.variable(outputVarName[fi], outputUnits[fi], cmoraxes, missing_value=CMOR_MDI)
  values  = np.array(d[:], np.float32)
+ #pdb.set_trace()
+
+ # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
+ cmor.set_variable_attribute(varid,'valid_min','f',np.min(values[values < CMOR_MDI]))
+ cmor.set_variable_attribute(varid,'valid_max','f',np.max(values[values < CMOR_MDI]))
+
+# Set bespoke attributes associated with anomalies
+ cmor.set_variable_attribute(varid, 'long_name', 'c', 'near-surface (~2m) specific humidity monthly mean anomalies from the 1991-2020 climatological reference period')
+ cmor.set_variable_attribute(varid, 'units_metadata', 'c', 'specific humidity: difference')
+
+# Set bespoke variable attributes for HadISDH 
+ #cmor.set_variable_attribute(varid, 'cell_methods', 'c', 'time: mean over station month, area: mean over gridbox')
+
+# Provenance info - produces global attribute <obs4MIPs_GH_Commit_ID> 
+ gitinfo = obs4MIPsLib.ProvenanceInfo(obs4MIPsLib.getGitInfo("./"))
+ full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{gitinfo['commit_number']}/demo"  
+ cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
 
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
  cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data

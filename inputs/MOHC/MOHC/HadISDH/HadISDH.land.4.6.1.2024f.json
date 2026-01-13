@@ -7,7 +7,7 @@
     "activity_id":"obs4MIPs",
     "calendar":"standard",
     "comment":"",
-    "contact":"kate.willett@METOFFICE.GOV.UK",
+    "contact":"kate.willett@metoffice.gov.uk",
     "grid":"5x5 degree latitude x longitude",
     "grid_label":"gn",
     "history":"",
@@ -20,9 +20,10 @@
     "product":"observations",
     "references":"Willett, K. M., Dunn, R. J. H., Thorne, P. W., Bell, S., de Podesta, M., Parker, D. E., Jones, P. D., and Williams Jr., C. N.: HadISDH land surface multi-variable humidity and temperature record for climate monitoring, Clim. Past, 10, 1983-2006, doi:10.5194/cp-10-1983-2014, 2014. and Willett, K. M., Williams Jr., C. N., Dunn, R. J. H., Thorne, P. W., Bell, S., de Podesta, M., Jones, P. D., and Parker D. E., 2013: HadISDH: An updated land surface specific humidity product for climate monitoring. Climate of the Past, 9, 657-677, doi:10.5194/cp-9-657-2013.",
     "source_id":"HadISDH-land-4-6-1-2024f",
-    "title":"HadISDH.land.4.6.1.2024f prepared for obs4MIPs (ODS2.5)",
+    "title":"HadISDH.land.4.6.1.2024f prepared for obs4MIPs (ODS2.6)",
     "tracking_prefix":"hdl:21.14102",
-    "variant_info":"obs4MIPs-compliant product prepared by MOHC (ODS2.5)",
+    "variant_info":"obs4MIPs-compliant product prepared by MOHC (ODS2.6)",
     "variant_label":"MOHC",
-    "originData_URL": "https://www.metoffice.gov.uk/hadobs/hadisdh/"
+    "source_data_url": "https://www.metoffice.gov.uk/hadobs/hadisdh/",
+    "has_aux_unc": "FALSE"
 }
