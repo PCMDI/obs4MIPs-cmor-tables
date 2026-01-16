@@ -12,7 +12,7 @@ import glob
 #%% User provided input
 # TODO don't have a currently support obs4MIPs table for hourly site specific data
 cmorTable = '../../../Tables/obs4MIPs_A1hrPt.json'
-inputJson = 'ARMBE_ATM.json' ; # Update contents of this file to set your global_attributes
+inputJson = 'ARMBE_SGP_ATM.json' ; # Update contents of this file to set your global_attributes
 inputFilePath = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/LLNL/ARMBE_Vxy/sgparmbeatmC1.c1.20180101.003000.nc'
 inputFilePath = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/LLNL/ARMBE_Vxy/sgparmbeatmC1.c1/sgparmbeatmC1.c1.*.nc'
 
@@ -90,8 +90,8 @@ for vr in vrs:
 # f = f.isel(time=slice(0,24)) # TEST 2 DAYS ONLY
 
     d = f[inputVarName]
-    lat = f.lat.values #[0:1] 
-    lon = f.lon.values #[0:1] 
+    lat = f.lat.values  
+    lon = f.lon.values  
     time = f.time.values ; # Rather use a file dimension-based load statement
     tbds = f.time_bounds.values
 # tunits = "seconds since 2013-01-01 00:00:00 0:00"
@@ -107,8 +107,12 @@ for vr in vrs:
     cmor.dataset_json(inputJson)
     cmor.load_table(cmorTable)
     cmor.set_cur_dataset_attribute('original_history',f.attrs) 
-
     cmor.set_cur_dataset_attribute("product","site-observations")
+
+    j = open(inputJson)
+    jdic = json.load(j)
+    site_id = jdic['site_id']
+    cmor.set_cur_dataset_attribute("grid_label","site-"+ site_id)
 
 # cftime.date2num(tdc,tunits)
 # cmorLat = cmor.axis("latitude1", coord_vals=np.array([lat]), units="degrees_north")
@@ -117,7 +121,6 @@ for vr in vrs:
     cmorLon = cmor.axis("longitude1", coord_vals=np.array([lon]), units="degrees_east")
     cmorTime = cmor.axis("time", coord_vals=time[:], cell_bounds=tbds, units= f.time.units)
 # cmorTime = cmor.axis("time", coord_vals=cftime.date2num(time,tunits), cell_bounds=cftime.date2num(f.time_bnds,tunits), units= tunits)
-
 
     if vr == 'temperature_sfc':
       cmorHeight = cmor.axis("height2m", coord_vals=np.array([2.0]), units="m")
