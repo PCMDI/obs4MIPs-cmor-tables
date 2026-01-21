@@ -26,7 +26,6 @@ from osgeo import gdal
 sys.path.append("../../../inputs/misc")
 import obs4MIPsLib
 
-
 # =========================
 # User settings
 # =========================
