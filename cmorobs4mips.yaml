@@ -1,0 +1,27 @@
+name: cmorobs4mips
+channels:
+  - conda-mo-internal
+  - conda-forge
+
+dependencies:
+  # Core
+  - python==*
+  - pip>=24.0
+  - setuptools>=71.0
+  
+  # Analysis packages
+  - cartopy==0.23.0
+  - geopandas==1.0.1
+  - matplotlib==3.9.2
+  - netcdf4==*
+  - numpy<2  # for tensorflow compatibility
+  - pandas==2.2.3
+  - scipy==1.14.1
+  - xarray==2024.6.0
+  - xcdat==0.7.2
+  - cmor==3.13.2
+  
+
+  # Dev packages
+  - pytest==8.3.3
+  - ipykernel==6.29.5

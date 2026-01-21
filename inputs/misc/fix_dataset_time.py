@@ -46,3 +46,21 @@ def monthly_times(datumyr,yrs,datum_start_month=1,start_month=1,end_month=12):
                 t.append(mp)
                 tbds.append((lbn,ubn))
     return(t,tbds,tunits)
+
+def make_continuous_bounds(time_bounds):
+    '''
+    HadISDH has time bounds that do not overlap. e.g., [1, 31], [32, 59], [60, 89] etc.
+    CMOR needs them to be continuous e.g., [0, 31], [31, 59], [59, 89] etc.
+    This code takes original bounds and corrects the lower bounds to equal previous uppers. 
+
+    param :: time_bounds
+    n rows by 2 column np.array of lower, upper bounds
+
+    returns :: time_bounds
+    n rows by 2 column np.array of lower, upper bounds
+
+    '''
+
+    time_bounds[:,0] = time_bounds[:,0] - 1
+    
+    return time_bounds

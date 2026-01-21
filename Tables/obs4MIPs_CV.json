@@ -1,6 +1,6 @@
 {
     "CV":{
-        "activity_id":"obs4MIPs",
+        "activity_id":["obs4MIPs"],
         "aux_uncertainty_id":{
             "lbnd":"lower bound of asymmetrical uncertainty information",
             "nobs":"number of observations",
@@ -128,7 +128,8 @@
             "UReading":"University of Reading, Reading, UK",
             "UW":"University of Washington, USA"
         },
-        "license":"Data in this file produced by <Your Centre Name> is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Use of the data must be acknowledged following guidelines found at <a URL maintained by you>. Further information about this data, including some limitations, can be found via <some URL maintained by you>.",
+        "license":["Data in this file produced by <Your Centre Name> is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Use of the data must be acknowledged following guidelines found at <a URL maintained by you>. Further information about this data, including some limitations, can be found via <some URL maintained by you>.",
+                   "Data in this file is licensed under an Open Government Licence (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)"],
         "nominal_resolution":[
             "0.5 km",
             "1 km",
@@ -1962,7 +1963,7 @@
             },
             "HadISDH-land-4-6-1-2024f":{
                 "region":"global_land",
-                "source":"HadISDH 4.6.1.2024f (2024): HadISDH land near-surface humidity anomalies",
+                "source":"HadISDH.land.4.6.1.2024f (2024): HadISDH land near-surface humidity anomalies",
                 "source_type":"gridded_insitu",
                 "source_version_number":"4.6.1.2024f"
             },

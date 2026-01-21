@@ -3,16 +3,18 @@ import numpy as np
 import xcdat as xc
 import xarray as xr
 import json
-import sys
+import sys, os
 import cftime
 
 sys.path.append("../../../misc/")
 from fix_dataset_time import monthly_times
 
+CMOR_MDI = 1.e20
 #%% User provided input
-cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+cmorTable = "../../../../Tables/obs4MIPs_Amon.json" ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'HadISSTv1.1.json' ; # Update contents of this file to set your global_attributes
-inputFilePathbgn = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/MOHC/HadISST1-1-PJG/'
+# EDITABLE - where is the input file?
+inputFilePathbgn = os.environ['SCRATCH']+'/RANDOM/'
 inputFileName = ['HadISST_sst.nc']  
 inputVarName = ['sst']
 outputVarName = ['ts']
@@ -21,10 +23,14 @@ outputUnits = ['K']
 for fi in range(len(inputVarName)):
  inputFilePath = inputFilePathbgn
  f = xr.open_dataset(inputFilePath+inputFileName[fi],decode_times=True,decode_cf=True)
- d = f[inputVarName[fi]] 
- d = d + 273.15
- d = np.where(np.less(d,-100),1.e20,d)
- d = np.where(np.isnan(d),1.e20,d)
+ #d = f[inputVarName[fi]] 
+ #d = d + 273.15
+ #d = np.where(np.less(d,-100),1.e20,d)
+ #d = np.where(np.isnan(d),1.e20,d)
+ d = f[inputVarName[fi]].values
+ d = np.where(np.isnan(d), CMOR_MDI, d)
+ d = np.where(np.less(d,-100), CMOR_MDI, d) # this shouldn't catch anything but might if using RH anomalies althuogh still really shouldn't
+ d = np.where(d < CMOR_MDI, d + 273.15, CMOR_MDI) 
 
  lat = f.latitude.values  
  lon = f.longitude.values  
