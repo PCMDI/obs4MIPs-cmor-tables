@@ -17,13 +17,12 @@ inputJson = 'ERA5-MARS-input.json' ; # Update contents of this file to set your 
 inputFilePathbgn = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/ECMWF/'
 inputFilePathend = 'ERA5/RDA/'
 
-inputVarName = ['VAR_2T', 'MSL','VAR_10SI','VAR_10U','VAR_10V']
-outputVarName = ['tas','psl','sfcWind','uas','vas']  #['psl']  
-outputUnits = ['K','Pa','m s-1','m s-1','m s-1'] 
+inputVarName = ['SSTK']  # ['VAR_2T', 'MSL','VAR_10SI','VAR_10U','VAR_10V']
+outputVarName = ['ts']  #['tas','psl','sfcWind','uas','vas']  #['psl']  
+outputUnits = ['K'] #['K','Pa','m s-1','m s-1','m s-1'] 
 
-inputVarName = ['VAR_2T']
+#inputVarName = ['VAR_2T']
 
-### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE..
 for vn,fi in enumerate(inputVarName):
  print(fi, outputVarName[vn])
 #w = sys.stdin.readline()
@@ -44,7 +43,6 @@ for vn,fi in enumerate(inputVarName):
 # d.positive = outpos[fi]
   print('above wait')
 # w = sys.stdin.readline()
-
   datumyr = 1979
   datum_start_month = 1 
   start_month = 1 
@@ -52,6 +50,9 @@ for vn,fi in enumerate(inputVarName):
 # tunits = 'days since ' str(datumyr) + '-01-01 00:00:00'
   yrs = [time[1].year]
   t, tbds, tunits = fix_dataset_time.monthly_times(datumyr, yrs, datum_start_month, start_month,end_month)
+
+  d = d.where(np.nan,1.e20)
+# d = d.fill(1.e20)
 
 #%% Initialize and run CMOR
   cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4 ,logfile='cmorLog.' + outputVarName[vn] + '.' + str(yrs[0]) +'.txt')

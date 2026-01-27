@@ -680,7 +680,7 @@ for count,CV in enumerate(CVJsonList):
         obs4MIPs_CV['CV'].update(eval(CV))
 # Add static entries to obs4MIPs_CV.json
 obs4MIPs_CV['CV']['activity_id'] = ['obs4MIPs']
-obs4MIPs_CV['CV']['license'] = [license_] 
+#obs4MIPs_CV['CV']['license'] = [license_] 
 
 # Write demo obs4MIPs_CV.json
 if os.path.exists('Tables/obs4MIPs_CV.json'):
