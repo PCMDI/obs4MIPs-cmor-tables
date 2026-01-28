@@ -78,7 +78,8 @@
             "gra":"regridded data in the region of Antarctica reported on the data provider's preferred target grid",
             "grg":"regridded data in the region of Greenland reported on the data provider's preferred target grid",
             "grz":"regridded zonal mean data reported on the data provider's preferred latitude target grid",
-            "site":"where the data reported is from in-situ observations"
+            "site":"where the data reported is from in-situ observations",
+            "site-US-ARM-SGP":"Testing manual entry"
         },
         "has_aux_unc":{
             "FALSE":"when no uncertainty information is provided",
@@ -130,9 +131,7 @@
             "UReading":"University of Reading, Reading, UK",
             "UW":"University of Washington, USA"
         },
-        "license":[
-            "Data in this file produced by <Your Centre Name> is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Use of the data must be acknowledged following guidelines found at <a URL maintained by you>. Further information about this data, including some limitations, can be found via <some URL maintained by you>."
-        ],
+        "license":"Data in this file produced by <Your Centre Name> is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Use of the data must be acknowledged following guidelines found at <a URL maintained by you>. Further information about this data, including some limitations, can be found via <some URL maintained by you>.",
         "nominal_resolution":[
             "0.5 km",
             "1 km",

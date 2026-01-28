@@ -28,5 +28,5 @@
     "source_data_retrieval_date": "20240404",
     "dataset_contributor": "PjG @ PCMDI",
     "source_data_url":"https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-monthly-means?tab=overview",
-    "has_aux_unc":false
+    "has_aux_unc":"FALSE"
 }
