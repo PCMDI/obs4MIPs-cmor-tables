@@ -1306,6 +1306,21 @@
             ],
             "source_version_number":"v06B_Final"
         },
+        "JASMES-SNOWCOVER-1-0":{
+            "institution_id":"JAXA",
+            "region":[
+                "global"
+            ],
+            "release_year":"2024",
+            "source_description":"Global daily surface snow area fraction derived from merged satellite observations using a consistent objective snow cover mapping algorithm applied to multiple generations of optical sensors since 1978.",
+            "source_label":"JASMES Snow Cover",
+            "source_name":"JASMES Snow Cover",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "snc"
+            ],
+            "source_version_number":"1-0"
+        },
         "JRA25":{
             "institution_id":"MRI",
             "region":[

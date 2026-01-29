@@ -23,6 +23,10 @@ inputVarName = ['T','U','V','Z']
 outputVarName = ['ta','ua','va','zg']  
 outputUnits = ['K','m s-1','m s-1','m'] 
 
+inputVarName = ['Q']
+outputVarName = ['hus']
+outputUnits = ['1']
+
 multi  = True
 if multi == True:
  vari = sys.argv[1]
@@ -41,19 +45,20 @@ if multi == True:
     inputVarName = ['Z']
     outputUnits = ['m']
     divconv = 9.81
+ if vari == 'hus':
+    inputVarName = ['Q']
+    outputUnits = ['1']
 
 ### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE..
 
 for vn,fi in enumerate(inputVarName):
  print(fi, outputVarName[vn])
-#w = sys.stdin.readline()
  inputFilePath = inputFilePathbgn+inputFilePathend + outputVarName[vn] + '-plev37/'
  files_yearly = glob.glob(inputFilePath + '*.nc')
  files_yearly.sort()
 
  for fi in files_yearly:
   f = xc.open_dataset(fi,decode_times=True, decode_cf=True)
-# f.level.attrs['axis'] = 'Z'
   f = f.bounds.add_missing_bounds(axes=['X', 'Y'])
   f = f.bounds.add_bounds('T')
   d = f[inputVarName[vn]].values
@@ -65,9 +70,6 @@ for vn,fi in enumerate(inputVarName):
   attsin = f.attrs
 
   if outputVarName[vn] == 'zg': d = np.divide(d,divconv)
-
-# print(f)
-# w = sys.stdin.readline()
 
   datumyr = 1979
   datum_start_month = 1

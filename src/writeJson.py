@@ -161,7 +161,10 @@ tableSource = [
  ['realm','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_realm.json'],
  ['source_type','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_source_type.json'],
  ['table_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_table_id.json'],
- ['institution_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_institution_id.json']
+ ['institution_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_institution_id.json'],
+ ['aux_uncertainty_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_aux_uncertainty_id.json'],
+ ['has_aux_unc','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_has_aux_unc.json'],
+ ['site_id','https://raw.githubusercontent.com/PCMDI/obs4MIPs-cmor-tables/master/obs4MIPs_site_id.json']
  ] ;
 
 #%% Loop through tables and create in-memory objects
@@ -298,19 +301,6 @@ for tab in (Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx,Ofx,monNobs,monStd
 # Add new variables
 # 
 
-'''
-# Test for variable lists
-for var in SIday['variable_entry'].keys():
-    print var
-sys.exit()
-'''
-
-# Add new variables
-
-
-# Add new variables
-
-# Add new variables
 #%% Coordinate
 #%% Frequency
 #%% Grid
@@ -331,16 +321,7 @@ tmp = [['grid_label','https://raw.githubusercontent.com/WCRP-CMIP/CMIP6_CVs/mast
 
 # Fix issues
 #==============================================================================
-# Example new institution_id entry
-#institution_id['institution_id']['NOAA-NCEI'] = 'NOAA\'s National Centers for Environmental Information, Asheville, NC 28801, USA'
-#institution_id['institution_id']['RSS'] = 'Remote Sensing Systems, Santa Rosa, CA 95401, USA'
-#institution_id['institution_id']['CNES'] = "Centre national d'etudes spatiales"
-#institution_id['institution_id']['NASA-GSFC'] = "National Aeronautics and Space Administration, Goddard Space Flight Center"
-'''
-#institution_id['institution_id']['ImperialCollege'] = "Imperial College, London, U.K."
-#institution_id['institution_id']['UReading'] = "University of Reading, Reading, U.K."
-#institution_id['institution_id']['UW'] = "University of Washington, USA"
-'''
+
 #%% License
 license_ = ('Data in this file produced by <Your Centre Name> is licensed under'
             ' a Creative Commons Attribution-ShareAlike 4.0 International License'
@@ -407,23 +388,6 @@ for s in source_id_orig['source_id'].keys():
 #print(source_id['source_id']['GERB-HR-ED01-1-1'])
 
 source_id['source_id']['20CR-V2']['institution_id'] = 'NOAA-ESRL-PSD' 
-source_id['source_id']['CERES-EBAF-4-0']['institution_id'] = 'NASA-LaRC'
-source_id['source_id']['CERES-EBAF-4-1']['institution_id'] = 'NASA-LaRC'
-#source_id['source_id']['CERES-EBAF-4-1']['institution_id'] = 'NASA-LaRC--PCMDI'
-source_id['source_id']['TropFlux-1-0']['institution_id'] = 'ESSO'
-#source_id['source_id']['REMSS-PRW-v07r01']['institution_id'] = 'RSS'
-#source_id['source_id']['REMSS-PRW-v07r01']['institution'] = 'RSS data prepared by PCMDI for obs4MIPs'
-source_id['source_id']['CMAP-V1902']['institution_id'] = 'NOAA-NCEI'
-source_id['source_id']['GPCP-2-3']['institution_id'] = 'NOAA-NCEI'
-
-#print(source_id['source_id']['GERB-HR-ED01-1-1'])
-#w = sys.stdin.readline()
-
-# Enter fixes or additions below
-'''
-source_id = {}
-source_id['source_id'] = {}
-'''
 
 #####
 
@@ -526,19 +490,6 @@ for key in source_id['source_id'].keys():
         sys.exit()
     # Validate region
     vals = source_id['source_id'][key]['region']
-#   for val in vals:
-#       if val not in eval(region)['region']['region']:  # region:
-#           print('Invalid region for entry:',key,'- aborting')
-#           sys.exit()
-
-
-
-    # Validate product   
-#   vals = source_id['source_id'][key]['product']
-#   for val in vals:
-#       if val not in product:
-#           print('Invalid product for entry:',key,'- aborting')
-#           sys.exit()
 
 print('above master loop')
 #%% Write variables to files
@@ -582,7 +533,8 @@ for jsonName in masterTargets:
 
     elif jsonName not in ['coordinate','formula_terms','fx','Ofx','grids',
                           'institution_id','source_id','Aday','Amon','A3hr','Lmon','Oday','SIday','A1hrPt',
-                          'Omon','CFsubhr','A6hr','A1hr','A1hPt','SImon']: #,'product','realm','region']:
+                          'Omon','CFsubhr','A6hr','A1hr','A1hPt','SImon', #]: #,'product','realm','region']:
+                          'aux_uncertainty_id','has_aux_unc','site_id']:
         jsonDict = {}
         jsonDict[jsonName] = eval(jsonName)
 
@@ -647,6 +599,7 @@ inputJson = ['frequency','grid_label','institution_id','license',
              'nominal_resolution','product','realm','region',
              'required_global_attributes','source_id','source_type','table_id', # These are controlled vocabs
              'coordinate','grids','formula_terms', # These are not controlled vocabs - rather lookup tables for CMOR
+             'aux_uncertainty_id','has_aux_unc','site_id'
 #            'Aday','Amon','Lmon','Omon','SImon','fx','Ofx' # Update/add if new tables are generated
             ]
 tableList = ['Aday','A3hr','A6hr','Oday','SIday','Amon','Lmon','Omon','SImon','1hrPt','A1hrPt','coordinate',
@@ -726,8 +679,8 @@ for count,CV in enumerate(CVJsonList):
         print('CV line 725 is ', CV)
         obs4MIPs_CV['CV'].update(eval(CV))
 # Add static entries to obs4MIPs_CV.json
-obs4MIPs_CV['CV']['activity_id'] = 'obs4MIPs'
-
+obs4MIPs_CV['CV']['activity_id'] = ['obs4MIPs']
+#obs4MIPs_CV['CV']['license'] = [license_] 
 
 # Write demo obs4MIPs_CV.json
 if os.path.exists('Tables/obs4MIPs_CV.json'):

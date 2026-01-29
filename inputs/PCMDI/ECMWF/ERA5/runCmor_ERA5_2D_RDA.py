@@ -17,19 +17,18 @@ inputJson = 'ERA5-MARS-input.json' ; # Update contents of this file to set your 
 inputFilePathbgn = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/ECMWF/'
 inputFilePathend = 'ERA5/RDA/'
 
-inputVarName = ['VAR_2T', 'MSL','VAR_10SI','VAR_10U','VAR_10V']
-outputVarName = ['tas','psl','sfcWind','uas','vas']  #['psl']  
-outputUnits = ['K','Pa','m s-1','m s-1','m s-1'] 
+inputVarName = ['SSTK']  # ['VAR_2T', 'MSL','VAR_10SI','VAR_10U','VAR_10V']
+outputVarName = ['tos']  #['tas','psl','sfcWind','uas','vas']  #['psl']  
+outputUnits = ['degC'] #['K','Pa','m s-1','m s-1','m s-1'] 
 
-inputVarName = ['VAR_2T']
-
-### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE..
 for vn,fi in enumerate(inputVarName):
  print(fi, outputVarName[vn])
 #w = sys.stdin.readline()
  inputFilePath = inputFilePathbgn+inputFilePathend + outputVarName[vn] + '/'
  files_yearly = glob.glob(inputFilePath + '*.nc')
  files_yearly.sort()
+
+ if fi =='SSTK': cmorTable = '../../../../Tables/obs4MIPs_Omon.json'
 
  for fi in files_yearly:
   f = xc.open_dataset(fi,decode_times=True, decode_cf=True)
@@ -44,7 +43,6 @@ for vn,fi in enumerate(inputVarName):
 # d.positive = outpos[fi]
   print('above wait')
 # w = sys.stdin.readline()
-
   datumyr = 1979
   datum_start_month = 1 
   start_month = 1 
@@ -52,6 +50,9 @@ for vn,fi in enumerate(inputVarName):
 # tunits = 'days since ' str(datumyr) + '-01-01 00:00:00'
   yrs = [time[1].year]
   t, tbds, tunits = fix_dataset_time.monthly_times(datumyr, yrs, datum_start_month, start_month,end_month)
+
+  if outputVarName[vn] == 'tos': d = np.subtract(d,273.15) 
+  d = np.where(np.isnan(d),1.e20,d)
 
 #%% Initialize and run CMOR
   cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4 ,logfile='cmorLog.' + outputVarName[vn] + '.' + str(yrs[0]) +'.txt')
@@ -75,7 +76,6 @@ for vn,fi in enumerate(inputVarName):
   path_to_code = os.getcwd().split('obs4MIPs-cmor-tables')[1]
   full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{git_commit_number}/{path_to_code}"
   cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
-  cmor.set_cur_dataset_attribute("version",ver)
 
 # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
   cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
