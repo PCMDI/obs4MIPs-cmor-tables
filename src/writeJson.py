@@ -247,7 +247,7 @@ fx['Header']['realm']       = 'fx'
 Ofx['Header']['realm']       = 'Ofx'
 A3hr['Header']['realm']     = 'atmos'
 A6hr['Header']['realm']     = 'atmos'
-#Oday['Header']['realm']     = 'ocean'
+Oday['Header']['realm']     = 'ocean'
 #SIday['Header']['realm']    = 'seaIce'
 CFsubhr['Header']['realm']    = 'atmos'
 A1hr['Header']['realm']    = 'atmos'
@@ -263,7 +263,7 @@ Ofx['Header']['table_id']  = 'Table obs4MIPs_Ofx'
 Aday['Header']['table_id']  = 'Table obs4MIPs_Aday'
 A3hr['Header']['table_id']  = 'Table obs4MIPs_A3hr'
 A6hr['Header']['table_id']  = 'Table obs4MIPs_A6hr'
-#Oday['Header']['table_id']  = 'Table obs4MIPs_Oday'
+Oday['Header']['table_id']  = 'Table obs4MIPs_Oday'
 #SIday['Header']['table_id'] = 'Table obs4MIPs_SIday'
 CFsubhr['Header']['table_id']    = 'Table obs4MIPs_CFsubhr'
 A1hr['Header']['table_id']    = 'Table obs4MIPs_A1hr'
@@ -275,8 +275,8 @@ A1hrPt['Header']['table_id']    = 'Table obs4MIPs_A1hrPt'
 # Clean out modeling_realm
 for jsonName in [Aday,A3hr,A6hr,Oday,SIday,Amon,Lmon,Omon,SImon,fx,Ofx]:
   try:
-   jsonName['Header']["Conventions"] = "CF-1.12; ODS-2.6"
-   jsonName['Header']["data_specs_version"] = "ODS-2.6"
+   jsonName['Header']["Conventions"] = "CF-1.12; ODS-2.6.1"
+   jsonName['Header']["data_specs_version"] = "ODS-2.6.1"
   except:
    pass
 
@@ -454,6 +454,7 @@ table_id = [
   'obs4MIPs_A3hr',
   'obs4MIPs_Lmon',
   'obs4MIPs_Omon',
+  'obs4MIPs_Oday',
   'obs4MIPs_SImon',
   'obs4MIPs_CFsubhr',
   'obs4MIPs_A1hr',
