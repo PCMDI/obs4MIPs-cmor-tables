@@ -1711,6 +1711,12 @@
                 "source_type":"satellite_blended",
                 "source_version_number":"4.2"
             },
+            "CERES-EBAF-4-2-1":{
+                "region":"global",
+                "source":"CERES-EBAF4-2 4.2.1 (2025): CERES EBAF (Energy Balanced and Filled) TOA Fluxes. Monthly Averages",
+                "source_type":"satellite_blended",
+                "source_version_number":"4.2.1"
+            },
             "CMAP-V1902":{
                 "region":"global",
                 "source":"CMAP V1902 (N/A): CMAP Precipitation",
@@ -1908,6 +1914,12 @@
                 "source":"GPCP 2.3 (N/A): Merged Precipitation",
                 "source_type":"satellite_blended",
                 "source_version_number":"2.3"
+            },
+            "GPCP-3-3":{
+                "region":"global",
+                "source":"GPCP-3-3 3.3 (2025): Global Precipitation Climatology Project (GPCP) Merged Precipitation",
+                "source_type":"satellite_blended",
+                "source_version_number":"3.3"
             },
             "GPCP-Daily-3-2":{
                 "region":"global",
