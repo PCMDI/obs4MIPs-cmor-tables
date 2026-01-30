@@ -1,0 +1,6 @@
+Transitioning CMOR work on NASA dataset done before by RSS now to NASA-GISS
+  the directories inputs/RSS/NASA-GSFC/, inputs/RSS/NASA-JPL/, and inputs/RSS/NASA-LaRC/
+  are moved to inputs/NASA-GISS/NASA-GSFC/, inputs/NASA-GISS/NASA-JPL/, and inputs/NASA-GISS/NASA-LaRC/
+
+  Input files are updated to the most recent avalaible ones by Jan. 2026
+  GPCP V3.3, CERES_EBAF4.2.1
