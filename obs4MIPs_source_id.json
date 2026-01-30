@@ -318,6 +318,24 @@
             ],
             "source_version_number":"4.2"
         },
+        "CERES-EBAF-4-2-1":{
+            "institution_id":"NASA-LaRC",
+            "region":[
+                "global"
+            ],
+            "release_year":"2025",
+            "source_description":"CERES EBAF (Energy Balanced and Filled) TOA Fluxes. Monthly Averages",
+            "source_label":"CERES-EBAF4-2",
+            "source_name":"CERES-EBAF4-2",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "rlut",
+                "rlutcs",
+                "rsut",
+                "rsutcs"
+            ],
+            "source_version_number":"4.2.1"
+        },
         "CMAP-V1902":{
             "institution_id":"NOAA-NCEI",
             "region":[
@@ -923,6 +941,21 @@
                 "pr"
             ],
             "source_version_number":"2.3"
+        },
+        "GPCP-3-3":{
+            "institution_id":"NASA-LaRC",
+            "region":[
+                "global"
+            ],
+            "release_year":"2025",
+            "source_description":"Global Precipitation Climatology Project (GPCP) Merged Precipitation",
+            "source_label":"GPCP-3-3",
+            "source_name":"GPCP-3-3",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"3.3"
         },
         "GPCP-Daily-3-2":{
             "institution_id":"NASA-GSFC",

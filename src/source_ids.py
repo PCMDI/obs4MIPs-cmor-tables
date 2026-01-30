@@ -63,3 +63,30 @@ source_id['source_id'][key]['region'] = ['north_america']
 source_id['source_id'][key]['source_type'] = 'gridded_insitu'
 source_id['source_id'][key]['source_variables'] = ['pr','tasmin', 'tasmax','sfcWind'] 
 
+key = 'CERES-EBAF-4-2-1'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = "CERES-EBAF4-2" 
+source_id['source_id'][key]['source_label'] = "CERES-EBAF4-2" 
+source_id['source_id'][key]['release_year'] = '2025'
+source_id['source_id'][key]['source_description'] = 'CERES EBAF (Energy Balanced and Filled) TOA Fluxes. Monthly Averages'
+source_id['source_id'][key]['source_version_number'] = '4.2.1'
+source_id['source_id'][key]['institution_id'] = 'NASA-LaRC'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] = ['rlut','rlutcs','rsut','rsutcs']
+
+key = 'GPCP-3-3'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = "GPCP-3-3"
+source_id['source_id'][key]['source_label'] = "GPCP-3-3"
+source_id['source_id'][key]['release_year'] = '2025'
+source_id['source_id'][key]['source_description'] = 'Global Precipitation Climatology Project (GPCP) Merged Precipitation'
+source_id['source_id'][key]['source_version_number'] = '3.3'
+source_id['source_id'][key]['institution_id'] = 'NASA-LaRC'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] = ['pr']
+
+
+
+
