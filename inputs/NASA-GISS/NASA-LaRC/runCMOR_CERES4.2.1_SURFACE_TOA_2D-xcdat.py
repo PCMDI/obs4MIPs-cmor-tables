@@ -13,11 +13,12 @@ from fix_dataset_time import monthly_times
 cmorTable = '../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'CERES4.2.1-SURFACE-TOA-2D-input.json' ; # Update contents of this file to set your global_attributes
 inputFilePath = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/NASA-LaRC/CERES_EBAF4.2.1/' # change to user's path where file is stored
+inputFileName='CERES_EBAF_Edition4.2.1_200003-202509.nc'
 
 inputVarName = ['toa_lw_all_mon','toa_sw_all_mon','toa_sw_clr_c_mon','toa_lw_clr_c_mon','toa_net_all_mon','solar_mon','toa_cre_lw_mon','toa_cre_sw_mon','sfc_lw_up_all_mon','sfc_sw_up_all_mon','sfc_sw_up_clr_c_mon','sfc_lw_down_all_mon','sfc_lw_down_clr_c_mon','sfc_sw_down_all_mon','sfc_sw_down_clr_c_mon']
 outputVarName = ['rlut','rsut','rsutcs','rlutcs','rt','rsdt','rltcre','rstcre','rlus','rsus','rsuscs','rlds','rldscs','rsds','rsdscs']
-outputUnits = ['W m-2'] * 18
-outpos = ['up','up','up','up','','down','up','up','up','up','up','down','down','down','down','down','down','down']
+outputUnits = ['W m-2'] * 15
+outpos = ['up','up','up','up','','down','up','up','up','up','up','down','down','down','down']
 
 # For adjusting CERES time
 years = np.arange(2000,2026,1)
@@ -53,7 +54,7 @@ for fi in range(len(inputVarName)):
   
     #%% Initialize and run CMOR
     # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
-    cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4) #,logfile='cmorLog.txt')
+    cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4)#,logfile='cmorLog.txt')
     cmor.dataset_json(inputJson)
     cmor.load_table(cmorTable)
     #cmor.set_cur_dataset_attribute('history',f.history) ; # Force input file attribute as history
@@ -81,8 +82,8 @@ for fi in range(len(inputVarName)):
     values  = np.array(d.values,np.float32)
   
     # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-    cmor.set_variable_attribute(varid,'valid_min','c',d.valid_min) # CERES defines this as a string in the EBAF netCDF4 files.  Must be saved as such
-    cmor.set_variable_attribute(varid,'valid_max','c',d.valid_max)
+    cmor.set_variable_attribute(varid,'valid_min','f',d.valid_min)
+    cmor.set_variable_attribute(varid,'valid_max','f',d.valid_max)
   
     # Provenance info
     git_commit_number = obs4MIPsLib.get_git_revision_hash()
