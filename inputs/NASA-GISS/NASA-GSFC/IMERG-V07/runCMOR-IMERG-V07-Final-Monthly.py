@@ -27,6 +27,7 @@ inputFilePath = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/NASA-GSFC
 inputVarName = 'precipitation'
 outputVarName = 'pr'
 outputUnits = 'kg m-2 s-1'
+cmor_missing = np.float32(1.0e20)
 
 for year in range(1998, 2026):  # put the years you want to process here
     inputDatasets = []
@@ -89,11 +90,20 @@ for year in range(1998, 2026):  # put the years you want to process here
         axisIds.append(axisId)
 
     # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
+    unit = getattr(d, "units", "").lower()
+    if "mm/day" in unit:
+        sec = 86400.0
+    elif "mm/hr" in unit or "mm/hour" in unit:
+        sec = 3600.0
+    else:
+        raise ValueError(f"Unsupported unit: {unit}")
+
     d["units"] = outputUnits
-    varid   = cmor.variable(outputVarName,str(d.units.values),axisIds,missing_value=d._FillValue)
-    pr_array = np.array(d[:],np.float32)
-    pr_array[pr_array != d._FillValue] /= (24.*3600.) #  IMERG data are in units of mm/day. Converting to kg m-2 s-1 (assuming density of water=1000 kg/m^3) and keeping missing values
-    values = pr_array
+    varid   = cmor.variable(outputVarName,str(d.units.values),axisIds,missing_value=cmor_missing)
+    values = np.array(d.values,np.float32)
+    fill = getattr(d, "_FillValue", None)
+    mask = ~np.isfinite(values) | (values == fill)
+    values = np.where(mask, cmor_missing, values/sec) #Convert to kg m-2 s-1
 
     # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
     cmor.set_variable_attribute(varid,'valid_min','f',0.0)
