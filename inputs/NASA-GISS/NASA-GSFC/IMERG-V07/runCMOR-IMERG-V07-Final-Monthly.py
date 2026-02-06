@@ -103,7 +103,7 @@ for year in range(1998, 2026):  # put the years you want to process here
     values = np.array(d.values,np.float32)
     fill = getattr(d, "_FillValue", None)
     mask = ~np.isfinite(values) | (values == fill)
-    values = np.where(mask, cmor_missing, values/sec) #Convert to kg m-2 s-1
+    values = np.where(mask, cmor_missing, values/sec) #Converting to kg m-2 s-1
 
     # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
     cmor.set_variable_attribute(varid,'valid_min','f',0.0)

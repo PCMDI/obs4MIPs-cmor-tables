@@ -68,7 +68,6 @@ for year in range(1983, 2025):  # put the years you want to process here
         axisId = cmor.axis(**axis)
         axisIds.append(axisId)
 
-
     # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
     varid   = cmor.variable(outputVarName,outputUnits,axisIds,missing_value=d._FillValue)
     values  = np.array(d.values,np.float32)
