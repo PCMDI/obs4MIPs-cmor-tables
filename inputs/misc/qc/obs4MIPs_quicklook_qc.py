@@ -15,6 +15,9 @@ def qc_var_basic(ds, varname):
     print(f"       dimensions : {v.dims}")
     print(f"       shape      : {v.shape}")
 
+    sname = v.attrs.get("standard_name", v.encoding.get("standard_name",f"{varname}"))
+    print(f"       standard name      : {sname}")
+
     units = v.attrs.get("units", "MISSING")
     print(f"       units      : {units}")
 
@@ -91,10 +94,9 @@ def qc_var_basic(ds, varname):
     else:
         plot_data = np.ma.masked_where(mask, data0)
 
-
     plt.pcolormesh(lon, lat, plot_data, shading="auto")
     plt.colorbar(label=units)
-    plt.title(f"{varname} (t=0)")
+    plt.title(f"{sname} (t=0)")
     plt.xlabel("Longitude")
     plt.ylabel("Latitude")
 
