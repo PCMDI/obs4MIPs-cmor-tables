@@ -1,3 +1,6 @@
+# Python bytecode
+*.pyc
+__pycache__/
 ~$.xlsx
 *.json~
 *.json.bak
