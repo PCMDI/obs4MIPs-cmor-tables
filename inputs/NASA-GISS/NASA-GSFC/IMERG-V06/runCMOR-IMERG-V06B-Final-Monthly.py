@@ -22,14 +22,14 @@ def extract_date(ds):   # preprocessing function when opening files
 
 #%% User provided input
 cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
-inputJson = 'IMERG-V07-Final-Monthly.json' ; # Update contents of this file to set your global_attributes
-inputFilePath = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/NASA-GSFC/IMERGV07/monthly-pjg/'
+inputJson = 'IMERG-V06B-Final-Monthly.json' ; # Update contents of this file to set your global_attributes
+inputFilePath = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/NASA-GSFC/IMERG6/monthly'
 inputVarName = 'precipitation'
 outputVarName = 'pr'
 outputUnits = 'kg m-2 s-1'
 cmor_missing = np.float32(1.0e20)
 
-for year in range(1998, 2026):  # put the years you want to process here
+for year in range(2000, 2022):  # put the years you want to process here
     inputDatasets = []
     for month in range(1,13):
         inputFiles = glob.glob(f"{inputFilePath}/3B-MO.MS.MRG.3IMERG.{year}{month:02}*.HDF5")

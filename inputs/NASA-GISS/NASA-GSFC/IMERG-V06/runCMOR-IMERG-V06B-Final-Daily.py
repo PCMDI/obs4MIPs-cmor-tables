@@ -22,14 +22,14 @@ def extract_date(ds):   # preprocessing function when opening files
 
 #%% User provided input
 cmorTable = '../../../../Tables/obs4MIPs_Aday.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
-inputJson = 'IMERG-V07-Final-Daily.json' ; # Update contents of this file to set your global_attributes
-inputFilePath = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/NASA-GSFC/IMERGV07/daily/'
-inputVarName = 'precipitation'
+inputJson = 'IMERG-V06B-Final-Daily.json' ; # Update contents of this file to set your global_attributes
+inputFilePath = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/NASA-GSFC/IMERG6/daily'
+inputVarName = 'precipitationCal'
 outputVarName = 'pr'
 outputUnits = 'kg m-2 s-1'
 cmor_missing = np.float32(1.0e20)
 
-for year in range(1998, 2026):  # put the years you want to process here
+for year in range(2000, 2022):  # put the years you want to process here
     for month in range(1,13):
         inputDatasets = []
         inputFiles = glob.glob(f"{inputFilePath}/3B-DAY.MS.MRG.3IMERG.{year}{month:02}*.nc4")
@@ -52,21 +52,14 @@ for year in range(1998, 2026):  # put the years you want to process here
         d = d.transpose('time','lat','lon') # need to transpose the IMEG latitudes and longitudes
 
         time = np.round(f.time)
-        time_bounds = np.round(f.time_bnds)
+        lat = f.lat.values
+        lon = f.lon.values
   
-        # The following lines are written to address floating point representation errors within the IMERG lat/lon data
-        lat = ['{:g}'.format(float('{:.4g}'.format(i))) for i in f.lat.values]
-        lon = ['{:g}'.format(float('{:.5g}'.format(i))) for i in f.lon.values]
-        lat_bounds = ['{:g}'.format(float('{:.4g}'.format(i))) for i in np.ravel(f.lat_bnds.values)]
-        lon_bounds = ['{:g}'.format(float('{:.5g}'.format(i))) for i in np.ravel(f.lon_bnds.values)]
-        
-        lat = np.asarray(lat,dtype=float)
-        lon = np.asarray(lon,dtype=float)
-        lat_bounds = np.reshape(np.asarray(lat_bounds,dtype=float), (1800,2))
-        lon_bounds = np.reshape(np.asarray(lon_bounds,dtype=float), (3600,2))
-
-        lat_bounds[(lat_bounds > -0.1) & (lat_bounds < 0.1)] = 0.0
-        lon_bounds[(lon_bounds > -0.1) & (lon_bounds < 0.1)] = 0.0
+        # Due to CMOR warnings related to the way latitudes and longitudes are read in/rounded
+        # need to round lat and lon bounds to 3 places after the decimal
+        lat_bounds = np.around(f.lat_bnds, 3)
+        lon_bounds = np.around(f.lon_bnds, 3)
+        time_bounds = np.round(f.time_bnds)
 
         #%% Initialize and run CMOR
         # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
@@ -93,13 +86,7 @@ for year in range(1998, 2026):  # put the years you want to process here
             axisIds.append(axisId)
 
         # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-        unit = getattr(d, "units", "").lower()
-        if "mm/day" in unit:
-            sec = 86400.0
-        elif "mm/hr" in unit or "mm/hour" in unit:
-            sec = 3600.0
-        else:
-            raise ValueError(f"Unsupported unit: {unit}")
+        sec = 86400.0 #specific units for IMERG6 daily file,units="mm", "Daily accumulated precipitation"
 
         d["units"] = outputUnits
         varid = cmor.variable(outputVarName,str(d.units.values),axisIds,missing_value=cmor_missing)

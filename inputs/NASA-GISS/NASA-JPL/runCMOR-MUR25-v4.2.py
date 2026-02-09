@@ -28,6 +28,7 @@ inputFilePath = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/NASA-JPL/
 inputVarName = 'analysed_sst'
 outputVarName = 'tos'
 outputUnits = 'degC'
+cmor_missing = np.float32(1.0e20)
 
 for year in range(2002, 2027):  # put the years you want to process here
     for month in range(1,13):
@@ -58,7 +59,7 @@ for year in range(2002, 2027):  # put the years you want to process here
         lat_bounds = f.lat_bnds
         lon_bounds = f.lon_bnds
         time_bounds = f.time_bnds
-        
+
         units = f.time.encoding["units"]
         calendar = f.time.encoding.get("calendar", "standard")
         time_vals = cftime.date2num(f.time.values, units=units, calendar=calendar).astype("float64")
@@ -90,14 +91,15 @@ for year in range(2002, 2027):  # put the years you want to process here
         
         # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
         d["units"] = outputUnits
-        varid   = cmor.variable(outputVarName,str(d.units.values),axisIds,missing_value=-9999.)
-        values  = np.array(d[:],np.float32)
+        varid   = cmor.variable(outputVarName,str(d.units.values),axisIds,missing_value=cmor_missing)
+        values  = np.array(d.values,np.float32)
         
         # Since 'analysed_sst' is stored as a 'short' integer array in these data files,
         # it is easiest to 'mask_and_scale' the data (as we do in 'xc.open_dataset' above)
         # and apply the conversion to degrees Celsius and set the missing data values here.
-        values  = values - 273.15
-        values[np.isnan(values)] = -9999.
+        fill = getattr(d, "_FillValue", None) 
+        mask = ~np.isfinite(values) | (values == fill) 
+        values = np.where(mask, cmor_missing, values-273.15)
         
         # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
         cmor.set_variable_attribute(varid,'valid_min','f',-1.8) # set manually for the time being

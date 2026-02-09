@@ -24,6 +24,7 @@ inputFilePath = '/global/cfs/cdirs/m4581/obs4MIPs/obs4MIPs_input/NASA-GSFC/GPCP-
 inputVarName = 'sat_gauge_precip'
 outputVarName = 'pr'
 outputUnits = 'kg m-2 s-1'
+cmor_missing = np.float32(1.0e20)
 
 for year in range(1983, 2025):  # put the years you want to process here
     inputDatasets = []
@@ -70,14 +71,24 @@ for year in range(1983, 2025):  # put the years you want to process here
 
 
     # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-    varid   = cmor.variable(outputVarName,outputUnits,axisIds,missing_value=d._FillValue)
+    unit = getattr(d, "units", "").lower()
+    if "mm/day" in unit:
+        sec = 86400.0
+    elif "mm/hr" in unit or "mm/hour" in unit:
+        sec = 3600.0
+    else:
+        raise ValueError(f"Unsupported unit: {unit}")
+
+    varid   = cmor.variable(outputVarName,outputUnits,axisIds,missing_value=cmor_missing)
     values  = np.array(d.values,np.float32)
-    values  = values/86400. # NASA-GSFC GPCP array is in units of mm/day. Must be converted to kg m-2 s-1
+    fill = getattr(d, "_FillValue", None)
+    mask = ~np.isfinite(values) | (values == fill)
+    values = np.where(mask, cmor_missing, values / sec) #convert to kg m-2 s-1
 
 
     # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-    cmor.set_variable_attribute(varid,'valid_min','f',d.valid_range[0]/86400)   
-    cmor.set_variable_attribute(varid,'valid_max','f',d.valid_range[-1]/86400)
+    cmor.set_variable_attribute(varid,'valid_min','f',float(d.valid_range[0]/86400))   
+    cmor.set_variable_attribute(varid,'valid_max','f',float(d.valid_range[-1]/86400))
 
     # Provenance info
     git_commit_number = obs4MIPsLib.get_git_revision_hash()
