@@ -12,7 +12,9 @@ This repo is used to develop and maintain:
     - `source_id`
     - `nominal_resolution`
     - `frequency`
-    - many other `required_global_attributes` 
+    - many other `required_global_attributes`
+ 
+  ⚠️ **Note that there is no intention to generate a tag/release for regular updates to the CV and RC JSON files. It is expected that users of this information will be in communication with the team managing this repository**.⚠️
 
 ## [Preparing a new obs4MIPs-compliant dataset](https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/master/inputs/README.md)
 
