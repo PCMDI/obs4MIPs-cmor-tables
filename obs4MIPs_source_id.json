@@ -1652,6 +1652,21 @@
             ],
             "source_version_number":"5.0"
         },
+        "NOAA-NCEI-ERSSTv6":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2025",
+            "source_description":"NOAA-NCEI Extended Reconstructed Sea Surface Temperature (ERSST)",
+            "source_label":"NOAA-NCEI ERSSTv6",
+            "source_name":"NOAA-NCEI ERSSTv6",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "tos"
+            ],
+            "source_version_number":"v6"
+        },
         "NOAA-NCEI-FAPAR-4-0":{
             "institution_id":"NOAA-NCEI",
             "region":[
@@ -1824,6 +1839,21 @@
                 "tos"
             ],
             "source_version_number":"2.0"
+        },
+        "NOAA-NCEI-OISST-v2-1":{
+            "institution_id":"NOAA-NCEI",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2020",
+            "source_description":"NOAA-NCEI Optimum Interpolation Sea Surface Temperature (OISST)",
+            "source_label":"NOAA-NCEI OISST v2.1",
+            "source_name":"NOAA-NCEI OISST v2.1",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "tos"
+            ],
+            "source_version_number":"v2.1"
         },
         "NOAA-NCEI-PERSIANN-1-1":{
             "institution_id":"NOAA-NCEI",

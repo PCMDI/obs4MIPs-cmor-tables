@@ -2184,6 +2184,12 @@
                 "source_type":"gridded_insitu",
                 "source_version_number":"5.0"
             },
+            "NOAA-NCEI-ERSSTv6":{
+                "region":"global_ocean",
+                "source":"NOAA-NCEI ERSSTv6 v6 (2025): NOAA-NCEI Extended Reconstructed Sea Surface Temperature (ERSST)",
+                "source_type":"satellite_blended",
+                "source_version_number":"v6"
+            },
             "NOAA-NCEI-FAPAR-4-0":{
                 "region":"global_land",
                 "source":"NOAA-NCEI-FAPAR 4.0 (2014): AVHRR Fraction of Absorbed Photosynthetically Active Radiation",
@@ -2249,6 +2255,12 @@
                 "source":"NOAA NCEI OISST 2.0 (2008): Optimal Interpolation Sea Surface Temperature",
                 "source_type":"satellite_blended",
                 "source_version_number":"2.0"
+            },
+            "NOAA-NCEI-OISST-v2-1":{
+                "region":"global_ocean",
+                "source":"NOAA-NCEI OISST v2.1 v2.1 (2020): NOAA-NCEI Optimum Interpolation Sea Surface Temperature (OISST)",
+                "source_type":"satellite_blended",
+                "source_version_number":"v2.1"
             },
             "NOAA-NCEI-PERSIANN-1-1":{
                 "region":"global",
