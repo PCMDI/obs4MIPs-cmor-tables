@@ -12,23 +12,23 @@ def has_bounds(ds, names):
     return any(n in ds.variables or n in ds.coords for n in names)
 
 #%% User provided input
-cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
-inputJson = 'IMERG-V06B-Final-Monthly.json' ; # Update contents of this file to set your global_attributes
-inputFilePath = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/NASA-GSFC/IMERG6/monthly'
-inputVarName = 'precipitation'
-outputVarName = 'pr'
-outputUnits = 'kg m-2 s-1'
+cmorTable = '../../../../Tables/obs4MIPs_Omon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+inputJson = 'ERSST-L4-v6.json' ; # Update contents of this file to set your global_attributes
+inputFilePath = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/NOAA-NCEI/ERSST-2026/daily_v6'
+inputVarName = 'sst'
+outputVarName = 'tos'
+outputUnits = 'degC'
 cmor_missing = np.float32(1.0e20)
 
-for year in range(2000, 2022):  # put the years you want to process here
-    inputFiles = glob.glob(f"{inputFilePath}/3B-MO.MS.MRG.3IMERG.{year}??01-S000000-E235959.??.V06B.HDF5")
+for year in range(1850,2026):  # put the years you want to process here
+    inputFiles = glob.glob(f"{inputFilePath}/ersst.v6.{year}??.nc")
     if len(inputFiles) == 0:
         continue
 
     # Open and read input netcdf files
     # Process variable (with time axis)
     inputFiles.sort()
-    f = xc.open_mfdataset(inputFiles, group='Grid', mask_and_scale=True, decode_times=True, use_cftime=True, combine='nested', concat_dim='time')
+    f = xc.open_mfdataset(inputFiles, mask_and_scale=True, decode_times=True, use_cftime=True, combine='nested', concat_dim='time')
     if not has_bounds(f, ["time_bnds", "time_bounds"]):
         f = f.bounds.add_bounds("T")
     if not has_bounds(f, ["lat_bnds", "lat_bounds"]):
@@ -37,14 +37,11 @@ for year in range(2000, 2022):  # put the years you want to process here
         f = f.bounds.add_bounds("X")
 
     d = f[inputVarName]
-    d = d.transpose('time','lat','lon') # need to transpose the IMEG latitudes and longitudes
 
     lat = f.lat.values
     lon = f.lon.values
-    # Due to CMOR warnings related to the way latitudes and longitudes are read in/rounded
-    # need to round lat and lon bounds to 3 places after the decimal
-    lat_bnds = np.around(f.get("lat_bnds", f.get("lat_bounds")).values, 3)
-    lon_bnds = np.around(f.get("lon_bnds", f.get("lon_bounds")).values, 3)
+    lat_bnds = f.get("lat_bnds", f.get("lat_bounds")).values
+    lon_bnds = f.get("lon_bnds", f.get("lon_bounds")).values
 
     t_units = f.time.attrs.get("units") or f.time.encoding.get("units")
     calendar = f.time.attrs.get("calendar") or f.time.encoding.get("calendar", "standard")
@@ -67,23 +64,15 @@ for year in range(2000, 2022):  # put the years you want to process here
     axisIds = [cmor.axis(**ax) for ax in axes]
 
     # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-    d_units = getattr(d, "units", "").lower()
-    if "mm/day" in d_units:
-        sec = 86400.0
-    elif "mm/hr" in d_units or "mm/hour" in d_units:
-        sec = 3600.0
-    else:
-        raise ValueError(f"Unsupported unit: {d_units}")
-
     varid = cmor.variable(outputVarName,outputUnits,axisIds,missing_value=cmor_missing)
-    values = np.array(d.values,np.float32)
+    values = d.squeeze("lev").values.astype(np.float32)
     fill = getattr(d, "_FillValue", None)
     mask = ~np.isfinite(values) | (values == fill)
-    values = np.where(mask, cmor_missing, values/sec) #convert to kg m-2 s-1
+    values = np.where(mask, cmor_missing, values)
 
     # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-    cmor.set_variable_attribute(varid,'valid_min','f',0.0)
-    cmor.set_variable_attribute(varid,'valid_max','f',100.0/86400.) # setting these manually for the time being.
+    cmor.set_variable_attribute(varid,'valid_min','f',-3.)
+    cmor.set_variable_attribute(varid,'valid_max','f',45.)
 
     # Provenance info
     git_commit_number = obs4MIPsLib.get_git_revision_hash()
