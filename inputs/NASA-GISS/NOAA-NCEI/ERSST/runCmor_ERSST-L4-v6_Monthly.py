@@ -13,18 +13,17 @@ def has_bounds(ds, names):
     return any(n in ds.variables or n in ds.coords for n in names)
 
 #%% User provided input
-cmorTable = '../../../../Tables/obs4MIPs_Aday.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
-inputJson = 'OLR-v2.0.json' ; # Update contents of this file to set your global_attributes
-inputFilePath = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/NOAA-NCEI/OLR/OLR-Daily_v02r00' # change to local path on user's machine where files are stored
-inputVarName = 'olr'
-outputVarName = 'rlut'
-outputUnits = 'W m-2'
-outpos = 'up'
+cmorTable = '../../../../Tables/obs4MIPs_Omon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+inputJson = 'ERSST-L4-v6.json' ; # Update contents of this file to set your global_attributes
+inputFilePath = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/NOAA-NCEI/ERSST-2026/daily_v6'
+inputVarName = 'sst'
+outputVarName = 'tos'
+outputUnits = 'degC'
 run_version = "v" + datetime.now().strftime("%Y%m%d") # fixed for entire run
 cmor_missing = np.float32(1.0e20)
 
-for year in range(1979, 2025):  # put the years you want to process here
-    inputFiles = glob.glob(f"{inputFilePath}/OLR-Daily_v02r00_s{year}0101_e{year}1231.nc")
+for year in range(1850,2026):  # put the years you want to process here
+    inputFiles = glob.glob(f"{inputFilePath}/ersst.v6.{year}??.nc")
     if len(inputFiles) == 0:
         continue
 
@@ -68,15 +67,15 @@ for year in range(1979, 2025):  # put the years you want to process here
     axisIds = [cmor.axis(**ax) for ax in axes]
 
     # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-    varid = cmor.variable(outputVarName,outputUnits,axisIds,missing_value=cmor_missing,positive=outpos)
-    values = np.array(d.values,np.float32)
+    varid = cmor.variable(outputVarName,outputUnits,axisIds,missing_value=cmor_missing)
+    values = d.squeeze("lev").values.astype(np.float32)
     fill = getattr(d, "_FillValue", None)
     mask = ~np.isfinite(values) | (values == fill)
     values = np.where(mask, cmor_missing, values)
 
     # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-    cmor.set_variable_attribute(varid,'valid_min','f',float(d.valid_min))
-    cmor.set_variable_attribute(varid,'valid_max','f',float(d.valid_max))
+    cmor.set_variable_attribute(varid,'valid_min','f',-3.)
+    cmor.set_variable_attribute(varid,'valid_max','f',45.)
 
     # Provenance info
     git_commit_number = obs4MIPsLib.get_git_revision_hash()
