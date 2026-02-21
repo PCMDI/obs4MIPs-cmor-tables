@@ -5,6 +5,7 @@ import glob
 import os
 import sys
 import cftime
+from datetime import datetime
 sys.path.append("../../../../inputs/misc/") # Path to obs4MIPsLib
 import obs4MIPsLib
 
@@ -18,6 +19,7 @@ inputFilePath = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/NASA-GSFC
 inputVarName = 'precipitation'
 outputVarName = 'pr'
 outputUnits = 'kg m-2 s-1'
+run_version = "v" + datetime.now().strftime("%Y%m%d") # fixed for entire run
 cmor_missing = np.float32(1.0e20)
 
 for year in range(1998, 2026):  # put the years you want to process here
@@ -55,6 +57,7 @@ for year in range(1998, 2026):  # put the years you want to process here
     # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
     cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4) #,logfile='cmorLog.txt')
     cmor.dataset_json(inputJson)
+    cmor.set_cur_dataset_attribute("version", run_version)
     cmor.load_table(cmorTable)
 
     axes = [

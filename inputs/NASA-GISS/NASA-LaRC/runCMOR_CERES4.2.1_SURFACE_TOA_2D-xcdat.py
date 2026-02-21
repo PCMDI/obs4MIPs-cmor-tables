@@ -4,6 +4,7 @@ import numpy as np
 import os
 import sys
 import cftime
+from datetime import datetime
 sys.path.append("../../../inputs/misc/") # Path to obs4MIPsLib and code to fix times
 import obs4MIPsLib
 
@@ -19,6 +20,7 @@ inputVarName = ['toa_lw_all_mon','toa_sw_all_mon','toa_sw_clr_c_mon','toa_lw_clr
 outputVarName = ['rlut','rsut','rsutcs','rlutcs','rt','rsdt','rltcre','rstcre','rlus','rsus','rsuscs','rlds','rldscs','rsds','rsdscs']
 outputUnits = ['W m-2'] * 15
 outpos = ['up','up','up','up','','down','up','up','up','up','up','down','down','down','down']
+run_version = "v" + datetime.now().strftime("%Y%m%d") # fixed for entire run
 cmor_missing = np.float32(1.0e20)
 
 # Open and read input netcdf files
@@ -48,6 +50,7 @@ for fi in range(len(inputVarName)): #looping over varaibles
     # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
     cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4) #,logfile='cmorLog.txt')
     cmor.dataset_json(inputJson)
+    cmor.set_cur_dataset_attribute("version", run_version)
     cmor.load_table(cmorTable)
 
     axes = [
