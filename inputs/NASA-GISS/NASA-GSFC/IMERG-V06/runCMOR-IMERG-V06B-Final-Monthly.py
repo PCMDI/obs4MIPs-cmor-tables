@@ -1,24 +1,16 @@
-
 import cmor
 import xcdat as xc
 import numpy as np
 import glob
-import sys
 import os
-
+import sys
+import cftime
+from datetime import datetime
 sys.path.append("../../../../inputs/misc/") # Path to obs4MIPsLib
-
 import obs4MIPsLib
 
-def extract_date(ds):   # preprocessing function when opening files
-    print(f"Extracting time for: {ds.encoding['source']}")
-    for var in ds.variables:
-        if var == 'time':
-            dataset_time = ds[var].values
-            dataset_units = ds[var].units
-            ds.assign(time=dataset_time)
-            ds["time"].attrs = {"units": dataset_units}
-    return ds
+def has_bounds(ds, names):
+    return any(n in ds.variables or n in ds.coords for n in names)
 
 #%% User provided input
 cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
@@ -27,87 +19,74 @@ inputFilePath = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/NASA-GSFC
 inputVarName = 'precipitation'
 outputVarName = 'pr'
 outputUnits = 'kg m-2 s-1'
+run_version = "v" + datetime.now().strftime("%Y%m%d") # fixed for entire run
 cmor_missing = np.float32(1.0e20)
 
 for year in range(2000, 2022):  # put the years you want to process here
-    inputDatasets = []
-    for month in range(1,13):
-        inputFiles = glob.glob(f"{inputFilePath}/3B-MO.MS.MRG.3IMERG.{year}{month:02}*.HDF5")
-        inputFiles.sort() # to ensure data files are in chronological order. Code will break otherwise
-        for inputFile in inputFiles:
-            inputDatasets.append(inputFile)
+    inputFiles = glob.glob(f"{inputFilePath}/3B-MO.MS.MRG.3IMERG.{year}??01-S000000-E235959.??.V06B.HDF5")
+    if len(inputFiles) == 0:
+        continue
 
-    print(inputDatasets)
-    print(f'Datasets gathered for {year}')
-
-    # Opening and concatenating files from the dataset
-    f = xc.open_mfdataset(inputDatasets, group='Grid', mask_and_scale=False, decode_times=False, combine='nested', concat_dim='time', preprocess=extract_date)
-    
-    print(f'Datasets concatenated for {year}')
+    # Open and read input netcdf files
+    # Process variable (with time axis)
+    inputFiles.sort()
+    f = xc.open_mfdataset(inputFiles, group='Grid', mask_and_scale=True, decode_times=True, use_cftime=True, combine='nested', concat_dim='time')
+    if not has_bounds(f, ["time_bnds", "time_bounds"]):
+        f = f.bounds.add_bounds("T")
+    if not has_bounds(f, ["lat_bnds", "lat_bounds"]):
+        f = f.bounds.add_bounds("Y")
+    if not has_bounds(f, ["lon_bnds", "lon_bounds"]):
+        f = f.bounds.add_bounds("X")
 
     d = f[inputVarName]
     d = d.transpose('time','lat','lon') # need to transpose the IMEG latitudes and longitudes
 
-    time = f.time
-    time_bounds = f.time_bnds
+    lat = f.lat.values
+    lon = f.lon.values
+    # Due to CMOR warnings related to the way latitudes and longitudes are read in/rounded
+    # need to round lat and lon bounds to 3 places after the decimal
+    lat_bnds = np.around(f.get("lat_bnds", f.get("lat_bounds")).values, 3)
+    lon_bnds = np.around(f.get("lon_bnds", f.get("lon_bounds")).values, 3)
 
-    # The following lines are written to address floating point representation errors within the IMERG lat/lon data
-    lat = ['{:g}'.format(float('{:.4g}'.format(i))) for i in f.lat.values]
-    lon = ['{:g}'.format(float('{:.5g}'.format(i))) for i in f.lon.values]
-    lat_bounds = ['{:g}'.format(float('{:.4g}'.format(i))) for i in np.ravel(f.lat_bnds.values)]
-    lon_bounds = ['{:g}'.format(float('{:.5g}'.format(i))) for i in np.ravel(f.lon_bnds.values)]
-    
-    lat = np.asarray(lat,dtype=float)
-    lon = np.asarray(lon,dtype=float)
-    lat_bounds = np.reshape(np.asarray(lat_bounds,dtype=float), (1800,2))
-    lon_bounds = np.reshape(np.asarray(lon_bounds,dtype=float), (3600,2))
-
-    lat_bounds[(lat_bounds > -0.1) & (lat_bounds < 0.1)] = 0.0
-    lon_bounds[(lon_bounds > -0.1) & (lon_bounds < 0.1)] = 0.0
+    t_units = f.time.attrs.get("units") or f.time.encoding.get("units")
+    calendar = f.time.attrs.get("calendar") or f.time.encoding.get("calendar", "standard")
+    time = cftime.date2num(f.time.values, units=t_units, calendar=calendar).astype("float64")
+    time_bnds = cftime.date2num(f.get("time_bnds", f.get("time_bounds")).values, units=t_units, calendar=calendar).astype("float64")
 
     #%% Initialize and run CMOR
     # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
     cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4) #,logfile='cmorLog.txt')
     cmor.dataset_json(inputJson)
+    cmor.set_cur_dataset_attribute("version", run_version)
     cmor.load_table(cmorTable)
-    # cmor.set_cur_dataset_attribute('history',f.history) # commented.  Does not appear that there is a 'history' attribute for the read-in files
-    axes    = [ {'table_entry': 'time',
-                'units': time.units,
-                },
-                {'table_entry': 'latitude',
-                'units': 'degrees_north',
-                'coord_vals': lat[:],
-                'cell_bounds': lat_bounds},
-                {'table_entry': 'longitude',
-                'units': 'degrees_east',
-                'coord_vals': lon[:],
-                'cell_bounds': lon_bounds},
-            ]
 
-    axisIds = list() ; # Create list of axes
-    for axis in axes:
-        axisId = cmor.axis(**axis)
-        axisIds.append(axisId)
+    axes = [
+        {"table_entry": "time", "units": t_units},
+        {"table_entry": "latitude", "units": "degrees_north",
+         "coord_vals": lat, "cell_bounds": lat_bnds},
+        {"table_entry": "longitude", "units": "degrees_east",
+         "coord_vals": lon, "cell_bounds": lon_bnds},
+    ]
+    axisIds = [cmor.axis(**ax) for ax in axes]
 
     # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-    unit = getattr(d, "units", "").lower()
-    if "mm/day" in unit:
+    d_units = getattr(d, "units", "").lower()
+    if "mm/day" in d_units:
         sec = 86400.0
-    elif "mm/hr" in unit or "mm/hour" in unit:
+    elif "mm/hr" in d_units or "mm/hour" in d_units:
         sec = 3600.0
     else:
-        raise ValueError(f"Unsupported unit: {unit}")
+        raise ValueError(f"Unsupported unit: {d_units}")
 
-    d["units"] = outputUnits
-    varid   = cmor.variable(outputVarName,str(d.units.values),axisIds,missing_value=cmor_missing)
+    varid = cmor.variable(outputVarName,outputUnits,axisIds,missing_value=cmor_missing)
     values = np.array(d.values,np.float32)
     fill = getattr(d, "_FillValue", None)
     mask = ~np.isfinite(values) | (values == fill)
-    values = np.where(mask, cmor_missing, values/sec) #Convert to kg m-2 s-1
+    values = np.where(mask, cmor_missing, values/sec) #convert to kg m-2 s-1
 
     # Append valid_min and valid_max to variable before writing using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
     cmor.set_variable_attribute(varid,'valid_min','f',0.0)
-    cmor.set_variable_attribute(varid,'valid_max','f',100.0/(24.*3600.)) # setting these manually for the time being.
+    cmor.set_variable_attribute(varid,'valid_max','f',100.0/86400.) # setting these manually for the time being.
 
     # Provenance info
     git_commit_number = obs4MIPsLib.get_git_revision_hash()
@@ -117,7 +96,7 @@ for year in range(2000, 2022):  # put the years you want to process here
 
     # Prepare variable for writing, then write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
     cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
-    cmor.write(varid,values,time_vals=time.values[:],time_bnds=time_bounds.values[:]) ; # Write variable with time axis
+    cmor.write(varid,values,time_vals=time,time_bnds=time_bnds) ; # Write variable with time axis
     f.close()
     cmor.close()
     print(f"File written for {year}")
