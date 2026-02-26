@@ -23,15 +23,16 @@ from datetime import datetime, timedelta
 from osgeo import gdal
 
 # obs4MIPs provenance helper (for git hash)
-sys.path.append("../../inputs/misc")
+sys.path.append("../../../inputs/misc")
 import obs4MIPsLib
-
 
 # =========================
 # User settings
 # =========================
-CMOR_TABLE = "../../Tables/obs4MIPs_Aday.json"
-INPUT_JSON = "../inputs/obs4MIPs_JASMES_SNOWCOVER.json"
+CMOR_TABLE = "../../../Tables/obs4MIPs_Aday.json"
+INPUT_JSON = "./obs4MIPs_JASMES_SNOWCOVER.json"
+
+tgt_org_data_path = "/Users/wakuhisa/Desktop/EORC_tmp/20251224_obs4mip_snc/obs4MIPs-cmor-tables/CMOR_JASMES_snc/org_data/"
 
 INPUT_SDS_NAME = "cs_flg_tpf"
 OUTPUT_VAR_NAME = "snc"
@@ -77,7 +78,7 @@ def build_input_glob(d, typ):
     mm = d.strftime("%m")
     ymd = d.strftime("%Y%m%d")
     # Example: ../org_data/1978/12/GHR19781201_19781201_GLBOD01D_SNWFG_EQ05KM_1n9.hdf.gz
-    return f"../org_data/{yyyy}/{mm}/{typ}{ymd}_{ymd}_GLBOD01D_SNWFG_EQ05KM_1?9.hdf.gz"
+    return tgt_org_data_path + f"{yyyy}/{mm}/{typ}{ymd}_{ymd}_GLBOD01D_SNWFG_EQ05KM_1?9.hdf.gz"
     #GHR19781201_19781201_GLBOD01D_SNWFG_EQ05KM_1n9.hdf.gz
     #M5C20010101_20010101_GLBOD01D_SNWFG_EQ05KM_1m9.hdf.gz
     #SVC20190101_20190101_GLBOD01D_SNWFG_EQ05KM_1s9.hdf.gz
@@ -170,7 +171,7 @@ def flag_to_snc(flg):
 
     return snc
 
-
+"""
 def make_lon_lat_with_bounds(nlat, nlon):
     # longitude edges and bounds
     dlon = 360.0 / nlon
@@ -188,7 +189,45 @@ def make_lon_lat_with_bounds(nlat, nlon):
     lat_bnds = np.sort(lat_bnds, axis=1)
 
     return lat, lon, lat_bnds, lon_bnds
+"""
 
+def make_lon_lat_with_bounds(nlat, nlon):
+    """
+    Exact coordinate construction (no floating-point runoff).
+    Expected grid: nlat=3601 (90 to -90 every 0.05 deg), nlon=7200 (0.05 deg)
+    lon in [-180, 180), lat in [90, -90]
+    """
+    # Use centi-degrees (0.01 deg) as integer base
+    # 0.05 deg = 5 centi-deg
+    step_cd = 5  # centi-deg
+
+    # ---- lon ----
+    # edges: -180 ... 180 step 0.05
+    lon_edges_cd = np.arange(-18000, 18000 + step_cd, step_cd, dtype=np.int64)  # len = nlon+1
+    if lon_edges_cd.size != nlon + 1:
+        raise RuntimeError(f"Unexpected lon size: {lon_edges_cd.size} (expected {nlon+1})")
+
+    lon_cd = (lon_edges_cd[:-1] + lon_edges_cd[1:]) // 2  # exact centers in centi-deg
+    lon = lon_cd.astype(np.float64) / 100.0
+    lon_bnds = np.stack([lon_edges_cd[:-1], lon_edges_cd[1:]], axis=1).astype(np.float64) / 100.0
+
+    # ---- lat ----
+    # centers include poles: 90, 89.95, ..., -90
+    lat_cd = np.arange(9000, -9000 - step_cd, -step_cd, dtype=np.int64)  # len = nlat
+    if lat_cd.size != nlat:
+        raise RuntimeError(f"Unexpected lat size: {lat_cd.size} (expected {nlat})")
+
+    # edges: first=90, last=-90, interior midpoints
+    lat_edges_cd = np.empty(nlat + 1, dtype=np.int64)
+    lat_edges_cd[0] = 9000
+    lat_edges_cd[-1] = -9000
+    lat_edges_cd[1:-1] = (lat_cd[:-1] + lat_cd[1:]) // 2  # exact midpoints
+
+    lat = lat_cd.astype(np.float64) / 100.0
+    lat_bnds = np.stack([lat_edges_cd[:-1], lat_edges_cd[1:]], axis=1).astype(np.float64) / 100.0
+    lat_bnds = np.sort(lat_bnds, axis=1)  # ensure increasing bounds
+
+    return lat, lon, lat_bnds, lon_bnds
 
 def detect_sensor_provenance(filename):
     if "GHR" in filename:
@@ -272,6 +311,8 @@ def main():
     cmor.setup(inpath="./", netcdf_file_action=cmor.CMOR_REPLACE_4)
     cmor.dataset_json(INPUT_JSON)
     cmor.load_table(CMOR_TABLE)
+
+
 
     # provenance: processing code location
     git_commit_number = obs4MIPsLib.get_git_revision_hash()

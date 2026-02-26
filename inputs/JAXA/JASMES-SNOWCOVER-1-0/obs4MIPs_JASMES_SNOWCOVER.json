@@ -8,8 +8,8 @@
   "activity_id": "obs4MIPs",
   "calendar": "standard",
   "comment": "",
-  "contact": "JASMES Team (Z-GCOM_QA@ml.jaxa.jp)",
-  "data_specs_version": "1n9",
+  "contact": "JASMES Team @ JAXA (Z-GCOM_QA@ml.jaxa.jp)",
+  "data_specs_version": "1.0",
 
   "grid": "0.05x0.05 degree latitude x longitude",
   "grid_label": "gn",
@@ -19,7 +19,7 @@
   "institution_id": "JAXA",
   "nominal_resolution": "5 km",
 
-  "outpath": "./output",
+  "outpath": "../../../../../output",
   "output_file_template": "<variable_id><frequency><source_id><variant_label><grid_label>",
   "output_path_template": "<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>",
 
@@ -35,7 +35,7 @@
 
   "source_data_url": "https://www.eorc.jaxa.jp/JASMES/",
   "source_data_retrieval_date": "20260107",
-  "dataset_contriubtor": "20260107; JASMES Team @ JAXA",
+  "dataset_contributor": "20260107; JASMES Team @ JAXA",
 
   "has_aux_unc": "FALSE"
 }
