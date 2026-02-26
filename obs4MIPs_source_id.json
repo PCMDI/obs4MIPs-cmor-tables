@@ -1454,6 +1454,30 @@
             ],
             "source_version_number":"1.1"
         },
+        "MERRA-2":{
+            "institution_id":"NASA-GMAO",
+            "region":[
+                "global"
+            ],
+            "release_year":"2025",
+            "source_description":"Modern-Era Retrospective analysis for Research and Applications",
+            "source_label":"MERRA",
+            "source_name":"MERRA",
+            "source_type":"reanalysis",
+            "source_variables":[
+                "hus",
+                "huss",
+                "psl",
+                "ta",
+                "tas",
+                "ua",
+                "uas",
+                "va",
+                "vas",
+                "zg"
+            ],
+            "source_version_number":"2"
+        },
         "MGOHCTA-WOA09":{
             "institution_id":"NOAA-NCEI",
             "region":[
