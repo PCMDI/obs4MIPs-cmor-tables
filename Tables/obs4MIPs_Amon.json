@@ -1754,7 +1754,7 @@
             "cell_measures":"area: areacella",
             "cell_methods":"time: mean",
             "comment":"Geopotential is the sum of the specific gravitational potential energy relative to the geoid and the specific centripetal potential energy. Geopotential height is the geopotential divided by the standard acceleration due to gravity. It is numerically similar to the altitude (or geometric height) and not to the quantity with standard name height, which is relative to the surface.",
-            "dimensions":"longitude latitude plev42-MERRA time",
+            "dimensions":"longitude latitude plev42-MERRA2 time",
             "frequency":"mon",
             "long_name":"Geopotential Height",
             "modeling_realm":"atmos",
