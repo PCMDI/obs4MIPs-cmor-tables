@@ -21,7 +21,7 @@ This repo is used to develop and maintain:
 The first step is to propose a new `source_id`, [open an issue in this repo](https://github.com/PCMDI/obs4MIPs-cmor-tables/issues/new/choose). When submitting an issue, a template is provided for contributors to modify for their proposed `source_id`. Once the issue is submitted, one of the site maintainers will review it and when ready will execute its implementation into the database of `source_ids` maintained within the [`obs4MIPs_source_id.json`](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/obs4MIPs_source_id.json) file in this repo.  Once a source_id is registered, data contributors can [follow the recipe for preparing obs4MIPs-compliant data](https://github.com/PCMDI/obs4MIPs-cmor-tables/blob/master/inputs/README.md).
 
 
-## Obs4MIPs Data Delivery Team (DDT)
+## Obs4MIPs Data Delivery Contributors (DDC)
 
 [![Contributors](https://contrib.rocks/image?repo=PCMDI/obs4MIPs-cmor-tables)](https://github.com/PCMDI/obs4MIPs-cmor-tables/graphs/contributors)
 
