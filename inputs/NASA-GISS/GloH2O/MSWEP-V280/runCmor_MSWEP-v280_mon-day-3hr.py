@@ -11,8 +11,8 @@ import obs4MIPsLib
 def has_bounds(ds, names):
     return any(n in ds.variables or n in ds.coords for n in names)
 
-freq = 'A3hr' #'Amon' #'Aday'  #'A3hr'
-version = 'Past-nogauge'  # 'Past'  #'Past-nogauge'
+freq = 'Amon' #'Amon' #'Aday'  #'A3hr'
+version = 'Past'  # 'Past'  #'Past-nogauge'
 
 if freq == 'Amon':
     avgp = 'Monthly'
@@ -22,7 +22,7 @@ elif freq == 'Aday':
     months = range(1,13)
 elif freq == 'A3hr':
     avgp = '3hourly'
-    months = range(1,2)
+    months = range(1,13)
 else:
     print("Please set freq!")
 
