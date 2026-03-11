@@ -12,18 +12,15 @@ def has_bounds(ds, names):
 
 #%% User provided input
 cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx
-#inputJson = 'MERRA2-monthly-asm.json' ; # Update contents of this file to set your global_attributes
-inputJson = 'test-asm.json' ; # Update contents of this file to set your global_attributes
+inputJson = 'MERRA2-monthly-asm.json' ; # Update contents of this file to set your global_attributes
 inputFilePath = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/NASA-GMAO/MERRA-2/monthly/2d'
-inputVarName = ['T2M','U2M','V2M','QV2M']
-outputVarName = ['tas','uas','vas','huss']  
-outputUnits = ['K','m s-1','m s-1','1'] 
+inputVarName = ['T2M','U2M','V2M','QV2M','SLP']
+outputVarName = ['tas','uas','vas','huss','psl']  
+outputUnits = ['K','m s-1','m s-1','1','Pa'] 
 run_version = "v" + datetime.now().strftime("%Y%m%d") # fixed for entire run
 cmor_missing = np.float32(1.0e20)
 
-### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE..
-
-for year in range(1980, 2027):  # put the years you want to process here
+for year in range(1980, 2026):  # put the years you want to process here
     inputFiles = glob.glob(f"{inputFilePath}/MERRA2_???.instM_2d_asm_Nx.{year}??.nc4.nc4")
     if len(inputFiles) == 0:
         continue
