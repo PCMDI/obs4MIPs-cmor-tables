@@ -5,14 +5,14 @@ import sys, os, glob
 import cftime
 from datetime import datetime
 from collections import defaultdict
-sys.path.append("../../../../misc") # Path to obs4MIPsLib used to trap provenance
+sys.path.append("../../../../inputs/misc") # Path to obs4MIPsLib used to trap provenance
 import obs4MIPsLib
 
 def has_bounds(ds, names):
     return any(n in ds.variables or n in ds.coords for n in names)
 
-freq = 'Amon' #'Amon' #'Aday'  #'A3hr'
-version = 'Past'  # 'Past'  #'Past-nogauge'  # 'NRT'
+freq = 'A3hr' #'Amon' #'Aday'  #'A3hr'
+version = 'Past-nogauge'  # 'Past'  #'Past-nogauge'
 
 if freq == 'Amon':
     avgp = 'Monthly'
@@ -22,13 +22,13 @@ elif freq == 'Aday':
     months = range(1,13)
 elif freq == 'A3hr':
     avgp = '3hourly'
-    months = range(1,13)
+    months = range(1,2)
 else:
     print("Please set freq!")
 
 
 #%% User provided input
-cmorTable = '../../../../../Tables/obs4MIPs_ATABLE.json'  #A3hr
+cmorTable = '../../../../Tables/obs4MIPs_ATABLE.json'
 cmorTable = cmorTable.replace('ATABLE',freq) 
 inputJson = f'MSWEP-V280-{version}_input.json' ; # Update contents of this file to set your global_attributes
 print(inputJson)
@@ -50,7 +50,6 @@ for year in range(1979,2021):  # put the years you want to process here
         else:
             files_by_month = defaultdict(list)
             for f in inputFiles_by_year:
-#               fname = os.path.basename(f)
                 YYYYjjj = datetime.strptime(os.path.basename(f)[:7], "%Y%j")
                 files_by_month[YYYYjjj.month].append(f)
             inputFiles = files_by_month[month]
@@ -101,7 +100,6 @@ for year in range(1979,2021):  # put the years you want to process here
         # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
         d_units = getattr(d, "units", "").lower()
         if "mm month-1" in d_units:
-            print(np.array([t.daysinmonth for t in d.time.values],dtype=np.float32))
             sec = np.array([t.daysinmonth * 86400.0 for t in d.time.values], dtype=np.float32)[:, None, None] 
             print("unit is "+"mm month-1")
         elif "mm d-1" in d_units:

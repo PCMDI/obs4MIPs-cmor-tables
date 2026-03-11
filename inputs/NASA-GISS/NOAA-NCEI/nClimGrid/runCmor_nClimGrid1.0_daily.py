@@ -4,14 +4,14 @@ import numpy as np
 import glob,os,sys
 import cftime
 from datetime import datetime
-sys.path.append("../../../../../inputs/misc/") # Path to obs4MIPsLib and code to fix times
+sys.path.append("../../../../inputs/misc/") # Path to obs4MIPsLib and code to fix times
 import obs4MIPsLib
 
 def has_bounds(ds, names):
     return any(n in ds.variables or n in ds.coords for n in names)
 
 #%% User provided input
-cmorTable = '../../../../../Tables/obs4MIPs_Aday.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+cmorTable = '../../../../Tables/obs4MIPs_Aday.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'nClimGrid_daily-input.json' ; # Update contents of this file to set your global_attributes
 inputFilePath = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/NOAA-NCEI/nClimGrid-Daily/grids' 
 inputVarName = ['prcp','tavg','tmax','tmin']
@@ -28,7 +28,7 @@ for fi in range(len(inputVarName)): #looping over varaibles
         if len(inputFiles) == 0:
             continue
 
-        f = xc.open_dataset(inputFiles, mask_and_scale=True, decode_times=True, use_cftime=True)
+        f = xc.open_mfdataset(inputFiles, mask_and_scale=True, decode_times=True, use_cftime=True)
         if not has_bounds(f, ["time_bnds", "time_bounds"]):
             f = f.bounds.add_bounds("T")
         if not has_bounds(f, ["lat_bnds", "lat_bounds"]):
