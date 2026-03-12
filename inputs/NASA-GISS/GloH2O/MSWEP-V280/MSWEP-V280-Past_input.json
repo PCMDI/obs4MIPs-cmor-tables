@@ -18,7 +18,7 @@
     "output_file_template":"<variable_id><frequency><source_id><variant_label><grid_label>",
     "output_path_template":"<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>",
     "product":"observations",
-    "references":"Beck, H. E., Wood, E. F., Pan, M., Fisher, C. K., Miralles, D. M., van Dijk, A. I. J. M., McVicar, T. R., and Adler, R. F. MSWEP V2 global 3-hourly 0.1 degree precipitation: methodology and quantitative assessment Bulletin of the American Meteorological Society 100(3), 473_500, 2019",
+    "references":"https://doi.org/10.1175/BAMS-D-17-0138.1",
     "source_data_retrieval_date":"20240207",
     "source_data_url":"https://www.gloh2o.org/mswep/",
     "source_id":"MSWEP-V280-Past",

@@ -20,6 +20,7 @@
     "output_path_template":"<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>",
     "product":"observations",
     "references":"Durre, Imke; Squires, Michael F.; Vose, Russell S.; Arguez, Anthony; Gross, Wendy S.; Rennie, Jared R.; Schreck, Carl J. (2022): NOAA nClimGrid-Daily Version 1 Daily gridded temperature and precipitation for the Contiguous United States since 1951. NOAA National Centers for Environmental Information. https://doi.org/10.25921/c4gt-r169",
+    "region":"north_america",
     "source_data_retrieval_date": "20210219; MAhn @ PCMDI",
     "source_data_url": "https://www.ncei.noaa.gov/products/land-based-station/nclimgrid-daily",
     "source_id":"nClimGrid-Daily-1-0",

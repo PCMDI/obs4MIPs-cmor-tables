@@ -18,6 +18,7 @@
     "output_file_template":"<variable_id><frequency><source_id><variant_label><grid_label>",
     "output_path_template":"<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>",
     "product":"observations",
+    "region": "north_america",
     "references":"https://www.prism.oregonstate.edu/documents/",
     "source_data_retrieval_date": "20230524; JL @ PCMDI",
     "source_data_url": "https://www.prism.oregonstate.edu/",
