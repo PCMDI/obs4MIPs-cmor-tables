@@ -625,7 +625,7 @@
             "valid_max":"",
             "valid_min":""
         },
-       "hus-plev42":{
+        "hus-plev42":{
             "cell_measures":"area: areacella",
             "cell_methods":"time: mean",
             "comment":"Specific humidity is the mass fraction of water vapor in (moist) air.",
@@ -1358,7 +1358,7 @@
             "valid_max":"",
             "valid_min":""
         },
-       "ta-plev42":{
+        "ta-plev42":{
             "cell_measures":"area: areacella",
             "cell_methods":"time: mean",
             "comment":"Air Temperature",
@@ -1588,7 +1588,7 @@
             "valid_max":"",
             "valid_min":""
         },
-       "ua-plev42":{
+        "ua-plev42":{
             "cell_measures":"area: areacella",
             "cell_methods":"time: mean",
             "comment":"Zonal wind (positive in a eastward direction).",
@@ -1606,7 +1606,7 @@
             "valid_max":"",
             "valid_min":""
         },
-	"uas":{
+        "uas":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: time: mean",
             "comment":"Eastward component of the near-surface (usually, 10 meters)  wind",
@@ -1660,7 +1660,7 @@
             "valid_max":"",
             "valid_min":""
         },
-       "va-plev42":{
+        "va-plev42":{
             "cell_measures":"area: areacella",
             "cell_methods":"time: mean",
             "comment":"Meridional wind (positive in a northward direction).",
@@ -1750,7 +1750,7 @@
             "valid_max":"",
             "valid_min":""
         },
-	"zg-plev42":{
+        "zg-plev42":{
             "cell_measures":"area: areacella",
             "cell_methods":"time: mean",
             "comment":"Geopotential is the sum of the specific gravitational potential energy relative to the geoid and the specific centripetal potential energy. Geopotential height is the geopotential divided by the standard acceleration due to gravity. It is numerically similar to the altitude (or geometric height) and not to the quantity with standard name height, which is relative to the surface.",
