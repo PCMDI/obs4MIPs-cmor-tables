@@ -46,4 +46,5 @@ institution_id['institution_id']['CMIP-IPO'] = 'CMIP International Project Offic
 institution_id['institution_id']['DoESS-UCI'] = 'Department of Earth System Science, University of California Irvine'
 institution_id['institution_id']['NCAS'] = 'National Centre for Atmospheric Science'
 institution_id['institution_id']['MOHC-CRU-NCAS'] = 'Joint research collaboration between MOHC(UK), CRU-UEA (UK) and NCAS (UK)'  
+institution_id['institution_id']['ENVEO'] = 'Environmental Earth Observation Information Technology GmbH, Innsbruck, Austria'
 
