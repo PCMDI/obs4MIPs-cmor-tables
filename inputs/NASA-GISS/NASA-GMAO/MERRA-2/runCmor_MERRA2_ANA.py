@@ -12,18 +12,15 @@ def has_bounds(ds, names):
 
 #%% User provided input
 cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx
-#inputJson = 'MERRA2-monthly-ana.json' ; # Update contents of this file to set your global_attributes
-inputJson = 'test-ana.json' ; # Update contents of this file to set your global_attributes
+inputJson = 'MERRA2-monthly-ana.json' ; # Update contents of this file to set your global_attributes
 inputFilePath = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/NASA-GMAO/MERRA-2/monthly/3d'
-inputVarName = ['T','U','V','H','QV','SLP']
-outputVarName = ['ta','ua','va','zg','hus','psl']  
-outputUnits = ['K','m s-1','m s-1','m','1','Pa'] 
+inputVarName = ['T','U','V','H','QV']
+outputVarName = ['ta','ua','va','zg','hus']  
+outputUnits = ['K','m s-1','m s-1','m','1'] 
 run_version = "v" + datetime.now().strftime("%Y%m%d") # fixed for entire run
 cmor_missing = np.float32(1.0e20)
 
-### BETTER IF THE USER DOES NOT CHANGE ANYTHING BELOW THIS LINE..
-
-for year in range(1980, 2027):  # put the years you want to process here
+for year in range(1980, 2026):  # put the years you want to process here
     inputFiles = glob.glob(f"{inputFilePath}/MERRA2_???.instM_3d_ana_Np.{year}??.nc4.nc4")
     if len(inputFiles) == 0:
         continue
@@ -50,6 +47,7 @@ for year in range(1980, 2027):  # put the years you want to process here
     time_bnds = cftime.date2num(f.get("time_bnds", f.get("time_bounds")).values, units=t_units, calendar=calendar).astype("float64")
 
     for fi in range(len(inputVarName)): #looping over varaibles
+        print(inputVarName[fi])
         d = f[inputVarName[fi]]
     
         #%% Initialize and run CMOR
@@ -60,17 +58,17 @@ for year in range(1980, 2027):  # put the years you want to process here
     
         axes = [
             {"table_entry": "time", "units": t_units},
+            {"table_entry": "plev42-MERRA2", "units": "Pa",
+             "coord_vals": lev},
             {"table_entry": "latitude", "units": "degrees_north",
              "coord_vals": lat, "cell_bounds": lat_bnds},
             {"table_entry": "longitude", "units": "degrees_east",
              "coord_vals": lon, "cell_bounds": lon_bnds},
-            {"table_entry": "plev42-MERRA2", "units": "Pa",
-             "coord_vals": lev},
         ]
-        axisIds = [cmor.axis(**ax) for ax in (axes[:-1] if (outputVarName[fi] == "psl") else axes)]
+        axisIds = [cmor.axis(**ax) for ax in axes]
     
         # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-        varid = cmor.variable(outputVarName[fi],outputUnits[fi],axisIds,missing_value=cmor_missing)
+        varid = cmor.variable(outputVarName[fi] + '-plev42',outputUnits[fi],axisIds,missing_value=cmor_missing)
         values = np.array(d.values,np.float32)
         fill = getattr(d, "_FillValue", None)
         mask = ~np.isfinite(values) | (values == fill)

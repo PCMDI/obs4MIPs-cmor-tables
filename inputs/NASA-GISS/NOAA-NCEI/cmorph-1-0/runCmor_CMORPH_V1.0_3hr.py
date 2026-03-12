@@ -6,7 +6,7 @@ import os
 import sys
 import cftime
 from datetime import datetime
-sys.path.append("../../../../../inputs/misc/") # Path to obs4MIPsLib
+sys.path.append("../../../../inputs/misc/") # Path to obs4MIPsLib
 import obs4MIPsLib
 
 def has_bounds(ds, names):
@@ -16,7 +16,7 @@ targetgrid = 'orig'
 #targetgrid = '2deg'
 
 #%% User provided input
-cmorTable = '../../../../../Tables/obs4MIPs_A3hr.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+cmorTable = '../../../../Tables/obs4MIPs_A3hr.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 if targetgrid == 'orig':
   inputJson = 'CMORPH_V1.0_3hr-input.json' ;
   subdir = '3hr.center/'
