@@ -35,7 +35,7 @@ run_version = "v" + datetime.now().strftime("%Y%m%d") # fixed for entire run
 cmor_missing = np.float32(1.0e20)
 
 for year in range(2001, 2020):  # put the years you want to process here
-   for month in range(1, 13):
+    for month in range(1, 13):
         inputFiles = glob.glob(f"{inputFilePath}/CMORPH_v1.0_0.25deg_3hr_{year}{month:02}.nc")
         if len(inputFiles) == 0:
             continue
