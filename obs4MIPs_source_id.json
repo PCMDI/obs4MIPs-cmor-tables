@@ -2136,6 +2136,22 @@
             ],
             "source_version_number":"6.6.0"
         },
+         "RSS-PRW-v07r00":{
+            "institution_id":"RSS",
+            "region":[
+                "global"
+            ],
+            "release_year":"2017",
+            "source_description":"RSS-PRW 7.0 (2018): Water Vapor Path",
+            "source_id":"RSS-PRW-v07r00",
+            "source_label":"RSS-PRW",
+            "source_name":"RSS-PRW",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "prw"
+            ],
+            "source_version_number":"7.0"
+        },
         "RSS-PRW-v07r01":{
             "institution_id":"RSS",
             "region":[
