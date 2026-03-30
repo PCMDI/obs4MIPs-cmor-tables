@@ -768,6 +768,22 @@
             ],
             "source_version_number":"2.0"
         },
+        "ESACCI-SCFG-MODIS-v4-0":{
+            "institution_id":"ENVEO",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2025",
+            "source_description":"Snow Cover Fraction on Ground (SCFG) derived from Terra MODIS data from the ESA SNOW CCI Climate Data Record version 4.0",
+            "source_label":"ESACCI-SCFG-MODIS",
+            "source_name":"ESACCI-SCFG-MODIS",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "sncfg",
+                "sncfv"
+            ],
+            "source_version_number":"v4-0"
+        },
         "FLUXNET2015-1-0":{
             "institution_id":"FLUXNET",
             "region":[
@@ -2136,7 +2152,7 @@
             ],
             "source_version_number":"6.6.0"
         },
-         "RSS-PRW-v07r00":{
+        "RSS-PRW-v07r00":{
             "institution_id":"RSS",
             "region":[
                 "global"
