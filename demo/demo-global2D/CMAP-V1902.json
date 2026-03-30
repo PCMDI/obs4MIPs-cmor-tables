@@ -1,10 +1,10 @@
 {
-    "#comment":"The following are CMOR internal settings and should not be edited by the user",
+    "#comment":"THE FOLLOWING ARE CMOR SETTINGS SPECIFIED FOR OBS4MIPS THAT SHOULD NOT BE EDITED BY THE USER",
     "_AXIS_ENTRY_FILE":"obs4MIPs_coordinate.json",
     "_FORMULA_VAR_FILE":"obs4MIPs_formula_terms.json",
     "_controlled_vocabulary_file":"obs4MIPs_CV.json",
-    "_further_info_url_tmpl":".",
     "activity_id":"obs4MIPs",
+    "#comment":"THE INFORMATION BELOW CAN BE EDITED BY THE USER",
     "calendar":"standard",
     "comment":"",
     "contact":"pingping.Xie@noaa.gov, obs4mips-panel@wcrp-cmip.org",
@@ -27,5 +27,5 @@
     "source_data_url": "https://www.esrl.noaa.gov/psd/data/gridded/data.cmap.html",
     "source_data_retrieval_date": "20190219",
     "dataset_contriubtor": "20190219; PJG @ PCMDI",
-    "has_aux_unc":false
+    "has_aux_unc":"FALSE"
 }
