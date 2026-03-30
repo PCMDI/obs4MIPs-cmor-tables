@@ -25,3 +25,15 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_type'] = 'reanalysis'
 source_id['source_id'][key]['source_variables'] = ['psl','tas','uas','vas','huss','ua','va','ta','zg','hus']
 
+key = 'ESACCI-SCFG-MODIS-v4-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'ESACCI-SCFG-MODIS'
+source_id['source_id'][key]['source_label'] = 'ESACCI-SCFG-MODIS'
+source_id['source_id'][key]['release_year'] = '2025'
+source_id['source_id'][key]['source_description'] = 'Snow Cover Fraction on Ground (SCFG) derived from Terra MODIS data from the ESA SNOW CCI Climate Data Record version 4.0'
+source_id['source_id'][key]['source_version_number'] = 'v4-0'
+source_id['source_id'][key]['institution_id'] = 'ENVEO'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] = ['sncfv','sncfg']
+

@@ -1850,6 +1850,12 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
             },
+            "ESACCI-SCFG-MODIS-v4-0":{
+                "region":"global_land",
+                "source":"ESACCI-SCFG-MODIS v4-0 (2025): Snow Cover Fraction on Ground (SCFG) derived from Terra MODIS data from the ESA SNOW CCI Climate Data Record version 4.0",
+                "source_type":"satellite_blended",
+                "source_version_number":"v4-0"
+            },
             "FLUXNET2015-1-0":{
                 "region":"global_land",
                 "source":"FLUXNET2015 1.0 (2020): FLUXNET Community Product",
@@ -2365,6 +2371,12 @@
                 "source":"RSS-PRW 6.6.0 (2017): RSS-PRW 6.6.0 (2017): Water Vapor Path",
                 "source_type":"satellite_blended",
                 "source_version_number":"6.6.0"
+            },
+            "RSS-PRW-v07r00":{
+                "region":"global",
+                "source":"RSS-PRW 7.0 (2017): RSS-PRW 7.0 (2018): Water Vapor Path",
+                "source_type":"satellite_blended",
+                "source_version_number":"7.0"
             },
             "RSS-PRW-v07r01":{
                 "region":"global",
