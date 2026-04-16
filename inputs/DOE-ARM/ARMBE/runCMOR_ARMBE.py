@@ -31,7 +31,7 @@ vrs = ['precip_rate_sfc','temperature_sfc','u_wind_sfc','v_wind_sfc','relative_h
 # 3D vars
 #vrs = ['u_wind_p','v_wind_p', 'temperature_p', 'relative_humidity_p']
 
-vrs = ['precip_rate_sfc']
+#vrs = ['precip_rate_sfc']
 
 for vr in vrs:
   print(vr)
@@ -113,6 +113,7 @@ for vr in vrs:
     jdic = json.load(j)
     site_id = jdic['site_id']
     cmor.set_cur_dataset_attribute("grid_label","site-"+ site_id)
+    cmor.set_cur_dataset_attribute("site_id","site-"+ site_id)
 
 # cftime.date2num(tdc,tunits)
 # cmorLat = cmor.axis("latitude1", coord_vals=np.array([lat]), units="degrees_north")

@@ -3,11 +3,14 @@ import numpy as np
 import xcdat as xc
 import xarray as xr
 import json
-import sys
+import sys,os
 import cftime
 
 sys.path.append("../../../misc/")
 from fix_dataset_time import monthly_times
+
+sys.path.append("../../../../inputs/misc/") # Path to obs4MIPsLib
+import obs4MIPsLib
 
 #%% User provided input
 cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
@@ -57,6 +60,12 @@ for fi in range(len(inputVarName)):
  cmorTime = cmor.axis("time", coord_vals=time_adj[:], cell_bounds=time_bounds_adj, units=tunits)
 #cmorTime = cmor.axis("time", coord_vals=time_adj[:], cell_bounds=cftime.date2num(time,tunits), units=tunits)
  cmoraxes = [cmorTime,cmorLat, cmorLon]
+
+# Provenance info
+ git_commit_number = obs4MIPsLib.get_git_revision_hash()
+ path_to_code = os.getcwd().split('obs4MIPs-cmor-tables')[1]
+ full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{git_commit_number}/{path_to_code.lstrip('/')}"
+ cmor.set_cur_dataset_attribute("processing_code_location",f"{full_git_path}")
 
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
  varid   = cmor.variable(outputVarName[fi],outputUnits[fi],cmoraxes,missing_value=1.e20)
