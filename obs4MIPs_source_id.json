@@ -1067,6 +1067,38 @@
             ],
             "source_version_number":"6.0"
         },
+        "GSMaP-v4":{
+            "institution_id":"JAXA",
+            "region":[
+                "global"
+            ],
+            "release_year":"2017",
+            "source_description":"JAXA GSMAP",
+            "source_id":"GSMaP-v4",
+            "source_label":"GSMAP",
+            "source_name":"GSMAP",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"v4"
+        },
+        "GSMaP-v5":{
+            "institution_id":"JAXA",
+            "region":[
+                "global"
+            ],
+            "release_year":"2017",
+            "source_description":"JAXA GSMAP",
+            "source_id":"GSMaP-v5",
+            "source_label":"GSMAP",
+            "source_name":"GSMAP",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"v5"
+        },        
         "HOFFMAN-1-0":{
             "institution_id":"UCI-ORNL",
             "region":[
