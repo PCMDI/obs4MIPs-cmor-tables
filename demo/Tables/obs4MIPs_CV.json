@@ -1964,6 +1964,18 @@
                 "source_type":"satellite_blended",
                 "source_version_number":"6.0"
             },
+            "GSMaP-v4":{
+                "region":"global",
+                "source":"GSMAP v4 (2017): JAXA GSMAP",
+                "source_type":"satellite_blended",
+                "source_version_number":"v4"
+            },
+            "GSMaP-v5":{
+                "region":"global",
+                "source":"GSMAP v5 (2017): JAXA GSMAP",
+                "source_type":"satellite_blended",
+                "source_version_number":"v5"
+            },
             "HOFFMAN-1-0":{
                 "region":"global",
                 "source":"HOFFMAN 1.0 (2014): Carbon Mass Flux Out Of Atmosphere Due To Net Biospheric Production On Land, Surface Downward Mass Flux of Carbon As CO2",
