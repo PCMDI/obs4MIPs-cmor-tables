@@ -13,19 +13,19 @@ sys.path.append("../../../../inputs/misc/") # Path to obs4MIPsLib
 import obs4MIPsLib
 
 #%% User provided input
-cmorTable = '../../../../Tables/obs4MIPs_Amon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
+cmorTable = '../../../../Tables/obs4MIPs_Omon.json' ; # Aday,Amon,Lmon,Omon,SImon,fx,monNobs,monStderr - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = 'HadISSTv1.1.json' ; # Update contents of this file to set your global_attributes
 inputFilePathbgn = '/global/cfs/projectdirs/m4581/obs4MIPs/obs4MIPs_input/MOHC/HadISST1-1-PJG/'
 inputFileName = ['HadISST_sst.nc']  
 inputVarName = ['sst']
-outputVarName = ['ts']
-outputUnits = ['K']
+outputVarName = ['tosanom']
+outputUnits = ['degC']
 
 for fi in range(len(inputVarName)):
  inputFilePath = inputFilePathbgn
  f = xr.open_dataset(inputFilePath+inputFileName[fi],decode_times=True,decode_cf=True)
  d = f[inputVarName[fi]] 
- d = d + 273.15
+#d = d + 273.15
  d = np.where(np.less(d,-100),1.e20,d)
  d = np.where(np.isnan(d),1.e20,d)
 

@@ -4658,6 +4658,24 @@
             "valid_max":"",
             "valid_min":""
         },
+        "tosanom":{
+            "cell_measures":"area: areacello",
+            "cell_methods":"area: mean where sea time: mean",
+            "comment":"Temperature anomaly of upper boundary of the liquid ocean, including temperatures below sea-ice and floating ice shelves.",
+            "dimensions":"longitude latitude time",
+            "frequency":"mon",
+            "long_name":"Sea Surface Temperature Anomaly",
+            "modeling_realm":"ocean",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"tosanom",
+            "positive":"",
+            "standard_name":"sea_surface_temperature",
+            "type":"real",
+            "units":"degC",
+            "valid_max":"",
+            "valid_min":""
+        },
         "tosga":{
             "cell_measures":"",
             "cell_methods":"area: mean where sea time: mean",
