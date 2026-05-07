@@ -2657,6 +2657,23 @@
                 "tasmin"
             ],
             "source_version_number":"1.0"
+         },
+        "WOA2023":{
+            "institution_id":"NOAA-NCEI-OCL",
+            "region":[
+                "global_ocean"
+            ],
+            "release_year":"2023",
+            "source_description":"World Ocean Atlas 2023: sea_water_potential_temperature, sea_water_salinity, January, 1.00 degree",
+            "source_id":"WOA2023",
+            "source_label":"WOA",
+            "source_name":"WOA2023",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "so",
+                "thetao"
+            ],
+            "source_version_number":"1.0"
         },
         "wang2024-cSoil-v2":{
             "institution_id":"EmoryU",
