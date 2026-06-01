@@ -13,6 +13,18 @@ source_id['source_id'][key]['region'] = ['global_ocean']
 source_id['source_id'][key]['source_type'] = 'satellite_blended'
 source_id['source_id'][key]['source_variables'] = ['tos']
 
+key = 'ESACCI-PREC-L3C-NO2'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'ESACCI-PREC-L3C-NO2'
+source_id['source_id'][key]['source_label'] = 'ESACCI-PREC-L3C-NO2'
+source_id['source_id'][key]['release_year'] = '2021'
+source_id['source_id'][key]['source_description'] = 'Total and tropospheric nitrogen dioxide (NO2) column number density in the context of ESA CCI+ precursors for aerosols and ozone project'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'KNMI-WUR'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] = ['tcno2','tcrno2']
+
 key = 'MERRA-2'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'MERRA'

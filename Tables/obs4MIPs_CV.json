@@ -108,6 +108,8 @@
             "INCOIS-NIO-IPSL":"Joint research colloboration between INCOIS(India), NIO(India) and IPSL(France)",
             "ImperialCollege":"Imperial College, London, UK",
             "JAXA":"The Japan Aerospace Exploration Agency",
+            "KNMI":"Royal Netherlands Meteorological Institute",
+            "KNMI-WUR":"Multi-institute/agency collaboration",
             "MET-Norway":"Norwegian Meteorological Institute",
             "MOHC":"Met Office Hadley Centre",
             "MOHC-CRU-NCAS":"Joint research collaboration between MOHC(UK), CRU-UEA (UK) and NCAS (UK)",
@@ -131,7 +133,8 @@
             "UCI-CHRS":"Center for Hydrometeorology and Remote Sensing",
             "UCSD-SIO":"University of California, San Diego, Scripps Institution of Oceanography",
             "UReading":"University of Reading, Reading, UK",
-            "UW":"University of Washington, USA"
+            "UW":"University of Washington, USA",
+            "WUR":"Wageningen Universit, Netherlands"
         },
         "license":"Data in this file produced by <Your Centre Name> is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Use of the data must be acknowledged following guidelines found at <a URL maintained by you>. Further information about this data, including some limitations, can be found via <some URL maintained by you>.",
         "nominal_resolution":[
@@ -1849,6 +1852,12 @@
                 "source":"ESACCI-CLOUD-MERIS-AATSR 2.0 (2017): Cloud properties derived from MERIS and AATSR (aboard ENVISAT) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"2.0"
+            },
+            "ESACCI-PREC-L3C-NO2":{
+                "region":"global",
+                "source":"ESACCI-PREC-L3C-NO2 1.0 (2021): Total and tropospheric nitrogen dioxide (NO2) column number density in the context of ESA CCI+ precursors for aerosols and ozone project",
+                "source_type":"satellite_blended",
+                "source_version_number":"1.0"
             },
             "ESACCI-SCFG-MODIS-v4-0":{
                 "region":"global_land",
