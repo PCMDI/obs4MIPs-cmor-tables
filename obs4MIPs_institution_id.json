@@ -22,6 +22,8 @@
         "INCOIS-NIO-IPSL":"Joint research colloboration between INCOIS(India), NIO(India) and IPSL(France)",
         "ImperialCollege":"Imperial College, London, UK",
         "JAXA":"The Japan Aerospace Exploration Agency",
+        "KNMI":"Royal Netherlands Meteorological Institute",
+        "KNMI-WUR":"Multi-institute/agency collaboration",
         "MET-Norway":"Norwegian Meteorological Institute",
         "MOHC":"Met Office Hadley Centre",
         "MOHC-CRU-NCAS":"Joint research collaboration between MOHC(UK), CRU-UEA (UK) and NCAS (UK)",
@@ -45,6 +47,7 @@
         "UCI-CHRS":"Center for Hydrometeorology and Remote Sensing",
         "UCSD-SIO":"University of California, San Diego, Scripps Institution of Oceanography",
         "UReading":"University of Reading, Reading, UK",
-        "UW":"University of Washington, USA"
+        "UW":"University of Washington, USA",
+        "WUR":"Wageningen Universit, Netherlands"
     }
 }
