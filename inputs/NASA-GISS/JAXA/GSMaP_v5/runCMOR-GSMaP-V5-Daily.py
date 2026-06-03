@@ -1,5 +1,6 @@
 import cmor
 import xcdat as xc
+import xarray as xr
 import numpy as np
 import glob
 import os
@@ -24,7 +25,7 @@ outputUnits = 'kg m-2 s-1'
 run_version = "v" + datetime.now().strftime("%Y%m%d") # fixed for entire run
 cmor_missing = np.float32(1.0e20)
 
-for year in range(1998,2027):  # put the years you want to process here
+for year in range(2007,2008):  # put the years you want to process here
     inputFiles = glob.glob(f"{inputFilePath}/{year}/{year}????.nc")
     if len(inputFiles) == 0:
         continue
@@ -33,6 +34,15 @@ for year in range(1998,2027):  # put the years you want to process here
     # Process variable (with time axis)
     inputFiles.sort()
     f = xc.open_mfdataset(inputFiles, mask_and_scale=True, decode_times=True, use_cftime=True, combine='nested', concat_dim='time')
+    full_time = xr.date_range(
+        start=f.time.values[0],
+        end=f.time.values[-1],
+        freq="D",
+        use_cftime=True
+    )
+
+    f = f.reindex(time=full_time)
+
     if not has_bounds(f, ["time_bnds", "time_bounds"]):
         f = f.bounds.add_bounds("T")
     if not has_bounds(f, ["lat_bnds", "lat_bounds"]):
