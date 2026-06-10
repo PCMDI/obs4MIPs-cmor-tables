@@ -37,6 +37,18 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_type'] = 'reanalysis'
 source_id['source_id'][key]['source_variables'] = ['psl','tas','uas','vas','huss','ua','va','ta','zg','hus']
 
+key = 'JRA-3Q'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'JRA'
+source_id['source_id'][key]['source_label'] = 'JRA'
+source_id['source_id'][key]['release_year'] = '2025'
+source_id['source_id'][key]['source_description'] = 'Japanese Reanalysis for Three Quarters of a Century' 
+source_id['source_id'][key]['source_version_number'] = '3Q'
+source_id['source_id'][key]['institution_id'] = 'JMA'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'reanalysis'
+source_id['source_id'][key]['source_variables'] = ['psl','tas','uas','vas','huss','ua','va','ta','zg','hus']
+
 key = 'ESACCI-SCFG-MODIS-v4-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'ESACCI-SCFG-MODIS'
