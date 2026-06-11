@@ -1418,6 +1418,30 @@
             ],
             "source_version_number":"1-0"
         },
+        "JRA-3Q":{
+            "institution_id":"JMA",
+            "region":[
+                "global"
+            ],
+            "release_year":"2025",
+            "source_description":"Japanese Reanalysis for Three Quarters of a Century",
+            "source_label":"JRA",
+            "source_name":"JRA",
+            "source_type":"reanalysis",
+            "source_variables":[
+                "hus",
+                "huss",
+                "psl",
+                "ta",
+                "tas",
+                "ua",
+                "uas",
+                "va",
+                "vas",
+                "zg"
+            ],
+            "source_version_number":"3Q"
+        },
         "JRA25":{
             "institution_id":"MRI",
             "region":[

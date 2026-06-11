@@ -108,6 +108,7 @@
             "INCOIS-NIO-IPSL":"Joint research colloboration between INCOIS(India), NIO(India) and IPSL(France)",
             "ImperialCollege":"Imperial College, London, UK",
             "JAXA":"The Japan Aerospace Exploration Agency",
+            "JMA":"Japanese Meterorological Agency",
             "KNMI":"Royal Netherlands Meteorological Institute",
             "KNMI-WUR":"Multi-institute/agency collaboration",
             "MET-Norway":"Norwegian Meteorological Institute",
@@ -2098,6 +2099,12 @@
                 "source":"JASMES Snow Cover 1-0 (2024): Global daily surface snow area fraction derived from merged satellite observations using a consistent objective snow cover mapping algorithm applied to multiple generations of optical sensors since 1978.",
                 "source_type":"satellite_blended",
                 "source_version_number":"1-0"
+            },
+            "JRA-3Q":{
+                "region":"global",
+                "source":"JRA 3Q (2025): Japanese Reanalysis for Three Quarters of a Century",
+                "source_type":"reanalysis",
+                "source_version_number":"3Q"
             },
             "JRA25":{
                 "region":"global",

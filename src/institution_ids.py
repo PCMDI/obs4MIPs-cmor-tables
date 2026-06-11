@@ -26,6 +26,7 @@ institution_id['institution_id']['ImperialCollege'] = 'Imperial College, London,
 institution_id['institution_id']['UReading'] = 'University of Reading, Reading, UK'
 institution_id['institution_id']['UW'] = 'University of Washington, USA'
 institution_id['institution_id']['JAXA'] = 'The Japan Aerospace Exploration Agency'
+institution_id['institution_id']['JMA'] = 'Japanese Meterorological Agency'
 institution_id['institution_id']['UCI-CHRS'] = 'Center for Hydrometeorology and Remote Sensing'
 institution_id['institution_id']['DLR-BIRA'] = 'Deutsches Zentrum fur Luft- und Raumfahrt, Royal Belgian Institute for Space Aeronomy'
 institution_id['institution_id']['UCSD-SIO'] = 'University of California, San Diego, Scripps Institution of Oceanography'
