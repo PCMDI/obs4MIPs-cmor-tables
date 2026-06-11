@@ -679,13 +679,13 @@
             "valid_max":"",
             "valid_min":""
         },
-        "hussanom":{
+        "hussanom-MOHC":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: time: mean",
             "comment":"Near-surface (usually, 2 meter) specific humidity anomaly.",
             "dimensions":"longitude latitude time height2m",
             "frequency":"mon",
-            "long_name":"Near-Surface Specific Humidity Anomaly",
+            "long_name":"Near-Surface Specific Humidity Anomaly from 1961-1990 climatology",
             "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
@@ -697,6 +697,24 @@
             "valid_max":"",
             "valid_min":""
         },
+        "tastosanom-MOHC":{
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: time: mean",
+            "comment":"SST (ocean) merged with land surface air temperature (2m) anomaly from 1961-1990 climatology",
+            "dimensions":"longitude latitude time",
+            "frequency":"mon",
+            "long_name":"Land and Ocean Temperature Anomaly",
+            "modeling_realm":"atmos",
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"tastosanomanom",
+            "positive":"",
+            "standard_name":"surface_temperature_anomaly",
+            "type":"real",
+            "units":"1",
+            "valid_max":"",
+            "valid_min":""
+        },        
         "lwp":{
             "cell_measures":"area: areacella",
             "cell_methods":"area: time: mean",
