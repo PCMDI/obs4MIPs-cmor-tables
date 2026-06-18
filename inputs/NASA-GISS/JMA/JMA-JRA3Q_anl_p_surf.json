@@ -9,7 +9,7 @@
     "dataset_contributor":"Jingbo Wu",
     "doi":"10.5065/PH0D-MH18",
     "grid":"960x480 regular Gaussian grid (N240)",
-    "grid_label":"gr",
+    "grid_label":"gn",
     "has_aux_unc":"FALSE",
     "_history_template":"%s; CMOR rewrote data to be consistent with <activity_id>, and <Conventions> standards",
     "institution_id":"JMA",
