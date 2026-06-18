@@ -1901,7 +1901,7 @@
             "z_bounds_factors":"",
             "z_factors":""
         },
-       "plev45-JRA3Q":{
+        "plev45-JRA3Q":{
             "axis":"Z",
             "bounds_values":"",
             "climatology":"",
@@ -1969,7 +1969,7 @@
             "value":"",
             "z_bounds_factors":"",
             "z_factors":""
-         },
+        },
         "plev7c":{
             "axis":"Z",
             "bounds_values":"",
