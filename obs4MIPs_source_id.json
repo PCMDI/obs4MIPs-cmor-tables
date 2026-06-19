@@ -2598,13 +2598,16 @@
                 "europe"
             ],
             "release_year":"2025",
-            "source_description":"WegenerNet Climate Station Network",
+            "source_description":"WegenerNet Climate Station Network level 2 data (hourly aggregates)",
             "source_label":"WNCSN",
-            "source_name":"WNCSN",
+            "source_name":"WegenerNet Climate Station Network level 2 data (hourly aggregates)",
             "source_type":"insitu",
             "source_variables":[
-                "so",
-                "thetao"
+                "tas",
+                "hurs",
+                "pr",
+                "uas",
+                "vas"
             ],
             "source_version_number":"8.0"
         },
