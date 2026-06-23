@@ -1,6 +1,30 @@
 source_id = {}
 source_id['source_id'] = {}
 
+key = '20CR-V3'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = '20CR'
+source_id['source_id'][key]['source_label'] = '20CR'
+source_id['source_id'][key]['release_year'] = '2019'
+source_id['source_id'][key]['source_description'] = 'Monthly NOAA/CIRES/DOE 20th Century Reanalysis V3'
+source_id['source_id'][key]['source_version_number'] = 'V3'
+source_id['source_id'][key]['institution_id'] = 'NOAA-ESRL-PSD'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'reanalysis'
+source_id['source_id'][key]['source_variables'] = ['psl','tas']
+
+key = 'CHIRPS-V3'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'CHIRPS'
+source_id['source_id'][key]['source_label'] = 'CHIRPS'
+source_id['source_id'][key]['release_year'] = '2025'
+source_id['source_id'][key]['source_description'] = 'CHIRPS Version 3.0'
+source_id['source_id'][key]['source_version_number'] = 'V3'
+source_id['source_id'][key]['institution_id'] = 'UCSB-CHC'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] = ['pr']
+
 key = 'NOAA-NCEI-OISST-v2-1'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'NOAA-NCEI OISST v2.1'
