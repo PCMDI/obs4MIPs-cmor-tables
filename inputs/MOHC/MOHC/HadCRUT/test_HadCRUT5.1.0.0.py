@@ -12,7 +12,7 @@ import urllib.request
 import tempfile
 import xarray as xr
 
-sys.path.append("../../../misc")
+sys.path.append("../../../misc")  # Path to obs4MIPsLib used to trap provenance
 
 # ── Dataset-specific settings (update these for a different dataset) ───────────
 cmorTable     = '../../../../Tables/obs4MIPs_Amon.json'
@@ -20,7 +20,7 @@ cvTable       = '../../../../Tables/obs4MIPs_CV.json'
 inputJson     = 'HadCRUT5.1.0.0.json'
 inputVarName  = 'tas_mean'
 outputVarName = 'tastosanom-MOHC'
-sourceURL     = 'https://www.metoffice.gov.uk/hadobs/hadcrut5/data/HadCRUT.5.1.0.0/analysis/HadCRUT.5.1.0.0.analysis.anomalies.ensemble_mean.nc'
+sourceURL     = 'https://www.metoffice.gov.uk/hadobs/hadcrut5/data/HadCRUT.5.1.0.0/analysis/HadCRUT.5.1.0.0.analysis.anomalies.ensemble_mean.nc'  # Also set in runCMOR_HadCRUT5.1.0.0.py — update both if URL changes
 
 PASS = "\033[92mPASS\033[0m"
 FAIL = "\033[91mFAIL\033[0m"
