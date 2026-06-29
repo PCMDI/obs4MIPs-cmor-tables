@@ -132,6 +132,7 @@
             "RSS":"Remote Sensing Systems, Santa Rosa, CA USA",
             "UAH":"University of Alcala, Spain",
             "UCI-CHRS":"Center for Hydrometeorology and Remote Sensing",
+            "UCSB-CHC":"University of California, Santa Barbara, Climate Hazards Center",
             "UCSD-SIO":"University of California, San Diego, Scripps Institution of Oceanography",
             "UReading":"University of Reading, Reading, UK",
             "UW":"University of Washington, USA",
@@ -1614,6 +1615,12 @@
                 "source_type":"reanalysis",
                 "source_version_number":"V2"
             },
+            "20CR-V3":{
+                "region":"global",
+                "source":"20CR V3 (2019): Monthly NOAA/CIRES/DOE 20th Century Reanalysis V3",
+                "source_type":"reanalysis",
+                "source_version_number":"V3"
+            },
             "AI-upscaling-cSoil-1-0":{
                 "region":"contiguous_united_states",
                 "source":"AI-upscaling-cSoil 1 (2024): Upscaling soil organic carbon measurements at the continental scale using multivariate clustering analysis and machine learning",
@@ -1721,6 +1728,12 @@
                 "source":"CERES-EBAF4-2 4.2.1 (2025): CERES EBAF (Energy Balanced and Filled) TOA Fluxes. Monthly Averages",
                 "source_type":"satellite_blended",
                 "source_version_number":"4.2.1"
+            },
+            "CHIRPS-V3":{
+                "region":"global_land",
+                "source":"CHIRPS V3 (2025): CHIRPS Version 3.0",
+                "source_type":"satellite_blended",
+                "source_version_number":"V3"
             },
             "CMAP-V1902":{
                 "region":"global",
