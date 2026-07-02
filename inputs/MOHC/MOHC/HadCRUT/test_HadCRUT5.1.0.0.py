@@ -432,14 +432,14 @@ try:
             check(f"Longitude values are within a recognised convention ({convention})",
                   _lon_ok,
                   f"Values outside expected range: min={lon_vals.min():.2f}, max={lon_vals.max():.2f}",
-                  disposition="[CMOR: WILL CHECK] - CMOR accepts both conventions")
+                  disposition="[CMOR: WILL CHECK] - source convention accepted as input")
             if uses_neg180:
-                warn(f"Longitude convention is -180→180 (first={lon_vals[0]:.2f}°, last={lon_vals[-1]:.2f}°); "
-                     f"obs4MIPs datasets typically use 0→360",
-                     "This is not a blocker — CMOR will write whatever convention the axis provides. "
-                     "However, verify that obs4MIPs downstream tools expect -180→180 for this product. "
-                     "If 0→360 is required, the axis values must be shifted before the CMOR write step.",
-                     disposition="[MANUAL FIX NEEDED] if downstream tools expect 0→360")
+                info(f"Source longitude convention is -180→180 (first={lon_vals[0]:.2f}°, last={lon_vals[-1]:.2f}°)",
+                     "CMOR will convert to 0→360 in the output",
+                     disposition="[CMOR: WILL CHANGE] - obs4MIPs_coordinate.json requires valid_min=0.0/"
+                                  "valid_max=360.0 with stored_direction='increasing'; CMOR offsets negative "
+                                  "longitudes by +360 and re-sorts the data accordingly (confirmed empirically: "
+                                  "-180→180 source is written as 2.5...357.5 in the output). No manual action needed.")
 
             lon_diffs        = np.diff(lon_vals)
             lon_unique_diffs = np.unique(np.round(lon_diffs, 4))
@@ -600,10 +600,11 @@ runCMOR_HadCRUT5.1.0.0.py. Items are grouped by who is responsible.
      or the early record. Inspect the specific cells exceeding ±15 K to
      confirm they are not erroneous. The CMOR table currently has no
      valid_min/valid_max to catch outliers automatically.
- 17. LONGITUDE CONVENTION: source uses -180→180, not 0→360. CMOR will
-     write whatever the axis provides. Verify that obs4MIPs downstream
-     tools and conventions accept -180→180 for this product. If 0→360
-     is required, shift the longitude axis values before the CMOR write.
+ 17. LONGITUDE CONVENTION: source uses -180→180, not 0→360. No action
+     needed — obs4MIPs_coordinate.json requires the longitude axis to be
+     0→360 (valid_min=0.0, valid_max=360.0, stored_direction=increasing)
+     and CMOR converts and re-sorts the data automatically. Confirmed on
+     actual output: source -180→180 is written as 2.5...357.5 (0→360).
  18. DTYPE: source is float64; runCMOR casts to float32. Measured max
      precision loss is 7.2e-7 K (sub-mK) — scientifically negligible.
  19. BOUNDS: lat, lon and time bounds are all present in the source

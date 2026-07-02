@@ -158,8 +158,13 @@ check("'lon' coordinate present", 'lon' in ds.coords,
 if 'lon' in ds.coords:
     lon = ds['lon'].values
     info("lon", f"{len(lon)} values,  {lon.min():.2f} to {lon.max():.2f} degrees_east")
-    check(f"  'lon' range within [-180, 360]  (got {lon.min():.2f} to {lon.max():.2f})",
-          lon.min() >= -180 and lon.max() <= 360)
+    # obs4MIPs_coordinate.json requires longitude valid_min=0.0/valid_max=360.0 with
+    # stored_direction='increasing'. CMOR converts any -180->180 source into this
+    # 0->360 convention and re-sorts the data accordingly, so the output must always
+    # be in this range regardless of the source convention.
+    check(f"  'lon' range within [0, 360]  (got {lon.min():.2f} to {lon.max():.2f})",
+          lon.min() >= -1e-6 and lon.max() <= 360 + 1e-6,
+          "CMOR should have converted the source -180->180 longitude to 0->360")
     check(f"  'lon' is monotonically increasing",
           bool(np.all(np.diff(lon) > 0)),
           f"Min step: {np.diff(lon).min():.3f}")
@@ -173,6 +178,8 @@ if 'lon' in ds.coords:
         check(f"  'lon_bnds' contiguous: upper[t] == lower[t+1]",
               bool(np.allclose(lonb[1:, 0], lonb[:-1, 1])),
               f"Max gap: {np.max(np.abs(lonb[1:,0] - lonb[:-1,1])):.6f}")
+        check(f"  'lon_bnds' span [0, 360]  (got {lonb.min():.3f} to {lonb.max():.3f})",
+              np.isclose(lonb.min(), 0, atol=0.01) and np.isclose(lonb.max(), 360, atol=0.01))
 
 # Time
 check("'time' coordinate present", 'time' in ds.coords)
