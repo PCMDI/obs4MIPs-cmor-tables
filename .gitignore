@@ -8,3 +8,6 @@ __pycache__/
 *.py~
 *.swp
 demo/demo
+
+# Local cache of downloaded HadCRUT5 ensemble-member zips (~6.5GB, re-downloaded on demand)
+inputs/MOHC/MOHC/HadCRUT-ensembles/_raw_zips/
