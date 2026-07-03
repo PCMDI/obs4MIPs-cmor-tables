@@ -216,6 +216,36 @@
             ],
             "source_version_number":"9.0"
         },
+        "C3S-XCH4-v4-6": {
+            "institution_id": "IUP-UB",
+            "region": [
+                "global"
+            ],
+            "release_year": "2024",
+            "source_description": "Copernicus Climate Change Service merged satellite-derived column-average dry-air mole fraction of atmospheric methane",
+            "source_label": "C3S-XCH4",
+            "source_name": "C3S XCH4",
+            "source_type": "satellite_retrieval",
+            "source_variables": [
+                "xch4", "xch4nobs", "xch4stderr", "xch4sd"
+            ],
+            "source_version_number": "4.6"
+        },
+        "C3S-XCO2-v4-6": {
+            "institution_id": "IUP-UB",
+            "region": [
+                "global"
+            ],
+            "release_year": "2024",
+            "source_description": "Copernicus Climate Change Service merged satellite-derived column-average dry-air mole fraction of atmospheric carbon dioxide",
+            "source_label": "C3S-XCO2",
+            "source_name": "C3S XCO2",
+            "source_type": "satellite_retrieval",
+            "source_variables": [
+                "xco2", "xco2nobs", "xco2stderr", "xco2sd"
+            ],
+            "source_version_number": "4.6"
+        },
         "CALIPSO-ICECLOUD-1-0":{
             "institution_id":"NASA-LaRC",
             "region":[
