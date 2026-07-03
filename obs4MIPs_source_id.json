@@ -227,7 +227,7 @@
             "source_name": "C3S XCH4",
             "source_type": "satellite_retrieval",
             "source_variables": [
-                "xch4"
+                "xch4", "xch4nobs", "xch4stderr", "xch4sd"
             ],
             "source_version_number": "4.6"
         },
@@ -242,7 +242,7 @@
             "source_name": "C3S XCO2",
             "source_type": "satellite_retrieval",
             "source_variables": [
-                "xco2"
+                "xco2", "xco2nobs", "xco2stderr", "xco2sd"
             ],
             "source_version_number": "4.6"
         },
