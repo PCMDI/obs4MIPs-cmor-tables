@@ -23,6 +23,7 @@ institution_id['institution_id']['INCOIS-NIO-IPSL'] =  'Joint research collobora
 institution_id['institution_id']['ESPRI-IPSL'] =  'Ensemble de Services Pour la Recherche, Institut Pierre Simon Laplace (France)'
 institution_id['institution_id']['CNES'] = "Centre national d'etudes spatiales"
 institution_id['institution_id']['ImperialCollege'] = 'Imperial College, London, UK'
+institution_id['institution_id']['IUP-UB'] = 'Institute of Environmental Physics, University of Bremen, Germany'
 institution_id['institution_id']['UReading'] = 'University of Reading, Reading, UK'
 institution_id['institution_id']['UW'] = 'University of Washington, USA'
 institution_id['institution_id']['JAXA'] = 'The Japan Aerospace Exploration Agency'
