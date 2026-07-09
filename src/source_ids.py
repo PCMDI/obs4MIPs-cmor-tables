@@ -13,6 +13,18 @@ source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_type'] = 'reanalysis'
 source_id['source_id'][key]['source_variables'] = ['psl','tas']
 
+key = 'ESACCI-L3-NO2-TROPOMI-2-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'ESACCI-L3-NO2-TROPOMI'
+source_id['source_id'][key]['source_label'] = 'ESACCI-L3-NO2-TROPOMI'
+source_id['source_id'][key]['release_year'] = '2025'
+source_id['source_id'][key]['source_description'] = 'Monthly tropospheric nitrogen dioxide (NO2) column number density in the context of ESA CCI+ precursors for aerosols and ozone project'
+source_id['source_id'][key]['source_version_number'] = '2.0'
+source_id['source_id'][key]['institution_id'] = ['KNMI-WUR']
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] = ['no2']
+
 key = 'C3S-XCH4-v4-6'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'C3S XCH4'

@@ -52,4 +52,4 @@ institution_id['institution_id']['MOHC-CRU-NCAS'] = 'Joint research collaboratio
 institution_id['institution_id']['ENVEO'] = 'Environmental Earth Observation Information Technology GmbH, Innsbruck, Austria'
 institution_id['institution_id']['KNMI'] = 'Royal Netherlands Meteorological Institute'
 institution_id['institution_id']['WUR'] = 'Wageningen Universit, Netherlands'
-institution_id['institution_id']['KNMI-WUR'] = 'Multi-institute/agency collaboration' 
+institution_id['institution_id']['KNMI-WUR'] = 'Multi-institute/agency collaboration,KNMI-WUR' 

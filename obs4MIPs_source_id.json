@@ -829,6 +829,23 @@
             ],
             "source_version_number":"2.0"
         },
+        "ESACCI-L3-NO2-TROPOMI-2-0":{
+            "institution_id":[
+                "KNMI-WUR"
+            ],
+            "region":[
+                "global"
+            ],
+            "release_year":"2025",
+            "source_description":"Monthly tropospheric nitrogen dioxide (NO2) column number density in the context of ESA CCI+ precursors for aerosols and ozone project",
+            "source_label":"ESACCI-L3-NO2-TROPOMI",
+            "source_name":"ESACCI-L3-NO2-TROPOMI",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "no2"
+            ],
+            "source_version_number":"2.0"
+        },
         "ESACCI-PREC-L3C-NO2":{
             "institution_id":"KNMI-WUR",
             "region":[
