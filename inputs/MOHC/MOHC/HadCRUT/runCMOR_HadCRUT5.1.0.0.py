@@ -154,7 +154,7 @@ try:
 
     # Provenance info - produces global attribute <processing_code_location>
     git_commit_number = obs4MIPsLib.get_git_revision_hash()
-    path_to_code = os.getcwd().split('obs4MIPs-cmor-tables')[1]
+    path_to_code = os.getcwd().split('obs4MIPs-cmor-tables')[1].lstrip('/')
     full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{git_commit_number}/{path_to_code}"
     cmor.set_cur_dataset_attribute("processing_code_location", f"{full_git_path}")
 

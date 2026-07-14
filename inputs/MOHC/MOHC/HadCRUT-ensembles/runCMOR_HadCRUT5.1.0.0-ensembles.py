@@ -99,10 +99,19 @@ for lo, hi in zipRanges:
         print(f"[zip {lo:3d}-{hi:3d}] cached: {zip_path}")
     else:
         print(f"[zip {lo:3d}-{hi:3d}] downloading: {zip_url}")
-        urllib.request.urlretrieve(zip_url, zip_path)
+        # Download to a .part file and rename only on success, so an interrupted
+        # download never leaves a truncated zip that a later run would treat as
+        # a valid cache hit (which would raise BadZipFile and abort the batch).
+        part_path = zip_path + ".part"
+        urllib.request.urlretrieve(zip_url, part_path)
+        os.rename(part_path, zip_path)
 
     with zipfile.ZipFile(zip_path) as zf:
-        members = sorted(zf.namelist(), key=lambda n: int(member_name_re.search(n).group(1)))
+        # Only consider entries that look like member files (HadCRUT...anomalies.<N>.nc);
+        # ignore any folder entries / README / checksum files so the sort key never
+        # dereferences a None regex match.
+        members = sorted((n for n in zf.namelist() if member_name_re.search(n)),
+                         key=lambda n: int(member_name_re.search(n).group(1)))
 
         for member_name in members:
             if len(succeeded) + len(failed) >= args.limit:
@@ -158,7 +167,7 @@ for lo, hi in zipRanges:
                     cmor.set_variable_attribute(varid, 'units_metadata', 'c', 'temperature: difference')
 
                     git_commit_number = obs4MIPsLib.get_git_revision_hash()
-                    path_to_code = os.getcwd().split('obs4MIPs-cmor-tables')[1]
+                    path_to_code = os.getcwd().split('obs4MIPs-cmor-tables')[1].lstrip('/')
                     full_git_path = f"https://github.com/PCMDI/obs4MIPs-cmor-tables/tree/{git_commit_number}/{path_to_code}"
                     cmor.set_cur_dataset_attribute("processing_code_location", f"{full_git_path}")
 
