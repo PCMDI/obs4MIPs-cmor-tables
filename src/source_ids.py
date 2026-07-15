@@ -1,6 +1,66 @@
 source_id = {}
 source_id['source_id'] = {}
 
+key = '20CR-V3'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = '20CR'
+source_id['source_id'][key]['source_label'] = '20CR'
+source_id['source_id'][key]['release_year'] = '2019'
+source_id['source_id'][key]['source_description'] = 'Monthly NOAA/CIRES/DOE 20th Century Reanalysis V3'
+source_id['source_id'][key]['source_version_number'] = 'V3'
+source_id['source_id'][key]['institution_id'] = 'NOAA-ESRL-PSD'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'reanalysis'
+source_id['source_id'][key]['source_variables'] = ['psl','tas']
+
+key = 'ESACCI-L3-NO2-TROPOMI-2-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'ESACCI-L3-NO2-TROPOMI'
+source_id['source_id'][key]['source_label'] = 'ESACCI-L3-NO2-TROPOMI'
+source_id['source_id'][key]['release_year'] = '2025'
+source_id['source_id'][key]['source_description'] = 'Monthly tropospheric nitrogen dioxide (NO2) column number density in the context of ESA CCI+ precursors for aerosols and ozone project'
+source_id['source_id'][key]['source_version_number'] = '2.0'
+source_id['source_id'][key]['institution_id'] = ['KNMI-WUR']
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] = ['no2']
+
+key = 'C3S-XCH4-v4-6'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'C3S XCH4'
+source_id['source_id'][key]['source_label'] = 'C3S-XCH4'
+source_id['source_id'][key]['release_year'] = '2024'
+source_id['source_id'][key]['source_description'] = 'Copernicus Climate Change Service merged satellite-derived column-average dry-air mole fraction of atmospheric methane'
+source_id['source_id'][key]['source_version_number'] = '4.6'
+source_id['source_id'][key]['institution_id'] = 'IUP-UB'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] = ['xch4']
+
+key = 'C3S-XCO2-v4-6'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'C3S XCO2'
+source_id['source_id'][key]['source_label'] = 'C3S-XCO2'
+source_id['source_id'][key]['release_year'] = '2024'
+source_id['source_id'][key]['source_description'] = 'Copernicus Climate Change Service merged satellite-derived column-average dry-air mole fraction of atmospheric carbon dioxide'
+source_id['source_id'][key]['source_version_number'] = '4.6'
+source_id['source_id'][key]['institution_id'] = 'IUP-UB'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] =['xco2']
+
+key = 'CHIRPS-V3'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'CHIRPS'
+source_id['source_id'][key]['source_label'] = 'CHIRPS'
+source_id['source_id'][key]['release_year'] = '2025'
+source_id['source_id'][key]['source_description'] = 'CHIRPS Version 3.0'
+source_id['source_id'][key]['source_version_number'] = 'V3'
+source_id['source_id'][key]['institution_id'] = 'UCSB-CHC'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] = ['pr']
+
 key = 'NOAA-NCEI-OISST-v2-1'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'NOAA-NCEI OISST v2.1'

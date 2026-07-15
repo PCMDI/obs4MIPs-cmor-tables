@@ -106,11 +106,12 @@
             "FMI":"Finnish Meteorological Institute, Helsinki, Finland",
             "GloH2O":"gloh2o.org",
             "INCOIS-NIO-IPSL":"Joint research colloboration between INCOIS(India), NIO(India) and IPSL(France)",
+            "IUP-UB":"Institute of Environmental Physics, University of Bremen, Germany",
             "ImperialCollege":"Imperial College, London, UK",
             "JAXA":"The Japan Aerospace Exploration Agency",
             "JMA":"Japanese Meterorological Agency",
             "KNMI":"Royal Netherlands Meteorological Institute",
-            "KNMI-WUR":"Multi-institute/agency collaboration",
+            "KNMI-WUR":"Multi-institute/agency collaboration,KNMI-WUR",
             "MET-Norway":"Norwegian Meteorological Institute",
             "MOHC":"Met Office Hadley Centre",
             "MOHC-CRU-NCAS":"Joint research collaboration between MOHC(UK), CRU-UEA (UK) and NCAS (UK)",
@@ -132,13 +133,16 @@
             "RSS":"Remote Sensing Systems, Santa Rosa, CA USA",
             "UAH":"University of Alcala, Spain",
             "UCI-CHRS":"Center for Hydrometeorology and Remote Sensing",
+            "UCSB-CHC":"University of California, Santa Barbara, Climate Hazards Center",
             "UCSD-SIO":"University of California, San Diego, Scripps Institution of Oceanography",
             "UReading":"University of Reading, Reading, UK",
             "UW":"University of Washington, USA",
             "WEGC":"Wegener Center for Climate and Global Change, University of Graz, Austria",
             "WUR":"Wageningen Universit, Netherlands"
         },
-        "license":"Data in this file produced by <Your Centre Name> is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Use of the data must be acknowledged following guidelines found at <a URL maintained by you>. Further information about this data, including some limitations, can be found via <some URL maintained by you>.",
+        "license":[
+            "Data in this file produced by <Your Centre Name> is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Use of the data must be acknowledged following guidelines found at <a URL maintained by you>. Further information about this data, including some limitations, can be found via <some URL maintained by you>."
+        ],
         "nominal_resolution":[
             "0.5 km",
             "1 km",
@@ -2415,6 +2419,12 @@
                 "source_type":"reanalysis",
                 "source_version_number":"V2"
             },
+            "20CR-V3":{
+                "region":"global",
+                "source":"20CR V3 (2019): Monthly NOAA/CIRES/DOE 20th Century Reanalysis V3",
+                "source_type":"reanalysis",
+                "source_version_number":"V3"
+            },
             "AI-upscaling-cSoil-1-0":{
                 "region":"contiguous_united_states",
                 "source":"AI-upscaling-cSoil 1 (2024): Upscaling soil organic carbon measurements at the continental scale using multivariate clustering analysis and machine learning",
@@ -2475,6 +2485,18 @@
                 "source_type":"satellite_retrieval",
                 "source_version_number":"9.0"
             },
+            "C3S-XCH4-v4-6":{
+                "region":"global",
+                "source":"C3S-XCH4 4.6 (2024): Copernicus Climate Change Service merged satellite-derived column-average dry-air mole fraction of atmospheric methane",
+                "source_type":"satellite_blended",
+                "source_version_number":"4.6"
+            },
+            "C3S-XCO2-v4-6":{
+                "region":"global",
+                "source":"C3S-XCO2 4.6 (2024): Copernicus Climate Change Service merged satellite-derived column-average dry-air mole fraction of atmospheric carbon dioxide",
+                "source_type":"satellite_blended",
+                "source_version_number":"4.6"
+            },
             "CALIPSO-ICECLOUD-1-0":{
                 "region":"global",
                 "source":"CALIPSO-ICECLOUD 1.00 (2018): Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO) Ice cloud",
@@ -2522,6 +2544,12 @@
                 "source":"CERES-EBAF4-2 4.2.1 (2025): CERES EBAF (Energy Balanced and Filled) TOA Fluxes. Monthly Averages",
                 "source_type":"satellite_blended",
                 "source_version_number":"4.2.1"
+            },
+            "CHIRPS-V3":{
+                "region":"global_land",
+                "source":"CHIRPS V3 (2025): CHIRPS Version 3.0",
+                "source_type":"satellite_blended",
+                "source_version_number":"V3"
             },
             "CMAP-V1902":{
                 "region":"global",
@@ -2653,6 +2681,12 @@
                 "region":"global",
                 "source":"ESACCI-CLOUD-MERIS-AATSR 2.0 (2017): Cloud properties derived from MERIS and AATSR (aboard ENVISAT) measurements. This dataset belongs to the ESA Cloud_cci suite of long-term coherent cloud property datasets.",
                 "source_type":"satellite_retrieval",
+                "source_version_number":"2.0"
+            },
+            "ESACCI-L3-NO2-TROPOMI-2-0":{
+                "region":"global",
+                "source":"ESACCI-L3-NO2-TROPOMI 2.0 (2025): Monthly tropospheric nitrogen dioxide (NO2) column number density in the context of ESA CCI+ precursors for aerosols and ozone project",
+                "source_type":"satellite_blended",
                 "source_version_number":"2.0"
             },
             "ESACCI-PREC-L3C-NO2":{

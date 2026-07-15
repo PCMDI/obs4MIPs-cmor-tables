@@ -17,6 +17,22 @@
             ],
             "source_version_number":"V2"
         },
+        "20CR-V3":{
+            "institution_id":"NOAA-ESRL-PSD",
+            "region":[
+                "global"
+            ],
+            "release_year":"2019",
+            "source_description":"Monthly NOAA/CIRES/DOE 20th Century Reanalysis V3",
+            "source_label":"20CR",
+            "source_name":"20CR",
+            "source_type":"reanalysis",
+            "source_variables":[
+                "psl",
+                "tas"
+            ],
+            "source_version_number":"V3"
+        },
         "AI-upscaling-cSoil-1-0":{
             "institution_id":"EmoryU",
             "region":[
@@ -200,6 +216,36 @@
             ],
             "source_version_number":"9.0"
         },
+        "C3S-XCH4-v4-6":{
+            "institution_id":"IUP-UB",
+            "region":[
+                "global"
+            ],
+            "release_year":"2024",
+            "source_description":"Copernicus Climate Change Service merged satellite-derived column-average dry-air mole fraction of atmospheric methane",
+            "source_label":"C3S-XCH4",
+            "source_name":"C3S XCH4",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "xch4"
+            ],
+            "source_version_number":"4.6"
+        },
+        "C3S-XCO2-v4-6":{
+            "institution_id":"IUP-UB",
+            "region":[
+                "global"
+            ],
+            "release_year":"2024",
+            "source_description":"Copernicus Climate Change Service merged satellite-derived column-average dry-air mole fraction of atmospheric carbon dioxide",
+            "source_label":"C3S-XCO2",
+            "source_name":"C3S XCO2",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "xco2"
+            ],
+            "source_version_number":"4.6"
+        },
         "CALIPSO-ICECLOUD-1-0":{
             "institution_id":"NASA-LaRC",
             "region":[
@@ -335,6 +381,21 @@
                 "rsutcs"
             ],
             "source_version_number":"4.2.1"
+        },
+        "CHIRPS-V3":{
+            "institution_id":"UCSB-CHC",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2025",
+            "source_description":"CHIRPS Version 3.0",
+            "source_label":"CHIRPS",
+            "source_name":"CHIRPS",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"V3"
         },
         "CMAP-V1902":{
             "institution_id":"NOAA-NCEI",
@@ -765,6 +826,23 @@
                 "clwtCCI",
                 "clwvi",
                 "pctCCI"
+            ],
+            "source_version_number":"2.0"
+        },
+        "ESACCI-L3-NO2-TROPOMI-2-0":{
+            "institution_id":[
+                "KNMI-WUR"
+            ],
+            "region":[
+                "global"
+            ],
+            "release_year":"2025",
+            "source_description":"Monthly tropospheric nitrogen dioxide (NO2) column number density in the context of ESA CCI+ precursors for aerosols and ozone project",
+            "source_label":"ESACCI-L3-NO2-TROPOMI",
+            "source_name":"ESACCI-L3-NO2-TROPOMI",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "no2"
             ],
             "source_version_number":"2.0"
         },
