@@ -137,6 +137,7 @@
             "UCSD-SIO":"University of California, San Diego, Scripps Institution of Oceanography",
             "UReading":"University of Reading, Reading, UK",
             "UW":"University of Washington, USA",
+            "WEGC":"Wegener Center for Climate and Global Change, University of Graz, Austria",
             "WUR":"Wageningen Universit, Netherlands"
         },
         "license":[
@@ -289,6 +290,806 @@
                 "latitude":"47.1167",
                 "location":"Neustift",
                 "longitude":"11.3175"
+            },
+            "AT-WegenerNet-001":{
+                "latitude":"46.9941",
+                "location":"Kirchberg (WegenerNet Station 001)",
+                "longitude":"15.7611"
+            },
+            "AT-WegenerNet-002":{
+                "latitude":"46.9939",
+                "location":"Kirchberg (WegenerNet Station 002)",
+                "longitude":"15.7790"
+            },
+            "AT-WegenerNet-003":{
+                "latitude":"46.9977",
+                "location":"Kirchberg (WegenerNet Station 003)",
+                "longitude":"15.7923"
+            },
+            "AT-WegenerNet-004":{
+                "latitude":"46.9945",
+                "location":"Edelsbach (WegenerNet Station 004)",
+                "longitude":"15.8135"
+            },
+            "AT-WegenerNet-005":{
+                "latitude":"46.9949",
+                "location":"Edelsbach (WegenerNet Station 005)",
+                "longitude":"15.8361"
+            },
+            "AT-WegenerNet-006":{
+                "latitude":"46.9973",
+                "location":"Feldbach (WegenerNet Station 006)",
+                "longitude":"15.8551"
+            },
+            "AT-WegenerNet-007":{
+                "latitude":"46.9940",
+                "location":"Feldbach (WegenerNet Station 007)",
+                "longitude":"15.8714"
+            },
+            "AT-WegenerNet-008":{
+                "latitude":"46.9961",
+                "location":"Riegersburg (WegenerNet Station 008)",
+                "longitude":"15.8863"
+            },
+            "AT-WegenerNet-009":{
+                "latitude":"46.9845",
+                "location":"Kirchberg (WegenerNet Station 009)",
+                "longitude":"15.7589"
+            },
+            "AT-WegenerNet-010":{
+                "latitude":"46.9801",
+                "location":"Kirchberg (WegenerNet Station 010)",
+                "longitude":"15.7758"
+            },
+            "AT-WegenerNet-011":{
+                "latitude":"46.9814",
+                "location":"Kirchberg (WegenerNet Station 011)",
+                "longitude":"15.7980"
+            },
+            "AT-WegenerNet-012":{
+                "latitude":"46.9827",
+                "location":"Edelsbach (WegenerNet Station 012)",
+                "longitude":"15.8137"
+            },
+            "AT-WegenerNet-013":{
+                "latitude":"46.9838",
+                "location":"Edelsbach (WegenerNet Station 013)",
+                "longitude":"15.8349"
+            },
+            "AT-WegenerNet-014":{
+                "latitude":"46.9830",
+                "location":"Feldbach (WegenerNet Station 014)",
+                "longitude":"15.8554"
+            },
+            "AT-WegenerNet-015":{
+                "latitude":"46.9826",
+                "location":"Feldbach (WegenerNet Station 015)",
+                "longitude":"15.8705"
+            },
+            "AT-WegenerNet-016":{
+                "latitude":"46.9843",
+                "location":"Riegersburg (WegenerNet Station 016)",
+                "longitude":"15.8913"
+            },
+            "AT-WegenerNet-017":{
+                "latitude":"46.9795",
+                "location":"Riegersburg (WegenerNet Station 017)",
+                "longitude":"15.9073"
+            },
+            "AT-WegenerNet-018":{
+                "latitude":"46.9862",
+                "location":"Riegersburg (WegenerNet Station 018)",
+                "longitude":"15.9293"
+            },
+            "AT-WegenerNet-019":{
+                "latitude":"46.9797",
+                "location":"Riegersburg (WegenerNet Station 019)",
+                "longitude":"15.9412"
+            },
+            "AT-WegenerNet-020":{
+                "latitude":"46.9823",
+                "location":"Riegersburg (WegenerNet Station 020)",
+                "longitude":"15.9664"
+            },
+            "AT-WegenerNet-021":{
+                "latitude":"46.9823",
+                "location":"Fehring (WegenerNet Station 021)",
+                "longitude":"15.9834"
+            },
+            "AT-WegenerNet-022":{
+                "latitude":"46.9865",
+                "location":"Fehring (WegenerNet Station 022)",
+                "longitude":"15.9989"
+            },
+            "AT-WegenerNet-023":{
+                "latitude":"46.9825",
+                "location":"Fehring (WegenerNet Station 023)",
+                "longitude":"16.0196"
+            },
+            "AT-WegenerNet-024":{
+                "latitude":"46.9675",
+                "location":"Kirchberg (WegenerNet Station 024)",
+                "longitude":"15.7612"
+            },
+            "AT-WegenerNet-025":{
+                "latitude":"46.9676",
+                "location":"Kirchberg (WegenerNet Station 025)",
+                "longitude":"15.7768"
+            },
+            "AT-WegenerNet-026":{
+                "latitude":"46.9704",
+                "location":"Kirchberg (WegenerNet Station 026)",
+                "longitude":"15.7950"
+            },
+            "AT-WegenerNet-027":{
+                "latitude":"46.9723",
+                "location":"Kirchberg (WegenerNet Station 027)",
+                "longitude":"15.8150"
+            },
+            "AT-WegenerNet-028":{
+                "latitude":"46.9682",
+                "location":"Feldbach (028 new location)",
+                "longitude":"15.8354"
+            },
+            "AT-WegenerNet-029":{
+                "latitude":"46.9715",
+                "location":"Feldbach (WegenerNet Station 029)",
+                "longitude":"15.8562"
+            },
+            "AT-WegenerNet-030":{
+                "latitude":"46.9648",
+                "location":"Feldbach (WegenerNet Station 030)",
+                "longitude":"15.8697"
+            },
+            "AT-WegenerNet-031":{
+                "latitude":"46.9689",
+                "location":"Riegersburg (WegenerNet Station 031)",
+                "longitude":"15.8886"
+            },
+            "AT-WegenerNet-032":{
+                "latitude":"46.9682",
+                "location":"Riegersburg (WegenerNet Station 032)",
+                "longitude":"15.9037"
+            },
+            "AT-WegenerNet-033":{
+                "latitude":"46.9697",
+                "location":"Riegersburg (WegenerNet Station 033)",
+                "longitude":"15.9254"
+            },
+            "AT-WegenerNet-034":{
+                "latitude":"46.9712",
+                "location":"Riegersburg (WegenerNet Station 034)",
+                "longitude":"15.9436"
+            },
+            "AT-WegenerNet-035":{
+                "latitude":"46.9702",
+                "location":"Riegersburg (WegenerNet Station 035)",
+                "longitude":"15.9666"
+            },
+            "AT-WegenerNet-036":{
+                "latitude":"46.9720",
+                "location":"Riegersburg (WegenerNet Station 036)",
+                "longitude":"15.9817"
+            },
+            "AT-WegenerNet-037":{
+                "latitude":"46.9667",
+                "location":"Fehring (WegenerNet Station 037)",
+                "longitude":"16.0050"
+            },
+            "AT-WegenerNet-038":{
+                "latitude":"46.9693",
+                "location":"Fehring (WegenerNet Station 038)",
+                "longitude":"16.0210"
+            },
+            "AT-WegenerNet-039":{
+                "latitude":"46.9564",
+                "location":"Paldau (WegenerNet Station 039)",
+                "longitude":"15.7615"
+            },
+            "AT-WegenerNet-040":{
+                "latitude":"46.9567",
+                "location":"Paldau (WegenerNet Station 040)",
+                "longitude":"15.7751"
+            },
+            "AT-WegenerNet-041":{
+                "latitude":"46.9589",
+                "location":"Paldau (WegenerNet Station 041)",
+                "longitude":"15.7948"
+            },
+            "AT-WegenerNet-042":{
+                "latitude":"46.9555",
+                "location":"Paldau (WegenerNet Station 042)",
+                "longitude":"15.8164"
+            },
+            "AT-WegenerNet-043":{
+                "latitude":"46.9581",
+                "location":"Paldau (WegenerNet Station 043)",
+                "longitude":"15.8376"
+            },
+            "AT-WegenerNet-044":{
+                "latitude":"46.9598",
+                "location":"Paldau (WegenerNet Station 044)",
+                "longitude":"15.8504"
+            },
+            "AT-WegenerNet-045":{
+                "latitude":"46.9542",
+                "location":"Feldbach (WegenerNet Station 045)",
+                "longitude":"15.8762"
+            },
+            "AT-WegenerNet-046":{
+                "latitude":"46.9547",
+                "location":"Feldbach (WegenerNet Station 046)",
+                "longitude":"15.8857"
+            },
+            "AT-WegenerNet-047":{
+                "latitude":"46.9588",
+                "location":"Feldbach (WegenerNet Station 047)",
+                "longitude":"15.9072"
+            },
+            "AT-WegenerNet-048":{
+                "latitude":"46.9566",
+                "location":"Feldbach (WegenerNet Station 048)",
+                "longitude":"15.9227"
+            },
+            "AT-WegenerNet-049":{
+                "latitude":"46.9588",
+                "location":"Riegersburg (WegenerNet Station 049)",
+                "longitude":"15.9482"
+            },
+            "AT-WegenerNet-050":{
+                "latitude":"46.9595",
+                "location":"Riegersburg (WegenerNet Station 050)",
+                "longitude":"15.9658"
+            },
+            "AT-WegenerNet-051":{
+                "latitude":"46.9591",
+                "location":"Fehring (WegenerNet Station 051)",
+                "longitude":"15.9833"
+            },
+            "AT-WegenerNet-052":{
+                "latitude":"46.9577",
+                "location":"Fehring (WegenerNet Station 052)",
+                "longitude":"15.9974"
+            },
+            "AT-WegenerNet-053":{
+                "latitude":"46.9548",
+                "location":"Fehring (WegenerNet Station 053)",
+                "longitude":"16.0172"
+            },
+            "AT-WegenerNet-054":{
+                "latitude":"46.9433",
+                "location":"Paldau (WegenerNet Station 054)",
+                "longitude":"15.7596"
+            },
+            "AT-WegenerNet-055":{
+                "latitude":"46.9434",
+                "location":"Paldau (WegenerNet Station 055)",
+                "longitude":"15.7804"
+            },
+            "AT-WegenerNet-056":{
+                "latitude":"46.9417",
+                "location":"Paldau (WegenerNet Station 056)",
+                "longitude":"15.7977"
+            },
+            "AT-WegenerNet-057":{
+                "latitude":"46.9435",
+                "location":"Paldau (WegenerNet Station 057)",
+                "longitude":"15.8112"
+            },
+            "AT-WegenerNet-058":{
+                "latitude":"46.9465",
+                "location":"Paldau (WegenerNet Station 058)",
+                "longitude":"15.8386"
+            },
+            "AT-WegenerNet-059":{
+                "latitude":"46.9434",
+                "location":"Feldbach (WegenerNet Station 059)",
+                "longitude":"15.8505"
+            },
+            "AT-WegenerNet-060":{
+                "latitude":"46.9434",
+                "location":"Feldbach (WegenerNet Station 060)",
+                "longitude":"15.8763"
+            },
+            "AT-WegenerNet-061":{
+                "latitude":"46.9442",
+                "location":"Feldbach (WegenerNet Station 061)",
+                "longitude":"15.8892"
+            },
+            "AT-WegenerNet-062":{
+                "latitude":"46.9454",
+                "location":"Feldbach (WegenerNet Station 062)",
+                "longitude":"15.9068"
+            },
+            "AT-WegenerNet-063":{
+                "latitude":"46.9409",
+                "location":"Feldbach (WegenerNet Station 063)",
+                "longitude":"15.9263"
+            },
+            "AT-WegenerNet-064":{
+                "latitude":"46.9445",
+                "location":"Feldbach (WegenerNet Station 064)",
+                "longitude":"15.9445"
+            },
+            "AT-WegenerNet-065":{
+                "latitude":"46.9426",
+                "location":"Fehring (WegenerNet Station 065)",
+                "longitude":"15.9617"
+            },
+            "AT-WegenerNet-066":{
+                "latitude":"46.9452",
+                "location":"Fehring (WegenerNet Station 066)",
+                "longitude":"15.9806"
+            },
+            "AT-WegenerNet-067":{
+                "latitude":"46.9435",
+                "location":"Fehring (WegenerNet Station 067)",
+                "longitude":"15.9970"
+            },
+            "AT-WegenerNet-068":{
+                "latitude":"46.9463",
+                "location":"Fehring (WegenerNet Station 068)",
+                "longitude":"16.0233"
+            },
+            "AT-WegenerNet-069":{
+                "latitude":"46.9415",
+                "location":"Fehring (WegenerNet Station 069)",
+                "longitude":"16.0395"
+            },
+            "AT-WegenerNet-070":{
+                "latitude":"46.9305",
+                "location":"Paldau (WegenerNet Station 070)",
+                "longitude":"15.7774"
+            },
+            "AT-WegenerNet-071":{
+                "latitude":"46.9309",
+                "location":"Paldau (WegenerNet Station 071)",
+                "longitude":"15.7965"
+            },
+            "AT-WegenerNet-072":{
+                "latitude":"46.9318",
+                "location":"Paldau (WegenerNet Station 072)",
+                "longitude":"15.8154"
+            },
+            "AT-WegenerNet-073":{
+                "latitude":"46.9313",
+                "location":"Paldau (WegenerNet Station 073)",
+                "longitude":"15.8361"
+            },
+            "AT-WegenerNet-074":{
+                "latitude":"46.9304",
+                "location":"Feldbach (WegenerNet Station 074)",
+                "longitude":"15.8524"
+            },
+            "AT-WegenerNet-075":{
+                "latitude":"46.9350",
+                "location":"Feldbach (WegenerNet Station 075)",
+                "longitude":"15.8674"
+            },
+            "AT-WegenerNet-076":{
+                "latitude":"46.9335",
+                "location":"Feldbach (WegenerNet Station 076)",
+                "longitude":"15.8900"
+            },
+            "AT-WegenerNet-077":{
+                "latitude":"46.9329",
+                "location":"Feldbach (Wegener Center Station)",
+                "longitude":"15.9071"
+            },
+            "AT-WegenerNet-078":{
+                "latitude":"46.9329",
+                "location":"Feldbach (WegenerNet Station 078)",
+                "longitude":"15.9246"
+            },
+            "AT-WegenerNet-079":{
+                "latitude":"46.9307",
+                "location":"Feldbach (079 new location)",
+                "longitude":"15.9428"
+            },
+            "AT-WegenerNet-080":{
+                "latitude":"46.9334",
+                "location":"Fehring (WegenerNet Station 080)",
+                "longitude":"15.9608"
+            },
+            "AT-WegenerNet-081":{
+                "latitude":"46.9289",
+                "location":"Fehring (WegenerNet Station 081)",
+                "longitude":"15.9851"
+            },
+            "AT-WegenerNet-082":{
+                "latitude":"46.9326",
+                "location":"Fehring (Wasserversorgung Vulkanland Station)",
+                "longitude":"16.0034"
+            },
+            "AT-WegenerNet-083":{
+                "latitude":"46.9347",
+                "location":"Fehring (WegenerNet Station 083)",
+                "longitude":"16.0228"
+            },
+            "AT-WegenerNet-084":{
+                "latitude":"46.9343",
+                "location":"Fehring (WegenerNet Station 084)",
+                "longitude":"16.0406"
+            },
+            "AT-WegenerNet-085":{
+                "latitude":"46.9169",
+                "location":"Paldau (WegenerNet Station 085)",
+                "longitude":"15.7811"
+            },
+            "AT-WegenerNet-086":{
+                "latitude":"46.9174",
+                "location":"Gnas (WegenerNet Station 086)",
+                "longitude":"15.7985"
+            },
+            "AT-WegenerNet-087":{
+                "latitude":"46.9188",
+                "location":"Paldau (087 new location #2)",
+                "longitude":"15.8153"
+            },
+            "AT-WegenerNet-088":{
+                "latitude":"46.9163",
+                "location":"Gnas (WegenerNet Station 088)",
+                "longitude":"15.8337"
+            },
+            "AT-WegenerNet-089":{
+                "latitude":"46.9184",
+                "location":"Gnas (WegenerNet Station 089)",
+                "longitude":"15.8554"
+            },
+            "AT-WegenerNet-090":{
+                "latitude":"46.9192",
+                "location":"Feldbach (WegenerNet Station 090)",
+                "longitude":"15.8707"
+            },
+            "AT-WegenerNet-091":{
+                "latitude":"46.9198",
+                "location":"Feldbach (WegenerNet Station 091)",
+                "longitude":"15.8904"
+            },
+            "AT-WegenerNet-092":{
+                "latitude":"46.9220",
+                "location":"Feldbach (WegenerNet Station 092)",
+                "longitude":"15.9075"
+            },
+            "AT-WegenerNet-093":{
+                "latitude":"46.9192",
+                "location":"Feldbach (WegenerNet Station 093)",
+                "longitude":"15.9308"
+            },
+            "AT-WegenerNet-094":{
+                "latitude":"46.9201",
+                "location":"Fehring (WegenerNet Station 094)",
+                "longitude":"15.9529"
+            },
+            "AT-WegenerNet-095":{
+                "latitude":"46.9190",
+                "location":"Fehring (WegenerNet Station 095)",
+                "longitude":"15.9676"
+            },
+            "AT-WegenerNet-096":{
+                "latitude":"46.9180",
+                "location":"Fehring (WegenerNet Station 096)",
+                "longitude":"15.9775"
+            },
+            "AT-WegenerNet-097":{
+                "latitude":"46.9165",
+                "location":"Fehring (WegenerNet Station 097)",
+                "longitude":"15.9998"
+            },
+            "AT-WegenerNet-098":{
+                "latitude":"46.9202",
+                "location":"Fehring (WegenerNet Station 098)",
+                "longitude":"16.0205"
+            },
+            "AT-WegenerNet-099":{
+                "latitude":"46.9213",
+                "location":"Fehring (WegenerNet Station 099)",
+                "longitude":"16.0334"
+            },
+            "AT-WegenerNet-100":{
+                "latitude":"46.9031",
+                "location":"Gnas (WegenerNet Station 100)",
+                "longitude":"15.7814"
+            },
+            "AT-WegenerNet-101":{
+                "latitude":"46.9047",
+                "location":"Gnas (WegenerNet Station 101)",
+                "longitude":"15.7968"
+            },
+            "AT-WegenerNet-102":{
+                "latitude":"46.9061",
+                "location":"Paldau (WegenerNet Station 102)",
+                "longitude":"15.8201"
+            },
+            "AT-WegenerNet-103":{
+                "latitude":"46.9081",
+                "location":"Gnas (WegenerNet Station 103)",
+                "longitude":"15.8348"
+            },
+            "AT-WegenerNet-104":{
+                "latitude":"46.9058",
+                "location":"Gnas (WegenerNet Station 104)",
+                "longitude":"15.8536"
+            },
+            "AT-WegenerNet-105":{
+                "latitude":"46.9100",
+                "location":"Feldbach (WegenerNet Station 105)",
+                "longitude":"15.8749"
+            },
+            "AT-WegenerNet-106":{
+                "latitude":"46.9096",
+                "location":"Gleichenberg (WegenerNet Station 106)",
+                "longitude":"15.8914"
+            },
+            "AT-WegenerNet-107":{
+                "latitude":"46.9052",
+                "location":"Gleichenberg (WegenerNet Station 107)",
+                "longitude":"15.9078"
+            },
+            "AT-WegenerNet-108":{
+                "latitude":"46.9048",
+                "location":"Feldbach (WegenerNet Station 108)",
+                "longitude":"15.9277"
+            },
+            "AT-WegenerNet-109":{
+                "latitude":"46.9061",
+                "location":"Feldbach (WegenerNet Station 109)",
+                "longitude":"15.9461"
+            },
+            "AT-WegenerNet-110":{
+                "latitude":"46.9077",
+                "location":"Kapfenstein (WegenerNet Station 110)",
+                "longitude":"15.9607"
+            },
+            "AT-WegenerNet-111":{
+                "latitude":"46.9080",
+                "location":"Fehring (WegenerNet Station 111)",
+                "longitude":"15.9833"
+            },
+            "AT-WegenerNet-112":{
+                "latitude":"46.9052",
+                "location":"Fehring (WegenerNet Station 112)",
+                "longitude":"16.0012"
+            },
+            "AT-WegenerNet-113":{
+                "latitude":"46.9048",
+                "location":"Kapfenstein (WegenerNet Station 113)",
+                "longitude":"16.0168"
+            },
+            "AT-WegenerNet-114":{
+                "latitude":"46.9060",
+                "location":"Fehring (WegenerNet Station 114)",
+                "longitude":"16.0409"
+            },
+            "AT-WegenerNet-115":{
+                "latitude":"46.8944",
+                "location":"Gnas (WegenerNet Station 115)",
+                "longitude":"15.7809"
+            },
+            "AT-WegenerNet-116":{
+                "latitude":"46.8922",
+                "location":"Gnas (WegenerNet Station 116)",
+                "longitude":"15.7979"
+            },
+            "AT-WegenerNet-117":{
+                "latitude":"46.8915",
+                "location":"Gnas (WegenerNet Station 117)",
+                "longitude":"15.8176"
+            },
+            "AT-WegenerNet-118":{
+                "latitude":"46.8972",
+                "location":"Gnas (WegenerNet Station 118)",
+                "longitude":"15.8334"
+            },
+            "AT-WegenerNet-119":{
+                "latitude":"46.8944",
+                "location":"Gnas (WegenerNet Station 119)",
+                "longitude":"15.8559"
+            },
+            "AT-WegenerNet-120":{
+                "latitude":"46.8945",
+                "location":"Gleichenberg (WegenerNet Station 120)",
+                "longitude":"15.8705"
+            },
+            "AT-WegenerNet-121":{
+                "latitude":"46.8905",
+                "location":"Gleichenberg (WegenerNet Station 121)",
+                "longitude":"15.8881"
+            },
+            "AT-WegenerNet-122":{
+                "latitude":"46.8902",
+                "location":"Gleichenberg (WegenerNet Station 122)",
+                "longitude":"15.9125"
+            },
+            "AT-WegenerNet-123":{
+                "latitude":"46.8939",
+                "location":"Gleichenberg (WegenerNet Station 123)",
+                "longitude":"15.9307"
+            },
+            "AT-WegenerNet-124":{
+                "latitude":"46.8963",
+                "location":"Kapfenstein (WegenerNet Station 124)",
+                "longitude":"15.9419"
+            },
+            "AT-WegenerNet-125":{
+                "latitude":"46.8933",
+                "location":"Kapfenstein (WegenerNet Station 125)",
+                "longitude":"15.9704"
+            },
+            "AT-WegenerNet-126":{
+                "latitude":"46.8926",
+                "location":"Kapfenstein (WegenerNet Station 126)",
+                "longitude":"15.9877"
+            },
+            "AT-WegenerNet-127":{
+                "latitude":"46.8920",
+                "location":"Kapfenstein (WegenerNet Station 127)",
+                "longitude":"16.0029"
+            },
+            "AT-WegenerNet-128":{
+                "latitude":"46.8914",
+                "location":"Kapfenstein (WegenerNet Station 128)",
+                "longitude":"16.0172"
+            },
+            "AT-WegenerNet-129":{
+                "latitude":"46.8788",
+                "location":"Gnas (WegenerNet Station 129)",
+                "longitude":"15.7957"
+            },
+            "AT-WegenerNet-130":{
+                "latitude":"46.8798",
+                "location":"Gnas (WegenerNet Station 130)",
+                "longitude":"15.8196"
+            },
+            "AT-WegenerNet-131":{
+                "latitude":"46.8809",
+                "location":"Gnas (WegenerNet Station 131)",
+                "longitude":"15.8320"
+            },
+            "AT-WegenerNet-132":{
+                "latitude":"46.8790",
+                "location":"Gnas (WegenerNet Station 132)",
+                "longitude":"15.8521"
+            },
+            "AT-WegenerNet-133":{
+                "latitude":"46.8822",
+                "location":"Gleichenberg (WegenerNet Station 133)",
+                "longitude":"15.8723"
+            },
+            "AT-WegenerNet-134":{
+                "latitude":"46.8787",
+                "location":"Gleichenberg (WegenerNet Station 134)",
+                "longitude":"15.8878"
+            },
+            "AT-WegenerNet-135":{
+                "latitude":"46.8807",
+                "location":"Gleichenberg (WegenerNet Station 135)",
+                "longitude":"15.9090"
+            },
+            "AT-WegenerNet-136":{
+                "latitude":"46.8797",
+                "location":"Gleichenberg (WegenerNet Station 136)",
+                "longitude":"15.9298"
+            },
+            "AT-WegenerNet-137":{
+                "latitude":"46.8800",
+                "location":"Gleichenberg (WegenerNet Station 137)",
+                "longitude":"15.9455"
+            },
+            "AT-WegenerNet-138":{
+                "latitude":"46.8798",
+                "location":"Kapfenstein (WegenerNet Station 138)",
+                "longitude":"15.9638"
+            },
+            "AT-WegenerNet-139":{
+                "latitude":"46.8823",
+                "location":"Kapfenstein (WegenerNet Station 139)",
+                "longitude":"15.9839"
+            },
+            "AT-WegenerNet-140":{
+                "latitude":"46.8829",
+                "location":"Kapfenstein (WegenerNet Station 140)",
+                "longitude":"15.9995"
+            },
+            "AT-WegenerNet-141":{
+                "latitude":"46.8693",
+                "location":"Gnas (WegenerNet Station 141)",
+                "longitude":"15.8343"
+            },
+            "AT-WegenerNet-142":{
+                "latitude":"46.8705",
+                "location":"Gnas (WegenerNet Station 142)",
+                "longitude":"15.8558"
+            },
+            "AT-WegenerNet-143":{
+                "latitude":"46.8686",
+                "location":"Gleichenberg (WegenerNet Station 143)",
+                "longitude":"15.8720"
+            },
+            "AT-WegenerNet-144":{
+                "latitude":"46.8667",
+                "location":"Gleichenberg (WegenerNet Station 144)",
+                "longitude":"15.8903"
+            },
+            "AT-WegenerNet-145":{
+                "latitude":"46.8682",
+                "location":"Gleichenberg (WegenerNet Station 145)",
+                "longitude":"15.9066"
+            },
+            "AT-WegenerNet-146":{
+                "latitude":"46.8661",
+                "location":"Gleichenberg (WegenerNet Station 146)",
+                "longitude":"15.9330"
+            },
+            "AT-WegenerNet-147":{
+                "latitude":"46.8671",
+                "location":"Gleichenberg (WegenerNet Station 147)",
+                "longitude":"15.9471"
+            },
+            "AT-WegenerNet-148":{
+                "latitude":"46.8707",
+                "location":"St. Anna (WegenerNet Station 148)",
+                "longitude":"15.9681"
+            },
+            "AT-WegenerNet-149":{
+                "latitude":"46.8690",
+                "location":"Kapfenstein (WegenerNet Station 149)",
+                "longitude":"15.9888"
+            },
+            "AT-WegenerNet-150":{
+                "latitude":"46.8685",
+                "location":"Kapfenstein (WegenerNet Station 150)",
+                "longitude":"16.0059"
+            },
+            "AT-WegenerNet-151":{
+                "latitude":"46.9611",
+                "location":"Feldbach (WegenerNet Station 151)",
+                "longitude":"15.8510"
+            },
+            "AT-WegenerNet-154":{
+                "latitude":"46.8918",
+                "location":"Kapfenstein (WegenerNet Station 154)",
+                "longitude":"15.9755"
+            },
+            "AT-WegenerNet-155":{
+                "latitude":"46.9564",
+                "location":"Feldbach (WegenerNet Station 155)",
+                "longitude":"15.9150"
+            },
+            "AT-WegenerNet-156":{
+                "latitude":"46.9582",
+                "location":"Paldau (Central Station Raabtal)",
+                "longitude":"15.8486"
+            },
+            "AT-WegenerNet-501":{
+                "latitude":"47.5363",
+                "location":"Admont (Oberkainz)",
+                "longitude":"14.5980"
+            },
+            "AT-WegenerNet-502":{
+                "latitude":"47.5313",
+                "location":"Admont (K\u00f6lblwiese)",
+                "longitude":"14.6113"
+            },
+            "AT-WegenerNet-503":{
+                "latitude":"47.5317",
+                "location":"Admont (Schr\u00f6ckalm)",
+                "longitude":"14.6679"
+            },
+            "AT-WegenerNet-504":{
+                "latitude":"47.4994",
+                "location":"Gaishorn (Blaseneck)",
+                "longitude":"14.6189"
+            },
+            "AT-WegenerNet-505":{
+                "latitude":"47.5654",
+                "location":"Admont (Zin\u00f6dl)",
+                "longitude":"14.6660"
+            },
+            "AT-WegenerNet-515":{
+                "latitude":"47.5914",
+                "location":"Admont (Gstatterboden)",
+                "longitude":"14.6367"
             },
             "AU-ASM":{
                 "latitude":"-22.2830",
@@ -2559,6 +3360,12 @@
                 "source":"WECANN 1.0 (2018): Water, Energy, and Carbon with Artificial Neural Networks",
                 "source_type":"satellite_retrieval",
                 "source_version_number":"1.0"
+            },
+            "WNCSN-L2-HD-v8":{
+                "region":"europe",
+                "source":"WNCSN 8.0 (2025): WegenerNet Climate Station Network",
+                "source_type":"insitu",
+                "source_version_number":"8.0"
             },
             "WOA-23":{
                 "region":"global_ocean",

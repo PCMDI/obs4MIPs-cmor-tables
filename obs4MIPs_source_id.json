@@ -2670,6 +2670,25 @@
             ],
             "source_version_number":"1.0"
         },
+        "WNCSN-L2-HD-v8":{
+            "institution_id":"WEGC",
+            "region":[
+                "europe"
+            ],
+            "release_year":"2025",
+            "source_description":"WegenerNet Climate Station Network level 2 data (hourly aggregates)",
+            "source_label":"WNCSN",
+            "source_name":"WegenerNet Climate Station Network level 2 data (hourly aggregates)",
+            "source_type":"insitu",
+            "source_variables":[
+                "tas",
+                "hurs",
+                "pr",
+                "uas",
+                "vas"
+            ],
+            "source_version_number":"8.0"
+        },
         "WOA-23":{
             "institution_id":"NOAA-NCEI",
             "region":[
