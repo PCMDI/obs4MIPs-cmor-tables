@@ -846,6 +846,24 @@
             ],
             "source_version_number":"2.0"
         },
+        "ESACCI-LST-IRMGP-3-0-0":{
+            "institution_id":"ULeicester",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2026",
+            "source_description":"ESA Land Surface Temperature Climate Change Initiative Multisensor Infra-Red Low Earth Orbit and Geostationary Earth Orbit land surface temperature",
+            "source_label":"ESACCI-LST-IRMGP",
+            "source_name":"ESACCI-LST-IRMGP",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "ts",
+                "ts_ucom",
+                "ts_uind",
+                "ts_ustr"
+            ],
+            "source_version_number":"3.00"
+        },
         "ESACCI-PREC-L3C-NO2":{
             "institution_id":"KNMI-WUR",
             "region":[
@@ -2681,9 +2699,9 @@
             "source_name":"WegenerNet Climate Station Network level 2 data (hourly aggregates)",
             "source_type":"insitu",
             "source_variables":[
-                "tas",
                 "hurs",
                 "pr",
+                "tas",
                 "uas",
                 "vas"
             ],
