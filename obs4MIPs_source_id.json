@@ -858,9 +858,9 @@
             "source_type":"satellite_blended",
             "source_variables":[
                 "ts",
-                "ts_ucom",
-                "ts_uind",
-                "ts_ustr"
+                "tsucom",
+                "tsuind",
+                "tsustr"
             ],
             "source_version_number":"3.00"
         },
