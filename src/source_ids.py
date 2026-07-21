@@ -11,7 +11,7 @@ source_id['source_id'][key]['source_version_number'] = '3.00'
 source_id['source_id'][key]['institution_id'] = 'ULeicester'
 source_id['source_id'][key]['region'] = ['global_land']
 source_id['source_id'][key]['source_type'] = 'satellite_blended'
-source_id['source_id'][key]['source_variables'] = ['ts', 'ts_uind', 'ts_ustr', 'ts_ucom']
+source_id['source_id'][key]['source_variables'] = ['ts', 'tsuind', 'tsustr', 'tsucom']
 
 key = '20CR-V3'
 source_id['source_id'][key] = {}
