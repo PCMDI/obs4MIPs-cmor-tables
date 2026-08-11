@@ -73,6 +73,18 @@ source_id['source_id'][key]['region'] = ['global_land']
 source_id['source_id'][key]['source_type'] = 'satellite_blended'
 source_id['source_id'][key]['source_variables'] = ['pr']
 
+key = 'EUMETSAT-CMSAF-GIRAFE-v1'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'EUMETSAT-CMSAF-GIRAFE'
+source_id['source_id'][key]['source_label'] = 'EUMETSAT-CMSAF-GIRAFE'
+source_id['source_id'][key]['release_year'] = '2026'
+source_id['source_id'][key]['source_description'] = 'Satellite-based Global Interpolated RAinFall Estimation (GIRAFE)'
+source_id['source_id'][key]['source_version_number'] = '1.0'
+source_id['source_id'][key]['institution_id'] = 'EUMETSAT-CMSAF'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['pr']
+
 key = 'NOAA-NCEI-OISST-v2-1'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'NOAA-NCEI OISST v2.1'

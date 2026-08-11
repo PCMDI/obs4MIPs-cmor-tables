@@ -896,6 +896,21 @@
             ],
             "source_version_number":"v4-0"
         },
+        "EUMETSAT-CMSAF-GIRAFE-v1":{
+            "institution_id":"EUMETSAT-CMSAF",
+            "region":[
+                "global"
+            ],
+            "release_year":"2026",
+            "source_description":"Satellite-based Global Interpolated RAinFall Estimation (GIRAFE)",
+            "source_label":"EUMETSAT-CMSAF-GIRAFE",
+            "source_name":"EUMETSAT-CMSAF-GIRAFE",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "pr"
+            ],
+            "source_version_number":"1.0"
+        },
         "FLUXNET2015-1-0":{
             "institution_id":"FLUXNET",
             "region":[
