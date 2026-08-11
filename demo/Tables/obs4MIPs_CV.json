@@ -102,6 +102,7 @@
             "ENVEO":"Environmental Earth Observation Information Technology GmbH, Innsbruck, Austria",
             "ESPRI-IPSL":"Ensemble de Services Pour la Recherche, Institut Pierre Simon Laplace (France)",
             "ESSO":"Indian National Centre for Ocean Information Services",
+            "EUMETSAT-CMSAF":"EUMETSAT Satellite Application Facility on Climate Monitoring, Offenbach, Germany",
             "EmoryU":"Emory University, GA, USA",
             "FMI":"Finnish Meteorological Institute, Helsinki, Finland",
             "GloH2O":"gloh2o.org",
@@ -2707,6 +2708,12 @@
                 "source":"ESACCI-SCFG-MODIS v4-0 (2025): Snow Cover Fraction on Ground (SCFG) derived from Terra MODIS data from the ESA SNOW CCI Climate Data Record version 4.0",
                 "source_type":"satellite_blended",
                 "source_version_number":"v4-0"
+            },
+            "EUMETSAT-CMSAF-GIRAFE-v1":{
+                "region":"global",
+                "source":"EUMETSAT-CMSAF-GIRAFE 1.0 (2026): Satellite-based Global Interpolated RAinFall Estimation (GIRAFE)",
+                "source_type":"satellite_retrieval",
+                "source_version_number":"1.0"
             },
             "FLUXNET2015-1-0":{
                 "region":"global_land",

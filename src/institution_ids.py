@@ -5,6 +5,7 @@ institution_id['institution_id']['ARCCSS'] = 'ARC Centre of Excellence for Clima
 institution_id['institution_id']['CEDA'] = 'Centre for Environmental Data Analysis, RAL Space, STFC Rutherford Appleton Laboratory, Chilton, Didcot; National Centre for Earth Observation, UK'
 institution_id['institution_id']['DOE-ARM'] = 'U.S. Department of Energy, Atmospheric Radiation Measurment Program'
 institution_id['institution_id']['ECMWF'] = 'The European Centre for Medium-Range Weather Forecasts, Shinfield Park, Reading RG2 9AX, UK'
+institution_id['institution_id']['EUMETSAT-CMSAF'] = 'EUMETSAT Satellite Application Facility on Climate Monitoring, Offenbach, Germany'
 institution_id['institution_id']['MRI'] = 'Meteorological Research Institute, Tsukuba, Ibaraki 305-0052, Japan'
 institution_id['institution_id']['NASA-JPL'] = 'NASA Jet Propulsion Laboratory, Pasadena, CA 91109, USA'
 institution_id['institution_id']['NASA-GSFC'] = 'NASA Goddard Space Flight Center, Greenbelt MD, USA'
