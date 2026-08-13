@@ -2847,6 +2847,12 @@
                 "source_type":"gridded_insitu",
                 "source_version_number":"2.0"
             },
+            "HadCRUT-5-1-0-0-analysis":{
+                "region":"global",
+                "source":"HadCRUT5 5.1.0.0 (2025): HadCRUT5 blended air temperature and sea surface temperature anomalies",
+                "source_type":"gridded_insitu",
+                "source_version_number":"5.1.0.0"
+            },
             "HadCRUT5-0-2-0":{
                 "region":"global",
                 "source":"HadCRUT5 5.0.2.0 (2025): HadCRUT5 blended air temperature and sea surface temperature anomalies",

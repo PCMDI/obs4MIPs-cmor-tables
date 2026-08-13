@@ -1620,7 +1620,7 @@
             "modeling_realm":"atmos",
             "ok_max_mean_abs":"",
             "ok_min_mean_abs":"",
-            "out_name":"tastosanomanom",
+            "out_name":"tastosanom",
             "positive":"",
             "standard_name":"surface_temperature_anomaly",
             "type":"real",
