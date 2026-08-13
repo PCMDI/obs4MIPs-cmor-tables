@@ -1257,6 +1257,21 @@
             ],
             "source_version_number":"2.0"
         },
+        "HadCRUT-5-1-0-0-analysis":{
+            "institution_id":"CRU-UEA",
+            "region":[
+                "global"
+            ],
+            "release_year":"2025",
+            "source_description":"HadCRUT5 blended air temperature and sea surface temperature anomalies",
+            "source_label":"HadCRUT5",
+            "source_name":"HadCRUT5",
+            "source_type":"gridded_insitu",
+            "source_variables":[
+                "tastosanom"
+            ],
+            "source_version_number":"5.1.0.0"
+        },
         "HadCRUT5-0-2-0":{
             "institution_id":"CRU-UEA",
             "region":[
