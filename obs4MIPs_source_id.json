@@ -1283,8 +1283,7 @@
             "source_name":"HadCRUT5",
             "source_type":"gridded_insitu",
             "source_variables":[
-                "tas",
-                "tos"
+                "tastosanom"
             ],
             "source_version_number":"5.0.2.0"
         },
