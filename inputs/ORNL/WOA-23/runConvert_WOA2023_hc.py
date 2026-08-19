@@ -240,7 +240,7 @@ for var in ["ohcJm2", "ohc"]:
         references="S. Levitus, J. I. Antonov, T. P. Boyer, O. K. Baranova, H. E. Garcia, R. A. Locarnini, A. V. Mishonov, J. R. Reagan, D. Seidov, E. S. Yarosh, M. M. Zweng, World ocean heat content and thermosteric sea level change (0-2000 m), Geophysical Research Letters. 1955-2010. 10.1029/2012GL051106",
         region="global_ocean",
         source="WOA23 yearly mean ocean heat content anomaly from in-situ profile data",
-        source_id="WOA-23",
+        source_id="WOA2023",
         source_data_retrieval_date=download_stamp,
         source_data_url=remote_source,
         source_label="WOA",

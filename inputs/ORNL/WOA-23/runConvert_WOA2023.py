@@ -238,7 +238,7 @@ for name, period_dict in local_source_dict.items():
             references=reference,
             region="global_ocean",
             source="WOA 2023 (2024): World Ocean Atlas",
-            source_id="WOA-23",
+            source_id="WOA2023",
             source_data_retrieval_date=download_stamp,
             source_data_url="https://www.ncei.noaa.gov/data/oceans/woa/WOA23/DATA/",
             source_label="WOA",
