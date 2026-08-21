@@ -13,6 +13,30 @@ source_id['source_id'][key]['region'] = ['global_land']
 source_id['source_id'][key]['source_type'] = 'satellite_blended'
 source_id['source_id'][key]['source_variables'] = ['ts', 'tsuind', 'tsustr', 'tsucom']
 
+key = 'ESACCI-LST-AMSR-6-0-4'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'ESACCI-LST-AMSR'
+source_id['source_id'][key]['source_label'] = 'ESACCI-LST-AMSR'
+source_id['source_id'][key]['release_year'] = '2026'
+source_id['source_id'][key]['source_description'] = 'ESA Land Surface Temperature Climate Change Initiative AMSR-E and AMSR2 Microwave Low Earth Orbit land surface temperature'
+source_id['source_id'][key]['source_version_number'] = '6.04'
+source_id['source_id'][key]['institution_id'] = 'ULeicester'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] = ['ts', 'tsuind']
+
+key = 'ESACCI-LST-SSMI-6-0-4'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'ESACCI-LST-SSMI'
+source_id['source_id'][key]['source_label'] = 'ESACCI-LST-SSMI'
+source_id['source_id'][key]['release_year'] = '2026'
+source_id['source_id'][key]['source_description'] = 'ESA Land Surface Temperature Climate Change Initiative SSM/I and SSMIS Microwave Low Earth Orbit land surface temperature'
+source_id['source_id'][key]['source_version_number'] = '6.04'
+source_id['source_id'][key]['institution_id'] = 'ULeicester'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_blended'
+source_id['source_id'][key]['source_variables'] = ['ts', 'tsuind']
+
 key = '20CR-V3'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = '20CR'

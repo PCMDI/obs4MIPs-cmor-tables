@@ -846,6 +846,22 @@
             ],
             "source_version_number":"2.0"
         },
+        "ESACCI-LST-AMSR-6-0-4":{
+            "institution_id":"ULeicester",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2026",
+            "source_description":"ESA Land Surface Temperature Climate Change Initiative AMSR-E and AMSR2 Microwave Low Earth Orbit land surface temperature",
+            "source_label":"ESACCI-LST-AMSR",
+            "source_name":"ESACCI-LST-AMSR",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "ts",
+                "tsuind"
+            ],
+            "source_version_number":"6.04"
+        },
         "ESACCI-LST-IRMGP-3-0-0":{
             "institution_id":"ULeicester",
             "region":[
@@ -863,6 +879,22 @@
                 "tsustr"
             ],
             "source_version_number":"3.00"
+        },
+        "ESACCI-LST-SSMI-6-0-4":{
+            "institution_id":"ULeicester",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2026",
+            "source_description":"ESA Land Surface Temperature Climate Change Initiative SSM/I and SSMIS Microwave Low Earth Orbit land surface temperature",
+            "source_label":"ESACCI-LST-SSMI",
+            "source_name":"ESACCI-LST-SSMI",
+            "source_type":"satellite_blended",
+            "source_variables":[
+                "ts",
+                "tsuind"
+            ],
+            "source_version_number":"6.04"
         },
         "ESACCI-PREC-L3C-NO2":{
             "institution_id":"KNMI-WUR",
