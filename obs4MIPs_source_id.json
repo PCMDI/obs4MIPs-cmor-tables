@@ -847,7 +847,7 @@
             "source_version_number":"2.0"
         },
         "ESACCI-LST-AMSR-6-0-4":{
-            "institution_id":"ULeicester",
+            "institution_id":"Estellus",
             "region":[
                 "global_land"
             ],
@@ -881,7 +881,7 @@
             "source_version_number":"3.00"
         },
         "ESACCI-LST-SSMI-6-0-4":{
-            "institution_id":"ULeicester",
+            "institution_id":"Estellus",
             "region":[
                 "global_land"
             ],

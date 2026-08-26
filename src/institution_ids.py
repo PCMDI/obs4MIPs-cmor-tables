@@ -55,3 +55,4 @@ institution_id['institution_id']['WEGC'] = 'Wegener Center for Climate and Globa
 institution_id['institution_id']['WUR'] = 'Wageningen Universit, Netherlands'
 institution_id['institution_id']['KNMI-WUR'] = 'Multi-institute/agency collaboration,KNMI-WUR'
 institution_id['institution_id']['ULeicester'] = 'University of Leicester, Leicester, UK'
+institution_id['institution_id']['Estellus'] = 'Estellus, Fr'
