@@ -938,12 +938,32 @@
             "source_name":"ESACCI-SCFG-MODIS",
             "source_type":"satellite_retrieval",
             "source_variables":[
+                "snc",
                 "sncfg",
-                "sncfgsd",
+                "sncfgstderr",
                 "sncfv",
-                "sncfvsd"
+                "sncfvstderr"
             ],
-            "source_version_number":"v4-0"
+            "source_version_number":"v4.0"
+        },
+        "ESACCI-SCFV-MODIS-v4-0":{
+            "institution_id":"ENVEO",
+            "region":[
+                "global_land"
+            ],
+            "release_year":"2025",
+            "source_description":"Snow Cover Fraction Viewable from above (SCFV) derived from Terra MODIS data from the ESA SNOW CCI Climate Data Record version 4.0",
+            "source_label":"ESACCI-SCFV-MODIS",
+            "source_name":"ESACCI-SCFV-MODIS",
+            "source_type":"satellite_retrieval",
+            "source_variables":[
+                "snc",
+                "sncfg",
+                "sncfgstderr",
+                "sncfv",
+                "sncfvstderr"
+            ],
+            "source_version_number":"v4.0"
         },
         "EUMETSAT-CMSAF-GIRAFE-v1":{
             "institution_id":"EUMETSAT-CMSAF",

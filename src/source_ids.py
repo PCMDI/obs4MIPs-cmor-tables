@@ -24,17 +24,30 @@ source_id['source_id'][key]['institution_id'] = 'EmoryU'
 source_id['source_id'][key]['region'] = ['north_america']
 source_id['source_id'][key]['source_type'] = 'AI_upscaling'
 source_id['source_id'][key]['source_variables'] = ['cSoil0to100cm']
+
 key = 'ESACCI-SCFG-MODIS-v4-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'ESACCI-SCFG-MODIS'
 source_id['source_id'][key]['source_label'] = 'ESACCI-SCFG-MODIS'
 source_id['source_id'][key]['release_year'] = '2025'
 source_id['source_id'][key]['source_description'] = 'Snow Cover Fraction on Ground (SCFG) derived from Terra MODIS data from the ESA SNOW CCI Climate Data Record version 4.0'
-source_id['source_id'][key]['source_version_number'] = 'v4-0'
+source_id['source_id'][key]['source_version_number'] = 'v4.0'
 source_id['source_id'][key]['institution_id'] = 'ENVEO'
 source_id['source_id'][key]['region'] = ['global_land']
 source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
-source_id['source_id'][key]['source_variables'] = ['sncfg','sncfv','sncfgsd','sncfvsd']
+source_id['source_id'][key]['source_variables'] = ['sncfg', 'sncfv', 'sncfgstderr','sncfvstderr', 'snc']
+
+key = 'ESACCI-SCFV-MODIS-v4-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'ESACCI-SCFV-MODIS'
+source_id['source_id'][key]['source_label'] = 'ESACCI-SCFV-MODIS'
+source_id['source_id'][key]['release_year'] = '2025'
+source_id['source_id'][key]['source_description'] = 'Snow Cover Fraction Viewable from above (SCFV) derived from Terra MODIS data from the ESA SNOW CCI Climate Data Record version 4.0'
+source_id['source_id'][key]['source_version_number'] = 'v4.0'
+source_id['source_id'][key]['institution_id'] = 'ENVEO'
+source_id['source_id'][key]['region'] = ['global_land']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['sncfg', 'sncfv', 'sncfgstderr','sncfvstderr', 'snc']
 
 key = 'ESACCI-LST-IRMGP-3-0-0'
 source_id['source_id'][key] = {}
