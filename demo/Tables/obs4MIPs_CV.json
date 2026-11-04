@@ -33,6 +33,7 @@
             "yrPt":"sampled yearly, at specified time point within the time period"
         },
         "grid_label":{
+            "25km":"data reported on a grid with a nominal resolution of 25 km",
             "gm":"global mean data",
             "gn":"data reported on a model's native grid",
             "gna":"data reported on a native grid in the region of Antarctica",
