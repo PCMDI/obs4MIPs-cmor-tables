@@ -25,7 +25,7 @@ ds = xr.open_dataset(f'../ESACCI-L3-NO2-TROPOMI-2-0_201805-202311.nc', decode_ti
 cmor.setup(
     inpath="/obs4MIPs-cmor-tables/Tables/",
     netcdf_file_action=cmor.CMOR_REPLACE_4,
-    # logfile=f"/usr/people/anglou/Obs4MIPs/NO2/logs/cmor_tropno2_{datetime.datetime.now().strftime('%Y%m%dT%H%M')}.log",
+    # logfile=f"/logs/cmor_tropno2_{datetime.datetime.now().strftime('%Y%m%dT%H%M')}.log",
 )
 
 #Read dataset json 
