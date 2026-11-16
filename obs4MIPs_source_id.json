@@ -240,7 +240,7 @@
             "source_description":"Copernicus Climate Change Service merged satellite-derived column-average dry-air mole fraction of atmospheric methane",
             "source_label":"C3S-XCH4",
             "source_name":"C3S XCH4",
-            "source_type":"satellite_blended",
+            "source_type":"satellite_retrieval",
             "source_variables":[
                 "xch4"
             ],
@@ -255,7 +255,7 @@
             "source_description":"Copernicus Climate Change Service merged satellite-derived column-average dry-air mole fraction of atmospheric carbon dioxide",
             "source_label":"C3S-XCO2",
             "source_name":"C3S XCO2",
-            "source_type":"satellite_blended",
+            "source_type":"satellite_retrieval",
             "source_variables":[
                 "xco2"
             ],

@@ -1,6 +1,30 @@
 source_id = {}
 source_id['source_id'] = {}
 
+key = 'C3S-XCH4-v4-6'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'C3S XCH4'
+source_id['source_id'][key]['source_label'] = 'C3S-XCH4'
+source_id['source_id'][key]['release_year'] = '2024'
+source_id['source_id'][key]['source_description'] = 'Copernicus Climate Change Service merged satellite-derived column-average dry-air mole fraction of atmospheric methane'
+source_id['source_id'][key]['source_version_number'] = '4.6'
+source_id['source_id'][key]['institution_id'] = 'IUP-UB'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['xch4']
+
+key = 'C3S-XCO2-v4-6'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'C3S XCO2'
+source_id['source_id'][key]['source_label'] = 'C3S-XCO2'
+source_id['source_id'][key]['release_year'] = '2024'
+source_id['source_id'][key]['source_description'] = 'Copernicus Climate Change Service merged satellite-derived column-average dry-air mole fraction of atmospheric carbon dioxide'
+source_id['source_id'][key]['source_version_number'] = '4.6'
+source_id['source_id'][key]['institution_id'] = 'IUP-UB'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] = ['xco2']
+
 key = 'AI-upscaling-0-30cm-cSoil-1-0'
 source_id['source_id'][key] = {}
 source_id['source_id'][key]['source_name'] = 'AI upscaling 0-30 cm cSoil'
