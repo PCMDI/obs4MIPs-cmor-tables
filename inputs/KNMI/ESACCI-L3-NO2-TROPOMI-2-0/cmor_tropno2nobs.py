@@ -63,7 +63,7 @@ time_id = cmor.axis(
 
 var_nobs = cmor.variable(
     table_entry="tropno2nobs",
-    axis_ids=[lon_id, lat_id, time_id],
+    axis_ids=[time_id, lat_id, lon_id],
     units="1",
     data_type='i',
     comment='Total number of superobservations (spatial mean) used to create temporal mean of tropno2',

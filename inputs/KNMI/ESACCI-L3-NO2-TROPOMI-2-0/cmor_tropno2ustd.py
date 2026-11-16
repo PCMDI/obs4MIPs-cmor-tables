@@ -66,7 +66,7 @@ time_id = cmor.axis(
 
 var_ustd = cmor.variable(
     table_entry="tropno2ustd",
-    axis_ids=[lon_id, lat_id, time_id],
+    axis_ids=[time_id, lat_id, lon_id],
     units="molecules cm^-2",
     comment='Total L3 uncertainty of tropno2, estimated using the detailed uncertainty propagation method described in Glissenaar et al. (2025), accounting for different uncertainty sources, their temporal correlation coefficients, and temporal representativeness uncertainty.',
     data_type='d',

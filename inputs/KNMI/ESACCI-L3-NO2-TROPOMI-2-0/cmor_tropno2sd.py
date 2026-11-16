@@ -65,7 +65,7 @@ time_id = cmor.axis(
 
 var_sd = cmor.variable(
     table_entry="tropno2sd",
-    axis_ids=[lon_id, lat_id, time_id],
+    axis_ids=[time_id, lat_id, lon_id],
     units="molecules cm^-2",
     comment="Temporal standrad deviation of tropno2.",
     data_type='d',

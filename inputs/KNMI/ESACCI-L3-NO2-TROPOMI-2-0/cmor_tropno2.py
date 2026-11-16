@@ -66,7 +66,7 @@ time_id = cmor.axis(
 
 var = cmor.variable(
     table_entry="tropno2",
-    axis_ids=[lon_id, lat_id, time_id],
+    axis_ids=[time_id, lat_id, lon_id],
     units="molecules cm^-2",
     comment='Monthly mean of tropospheric NO2 vertical column density observed by TROPOMI at approximately 13:30 local solar time. Retrievals are subject to cloud screening and are therefore representative primarily of clear-sky conditions.',
     data_type='d',
