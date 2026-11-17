@@ -18,7 +18,7 @@
 "institution_id": "KNMI-WUR" ,
 "license": "Data in this file is licensed under the ESA CCI Data Policy: free and open access" ,
 "nominal_resolution": "25 km" ,
-"outpath":"/nobackup/users/anglou/data/obs4MIPs/TROPOMI",
+"outpath":"./",
 "output_file_template":"<variable_id><frequency><source_id><variant_label><grid_label>",
 "output_path_template":"<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>",
 "processing_level" : "L3",

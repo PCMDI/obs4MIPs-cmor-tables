@@ -3,7 +3,7 @@
 """
 Created on Mon Oct 26 16:20:03 2026
 
-@author: anglou
+@author: Isidora Anglou, isidora.anglou[at]knmi.nl
 """
 
 import numpy as np
@@ -16,13 +16,14 @@ import os
 dataset='02x02'
 
 # Open dataset 
-ds = xr.open_dataset(f'../ESACCI-L3-NO2-TROPOMI-2-0_201805-202311.nc', decode_times=False)
+
+ds = xr.open_dataset(f'.../{dataset}/ESACCI-L3-NO2-TROPOMI-2-0_201805-202311.nc', decode_times=False)
 
 # Set up CMOR
+
 cmor.setup(
     inpath="/obs4MIPs-cmor-tables/Tables/",
     netcdf_file_action=cmor.CMOR_REPLACE_4,
-    # logfile=f"/logs/cmor_tropno2nobs_{datetime.datetime.now().strftime('%Y%m%dT%H%M')}.log",
 )
 
 #Read dataset json 
