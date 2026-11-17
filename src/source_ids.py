@@ -131,3 +131,15 @@ source_id['source_id'][key]['institution_id'] = 'CRU-UEA'
 source_id['source_id'][key]['region'] = ['global']
 source_id['source_id'][key]['source_type'] = 'gridded_insitu'
 source_id['source_id'][key]['source_variables'] = ['tastosanom']
+
+key = 'ESACCI-L3-NO2-TROPOMI-2-0'
+source_id['source_id'][key] = {}
+source_id['source_id'][key]['source_name'] = 'ESACCI-L3-NO2-TROPOMI-2-0'
+source_id['source_id'][key]['source_label'] = 'ESACCI-L3-NO2-TROPOMI'
+source_id['source_id'][key]['release_year'] = '2026'
+source_id['source_id'][key]['source_description'] = 'Monthly tropospheric nitrogen dioxide (NO2) column number density produced in the context of ESA CCI+ precursors for aerosols and ozone project'
+source_id['source_id'][key]['source_version_number'] = '2.0'
+source_id['source_id'][key]['institution_id'] = 'KNMI'
+source_id['source_id'][key]['region'] = ['global']
+source_id['source_id'][key]['source_type'] = 'satellite_retrieval'
+source_id['source_id'][key]['source_variables'] =  ['tropno2','tropno2nobs','tropno2sd','tropno2ustd']
