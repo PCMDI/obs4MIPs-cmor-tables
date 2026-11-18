@@ -1,0 +1,51 @@
+{
+    "#comment":"The following are CMOR internal settings and should not be edited by the user",
+    "_AXIS_ENTRY_FILE":"obs4MIPs_coordinate.json",
+    "_FORMULA_VAR_FILE":"obs4MIPs_formula_terms.json",
+    "_controlled_vocabulary_file":"obs4MIPs_CV.json",
+    "_further_info_url_tmpl":".",
+
+    "activity_id":"obs4MIPs",
+    "calendar":"standard",
+    "Conventions":"CF-1.12 ODS-2.6.1",
+
+    "comment":"", 
+    "contact":"snowcci@enveo.at", 
+    "dataset_contributor":"Maria Heinrich, Gabriele Schwaizer",
+    "data_specs_version":"2.6",
+    "doi": "10.5285/bc13bb02a958449aac139853c4638f32",
+    "frequency":"day",
+    "grid":"0.01x0.01 degree latitude x longitude",
+    "grid_label":"gn",
+    "has_aux_unc":"TRUE",
+    "aux_uncertainty_id":"sncfvstderr",
+    "history":"",
+    "institution":"Environmental Earth Observation Information Technology GmbH, Innsbruck, Austria",
+    "institution_id":"ENVEO",
+    "license": "Data in this file produced by ENVEO is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Use of the data must be acknowledged following guidelines found at https://catalogue.ceda.ac.uk/uuid/bc13bb02a958449aac139853c4638f32/. Further information about this data, including some limitations, can be found via http://snow-cci.enveo.at/ and https://climate.esa.int/en/projects/snow/.",
+    "long_name": "Snow Cover Fraction Viewable", 
+    "nominal_resolution":"1 km",
+    "processing_code_location": ".", 
+    "product":"observations",
+    "references":"Schwaizer, G.; Nagler, T.; Hetzenecker, M.; Heinrich, M.; Moelg, N.; Nemec, J.; Haslinger, B.; Fasching, U.; Scolamiero, A.; Malcher, P.; Metsamaki, S. (2025): ESA Snow Climate Change Initiative (Snow_cci): Daily global Snow Cover Fraction - viewable snow (SCFV) from MODIS (2000-2023), version 4.0. NERC EDS Centre for Environmental Data Analysis, 03 December 2025. https://dx.doi.org/10.5285/bc13bb02a958449aac139853c4638f32",
+
+    "source": "ESACCI-SCFV-MODIS v4-0 (2025): Snow Cover Fraction on Viewable from above (SCFV) derived from Terra MODIS data from the ESA SNOW CCI Climate Data Record version 4.0",
+    "source_data_retrieval_date": "20251203",
+    "source_id":"ESACCI-SCFV-MODIS-v4-0",
+    "source_data_url":"https://catalogue.ceda.ac.uk/uuid/bc13bb02a958449aac139853c4638f32/",
+    "source_label": "ESACCI-SCFV-MODIS",
+    "source_type": "satellite_retrieval",
+    "source_version_number": "4.0",
+
+    "title": "ESA CCI viewable snow product level L3C daily from MODIS",
+    "tracking_id": "",
+    "variable_id": "sncfv",
+    "variant_info": "obs4MIPs-compliant product prepared by ENVEO",
+    "variant_label": "ENVEO",
+
+
+    "outpath":"../out",
+    "output_file_template":"<variable_id><frequency><source_id><variant_label><grid_label>",
+    "output_path_template":"<activity_id>/<institution_id>/<source_id>/<frequency>/<variable_id>/<grid_label>/<version>"
+    
+}
